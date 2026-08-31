@@ -1,0 +1,9 @@
+# https://polynite.io
+User-agent: *
+Allow: /
+
+# The staging copy of the app. Same code as the site, one version ahead,
+# and nothing here should ever compete with the real pages in search.
+Disallow: /dev/
+
+Sitemap: https://polynite.io/sitemap.xml

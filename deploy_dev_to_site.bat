@@ -20,10 +20,11 @@ REM  counter and dev's is far behind the site's. Copying it would
 REM  send the version backwards and browsers would stop reloading.
 REM  The site's counter is bumped below instead.
 REM
-REM  tier.txt is always excluded too, and that exclusion is what
-REM  MAKES the root the release: the build stamps "dev" into it, and
-REM  its absence here is how the page knows the released library is
-REM  beside it rather than one level up.
+REM  tier.txt is always excluded too - and REWRITTEN below. The build
+REM  stamps "dev" into dev\tier.txt; the site gets "release". Both
+REM  folders therefore have one, which is deliberate: leaving the site
+REM  without a file the page asks for on every load would answer the
+REM  question with a permanent 404 in everyone's console.
 REM ###############################################################
 
 set "SRC=%~dp0dev"
@@ -59,6 +60,11 @@ REM robocopy: 0-7 is success, 8 and up is a real failure. `if errorlevel N`
 REM means ">= N", so this is the documented way to read it.
 if errorlevel 8 goto :fail
 
+REM This folder IS the release, and says so. fs_assets.js reads it to decide
+REM whether the released model library is beside the page or one level up -
+REM a question no relative URL can answer once the site sits at a domain root.
+>"%DST%\tier.txt" echo release
+
 REM Bump the SITE's own version so version.js cache-busts app.js and app.wasm
 REM for everyone still holding the old ones. Seeds itself when missing.
 if exist "%DST%\version_inc.bat" call "%DST%\version_inc.bat"
@@ -72,8 +78,6 @@ if exist "%DST%\App.js"   echo           for app.js. Delete App.* here and in de
 if exist "%DST%\App.wasm" echo  WARNING: App.wasm is still here - same problem.
 if not exist "%DST%\app.js" echo  WARNING: app.js is MISSING - the site will show the WebGPU notice.
 if not exist "%DST%\backend.js" echo  WARNING: backend.js missing - the shell will assume WebGPU.
-if exist "%DST%\tier.txt" echo  WARNING: tier.txt is on the SITE. The release must not have one -
-if exist "%DST%\tier.txt" echo           delete it, or the site will look for its models one level up.
 if not exist "%DST%\CNAME" echo  WARNING: CNAME is missing - GitHub Pages will drop the custom domain.
 if not exist "%DST%\models\index.txt" echo  WARNING: models\index.txt missing - run this again with: models
 echo.
