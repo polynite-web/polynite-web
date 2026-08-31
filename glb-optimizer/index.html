@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GLB Optimizer: Compress and Shrink glTF Files | Polynite</title>
+<title>GLB Optimizer: Compress and Shrink GLB Files | Polynite</title>
 <meta name="description" content="Make a GLB smaller without opening a desktop tool. Polynite compresses geometry, resizes textures and reports the exact saving before you export.">
 <link rel="canonical" href="https://polynite.io/glb-optimizer/">
 <meta name="theme-color" content="#0b0d12">
@@ -13,15 +13,15 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="GLB Optimizer: Compress and Shrink glTF Files | Polynite">
+<meta property="og:title" content="GLB Optimizer: Compress and Shrink GLB Files | Polynite">
 <meta property="og:description" content="Make a GLB smaller without opening a desktop tool. Polynite compresses geometry, resizes textures and reports the exact saving before you export.">
 <meta property="og:url" content="https://polynite.io/glb-optimizer/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB and glTF models">
+<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GLB Optimizer: Compress and Shrink glTF Files | Polynite">
+<meta name="twitter:title" content="GLB Optimizer: Compress and Shrink GLB Files | Polynite">
 <meta name="twitter:description" content="Make a GLB smaller without opening a desktop tool. Polynite compresses geometry, resizes textures and reports the exact saving before you export.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 <style>:root{
@@ -90,7 +90,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     "@type": "WebSite",
     "url": "https://polynite.io/"
   },
-  "description": "Compress GLB and glTF geometry and textures in the browser and compare the result before exporting."
+  "description": "Compress GLB geometry and textures in the browser and compare the result before exporting."
 }</script>
 </head>
 <body>
@@ -111,7 +111,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>Make a GLB smaller</h1>
-  <p class="lead">Most oversized glTF files are oversized for two reasons: the mesh carries
+  <p class="lead">Most oversized GLB files are oversized for two reasons: the mesh carries
   more detail than anyone will ever see, and the textures are larger than the screen can
   show. Polynite handles both, and tells you what each one cost you.</p>
 
@@ -120,7 +120,8 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   <h2>Geometry</h2>
   <p>Vertex attributes are quantized and the index buffer is reordered for the vertex cache,
   which is where the first easy megabytes usually come from. On export the geometry is
-  compressed with Meshopt, so the result still loads in any glTF reader.</p>
+  compressed with Meshopt, so the result still loads in any glTF based engine,
+  which is what a GLB is underneath.</p>
 
   <h2>Textures</h2>
   <p>An 8K base colour map on a prop that occupies two hundred pixels on screen is the most

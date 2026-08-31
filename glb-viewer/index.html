@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GLB Viewer: Open glTF and GLB Files Online | Polynite</title>
-<meta name="description" content="Open a .glb or .gltf file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
+<title>GLB Viewer: Open GLB Files Online | Polynite</title>
+<meta name="description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
 <link rel="canonical" href="https://polynite.io/glb-viewer/">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
@@ -13,16 +13,16 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="GLB Viewer: Open glTF and GLB Files Online | Polynite">
-<meta property="og:description" content="Open a .glb or .gltf file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
+<meta property="og:title" content="GLB Viewer: Open GLB Files Online | Polynite">
+<meta property="og:description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
 <meta property="og:url" content="https://polynite.io/glb-viewer/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB and glTF models">
+<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GLB Viewer: Open glTF and GLB Files Online | Polynite">
-<meta name="twitter:description" content="Open a .glb or .gltf file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
+<meta name="twitter:title" content="GLB Viewer: Open GLB Files Online | Polynite">
+<meta name="twitter:description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 <style>:root{
   --bg:#0b0d12; --bg2:#11141b; --line:#1e2430;
@@ -90,7 +90,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     "@type": "WebSite",
     "url": "https://polynite.io/"
   },
-  "description": "Open and inspect GLB and glTF files in the browser with WebGPU."
+  "description": "Open and inspect GLB files in the browser with WebGPU."
 }</script>
 </head>
 <body>
@@ -111,7 +111,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>GLB viewer for the browser</h1>
-  <p class="lead">Drop a <code>.glb</code> or <code>.gltf</code> file into the page and look at it.
+  <p class="lead">Drop a <code>.glb</code> file into the page and look at it.
   Nothing is uploaded, and there is no account to create before you can see your model.</p>
 
   <p><a class="cta" href="/">Open the viewer</a></p>
@@ -127,8 +127,9 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   with flipped normals or a missing UV set announces itself immediately in those views.</p>
 
   <h2>Formats</h2>
-  <p>Binary glTF (<code>.glb</code>), text glTF with embedded buffers (<code>.gltf</code>),
-  Wavefront <code>.obj</code>, and Polynite's own <code>.wmesh</code> cache. Draco and
+  <p>GLB is the format Polynite is built around, and the one everything here is tuned for.
+  Wavefront <code>.obj</code> and text glTF also open, and Polynite's own
+  <code>.wmesh</code> cache loads instantly once a model has been prepared. Draco and
   Meshopt compressed geometry are handled on load.</p>
 
   <h2>Why it stays on your machine</h2>

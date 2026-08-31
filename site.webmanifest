@@ -1,7 +1,7 @@
 {
   "name": "Polynite",
   "short_name": "Polynite",
-  "description": "Create, view and optimize GLB and glTF models in your browser.",
+  "description": "Create, view and optimize GLB models in your browser.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

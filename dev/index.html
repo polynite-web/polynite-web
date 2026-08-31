@@ -2,39 +2,83 @@
 <html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
-<title>Wake Nanite - Virtual Mesh Viewer | SpinView</title>
-<meta name="description" content="Wake Nanite: a WebGPU virtual-mesh viewer with Nanite-style cluster LOD. Load .glb models and inspect clusters, LOD levels and error heat live in your browser.">
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
+<title>Polynite: Create, View and Optimize GLB Models Online</title>
+<meta name="description" content="Open a GLB file in your browser, look at it, and make it smaller. Polynite reduces polygons, compresses geometry and textures, and renders with WebGPU. Your files stay on your machine.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#0b0d12">
 
-<link rel="canonical" href="https://spinview.app/nanite">
+<link rel="canonical" href="https://polynite.io/">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
-<meta property="og:title" content="Wake Nanite - Virtual Mesh Viewer">
-<meta property="og:description" content="A WebGPU virtual-mesh viewer with Nanite-style cluster LOD: load a model and inspect clusters, LOD levels and pixel error live.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://spinview.app/nanite">
-<meta property="og:site_name" content="SpinView">
+<meta property="og:site_name" content="Polynite">
+<meta property="og:title" content="Polynite: Create, View and Optimize GLB Models Online">
+<meta property="og:description" content="Open a GLB file in your browser, look at it, and make it smaller. Polynite reduces polygons, compresses geometry and textures, and renders with WebGPU. Your files stay on your machine.">
+<meta property="og:url" content="https://polynite.io/">
+<meta property="og:image" content="https://polynite.io/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wake Nanite - Virtual Mesh Viewer">
-<meta name="twitter:description" content="A WebGPU virtual-mesh viewer with Nanite-style cluster LOD, running in the browser.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Polynite: Create, View and Optimize GLB Models Online">
+<meta name="twitter:description" content="Open a GLB file in your browser, look at it, and make it smaller. Polynite reduces polygons, compresses geometry and textures, and renders with WebGPU. Your files stay on your machine.">
+<meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Wake Nanite",
-  "url": "https://spinview.app/nanite",
-  "description": "A WebGPU virtual-mesh viewer with Nanite-style cluster LOD.",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Web Browser",
+  "@type": "WebSite",
+  "name": "Polynite",
+  "url": "https://polynite.io/",
+  "description": "Create, view and optimize GLB models in your browser."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Polynite",
+  "url": "https://polynite.io/",
+  "logo": "https://polynite.io/assets/icon-512.png",
+  "sameAs": [
+    "https://github.com/polynite-io"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Polynite",
+  "url": "https://polynite.io/",
+  "description": "A browser based 3D tool to open, inspect and optimize GLB models. Reduce polygons, compress geometry, resample textures and build levels of detail, rendered with WebGPU.",
+  "applicationCategory": "DesignApplication",
+  "applicationSubCategory": "3D model viewer and optimizer",
+  "operatingSystem": "Any, requires a browser with WebGPU",
+  "browserRequirements": "Requires WebGPU",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Open GLB files, plus OBJ and text glTF",
+    "Inspect triangles, materials, textures and level of detail",
+    "Reduce polygon count with an error driven simplifier",
+    "Compress geometry with Meshopt and resample textures",
+    "Compare the original and the optimized model side by side",
+    "Export an optimized GLB"
+  ],
   "publisher": {
     "@type": "Organization",
-    "name": "SpinView",
-    "url": "https://spinview.app"
+    "name": "Polynite",
+    "url": "https://polynite.io/"
   }
 }
 </script>
@@ -102,23 +146,31 @@ body {
   background: #000;
   z-index: 0;
 }
+/* A strip at the bottom, not a black sheet over the whole window. It used to
+   cover everything, which meant the only thing anyone could read while the
+   engine loaded was a spinner. The intro underneath is the better use of those
+   two seconds, so the loader steps aside and just says what it is doing. */
 .app-loader {
   position: fixed;
-  inset: 0;
+  inset: auto 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  color: rgba(255, 255, 255, 0.35);
-  background: #000;
+  flex-direction: row;
+  gap: 10px;
+  padding: 14px 16px 22px;
+  color: rgba(255, 255, 255, 0.42);
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(to top, #0b0d12 45%, rgba(11, 13, 18, 0));
+  pointer-events: none;
   z-index: 50;
 }
 .app-spinner {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 12px;
-  border: 4px solid rgba(255, 255, 255, 0.08);
-  border-top-color: rgba(255, 255, 255, 0.42);
+  width: 18px;
+  height: 18px;
+  flex: none;
+  border: 2px solid rgba(255, 255, 255, 0.10);
+  border-top-color: rgba(255, 255, 255, 0.45);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -223,44 +275,70 @@ body {
 }
 
 /*
- * Search-engine and accessibility content.
- * It remains in the document flow for crawlers and assistive technologies
- * without interfering with the fullscreen graphics canvas.
+ * The page's own content, and the only description of Polynite that does not
+ * require running WebGPU to read. It is REAL and VISIBLE while the engine
+ * loads - the first thing a visitor on a slow connection sees, and the first
+ * thing a crawler reads - and the engine hides it on its first committed
+ * frame. It was a 1px clipped block before: text written for search engines
+ * and shown to nobody, which is exactly what search engines penalise.
  */
 .seo-content {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: normal;
-  border: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 6vh 7vw 22vh;
+  overflow-y: auto;
+  color: #cfdcec;
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #0b0d12;
 }
+.seo-content h1 {
+  font-size: clamp(1.6rem, 4.2vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0;
+  color: #eef4fb;
+  letter-spacing: -0.01em;
+  max-width: 22ch;
+}
+.seo-content p { margin: 0; max-width: 46rem; }
+.seo-content .sub { color: #9fb0c6; font-size: 1.05rem; }
+.seo-content h2 { font-size: 1rem; margin: 1.2rem 0 0; color: #eef4fb; }
+.seo-content ul { margin: 0; padding-left: 1.1rem; max-width: 46rem; }
+.seo-content li { margin: 0.15rem 0; }
+.seo-content nav { margin-top: 1.4rem; display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.seo-content a { color: #7fc3ff; }
 </style>
 </head>
 <body translate="no" class="notranslate">
-<main class="seo-content" id="about-nanite" translate="yes">
-  <h1>Wake Nanite</h1>
+<main class="seo-content" id="intro">
+  <h1>Create, view and optimize GLB models in your browser</h1>
 
-  <p>
-    Wake Nanite is a virtual-mesh viewer running directly in your web browser
-    on WebGPU.
+  <p class="sub">
+    Polynite opens a <code>.glb</code> file, draws it with WebGPU,
+    and makes it smaller. The file is read by this page and stays on your machine.
   </p>
 
-  <p>
-    It builds a Nanite-style cluster LOD hierarchy and renders the selected
-    cut live: clusters, LOD levels, error heat, normals, depth, UVs and
-    albedo.
-  </p>
+  <h2>What it does</h2>
+  <ul>
+    <li>Open GLB files, with no upload and no account. OBJ and text glTF are read too.</li>
+    <li>Inspect triangles, materials, textures, normals, UVs and level of detail.</li>
+    <li>Reduce the polygon count with an error driven simplifier that respects UV seams.</li>
+    <li>Compress geometry with Meshopt and resample oversized textures.</li>
+    <li>Compare the original and the optimized model side by side before exporting.</li>
+  </ul>
 
-  <p>
-    Load one of the bundled models or drop your own .glb, .gltf, .obj or
-    .wmesh file into the window.
-  </p>
+  <p>Drop a model into the window to begin, or pick one of the bundled examples.</p>
 
-  <a href="https://spinview.app/">Visit SpinView</a>
+  <nav aria-label="Polynite tools">
+    <a href="/glb-viewer/">GLB viewer</a>
+    <a href="/glb-optimizer/">GLB optimizer</a>
+    <a href="/reduce-polygons/">Reduce polygons</a>
+    <a href="/about/">About Polynite</a>
+  </nav>
 </main>
 
 <div class="app-loader" id="loader">
@@ -613,6 +691,11 @@ body {
     if (engineAborted) return;
     loaderHidden = true;
     if (loader) loader.style.display = "none";
+    /* The intro goes with it. It is not decoration to be swept away: it is what
+       the page says while there is nothing to look at yet, and the engine's
+       first committed frame is the moment there is. */
+    var intro = document.getElementById("intro");
+    if (intro) intro.style.display = "none";
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
@@ -720,6 +803,8 @@ body {
 
   function gpuNotice(reason, detail, title) {
     try { if (loader) loader.style.display = "none"; } catch (eL) {}
+    /* The intro STAYS. A visitor whose browser cannot run the engine should
+       still be told what this page is, and the notice sits over it. */
     var d = document.createElement("div");
     d.className = "gpu-notice";
     var card = document.createElement("div");
