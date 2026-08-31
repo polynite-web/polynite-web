@@ -44,10 +44,12 @@
    * underneath it. */
   /* Dev build, or the released copy of it?
    *
-   * The build always writes tier.txt containing "dev"; deploy_dev_to_site.bat
-   * excludes it when it copies dev/ over the site, so the release simply does
-   * not have one. A file the build writes and the deploy strips is the only
-   * answer that does not depend on where the page happens to be served from.
+   * The build writes tier.txt containing "dev"; deploy_dev_to_site.bat replaces
+   * it with "release" when it copies dev/ over the site. Both folders have one,
+   * on purpose: a missing file would answer the question just as well and put a
+   * permanent 404 in every visitor's console. Anything other than "dev" - and a
+   * fetch that fails outright - means release, so a site that predates this
+   * file still behaves correctly.
    *
    * The previous test - a HEAD on ../models/index.txt, "is there a model
    * library one level up" - was true for a nested /dev/ under a site, and
