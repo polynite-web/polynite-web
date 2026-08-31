@@ -1,0 +1,2924 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SpinView - PolyNite, a WebGPU GLB viewer with VR</title>
+<meta name="description" content="SpinView builds interactive 3D tools, games and visual experiments. Now live: PolyNite, a WebGPU GLB and glTF viewer with Nanite-like adaptive geometry, scene lighting, sharing and a VR mode.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<link rel="canonical" href="https://spinview.app/">
+<link rel="icon" type="image/png" href="/assets/spinview_icon.jpg">
+<link rel="apple-touch-icon" href="/assets/spinview_icon.jpg">
+
+<meta property="og:title" content="SpinView - PolyNite, a WebGPU GLB viewer with VR">
+<meta property="og:description" content="Drop a GLB and explore every detail, then step inside it in VR. PolyNite is a WebGPU viewer with Nanite-like adaptive geometry, running directly in your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://spinview.app/">
+<meta property="og:site_name" content="SpinView">
+<meta property="og:image" content="https://spinview.app/_data/app/polynite/screen/img07.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SpinView - PolyNite, a WebGPU GLB viewer with VR">
+<meta name="twitter:description" content="Drop a GLB and explore every detail, then step inside it in VR.">
+<meta name="twitter:image" content="https://spinview.app/_data/app/polynite/screen/img07.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://spinview.app/#organization",
+      "name": "SpinView",
+      "url": "https://spinview.app/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://spinview.app/#website",
+      "url": "https://spinview.app/",
+      "name": "SpinView",
+      "publisher": { "@id": "https://spinview.app/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "PolyNite",
+      "url": "https://spinview.app/polynite/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web browser with WebGPU",
+      "description": "A WebGPU-powered GLB and glTF viewer with Nanite-like adaptive geometry, scene lighting, sharing and a VR mode.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@id": "https://spinview.app/#organization" }
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var host=(location.hostname||"").toLowerCase();
+  window.SPINVIEW_PRODUCTION =
+    host==="spinview.app" ||
+    host==="www.spinview.app" ||
+    host.endsWith(".spinview.app");
+
+  if(window.SPINVIEW_PRODUCTION){
+    var s=document.createElement("script");
+    s.src="/version.js";
+    s.async=false;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+<style>
+/* ============================================================
+   SpinView - cinema shell
+   One full-screen stage. Content comes from _data/catalog.json.
+   ============================================================ */
+
+:root {
+  --bg:            #000000;
+  --ink:           #ffffff;
+  --ink-soft:      rgba(255,255,255,.72);
+  --ink-faint:     rgba(255,255,255,.42);
+  --line:          rgba(255,255,255,.16);
+  --line-soft:     rgba(255,255,255,.09);
+
+  --cyan:          #4dd6ff;
+  --violet:        #9a6bff;
+  --magenta:       #ff5ce1;
+  --accent:        var(--cyan);
+
+  --stage-pad-x:   clamp(22px, 6vw, 96px);
+  --stage-pad-t:   96px;
+  --stage-pad-b:   96px;
+  /* the copy block is a fixed height, centred in the stage - so its lower
+     edge sits at the same place on every slide, and the button pinned just
+     under that edge never moves either */
+  /* a floor as well as a proportion: on a short laptop 42vh is not enough
+     to hold the feature grid, and the block would grow past the button */
+  --copy-h:        max(420px, 42vh);
+  --cta-gap:       34px;
+  /* The copy block is centred on the padding box, so an asymmetric padding
+     is what moves it off the middle of the stage. The button is positioned
+     from the stage, not from the block, so it has to be told about the same
+     offset or the two drift apart. */
+  --copy-shift:    calc((var(--stage-pad-t) - var(--stage-pad-b)) / 2);
+  /* one place to slow the whole reel down or speed it up */
+  --swap:          .78s;
+
+  --ease:          cubic-bezier(.22,.61,.36,1);
+  --ease-out:      cubic-bezier(.16,1,.3,1);
+
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Pure full-screen by default. The archive below is only reachable
+   when there is released content to scroll to (body.has-more). */
+html, body { height: 100%; overflow: hidden; }
+html.has-more, html.has-more body {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+::selection { background: rgba(77,214,255,.28); }
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ intro */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: #000;
+  transition: opacity .85s var(--ease), visibility .85s;
+}
+#intro.done { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.intro-lockup {
+  display: grid;
+  justify-items: center;
+  gap: clamp(16px, 2.6vh, 26px);
+  opacity: 0;
+  /* opacity only - a scale or width animation on a logo reads as a wobble */
+  animation: introIn .7s var(--ease) .05s forwards;
+}
+.intro-word {
+  font-size: clamp(11px, 1.5vw, 14px);
+  font-weight: 500;
+  letter-spacing: .62em;
+  text-indent: .62em;
+  color: rgba(255,255,255,.82);
+}
+.intro-rule {
+  width: clamp(120px, 18vw, 230px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--magenta), transparent);
+  opacity: 0;
+  animation: introIn .8s var(--ease) .28s forwards;
+}
+@keyframes introIn { to { opacity: 1; } }
+
+/* ------------------------------------------------------------------ chrome */
+
+.mark-corner {
+  position: fixed;
+  top: max(18px, env(safe-area-inset-top));
+  left: max(18px, env(safe-area-inset-left));
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .7s var(--ease) .15s, transform .7s var(--ease) .15s;
+}
+body.lit .mark-corner { opacity: .5; transform: none; }
+.mark-corner:hover, .mark-corner:focus-visible { opacity: 1 !important; }
+.mark-corner span {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .34em;
+  text-indent: .34em;
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 0 4px rgba(0,0,0,.9), 0 0 14px rgba(0,0,0,.7);
+}
+
+/* Project switcher. Doubles as the "whose slide is this" indicator, so the
+   name never has to be repeated a third time in the chrome. */
+body.tight .mark-corner { display: none; }
+
+.projects {
+  position: fixed;
+  max-width: calc(100vw - 30px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(18px, env(safe-area-inset-right));
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 24px);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .7s var(--ease) .2s, transform .7s var(--ease) .2s;
+}
+body.lit .projects { opacity: 1; transform: none; }
+.projects::-webkit-scrollbar { display: none; }
+
+.proj {
+  position: relative;
+  padding: 5px 0 7px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-indent: .24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255,255,255,.32);
+  text-shadow: 0 0 3px rgba(0,0,0,.95), 0 0 10px rgba(0,0,0,.85), 0 0 24px rgba(0,0,0,.6);
+  transition: color .3s var(--ease);
+}
+.proj:hover { color: rgba(255,255,255,.78); }
+.proj.on { color: #fff; }
+.proj::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: .24em;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  box-shadow: 0 0 10px rgba(120,190,255,.55);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .45s var(--ease);
+}
+.proj.on::after { transform: scaleX(1); }
+.proj .tag {
+  display: inline-block;
+  margin-left: 7px;
+  padding: 1px 4px;
+  border: 1px solid rgba(255,196,107,.4);
+  border-radius: 2px;
+  font-size: 8px;
+  letter-spacing: .1em;
+  text-indent: .1em;
+  color: #ffc46b;
+  vertical-align: 1px;
+}
+
+/* ------------------------------------------------------------------- stage */
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bg-layer { position: absolute; inset: 0; z-index: 0; }
+
+.bg-shot {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.45s var(--ease);
+}
+/* Only the shot on screen is promoted. will-change on the base rule meant
+   nine full-screen compositor layers at once - on a phone at dpr 3 that is
+   roughly 11 MB each, held permanently, for eight pictures nobody is
+   looking at. */
+.bg-shot.on { will-change: opacity, transform; }
+.bg-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  transform: scale(1.12);
+  /* A backdrop never snaps in. The <img> stays transparent until the file
+     has actually decoded, then fades on its own clock - independent of the
+     .bg-shot cross-fade, so a slow file arriving mid-slide still arrives
+     softly instead of popping. */
+  opacity: 0;
+  transition: opacity .85s var(--ease);
+}
+.bg-shot img.ready { opacity: 1; }
+.bg-shot.on { opacity: 1; }
+
+/* The pan and the zoom run on the wrapper and on the image separately, with
+   periods that do not divide into each other - so the pair never repeats the
+   same frame and the motion reads as a slow camera rather than a loop. */
+.bg-shot.on { animation: pan 23s ease-in-out infinite alternate; }
+.bg-shot.on img { animation: zoom 31s ease-in-out infinite alternate; }
+
+/* ±1.8% over 23s is a move you have to be told about. On a phone, where the
+   frame is small and the picture is already dimmed, it read as a still. */
+@keyframes pan {
+  from { transform: translate3d(-3.2%, 1.8%, 0); }
+  to   { transform: translate3d( 3.2%, -2.1%, 0); }
+}
+@keyframes zoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.26); }
+}
+
+/* dim the photo when the slide has its own visual (segmentation) */
+.bg-shot.muted { filter: blur(26px) saturate(.55) brightness(.42); }
+
+/* A full-screen blur on a layer that is also being panned has to be
+   recomputed every single frame. That is what froze the backdrop on the
+   cluster slide on Android - the compositor simply stopped keeping up. On
+   touch hardware the same slide is pushed back with colour and exposure
+   instead, and the camera keeps moving. */
+/* Two ways in, because one is not reliable: a phone always matches the width,
+   and a touch device that reports a hover-capable pointer (a stylus, a
+   connected mouse, DeX) still cannot afford these. */
+@media (hover: none), (max-width: 900px) {
+  .bg-shot.muted { filter: saturate(.34) brightness(.3) contrast(1.1); }
+  /* Blend modes are the other per-frame cost that phones pay badly for: an
+     overlay layer the size of the viewport forces the whole stage through a
+     second compositing pass on every single frame of the pan. */
+  .stage .grain { mix-blend-mode: normal; opacity: .07; }
+  .stage .aura  { mix-blend-mode: normal; opacity: .34; }
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity .9s var(--ease);
+  background:
+    radial-gradient(118% 80% at 50% 46%, rgba(0,0,0,.22) 0%, rgba(0,0,0,.66) 60%, rgba(0,0,0,.92) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.18) 26%, rgba(0,0,0,.42) 62%, rgba(0,0,0,.94) 100%);
+}
+/* A slow light that crosses the frame behind the copy. This is the piece
+   that stops a phone looking like a screenshot: the type stays perfectly
+   still (moving it either steps pixels or goes soft), while the light it
+   sits in keeps moving. It is one composited layer and nothing reflows. */
+.aura {
+  position: absolute;
+  inset: -20%;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .5;
+  background:
+    radial-gradient(38% 46% at 50% 50%, rgba(77,214,255,.13) 0%, rgba(77,214,255,.05) 45%, transparent 72%),
+    radial-gradient(30% 38% at 50% 50%, rgba(255,92,225,.09) 0%, transparent 70%);
+  animation: auraDrift 27s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes auraDrift {
+  from { transform: translate3d(-9%, 4%, 0) scale(1); }
+  to   { transform: translate3d( 9%, -5%, 0) scale(1.16); }
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.5'/></svg>");
+}
+
+/* ------------------------------------------------------------------ slides */
+
+.slides {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: grid;
+}
+/* only the backdrop layer is dragged as a block, for parallax */
+.bg-layer { will-change: transform; }
+.bg-layer.settle { transition: transform .5s var(--ease-out); }
+.slide {
+  grid-area: 1 / 1;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: var(--stage-pad-t) var(--stage-pad-x) var(--stage-pad-b);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  /* transform is a transition, not an animation, on purpose: a drag hands
+     the slide over mid-flight and a transition carries on from wherever the
+     finger left it. A keyframe animation would snap back to its `from`. */
+  transition:
+    opacity var(--swap) var(--ease),
+    visibility var(--swap),
+    transform var(--swap) var(--ease-out);
+  backface-visibility: hidden;
+}
+/* promoted only while it is actually moving - at most three at a time */
+.slide.on,
+.slide.leaving,
+.slide.dragging { will-change: transform, opacity; }
+.slide.on { opacity: 1; visibility: visible; pointer-events: auto; transform: translate3d(0, 0, 0); }
+
+/* while a finger is down the slide is placed by hand, frame by frame */
+.slide.dragging { transition: none; visibility: visible; }
+/* used for one frame to seat an incoming slide off-stage without animating */
+.slide.no-tr { transition: none; }
+
+/* The reel travels. The outgoing slide leaves the way the gesture was
+   going and the incoming one arrives from the opposite edge, so the move
+   has a direction instead of being a dissolve in place. */
+.slides.d-next .slide.leaving { transform: translate3d(-17%, 0, 0); }
+.slides.d-prev .slide.leaving { transform: translate3d( 17%, 0, 0); }
+
+/* Leaving is its own state, not just the absence of .on: the copy sinks and
+   fades on the way out instead of being cut. Without it the outgoing text
+   simply stops existing, which is what reads as brutal. */
+.slide.leaving { opacity: 0; visibility: visible; pointer-events: none; }
+.slide.leaving .anim { animation: sink .62s var(--ease) forwards; }
+.slide.leaving .anim:nth-child(1) { animation-delay: 0s; }
+.slide.leaving .anim:nth-child(2) { animation-delay: .03s; }
+.slide.leaving .anim:nth-child(3) { animation-delay: .16s; }
+.slide.leaving .anim:nth-child(4) { animation-delay: .09s; }
+.slide.leaving .kicker.anim,
+.slide.leaving .seg-copy .kicker {
+  animation: kickerOut .5s var(--ease) forwards;
+}
+@keyframes sink {
+  to { opacity: 0; transform: translate3d(0, -16px, 0); }
+}
+@keyframes kickerOut {
+  to { opacity: 0; transform: translate3d(24px, 0, 0); }
+}
+
+.slide-inner {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  min-height: var(--copy-h);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: clamp(14px, 2vh, 22px);
+}
+
+/* Legibility comes from the glyphs themselves: a black glow radiating from
+   the letterforms, layered from tight to wide. It follows the shape of the
+   text instead of dropping a dark panel over the picture, so the backdrop
+   stays fully visible. --halo scales it per slide (0 removes it). */
+
+/* No idle animation on the copy. A slow translation of large light type
+   either steps in whole pixels or, once promoted to its own layer, goes
+   soft - both were worse than a still frame. The life on screen comes from
+   the backdrop, which drifts continuously behind the scrim. */
+
+/* per-element entrance */
+.slide .anim {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.slide.on .anim {
+  animation: riseIn 1.15s var(--ease-out) forwards;
+}
+.slide.on .anim:nth-child(1) { animation-delay: .10s; }
+
+/* The kicker does not rise with the rest: it slides in from the left while
+   its rule draws itself, then keeps drifting sideways for as long as the
+   slide is up. It is small, letterspaced and glowing, so promoting it to its
+   own layer costs nothing visible - which is what keeps the slow travel
+   smooth instead of stepping a pixel at a time. */
+.slide.on .kicker.anim,
+.slide.on .seg-copy .kicker {
+  will-change: transform;
+  animation:
+    kickerIn 1.05s var(--ease-out) .2s forwards,
+    kickerDrift 15s ease-in-out 1.35s infinite,
+    kickerPulse 6.5s ease-in-out 1.35s infinite;
+}
+@keyframes kickerIn {
+  from { opacity: 0; transform: translate3d(-26px, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+/* starts and ends at zero, so it never jumps when it takes over from the entrance */
+@keyframes kickerDrift {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(9px, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes kickerPulse {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.35); }
+}
+.kicker::before { transform: scaleX(0); transform-origin: left center; }
+.slide.on .kicker::before {
+  animation: ruleIn .9s var(--ease-out) .55s forwards;
+}
+
+/* The copy is never completely still. Six pixels over sixteen seconds is
+   below the threshold where you can point at what moved - which is exactly
+   the point: the page reads as live rather than as a screenshot, and the
+   type is not travelling far enough or fast enough to soften. */
+.slide.on .slide-inner {
+  animation: copyDrift 17s ease-in-out 1.8s infinite;
+}
+@keyframes copyDrift {
+  0%, 100% { transform: translate3d(0,  0,   0); }
+  50%      { transform: translate3d(0, -6px, 0); }
+}
+@keyframes ruleIn { to { transform: scaleX(1); } }
+.slide.on .anim:nth-child(2) { animation-delay: .30s; }
+.slide.on .anim:nth-child(3) { animation-delay: .44s; }
+.slide.on .anim:nth-child(4) { animation-delay: .58s; }
+.slide.on .anim:nth-child(5) { animation-delay: .72s; }
+@keyframes riseIn { to { opacity: 1; transform: none; } }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(10px, 1.15vw, 11.5px);
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-shadow:
+    0 0 1px  rgba(0,0,0, calc(1 * var(--halo, 1))),
+    0 0 4px  rgba(0,0,0, calc(.98 * var(--halo, 1))),
+    0 0 9px  rgba(0,0,0, calc(.92 * var(--halo, 1))),
+    0 0 20px rgba(0,0,0, calc(.80 * var(--halo, 1))),
+    0 0 40px rgba(0,0,0, calc(.62 * var(--halo, 1))),
+    0 0 76px rgba(0,0,0, calc(.45 * var(--halo, 1)));
+}
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan));
+  text-indent: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 8px 2px;
+  border: 1px solid rgba(255,196,107,.42);
+  border-radius: 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-indent: .2em;
+  text-transform: uppercase;
+  color: #ffc46b;
+  background: rgba(8,6,3,.55);
+  box-shadow: 0 0 22px -6px rgba(255,196,107,.45), 0 2px 12px rgba(0,0,0,.6);
+}
+
+.card-badge {
+  position: absolute;
+  top: 11px; right: 12px;
+  padding: 3px 7px 2px;
+  border: 1px solid rgba(255,196,107,.42);
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #ffc46b;
+  background: rgba(10,8,4,.6);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(44px, 8.6vw, 118px);
+  line-height: .96;
+  font-weight: 200;
+  letter-spacing: -.028em;
+  text-wrap: balance;
+  text-shadow:
+    0 0 2px   rgba(0,0,0, calc(.92 * var(--halo, 1))),
+    0 0 6px   rgba(0,0,0, calc(.86 * var(--halo, 1))),
+    0 0 14px  rgba(0,0,0, calc(.78 * var(--halo, 1))),
+    0 0 30px  rgba(0,0,0, calc(.68 * var(--halo, 1))),
+    0 0 62px  rgba(0,0,0, calc(.54 * var(--halo, 1))),
+    0 0 120px rgba(0,0,0, calc(.40 * var(--halo, 1))),
+    0 2px 6px rgba(0,0,0, calc(.62 * var(--halo, 1)));
+}
+.title em {
+  font-style: normal;
+  background: linear-gradient(96deg, var(--cyan), var(--violet) 30%, var(--magenta) 52%, var(--violet) 74%, var(--cyan));
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* The copy itself never travels - moving large light type either steps in
+   whole pixels or goes soft. The gradient underneath it can move all it
+   likes: nothing reflows, nothing repaints outside the glyphs, and the
+   headline stops reading as a screenshot. This is the one idle animation
+   that survives on a phone. */
+.slide.on .title em { animation: sheen 9s ease-in-out 1.2s infinite; }
+@keyframes sheen {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* A phone gets no hover and no cursor, so the only thing that says "this is
+   live" is motion. The blurb breathes very slightly - far below the
+   threshold where text starts to shimmer, but enough to read as alive. */
+@media (hover: none) {
+  .slide.on .blurb { animation: breathe 7.5s ease-in-out 1.4s infinite; }
+  .slide.on .chip  { animation: breathe 6.2s ease-in-out 1.6s infinite; }
+  .slide.on .chip:nth-child(2) { animation-delay: 2s; }
+  .slide.on .chip:nth-child(3) { animation-delay: 3.4s; }
+}
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .82; }
+}
+
+.blurb {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(14.5px, 1.55vw, 18.5px);
+  line-height: 1.62;
+  font-weight: 300;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+  text-shadow:
+    0 0 2px   rgba(0,0,0, calc(.96 * var(--halo, 1))),
+    0 0 5px   rgba(0,0,0, calc(.90 * var(--halo, 1))),
+    0 0 12px  rgba(0,0,0, calc(.82 * var(--halo, 1))),
+    0 0 26px  rgba(0,0,0, calc(.66 * var(--halo, 1))),
+    0 0 54px  rgba(0,0,0, calc(.48 * var(--halo, 1))),
+    0 1px 3px rgba(0,0,0, calc(.80 * var(--halo, 1)));
+}
+
+/* ---------------------------------------------------------------- actions */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: clamp(6px, 1.4vh, 14px);
+}
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .17em;
+  text-indent: .17em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(3,7,13,.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-shadow: 0 0 10px rgba(0,0,0,.7);
+  overflow: hidden;
+  transition: border-color .3s var(--ease), background .3s var(--ease),
+              transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.btn:hover { border-color: rgba(255,255,255,.4); background: rgba(16,26,40,.62); transform: translateY(-1px); }
+
+.btn.primary {
+  /* one accent, nothing else: dark glass, a cyan edge, white type */
+  border-color: rgba(77,214,255,.62);
+  color: #ffffff;
+  background: rgba(3,9,15,.62);
+  box-shadow:
+    0 0 18px -6px rgba(77,214,255,.45),
+    inset 0 0 20px rgba(77,214,255,.07);
+}
+.btn.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(77,214,255,.1);
+  opacity: 0;
+  transition: opacity .35s var(--ease);
+}
+.btn.primary:hover {
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 28px -6px rgba(77,214,255,.75),
+    inset 0 0 26px rgba(77,214,255,.12);
+}
+.btn.primary:hover::after { opacity: 1; }
+
+/* ------------------------------------------------------------ seg / clusters */
+
+.slide.kind-segmentation .slide-inner {
+  max-width: 1180px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+  align-items: center;
+  gap: clamp(28px, 4.5vw, 66px);
+  text-align: left;
+  justify-items: stretch;
+}
+.seg-copy { display: grid; gap: clamp(12px, 1.8vh, 20px); justify-items: start; }
+.seg-copy .kicker { opacity: 0; }
+.seg-copy .title { font-size: clamp(34px, 4.6vw, 62px); }
+.seg-copy .blurb { max-width: 44ch; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 7px 13px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  color: rgba(255,255,255,.62);
+  background: rgba(6,8,13,.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-shadow: 0 1px 3px rgba(0,0,0,.7);
+}
+.chip::before {
+  content: "";
+  display: inline-block;
+  width: 5px; height: 5px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 9px var(--cyan);
+  vertical-align: middle;
+}
+
+/* the cluster viewer */
+.seg-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 735 / 654;
+  max-height: calc(var(--copy-h) - 8px);
+  margin: 0 auto;
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #05070d;
+  box-shadow: 0 40px 90px -40px rgba(0,0,0,.95);
+}
+/* soften the model's studio backdrop into the dark page */
+.seg-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(78% 66% at 50% 44%, transparent 44%, rgba(3,5,10,.62) 82%, rgba(3,5,10,.94) 100%);
+}
+.seg-plate, .seg-grid { filter: saturate(1.05) contrast(1.06); }
+.seg-plate {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0;
+  transition: opacity .8s var(--ease);
+}
+.seg-stage.solid .seg-plate { opacity: 1; }
+
+.seg-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  gap: 0px;
+  transition: gap 1.4s var(--ease-out);
+}
+.seg-stage.building .seg-grid { gap: 3px; }
+.seg-cell {
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(.7);
+  filter: brightness(1.9) saturate(1.4);
+  /* deliberately NOT will-change: that hint on seventy-two tiles asks for
+     seventy-two compositor layers, each holding its own scaled copy of the
+     same photograph. The browser promotes them for the second the animation
+     runs and releases them again, which is what we want. */
+}
+.seg-stage.play .seg-cell {
+  animation: cellIn 1s var(--ease-out) forwards;
+}
+@keyframes cellIn {
+  0%   { opacity: 0; transform: scale(.55); filter: brightness(2.6) saturate(1.6); }
+  45%  { opacity: 1; transform: scale(1.03); filter: brightness(1.7) saturate(1.4); }
+  100% { opacity: 1; transform: scale(1);    filter: none; }
+}
+/* phone variant: same choreography, no filter work */
+@keyframes cellInLite {
+  0%   { opacity: 0; transform: scale(.55); }
+  45%  { opacity: 1; transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.seg-scan {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(77,214,255,.06) 42%,
+    rgba(160,220,255,.5) 50%,
+    rgba(77,214,255,.06) 58%,
+    transparent 100%);
+  mix-blend-mode: screen;
+}
+.seg-stage.play .seg-scan { animation: scan 3.2s var(--ease) 2 forwards; }
+@keyframes scan {
+  0%   { opacity: 0; transform: translateY(-100%); }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(100%); }
+}
+
+.seg-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(77,214,255,.18), inset 0 0 60px rgba(0,0,0,.6);
+}
+.seg-corner {
+  position: absolute;
+  width: 16px; height: 16px;
+  border: 1px solid rgba(77,214,255,.55);
+}
+.seg-corner.tl { top: 9px;  left: 9px;  border-right: 0; border-bottom: 0; }
+.seg-corner.tr { top: 9px;  right: 9px; border-left: 0;  border-bottom: 0; }
+.seg-corner.bl { bottom: 9px; left: 9px; border-right: 0; border-top: 0; }
+.seg-corner.br { bottom: 9px; right: 9px; border-left: 0; border-top: 0; }
+
+.seg-hud {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.62);
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.85));
+}
+.seg-hud .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: .25; } }
+.seg-hud .grow { flex: 1; }
+.seg-hud .pct { color: var(--cyan); font-variant-numeric: tabular-nums; }
+.seg-bar {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 1px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  box-shadow: 0 0 12px rgba(77,214,255,.8);
+  transition: width .25s linear;
+}
+
+/* ------------------------------------------------------------------ reveal */
+
+.slide.kind-reveal .slide-inner { max-width: 760px; }
+.slide.kind-reveal .bridge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---------------------------------------------------------------- features */
+
+.slide.kind-features .title { font-size: clamp(36px, 5.4vw, 74px); }
+.slide.kind-features .slide-inner { max-width: 960px; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  width: 100%;
+  max-width: 940px;
+  margin-top: clamp(8px, 1.6vh, 18px);
+  border: 1px solid var(--line-soft);
+  background: var(--line-soft);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.feature {
+  padding: clamp(13px, 1.7vw, 19px);
+  text-align: left;
+  background: rgba(6,8,14,.62);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background .3s var(--ease);
+}
+.feature:hover { background: rgba(18,24,38,.8); }
+.feature b {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -.005em;
+  color: #fff;
+}
+.feature span {
+  display: block;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: var(--ink-faint);
+}
+
+/* The call to action does not live inside the slide copy: it is pinned to
+   the stage, so it holds exactly the same spot for every slide of a project
+   and never blinks out on a slide that declares no action of its own. */
+.cta {
+  position: absolute;
+  z-index: 15;
+  left: 0;
+  right: 0;
+  top: calc(50% + var(--copy-shift) + (var(--copy-h) / 2) + var(--cta-gap));
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+}
+body.lit .cta { opacity: 1; }
+
+.cta-inner { position: relative; display: inline-flex; }
+
+/* the secondary sits beside the primary without shifting it off centre */
+.cta .btn.ghost {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 0;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------- navigation */
+
+.nav {
+  position: absolute;
+  z-index: 20;
+  left: 0; right: 0;
+  bottom: max(26px, env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 var(--stage-pad-x);
+  opacity: 0;
+  transition: opacity .8s var(--ease) .3s;
+}
+body.lit .nav { opacity: 1; }
+
+.arrow {
+  width: 34px; height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: rgba(255,255,255,.45);
+  transition: color .25s var(--ease), background .25s var(--ease);
+}
+.arrow:hover { color: #fff; background: rgba(255,255,255,.08); }
+.arrow svg { width: 13px; height: 13px; }
+
+.dots { display: flex; align-items: center; }
+.dot-group { display: flex; align-items: center; gap: 9px; }
+.dot-group + .dot-group { margin-left: 20px; position: relative; }
+.dot-group + .dot-group::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  width: 1px;
+  height: 9px;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.16);
+}
+.dot-btn {
+  position: relative;
+  width: 26px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  transition: width .42s var(--ease-out);
+}
+/* The slide you are on is not a slightly brighter version of the others:
+   it is twice as wide, thicker, and it is the only one that glows. You can
+   find it from across the room, which is the whole point of an indicator. */
+.dot-btn.on { width: 52px; }
+.dot-btn i {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.22);
+  overflow: hidden;
+  transition: background .3s var(--ease), height .32s var(--ease-out), box-shadow .32s var(--ease);
+}
+.dot-btn:hover i { background: rgba(255,255,255,.45); }
+.dot-btn.on i {
+  height: 4px;
+  background: rgba(255,255,255,.26);
+  box-shadow: 0 0 0 1px rgba(120,190,255,.22), 0 0 16px rgba(77,214,255,.35);
+}
+.dot-btn i::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  box-shadow: 0 0 10px rgba(120,190,255,.7);
+}
+.dot-btn.on i::after { width: var(--p, 0%); }
+.dot-btn.seen i::after { width: 100%; background: rgba(255,255,255,.5); box-shadow: none; }
+
+/* Under the active bar, a soft line of the same light draws itself out from
+   the centre. It belongs to the bar rather than sitting above it, so the
+   position reads at a glance without anything hovering over the row. */
+.dot-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 6px);
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--cyan) 28%, var(--cyan) 72%, transparent);
+  filter: blur(2px);
+  opacity: 0;
+  transition: width .5s var(--ease-out), opacity .4s var(--ease);
+}
+.dot-btn.on::after { width: 112%; opacity: .7; }
+
+.counter {
+  position: absolute;
+  right: var(--stage-pad-x);
+  bottom: 0;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  color: rgba(255,255,255,.3);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 4px rgba(0,0,0,.9), 0 0 14px rgba(0,0,0,.7);
+}
+
+/* Scroll cue. Only when there is something below, only once the viewer
+   has reached the end of the reel, and never again after they scroll. */
+.cue {
+  position: absolute;
+  z-index: 20;
+  right: var(--stage-pad-x);
+  bottom: max(86px, calc(env(safe-area-inset-bottom) + 80px));
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  animation: bob 2.6s ease-in-out infinite;
+}
+body.has-more .cue.show { display: inline-flex; }
+.cue { cursor: pointer; transition: color .3s var(--ease); }
+.cue:hover { color: rgba(255,255,255,.72); }
+@keyframes bob { 50% { transform: translateY(5px); } }
+
+/* ------------------------------------------------------------ build panel */
+/* "Am I even looking at the new one?" is a question a phone cannot answer on
+   its own: the footer stamp is hidden at this width and a browser will
+   happily serve an index.html it cached ten minutes ago. This panel says
+   which build is running, asks the server what it is currently shipping,
+   and compares the two. Opened with /?build or by tapping the slide counter
+   three times. */
+.build-panel {
+  position: fixed;
+  z-index: 200;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  width: min(420px, calc(100vw - 28px));
+  transform: translate(-50%, 14px);
+  padding: 16px 18px 14px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 10px;
+  /* no backdrop-filter: it forces the entire page behind it into a backdrop
+     root, which is a whole-viewport cost paid even while this panel is hidden */
+  background: rgba(6,8,12,.97);
+  box-shadow: 0 20px 60px rgba(0,0,0,.75);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .4s var(--ease), transform .4s var(--ease-out), visibility .4s;
+}
+.build-panel.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+.build-panel h3 {
+  margin: 0 0 12px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-indent: .28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.34);
+}
+.build-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 5px 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+.build-row + .build-row { border-top: 1px solid rgba(255,255,255,.06); }
+.build-row .k {
+  flex: none;
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.32);
+}
+.build-row .v {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255,255,255,.86);
+  word-break: break-word;
+}
+.build-verdict {
+  margin-top: 12px;
+  padding: 9px 11px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.build-verdict.wait  { background: rgba(255,255,255,.06); color: rgba(255,255,255,.5); }
+.build-verdict.fresh { background: rgba(77,214,255,.12); color: var(--cyan); box-shadow: inset 0 0 0 1px rgba(77,214,255,.28); }
+.build-verdict.stale { background: rgba(255,196,107,.13); color: #ffc46b; box-shadow: inset 0 0 0 1px rgba(255,196,107,.34); }
+.build-verdict.err   { background: rgba(255,92,225,.10); color: #ff9ae8; box-shadow: inset 0 0 0 1px rgba(255,92,225,.28); }
+.build-acts { display: flex; gap: 8px; margin-top: 11px; }
+.build-acts button {
+  flex: 1;
+  min-height: 38px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 6px;
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.8);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+}
+.build-acts button.key { border-color: rgba(77,214,255,.45); color: var(--cyan); }
+.build-acts button:hover { background: rgba(255,255,255,.09); color: #fff; }
+
+/* ----------------------------------------------------------------- archive */
+
+.archive {
+  position: relative;
+  z-index: 4;
+  padding: clamp(64px, 10vh, 120px) var(--stage-pad-x) clamp(48px, 8vh, 90px);
+  background: #000;
+  border-top: 1px solid var(--line-soft);
+}
+.archive-head {
+  max-width: 1160px;
+  margin: 0 auto clamp(22px, 3vh, 34px);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.archive-head h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 200;
+  letter-spacing: -.02em;
+}
+.archive-head span {
+  font-size: 10.5px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.rail {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  justify-content: start;
+  gap: 14px;
+}
+.rail .card { max-width: 380px; }
+.card {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--line-soft);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #07090f;
+  transition: transform .35s var(--ease), border-color .35s var(--ease);
+}
+.card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.28); }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .62; transition: opacity .35s var(--ease), transform .6s var(--ease); }
+.card:hover img { opacity: .85; transform: scale(1.04); }
+.card-body {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 14px 15px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.92));
+}
+.card-body b { display: block; font-size: 14px; font-weight: 500; }
+.card-body span { display: block; margin-top: 3px; font-size: 11px; color: var(--ink-faint); }
+.card-kicker {
+  position: absolute;
+  top: 12px; left: 13px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.foot {
+  position: relative;
+  z-index: 4;
+  padding: 26px var(--stage-pad-x) max(26px, env(safe-area-inset-bottom));
+  background: #000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 20px;
+  font-size: 10.5px;
+  letter-spacing: .13em;
+  color: rgba(255,255,255,.26);
+}
+.build-stamp {
+  margin-left: 10px;
+  opacity: .55;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage .foot-line {
+  position: absolute;
+  z-index: 20;
+  left: var(--stage-pad-x);
+  bottom: max(24px, env(safe-area-inset-bottom));
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: rgba(255,255,255,.26);
+  opacity: 0;
+  transition: opacity .8s var(--ease) .4s;
+}
+body.lit .build-stamp {
+  margin-left: 10px;
+  opacity: .55;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage .foot-line { opacity: 1; }
+
+/* ------------------------------------------------------------- responsive */
+
+@media (max-width: 1080px) {
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .slide.kind-segmentation .slide-inner {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: center;
+    justify-items: center;
+    gap: clamp(20px, 3vh, 30px);
+  }
+  .seg-copy { justify-items: center; }
+  .seg-copy .blurb { max-width: 52ch; }
+  .chips { justify-content: center; }
+  .seg-stage { max-width: 400px; max-height: calc(var(--copy-h) - 236px); }
+  .slide.kind-segmentation .chips { display: none; }
+  /* the counter used to disappear here - which left a phone with no way of
+     knowing how far into a project it was. It stays, smaller, above the row. */
+  .counter {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: calc(100% + 9px);
+    font-size: 9.5px;
+    letter-spacing: .26em;
+    text-indent: .26em;
+    color: rgba(255,255,255,.42);
+  }
+  .dot-btn { width: 22px; }
+  .dot-btn.on { width: 44px; }
+}
+
+@media (max-width: 620px) {
+  /* The button hangs below the copy but is not part of it, so a block that
+     is centred on its own sits visibly low. The padding is deliberately
+     bottom-heavy: it lifts the copy by half the difference, and --copy-shift
+     carries the button up with it. */
+  :root { --stage-pad-t: 58px; --stage-pad-b: 132px; --copy-h: 56vh; --cta-gap: 24px; }
+  .cta { left: var(--stage-pad-x); right: var(--stage-pad-x); }
+  .cta-inner { display: flex; width: 100%; }
+  .cta .btn.primary { width: 100%; }
+  .cta .btn.ghost {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+  }
+  .title { font-size: clamp(38px, 12.5vw, 62px); }
+  .blurb { font-size: 14.5px; line-height: 1.6; }
+  .btn { min-height: 46px; padding: 0 20px; font-size: 11px; }
+  .actions { width: 100%; flex-direction: column; }
+  .actions .btn { width: 100%; }
+  :root { --copy-h: 54vh; --cta-gap: 18px; }
+  .slide.kind-segmentation .seg-copy .title { font-size: clamp(26px, 7.6vw, 36px); }
+  .slide.kind-segmentation .seg-copy .blurb { font-size: 13.5px; line-height: 1.5; }
+  .seg-stage { max-height: calc(var(--copy-h) - 186px); }
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature { padding: 12px 13px; }
+  .feature b { margin: 0; font-size: 12px; }
+  .feature span { display: none; }
+  .seg-hud { font-size: 9px; letter-spacing: .14em; gap: 8px; padding: 9px 11px; }
+  /* Tiles animating a filter() at once is what stalls the assembly on a
+     mid-range Android. Opacity and transform are composited - the same move,
+     none of the per-frame repaint. */
+  .seg-cell { filter: none; }
+  .seg-stage.play .seg-cell { animation-name: cellInLite; }
+  .seg-stage.play .seg-scan { animation-iteration-count: 1; }
+  .build-stamp {
+  margin-left: 10px;
+  opacity: .55;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage .foot-line { display: none; }
+  .projects { gap: 13px; top: max(14px, env(safe-area-inset-top)); }
+  .proj { font-size: 9px; letter-spacing: .17em; text-indent: .17em; }
+  .proj .tag { margin-left: 5px; font-size: 7.5px; }
+  .mark-corner span { font-size: 9px; letter-spacing: .26em; text-indent: .26em; }
+}
+
+/* very short landscape phones */
+@media (max-height: 520px) and (orientation: landscape) {
+  :root { --stage-pad-t: 30px; --stage-pad-b: 74px; --copy-h: 62vh; --cta-gap: 14px; }
+  .seg-stage { max-height: calc(var(--copy-h) - 150px); }
+  .title { font-size: clamp(30px, 6vw, 46px); }
+  .blurb { font-size: 13px; }
+  .feature-grid { display: none; }
+
+}
+
+@keyframes softIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes softOut { from { opacity: 1; } to { opacity: 0; } }
+
+/* Reduced motion means less travel - not a fast-forward.
+   Collapsing every duration to nothing (the usual one-liner) does not calm
+   the page down, it plays the whole thing at ten times speed: the clusters
+   snapped together in 276ms instead of 2.6s. Android turns this preference
+   on with battery saver and with the "remove animations" accessibility
+   setting, so plenty of real visitors land here. Durations stay human,
+   movement is what goes. */
+/* prefers-reduced-motion is deliberately NOT honoured here, and that is a
+   considered choice rather than an oversight.
+
+   On Android this preference is switched on by battery saver and by the
+   "remove animations" accessibility toggle - neither of which is a visitor
+   asking a portfolio site to hold still. It is on for a large share of real
+   phone traffic, and every attempt to answer it produced exactly the page
+   this site must not be: the backdrop stopped panning, the copy stopped
+   drifting, and - because the calmed entrances were shorter than the full
+   ones - what movement remained ran faster than on a desktop. Stretching an
+   idle loop to 30 seconds does not read as calm, it reads as broken.
+
+   So the reel behaves identically everywhere. The one thing that genuinely
+   helps a motion-sensitive reader is a way to stop it, and that is the job
+   of a control they can press, not of a media query nobody set on purpose. */
+
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <div class="intro-lockup">
+    <div class="intro-rule"></div>
+    <div class="intro-word">SPINVIEW</div>
+  </div>
+</div>
+
+<a class="mark-corner" href="/" aria-label="SpinView">
+  <span>SPINVIEW</span>
+</a>
+
+<nav class="projects" id="projectNav" aria-label="Projects"></nav>
+
+<section class="stage" id="stage" aria-roledescription="carousel" aria-label="Featured">
+  <div class="bg-layer" id="bgLayer"></div>
+  <div class="scrim" id="scrim"></div>
+  <div class="aura" aria-hidden="true"></div>
+  <div class="grain"></div>
+
+  <div class="slides" id="slides"></div>
+
+  <div class="cta" id="cta"></div>
+
+  <button class="cue" id="cue" type="button">More <span aria-hidden="true">&#9662;</span></button>
+
+  <div class="nav" id="nav">
+    <button class="arrow" id="prev" type="button" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
+    <button class="arrow" id="next" type="button" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="counter" id="counter"></div>
+  </div>
+
+  <div class="foot-line">&copy; <span id="yearTop"></span> SpinView &middot; Majify Technologies Inc. <span class="build-stamp"></span></div>
+</section>
+
+<div class="build-panel" id="buildPanel" role="dialog" aria-label="Build" aria-hidden="true">
+  <h3>Build</h3>
+  <div class="build-row"><span class="k">Page ouverte</span><span class="v" id="bpLocal">-</span></div>
+  <div class="build-row"><span class="k">Catalogue</span><span class="v" id="bpGen">-</span></div>
+  <div class="build-row"><span class="k">Sur le serveur</span><span class="v" id="bpServer">...</span></div>
+  <div class="build-verdict wait" id="bpVerdict">Vérification…</div>
+  <div class="build-acts">
+    <button type="button" class="key" id="bpReload">Recharger à neuf</button>
+    <button type="button" id="bpClose">Fermer</button>
+  </div>
+</div>
+
+<section class="archive" id="archive" hidden>
+  <div class="archive-head">
+    <h2>Everything on SpinView</h2>
+    <span id="archiveCount"></span>
+  </div>
+  <div class="rail" id="rail"></div>
+</section>
+
+<footer class="foot" id="foot" hidden>
+  <span>&copy; <span id="year"></span> SpinView &middot; Majify Technologies Inc.</span>
+  <span class="build-stamp"></span>
+</footer>
+
+<script>
+var SPINVIEW_CATALOG = /* SPINVIEW_CATALOG_BEGIN */{"generated": "2026-08-27T01:32:20", "projects": [{"id": "polynite", "title": "PolyNite", "type": "app", "collection": "spinview", "status": "live", "released": true, "release_date": "2026-08-26", "tagline": "Drop a model. Step inside it.", "description": "A WebGPU-powered GLB and glTF viewer. Drop a 3D model and explore it instantly with dynamic lighting, materials, animations and Nanite-like adaptive geometry - then step inside it in VR.", "short": "A WebGPU GLB viewer with adaptive geometry, scene lighting and VR.", "iconText": "P", "cover": "screen/img07.jpg", "screens": ["screen/img07.jpg", "screen/img09.jpg", "screen/img05.jpg", "screen/img13jpg.jpg", "screen/img08.jpg", "screen/img02.jpg", "screen/img03.jpg", "screen/img01.jpg", "screen/img10.jpg", "screen/img11.jpg", "screen/img12.jpg", "screen/img06.jpg"], "tags": ["WebGPU", "3D", "GLB", "Viewer"], "url": "/polynite/", "play": "/polynite/", "play_label": "Launch PolyNite", "visible": true, "featured": true, "featured_order": 1, "featured_kicker": "SpinView \u00b7 Now live", "features": [{"title": "Drag & drop GLB", "text": "Drop a .glb or .gltf anywhere on the page. Nothing is uploaded."}, {"title": "VR mode", "text": "Put on a headset and walk around your model at real scale."}, {"title": "Adaptive geometry", "text": "Nanite-like cluster LOD keeps dense meshes fast without losing detail."}, {"title": "Build a scene", "text": "Lighting, environments and materials to frame a model properly."}, {"title": "Share it", "text": "Send what you built and it opens in any browser."}, {"title": "Any device", "text": "One viewer, from a phone to a headset."}], "slides": [{"id": "hero", "kind": "hero", "image": "screen/img07.jpg", "focus": "50% 45%", "kicker": "SpinView \u00b7 Now live", "title": "PolyNite", "text": "Drop a GLB and explore every detail - in your browser, or in VR.", "actions": [{"label": "Launch PolyNite", "href": "/polynite/", "primary": true}], "pool": "showcase"}, {"id": "clusters", "kind": "segmentation", "image": "seg/01.jpg", "focus": "50% 42%", "kicker": "Inside the engine", "title": "It sees clusters", "text": "PolyNite breaks every mesh into thousands of small clusters. Each frame, the engine keeps only the clusters \u2014 and the level of detail \u2014 the camera actually needs.", "chips": ["Meshlet clusters", "View-dependent LOD", "GPU-driven culling"], "stats": [], "readout": "Building cluster hierarchy"}, {"id": "render", "kind": "reveal", "image": "screen/img13jpg.jpg", "focus": "50% 40%", "kicker": "On screen", "title": "You see the model", "text": "None of that work is visible. What reaches the screen is the full model \u2014 lit, shaded and animated in real time.", "actions": [{"label": "Launch PolyNite", "href": "/polynite/", "primary": true}], "pool": "showcase"}, {"id": "drop", "kind": "hero", "image": "screen/img02.jpg", "focus": "50% 50%", "kicker": "The viewer", "title": "Drag. Drop. Done.", "text": "Drop a .glb or .gltf on the page and it opens instantly, with lighting, materials and animation. Nothing to install, nothing uploaded.", "actions": [{"label": "Open the viewer", "href": "/polynite/", "primary": true}], "pool": "showcase"}, {"id": "vr", "kind": "reveal", "image": "screen/img09.jpg", "focus": "50% 45%", "kicker": "Step inside", "title": "See it at real scale", "text": "Open the same scene on a headset and walk around your model in VR - no export, no second tool.", "pool": "showcase", "actions": [{"label": "Launch PolyNite", "href": "/polynite/", "primary": true}]}, {"id": "dense", "kind": "features", "image": "screen/img09.jpg", "focus": "50% 45%", "kicker": "Everything it does", "title": "More than a preview", "text": "Load, inspect, optimise, light, share - and step inside.", "actions": [{"label": "Launch PolyNite", "href": "/polynite/", "primary": true}], "pool": "showcase"}], "pools": {"showcase": ["screen/img07.jpg", "screen/img02.jpg", "screen/img03.jpg", "screen/img09.jpg", "screen/img05.jpg", "screen/img08.jpg", "screen/img13jpg.jpg", "screen/img10.jpg", "screen/img06.jpg"]}, "_base": "./_data/app/polynite/"}, {"id": "numeris", "title": "Numeris", "type": "game", "collection": "spinmind", "status": "beta", "released": true, "badge": "Beta", "tagline": "Solve, progress and share your branch.", "description": "Cross-math puzzles inside an evolving visual world. Solve, progress and share your branch.", "short": "Cross-math puzzles inside an evolving visual world.", "icon": "screen/image.webp", "cover": "screen/image2.webp", "screens": ["screen/image2.webp", "screen/image.webp", "screen/image3.webp"], "tags": ["Puzzle", "SpinMind"], "url": "/projects/numeris.html", "play": "/numeris/", "play_label": "Play Numeris", "visible": true, "featured": true, "featured_order": 2, "featured_kicker": "SpinMind \u00b7 Beta", "slides": [{"id": "numeris", "kind": "hero", "image": "screen/image2.webp", "focus": "50% 42%", "kicker": "SpinMind", "badge": "Beta", "title": "Numeris", "text": "Cross-math puzzles inside an evolving visual world. Solve, progress and share your branch.", "actions": [{"label": "Play Numeris", "href": "/numeris/", "primary": true}]}], "lift": 1.45, "scrim": 0.84, "_base": "./_data/game/numeris/"}, {"id": "raylab", "title": "RayLab", "type": "experiment", "collection": "spinview", "status": "experimental", "released": true, "badge": "Experimental", "tagline": "Every pixel traced.", "description": "A realtime blob raytracer running on WebGPU. Soft shadows, a BVH-accelerated scene, adaptive resolution and a side-by-side VR view.", "short": "A realtime blob raytracer on WebGPU, viewable in VR.", "iconText": "R", "cover": "screen/03.jpg", "screens": ["screen/03.jpg", "screen/01.jpg", "screen/02.jpg"], "tags": ["Raytracing", "WebGPU", "VR", "Experiment"], "url": "/raylab/", "play": "/raylab/", "play_label": "Open RayLab", "visible": true, "featured": true, "featured_order": 3, "featured_kicker": "Experiment \u00b7 Raytracing", "lift": 1.05, "scrim": 0.9, "features": [{"title": "Realtime raytracing", "text": "Every pixel traced on the GPU. No rasteriser anywhere in the pipeline."}, {"title": "VR mode", "text": "Side-by-side stereo, traced live for each eye."}, {"title": "Soft shadows", "text": "Penumbra and contact shadows straight out of the tracer."}, {"title": "BVH accelerated", "text": "A bounding-volume hierarchy keeps the scene fast as it grows."}, {"title": "Adaptive resolution", "text": "The render scale follows the framerate instead of dropping it."}, {"title": "Blob geometry", "text": "Capsules and spheres blended into creatures - maths, not meshes."}], "slides": [{"id": "raylab", "kind": "hero", "image": "screen/03.jpg", "focus": "50% 45%", "kicker": "Experiment \u00b7 Raytracing", "badge": "Experimental", "title": "RayLab", "text": "Every pixel traced in real time. No meshes, no rasteriser - rays, blobs and light, on WebGPU.", "pool": "traced", "actions": [{"label": "Open RayLab", "href": "/raylab/", "primary": true}]}, {"id": "traced-vr", "kind": "features", "image": "screen/01.jpg", "focus": "50% 45%", "kicker": "And in VR", "badge": "Experimental", "title": "Traced for each eye", "text": "The same scene in side-by-side stereo - shadows and light computed live, from inside.", "pool": "traced", "actions": [{"label": "Open RayLab", "href": "/raylab/", "primary": true}]}], "pools": {"traced": ["screen/03.jpg", "screen/01.jpg", "screen/02.jpg"]}, "_base": "./_data/experiment/raylab/"}, {"id": "deitouch", "title": "DeiTouch", "type": "app", "status": "forming", "released": false, "description": "Experimental touch interfaces and virtual keyboard ideas. Still forming inside SpinView.", "short": "Experimental touch interfaces and virtual keyboard concepts.", "iconText": "D", "tags": ["Touch", "Interface"], "visible": true, "featured": false, "featured_order": 2, "featured_kicker": "App \u00b7 Forming", "_base": "./_data/app/deitouch/"}, {"id": "holophone", "title": "Holophone", "type": "app", "status": "forming", "released": false, "description": "A tactile music experiment where gestures become the instrument.", "short": "A tactile musical interface shaped directly through touch.", "iconText": "H", "tags": ["Music", "Touch"], "visible": true, "featured": false, "featured_order": 3, "featured_kicker": "Music \u00b7 Forming", "_base": "./_data/app/holophone/"}, {"id": "mandelbrot", "title": "Mandelbrot Study", "type": "experiment", "status": "prototype", "released": false, "description": "Procedural shader studies around evolving Mandelbrot worlds.", "iconText": "M", "tags": ["Shader", "Fractal"], "visible": true, "featured": false, "_base": "./_data/experiment/mandelbrot/"}], "spinfx": [{"id": "spinfx-099", "number": 99, "title": "Depth Study", "type": "spinfx", "description": "Living-image experiment exploring movement and visual parallax.", "cover": "cover.webp", "url": "https://www.youtube.com/@SpinViewFx", "visible": true, "featured": false, "date": "2026-08-19", "_base": "./_data/spinfx/099/"}, {"id": "spinfx-098", "number": 98, "title": "Motion Study", "type": "spinfx", "description": "Compact visual experiment from the SpinFX series.", "cover": "cover.webp", "url": "https://www.youtube.com/@SpinViewFx", "visible": true, "featured": false, "date": "2026-08-12", "_base": "./_data/spinfx/098/"}, {"id": "spinfx-097", "number": 97, "title": "Light Study", "type": "spinfx", "description": "Small exploration around light, depth and motion.", "cover": "cover.webp", "url": "https://www.youtube.com/@SpinViewFx", "visible": true, "featured": false, "date": "2026-08-05", "_base": "./_data/spinfx/097/"}, {"id": "spinfx-096", "number": 96, "title": "Shader Study", "type": "spinfx", "description": "A procedural visual experiment from SpinView.", "cover": "cover.webp", "url": "https://www.youtube.com/@SpinViewFx", "visible": true, "featured": false, "date": "2026-07-29", "_base": "./_data/spinfx/096/"}, {"id": "spinfx-001", "number": 1, "title": "Wire Study", "type": "spinfx", "description": "An early flow study from the SpinFX series.", "cover": "cover.webp", "url": "https://www.youtube.com/@SpinViewFx", "visible": true, "featured": false, "date": "2026-07-01", "_base": "./_data/spinfx/001/"}], "notes": [{"date": "08/19", "title": "Numeris sharing branches", "text": "Refining how a branch is shared, continued and challenged.", "url": "/projects/numeris.html"}, {"date": "08/18", "title": "Dynamic boss levels", "text": "Testing bosses that build the board while the player solves it.", "url": "/projects/numeris.html"}, {"date": "08/17", "title": "Mandelbrot as identity", "text": "The fractal background is becoming one of Numeris' strongest visual signatures.", "url": "/projects/numeris.html"}]}/* SPINVIEW_CATALOG_END */;
+
+(function () {
+  "use strict";
+
+  /* ------------------------------------------------------------- helpers */
+
+  var $  = function (id) { return document.getElementById(id); };
+  var el = function (tag, cls) { var n = document.createElement(tag); if (cls) n.className = cls; return n; };
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function ver() {
+    return window.SPINVIEW_VERSION ? ("?v=" + window.SPINVIEW_VERSION) : "";
+  }
+
+  /* Resolve a presentation asset against the project's generated _base. */
+  function asset(item, raw) {
+    if (!raw) return "";
+    if (/^(https?:)?\/\//i.test(raw) || raw.charAt(0) === "/") return raw;
+    var base = item && item._base ? item._base : "";
+    return base + raw;
+  }
+
+  /* Deep links.
+       /?polynite            -> that project, first slide
+       /?polynite=clusters   -> that project, that slide id
+       /?p=polynite          -> same as the first form
+       /#polynite/clusters   -> same, via the hash
+     A project reachable this way does not have to be featured or released,
+     so an unreleased project can still be previewed through a direct link. */
+  function readDeepLink() {
+    var out = { project: "", slide: "" };
+    var raw = "";
+    var q = (location.search || "").replace(/^\?/, "");
+
+    if (q) {
+      var parts = q.split("&");
+      for (var i = 0; i < parts.length; i++) {
+        if (!parts[i]) continue;
+        var kv = parts[i].split("=");
+        var k = "", v = "";
+        try { k = decodeURIComponent(kv[0] || ""); } catch (e) { k = kv[0] || ""; }
+        try { v = decodeURIComponent(kv[1] || ""); } catch (e) { v = kv[1] || ""; }
+        if (!k) continue;
+        if (k === "p" || k === "project" || k === "app") { raw = v; break; }
+        /* housekeeping parameters are not project names */
+        if (k === "build" || k === "fresh" || k === "cb" || k === "v") continue;
+        raw = k;
+        if (kv.length > 1) out.slide = v;
+        break;
+      }
+    }
+    if (!raw) {
+      try { raw = decodeURIComponent((location.hash || "").replace(/^#/, "")); }
+      catch (e) { raw = (location.hash || "").replace(/^#/, ""); }
+    }
+
+    var seg = String(raw).split("/");
+    out.project = (seg[0] || "").toLowerCase().trim();
+    if (seg[1] && !out.slide) out.slide = seg[1];
+    out.slide = String(out.slide || "").toLowerCase().trim();
+    return out;
+  }
+
+  /* Index of the first slide matching a deep link, or -1. */
+  function findDeep(deep) {
+    if (!deep || !deep.project) return -1;
+    var first = -1;
+    for (var i = 0; i < state.slides.length; i++) {
+      var s = state.slides[i];
+      var pid = String((s._p && s._p.id) || "").toLowerCase();
+      if (pid !== deep.project) continue;
+      if (first < 0) first = i;
+      if (!deep.slide) return i;
+      if (String(s.id || "").toLowerCase() === deep.slide) return i;
+    }
+    return first;
+  }
+
+  var reduced = false;
+  try {
+    reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch (e) {}
+
+  /* --------------------------------------------------------------- model */
+
+  /* A project is shown on the front stage when it is visible, featured and
+     released. `released` defaults to (status === "live") so older project
+     files keep working without an edit. */
+  function isReleased(p) {
+    if (typeof p.released === "boolean") return p.released;
+    return p.status === "live";
+  }
+
+  function pickProjects(cat) {
+    var all = (cat && cat.projects) || [];
+    return all.filter(function (p) { return p.visible !== false; });
+  }
+
+  function shuffled(a) {
+    var out = a.slice(), i, j, t;
+    for (i = out.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      t = out[i]; out[i] = out[j]; out[j] = t;
+    }
+    return out;
+  }
+
+  /* A slide may draw its backdrop from a pool instead of naming one file:
+       "pool": "showcase"   -> the named list in the project's "pools"
+       "pool": "screens"    -> the project's own screens array
+       "pool": ["a", "b"]   -> an inline list
+     Paths resolve against _base like any other presentation asset. */
+  function resolvePool(p, raw) {
+    var list = null;
+    if (raw === true || raw === "screens") list = p.screens || [];
+    else if (typeof raw === "string") list = (p.pools && p.pools[raw]) || [];
+    else if (Object.prototype.toString.call(raw) === "[object Array]") list = raw;
+    if (!list || !list.length) return null;
+    var out = [];
+    for (var i = 0; i < list.length; i++) out.push(asset(p, list[i]));
+    return out;
+  }
+
+  /* Deal one backdrop per pooled slide: never the same shot twice on the
+     same pass, and never the shot that slide just had. skip keeps the
+     slide currently on screen untouched. */
+  function dealImages(skip) {
+    var used = {};
+    var i, k, bag, pick;
+
+    for (i = 0; i < state.slides.length; i++) {
+      if (!state.slides[i].pool) used[state.slides[i].image] = true;
+    }
+    if (skip != null && state.slides[skip]) used[state.slides[skip].image] = true;
+
+    for (i = 0; i < state.slides.length; i++) {
+      var sl = state.slides[i];
+      if (!sl.pool || i === skip) continue;
+
+      bag = shuffled(sl.pool);
+      pick = null;
+      for (k = 0; k < bag.length; k++) {
+        if (!used[bag[k]] && bag[k] !== sl.image) { pick = bag[k]; break; }
+      }
+      if (!pick) {
+        for (k = 0; k < bag.length; k++) if (!used[bag[k]]) { pick = bag[k]; break; }
+      }
+      if (!pick) pick = bag[0];
+
+      used[pick] = true;
+      sl.image = pick;
+      if (sl._img && sl._img.getAttribute("src") !== pick + ver()) {
+        /* a swapped file has to earn its fade again */
+        sl._img.classList.remove("ready");
+        sl._img.src = pick + ver();
+      }
+    }
+  }
+
+  /* "App · Live" when a project declares no kicker of its own. */
+  function kickerFor(p) {
+    var a = p.collection || p.type || "";
+    var b = p.status || "";
+    var t = function (x) { return x ? x.charAt(0).toUpperCase() + x.slice(1) : ""; };
+    return [t(a), t(b)].filter(Boolean).join(" \u00b7 ");
+  }
+
+  /* Every slide has to say whose slide it is. When the headline already
+     carries the project name (a title card), the kicker stays as written;
+     otherwise the project name is prefixed onto it. */
+  function ownedKicker(p, kicker, title) {
+    var name = String(p.title || "");
+    if (!name) return kicker;
+    var low = name.toLowerCase();
+    if (String(title || "").toLowerCase().indexOf(low) >= 0) return kicker;
+    if (String(kicker || "").toLowerCase().indexOf(low) >= 0) return kicker;
+    return kicker ? (name + " \u00b7 " + kicker) : name;
+  }
+
+  /* Turn a project into an array of stage slides. A project may declare its
+     own `slides`; otherwise one slide is derived from its base fields. */
+  function slidesFor(p) {
+    var out = [];
+    var list = p.slides && p.slides.length ? p.slides : null;
+
+    if (!list) {
+      out.push({
+        _p: p,
+        kind: "hero",
+        image: asset(p, p.cover || (p.screens && p.screens[0])),
+        pool: resolvePool(p, p.pool),
+        focus: "50% 45%",
+        lift: p.lift || 0,
+        halo: (p.halo != null ? p.halo : 1),
+        scrim: (p.scrim != null ? p.scrim : 1),
+        kicker: p.featured_kicker || kickerFor(p),
+        badge: p.badge || "",
+        title: p.title,
+        text: p.description || p.short || "",
+        actions: p.play ? [{ label: p.play_label || ("Open " + p.title), href: p.play, primary: true }] : []
+      });
+      return out;
+    }
+
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      out.push({
+        _p: p,
+        id: s.id || (p.id + "-" + i),
+        kind: s.kind || "hero",
+        image: asset(p, s.image),
+        pool: resolvePool(p, s.pool),
+        focus: s.focus || "50% 45%",
+        lift: s.lift || p.lift || 0,
+        halo: (s.halo != null ? s.halo : (p.halo != null ? p.halo : 1)),
+        scrim: (s.scrim != null ? s.scrim : (p.scrim != null ? p.scrim : 1)),
+        kicker: ownedKicker(p, s.kicker || p.featured_kicker || "", s.title || p.title),
+        badge: s.badge !== undefined ? s.badge : (p.badge || ""),
+        title: s.title || p.title,
+        text: s.text || "",
+        chips: s.chips || [],
+        stats: s.stats || [],
+        readout: s.readout || "",
+        actions: s.actions || []
+      });
+    }
+    return out;
+  }
+
+  /* ------------------------------------------------------------ rendering */
+
+  var state = {
+    slides: [],
+    index: 0,
+    timer: null,
+    tick: null,
+    started: 0,
+    paused: false,
+    cueSeen: false,
+    exitTo: null,      /* where a released drag wants the outgoing slide to land */
+    armed: false,      /* the clock only starts once the intro is out of the way */
+    firstRun: true     /* the opening slide gets a shorter hold */
+  };
+
+  /* The very first move happens quickly, so a visitor landing on the page
+     sees within a couple of seconds that this is a reel and not a still.
+     Every slide after that runs at its own reading pace. */
+  var FIRST_DWELL = 3400;
+
+  function words(t) {
+    t = String(t || "").trim();
+    return t ? t.split(/\s+/).length : 0;
+  }
+
+  /* How long a slide holds. A slide is on screen for as long as it takes to
+     read it, not for a fixed beat: the opening card is a hook and gets out of
+     the way fast, a dense card lingers. A slide may override this with
+     "duration" (milliseconds) in project.json. */
+  function durationFor(s) {
+    if (s.duration) return s.duration;
+
+    var n = words(s.title) + words(s.text);
+    if (s.chips) n += words(s.chips.join(" "));
+
+    var d = 3200 + n * 210;
+
+    if (s.kind === "segmentation") {
+      d += 4200;                       /* the clusters take ~3.2s to assemble */
+    } else if (s.kind === "features") {
+      var f = (s._p && s._p.features) ? s._p.features.length : 0;
+      d += 1500 + f * 340;
+    }
+
+    return Math.max(5200, Math.min(d, 12000));
+  }
+
+  function buildBackgrounds() {
+    var layer = $("bgLayer");
+    layer.innerHTML = "";
+    state.slides.forEach(function (s, i) {
+      var wrap = el("div", "bg-shot");
+      if (s.kind === "segmentation") wrap.className += " muted";
+      if (s.image) {
+        var img = el("img");
+        img.alt = "";
+        img.decoding = "async";
+        /* "lazy" on a carousel means the file only starts downloading once
+           the slide is already on screen, which is exactly the pop-in.
+           The first few are fetched up front; the rest are warmed in the
+           background by warmShots() once the page is up. */
+        img.loading = i < 3 ? "eager" : "lazy";
+        if (i === 0) { try { img.fetchPriority = "high"; } catch (e) {} }
+        img.style.objectPosition = s.focus;
+        /* a dark screenshot needs a lift before the scrim buries it */
+        if (s.lift) img.style.filter = "brightness(" + s.lift + ") saturate(1.12)";
+        /* A shot that 404s is dropped from its pool and replaced, so one
+           file missing from a deploy cannot leave a slide on black. */
+        img.onerror = function () {
+          var dead = s.image;
+          if (s.pool && s.pool.length > 1) {
+            s.pool = s.pool.filter(function (u) { return u !== dead; });
+            try { console.warn("[SpinView] missing " + dead + " - dropped from pool"); } catch (e) {}
+            dealImages(null);
+          } else {
+            try { console.warn("[SpinView] missing " + dead); } catch (e) {}
+            this.remove();
+          }
+        };
+        /* the class is what fades it in; it goes on only once pixels exist */
+        img.addEventListener("load", function () { this.classList.add("ready"); });
+        img.src = s.image + ver();
+        if (img.complete && img.naturalWidth) img.classList.add("ready");
+        wrap.appendChild(img);
+        s._img = img;
+      }
+      layer.appendChild(wrap);
+      s._bg = wrap;
+    });
+  }
+
+  /* Primary action: whatever the slide declares, else the project's own
+     launch link. It is therefore identical across a project's slides, which
+     is the whole point - the button must not move or vanish. */
+  function ctaFor(s) {
+    var p = s._p || {};
+    var acts = s.actions || [];
+    var primary = null, extras = [];
+
+    /* the project's own launch link wins, so the label and the width are
+       identical on every one of its slides */
+    if (p.play) {
+      primary = { label: p.play_label || ("Open " + (p.title || "")), href: p.play, primary: true };
+    }
+    for (var i = 0; i < acts.length; i++) {
+      if (primary && acts[i].href === primary.href) continue;
+      if (!primary && acts[i].primary) { primary = acts[i]; continue; }
+      extras.push(acts[i]);
+    }
+    return { primary: primary, extras: extras };
+  }
+
+  function renderCta(s) {
+    var host = $("cta");
+    if (!host) return;
+    var cfg = ctaFor(s);
+    host.innerHTML = "";
+    if (!cfg.primary && !cfg.extras.length) return;
+
+    var wrap = el("div", "cta-inner");
+
+    function mk(a, cls) {
+      var node;
+      if (a.href) { node = el("a", cls); node.href = a.href; }
+      else {
+        node = el("button", cls);
+        node.type = "button";
+        node.addEventListener("click", function () {
+          var t = indexOfSlideId(a.slide);
+          if (t >= 0) go(t, true);
+        });
+      }
+      node.textContent = a.label || "Open";
+      return node;
+    }
+
+    if (cfg.primary) wrap.appendChild(mk(cfg.primary, "btn primary"));
+    cfg.extras.forEach(function (a) { wrap.appendChild(mk(a, "btn ghost")); });
+    host.appendChild(wrap);
+  }
+
+  function indexOfSlideId(id) {
+    if (!id) return -1;
+    for (var i = 0; i < state.slides.length; i++) {
+      if (state.slides[i].id === id) return i;
+    }
+    return -1;
+  }
+
+  /* Kicker line, optionally carrying a status badge ("Beta", "Preview"...). */
+  function kickerNode(s, extraClass) {
+    if (!s.kicker && !s.badge) return null;
+    var k = el("div", "kicker" + (extraClass || ""));
+    if (s.kicker) {
+      var t = el("span");
+      t.textContent = s.kicker;
+      k.appendChild(t);
+    }
+    if (s.badge) {
+      var b = el("span", "badge");
+      b.textContent = s.badge;
+      k.appendChild(b);
+    }
+    return k;
+  }
+
+  function heroSlide(s) {
+    var inner = el("div", "slide-inner");
+    var k = kickerNode(s, " anim"); if (k) inner.appendChild(k);
+    var h = el("h1", "title anim");
+    h.innerHTML = markTitle(s.title);
+    inner.appendChild(h);
+    if (s.text) { var p = el("p", "blurb anim"); p.textContent = s.text; inner.appendChild(p); }
+    return inner;
+  }
+
+  function revealSlide(s) {
+    var inner = el("div", "slide-inner");
+    var k = kickerNode(s, " anim"); if (k) inner.appendChild(k);
+    var h = el("h1", "title anim");
+    h.innerHTML = markTitle(s.title);
+    inner.appendChild(h);
+    if (s.text) { var p = el("p", "blurb anim"); p.textContent = s.text; inner.appendChild(p); }
+    return inner;
+  }
+
+  function featureSlide(s) {
+    var inner = el("div", "slide-inner");
+    var k = kickerNode(s, " anim"); if (k) inner.appendChild(k);
+    var h = el("h1", "title anim");
+    h.innerHTML = markTitle(s.title);
+    inner.appendChild(h);
+    if (s.text) { var p = el("p", "blurb anim"); p.textContent = s.text; inner.appendChild(p); }
+
+    var feats = (s._p && s._p.features) || [];
+    if (feats.length) {
+      var grid = el("div", "feature-grid anim");
+      feats.forEach(function (f) {
+        var cell = el("div", "feature");
+        var b = el("b"); b.textContent = f.title || "";
+        var sp = el("span"); sp.textContent = f.text || "";
+        cell.appendChild(b); cell.appendChild(sp);
+        grid.appendChild(cell);
+      });
+      inner.appendChild(grid);
+    }
+    return inner;
+  }
+
+  /* The cluster viewer: the segmentation shot is assembled cell by cell,
+     the gaps close, and the readout completes. */
+  /* 182 tiles each painting a scaled copy of the same JPEG is heavy on a
+     phone GPU, so the grid is coarser on small screens. */
+  var SEG_COLS = 14, SEG_ROWS = 13;
+  try {
+    if (window.innerWidth <= 620) { SEG_COLS = 8; SEG_ROWS = 7; }
+    else if (window.innerWidth <= 900) { SEG_COLS = 10; SEG_ROWS = 9; }
+  } catch (e) {}
+
+  function segSlide(s) {
+    var inner = el("div", "slide-inner");
+
+    var copy = el("div", "seg-copy anim");
+    var segK = kickerNode(s, ""); if (segK) copy.appendChild(segK);
+    var h = el("h2", "title"); h.innerHTML = markTitle(s.title); copy.appendChild(h);
+    if (s.text) { var p = el("p", "blurb"); p.textContent = s.text; copy.appendChild(p); }
+    if (s.chips && s.chips.length) {
+      var chips = el("div", "chips");
+      s.chips.forEach(function (c) {
+        var chip = el("span", "chip"); chip.textContent = c; chips.appendChild(chip);
+      });
+      copy.appendChild(chips);
+    }
+    if (s.stats && s.stats.length) {
+      var st = el("div", "chips");
+      s.stats.forEach(function (x) {
+        var chip = el("span", "chip");
+        chip.textContent = (x.value ? x.value + " " : "") + (x.label || "");
+        st.appendChild(chip);
+      });
+      copy.appendChild(st);
+    }
+    inner.appendChild(copy);
+
+    var stage = el("div", "seg-stage anim");
+    var grid = el("div", "seg-grid");
+    grid.style.gridTemplateColumns = "repeat(" + SEG_COLS + ", 1fr)";
+    grid.style.gridTemplateRows = "repeat(" + SEG_ROWS + ", 1fr)";
+
+    var cx = (SEG_COLS - 1) / 2, cy = (SEG_ROWS - 1) / 2;
+    var maxD = Math.sqrt(cx * cx + cy * cy);
+
+    for (var y = 0; y < SEG_ROWS; y++) {
+      for (var x = 0; x < SEG_COLS; x++) {
+        var cell = el("div", "seg-cell");
+        cell.style.backgroundImage = "url('" + s.image + ver() + "')";
+        cell.style.backgroundSize = (SEG_COLS * 100) + "% " + (SEG_ROWS * 100) + "%";
+        cell.style.backgroundPosition =
+          (SEG_COLS > 1 ? (x / (SEG_COLS - 1)) * 100 : 0) + "% " +
+          (SEG_ROWS > 1 ? (y / (SEG_ROWS - 1)) * 100 : 0) + "%";
+        var d = Math.sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy)) / maxD;
+        /* centre-out wave with a touch of scatter so it never looks like a wipe */
+        var jitter = ((x * 7 + y * 13) % 5) * 0.028;
+        cell.style.animationDelay = (0.14 + d * 1.35 + jitter).toFixed(3) + "s";
+        grid.appendChild(cell);
+      }
+    }
+    var plate = el("div", "seg-plate");
+    plate.style.backgroundImage = "url('" + s.image + ver() + "')";
+    stage.appendChild(plate);
+    stage.appendChild(grid);
+
+    var scan = el("div", "seg-scan"); stage.appendChild(scan);
+
+    var frame = el("div", "seg-frame");
+    ["tl", "tr", "bl", "br"].forEach(function (c) {
+      frame.appendChild(el("div", "seg-corner " + c));
+    });
+    stage.appendChild(frame);
+
+    var hud = el("div", "seg-hud");
+    var dot = el("span", "dot"); hud.appendChild(dot);
+    var label = el("span"); label.textContent = s.readout || "Building cluster hierarchy";
+    hud.appendChild(label);
+    hud.appendChild(el("span", "grow"));
+    var pct = el("span", "pct"); pct.textContent = "0%";
+    hud.appendChild(pct);
+    var bar = el("div", "seg-bar");
+    hud.appendChild(bar);
+    stage.appendChild(hud);
+
+    inner.appendChild(stage);
+
+    /* The cell animations are on a clock; the image is not. If the assembly
+       starts before the file has decoded, every delay has already elapsed by
+       the time pixels exist and the whole thing pops in at once - which is
+       exactly what a slow phone shows. So we wait for the decode. */
+    var probe = new Image();
+    var ready = false;
+    var waiting = null;
+    function release() {
+      if (ready) return;
+      ready = true;
+      if (waiting) { var f = waiting; waiting = null; f(); }
+    }
+    probe.onload = probe.onerror = release;
+    probe.src = s.image + ver();
+    if (probe.complete && probe.naturalWidth) ready = true;
+    /* A load event that never arrives - a proxy stall, a dead file, an
+       Android tab restored from the background - used to leave the assembly
+       waiting forever and the slide showing an empty frame. It plays anyway
+       after three seconds. */
+    setTimeout(release, 3000);
+
+    s._seg = {
+      stage: stage, pct: pct, bar: bar, raf: null,
+      isReady: function () { return ready; },
+      onReady: function (fn) { if (ready) fn(); else waiting = fn; }
+    };
+    return inner;
+  }
+
+  function markTitle(t) {
+    /* wrap *word* in a gradient span */
+    return esc(t).replace(/\*(.+?)\*/g, "<em>$1</em>");
+  }
+
+  function segPlay(s) {
+    var seg = s._seg;
+    if (!seg) return;
+    if (seg.onReady && !seg.isReady()) {
+      seg.onReady(function () {
+        if (state.slides[state.index] === s) segPlay(s);
+      });
+      return;
+    }
+    var stage = seg.stage;
+    stage.classList.remove("play", "building", "solid");
+    /* force reflow so the animation restarts */
+    void stage.offsetWidth;
+    stage.classList.add("play", "building");
+
+    var total = reduced ? 2200 : 3200;
+    var t0 = (window.performance && performance.now) ? performance.now() : Date.now();
+
+    if (seg.raf) cancelAnimationFrame(seg.raf);
+    function step(now) {
+      var t = Math.min(1, ((now || Date.now()) - t0) / total);
+      var v = Math.round(t * 100);
+      seg.pct.textContent = v + "%";
+      seg.bar.style.width = v + "%";
+      if (t < 1) {
+        seg.raf = requestAnimationFrame(step);
+      } else {
+        seg.pct.textContent = "READY";
+        stage.classList.remove("building");
+        stage.classList.add("solid");
+      }
+    }
+    seg.raf = requestAnimationFrame(step);
+  }
+
+  function segStop(s) {
+    var seg = s._seg;
+    if (!seg) return;
+    if (seg.raf) cancelAnimationFrame(seg.raf);
+    seg.stage.classList.remove("play", "building", "solid");
+    seg.pct.textContent = "0%";
+    seg.bar.style.width = "0%";
+  }
+
+  function buildSlides() {
+    var host = $("slides");
+    host.innerHTML = "";
+    state.slides.forEach(function (s, i) {
+      var node = el("section", "slide kind-" + s.kind);
+      if (s.halo !== 1) node.style.setProperty("--halo", String(s.halo));
+      node.setAttribute("role", "tabpanel");
+      node.setAttribute("aria-label", (i + 1) + " of " + state.slides.length);
+      var inner;
+      if (s.kind === "segmentation")   inner = segSlide(s);
+      else if (s.kind === "features")  inner = featureSlide(s);
+      else if (s.kind === "reveal")    inner = revealSlide(s);
+      else                             inner = heroSlide(s);
+      node.appendChild(inner);
+      host.appendChild(node);
+      s._node = node;
+    });
+  }
+
+  /* One run of dots per project, so the reel reads as "five of these,
+     then one of those" rather than one undifferentiated row. */
+  function buildDots() {
+    var host = $("dots");
+    host.innerHTML = "";
+    var group = null, lastId = null;
+
+    state.slides.forEach(function (s, i) {
+      var pid = (s._p && s._p.id) || "";
+      if (pid !== lastId) {
+        group = el("div", "dot-group");
+        host.appendChild(group);
+        lastId = pid;
+      }
+      var b = el("button", "dot-btn");
+      b.type = "button";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", ((s._p && s._p.title) || "Slide") + " " + (s._n || (i + 1)));
+      b.title = (s._p && s._p.title) || "";
+      b.appendChild(el("i"));
+      b.addEventListener("click", function () { go(i, true); });
+      group.appendChild(b);
+      s._dot = b;
+    });
+  }
+
+  /* ------------------------------------------------------------- carousel */
+
+  /* Which way the reel travels. Passed in by a drag (the direction of the
+     gesture wins, even when it wraps); otherwise inferred, with the wrap at
+     each end reading as a continuation rather than a rewind. */
+  function directionFor(prev, next, n) {
+    if (prev === next) return 1;
+    if (prev === n - 1 && next === 0) return 1;
+    if (prev === 0 && next === n - 1) return -1;
+    return next > prev ? 1 : -1;
+  }
+
+  function go(i, manual, dir) {
+    if (!state.slides.length) return;
+    var n = state.slides.length;
+    var next = ((i % n) + n) % n;
+    var prev = state.index;
+    if (dir == null) dir = directionFor(prev, next, n);
+
+    var host = $("slides");
+    host.classList.toggle("d-next", dir >= 0);
+    host.classList.toggle("d-prev", dir < 0);
+
+    /* Seat the incoming slide off-stage before it is shown. If a drag put it
+       there already, its inline transform is left to be cleared below and the
+       transition simply carries on from where the finger let go - no snap
+       back to a keyframe's starting position. */
+    var enter = state.slides[next]._node;
+    var leave = state.slides[prev] && state.slides[prev]._node;
+    enter.classList.remove("dragging");
+    enter.style.opacity = "";
+    if (prev !== next) {
+      if (enter.style.transform) {
+        enter.style.transform = "";
+      } else {
+        enter.classList.add("no-tr");
+        enter.style.transform = "translate3d(" + (dir >= 0 ? "17%" : "-17%") + ", 0, 0)";
+        void enter.offsetWidth;            /* commit that position, unanimated */
+        enter.classList.remove("no-tr");
+        enter.style.transform = "";
+      }
+    }
+    if (leave && leave !== enter) {
+      leave.classList.remove("dragging");
+      leave.style.opacity = "";
+      /* A drag can carry a slide further out than the class-driven exit
+         position, and clearing the transform would then pull it *back*
+         towards the middle before it left - which is exactly the rubber-band
+         that makes a swipe feel like it was refused. exitTo is the drag's
+         own, further, destination; it wins. */
+      leave.style.transform = state.exitTo || "";
+    }
+    state.exitTo = null;
+
+    state.slides.forEach(function (s, k) {
+      var on = k === next;
+      /* --p still holds ~100% from this dot's last run; clear it before the
+         dot goes active or it flashes full for one frame */
+      s._dot.style.setProperty("--p", "0%");
+      if (on) s._node.classList.remove("leaving");
+      s._node.classList.toggle("on", on);
+      s._bg.classList.toggle("on", on);
+      s._dot.classList.toggle("on", on);
+      s._dot.classList.toggle("seen", !on && k < next);
+      s._dot.setAttribute("aria-selected", on ? "true" : "false");
+      if (!on && s.kind === "segmentation" && k === prev) segStop(s);
+    });
+
+    /* let the outgoing copy play its exit before it is dropped */
+    if (prev !== next && state.slides[prev]) {
+      var out = state.slides[prev]._node;
+      out.classList.add("leaving");
+      if (out._exit) clearTimeout(out._exit);
+      out._exit = setTimeout(function () {
+        out.classList.remove("leaving");
+        out.style.transform = "";
+        out.style.opacity = "";
+      }, 900);
+    }
+
+    if (prev !== next) state.firstRun = false;
+
+    state.index = next;
+
+    $("counter").textContent =
+      pad(state.slides[next]._n) + " / " + pad(state.slides[next]._of);
+
+    syncProjectNav(state.slides[next]._p);
+
+    /* a new pass gets a new set of backdrops, dealt behind the viewer */
+    if (n > 1 && next === 0 && prev === n - 1) {
+      setTimeout(function () { dealImages(0); }, 1600);
+    }
+
+    var sc = $("scrim");
+    if (sc) sc.style.opacity = String(state.slides[next].scrim != null ? state.slides[next].scrim : 1);
+
+    var cur = state.slides[next];
+    if (cur.kind === "segmentation") segPlay(cur);
+    renderCta(cur);
+    if (manual) syncUrl(cur);
+    updateCue(next, n);
+
+    restart(manual);
+  }
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  function updateCue(index, total) {
+    var cue = $("cue");
+    if (!cue) return;
+    var show = !state.cueSeen && total > 0 && index === total - 1;
+    cue.classList.toggle("show", show);
+  }
+
+  /* Reflect the project the viewer is on, so the address bar can be copied.
+     Only on deliberate navigation - autoplay never rewrites the URL. */
+  var urlLock = false;
+  function syncUrl(slide) {
+    if (urlLock) return;
+    if (!window.history || !history.replaceState) return;
+    var id = (slide._p && slide._p.id) || "";
+    if (!id) return;
+    try {
+      history.replaceState(null, "", location.pathname + "?" + encodeURIComponent(id));
+    } catch (e) {}
+  }
+
+  function restart(manual) {
+    stopTimer();
+    if (!state.armed) return;
+    if (state.slides.length < 2) return;
+    state.started = Date.now();
+    var s = state.slides[state.index];
+    var d = state.firstRun ? FIRST_DWELL : durationFor(s);
+
+    state.tick = setInterval(function () {
+      if (state.paused) { state.started += 60; return; }
+      var p = Math.min(100, ((Date.now() - state.started) / d) * 100);
+      s._dot.style.setProperty("--p", p + "%");
+      if (p >= 100) { stopTimer(); go(state.index + 1); }
+    }, 60);
+    if (manual) { /* no-op, kept for clarity */ }
+  }
+
+  function stopTimer() {
+    if (state.tick) { clearInterval(state.tick); state.tick = null; }
+  }
+
+  /* ------------------------------------------------------- project switcher */
+
+  function buildProjectNav() {
+    var host = $("projectNav");
+    if (!host) return;
+    host.innerHTML = "";
+
+    var seen = {}, order = [];
+    state.slides.forEach(function (s, i) {
+      var p = s._p;
+      if (!p || seen[p.id] !== undefined) return;
+      seen[p.id] = i;
+      order.push(p);
+    });
+
+    /* a lone project needs no switcher */
+    if (order.length < 2) { host.style.display = "none"; return; }
+    host.style.display = "";
+
+    order.forEach(function (p) {
+      var b = el("button", "proj");
+      b.type = "button";
+      b.setAttribute("data-id", p.id);
+      b.appendChild(document.createTextNode(p.title || p.id));
+      if (p.badge) {
+        var t = el("span", "tag");
+        t.textContent = p.badge;
+        b.appendChild(t);
+      }
+      b.addEventListener("click", function () { go(seen[p.id], true); });
+      host.appendChild(b);
+    });
+  }
+
+  function syncProjectNav(p) {
+    var host = $("projectNav");
+    if (!host || !p) return;
+    var btns = host.getElementsByTagName("button");
+    for (var i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute("data-id") === p.id;
+      btns[i].classList.toggle("on", on);
+      /* if the row has had to scroll, keep the active name in view - set
+         scrollLeft directly so the page itself is never scrolled */
+      if (on && host.scrollWidth > host.clientWidth + 2) {
+        host.scrollLeft = Math.max(0,
+          btns[i].offsetLeft - (host.clientWidth - btns[i].offsetWidth) / 2);
+      }
+    }
+  }
+
+  /* On a narrow screen the switcher and the wordmark fight for the top row.
+     Navigation wins: the wordmark steps aside rather than the project names
+     being truncated. The intro has already shown the name anyway. */
+  function fitChrome() {
+    var mark = document.querySelector(".mark-corner");
+    var nav = $("projectNav");
+    if (!mark || !nav) return;
+    document.body.classList.remove("tight");
+    if (nav.style.display === "none" || !nav.children.length) return;
+    var m = mark.getBoundingClientRect();
+    var n = nav.getBoundingClientRect();
+    if (n.left < m.right + 14) document.body.classList.add("tight");
+  }
+
+  /* ------------------------------------------------------------- archive */
+
+  /* The strip below the fold is the index of everything released - the
+     projects on the reel included. It is what makes the page scrollable at
+     all, and it grows on its own as projects ship. */
+  function buildArchive(projects) {
+    var rest = projects.filter(isReleased);
+    if (!rest.length) return false;
+
+    var rail = $("rail");
+    rail.innerHTML = "";
+    var onStage = {};
+    state.slides.forEach(function (s, i) {
+      if (s._p && s._p.id && onStage[s._p.id] === undefined) onStage[s._p.id] = i;
+    });
+
+    rest.forEach(function (p) {
+      var href = p.play || p.url || "#";
+      var card = el("a", "card");
+      card.href = href;
+      var cover = asset(p, p.cover || (p.screens && p.screens[0]));
+      if (cover) {
+        var img = el("img");
+        img.src = cover + ver();
+        img.alt = "";
+        img.loading = "lazy";
+        img.onerror = function () { this.remove(); };
+        card.appendChild(img);
+      }
+      if (p.status) {
+        var kick = el("div", "card-kicker");
+        kick.textContent = p.status;
+        card.appendChild(kick);
+      }
+      if (p.badge) {
+        var bg = el("div", "card-badge");
+        bg.textContent = p.badge;
+        card.appendChild(bg);
+      }
+      var body = el("div", "card-body");
+      var b = el("b"); b.textContent = p.title || p.id;
+      var sp = el("span"); sp.textContent = p.short || p.description || "";
+      body.appendChild(b); body.appendChild(sp);
+      card.appendChild(body);
+      rail.appendChild(card);
+    });
+
+    $("archiveCount").textContent = rest.length + (rest.length > 1 ? " projects" : " project");
+    $("archive").hidden = false;
+    $("foot").hidden = false;
+    document.documentElement.classList.add("has-more");
+    document.body.classList.add("has-more");
+    return true;
+  }
+
+  /* ----------------------------------------------------------------- boot */
+
+  function bindInput() {
+    $("prev").addEventListener("click", function () { go(state.index - 1, true); });
+    $("next").addEventListener("click", function () { go(state.index + 1, true); });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { go(state.index + 1, true); }
+      else if (e.key === "ArrowLeft") { go(state.index - 1, true); }
+    });
+
+    var stage = $("stage");
+    var bgHost = $("bgLayer");
+
+    /* Hover-to-pause, but only where hovering is a thing. A touch browser
+       synthesises a mouseover on tap and then never sends the matching
+       mouseleave - so one tap latched state.paused true and the reel stopped
+       advancing for the rest of the visit. That is the frozen counter. */
+    var canHover = false;
+    try {
+      canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    } catch (e) {}
+
+    if (canHover) {
+      /* Pause only while the pointer is actually on something readable or
+         clickable. The stage fills the whole viewport, so pausing on the stage
+         itself would freeze the reel for anyone whose cursor sits on the page. */
+      var HOLD = ".slide-inner, .cta, .nav, .cue, .mark-corner";
+      var holds = function (node) {
+        while (node && node !== stage) {
+          if (node.matches && node.matches(HOLD)) return true;
+          node = node.parentNode;
+        }
+        return false;
+      };
+      stage.addEventListener("mouseover", function (e) { state.paused = holds(e.target); });
+      stage.addEventListener("mouseleave", function () { state.paused = false; });
+    }
+
+    /* ---- tap anywhere in the scene: next slide ------------------------- */
+    /* Anything that already does something of its own is left alone. */
+    var SKIP = "a, button, input, select, textarea, [role='button'], .cta, .nav, .cue, .projects, .mark-corner";
+    var noTapUntil = 0;
+
+    stage.addEventListener("click", function (e) {
+      if (Date.now() < noTapUntil) return;      /* that click was the end of a drag */
+      var node = e.target;
+      while (node && node !== stage) {
+        if (node.matches && node.matches(SKIP)) return;
+        node = node.parentNode;
+      }
+      go(state.index + 1, true);
+    });
+
+    /* ---- drag the reel ------------------------------------------------- */
+    /* Two slides move under the finger: the one you are on, and the one you
+       are pulling in from the far edge. Released past the threshold neither
+       of them goes back - the outgoing keeps travelling the way the gesture
+       was going and the incoming completes its arrival. Released short, both
+       ease home. Because the hand-over is a CSS transition and not a
+       keyframe, the slide carries on from exactly where the finger left it. */
+    var x0 = null, y0 = null, axis = null, moved = false, peer = -1;
+
+    function stageW() { return stage.clientWidth || window.innerWidth || 1; }
+
+    function loosen(s) {
+      if (!s || !s._node) return;
+      s._node.classList.remove("dragging");
+      s._node.style.transform = "";
+      s._node.style.opacity = "";
+    }
+
+    function dragTo(dx) {
+      var n = state.slides.length, w = stageW();
+      var want = ((((dx < 0 ? state.index + 1 : state.index - 1) % n) + n) % n);
+      if (peer !== want) {
+        if (peer >= 0 && peer !== state.index) loosen(state.slides[peer]);
+        peer = want;
+      }
+      var cur = state.slides[state.index];
+      var other = state.slides[peer];
+      var t = Math.min(1, Math.abs(dx) / (w * 0.55));   /* 0 -> 1 across the gesture */
+      var shift = dx * 0.62;                            /* a little resistance */
+
+      cur._node.classList.add("dragging");
+      cur._node.style.transform = "translate3d(" + shift.toFixed(1) + "px,0,0)";
+      cur._node.style.opacity = (1 - t * 0.6).toFixed(3);
+
+      if (other && other !== cur) {
+        var park = (dx < 0 ? 1 : -1) * w * 0.55;        /* waiting off the edge */
+        other._node.classList.add("dragging");
+        other._node.style.transform = "translate3d(" + (park + shift).toFixed(1) + "px,0,0)";
+        other._node.style.opacity = Math.min(1, t * 1.25).toFixed(3);
+      }
+      if (bgHost) bgHost.style.transform = "translate3d(" + (dx * 0.16).toFixed(1) + "px,0,0)";
+    }
+
+    stage.addEventListener("touchstart", function (e) {
+      if (e.touches.length !== 1) return;
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+      axis = null; moved = false; peer = -1;
+      if (bgHost) bgHost.classList.remove("settle");
+    }, { passive: true });
+
+    stage.addEventListener("touchmove", function (e) {
+      if (x0 === null || !e.touches.length) return;
+      var dx = e.touches[0].clientX - x0;
+      var dy = e.touches[0].clientY - y0;
+      if (axis === null) {
+        /* wait until the gesture has an opinion, so a vertical scroll is
+           never stolen by the carousel */
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        axis = Math.abs(dx) > Math.abs(dy) * 1.2 ? "x" : "y";
+      }
+      if (axis !== "x") return;
+      moved = true;
+      state.paused = true;
+      dragTo(dx);
+    }, { passive: true });
+
+    function endDrag(e) {
+      if (x0 === null) return;
+      var dx = (e.changedTouches && e.changedTouches.length)
+        ? e.changedTouches[0].clientX - x0 : 0;
+      x0 = null; y0 = null;
+      state.paused = false;
+
+      if (bgHost) {
+        bgHost.classList.add("settle");
+        bgHost.style.transform = "";
+        setTimeout(function () { bgHost.classList.remove("settle"); }, 520);
+      }
+
+      var committed = false;
+      if (axis === "x" && moved) {
+        noTapUntil = Date.now() + 700;
+        var threshold = Math.max(50, Math.min(140, stageW() * 0.16));
+        if (Math.abs(dx) > threshold && peer >= 0 && peer !== state.index) {
+          /* Drop the no-transition flag but keep the transforms in place:
+             go() clears them, and the browser transitions out of the held
+             position instead of jumping. */
+          var w = stageW();
+          var held = dx * 0.62;                       /* where the finger left it */
+          var out = dx < 0
+            ? Math.min(held - w * 0.14, -w * 0.17)    /* keep going left */
+            : Math.max(held + w * 0.14,  w * 0.17);   /* keep going right */
+          state.exitTo = "translate3d(" + out.toFixed(1) + "px, 0, 0)";
+          state.slides[state.index]._node.classList.remove("dragging");
+          state.slides[peer]._node.classList.remove("dragging");
+          go(peer, true, dx < 0 ? 1 : -1);
+          committed = true;
+        }
+      }
+      if (!committed) {
+        loosen(state.slides[state.index]);
+        if (peer >= 0) loosen(state.slides[peer]);
+      }
+      axis = null; moved = false; peer = -1;
+    }
+    stage.addEventListener("touchend", endDrag, { passive: true });
+    stage.addEventListener("touchcancel", endDrag, { passive: true });
+
+    document.addEventListener("visibilitychange", function () {
+      state.paused = document.hidden;
+    });
+
+    var cue = $("cue");
+    if (cue) {
+      cue.addEventListener("click", function () {
+        var a = $("archive");
+        if (a) a.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+
+    /* once they have scrolled, they know there is more - stop offering */
+    window.addEventListener("scroll", function () {
+      if (state.cueSeen) return;
+      if (window.pageYOffset > 40) {
+        state.cueSeen = true;
+        if (cue) cue.classList.remove("show");
+      }
+    }, { passive: true });
+  }
+
+  /* The opening card is a real wait, not a staged one: it holds until the
+     first backdrop has decoded, so the stage is never revealed on an empty
+     frame. A floor keeps it from flashing past on a warm cache, a ceiling
+     keeps a slow network from parking the visitor on a black screen. */
+  var INTRO_MIN = 900, INTRO_MAX = 4000;
+
+  function runIntro(firstImage) {
+    var intro = $("intro");
+    var t0 = Date.now();
+    var done = false;
+
+    function finish() {
+      if (done) return;
+      done = true;
+      intro.classList.add("done");
+      document.body.classList.add("lit");
+      /* the opening slide's hold begins now - not while it was hidden behind
+         the intro, which made the first move land at an unpredictable moment */
+      state.armed = true;
+      restart(false);
+      setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 1000);
+    }
+
+    function release() {
+      var waited = Date.now() - t0;
+      if (waited >= INTRO_MIN) finish();
+      else setTimeout(finish, INTRO_MIN - waited);
+    }
+
+    /* the preference is about movement, not about skipping the wait for the
+       first image - only the fade is dropped */
+    if (reduced) intro.style.transition = "none";
+
+    setTimeout(finish, INTRO_MAX);       /* never hold longer than this */
+
+    if (!firstImage) { release(); return; }
+
+    var probe = new Image();
+    probe.onload = probe.onerror = release;
+    probe.src = firstImage;
+    if (probe.complete) release();
+  }
+
+  /* Which build is this?
+     `generated` is stamped into index.html by the catalog builder, so it can
+     never be out of step with the page you are looking at - unlike
+     version.js, which is a separate request the browser may cache on its own.
+     Printed to the console, written into the footer, and readable at any time
+     with SPINVIEW_BUILD in the console. */
+  function stampBuild(cat) {
+    var gen = (cat && cat.generated) ? String(cat.generated).replace("T", " ").slice(0, 16) : "?";
+    var v = window.SPINVIEW_VERSION || "local";
+
+    window.SPINVIEW_BUILD = { version: v, generated: gen };
+
+    var nodes = document.querySelectorAll(".build-stamp");
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].textContent = "\u00b7 " + v + " \u00b7 " + gen;
+      nodes[i].title = "Build " + v + ", catalog generated " + gen;
+    }
+    try { console.log("[SpinView] build " + v + " \u00b7 catalog " + gen); } catch (e) {}
+  }
+
+  /* ------------------------------------------------------------- build panel */
+
+  /* The page's own identity is the catalog timestamp the builder stamped into
+     this very file - not version.js, which is a separate request the browser
+     caches on its own schedule and which can therefore describe a different
+     build than the one you are reading. */
+  function localBuild(cat) {
+    return {
+      version: window.SPINVIEW_VERSION || "local",
+      generated: (cat && cat.generated) ? String(cat.generated).replace("T", " ").slice(0, 16) : "?"
+    };
+  }
+
+  function openBuild(cat) {
+    var panel = $("buildPanel");
+    if (!panel) return;
+    var me = localBuild(cat);
+    $("bpLocal").textContent = me.version;
+    $("bpGen").textContent = me.generated;
+    $("bpServer").textContent = "...";
+    var verdict = $("bpVerdict");
+    verdict.className = "build-verdict wait";
+    verdict.textContent = "Vérification…";
+    panel.classList.add("show");
+    panel.setAttribute("aria-hidden", "false");
+    state.paused = true;
+
+    if (!window.fetch) {
+      verdict.className = "build-verdict err";
+      verdict.textContent = "Navigateur trop ancien pour vérifier";
+      return;
+    }
+
+    /* Ask for index.html itself, uncached. Its catalog stamp is the one thing
+       that cannot disagree with the HTML it arrived in. */
+    var bust = "cb=" + Date.now();
+    var url = location.pathname + (location.pathname.slice(-1) === "/" ? "" : "") + "?" + bust;
+
+    fetch(url, { cache: "no-store" })
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var g = /"generated"\s*:\s*"([^"]+)"/.exec(html);
+        var live = g ? g[1].replace("T", " ").slice(0, 16) : "";
+        return fetch("/version.txt?" + bust, { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.text() : ""; })
+          .catch(function () { return ""; })
+          .then(function (v) { return { gen: live, ver: (v || "").trim() }; });
+      })
+      .then(function (srv) {
+        $("bpServer").textContent =
+          (srv.ver || "?") + (srv.gen ? "  \u00b7  " + srv.gen : "");
+        if (!srv.gen) {
+          verdict.className = "build-verdict err";
+          verdict.textContent = "Serveur injoignable";
+        } else if (srv.gen === me.generated) {
+          verdict.className = "build-verdict fresh";
+          verdict.textContent = "À jour";
+        } else {
+          verdict.className = "build-verdict stale";
+          verdict.textContent = "Version en cache — rechargez";
+        }
+      })
+      .catch(function () {
+        $("bpServer").textContent = "-";
+        verdict.className = "build-verdict err";
+        verdict.textContent = "Vérification impossible (hors ligne ?)";
+      });
+  }
+
+  function closeBuild() {
+    var panel = $("buildPanel");
+    if (!panel) return;
+    panel.classList.remove("show");
+    panel.setAttribute("aria-hidden", "true");
+    state.paused = false;
+  }
+
+  function bindBuild(cat) {
+    var panel = $("buildPanel");
+    if (!panel) return;
+
+    $("bpClose").addEventListener("click", closeBuild);
+    $("bpReload").addEventListener("click", function () {
+      var go = function () {
+        location.replace(location.pathname + "?fresh=" + Date.now());
+      };
+      /* a fresh URL defeats the HTTP cache; caches.delete() covers anything a
+         service worker may have parked, now or later */
+      if (window.caches && caches.keys) {
+        caches.keys()
+          .then(function (ks) { return Promise.all(ks.map(function (k) { return caches.delete(k); })); })
+          .then(go, go);
+      } else { go(); }
+    });
+
+    /* three taps on the slide counter - small, deliberate, never hit by
+       accident, and visible on a phone */
+    var counter = $("counter");
+    if (counter) {
+      var hits = 0, last = 0;
+      counter.style.pointerEvents = "auto";
+      counter.style.cursor = "pointer";
+      counter.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var now = Date.now();
+        hits = (now - last < 700) ? hits + 1 : 1;
+        last = now;
+        if (hits >= 3) { hits = 0; openBuild(cat); }
+      });
+    }
+
+    /* and /?build or /#build, which is the one that can be typed on a phone */
+    var wants = /(^|[?&])build(=|&|$)/.test(location.search) ||
+                /^#build$/i.test(location.hash || "");
+    if (wants) setTimeout(function () { openBuild(cat); }, 900);
+  }
+
+  function boot() {
+    var cat = SPINVIEW_CATALOG;
+    var y = String(new Date().getFullYear());
+    $("year").textContent = y;
+    $("yearTop").textContent = y;
+
+    stampBuild(cat);
+    /* version.js is injected asynchronously - restamp once it has landed */
+    window.addEventListener("load", function () { stampBuild(cat); });
+
+    if (!cat || !cat.projects) {
+      console.error("[SpinView] catalog missing or malformed");
+      runIntro("");
+      return;
+    }
+
+    var projects = pickProjects(cat);
+
+    var stars = projects
+      .filter(function (p) { return p.featured && isReleased(p); })
+      .sort(function (a, b) {
+        return (a.featured_order || 999) - (b.featured_order || 999);
+      });
+
+    if (!stars.length) {
+      /* nothing released yet: fall back to anything released, then anything */
+      stars = projects.filter(isReleased).slice(0, 1);
+    }
+
+    var deep = readDeepLink();
+    if (deep.project) {
+      var hit = null;
+      for (var d = 0; d < projects.length; d++) {
+        if (String(projects[d].id).toLowerCase() === deep.project) { hit = projects[d]; break; }
+      }
+      /* a direct link wins over the featured/released filter */
+      if (hit && stars.indexOf(hit) < 0) stars.unshift(hit);
+    }
+
+    stars.forEach(function (p) {
+      state.slides = state.slides.concat(slidesFor(p));
+    });
+
+    if (!state.slides.length) {
+      console.warn("[SpinView] no released project to feature");
+      runIntro("");
+      return;
+    }
+
+    /* position of each slide inside its own project */
+    var counts = {};
+    state.slides.forEach(function (s) {
+      var id = (s._p && s._p.id) || "";
+      counts[id] = (counts[id] || 0) + 1;
+      s._n = counts[id];
+    });
+    state.slides.forEach(function (s) {
+      s._of = counts[(s._p && s._p.id) || ""];
+    });
+
+    dealImages(null);
+    buildBackgrounds();
+    buildSlides();
+    buildDots();
+    buildProjectNav();
+    fitChrome();
+    window.addEventListener("resize", fitChrome);
+    window.addEventListener("orientationchange", function () {
+      setTimeout(fitChrome, 120);
+    });
+    bindInput();
+    bindBuild(cat);
+    buildArchive(projects);
+
+    var start = findDeep(deep);
+    go(start > 0 ? start : 0, false);
+
+    var firstShot = state.slides[state.index] && state.slides[state.index].image;
+    runIntro(firstShot ? firstShot + ver() : "");
+
+    /* let #hash changes move the stage without a reload */
+    window.addEventListener("hashchange", function () {
+      var t = findDeep(readDeepLink());
+      if (t >= 0) {
+        urlLock = true;
+        go(t, true);
+        urlLock = false;
+      }
+    });
+
+    /* warm the segmentation shot early - it drives an animation, so it must
+       be decoded before its slide comes up */
+    state.slides.forEach(function (sl) {
+      if (sl.kind === "segmentation" && sl.image) {
+        var w = new Image();
+        w.src = sl.image + ver();
+      }
+    });
+
+    /* Warm every backdrop, one at a time, behind the reel. Sequential and
+       not parallel on purpose: a phone on mobile data that fires nine
+       requests at once finishes all of them late, including the one the
+       viewer is about to need. */
+    warmShots();
+  }
+
+  function warmShots() {
+    var queue = [], seen = {};
+    state.slides.forEach(function (s) {
+      if (s.image && !seen[s.image]) { seen[s.image] = 1; queue.push(s.image); }
+      (s.pool || []).forEach(function (u) {
+        if (!seen[u]) { seen[u] = 1; queue.push(u); }
+      });
+    });
+    var i = 0;
+    (function next() {
+      if (i >= queue.length) return;
+      var im = new Image();
+      im.onload = im.onerror = function () { setTimeout(next, 40); };
+      im.src = queue[i++] + ver();
+    })();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+</body>
+</html>
