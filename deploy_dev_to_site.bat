@@ -51,9 +51,7 @@ echo  mirror. Nothing already on the site can be destroyed by a mistake in the
 echo  exclusion list. .git, CNAME and README.md are left alone for the same
 echo  reason: robocopy only writes what dev\ actually contains.
 echo.
-set "GO="
-set /p GO=Proceed? [y/N]: 
-if /i not "%GO%"=="y" goto :cancel
+
 
 robocopy "%SRC%" "%DST%" /E %XMODELS% /XF version.txt tier.txt /XD "%SRC%\.git" /XJ /NFL /NDL /NJH /R:1 /W:1
 REM robocopy: 0-7 is success, 8 and up is a real failure. `if errorlevel N`
