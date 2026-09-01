@@ -824,9 +824,62 @@ body {
       setTimeout(offer, MIN_MS);
     };
 
-    /* What the HUD asks. The Account panel draws its own entry from these, so
-       the offer survives the pill being closed. */
-    window.__pnInstallReady = function () { return deferred ? 1 : 0; };
+    /* Is this page already running as the installed app? Then there is
+       nothing to offer, and offering anyway is the surest way to look
+       broken. display-mode covers Android and desktop; navigator.standalone
+       is the iOS spelling of the same fact. */
+    function installed() {
+      try {
+        if (window.matchMedia &&
+            window.matchMedia("(display-mode: standalone)").matches) return true;
+        if (window.matchMedia &&
+            window.matchMedia("(display-mode: minimal-ui)").matches) return true;
+      } catch (e) {}
+      return navigator.standalone === true;
+    }
+
+    /* What the HUD asks. THREE answers, not two.
+       The Account panel used to read "do we hold a prompt", which is false far
+       more often than it is true: Chrome hands beforeinstallprompt over once
+       per page load and never again once it has been used or refused, and
+       Safari has no such event at all. So the entry vanished in exactly the
+       situation where somebody goes looking for it - "it offered yesterday and
+       now there is nothing anywhere".
+         0  already installed, or nothing to say
+         1  a prompt is in hand: pressing asks the browser
+         2  installable through the browser's own menu, and __pnInstallHint
+            says where that menu item is - only the shell knows which browser
+            this is, so only the shell writes that sentence. */
+    window.__pnInstallState = function () {
+      if (installed()) return 0;
+      if (deferred) return 1;
+      /* No prompt in hand. Say "use the browser's own item" only where such an
+         item exists: onbeforeinstallprompt is Chromium's, whether or not it
+         has already fired, and navigator.standalone is iOS Safari's Add to
+         Home Screen. Firefox on the desktop has neither, and an entry there
+         would send someone hunting for a menu that is not in that menu. */
+      if ('onbeforeinstallprompt' in window) return 2;
+      if (iosSafari()) return 2;
+      return 0;
+    };
+
+    function iosSafari() {
+      return navigator.standalone !== undefined ||
+             /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+             (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    }
+
+    /* Named for what it is, not for the browser it is on: a UA string is a
+       guess, but "the phone menu" and "the address bar" are two genuinely
+       different places and telling someone the wrong one is worse than
+       telling them nothing. Coarse on purpose - touch vs pointer. */
+    window.__pnInstallHint = function () {
+      if (iosSafari()) return "Share, then Add to Home Screen.";
+      var touch = (navigator.maxTouchPoints || 0) > 0;
+      if (touch) return "Browser menu, then Install app or Add to Home screen.";
+      return "The install icon at the right of the address bar, or the browser menu.";
+    };
+
     window.__pnInstall = function () {
       if (!deferred) return 0;
       if (chip) chip.classList.remove("visible");
@@ -859,6 +912,28 @@ body {
       });
     }
   })();
+
+  /* ------------------------------------------------------------ installable
+     Chrome's install criteria still require a service worker with a fetch
+     handler; without one, beforeinstallprompt never fires and no amount of
+     manifest is enough. Polynite had no worker at all, which is the whole
+     reason the offer never appeared on Android.
+     /sw.js does the least a worker can do and still count: it answers
+     navigations from the network and touches nothing else. It caches NOTHING
+     on purpose - app.js and app.wasm are already cache-busted by version.txt,
+     and a worker holding an old copy of a 1.4 MB binary would pin people to a
+     build they cannot get rid of. Offline is a separate decision, and this is
+     not it.
+     Registered from the ROOT script so its scope is the whole site: the dev
+     build lives one folder deeper and is the same app. */
+  if ("serviceWorker" in navigator &&
+      (location.protocol === "https:" || location.hostname === "localhost" ||
+       location.hostname === "127.0.0.1")) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js", { scope: "/" })
+        .catch(function () { /* no worker, no install offer - nothing else breaks */ });
+    });
+  }
 
   /* Safety fallback only if the engine did not abort */
   setTimeout(function () {

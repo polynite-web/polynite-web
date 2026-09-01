@@ -132,14 +132,6 @@ body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  /* The start-up screen is ONE composition: the spinner, then what this page
-     is. Both are flow items of the body so they stack and centre together
-     instead of one covering the other. Everything else here - the canvas, the
-     notice, the debug console - is fixed and out of this flow. */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: #0b0d12;
 }
 .game-canvas {
@@ -159,14 +151,17 @@ body {
    cover everything, which meant the only thing anyone could read while the
    engine loaded was a spinner. The intro underneath is the better use of those
    two seconds, so the loader steps aside and just says what it is doing. */
+/* Dead centre, where a spinner belongs. Transparent, not an opaque sheet:
+   the intro sits underneath in the lower part of the screen and the two never
+   fight for the same pixels. */
 .app-loader {
-  order: -1;                      /* above the intro, whatever the DOM order */
+  position: fixed;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 2.2rem;
   color: rgba(255, 255, 255, 0.42);
   font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   pointer-events: none;
@@ -180,6 +175,44 @@ body {
   border-top-color: rgba(255, 255, 255, 0.42);
   border-radius: 50%;
   animation: spin 1s linear infinite;
+}
+/* The install offer. Chrome would put its own banner over the viewer at a
+   moment it chooses; this takes the event instead and asks quietly, once the
+   engine is up and the visitor has seen what they would be installing. */
+.install-chip {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 55;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(178, 211, 235, 0.18);
+  background: rgba(10, 16, 25, 0.78);
+  color: #93a4ba;
+  font: 13px/1 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.install-chip.visible { display: flex; opacity: 1; }
+.install-chip button {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+}
+.install-chip .go {
+  padding: 5px 10px;
+  background: rgba(178, 211, 235, 0.14);
+  color: #cfdcec;
+}
+.install-chip .go:hover { background: rgba(178, 211, 235, 0.24); }
+.install-chip .no {
+  padding: 6px 9px;
+  background: transparent;
+  color: #7f8ea3;
 }
 @keyframes intro-in {
   from { opacity: 0; }
@@ -303,18 +336,19 @@ body {
    flash of text on a fast connection, and something to read on a slow one. */
 .seo-content {
   animation: intro-in 380ms ease 1100ms both;
+  position: fixed;
+  inset: auto 0 0 0;              /* the lower band, clear of the spinner */
   z-index: 5;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  width: 100%;
-  max-width: 42rem;
-  max-height: 66vh;
+  gap: 0.8rem;
+  max-height: 38vh;
   overflow-y: auto;
-  padding: 0 max(1.35rem, 5vw);
+  padding: 0 max(1.35rem, 5vw) max(1.6rem, 4vh);
   color: #93a4ba;
   font: 15px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+.seo-content > * { max-width: 42rem; }
 .seo-content h1 {
   font-size: clamp(1.25rem, 3.2vw, 1.7rem);
   line-height: 1.25;
@@ -365,6 +399,11 @@ body {
 <div class="app-loader" id="loader">
   <div class="app-spinner"></div>
   <div id="loaderText">Loading engine...</div>
+</div>
+<div class="install-chip" id="installChip">
+  <span>Install Polynite on this device</span>
+  <button class="go" id="installGo" type="button">Install</button>
+  <button class="no" id="installNo" type="button" aria-label="Not now">&times;</button>
 </div>
 <div class="debug-console" id="debugConsole"></div>
 <button class="debug-button" id="debugButton" type="button">...</button>
@@ -723,6 +762,178 @@ body {
      numerisHideLoader stays as an alias: same shell, same contract. */
   window.vmeshHideLoader = hideLoader;
   window.numerisHideLoader = hideLoader;
+
+  /* ---------------------------------------------------------------- install
+     Chrome fires beforeinstallprompt and, left alone, decides for itself when
+     to put a banner over the viewer. preventDefault takes that decision back:
+     the offer waits for EVIDENCE OF INTEREST, not for a timer.
+     Four seconds after start-up, a visitor has barely worked out what they are
+     looking at, and an install offer at that moment is a popup. The same offer
+     after they have opened a model and optimized it is a shortcut to something
+     they have just found useful. Same words, opposite meaning.
+     So the engine reports what the person actually did - opened a file,
+     finished an optimize pass, published - and the offer appears once those
+     add up, and never in the first forty-five seconds. A returning visitor
+     needs less: coming back IS the signal, so one action is enough.
+     Closing it is an answer, and it is remembered for thirty days. Long
+     enough that nobody is nagged twice about the same thing; short enough that
+     someone who was busy in March is asked again in April, by which time they
+     may well have made Polynite part of their week. The Account panel keeps a
+     permanent entry either way, so a no here never becomes a dead end.
+     Safari fires nothing at all - there is no equivalent event on iOS - so
+     none of this ever shows there, and the page says nothing it cannot do. */
+  (function () {
+    var chip = document.getElementById("installChip");
+    var deferred = null, shown = false, dismissed = false;
+    var score = 0, t0 = Date.now();
+    var MIN_MS = 45000;          /* never in the first minute of a first look */
+    var DECLINE_KEY = "pn_install_declined";
+    var DECLINE_MS = 30 * 24 * 3600 * 1000;
+
+    function declined() {
+      try {
+        var t = parseInt(localStorage.getItem(DECLINE_KEY) || "0", 10);
+        return t > 0 && Date.now() - t < DECLINE_MS;
+      } catch (e) { return false; }
+    }
+
+    /* Has this browser been here before? A second visit is itself a signal,
+       and worth one point on its own. */
+    var returning = false;
+    try {
+      var v = (parseInt(localStorage.getItem("pn_visits") || "0", 10) || 0) + 1;
+      localStorage.setItem("pn_visits", String(v));
+      returning = v > 1;
+    } catch (e) { /* private mode: treat as a first visit */ }
+
+    function offer() {
+      if (shown || dismissed || !deferred || !chip || declined()) return;
+      if (score < (returning ? 1 : 2)) return;
+      if (Date.now() - t0 < MIN_MS) return;
+      shown = true;
+      chip.classList.add("visible");
+    }
+
+    /* Called by the engine. 1 = opened a model, 2 = did something with it.
+       The policy lives here rather than in the WASM so it can be tuned
+       without a rebuild. */
+    window.__pnInstallSignal = function (weight) {
+      score += (weight | 0) || 1;
+      offer();
+      /* The clock may be the only thing still missing. */
+      setTimeout(offer, MIN_MS);
+    };
+
+    /* Is this page already running as the installed app? Then there is
+       nothing to offer, and offering anyway is the surest way to look
+       broken. display-mode covers Android and desktop; navigator.standalone
+       is the iOS spelling of the same fact. */
+    function installed() {
+      try {
+        if (window.matchMedia &&
+            window.matchMedia("(display-mode: standalone)").matches) return true;
+        if (window.matchMedia &&
+            window.matchMedia("(display-mode: minimal-ui)").matches) return true;
+      } catch (e) {}
+      return navigator.standalone === true;
+    }
+
+    /* What the HUD asks. THREE answers, not two.
+       The Account panel used to read "do we hold a prompt", which is false far
+       more often than it is true: Chrome hands beforeinstallprompt over once
+       per page load and never again once it has been used or refused, and
+       Safari has no such event at all. So the entry vanished in exactly the
+       situation where somebody goes looking for it - "it offered yesterday and
+       now there is nothing anywhere".
+         0  already installed, or nothing to say
+         1  a prompt is in hand: pressing asks the browser
+         2  installable through the browser's own menu, and __pnInstallHint
+            says where that menu item is - only the shell knows which browser
+            this is, so only the shell writes that sentence. */
+    window.__pnInstallState = function () {
+      if (installed()) return 0;
+      if (deferred) return 1;
+      /* No prompt in hand. Say "use the browser's own item" only where such an
+         item exists: onbeforeinstallprompt is Chromium's, whether or not it
+         has already fired, and navigator.standalone is iOS Safari's Add to
+         Home Screen. Firefox on the desktop has neither, and an entry there
+         would send someone hunting for a menu that is not in that menu. */
+      if ('onbeforeinstallprompt' in window) return 2;
+      if (iosSafari()) return 2;
+      return 0;
+    };
+
+    function iosSafari() {
+      return navigator.standalone !== undefined ||
+             /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+             (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    }
+
+    /* Named for what it is, not for the browser it is on: a UA string is a
+       guess, but "the phone menu" and "the address bar" are two genuinely
+       different places and telling someone the wrong one is worse than
+       telling them nothing. Coarse on purpose - touch vs pointer. */
+    window.__pnInstallHint = function () {
+      if (iosSafari()) return "Share, then Add to Home Screen.";
+      var touch = (navigator.maxTouchPoints || 0) > 0;
+      if (touch) return "Browser menu, then Install app or Add to Home screen.";
+      return "The install icon at the right of the address bar, or the browser menu.";
+    };
+
+    window.__pnInstall = function () {
+      if (!deferred) return 0;
+      if (chip) chip.classList.remove("visible");
+      deferred.prompt();
+      deferred = null;
+      return 1;
+    };
+    window.addEventListener("beforeinstallprompt", function (e) {
+      e.preventDefault();
+      deferred = e;
+      offer();                    /* only lands if the work is already done */
+    });
+    window.addEventListener("appinstalled", function () {
+      if (chip) chip.classList.remove("visible");
+      deferred = null;
+    });
+    /* The session clock starts when there is something to look at, not when
+       the page was requested: a slow first load is not time spent deciding. */
+    var armed = window.vmeshHideLoader;
+    window.vmeshHideLoader = function () { armed(); t0 = Date.now(); };
+    window.numerisHideLoader = window.vmeshHideLoader;
+    if (chip) {
+      document.getElementById("installGo").addEventListener("click", function () {
+        window.__pnInstall();
+      });
+      document.getElementById("installNo").addEventListener("click", function () {
+        chip.classList.remove("visible");
+        dismissed = true;
+        try { localStorage.setItem(DECLINE_KEY, String(Date.now())); } catch (e) {}
+      });
+    }
+  })();
+
+  /* ------------------------------------------------------------ installable
+     Chrome's install criteria still require a service worker with a fetch
+     handler; without one, beforeinstallprompt never fires and no amount of
+     manifest is enough. Polynite had no worker at all, which is the whole
+     reason the offer never appeared on Android.
+     /sw.js does the least a worker can do and still count: it answers
+     navigations from the network and touches nothing else. It caches NOTHING
+     on purpose - app.js and app.wasm are already cache-busted by version.txt,
+     and a worker holding an old copy of a 1.4 MB binary would pin people to a
+     build they cannot get rid of. Offline is a separate decision, and this is
+     not it.
+     Registered from the ROOT script so its scope is the whole site: the dev
+     build lives one folder deeper and is the same app. */
+  if ("serviceWorker" in navigator &&
+      (location.protocol === "https:" || location.hostname === "localhost" ||
+       location.hostname === "127.0.0.1")) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js", { scope: "/" })
+        .catch(function () { /* no worker, no install offer - nothing else breaks */ });
+    });
+  }
 
   /* Safety fallback only if the engine did not abort */
   setTimeout(function () {
