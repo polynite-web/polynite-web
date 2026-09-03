@@ -353,7 +353,13 @@ body {
   font: 700 11px Arial, Helvetica, sans-serif;
   z-index: 110;
 }
-.debug-button.visible { display: block; }
+.debug-button.visible { display: block; opacity: 1; transition: opacity 600ms ease; }
+/* Faded, not removed. A build number is for diagnosing, and the moment it is
+   wanted is the moment something looks wrong - so it stays reachable rather
+   than disappearing: it comes back on hover, on touch, and it never fades at
+   all with ?dev or once anything has gone to the console as an error. */
+.debug-button.idle { opacity: 0.06; }
+.debug-button.idle:hover, .debug-button.idle:active { opacity: 1; }
 .debug-button.has-error {
   background: rgba(120, 0, 0, 0.84);
   border-color: rgba(255, 100, 100, 0.85);
@@ -739,6 +745,7 @@ body {
     if (kind === "error") {
       debugConsole.classList.add("has-error");
       debugButton.classList.add("visible", "has-error");
+      debugButton.classList.remove("idle");   /* something is wrong: be seen */
       /* The WebGPU panel is already a complete explanation: popping the error
          console on top of it only hides it. The button stays there, in red,
          for whoever wants the detail. */
@@ -1300,6 +1307,16 @@ body {
   };
 
   debugButton.classList.add("visible");
+  /* Eight seconds is long enough to read a version and short enough that it
+     stops sitting on the interface. ?dev pins it, and so does any error - see
+     the error path above, which also turns it red. */
+  (function () {
+    if (/(^|[?&])dev(=|&|$)/.test(location.search)) return;
+    setTimeout(function () {
+      if (!debugButton.classList.contains("has-error"))
+        debugButton.classList.add("idle");
+    }, 8000);
+  })();
   window.spinviewConsoleShow = consoleShow;
   window.spinviewConsoleHide = consoleHide;
   window.spinviewConsoleToggle = consoleToggle;
