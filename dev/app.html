@@ -2,8 +2,8 @@
 <html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
-<title>Polynite: Create, View and Optimize GLB Models Online</title>
-<meta name="description" content="Open a GLB file in your browser, look at it, and make it smaller. Polynite reduces polygons, compresses geometry and textures, and renders with WebGPU. Your files stay on your machine.">
+<title>GLB Viewer Online: View, Optimize and Share 3D Models - Polynite</title>
+<meta name="description" content="Open a GLB file in your browser, look at it, make it smaller, and share it with one short link. No upload, no account, no install. Rendered with WebGPU.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -17,8 +17,8 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="Polynite: Create, View and Optimize GLB Models Online">
-<meta property="og:description" content="Open a GLB file in your browser, look at it, and make it smaller. Polynite reduces polygons, compresses geometry and textures, and renders with WebGPU. Your files stay on your machine.">
+<meta property="og:title" content="GLB Viewer Online: View, Optimize and Share 3D Models - Polynite">
+<meta property="og:description" content="Open a GLB file in your browser, look at it, make it smaller, and share it with one short link. No upload, no account, no install. Rendered with WebGPU.">
 <meta property="og:url" content="https://polynite.io/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -26,8 +26,8 @@
 <meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Polynite: Create, View and Optimize GLB Models Online">
-<meta name="twitter:description" content="Open a GLB file in your browser, look at it, and make it smaller. Polynite reduces polygons, compresses geometry and textures, and renders with WebGPU. Your files stay on your machine.">
+<meta name="twitter:title" content="GLB Viewer Online: View, Optimize and Share 3D Models - Polynite">
+<meta name="twitter:description" content="Open a GLB file in your browser, look at it, make it smaller, and share it with one short link. No upload, no account, no install. Rendered with WebGPU.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 
 <script type="application/ld+json">
@@ -36,7 +36,7 @@
   "@type": "WebSite",
   "name": "Polynite",
   "url": "https://polynite.io/",
-  "description": "Create, view and optimize GLB models in your browser."
+  "description": "View, optimize and share GLB models in your browser."
 }
 </script>
 <script type="application/ld+json">
@@ -73,7 +73,8 @@
     "Reduce polygon count with an error driven simplifier",
     "Compress geometry with Meshopt and resample textures",
     "Compare the original and the optimized model side by side",
-    "Export an optimized GLB"
+    "Export an optimized GLB",
+    "Share a model with one short link, no upload and no account"
   ],
   "publisher": {
     "@type": "Organization",
@@ -151,21 +152,58 @@ body {
    cover everything, which meant the only thing anyone could read while the
    engine loaded was a spinner. The intro underneath is the better use of those
    two seconds, so the loader steps aside and just says what it is doing. */
+/* Everything the page shows before there is a model to look at, in one layer
+   so that it can LEAVE in one piece.
+   It used to leave in pieces: display:none on the loader and on the intro, at
+   the same instant, which on a load a little slower than a second reads as a
+   glitch - the text fades in at 1100ms and is then snatched away. That is the
+   "flash of SEO text". Nothing here is removed any more; the whole layer
+   dissolves, and the scene is behind it. */
+#startup {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;       /* the links inside take theirs back below */
+  opacity: 1;
+  transition: opacity 700ms ease;
+}
+#startup.gone { opacity: 0; }
+
+/* The dark the model comes out of. Under the intro and the spinner, over the
+   canvas - so the first committed frame is not a half-drawn buffer appearing
+   from nowhere but a fade from the app's own ground. */
+#curtain {
+  position: absolute;
+  inset: 0;
+  background: #0b0d12;
+  z-index: 1;
+}
+
 /* Dead centre, where a spinner belongs. Transparent, not an opaque sheet:
    the intro sits underneath in the lower part of the screen and the two never
    fight for the same pixels. */
 .app-loader {
-  position: fixed;
+  position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 12px;
   color: rgba(255, 255, 255, 0.42);
   font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   pointer-events: none;
   z-index: 50;
+}
+/* The message is placed UNDER the spinner rather than stacked with it in a
+   column. Stacked, a message that wrapped to two lines made the column taller
+   and pushed the wheel up - which is why it was centred on some loads and not
+   on others. Out of the flow, the wheel is centred on all of them. */
+#loaderText {
+  position: absolute;
+  top: calc(50% + 36px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0 1.25rem;
 }
 .app-spinner {
   width: 40px;
@@ -336,7 +374,8 @@ body {
    flash of text on a fast connection, and something to read on a slow one. */
 .seo-content {
   animation: intro-in 380ms ease 1100ms both;
-  position: fixed;
+  pointer-events: auto;       /* #startup gives them up; the links want them */
+  position: absolute;
   inset: auto 0 0 0;              /* the lower band, clear of the spinner */
   z-index: 5;
   display: flex;
@@ -369,12 +408,15 @@ body {
 </style>
 </head>
 <body translate="no" class="notranslate">
+<div id="startup">
+<div id="curtain"></div>
 <main class="seo-content" id="intro">
-  <h1>Create, view and optimize GLB models in your browser</h1>
+  <h1>View, optimize and share GLB models in your browser</h1>
 
   <p class="sub">
-    Polynite opens a <code>.glb</code> file, draws it with WebGPU,
-    and makes it smaller. The file is read by this page and stays on your machine.
+    Polynite opens a <code>.glb</code> file, draws it with WebGPU, makes it smaller,
+    and gives you a short link to send it to anyone. The file is read by this page
+    and stays on your machine.
   </p>
 
   <h2>What it does</h2>
@@ -384,6 +426,8 @@ body {
     <li>Reduce the polygon count with an error driven simplifier that respects UV seams.</li>
     <li>Compress geometry with Meshopt and resample oversized textures.</li>
     <li>Compare the original and the optimized model side by side before exporting.</li>
+    <li>Share a model with one short link. Whoever opens it sees it in their browser,
+        lit and framed the way you left it, with nothing to install.</li>
   </ul>
 
   <p>Drop a model into the window to begin, or pick one of the bundled examples.</p>
@@ -399,6 +443,7 @@ body {
 <div class="app-loader" id="loader">
   <div class="app-spinner"></div>
   <div id="loaderText">Loading engine...</div>
+</div>
 </div>
 <div class="install-chip" id="installChip">
   <span>Install Polynite on this device</span>
@@ -767,12 +812,17 @@ body {
     if (loaderHidden) return;
     if (engineAborted) return;
     loaderHidden = true;
-    if (loader) loader.style.display = "none";
-    /* The intro goes with it. It is not decoration to be swept away: it is what
-       the page says while there is nothing to look at yet, and the engine's
-       first committed frame is the moment there is. */
-    var intro = document.getElementById("intro");
-    if (intro) intro.style.display = "none";
+    /* One class, one fade. The intro is not decoration to be swept away: it is
+       what the page says while there is nothing to look at yet, and the first
+       committed frame is the moment there is - so it dissolves INTO the model
+       rather than being cut off mid-sentence.
+       Removed from the document only once the fade is over: it is already
+       pointer-events:none, so it is out of the way long before that. */
+    var startup = document.getElementById("startup");
+    if (startup) {
+      startup.classList.add("gone");
+      setTimeout(function () { startup.style.display = "none"; }, 900);
+    }
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
