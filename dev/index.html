@@ -527,8 +527,23 @@ body {
       else debugConsole.appendChild(devInfoEl);
     }
     var flags = String(location.search || "").replace(/^\?/, "");
-    var scr = window.innerWidth + "x" + window.innerHeight + " css | dpr " +
-              (window.devicePixelRatio || 1);
+    /* THREE FACTS, and they were being collapsed into a wrong one.
+       The CSS size is what layout works in. The NATIVE size is what the panel
+       of glass has - what somebody means by "my phone is 1080". What we
+       actually draw is smaller on purpose: dpr is capped for the fragment
+       cost (see the gpu-bootstrap block below), and reporting the cap as if it
+       were the device's ratio hid both that the screen has more pixels and
+       that we chose not to use them. */
+    var cssW = window.innerWidth, cssH = window.innerHeight;
+    var dprReal = window.__pnDprReal || window.devicePixelRatio || 1;
+    var dprUsed = window.devicePixelRatio || 1;
+    var px = function (r) {
+      return Math.round(cssW * r) + "x" + Math.round(cssH * r);
+    };
+    var scr = cssW + "x" + cssH + " css | " + px(dprReal) + " native";
+    if (dprReal !== 1) scr += " | dpr " + (Math.round(dprReal * 100) / 100);
+    var render = px(dprUsed) + " | dpr " + (Math.round(dprUsed * 100) / 100) +
+                 (dprUsed < dprReal ? " (capped, ?dpr=0 to lift)" : "");
     var rows = devMode ? [
       ["engine",  "<b>" + devEsc(devInfo.engine) + "</b> — " + devEsc(devInfo.backend)],
       ["runtime", devEsc(devInfo.runtime || "not reported yet")],
@@ -540,6 +555,7 @@ body {
                     (window.__spinBuildBackend ? " (backend.js)"
                                                : " (backend.js absent -> assumed)"))],
       ["screen",  devEsc(scr)],
+      ["render",  devEsc(render)],
       ["flags",   devEsc(flags || "none")],
       ["UA",      devEsc(navigator.userAgent)]
     ] : [
@@ -549,6 +565,7 @@ body {
       ["version",  devEsc(shownVersion())],
       ["graphics", devEsc(devInfo.api)],
       ["display",  devEsc(scr)],
+      ["render",   devEsc(render)],
       ["device",   devEsc(navigator.userAgent)]
     ];
     var html = "", i;
@@ -874,10 +891,19 @@ body {
        different places and telling someone the wrong one is worse than
        telling them nothing. Coarse on purpose - touch vs pointer. */
     window.__pnInstallHint = function () {
-      if (iosSafari()) return "Share, then Add to Home Screen.";
+      /* Short enough to be read at a glance, because it is now shown only
+         when somebody presses the row asking for it - a sentence was the
+         right shape when it sat there permanently and had to explain its own
+         presence. Two taps in one
+         menu.
+         ASCII ONLY. These strings are drawn by the HUD's own font atlas, not
+         by the page, and an arrow is U+2192 - outside the Latin-1 range the
+         atlas is built from. A character the atlas has no glyph for is a box,
+         and a box in a hint is worse than the extra word. */
+      if (iosSafari()) return "Share, then Add to Home Screen";
       var touch = (navigator.maxTouchPoints || 0) > 0;
-      if (touch) return "Browser menu, then Install app or Add to Home screen.";
-      return "The install icon at the right of the address bar, or the browser menu.";
+      if (touch) return "Browser menu, then Install app";
+      return "Install icon in the address bar";
     };
 
     window.__pnInstall = function () {
@@ -1238,6 +1264,11 @@ body {
     var real = window.devicePixelRatio || 1;
     var m = /[?&]dpr=([0-9.]+)/.exec(window.location.search);
     var cap = m ? parseFloat(m[1]) : 2;
+    /* KEPT, because the getter below is about to make it unreachable. Every
+       later reader of devicePixelRatio - including the panel that reports the
+       display to a user - would otherwise see the cap and call it the device's
+       own ratio, which is how "1080-wide phone" came out as "dpr 2". */
+    window.__pnDprReal = real;
     if (cap > 0 && real > cap) {
       try {
         Object.defineProperty(window, "devicePixelRatio", {
