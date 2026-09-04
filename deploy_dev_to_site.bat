@@ -91,4 +91,4 @@ echo  [polynite] DEPLOY FAILED.
 
 :done
 endlocal
-pause
+
