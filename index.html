@@ -107,11 +107,21 @@
     "www.polynite.io": "https://api.polynite.io",
     "spinview.app":    "https://api.spinview.app"
   };
-  var local = location.hostname === "localhost" ||
-              location.hostname === "127.0.0.1" ||
-              location.hostname === "::1";
+  var h = location.hostname;
+  var local = h === "localhost" || h === "127.0.0.1" || h === "::1";
+  /* A PHONE ON THE DESK IS ALSO DEVELOPMENT.
+     Testing on a real device means loading this page from the machine's LAN
+     address, and that hostname is neither localhost nor a known site - so the
+     account, and with it Share, simply switched itself off, on the one device
+     the touch work is for. The log said so in one line nobody was reading:
+     "no __pnApiBase configured - account feature is off".
+     The dev Worker is on the same machine as the page, so the API is this
+     same host on its own port. localhost would be the PHONE's localhost,
+     which is nothing. */
+  var lan = /^10\.|^192\.168\.|^172\.(1[6-9]|2\d|3[01])\.|\.local$/.test(h);
   window.__pnApiBase = local ? "http://localhost:8787"
-                             : (PN_API_SITES[location.hostname] || "");
+                    : lan   ? location.protocol + "//" + h + ":8787"
+                            : (PN_API_SITES[h] || "");
 })();
 </script>
 <script src="backend.js"></script>
