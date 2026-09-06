@@ -88,11 +88,9 @@ goto :done
 
 :fail
 echo  [polynite] DEPLOY FAILED.
-
-git.exe push --progress  -- "origin" main:main
+git add -A && git commit -m "update"
+git push --progress  -- "origin" main:main
 :done
-
-
 
 endlocal
 
