@@ -65,7 +65,18 @@ REM a question no relative URL can answer once the site sits at a domain root.
 
 REM Bump the SITE's own version so version.js cache-busts app.js and app.wasm
 REM for everyone still holding the old ones. Seeds itself when missing.
-if exist "%DST%\version_inc.bat" call "%DST%\version_inc.bat"
+set "VERSION=unknown"
+
+if exist "%DST%\version_inc.bat" (
+    call "%DST%\version_inc.bat"
+
+    if exist "%DST%\version.txt" (
+        set /p VERSION=<"%DST%\version.txt"
+    )
+)
+
+echo [polynite] Version: %VERSION%
+
 
 echo.
 echo  [polynite] Deployed.
@@ -82,16 +93,18 @@ echo.
 echo  Then commit and push polynite-web to publish.
 goto :done
 
+
+:done
+git add -A
+git commit -m "Deploy Polynite v%VERSION%"
+git push --progress -- "origin" main:main
+endlocal
+
 :cancel
 echo  [polynite] Cancelled. Nothing was copied.
-goto :done
+endlocal
 
 :fail
 echo  [polynite] DEPLOY FAILED.
-
-:done
-git add -A && git commit -m "update"
-git push --progress  -- "origin" main:main
-endlocal
 
 pause
