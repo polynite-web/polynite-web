@@ -6,11 +6,14 @@ REM ###############################################################
 REM  Publishes dev\ over the ROOT of polynite-web, and a light copy
 REM  of the same build into web\.
 REM
-REM  web\ NEVER gets models\, whatever this is called with. The root
-REM  takes them on request - "models" as the first argument - because
-REM  the site serves them; web\ is the app on its own and models\ is
-REM  nearly two gigabytes, which is not a thing to put in a git commit
-REM  once, let alone once per release.
+REM  web\ takes the models that Cloudflare Pages will actually accept -
+REM  25 MiB per file, and it refuses the deployment over that - and
+REM  then gets an index.txt GENERATED FROM WHAT LANDED. Copying the
+REM  original index would list 45 models that are not there: a menu
+REM  full of dead entries, which is worse than a short one.
+REM
+REM  The root is not filtered. It has no such limit, and it is the
+REM  copy that holds everything.
 REM ###############################################################
 
 set "SRC=%~dp0dev"
@@ -31,7 +34,7 @@ echo  Deploying   %SRC%
 echo         to   %~dp0
 echo.
 echo  Copying: %WHAT%
-echo         and a copy into web\ - never with models\
+echo         and a copy into web\ - models under 25 MiB only
 echo  Always excluded: version.txt, tier.txt
 echo.
 echo  Files removed from dev\ are NOT deleted here - this copies, it does not
@@ -87,11 +90,50 @@ set "WEB=%~dp0web"
 if not exist "%WEB%" mkdir "%WEB%"
 
 echo.
-echo  [polynite] Copying into web\ (no models)...
+echo  [polynite] Copying into web\ ...
 
 robocopy "%SRC%" "%WEB%" /E /XD "%SRC%\models" "%SRC%\.git" /XF version.txt tier.txt /XJ /NFL /NDL /NJH /R:1 /W:1
 
 if errorlevel 8 goto :fail
+
+REM ---------------------------------------------------------------
+REM The models Pages will take: 25 MiB each, no more.
+REM
+REM 26214400 is the limit itself, not a margin under it - a file
+REM exactly that size is accepted, and guessing lower would drop
+REM models for nothing. It is written once, here.
+REM
+REM index.txt is EXCLUDED from the copy and rebuilt below. Copied,
+REM it would describe the folder it came from rather than the one it
+REM is in, and every model it names that did not fit would be a row
+REM in the menu that fails when pressed.
+REM ---------------------------------------------------------------
+
+echo  [polynite] Models under 25 MiB into web\models\ ...
+
+robocopy "%SRC%\models" "%WEB%\models" /E /MAX:26214400 /XF index.txt /XJ /NFL /NDL /NJH /R:1 /W:1
+
+if errorlevel 8 goto :fail
+
+REM ---------------------------------------------------------------
+REM index.txt, written from what is actually there.
+REM
+REM "<name> <bytes>", the format the scanner reads with strrchr on a
+REM space - so the SIZE is the last field and a name may contain
+REM spaces, which one of these does.
+REM
+REM PowerShell rather than a for loop: a filename here contains
+REM parentheses, and those close a batch block from inside a
+REM redirect. WriteAllLines also writes UTF-8 with no BOM, where
+REM Set-Content -Encoding utf8 would put three bytes in front of the
+REM first filename and the first model would go missing.
+REM ---------------------------------------------------------------
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$d='%WEB%\models'; $l=@(Get-ChildItem -Path (Join-Path $d '*') -Include *.glb,*.gltf -File | Sort-Object Name | ForEach-Object { $_.Name + ' ' + $_.Length }); [IO.File]::WriteAllLines((Join-Path $d 'index.txt'), $l); Write-Host ('  [polynite] web index: ' + $l.Count + ' models')"
+
+if errorlevel 1 (
+    echo  WARNING: could not write web\models\index.txt - Examples will be empty.
+)
 
 REM The same two files the root writes for itself, so the copy is not a
 REM build that quietly believes it is something else.
@@ -138,9 +180,9 @@ if not exist "%WEB%\app.js" (
     echo  WARNING: web\app.js is MISSING - the copy into web\ did not land.
 )
 
-if exist "%WEB%\models" (
-    echo  WARNING: web\models exists. It is never copied there; something put
-    echo           it in by hand, and it is about two gigabytes of git.
+if not exist "%WEB%\models\index.txt" (
+    echo  WARNING: web\models\index.txt missing - Examples will be empty on the
+    echo           Pages deployment, which serves web\.
 )
 
 
