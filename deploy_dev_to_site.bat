@@ -3,7 +3,14 @@ setlocal
 title Polynite: deploy dev -> site
 
 REM ###############################################################
-REM  Publishes dev\ over the ROOT of polynite-web.
+REM  Publishes dev\ over the ROOT of polynite-web, and a light copy
+REM  of the same build into web\.
+REM
+REM  web\ NEVER gets models\, whatever this is called with. The root
+REM  takes them on request - "models" as the first argument - because
+REM  the site serves them; web\ is the app on its own and models\ is
+REM  nearly two gigabytes, which is not a thing to put in a git commit
+REM  once, let alone once per release.
 REM ###############################################################
 
 set "SRC=%~dp0dev"
@@ -24,6 +31,7 @@ echo  Deploying   %SRC%
 echo         to   %~dp0
 echo.
 echo  Copying: %WHAT%
+echo         and a copy into web\ - never with models\
 echo  Always excluded: version.txt, tier.txt
 echo.
 echo  Files removed from dev\ are NOT deleted here - this copies, it does not
@@ -64,6 +72,35 @@ echo  [polynite] Version: %VERSION%
 
 
 REM ---------------------------------------------------------------
+REM The same build, into web\, without models\
+REM
+REM After the version bump on purpose: version.txt is written by it,
+REM and the two copies saying different versions would be a bug that
+REM only shows up in a bug report weeks later.
+REM
+REM Copies, like the one above - it does not mirror. Nothing already
+REM in web\ is destroyed by a mistake in an exclusion list.
+REM ---------------------------------------------------------------
+
+set "WEB=%~dp0web"
+
+if not exist "%WEB%" mkdir "%WEB%"
+
+echo.
+echo  [polynite] Copying into web\ (no models)...
+
+robocopy "%SRC%" "%WEB%" /E /XD "%SRC%\models" "%SRC%\.git" /XF version.txt tier.txt /XJ /NFL /NDL /NJH /R:1 /W:1
+
+if errorlevel 8 goto :fail
+
+REM The same two files the root writes for itself, so the copy is not a
+REM build that quietly believes it is something else.
+>"%WEB%\tier.txt" echo release
+
+if exist "%DST%\version.txt" copy /y "%DST%\version.txt" "%WEB%\version.txt" >nul
+
+
+REM ---------------------------------------------------------------
 REM Sanity checks
 REM ---------------------------------------------------------------
 
@@ -95,6 +132,15 @@ if not exist "%DST%\CNAME" (
 
 if not exist "%DST%\models\index.txt" (
     echo  WARNING: models\index.txt missing - run this again with: models
+)
+
+if not exist "%WEB%\app.js" (
+    echo  WARNING: web\app.js is MISSING - the copy into web\ did not land.
+)
+
+if exist "%WEB%\models" (
+    echo  WARNING: web\models exists. It is never copied there; something put
+    echo           it in by hand, and it is about two gigabytes of git.
 )
 
 
