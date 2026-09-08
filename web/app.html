@@ -289,6 +289,19 @@ body {
   font-size: 12.5px; color: #cfcfd8;
   background: rgba(255,255,255,.06); padding: 1px 5px; border-radius: 4px;
 }
+.gpu-notice-reload {
+  display: block;
+  margin: 18px auto 0;
+  padding: 10px 22px;
+  font: inherit;
+  font-size: 15px;
+  color: #eaf1ff;
+  background: #2b62d9;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.gpu-notice-reload:hover { background: #3a74ee; }
 .gpu-notice-detail {
   margin-top: 22px; padding-top: 14px;
   border-top: 1px solid rgba(255,255,255,.09);
@@ -1060,6 +1073,10 @@ body {
     gl_device: "Le contexte WebGL 2 a ete obtenu, mais le moteur n'a pas pu initialiser son rendu. C'est generalement le pilote graphique.",
     dl: "Le fichier du moteur n'a pas pu etre recupere. Verifie ta connexion, puis recharge la page.",
     title_dl: "Le moteur n'a pas pu etre telecharge",
+    lost_title: "Le rendu s'est interrompu",
+    lost: "Le navigateur a retire le peripherique graphique en cours de route - le plus souvent par manque de memoire video, ou apres un plantage du pilote. Rien n'est perdu : ta scene est enregistree.",
+    lost_full: "La memoire video est epuisee : trop d'onglets 3D ouverts, ou un modele trop lourd pour cet appareil. Ferme les autres onglets, puis recharge.",
+    reload: "Recharger la page",
     detail: "Detail technique"
   } : {
     title: "WebGPU is required",
@@ -1078,6 +1095,10 @@ body {
     gl_device: "A WebGL 2 context was acquired but the engine could not initialize rendering. This usually points at the graphics driver.",
     dl: "The engine file could not be fetched. Check your connection, then reload the page.",
     title_dl: "The engine could not be downloaded",
+    lost_title: "Rendering stopped",
+    lost: "The browser took the graphics device away mid-session - usually out of video memory, or after a driver crash. Nothing is lost: your scene is saved.",
+    lost_full: "Video memory is exhausted: too many 3D tabs open, or a model too heavy for this device. Close the other tabs, then reload.",
+    reload: "Reload the page",
     detail: "Technical detail"
   };
 
@@ -1149,8 +1170,16 @@ body {
     var dt = document.createElement("div");
     dt.className = "gpu-notice-detail";
     dt.textContent = T.detail + " : " + userSafe(detail);
+    /* THE WAY OUT. A lost or refused device is nearly always a transient state
+       of the browser's GPU process, and a reload is the remedy - so the panel
+       offers it rather than leaving the visitor to guess. */
+    var rb = document.createElement("button");
+    rb.type = "button";
+    rb.className = "gpu-notice-reload";
+    rb.textContent = T.reload;
+    rb.onclick = function () { try { location.reload(); } catch (eX) {} };
     card.appendChild(h); card.appendChild(p);
-    card.appendChild(how); card.appendChild(ul); card.appendChild(dt);
+    card.appendChild(how); card.appendChild(ul); card.appendChild(dt); card.appendChild(rb);
     d.appendChild(card);
     document.body.appendChild(d);
     window.__spinNoticeShown = true;
@@ -1268,6 +1297,16 @@ body {
       /* The last panic line is the real cause of an abort: keep it so we can
          show it (dev) or reference it (user) instead of a bare "aborted". */
       if (/panic|fatal/i.test(_m)) window.__spinLastPanic = _m;
+      /* DEVICE LOST IS NOT AN ABORT. sokol logs it as an error and carries on
+         drawing into a device that no longer exists - every later call fails,
+         the console floods, and the visitor sees a frozen picture with no
+         explanation. Stop the loop and say what happened, once. */
+      if (!engineAborted && /wgpu: device lost/i.test(_m)) {
+        engineAborted = true;
+        try { if (Module.pauseMainLoop) Module.pauseMainLoop(); } catch (eP) {}
+        if (typeof gpuNotice === "function" && !document.querySelector(".gpu-notice"))
+          gpuNotice(/out of memory/i.test(_m) ? T.lost_full : T.lost, _m, T.lost_title);
+      }
     },
     setStatus: function (msg) {
       if (devMode && msg) console.info("[status]", msg);
