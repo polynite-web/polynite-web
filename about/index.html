@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
+<meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Polynite: a Browser Based 3D Toolkit</title>
 <meta name="description" content="What Polynite is, what it does today, and where it is going. A WebGPU tool for creating, viewing and optimizing GLB assets.">
@@ -99,6 +100,8 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <nav class="site" aria-label="Main">
       <ul>
     <li><a href="/">Viewer</a></li>
+    <li><a href="/create/">Create</a></li>
+    <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
     <li><a href="/reduce-polygons/">Reduce polygons</a></li>
@@ -110,8 +113,9 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>About Polynite</h1>
-  <p class="lead">Polynite is a 3D tool that runs in a browser tab. It opens GLB
-  files, renders them with WebGPU, and makes them smaller.</p>
+  <p class="lead">Polynite is a 3D tool that runs in a browser tab. It creates scenes
+  from a tap or a sentence, opens GLB files, renders them with WebGPU, and makes them
+  smaller.</p>
 
   <h2>Why a browser</h2>
   <p>Most people who need to check or shrink a GLB do not want to install anything, and the
@@ -122,6 +126,9 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 
   <h2>What it does today</h2>
   <div class="grid">
+    <div class="card"><h3>Create</h3><p>Procedural castles, towers, villages and forests in
+    one tap; shapes from a sentence with an AI model; a 3D model from text or a picture.
+    Move what you made by hand, export it as a GLB.</p></div>
     <div class="card"><h3>View</h3><p>GLB first, and debug views for normals, depth, UVs,
     clusters and level of detail. OBJ and text glTF open too.</p></div>
     <div class="card"><h3>Optimize</h3><p>Geometry quantization, Meshopt compression, texture
@@ -133,9 +140,10 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   </div>
 
   <h2>Where it is going</h2>
-  <p>Scene editing, animation and rigging, procedural generation, and AI assisted tools
-  through MCP are on the way. They are not here yet, and this page will say so until they
-  are.</p>
+  <p>An <a href="/mcp/">MCP server</a> already lets an agent such as Claude Code build in
+  the scene; it is a preview, and the page about it says what works. Animation and rigging
+  of what you create, and heavier creations that travel the same road as a big GLB, are
+  next. This page will say so as they land.</p>
 
   <h2>Your files</h2>
   <p>Models you open are read by the page and stay on your machine. Signing in is optional
@@ -152,6 +160,8 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   <div class="wrap">
     <ul>
     <li><a href="/">Viewer</a></li>
+    <li><a href="/create/">Create</a></li>
+    <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
     <li><a href="/reduce-polygons/">Reduce polygons</a></li>

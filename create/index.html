@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GLB Viewer: Open GLB Files Online | Polynite</title>
-<meta name="description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
-<link rel="canonical" href="https://polynite.io/glb-viewer/">
+<title>Create 3D Models Online, Free: From a Tap, a Sentence or a Picture | Polynite</title>
+<meta name="description" content="Make 3D scenes in your browser: procedural castles and villages in one tap, shapes from a text description, a full 3D model from text or a picture. Move it by hand, export a free GLB.">
+<link rel="canonical" href="https://polynite.io/create/">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -14,16 +14,16 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="GLB Viewer: Open GLB Files Online | Polynite">
-<meta property="og:description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
-<meta property="og:url" content="https://polynite.io/glb-viewer/">
+<meta property="og:title" content="Create 3D Models Online, Free: From a Tap, a Sentence or a Picture | Polynite">
+<meta property="og:description" content="Make 3D scenes in your browser: procedural castles and villages in one tap, shapes from a text description, a full 3D model from text or a picture. Move it by hand, export a free GLB.">
+<meta property="og:url" content="https://polynite.io/create/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GLB Viewer: Open GLB Files Online | Polynite">
-<meta name="twitter:description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
+<meta name="twitter:title" content="Create 3D Models Online, Free: From a Tap, a Sentence or a Picture | Polynite">
+<meta name="twitter:description" content="Make 3D scenes in your browser: procedural castles and villages in one tap, shapes from a text description, a full 3D model from text or a picture. Move it by hand, export a free GLB.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 <style>:root{
   --bg:#0b0d12; --bg2:#11141b; --line:#1e2430;
@@ -78,7 +78,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "@type": "ListItem",
       "position": 2,
       "name": "GLB viewer",
-      "item": "https://polynite.io/glb-viewer/"
+      "item": "https://polynite.io/create/"
     }
   ]
 }</script>
@@ -86,7 +86,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "GLB viewer",
-  "url": "https://polynite.io/glb-viewer/",
+  "url": "https://polynite.io/create/",
   "isPartOf": {
     "@type": "WebSite",
     "url": "https://polynite.io/"
@@ -101,9 +101,9 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <nav class="site" aria-label="Main">
       <ul>
     <li><a href="/">Viewer</a></li>
-    <li><a href="/create/">Create</a></li>
+    <li><a href="/create/" aria-current="page">Create</a></li>
     <li><a href="/mcp/">MCP</a></li>
-    <li><a href="/glb-viewer/" aria-current="page">GLB viewer</a></li>
+    <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
     <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
@@ -113,52 +113,65 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 </header>
 <main>
   <div class="wrap">
-  <h1>GLB viewer for the browser</h1>
-  <p class="lead">Drop a <code>.glb</code> file into the page and look at it.
-  Nothing is uploaded, and there is no account to create before you can see your model.</p>
+  <h1>Create 3D models in your browser, free</h1>
+  <p class="lead">Polynite makes a 3D scene from a tap, a sentence or a picture, in a browser
+  tab, with nothing to install. What you make can be moved by hand, lit, shared with one link
+  and exported as a <code>.glb</code>.</p>
 
-  <p><a class="cta" href="/">Open the viewer</a></p>
+  <p><a class="cta" href="/">Open Polynite and press Create</a></p>
 
-  <h2>What you can look at</h2>
-  <p>Polynite loads the file, builds a cluster hierarchy from the geometry, and renders it
-  with WebGPU. Alongside the model you get the numbers that usually matter when a file
-  misbehaves: how many triangles the source contains, how many are actually drawn at the
-  current camera distance, the file size, and which materials and textures came through.</p>
+  <h2>Three ways to create</h2>
+  <p><strong>Procedural, in one tap.</strong> A castle with its walls, towers, keep and village;
+  a tower; a village around its well; a forest of round trees, pines and rocks. Every tap makes
+  a different one: the walls are stone or brick, the roofs red, slate or green, the village
+  denser or sparser. It costs nothing and needs no account. It is also the fastest way to see
+  what the materials and the light do before you write a word.</p>
 
-  <p>There are debug views for normals, depth, UVs, albedo, cluster boundaries and level of
-  detail, which is often the quickest way to find out why an import looks wrong. A model
-  with flipped normals or a missing UV set announces itself immediately in those views.</p>
+  <p><strong>Shapes from a sentence.</strong> Describe what you want - a lighthouse on rocks,
+  a table with four chairs, a small harbour - and an AI model builds it out of primitives:
+  cubes, spheres, cylinders, cones, capsules and planes, each with a colour and a material.
+  Polynite checks every action the model proposes and refuses what would not stand, so the
+  model corrects itself turn after turn. It works through your Pollinations account.</p>
 
-  <h2>Formats</h2>
-  <p>GLB is the format Polynite is built around, and the one everything here is tuned for.
-  Wavefront <code>.obj</code> and text glTF also open, and Polynite's own
-  <code>.wmesh</code> cache loads instantly once a model has been prepared. Draco and
-  Meshopt compressed geometry are handled on load.</p>
+  <p><strong>A 3D model from text or a picture.</strong> Trellis, through the same account,
+  turns a description or a photograph into a real mesh with textures. The form says what it
+  costs in pollen before you press. The result opens in the viewer like any GLB, and can be
+  shrunk, shared and exported from there.</p>
 
-  <h2>Why it stays on your machine</h2>
-  <p>The file is read by the page itself. That is not a privacy slogan, it is how the tool
-  is built: there is no server in the path between the file picker and the renderer. A
-  client model or an unreleased asset can be inspected without leaving your computer.
-  If you sign in and publish a model to your own library, that is a separate, explicit step.</p>
+  <h2>Materials and light</h2>
+  <p>Every object can wear a material with real relief: stone, brick, wood, tile, leaf, grass,
+  cobble, marble, metal or sand. They are generated in the page - no texture is downloaded -
+  and the sun, the lamps and the mirror floor read them the way they read a file's own maps.
+  Everything you create is in metres, so a two metre wall is a two metre wall.</p>
+
+  <h2>Edit with your hands</h2>
+  <p>Tap an object and two handles appear: drag the centre to move it on the ground, drag the
+  edge to turn and resize it. Every gesture is one step of undo. A loaded GLB is an object
+  like the others - you can put a castle beside it, or stand it on a table you just made.</p>
+
+  <h2>Export a GLB, free</h2>
+  <p>Anything you create can be written as a standard <code>.glb</code> - one mesh with normals,
+  UVs and vertex colours - and opened in Blender, Unity, Godot, three.js or any glTF viewer.
+  Bake it first and the same file is loaded back through Polynite's cluster builder, so a
+  creation of hundreds of thousands of triangles stays smooth on a phone.</p>
+
+  <h2>Let an agent build</h2>
+  <p>The same actions are open to programs. Claude Code, or any MCP client, can create, move
+  and describe objects in your scene through the <a href="/mcp/">Polynite MCP server</a>.</p>
 
   <h2>Requirements</h2>
-  <p>A browser with WebGPU. That means a recent Chrome, Edge, Firefox or Safari, over HTTPS.
-  If WebGPU is unavailable, the page says which of the two is missing, the browser support
-  or the secure context, instead of showing a blank canvas.</p>
-
-  <h2>Next</h2>
-  <p>Once the model is open, the same page can shrink it. See
-  <a href="/glb-optimizer/">the GLB optimizer</a> and
-  <a href="/reduce-polygons/">reducing polygons</a>.</p>
+  <p>A browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, over HTTPS. The
+  procedural creations need nothing else. The AI ways need a free Pollinations account,
+  and the 3D model costs pollen.</p>
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
     <li><a href="/">Viewer</a></li>
-    <li><a href="/create/">Create</a></li>
+    <li><a href="/create/" aria-current="page">Create</a></li>
     <li><a href="/mcp/">MCP</a></li>
-    <li><a href="/glb-viewer/" aria-current="page">GLB viewer</a></li>
+    <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
     <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>

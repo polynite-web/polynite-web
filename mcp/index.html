@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reduce Polygons in a 3D Model Online | Polynite</title>
-<meta name="description" content="Cut the triangle count of a GLB model in the browser, compare the result against the original, and export the version you want.">
-<link rel="canonical" href="https://polynite.io/reduce-polygons/">
+<title>Polynite MCP Server: Let Claude Code Build in a 3D Scene | Polynite</title>
+<meta name="description" content="Connect Claude Code or any MCP client to Polynite and let an agent create, move and describe 3D objects in a live WebGPU scene. Preview, free, JSON actions in metres.">
+<link rel="canonical" href="https://polynite.io/mcp/">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -14,16 +14,16 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="Reduce Polygons in a 3D Model Online | Polynite">
-<meta property="og:description" content="Cut the triangle count of a GLB model in the browser, compare the result against the original, and export the version you want.">
-<meta property="og:url" content="https://polynite.io/reduce-polygons/">
+<meta property="og:title" content="Polynite MCP Server: Let Claude Code Build in a 3D Scene | Polynite">
+<meta property="og:description" content="Connect Claude Code or any MCP client to Polynite and let an agent create, move and describe 3D objects in a live WebGPU scene. Preview, free, JSON actions in metres.">
+<meta property="og:url" content="https://polynite.io/mcp/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reduce Polygons in a 3D Model Online | Polynite">
-<meta name="twitter:description" content="Cut the triangle count of a GLB model in the browser, compare the result against the original, and export the version you want.">
+<meta name="twitter:title" content="Polynite MCP Server: Let Claude Code Build in a 3D Scene | Polynite">
+<meta name="twitter:description" content="Connect Claude Code or any MCP client to Polynite and let an agent create, move and describe 3D objects in a live WebGPU scene. Preview, free, JSON actions in metres.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 <style>:root{
   --bg:#0b0d12; --bg2:#11141b; --line:#1e2430;
@@ -77,21 +77,21 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Reduce polygons",
-      "item": "https://polynite.io/reduce-polygons/"
+      "name": "GLB viewer",
+      "item": "https://polynite.io/mcp/"
     }
   ]
 }</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Reduce polygons",
-  "url": "https://polynite.io/reduce-polygons/",
+  "name": "GLB viewer",
+  "url": "https://polynite.io/mcp/",
   "isPartOf": {
     "@type": "WebSite",
     "url": "https://polynite.io/"
   },
-  "description": "Reduce the triangle count of a 3D model in the browser and compare the result with the original."
+  "description": "Open and inspect GLB files in the browser with WebGPU."
 }</script>
 </head>
 <body>
@@ -102,10 +102,10 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       <ul>
     <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
-    <li><a href="/mcp/">MCP</a></li>
+    <li><a href="/mcp/" aria-current="page">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/" aria-current="page">Reduce polygons</a></li>
+    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
       </ul>
     </nav>
@@ -113,36 +113,47 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 </header>
 <main>
   <div class="wrap">
-  <h1>Reduce the polygon count of a model</h1>
-  <p class="lead">A scan or a CAD export can arrive with millions of triangles for a shape
-  that a few thousand would describe. Reducing it is easy. Reducing it without wrecking the
-  silhouette is the part that needs to be looked at.</p>
+  <h1>An MCP server for a 3D scene</h1>
+  <p class="lead">Polynite exposes what it builds with to programs: an agent such as Claude
+  Code can create objects, move them, read the scene back and correct itself, in the same
+  window you are looking at. It is a preview, and this page says what works today.</p>
 
-  <p><a class="cta" href="/">Open a model</a></p>
+  <p><a class="cta" href="/">Open Polynite, press Create, then Agent</a></p>
 
-  <h2>How the simplification works</h2>
-  <p>Polynite collapses edges by error, keeping the ones that carry the shape and dropping
-  the ones that do not. Boundaries and UV seams are treated as constraints, which is why the
-  texture usually still lines up after a heavy reduction. The target is expressed as a
-  proportion of the original, so the same setting behaves the same way on any model.</p>
+  <h2>What an agent can do</h2>
+  <ul>
+    <li><code>polynite_capabilities</code> - the grammar: ops, primitive types, materials, units.</li>
+    <li><code>polynite_describe</code> - every object with position, rotation, scale, colour and material, the selection, the lamps, the sun, the camera.</li>
+    <li><code>polynite_apply</code> - a batch of actions: create, set, move, rotate, scale, place on, duplicate, delete, group, camera, sun, lamps. All or nothing: a refused action refuses the batch and says why.</li>
+    <li><code>polynite_undo</code>, <code>polynite_redo</code>, <code>polynite_select</code>, <code>polynite_snapshot</code>, <code>polynite_load</code>.</li>
+    <li><code>polynite_bake</code> and <code>polynite_export</code> - the creation as a GLB file, loaded back as a model or just written.</li>
+  </ul>
 
-  <h2>Look before you commit</h2>
-  <p>Every reduction is a trade. The viewer draws the original and the reduced mesh in the
-  same frame, split by a line you can drag, so you can see exactly which details went. A
-  number in a dialog cannot tell you that the ear of a character disappeared at sixty
-  percent, but the split view can.</p>
+  <h2>Connect Claude Code</h2>
+  <p>On the desktop app, open the door in Create &gt; Agent, then:</p>
+  <pre><code>claude mcp add --transport http polynite http://127.0.0.1:8790/mcp</code></pre>
+  <p>Ask for a castle beside the model, or a table with chairs, and watch it appear. The
+  agent reads the scene back after every batch, including the sentence Polynite wrote for
+  each refused action, so a wrong move is corrected rather than repeated.</p>
 
-  <h2>Several steps instead of one</h2>
-  <p>If the model is going into a game or a configurator, one reduced mesh is rarely the
-  right answer. Polynite can build a series of steps from the same source and select between
-  them by screen size, so the triangle count follows the camera rather than being fixed once
-  and for all.</p>
+  <h2>On the web: a room</h2>
+  <p>A page cannot listen on a port, so the web app listens on a room: open the door and the
+  page shows a room name. A tool posts its requests to that room and the page answers them.
+  Nothing outside your window can reach the scene while the door is closed.</p>
 
-  <h2>When reduction is not the answer</h2>
-  <p>If the file is heavy and the mesh is already modest, the weight is in the textures.
-  Reducing triangles will do almost nothing. The
-  <a href="/glb-optimizer/">optimizer page</a> covers that case, and Polynite shows the
-  split between geometry and textures so you know which of the two you are fighting.</p>
+  <h2>The actions, in short</h2>
+  <pre><code>{"op":"create","id":"pedestal","t":"cube","p":[0,0.25,0],"s":[1.6,0.5,1.6],"c":"#c8c0b0","m":"stone"}
+{"op":"create","id":"ball","t":"sphere","p":[0,1,0],"s":0.9,"c":"#d02a20"}
+{"op":"place","id":"ball","on":"pedestal","side":"top"}
+{"op":"camera","frame":"all"}</code></pre>
+  <p>Units are metres and degrees, up is +Y, the floor is y = 0, primitives are one metre and
+  centred. The loaded GLB is the object <code>model</code> and can be moved and scaled like the
+  others.</p>
+
+  <h2>Status</h2>
+  <p>Preview. The desktop app and the web page both answer; the door is off by default and
+  carries no secret yet, so keep the room name to yourself. Heavy creations, materials in the
+  exported GLB and a shared server address are being worked on.</p>
   </div>
 </main>
 <footer class="site">
@@ -150,10 +161,10 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <ul>
     <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
-    <li><a href="/mcp/">MCP</a></li>
+    <li><a href="/mcp/" aria-current="page">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/" aria-current="page">Reduce polygons</a></li>
+    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
     </ul>
     <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>

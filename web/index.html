@@ -2,8 +2,9 @@
 <html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
-<title>GLB Viewer Online: View, Optimize and Share 3D Models - Polynite</title>
-<meta name="description" content="Open a GLB file in your browser, look at it, make it smaller, and share it with one short link. No upload, no account, no install. Rendered with WebGPU.">
+<meta name="google" content="notranslate">
+<title>Free GLB Viewer and 3D Creator Online: Create, Optimize, Share - Polynite</title>
+<meta name="description" content="Create 3D scenes from text or one-tap generators, open GLB files, reduce polygons and share with one link. Free, in your browser, no install, WebGPU. AI agents can build in your scene through MCP.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -17,8 +18,8 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="GLB Viewer Online: View, Optimize and Share 3D Models - Polynite">
-<meta property="og:description" content="Open a GLB file in your browser, look at it, make it smaller, and share it with one short link. No upload, no account, no install. Rendered with WebGPU.">
+<meta property="og:title" content="Free GLB Viewer and 3D Creator Online: Create, Optimize, Share - Polynite">
+<meta property="og:description" content="Create 3D scenes from text or one-tap generators, open GLB files, reduce polygons and share with one link. Free, in your browser, no install, WebGPU. AI agents can build in your scene through MCP.">
 <meta property="og:url" content="https://polynite.io/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -26,8 +27,8 @@
 <meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GLB Viewer Online: View, Optimize and Share 3D Models - Polynite">
-<meta name="twitter:description" content="Open a GLB file in your browser, look at it, make it smaller, and share it with one short link. No upload, no account, no install. Rendered with WebGPU.">
+<meta name="twitter:title" content="Free GLB Viewer and 3D Creator Online: Create, Optimize, Share - Polynite">
+<meta name="twitter:description" content="Create 3D scenes from text or one-tap generators, open GLB files, reduce polygons and share with one link. Free, in your browser, no install, WebGPU. AI agents can build in your scene through MCP.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 
 <script type="application/ld+json">
@@ -36,7 +37,7 @@
   "@type": "WebSite",
   "name": "Polynite",
   "url": "https://polynite.io/",
-  "description": "View, optimize and share GLB models in your browser."
+  "description": "Create, view, optimize and share 3D models (GLB) in your browser, free."
 }
 </script>
 <script type="application/ld+json">
@@ -59,7 +60,7 @@
   "url": "https://polynite.io/",
   "description": "A browser based 3D tool to open, inspect and optimize GLB models. Reduce polygons, compress geometry, resample textures and build levels of detail, rendered with WebGPU.",
   "applicationCategory": "DesignApplication",
-  "applicationSubCategory": "3D model viewer and optimizer",
+  "applicationSubCategory": "3D creator, model viewer and optimizer",
   "operatingSystem": "Any, requires a browser with WebGPU",
   "browserRequirements": "Requires WebGPU",
   "offers": {
@@ -68,6 +69,12 @@
     "priceCurrency": "USD"
   },
   "featureList": [
+    "Create 3D scenes in one tap with procedural generators: castle, tower, village, forest",
+    "Create 3D shapes from a text description with an AI model",
+    "Generate a 3D model from text or a picture (Trellis)",
+    "Let an AI agent such as Claude Code build in the scene through an MCP server",
+    "Procedural materials with relief: stone, brick, wood, tile, leaf, grass, cobble, marble, metal, sand",
+    "Export what you create as a GLB file, free",
     "Open GLB files, plus OBJ and text glTF",
     "Inspect triangles, materials, textures and level of detail",
     "Reduce polygon count with an error driven simplifier",
@@ -430,15 +437,24 @@ body {
 <div id="startup">
 <div id="curtain"></div>
 <main class="seo-content" id="intro">
-  <h1>View, optimize and share GLB models in your browser</h1>
+  <h1>Create, view, optimize and share 3D models in your browser</h1>
 
   <p class="sub">
-    Polynite opens a <code>.glb</code> file, draws it with WebGPU, makes it smaller,
-    and gives you a short link to send it to anyone. The file is read by this page
-    and stays on your machine.
+    Polynite makes 3D scenes from a tap or a sentence, opens a <code>.glb</code> file,
+    draws it with WebGPU, makes it smaller, and gives you a short link to send it to
+    anyone. Free, nothing to install. What you open stays on your machine.
   </p>
 
-  <h2>What it does</h2>
+  <h2>Create</h2>
+  <ul>
+    <li>One tap: a castle, a tower, a village or a forest, different every time, with stone, brick, wood, tile and grass materials.</li>
+    <li>From words: describe a scene and an AI model builds it out of shapes you can then move by hand.</li>
+    <li>A real 3D model from text or a picture, through your Pollinations account.</li>
+    <li>From an agent: Claude Code and other MCP clients can build in your scene through the <a href="/mcp/">Polynite MCP server</a>.</li>
+    <li>Export what you made as a GLB, free.</li>
+  </ul>
+
+  <h2>View, optimize, share</h2>
   <ul>
     <li>Open GLB files, with no upload and no account. OBJ and text glTF are read too.</li>
     <li>Inspect triangles, materials, textures, normals, UVs and level of detail.</li>
@@ -452,6 +468,8 @@ body {
   <p>Drop a model into the window to begin, or pick one of the bundled examples.</p>
 
   <nav aria-label="Polynite tools">
+    <a href="/create/">Create 3D models</a>
+    <a href="/mcp/">MCP server</a>
     <a href="/glb-viewer/">GLB viewer</a>
     <a href="/glb-optimizer/">GLB optimizer</a>
     <a href="/reduce-polygons/">Reduce polygons</a>
