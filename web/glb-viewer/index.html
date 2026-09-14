@@ -115,15 +115,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Is my file uploaded?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The page reads the file itself; there is no server between the file picker and the renderer. A client model or an unreleased asset can be inspected without leaving your computer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which formats open?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "GLB first, and everything is tuned for it. Wavefront .obj and text glTF open too, and Draco or Meshopt compressed geometry is handled on load."
+        "text": "No. The page reads it; there is no server in the path."
       }
     },
     {
@@ -131,7 +123,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Is there a size limit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only your browser's memory. There is no server limit, because there is no server in the path."
+        "text": "Only your browser's memory."
       }
     },
     {
@@ -139,7 +131,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Does it work on a phone?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, on a recent Chrome or Safari with WebGPU. The page says so plainly when a browser cannot, instead of showing a blank canvas."
+        "text": "Yes, on a recent Chrome or Safari with WebGPU."
       }
     }
   ]
@@ -165,59 +157,34 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>GLB viewer for the browser</h1>
-  <p class="lead">Drop a .glb on the page and it is on screen: lit, turning, with every number that matters next to it. No upload, no account, no waiting for a queue.</p>
+  <p class="lead">Drop a <code>.glb</code> on the page. It is on screen: lit, turning, with the numbers next to it. No upload, no account.</p>
 
   <p class="ctas"><a class="cta" href="/">Open the viewer</a><a class="cta ghost" href="/free-glb-models/">Try a free model</a></p>
 
-  <h2>Show it in one link</h2>
-  <p>Once a model is open, one link carries it, with the light and the framing you chose, to anyone
-  with a browser. A client sees exactly what you see, on a phone, without installing anything.</p>
-
-
-  <h2>What you can look at</h2>
-  <p>Polynite loads the file, builds a cluster hierarchy from the geometry, and renders it
-  with WebGPU. Alongside the model you get the numbers that usually matter when a file
-  misbehaves: how many triangles the source contains, how many are actually drawn at the
-  current camera distance, the file size, and which materials and textures came through.</p>
-
-  <p>There are debug views for normals, depth, UVs, albedo, cluster boundaries and level of
-  detail, which is often the quickest way to find out why an import looks wrong. A model
-  with flipped normals or a missing UV set announces itself immediately in those views.</p>
+  <h2>What you see</h2>
+  <p>Triangles in the file and on screen, file size, materials, textures. Debug views for normals, depth, UVs, clusters and level of detail: a flipped normal or a missing UV shows at once.</p>
 
   <h2>Formats</h2>
-  <p>GLB is the format Polynite is built around, and the one everything here is tuned for.
-  Wavefront <code>.obj</code> and text glTF also open, and Polynite's own
-  <code>.wmesh</code> cache loads instantly once a model has been prepared. Draco and
-  Meshopt compressed geometry are handled on load.</p>
+  <p>GLB first. Wavefront <code>.obj</code> and text glTF too. Draco and Meshopt geometry handled on load.</p>
 
-  <h2>Why it stays on your machine</h2>
-  <p>The file is read by the page itself. That is not a privacy slogan, it is how the tool
-  is built: there is no server in the path between the file picker and the renderer. A
-  client model or an unreleased asset can be inspected without leaving your computer.
-  If you sign in and publish a model to your own library, that is a separate, explicit step.</p>
+  <h2>Show it in one link</h2>
+  <p>One link carries the model, the light and the framing to any browser, phone included.</p>
+
+  <h2>Then make it lighter</h2>
+  <p>The same page shrinks it: <a href="/glb-optimizer/">GLB optimizer</a>.</p>
 
   <h2>Requirements</h2>
-  <p>A browser with WebGPU. That means a recent Chrome, Edge, Firefox or Safari, over HTTPS.
-  If WebGPU is unavailable, the page says which of the two is missing, the browser support
-  or the secure context, instead of showing a blank canvas.</p>
-
-  <h2>Next</h2>
-  <p>Once the model is open, the same page can shrink it. See
-  <a href="/glb-optimizer/">the GLB optimizer</a> and
-  <a href="/reduce-polygons/">reducing polygons</a>.</p>
+  <p>A browser with WebGPU: recent Chrome, Edge, Firefox or Safari, over HTTPS.</p>
 
   <h2 class="faq-title">Questions people ask</h2>
   <div class="faq">
     <h3>Is my file uploaded?</h3>
-    <p>No. The page reads the file itself; there is no server between the file picker and the renderer. A client model or an unreleased asset can be inspected without leaving your computer.</p>
-    <h3>Which formats open?</h3>
-    <p>GLB first, and everything is tuned for it. Wavefront .obj and text glTF open too, and Draco or Meshopt compressed geometry is handled on load.</p>
+    <p>No. The page reads it; there is no server in the path.</p>
     <h3>Is there a size limit?</h3>
-    <p>Only your browser's memory. There is no server limit, because there is no server in the path.</p>
+    <p>Only your browser's memory.</p>
     <h3>Does it work on a phone?</h3>
-    <p>Yes, on a recent Chrome or Safari with WebGPU. The page says so plainly when a browser cannot, instead of showing a blank canvas.</p>
+    <p>Yes, on a recent Chrome or Safari with WebGPU.</p>
   </div>
-
   </div>
 </main>
 <footer class="site">
@@ -231,7 +198,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <li><a href="/about/">About</a></li>
     <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
+    <p><strong>Spin it. Share it. Remix it.</strong> Built in your browser. Sent as one link.</p>
   </div>
 </footer>
 </body>

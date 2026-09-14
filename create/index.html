@@ -115,7 +115,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Is it free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Creating procedurally, viewing, editing by hand, sharing and exporting a GLB are free, with no account. Generating shapes or a full model with AI goes through your own Pollinations account and costs its credits."
+        "text": "Yes. Creating, editing, sharing and exporting cost nothing and need no account. AI generation uses your own Pollinations credits."
       }
     },
     {
@@ -123,7 +123,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Do I need to install anything?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Polynite runs in a browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, on a computer or a phone."
+        "text": "No. A browser with WebGPU, on a computer or a phone."
       }
     },
     {
@@ -131,15 +131,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Can I download what I make?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Anything you create exports as a standard .glb that opens in Blender, Unity, Godot, three.js and any glTF viewer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where do my files go?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nowhere, unless you decide. A model you open is read by the page and stays on your machine. Sharing or publishing is a separate, explicit step, into a link or a repository you own."
+        "text": "Yes, as a standard .glb."
       }
     }
   ]
@@ -165,84 +157,47 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>Create 3D models in your browser, free</h1>
-  <p class="lead">A castle in one tap. A lighthouse from a sentence. A dragon from a picture. Polynite makes 3D scenes in a browser tab, with nothing to install, and turns what you make into one link anyone can open, spin and remix.</p>
+  <p class="lead">A castle in one tap. A lighthouse from a sentence. A dragon from a picture. Then one link: spin it, share it, remix it.</p>
 
   <p class="ctas"><a class="cta" href="/">Start creating</a><a class="cta ghost" href="/free-glb-models/">See what people make</a></p>
 
-  <h2>One link does the rest</h2>
-  <p>Every scene has a link. Send it and the other person gets the same model, the same light and
-  the same framing, live in their browser, with a <strong>Remix</strong> button under it. Publish it
-  and it joins the <a href="/free-glb-models/">gallery</a>, with its own page, for anyone to find. The
-  best thing you make today can be somebody else's starting point tonight.</p>
-
-
   <h2>Made with Polynite</h2>
-  <p class="lead">Four creations shared straight from the app, kept as their authors left them: the light,
-  the floor, the framing. Open one, spin it, remix it.</p>
+  <p class="lead">Shared from the app. Open one, spin it, remix it.</p>
   <div class="grid examples">
     <a href="https://share.polynite.io/8nFeVXI2pr"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=8nFeVXI2pr" width="1200" height="630" alt="A black dragon with glowing red eyes, wings spread, on a tiled floor in low light"><span>Dragon in the dark &middot; by glasstyping-beep</span></a>
     <a href="https://share.polynite.io/JhFlJTaMhu"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=JhFlJTaMhu" width="1200" height="630" alt="A cartoon beagle puppy standing on a checkered floor under a violet sky"><span>Puppy &middot; by glasstyping-beep</span></a>
     <a href="https://share.polynite.io/jPbTT9chVl"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=jPbTT9chVl" width="1200" height="630" alt="A small toy T-rex with yellow eyes on a blue tiled floor, lit from above"><span>Little T-rex &middot; by Black-Wolf-Legendary</span></a>
     <a href="https://share.polynite.io/4SWFJ47WNj"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=4SWFJ47WNj" width="1200" height="630" alt="A chocolate chip cookie on a checkered floor in a pool of warm light"><span>Cookie &middot; by Black-Wolf-Legendary</span></a>
   </div>
-  <p><a href="/free-glb-models/">More, published by their creators, in the free models gallery &rarr;</a></p>
+  <p><a href="/free-glb-models/">More in the free models gallery &rarr;</a></p>
 
   <h2>Three ways to create</h2>
-  <p><strong>Procedural, in one tap.</strong> A castle with its walls, towers, keep and village;
-  a tower; a village around its well; a forest of round trees, pines and rocks. Every tap makes
-  a different one: the walls are stone or brick, the roofs red, slate or green, the village
-  denser or sparser. It costs nothing and needs no account. It is also the fastest way to see
-  what the materials and the light do before you write a word.</p>
+  <p><strong>One tap.</strong> Castles, towers, villages, forests. Tap again for another.<br><strong>One sentence.</strong> Say it, shapes appear.<br><strong>One picture.</strong> A full 3D model from text or an image.</p>
 
-  <p><strong>Shapes from a sentence.</strong> Describe what you want - a lighthouse on rocks,
-  a table with four chairs, a small harbour - and an AI model builds it out of primitives:
-  cubes, spheres, cylinders, cones, capsules and planes, each with a colour and a material.
-  Polynite checks every action the model proposes and refuses what would not stand, so the
-  model corrects itself turn after turn. It works through your Pollinations account.</p>
+  <h2>Edit by hand</h2>
+  <p>Tap an object: drag it, turn it, scale it. Give it stone, brick, wood, grass, water, with real relief.</p>
 
-  <p><strong>A 3D model from text or a picture.</strong> Trellis, through the same account,
-  turns a description or a photograph into a real mesh with textures. The form says what it
-  costs in pollen before you press. The result opens in the viewer like any GLB, and can be
-  shrunk, shared and exported from there.</p>
-
-  <h2>Materials and light</h2>
-  <p>Every object can wear a material with real relief: stone, brick, wood, tile, leaf, grass,
-  cobble, marble, metal or sand. They are generated in the page - no texture is downloaded -
-  and the sun, the lamps and the mirror floor read them the way they read a file's own maps.
-  Everything you create is in metres, so a two metre wall is a two metre wall.</p>
-
-  <h2>Edit with your hands</h2>
-  <p>Tap an object and two handles appear: drag the centre to move it on the ground, drag the
-  edge to turn and resize it. Every gesture is one step of undo. A loaded GLB is an object
-  like the others - you can put a castle beside it, or stand it on a table you just made.</p>
+  <h2>One link does the rest</h2>
+  <p>Send the link. Same model, same light, same framing, live, with a <strong>Remix</strong> button. Publish it and it gets its own page in the <a href="/free-glb-models/">gallery</a>.</p>
 
   <h2>Export a GLB, free</h2>
-  <p>Anything you create can be written as a standard <code>.glb</code> - one mesh with normals,
-  UVs and vertex colours - and opened in Blender, Unity, Godot, three.js or any glTF viewer.
-  Bake it first and the same file is loaded back through Polynite's cluster builder, so a
-  creation of hundreds of thousands of triangles stays smooth on a phone.</p>
+  <p>One standard <code>.glb</code>. Opens in Blender, Unity, Godot, three.js and any glTF viewer.</p>
 
   <h2>Let an agent build</h2>
-  <p>The same actions are open to programs. Any MCP client can create, move
-  and describe objects in your scene through the <a href="/mcp/">Polynite MCP server</a>.</p>
+  <p>Any MCP client can create, move and describe objects in your scene. <a href="/mcp/">Preview.</a></p>
 
   <h2>Requirements</h2>
-  <p>A browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, over HTTPS. The
-  procedural creations need nothing else. The AI ways need a free Pollinations account,
-  and the 3D model costs pollen.</p>
+  <p>A browser with WebGPU: recent Chrome, Edge, Firefox or Safari. The AI ways use a free Pollinations account.</p>
 
   <h2 class="faq-title">Questions people ask</h2>
   <div class="faq">
     <h3>Is it free?</h3>
-    <p>Yes. Creating procedurally, viewing, editing by hand, sharing and exporting a GLB are free, with no account. Generating shapes or a full model with AI goes through your own Pollinations account and costs its credits.</p>
+    <p>Yes. Creating, editing, sharing and exporting cost nothing and need no account. AI generation uses your own Pollinations credits.</p>
     <h3>Do I need to install anything?</h3>
-    <p>No. Polynite runs in a browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, on a computer or a phone.</p>
+    <p>No. A browser with WebGPU, on a computer or a phone.</p>
     <h3>Can I download what I make?</h3>
-    <p>Yes. Anything you create exports as a standard .glb that opens in Blender, Unity, Godot, three.js and any glTF viewer.</p>
-    <h3>Where do my files go?</h3>
-    <p>Nowhere, unless you decide. A model you open is read by the page and stays on your machine. Sharing or publishing is a separate, explicit step, into a link or a repository you own.</p>
+    <p>Yes, as a standard .glb.</p>
   </div>
-
   </div>
 </main>
 <footer class="site">
@@ -256,7 +211,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <li><a href="/about/">About</a></li>
     <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
+    <p><strong>Spin it. Share it. Remix it.</strong> Built in your browser. Sent as one link.</p>
   </div>
 </footer>
 </body>

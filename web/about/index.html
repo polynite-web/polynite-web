@@ -111,18 +111,18 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Who is it for?",
+      "name": "Is it free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with a browser and an idea: people who want to make something in 3D without learning a suite, people who need to check or shrink a GLB in ten seconds, and people who want to send a model to someone as one link."
+        "text": "Creating, viewing, optimizing, sharing and exporting are free, with no account. AI generation uses your own Pollinations credits."
       }
     },
     {
       "@type": "Question",
-      "name": "Is it free?",
+      "name": "Who is it for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Creating, viewing, editing, optimizing, sharing and exporting are free, with no account. AI generation uses your own Pollinations account. A library of your published models lives in your own GitHub repository."
+        "text": "Anyone with a browser and an idea, and anyone who needs to check or shrink a GLB in ten seconds."
       }
     },
     {
@@ -130,7 +130,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Where is it going?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An MCP server already lets an agent build in the scene. Animation and rigging of what you create, films of a scene, and heavier creations are next."
+        "text": "MCP connectivity, animation, films of a scene, heavier creations."
       }
     }
   ]
@@ -156,69 +156,48 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>About Polynite</h1>
-  <p class="lead">A 3D viewer and creation environment in your browser, with MCP connectivity. Make a scene from a tap, a sentence or a picture, open any GLB, make it lighter, share it in one link, let the next person remix it, and let an agent build beside you.</p>
+  <p class="lead">A 3D viewer and creation environment in your browser, with MCP connectivity. Create, open any GLB, make it lighter, share it, remix it.</p>
 
   <p class="ctas"><a class="cta" href="/">Open Polynite</a><a class="cta ghost" href="/free-glb-models/">See what people make</a></p>
 
   <h2>Made with Polynite</h2>
-  <p class="lead">Shared straight from the app, kept as their authors left them: the light, the floor,
-  the framing. Open one, spin it, remix it.</p>
+  <p class="lead">Shared from the app. Open one, spin it, remix it.</p>
   <div class="grid examples">
     <a href="https://share.polynite.io/8nFeVXI2pr"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=8nFeVXI2pr" width="1200" height="630" alt="A black dragon with glowing red eyes, wings spread, on a tiled floor in low light"><span>Dragon in the dark &middot; by glasstyping-beep</span></a>
     <a href="https://share.polynite.io/JhFlJTaMhu"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=JhFlJTaMhu" width="1200" height="630" alt="A cartoon beagle puppy standing on a checkered floor under a violet sky"><span>Puppy &middot; by glasstyping-beep</span></a>
     <a href="https://share.polynite.io/jPbTT9chVl"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=jPbTT9chVl" width="1200" height="630" alt="A small toy T-rex with yellow eyes on a blue tiled floor, lit from above"><span>Little T-rex &middot; by Black-Wolf-Legendary</span></a>
     <a href="https://share.polynite.io/4SWFJ47WNj"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=4SWFJ47WNj" width="1200" height="630" alt="A chocolate chip cookie on a checkered floor in a pool of warm light"><span>Cookie &middot; by Black-Wolf-Legendary</span></a>
   </div>
-  <p><a href="/free-glb-models/">More, published by their creators, in the free models gallery &rarr;</a></p>
-
-
-  <h2>Why a browser</h2>
-  <p>Most people who need to check or shrink a GLB do not want to install anything, and the
-  ones who already own a 3D suite do not want to open it to answer a question that takes ten
-  seconds. A page that loads, reads the file locally and draws it removes that whole step.
-  WebGPU is what makes it viable: the same cluster based renderer that would need a native
-  build a few years ago now runs on a tab.</p>
+  <p><a href="/free-glb-models/">More in the free models gallery &rarr;</a></p>
 
   <h2>What it does today</h2>
   <div class="grid">
-    <div class="card"><h3>Create</h3><p>Procedural castles, towers, villages and forests in
-    one tap; shapes from a sentence with an AI model; a 3D model from text or a picture.
-    Move what you made by hand, export it as a GLB.</p></div>
-    <div class="card"><h3>View</h3><p>GLB first, and debug views for normals, depth, UVs,
-    clusters and level of detail. OBJ and text glTF open too.</p></div>
-    <div class="card"><h3>Optimize</h3><p>Geometry quantization, Meshopt compression, texture
-    resampling, and a side by side comparison before you export.</p></div>
-    <div class="card"><h3>Simplify (coming)</h3><p>Polygon reduction that keeps the silhouette and the UV seams, with several steps chosen by screen size. On the road; the optimizer already takes the textures down today.</p></div>
-    <div class="card"><h3>Keep</h3><p>An optional library backed by your own GitHub account,
-    so a model you publish follows you from one machine to the next.</p></div>
+    <div class="card"><h3>Create</h3><p>Castles, villages and forests in one tap. Shapes from a sentence. A model from a picture. Export a GLB.</p></div>
+    <div class="card"><h3>View</h3><p>GLB first, OBJ and glTF too. Debug views for normals, depth, UVs, clusters, level of detail.</p></div>
+    <div class="card"><h3>Optimize</h3><p>Textures resampled, geometry compressed, before and after side by side.</p></div>
+    <div class="card"><h3>Share</h3><p>One link, live, with a Remix button. Publish it and it gets its own page.</p></div>
+    <div class="card"><h3>Keep</h3><p>A library in your own GitHub account, so what you publish follows you.</p></div>
+    <div class="card"><h3>Simplify (coming)</h3><p>Polygon reduction that keeps the silhouette and the UV seams.</p></div>
   </div>
 
   <h2>Where it is going</h2>
-  <p>The <a href="/mcp/">MCP door</a> is under construction: any MCP client will build in the
-  scene, read it back and correct itself, in the same window you are looking at. Animation and
-  rigging of what you create, films of a scene, and heavier creations that travel the same road
-  as a big GLB, are next. This page will say so as they land.</p>
+  <p>The <a href="/mcp/">MCP door</a> is under construction: any MCP client will build in the scene and read it back. Animation, films of a scene and heavier creations are next.</p>
 
   <h2>Your files</h2>
-  <p>Models you open are read by the page and stay on your machine. Signing in is optional
-  and is never required to view or optimize anything. When you do sign in, Polynite stores
-  what you publish in a repository you own and can take back at any time.</p>
+  <p>They stay on your machine. Sign in only to publish, into a repository you own.</p>
 
   <h2>Who makes it</h2>
-  <p>Polynite is built by a small independent team. The source of several components,
-  including the connectors, is published on
-  <a href="https://github.com/polynite-io" rel="noopener">GitHub</a>.</p>
+  <p>A small independent team. Several components are on <a href="https://github.com/polynite-io" rel="noopener">GitHub</a>.</p>
 
   <h2 class="faq-title">Questions people ask</h2>
   <div class="faq">
-    <h3>Who is it for?</h3>
-    <p>Anyone with a browser and an idea: people who want to make something in 3D without learning a suite, people who need to check or shrink a GLB in ten seconds, and people who want to send a model to someone as one link.</p>
     <h3>Is it free?</h3>
-    <p>Creating, viewing, editing, optimizing, sharing and exporting are free, with no account. AI generation uses your own Pollinations account. A library of your published models lives in your own GitHub repository.</p>
+    <p>Creating, viewing, optimizing, sharing and exporting are free, with no account. AI generation uses your own Pollinations credits.</p>
+    <h3>Who is it for?</h3>
+    <p>Anyone with a browser and an idea, and anyone who needs to check or shrink a GLB in ten seconds.</p>
     <h3>Where is it going?</h3>
-    <p>An MCP server already lets an agent build in the scene. Animation and rigging of what you create, films of a scene, and heavier creations are next.</p>
+    <p>MCP connectivity, animation, films of a scene, heavier creations.</p>
   </div>
-
   </div>
 </main>
 <footer class="site">
@@ -232,7 +211,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <li><a href="/about/" aria-current="page">About</a></li>
     <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
+    <p><strong>Spin it. Share it. Remix it.</strong> Built in your browser. Sent as one link.</p>
   </div>
 </footer>
 </body>

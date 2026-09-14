@@ -115,7 +115,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Where do the megabytes go?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Almost always into textures: an 8K colour map on a prop that covers two hundred pixels is the most common cause of a heavy file. Polynite shows the resolution of every image next to its weight, and resamples them."
+        "text": "Almost always into textures. Polynite shows the split between geometry and textures, so you fight the right one."
       }
     },
     {
@@ -123,7 +123,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Will the result still open everywhere?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The output is a standard GLB with Meshopt compressed geometry, which any glTF based engine reads."
+        "text": "Yes. A standard GLB with Meshopt compression, read by any glTF engine."
       }
     },
     {
@@ -131,15 +131,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
       "name": "Can I see what I lose?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, before you export: file size, triangle count and texture budget side by side, and a split view down the middle of the same frame to compare the original with the optimized version."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is anything uploaded?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. The whole pass runs in the page. No queue, no size limit imposed by a server, no copy of your asset in someone else's storage."
+        "text": "Yes, before you export: numbers side by side and a split view of the same frame."
       }
     }
   ]
@@ -165,51 +157,34 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>Make a GLB smaller</h1>
-  <p class="lead">Half the megabytes, the same model. Polynite compresses the geometry, shrinks the textures and puts the before and the after side by side, so you export the saving you can see.</p>
+  <p class="lead">Half the megabytes, the same model. Geometry compressed, textures shrunk, before and after side by side.</p>
 
   <p class="ctas"><a class="cta" href="/">Open a model</a><a class="cta ghost" href="/glb-viewer/">Just look at one first</a></p>
 
-  <h2>Geometry</h2>
-  <p>Vertex attributes are quantized and the index buffer is reordered for the vertex cache,
-  which is where the first easy megabytes usually come from. On export the geometry is
-  compressed with Meshopt, so the result still loads in any glTF based engine,
-  which is what a GLB is underneath.</p>
-
   <h2>Textures</h2>
-  <p>An 8K base colour map on a prop that occupies two hundred pixels on screen is the most
-  common single cause of a heavy file. Polynite shows the resolution of every image in the
-  file next to its weight, and can resample them. Texture size dominates almost every real
-  GLB, so this is normally where the file actually shrinks.</p>
+  <p>The usual culprit: an 8K map on a prop two hundred pixels wide. See every image's size next to its weight, and resample it.</p>
 
-  <h2>Quality steps, and what is coming</h2>
-  <p>Today the optimizer builds several quality steps from the same source - tiny, low, high,
-  max - by rebuilding the textures at each size, which is where the weight of almost every
-  real GLB is. Reducing the triangle count itself, with the silhouette kept and the UVs still
-  aligned, is the next step on the road; <a href="/reduce-polygons/">this page says where it stands</a>.</p>
+  <h2>Geometry</h2>
+  <p>Quantized, cache ordered, Meshopt compressed on export. Still a standard GLB that opens everywhere.</p>
 
-  <h2>What you see before you export</h2>
-  <p>The before and after sit side by side: file size, triangle count, texture budget. You
-  can also split the view down the middle and compare the original with the optimized version
-  in the same frame, which is the only honest way to decide whether a saving is worth the
-  visual cost.</p>
+  <h2>Quality steps</h2>
+  <p>Tiny, low, high, max, from one source. Polygon reduction is <a href="/reduce-polygons/">next</a>.</p>
+
+  <h2>See before you export</h2>
+  <p>File size, triangles and texture budget side by side, and a split line to drag across the model.</p>
 
   <h2>Nothing is uploaded</h2>
-  <p>The whole pass runs in the page. The file never leaves your machine, so there is no
-  queue, no size limit imposed by a server, and no copy of your asset sitting in someone
-  else's storage.</p>
+  <p>The whole pass runs in the page.</p>
 
   <h2 class="faq-title">Questions people ask</h2>
   <div class="faq">
     <h3>Where do the megabytes go?</h3>
-    <p>Almost always into textures: an 8K colour map on a prop that covers two hundred pixels is the most common cause of a heavy file. Polynite shows the resolution of every image next to its weight, and resamples them.</p>
+    <p>Almost always into textures. Polynite shows the split between geometry and textures, so you fight the right one.</p>
     <h3>Will the result still open everywhere?</h3>
-    <p>Yes. The output is a standard GLB with Meshopt compressed geometry, which any glTF based engine reads.</p>
+    <p>Yes. A standard GLB with Meshopt compression, read by any glTF engine.</p>
     <h3>Can I see what I lose?</h3>
-    <p>Yes, before you export: file size, triangle count and texture budget side by side, and a split view down the middle of the same frame to compare the original with the optimized version.</p>
-    <h3>Is anything uploaded?</h3>
-    <p>No. The whole pass runs in the page. No queue, no size limit imposed by a server, no copy of your asset in someone else's storage.</p>
+    <p>Yes, before you export: numbers side by side and a split view of the same frame.</p>
   </div>
-
   </div>
 </main>
 <footer class="site">
@@ -223,7 +198,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <li><a href="/about/">About</a></li>
     <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
+    <p><strong>Spin it. Share it. Remix it.</strong> Built in your browser. Sent as one link.</p>
   </div>
 </footer>
 </body>
