@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
+<meta property="og:image:alt" content="Polynite, a 3D viewer and creation environment in your browser, with MCP connectivity">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GLB Viewer: Open GLB Files Online | Polynite">
 <meta name="twitter:description" content="Open a .glb file in your browser and inspect it. Polynite renders with WebGPU, keeps the file on your machine, and shows triangle counts, materials and level of detail.">
@@ -60,6 +60,19 @@ p,li{color:#cfdcec}
 .card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg2)}
 .card h3{margin-top:0}
 .card p{margin-bottom:0; font-size:.95rem; color:var(--dim)}
+.faq h3{margin:1.3rem 0 .3rem; font-size:1.05rem}
+.faq p{margin:0 0 .5rem; color:var(--dim)}
+.ctas{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin:1.75rem 0 .5rem}
+.ctas .cta{margin:0}
+.examples{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.examples a{display:block; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--bg2); color:var(--dim); font-size:.9rem}
+.examples a:hover{border-color:var(--accent); text-decoration:none}
+.examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
+.examples span{display:block; padding:.55rem .8rem}
+header.site nav.site{flex:1}
+nav.site li.go{margin-left:auto}
+nav.site li.go a{color:#062026; background:var(--accent); padding:.35rem .85rem; border-radius:999px; font-weight:600}
+nav.site li.go a:hover{text-decoration:none; filter:brightness(1.08)}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -93,6 +106,44 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   },
   "description": "Open and inspect GLB files in the browser with WebGPU."
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my file uploaded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The page reads the file itself; there is no server between the file picker and the renderer. A client model or an unreleased asset can be inspected without leaving your computer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which formats open?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GLB first, and everything is tuned for it. Wavefront .obj and text glTF open too, and Draco or Meshopt compressed geometry is handled on load."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a size limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only your browser's memory. There is no server limit, because there is no server in the path."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on a phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, on a recent Chrome or Safari with WebGPU. The page says so plainly when a browser cannot, instead of showing a blank canvas."
+      }
+    }
+  ]
+}</script>
 </head>
 <body>
 <header class="site">
@@ -100,14 +151,13 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <a class="brand" href="/"><img src="/assets/favicon-32.png" width="24" height="24" alt=""> Polynite</a>
     <nav class="site" aria-label="Main">
       <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/" aria-current="page">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li class="go"><a href="/">Open Polynite</a></li>
       </ul>
     </nav>
   </div>
@@ -115,10 +165,14 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>GLB viewer for the browser</h1>
-  <p class="lead">Drop a <code>.glb</code> file into the page and look at it.
-  Nothing is uploaded, and there is no account to create before you can see your model.</p>
+  <p class="lead">Drop a .glb on the page and it is on screen: lit, turning, with every number that matters next to it. No upload, no account, no waiting for a queue.</p>
 
-  <p><a class="cta" href="/">Open the viewer</a></p>
+  <p class="ctas"><a class="cta" href="/">Open the viewer</a><a class="cta ghost" href="/free-glb-models/">Try a free model</a></p>
+
+  <h2>Show it in one link</h2>
+  <p>Once a model is open, one link carries it, with the light and the framing you chose, to anyone
+  with a browser. A client sees exactly what you see, on a phone, without installing anything.</p>
+
 
   <h2>What you can look at</h2>
   <p>Polynite loads the file, builds a cluster hierarchy from the geometry, and renders it
@@ -151,21 +205,33 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   <p>Once the model is open, the same page can shrink it. See
   <a href="/glb-optimizer/">the GLB optimizer</a> and
   <a href="/reduce-polygons/">reducing polygons</a>.</p>
+
+  <h2 class="faq-title">Questions people ask</h2>
+  <div class="faq">
+    <h3>Is my file uploaded?</h3>
+    <p>No. The page reads the file itself; there is no server between the file picker and the renderer. A client model or an unreleased asset can be inspected without leaving your computer.</p>
+    <h3>Which formats open?</h3>
+    <p>GLB first, and everything is tuned for it. Wavefront .obj and text glTF open too, and Draco or Meshopt compressed geometry is handled on load.</p>
+    <h3>Is there a size limit?</h3>
+    <p>Only your browser's memory. There is no server limit, because there is no server in the path.</p>
+    <h3>Does it work on a phone?</h3>
+    <p>Yes, on a recent Chrome or Safari with WebGPU. The page says so plainly when a browser cannot, instead of showing a blank canvas.</p>
+  </div>
+
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/" aria-current="page">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>
+    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
   </div>
 </footer>
 </body>

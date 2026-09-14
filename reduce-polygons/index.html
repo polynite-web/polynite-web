@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reduce Polygons in a 3D Model Online | Polynite</title>
-<meta name="description" content="Cut the triangle count of a GLB model in the browser, compare the result against the original, and export the version you want.">
-<link rel="canonical" href="https://polynite.io/reduce-polygons/">
+<title>Reduce Polygons in a 3D Model Online: Where Polynite Stands | Polynite</title>
+<meta name="description" content="Polygon reduction in the browser is on Polynite's road. Today the GLB optimizer already compresses the geometry and shrinks the textures, which is where most of a heavy file's weight is.">
+<link rel="canonical" href="https://polynite.io/glb-optimizer/">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -14,16 +14,16 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="Reduce Polygons in a 3D Model Online | Polynite">
-<meta property="og:description" content="Cut the triangle count of a GLB model in the browser, compare the result against the original, and export the version you want.">
+<meta property="og:title" content="Reduce Polygons in a 3D Model Online: Where Polynite Stands | Polynite">
+<meta property="og:description" content="Polygon reduction in the browser is on Polynite's road. Today the GLB optimizer already compresses the geometry and shrinks the textures, which is where most of a heavy file's weight is.">
 <meta property="og:url" content="https://polynite.io/reduce-polygons/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
+<meta property="og:image:alt" content="Polynite, a 3D viewer and creation environment in your browser, with MCP connectivity">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reduce Polygons in a 3D Model Online | Polynite">
-<meta name="twitter:description" content="Cut the triangle count of a GLB model in the browser, compare the result against the original, and export the version you want.">
+<meta name="twitter:title" content="Reduce Polygons in a 3D Model Online: Where Polynite Stands | Polynite">
+<meta name="twitter:description" content="Polygon reduction in the browser is on Polynite's road. Today the GLB optimizer already compresses the geometry and shrinks the textures, which is where most of a heavy file's weight is.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 <style>:root{
   --bg:#0b0d12; --bg2:#11141b; --line:#1e2430;
@@ -60,6 +60,19 @@ p,li{color:#cfdcec}
 .card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg2)}
 .card h3{margin-top:0}
 .card p{margin-bottom:0; font-size:.95rem; color:var(--dim)}
+.faq h3{margin:1.3rem 0 .3rem; font-size:1.05rem}
+.faq p{margin:0 0 .5rem; color:var(--dim)}
+.ctas{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin:1.75rem 0 .5rem}
+.ctas .cta{margin:0}
+.examples{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.examples a{display:block; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--bg2); color:var(--dim); font-size:.9rem}
+.examples a:hover{border-color:var(--accent); text-decoration:none}
+.examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
+.examples span{display:block; padding:.55rem .8rem}
+header.site nav.site{flex:1}
+nav.site li.go{margin-left:auto}
+nav.site li.go a{color:#062026; background:var(--accent); padding:.35rem .85rem; border-radius:999px; font-weight:600}
+nav.site li.go a:hover{text-decoration:none; filter:brightness(1.08)}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -93,6 +106,44 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   },
   "description": "Reduce the triangle count of a 3D model in the browser and compare the result with the original."
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Polynite reduce polygons today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet. Polygon reduction is on the road, and this page will say so the day it lands. What works today is the optimizer: geometry quantized and Meshopt compressed, textures shrunk, the before and after side by side."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I do about a heavy file right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open it in the optimizer. In almost every real GLB the weight is in the textures, not the triangles: an 8K colour map on a small prop. Polynite shows the split between geometry and textures, so you know which one you are fighting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What will the reduction look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Edges collapsed by error, boundaries and UV seams kept as constraints so the texture still lines up, a target given as a proportion of the original, several steps picked by screen size, and a split line to drag across the model to see exactly what went."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With the optimizer, in your browser, with nothing uploaded: open a model, see what it weighs, export the version you can see."
+      }
+    }
+  ]
+}</script>
 </head>
 <body>
 <header class="site">
@@ -100,14 +151,13 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <a class="brand" href="/"><img src="/assets/favicon-32.png" width="24" height="24" alt=""> Polynite</a>
     <nav class="site" aria-label="Main">
       <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/" aria-current="page">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li class="go"><a href="/">Open Polynite</a></li>
       </ul>
     </nav>
   </div>
@@ -115,50 +165,58 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>Reduce the polygon count of a model</h1>
-  <p class="lead">A scan or a CAD export can arrive with millions of triangles for a shape
-  that a few thousand would describe. Reducing it is easy. Reducing it without wrecking the
-  silhouette is the part that needs to be looked at.</p>
+  <p class="lead">Polygon reduction is coming to Polynite. Today the optimizer does the part that
+  usually matters more: it compresses the geometry and shrinks the textures, in your browser,
+  with the before and after side by side.</p>
 
-  <p><a class="cta" href="/">Open a model</a></p>
+  <p class="ctas"><a class="cta" href="/glb-optimizer/">Open the optimizer</a><a class="cta ghost" href="/">Open a model</a></p>
 
-  <h2>How the simplification works</h2>
-  <p>Polynite collapses edges by error, keeping the ones that carry the shape and dropping
-  the ones that do not. Boundaries and UV seams are treated as constraints, which is why the
-  texture usually still lines up after a heavy reduction. The target is expressed as a
-  proportion of the original, so the same setting behaves the same way on any model.</p>
+  <h2>What works today</h2>
+  <p>Open a GLB and Polynite tells you what it weighs and why: how many triangles, how many
+  are drawn at the current distance, and the resolution of every texture next to its weight.
+  Vertex attributes are quantized, the index buffer is reordered, the geometry is Meshopt
+  compressed on export, and the textures are rebuilt at the quality you choose. The result is a
+  standard GLB that opens in Blender, Unity, Godot, three.js and any glTF viewer.</p>
 
-  <h2>Look before you commit</h2>
-  <p>Every reduction is a trade. The viewer draws the original and the reduced mesh in the
-  same frame, split by a line you can drag, so you can see exactly which details went. A
-  number in a dialog cannot tell you that the ear of a character disappeared at sixty
-  percent, but the split view can.</p>
+  <h2>Is the weight really in the triangles?</h2>
+  <p>Usually not. A scan or a CAD export can arrive with millions of triangles, and that is real;
+  but the file that is heavy on a web page is almost always heavy because of an 8K colour map
+  on a prop that covers two hundred pixels. Polynite shows the split between geometry and
+  textures, so you fight the right one first.</p>
 
-  <h2>Several steps instead of one</h2>
-  <p>If the model is going into a game or a configurator, one reduced mesh is rarely the
-  right answer. Polynite can build a series of steps from the same source and select between
-  them by screen size, so the triangle count follows the camera rather than being fixed once
-  and for all.</p>
+  <h2>What is coming</h2>
+  <p>Edge collapse driven by error, so the edges that carry the shape stay and the ones that do
+  not go. Boundaries and UV seams treated as constraints, so the texture still lines up after
+  a heavy reduction. The target as a proportion of the original, so the same setting behaves
+  the same way on any model. Several steps from one source, picked by screen size, so the
+  triangle count follows the camera. And the split line to drag across the model, because a
+  number in a dialog cannot tell you that the ear of a character disappeared at sixty percent.</p>
 
-  <h2>When reduction is not the answer</h2>
-  <p>If the file is heavy and the mesh is already modest, the weight is in the textures.
-  Reducing triangles will do almost nothing. The
-  <a href="/glb-optimizer/">optimizer page</a> covers that case, and Polynite shows the
-  split between geometry and textures so you know which of the two you are fighting.</p>
+  <h2>Questions people ask</h2>
+  <div class="faq">
+    <h3>Can Polynite reduce polygons today?</h3>
+    <p>Not yet. Polygon reduction is on the road, and this page will say so the day it lands. What works today is the optimizer: geometry quantized and Meshopt compressed, textures shrunk, the before and after side by side.</p>
+    <h3>What can I do about a heavy file right now?</h3>
+    <p>Open it in the optimizer. In almost every real GLB the weight is in the textures, not the triangles: an 8K colour map on a small prop. Polynite shows the split between geometry and textures, so you know which one you are fighting.</p>
+    <h3>What will the reduction look like?</h3>
+    <p>Edges collapsed by error, boundaries and UV seams kept as constraints so the texture still lines up, a target given as a proportion of the original, several steps picked by screen size, and a split line to drag across the model to see exactly what went.</p>
+    <h3>Where do I start?</h3>
+    <p>With the optimizer, in your browser, with nothing uploaded: open a model, see what it weighs, export the version you can see.</p>
+  </div>
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/" aria-current="page">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>
+    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
   </div>
 </footer>
 </body>

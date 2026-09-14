@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
+<meta property="og:image:alt" content="Polynite, a 3D viewer and creation environment in your browser, with MCP connectivity">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Create 3D Models Online, Free: From a Tap, a Sentence or a Picture | Polynite">
 <meta name="twitter:description" content="Make 3D scenes in your browser: procedural castles and villages in one tap, shapes from a text description, a full 3D model from text or a picture. Move it by hand, export a free GLB.">
@@ -65,6 +65,14 @@ p,li{color:#cfdcec}
 .examples a:hover{border-color:var(--accent); text-decoration:none}
 .examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
 .examples span{display:block; padding:.55rem .8rem}
+.faq h3{margin:1.3rem 0 .3rem; font-size:1.05rem}
+.faq p{margin:0 0 .5rem; color:var(--dim)}
+.ctas{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin:1.75rem 0 .5rem}
+.ctas .cta{margin:0}
+header.site nav.site{flex:1}
+nav.site li.go{margin-left:auto}
+nav.site li.go a{color:#062026; background:var(--accent); padding:.35rem .85rem; border-radius:999px; font-weight:600}
+nav.site li.go a:hover{text-decoration:none; filter:brightness(1.08)}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -82,7 +90,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "GLB viewer",
+      "name": "Create 3D models",
       "item": "https://polynite.io/create/"
     }
   ]
@@ -90,13 +98,51 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "GLB viewer",
+  "name": "Create 3D models",
   "url": "https://polynite.io/create/",
   "isPartOf": {
     "@type": "WebSite",
     "url": "https://polynite.io/"
   },
   "description": "Open and inspect GLB files in the browser with WebGPU."
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Creating procedurally, viewing, editing by hand, sharing and exporting a GLB are free, with no account. Generating shapes or a full model with AI goes through your own Pollinations account and costs its credits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Polynite runs in a browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, on a computer or a phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download what I make?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Anything you create exports as a standard .glb that opens in Blender, Unity, Godot, three.js and any glTF viewer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do my files go?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nowhere, unless you decide. A model you open is read by the page and stays on your machine. Sharing or publishing is a separate, explicit step, into a link or a repository you own."
+      }
+    }
+  ]
 }</script>
 </head>
 <body>
@@ -105,14 +151,13 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <a class="brand" href="/"><img src="/assets/favicon-32.png" width="24" height="24" alt=""> Polynite</a>
     <nav class="site" aria-label="Main">
       <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/" aria-current="page">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li class="go"><a href="/">Open Polynite</a></li>
       </ul>
     </nav>
   </div>
@@ -120,11 +165,16 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>Create 3D models in your browser, free</h1>
-  <p class="lead">Polynite makes a 3D scene from a tap, a sentence or a picture, in a browser
-  tab, with nothing to install. What you make can be moved by hand, lit, shared with one link
-  and exported as a <code>.glb</code>.</p>
+  <p class="lead">A castle in one tap. A lighthouse from a sentence. A dragon from a picture. Polynite makes 3D scenes in a browser tab, with nothing to install, and turns what you make into one link anyone can open, spin and remix.</p>
 
-  <p><a class="cta" href="/">Open Polynite and press Create</a></p>
+  <p class="ctas"><a class="cta" href="/">Start creating</a><a class="cta ghost" href="/free-glb-models/">See what people make</a></p>
+
+  <h2>One link does the rest</h2>
+  <p>Every scene has a link. Send it and the other person gets the same model, the same light and
+  the same framing, live in their browser, with a <strong>Remix</strong> button under it. Publish it
+  and it joins the <a href="/free-glb-models/">gallery</a>, with its own page, for anyone to find. The
+  best thing you make today can be somebody else's starting point tonight.</p>
+
 
   <h2>Made with Polynite</h2>
   <p class="lead">Four creations shared straight from the app, kept as their authors left them: the light,
@@ -173,28 +223,40 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   creation of hundreds of thousands of triangles stays smooth on a phone.</p>
 
   <h2>Let an agent build</h2>
-  <p>The same actions are open to programs. Claude Code, or any MCP client, can create, move
+  <p>The same actions are open to programs. Any MCP client can create, move
   and describe objects in your scene through the <a href="/mcp/">Polynite MCP server</a>.</p>
 
   <h2>Requirements</h2>
   <p>A browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, over HTTPS. The
   procedural creations need nothing else. The AI ways need a free Pollinations account,
   and the 3D model costs pollen.</p>
+
+  <h2 class="faq-title">Questions people ask</h2>
+  <div class="faq">
+    <h3>Is it free?</h3>
+    <p>Yes. Creating procedurally, viewing, editing by hand, sharing and exporting a GLB are free, with no account. Generating shapes or a full model with AI goes through your own Pollinations account and costs its credits.</p>
+    <h3>Do I need to install anything?</h3>
+    <p>No. Polynite runs in a browser with WebGPU: a recent Chrome, Edge, Firefox or Safari, on a computer or a phone.</p>
+    <h3>Can I download what I make?</h3>
+    <p>Yes. Anything you create exports as a standard .glb that opens in Blender, Unity, Godot, three.js and any glTF viewer.</p>
+    <h3>Where do my files go?</h3>
+    <p>Nowhere, unless you decide. A model you open is read by the page and stays on your machine. Sharing or publishing is a separate, explicit step, into a link or a repository you own.</p>
+  </div>
+
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/" aria-current="page">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>
+    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
   </div>
 </footer>
 </body>

@@ -1,7 +1,7 @@
 {
   "name": "Polynite",
   "short_name": "Polynite",
-  "description": "Create, view and optimize GLB models in your browser.",
+  "description": "A 3D viewer and creation environment in your browser, with MCP connectivity.",
   "id": "/",
   "start_url": "/",
   "scope": "/",

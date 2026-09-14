@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
+<meta property="og:image:alt" content="Polynite, a 3D viewer and creation environment in your browser, with MCP connectivity">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Polynite: a Browser Based 3D Toolkit">
 <meta name="twitter:description" content="What Polynite is, what it does today, and where it is going. A WebGPU tool for creating, viewing and optimizing GLB assets.">
@@ -60,6 +60,19 @@ p,li{color:#cfdcec}
 .card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg2)}
 .card h3{margin-top:0}
 .card p{margin-bottom:0; font-size:.95rem; color:var(--dim)}
+.faq h3{margin:1.3rem 0 .3rem; font-size:1.05rem}
+.faq p{margin:0 0 .5rem; color:var(--dim)}
+.ctas{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin:1.75rem 0 .5rem}
+.ctas .cta{margin:0}
+.examples{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.examples a{display:block; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--bg2); color:var(--dim); font-size:.9rem}
+.examples a:hover{border-color:var(--accent); text-decoration:none}
+.examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
+.examples span{display:block; padding:.55rem .8rem}
+header.site nav.site{flex:1}
+nav.site li.go{margin-left:auto}
+nav.site li.go a{color:#062026; background:var(--accent); padding:.35rem .85rem; border-radius:999px; font-weight:600}
+nav.site li.go a:hover{text-decoration:none; filter:brightness(1.08)}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -92,6 +105,36 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     "url": "https://polynite.io/"
   }
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is it for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anyone with a browser and an idea: people who want to make something in 3D without learning a suite, people who need to check or shrink a GLB in ten seconds, and people who want to send a model to someone as one link."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Creating, viewing, editing, optimizing, sharing and exporting are free, with no account. AI generation uses your own Pollinations account. A library of your published models lives in your own GitHub repository."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is it going?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An MCP server already lets an agent build in the scene. Animation and rigging of what you create, films of a scene, and heavier creations are next."
+      }
+    }
+  ]
+}</script>
 </head>
 <body>
 <header class="site">
@@ -99,14 +142,13 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <a class="brand" href="/"><img src="/assets/favicon-32.png" width="24" height="24" alt=""> Polynite</a>
     <nav class="site" aria-label="Main">
       <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/" aria-current="page">About</a></li>
+    <li class="go"><a href="/">Open Polynite</a></li>
       </ul>
     </nav>
   </div>
@@ -114,9 +156,21 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>About Polynite</h1>
-  <p class="lead">Polynite is a 3D tool that runs in a browser tab. It creates scenes
-  from a tap or a sentence, opens GLB files, renders them with WebGPU, and makes them
-  smaller.</p>
+  <p class="lead">A 3D viewer and creation environment in your browser, with MCP connectivity. Make a scene from a tap, a sentence or a picture, open any GLB, make it lighter, share it in one link, let the next person remix it, and let an agent build beside you.</p>
+
+  <p class="ctas"><a class="cta" href="/">Open Polynite</a><a class="cta ghost" href="/free-glb-models/">See what people make</a></p>
+
+  <h2>Made with Polynite</h2>
+  <p class="lead">Shared straight from the app, kept as their authors left them: the light, the floor,
+  the framing. Open one, spin it, remix it.</p>
+  <div class="grid examples">
+    <a href="https://share.polynite.io/8nFeVXI2pr"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=8nFeVXI2pr" width="1200" height="630" alt="A black dragon with glowing red eyes, wings spread, on a tiled floor in low light"><span>Dragon in the dark &middot; by glasstyping-beep</span></a>
+    <a href="https://share.polynite.io/JhFlJTaMhu"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=JhFlJTaMhu" width="1200" height="630" alt="A cartoon beagle puppy standing on a checkered floor under a violet sky"><span>Puppy &middot; by glasstyping-beep</span></a>
+    <a href="https://share.polynite.io/jPbTT9chVl"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=jPbTT9chVl" width="1200" height="630" alt="A small toy T-rex with yellow eyes on a blue tiled floor, lit from above"><span>Little T-rex &middot; by Black-Wolf-Legendary</span></a>
+    <a href="https://share.polynite.io/4SWFJ47WNj"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=4SWFJ47WNj" width="1200" height="630" alt="A chocolate chip cookie on a checkered floor in a pool of warm light"><span>Cookie &middot; by Black-Wolf-Legendary</span></a>
+  </div>
+  <p><a href="/free-glb-models/">More, published by their creators, in the free models gallery &rarr;</a></p>
+
 
   <h2>Why a browser</h2>
   <p>Most people who need to check or shrink a GLB do not want to install anything, and the
@@ -134,17 +188,16 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     clusters and level of detail. OBJ and text glTF open too.</p></div>
     <div class="card"><h3>Optimize</h3><p>Geometry quantization, Meshopt compression, texture
     resampling, and a side by side comparison before you export.</p></div>
-    <div class="card"><h3>Simplify</h3><p>Error driven edge collapse with UV and boundary
-    constraints, and several quality steps from one source.</p></div>
+    <div class="card"><h3>Simplify (coming)</h3><p>Polygon reduction that keeps the silhouette and the UV seams, with several steps chosen by screen size. On the road; the optimizer already takes the textures down today.</p></div>
     <div class="card"><h3>Keep</h3><p>An optional library backed by your own GitHub account,
     so a model you publish follows you from one machine to the next.</p></div>
   </div>
 
   <h2>Where it is going</h2>
-  <p>An <a href="/mcp/">MCP server</a> already lets an agent such as Claude Code build in
-  the scene; it is a preview, and the page about it says what works. Animation and rigging
-  of what you create, and heavier creations that travel the same road as a big GLB, are
-  next. This page will say so as they land.</p>
+  <p>The <a href="/mcp/">MCP door</a> is under construction: any MCP client will build in the
+  scene, read it back and correct itself, in the same window you are looking at. Animation and
+  rigging of what you create, films of a scene, and heavier creations that travel the same road
+  as a big GLB, are next. This page will say so as they land.</p>
 
   <h2>Your files</h2>
   <p>Models you open are read by the page and stay on your machine. Signing in is optional
@@ -155,21 +208,31 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   <p>Polynite is built by a small independent team. The source of several components,
   including the connectors, is published on
   <a href="https://github.com/polynite-io" rel="noopener">GitHub</a>.</p>
+
+  <h2 class="faq-title">Questions people ask</h2>
+  <div class="faq">
+    <h3>Who is it for?</h3>
+    <p>Anyone with a browser and an idea: people who want to make something in 3D without learning a suite, people who need to check or shrink a GLB in ten seconds, and people who want to send a model to someone as one link.</p>
+    <h3>Is it free?</h3>
+    <p>Creating, viewing, editing, optimizing, sharing and exporting are free, with no account. AI generation uses your own Pollinations account. A library of your published models lives in your own GitHub repository.</p>
+    <h3>Where is it going?</h3>
+    <p>An MCP server already lets an agent build in the scene. Animation and rigging of what you create, films of a scene, and heavier creations are next.</p>
+  </div>
+
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/" aria-current="page">About</a></li>
+    <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>
+    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
   </div>
 </footer>
 </body>

@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
+<meta property="og:image:alt" content="Polynite, a 3D viewer and creation environment in your browser, with MCP connectivity">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GLB Optimizer: Compress and Shrink GLB Files | Polynite">
 <meta name="twitter:description" content="Make a GLB smaller without opening a desktop tool. Polynite compresses geometry, resizes textures and reports the exact saving before you export.">
@@ -60,6 +60,19 @@ p,li{color:#cfdcec}
 .card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg2)}
 .card h3{margin-top:0}
 .card p{margin-bottom:0; font-size:.95rem; color:var(--dim)}
+.faq h3{margin:1.3rem 0 .3rem; font-size:1.05rem}
+.faq p{margin:0 0 .5rem; color:var(--dim)}
+.ctas{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin:1.75rem 0 .5rem}
+.ctas .cta{margin:0}
+.examples{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.examples a{display:block; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--bg2); color:var(--dim); font-size:.9rem}
+.examples a:hover{border-color:var(--accent); text-decoration:none}
+.examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
+.examples span{display:block; padding:.55rem .8rem}
+header.site nav.site{flex:1}
+nav.site li.go{margin-left:auto}
+nav.site li.go a{color:#062026; background:var(--accent); padding:.35rem .85rem; border-radius:999px; font-weight:600}
+nav.site li.go a:hover{text-decoration:none; filter:brightness(1.08)}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -93,6 +106,44 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   },
   "description": "Compress GLB geometry and textures in the browser and compare the result before exporting."
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where do the megabytes go?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always into textures: an 8K colour map on a prop that covers two hundred pixels is the most common cause of a heavy file. Polynite shows the resolution of every image next to its weight, and resamples them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the result still open everywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The output is a standard GLB with Meshopt compressed geometry, which any glTF based engine reads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see what I lose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, before you export: file size, triangle count and texture budget side by side, and a split view down the middle of the same frame to compare the original with the optimized version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is anything uploaded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The whole pass runs in the page. No queue, no size limit imposed by a server, no copy of your asset in someone else's storage."
+      }
+    }
+  ]
+}</script>
 </head>
 <body>
 <header class="site">
@@ -100,14 +151,13 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <a class="brand" href="/"><img src="/assets/favicon-32.png" width="24" height="24" alt=""> Polynite</a>
     <nav class="site" aria-label="Main">
       <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/" aria-current="page">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li class="go"><a href="/">Open Polynite</a></li>
       </ul>
     </nav>
   </div>
@@ -115,11 +165,9 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>Make a GLB smaller</h1>
-  <p class="lead">Most oversized GLB files are oversized for two reasons: the mesh carries
-  more detail than anyone will ever see, and the textures are larger than the screen can
-  show. Polynite handles both, and tells you what each one cost you.</p>
+  <p class="lead">Half the megabytes, the same model. Polynite compresses the geometry, shrinks the textures and puts the before and the after side by side, so you export the saving you can see.</p>
 
-  <p><a class="cta" href="/">Open a model</a></p>
+  <p class="ctas"><a class="cta" href="/">Open a model</a><a class="cta ghost" href="/glb-viewer/">Just look at one first</a></p>
 
   <h2>Geometry</h2>
   <p>Vertex attributes are quantized and the index buffer is reordered for the vertex cache,
@@ -133,11 +181,11 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   file next to its weight, and can resample them. Texture size dominates almost every real
   GLB, so this is normally where the file actually shrinks.</p>
 
-  <h2>Level of detail</h2>
-  <p>Rather than one fixed simplification, Polynite can build several quality steps from the
-  same source and keep them in the file. The viewer then draws whichever step matches the
-  distance, so a model can be both light on screen and detailed when the camera comes close.
-  See <a href="/reduce-polygons/">reducing polygons</a> for how the simplification works.</p>
+  <h2>Quality steps, and what is coming</h2>
+  <p>Today the optimizer builds several quality steps from the same source - tiny, low, high,
+  max - by rebuilding the textures at each size, which is where the weight of almost every
+  real GLB is. Reducing the triangle count itself, with the silhouette kept and the UVs still
+  aligned, is the next step on the road; <a href="/reduce-polygons/">this page says where it stands</a>.</p>
 
   <h2>What you see before you export</h2>
   <p>The before and after sit side by side: file size, triangle count, texture budget. You
@@ -149,21 +197,33 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   <p>The whole pass runs in the page. The file never leaves your machine, so there is no
   queue, no size limit imposed by a server, and no copy of your asset sitting in someone
   else's storage.</p>
+
+  <h2 class="faq-title">Questions people ask</h2>
+  <div class="faq">
+    <h3>Where do the megabytes go?</h3>
+    <p>Almost always into textures: an 8K colour map on a prop that covers two hundred pixels is the most common cause of a heavy file. Polynite shows the resolution of every image next to its weight, and resamples them.</p>
+    <h3>Will the result still open everywhere?</h3>
+    <p>Yes. The output is a standard GLB with Meshopt compressed geometry, which any glTF based engine reads.</p>
+    <h3>Can I see what I lose?</h3>
+    <p>Yes, before you export: file size, triangle count and texture budget side by side, and a split view down the middle of the same frame to compare the original with the optimized version.</p>
+    <h3>Is anything uploaded?</h3>
+    <p>No. The whole pass runs in the page. No queue, no size limit imposed by a server, no copy of your asset in someone else's storage.</p>
+  </div>
+
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/" aria-current="page">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>
+    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
   </div>
 </footer>
 </body>

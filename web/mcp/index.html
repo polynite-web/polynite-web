@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polynite MCP Server: Let Claude Code Build in a 3D Scene | Polynite</title>
-<meta name="description" content="Connect Claude Code or any MCP client to Polynite and let an agent create, move and describe 3D objects in a live WebGPU scene. Preview, free, JSON actions in metres.">
+<title>Polynite MCP Server (Preview): Connect an Agent to a Live 3D Scene | Polynite</title>
+<meta name="description" content="Polynite exposes its 3D scene to any MCP client: an agent creates, moves and describes objects in a live WebGPU scene, and reads it back. Under construction, free, JSON actions in metres.">
 <link rel="canonical" href="https://polynite.io/mcp/">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
@@ -14,16 +14,16 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="Polynite MCP Server: Let Claude Code Build in a 3D Scene | Polynite">
-<meta property="og:description" content="Connect Claude Code or any MCP client to Polynite and let an agent create, move and describe 3D objects in a live WebGPU scene. Preview, free, JSON actions in metres.">
+<meta property="og:title" content="Polynite MCP Server (Preview): Connect an Agent to a Live 3D Scene | Polynite">
+<meta property="og:description" content="Polynite exposes its 3D scene to any MCP client: an agent creates, moves and describes objects in a live WebGPU scene, and reads it back. Under construction, free, JSON actions in metres.">
 <meta property="og:url" content="https://polynite.io/mcp/">
 <meta property="og:image" content="https://polynite.io/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite, a browser tool to create, view and optimize GLB models">
+<meta property="og:image:alt" content="Polynite, a 3D viewer and creation environment in your browser, with MCP connectivity">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Polynite MCP Server: Let Claude Code Build in a 3D Scene | Polynite">
-<meta name="twitter:description" content="Connect Claude Code or any MCP client to Polynite and let an agent create, move and describe 3D objects in a live WebGPU scene. Preview, free, JSON actions in metres.">
+<meta name="twitter:title" content="Polynite MCP Server (Preview): Connect an Agent to a Live 3D Scene | Polynite">
+<meta name="twitter:description" content="Polynite exposes its 3D scene to any MCP client: an agent creates, moves and describes objects in a live WebGPU scene, and reads it back. Under construction, free, JSON actions in metres.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-cover.png">
 <style>:root{
   --bg:#0b0d12; --bg2:#11141b; --line:#1e2430;
@@ -60,6 +60,20 @@ p,li{color:#cfdcec}
 .card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg2)}
 .card h3{margin-top:0}
 .card p{margin-bottom:0; font-size:.95rem; color:var(--dim)}
+.faq h3{margin:1.3rem 0 .3rem; font-size:1.05rem}
+.faq p{margin:0 0 .5rem; color:var(--dim)}
+.ctas{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin:1.75rem 0 .5rem}
+.ctas .cta{margin:0}
+.examples{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.examples a{display:block; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--bg2); color:var(--dim); font-size:.9rem}
+.examples a:hover{border-color:var(--accent); text-decoration:none}
+.examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
+.examples span{display:block; padding:.55rem .8rem}
+header.site nav.site{flex:1}
+nav.site li.go{margin-left:auto}
+nav.site li.go a{color:#062026; background:var(--accent); padding:.35rem .85rem; border-radius:999px; font-weight:600}
+nav.site li.go a:hover{text-decoration:none; filter:brightness(1.08)}
+.note{border:1px solid var(--accent); border-radius:10px; padding:.8rem 1rem; background:var(--bg2); color:var(--dim); margin:1rem 0}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -77,7 +91,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "GLB viewer",
+      "name": "MCP server",
       "item": "https://polynite.io/mcp/"
     }
   ]
@@ -85,13 +99,51 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "GLB viewer",
+  "name": "MCP server",
   "url": "https://polynite.io/mcp/",
   "isPartOf": {
     "@type": "WebSite",
     "url": "https://polynite.io/"
   },
   "description": "Open and inspect GLB files in the browser with WebGPU."
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What can the agent do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create primitives, set materials and colours, move, rotate, scale, place one thing on another, group, light, frame the camera, undo, and read every object back with its position, so it can correct a wrong move rather than repeat it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it need a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the desktop app, a local HTTP door on 127.0.0.1. On the web, a room: the page shows a name, the tool posts to it, the page answers. Nothing reaches the scene while the door is closed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which clients work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any client that speaks MCP over HTTP: the desktop build publishes an endpoint on your machine, the web page a room. No client is favoured and none is required to use Polynite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it finished?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The actions above work; heavy creations, materials in the exported GLB and a shared server address are being worked on, and this page says so as they land."
+      }
+    }
+  ]
 }</script>
 </head>
 <body>
@@ -100,14 +152,13 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <a class="brand" href="/"><img src="/assets/favicon-32.png" width="24" height="24" alt=""> Polynite</a>
     <nav class="site" aria-label="Main">
       <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/" aria-current="page">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li class="go"><a href="/">Open Polynite</a></li>
       </ul>
     </nav>
   </div>
@@ -115,11 +166,11 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
 <main>
   <div class="wrap">
   <h1>An MCP server for a 3D scene</h1>
-  <p class="lead">Polynite exposes what it builds with to programs: an agent such as Claude
-  Code can create objects, move them, read the scene back and correct itself, in the same
-  window you are looking at. It is a preview, and this page says what works today.</p>
+  <p class="lead">Give an agent a 3D scene. Any MCP client builds beside you in the same window: it creates, moves, reads the scene back and corrects itself. The door is being built; this page says what it does and where it stands.</p>
 
-  <p><a class="cta" href="/">Open Polynite, press Create, then Agent</a></p>
+  <p class="note"><strong>Under construction.</strong> The MCP door is a preview: it works in the lab build and is not switched on for the public site yet. Nothing here asks you to install a client, and no client is favoured: it speaks MCP over HTTP, which is what every client speaks.</p>
+
+  <p class="ctas"><a class="cta" href="/create/">Create by hand today</a><a class="cta ghost" href="#actions">See the actions</a></p>
 
   <h2>What an agent can do</h2>
   <ul>
@@ -130,9 +181,9 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
     <li><code>polynite_bake</code> and <code>polynite_export</code> - the creation as a GLB file, loaded back as a model or just written.</li>
   </ul>
 
-  <h2>Connect Claude Code</h2>
-  <p>On the desktop app, open the door in Create &gt; Agent, then:</p>
-  <pre><code>claude mcp add --transport http polynite http://127.0.0.1:8790/mcp</code></pre>
+  <h2>Connect a client</h2>
+  <p>In the lab build, open the door in Create &gt; Agent; the app shows the address of its endpoint:</p>
+  <pre><code>http://127.0.0.1:8790/mcp        (streamable HTTP, on your machine)</code></pre>
   <p>Ask for a castle beside the model, or a table with chairs, and watch it appear. The
   agent reads the scene back after every batch, including the sentence Polynite wrote for
   each refused action, so a wrong move is corrected rather than repeated.</p>
@@ -142,7 +193,7 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   page shows a room name. A tool posts its requests to that room and the page answers them.
   Nothing outside your window can reach the scene while the door is closed.</p>
 
-  <h2>The actions, in short</h2>
+  <h2 id="actions">The actions, in short</h2>
   <pre><code>{"op":"create","id":"pedestal","t":"cube","p":[0,0.25,0],"s":[1.6,0.5,1.6],"c":"#c8c0b0","m":"stone"}
 {"op":"create","id":"ball","t":"sphere","p":[0,1,0],"s":0.9,"c":"#d02a20"}
 {"op":"place","id":"ball","on":"pedestal","side":"top"}
@@ -155,21 +206,33 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   <p>Preview. The desktop app and the web page both answer; the door is off by default and
   carries no secret yet, so keep the room name to yourself. Heavy creations, materials in the
   exported GLB and a shared server address are being worked on.</p>
+
+  <h2 class="faq-title">Questions people ask</h2>
+  <div class="faq">
+    <h3>What can the agent do?</h3>
+    <p>Create primitives, set materials and colours, move, rotate, scale, place one thing on another, group, light, frame the camera, undo, and read every object back with its position, so it can correct a wrong move rather than repeat it.</p>
+    <h3>Does it need a server?</h3>
+    <p>On the desktop app, a local HTTP door on 127.0.0.1. On the web, a room: the page shows a name, the tool posts to it, the page answers. Nothing reaches the scene while the door is closed.</p>
+    <h3>Which clients work?</h3>
+    <p>Any client that speaks MCP over HTTP: the desktop build publishes an endpoint on your machine, the web page a room. No client is favoured and none is required to use Polynite.</p>
+    <h3>Is it finished?</h3>
+    <p>No. The actions above work; heavy creations, materials in the exported GLB and a shared server address are being worked on, and this page says so as they land.</p>
+  </div>
+
   </div>
 </main>
 <footer class="site">
   <div class="wrap">
     <ul>
-    <li><a href="/">Viewer</a></li>
     <li><a href="/create/">Create</a></li>
     <li><a href="/free-glb-models/">Free models</a></li>
     <li><a href="/mcp/" aria-current="page">MCP</a></li>
     <li><a href="/glb-viewer/">GLB viewer</a></li>
     <li><a href="/glb-optimizer/">GLB optimizer</a></li>
-    <li><a href="/reduce-polygons/">Reduce polygons</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/">Open Polynite</a></li>
     </ul>
-    <p>Polynite runs in your browser. Models you open stay on your machine unless you publish them yourself.</p>
+    <p>Made in a browser tab. Shared with one link. Remixed by whoever opens it. Your files stay on your machine until you say otherwise.</p>
   </div>
 </footer>
 </body>
