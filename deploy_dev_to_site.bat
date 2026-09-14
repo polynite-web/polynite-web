@@ -140,7 +140,9 @@ REM THE SITE'S OWN FILES, which live at the root and never in dev\:
 REM the pages search engines are sent to (about, create, mcp,
 REM glb-viewer, glb-optimizer, reduce-polygons), robots.txt, the two
 REM sitemaps, the manifest, the service worker, the 404 page and the
-REM IndexNow key. Cloudflare Pages serves web\, and without this step
+REM IndexNow key - and assets\, the favicons, icons and cover the pages
+REM and the manifest point at (devssets holds only the app's wordmark).
+REM Cloudflare Pages serves web\, and without this step
 REM the live site had none of them: /sitemap.xml answered with
 REM index.html (the SPA fallback) and Google could not read it, and
 REM /robots.txt was Cloudflare's own default.
@@ -152,7 +154,7 @@ for %%F in (robots.txt sitemap.xml sitemap-pages.xml site.webmanifest sw.js 404.
     if exist "%DST%\%%F" copy /y "%DST%\%%F" "%WEB%\%%F" >nul
 )
 
-for %%D in (about create mcp glb-viewer glb-optimizer reduce-polygons) do (
+for %%D in (assets about create mcp glb-viewer glb-optimizer reduce-polygons) do (
     if exist "%DST%\%%D\" robocopy "%DST%\%%D" "%WEB%\%%D" /E /XJ /NFL /NDL /NJH /R:1 /W:1 >nul
 )
 
