@@ -1,0 +1,18 @@
+# The public pages moved to Polynite Explore, for good.
+/about/* https://explore.polynite.io/about/:splat 301
+/about https://explore.polynite.io/about/ 301
+/create/* https://explore.polynite.io/create/:splat 301
+/create https://explore.polynite.io/create/ 301
+/mcp/* https://explore.polynite.io/mcp/:splat 301
+/mcp https://explore.polynite.io/mcp/ 301
+/glb-viewer/* https://explore.polynite.io/glb-viewer/:splat 301
+/glb-viewer https://explore.polynite.io/glb-viewer/ 301
+/glb-optimizer/* https://explore.polynite.io/glb-optimizer/:splat 301
+/glb-optimizer https://explore.polynite.io/glb-optimizer/ 301
+/reduce-polygons/* https://explore.polynite.io/reduce-polygons/:splat 301
+/reduce-polygons https://explore.polynite.io/reduce-polygons/ 301
+/explore/* https://explore.polynite.io/:splat 301
+/explore https://explore.polynite.io/ 301
+/free-glb-models/* https://explore.polynite.io/:splat 301
+/free-glb-models https://explore.polynite.io/ 301
+/sitemap-pages.xml https://explore.polynite.io/sitemap-pages.xml 301

@@ -137,9 +137,9 @@ if errorlevel 1 (
 
 REM ---------------------------------------------------------------
 REM THE SITE'S OWN FILES, which live at the root and never in dev\:
-REM the pages search engines are sent to (about, create, mcp,
-REM glb-viewer, glb-optimizer, reduce-polygons), robots.txt, the two
-REM sitemaps, the manifest, the service worker, the 404 page and the
+REM robots.txt (which names Explore's sitemap), the app's own sitemap,
+REM the manifest, the service worker, the 404 page, _redirects (the old
+REM page addresses, sent to explore.polynite.io for good) and the
 REM IndexNow key - and assets\, the favicons, icons and cover the pages
 REM and the manifest point at (devssets holds only the app's wordmark).
 REM Cloudflare Pages serves web\, and without this step
@@ -150,11 +150,11 @@ REM ---------------------------------------------------------------
 
 echo  [polynite] Site files into web\ (pages, robots, sitemaps, manifest) ...
 
-for %%F in (robots.txt sitemap.xml sitemap-pages.xml site.webmanifest sw.js 404.html 85ef0b560cb79cf375d6f23d3891180c.txt) do (
+for %%F in (robots.txt sitemap.xml site.webmanifest sw.js 404.html _redirects) do (
     if exist "%DST%\%%F" copy /y "%DST%\%%F" "%WEB%\%%F" >nul
 )
 
-for %%D in (assets about create mcp glb-viewer glb-optimizer reduce-polygons) do (
+for %%D in (assets) do (
     if exist "%DST%\%%D\" robocopy "%DST%\%%D" "%WEB%\%%D" /E /XJ /NFL /NDL /NJH /R:1 /W:1 >nul
 )
 
