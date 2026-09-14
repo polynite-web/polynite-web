@@ -60,6 +60,11 @@ p,li{color:#cfdcec}
 .card{border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:var(--bg2)}
 .card h3{margin-top:0}
 .card p{margin-bottom:0; font-size:.95rem; color:var(--dim)}
+.examples{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.examples a{display:block; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--bg2); color:var(--dim); font-size:.9rem}
+.examples a:hover{border-color:var(--accent); text-decoration:none}
+.examples img{display:block; width:100%; height:auto; aspect-ratio:1200/630; object-fit:cover; background:#000}
+.examples span{display:block; padding:.55rem .8rem}
 code{background:#161b24; padding:.1em .35em; border-radius:4px; font-size:.9em}
 footer.site{border-top:1px solid var(--line); margin-top:3.5rem; padding:2rem 0 3rem; color:var(--dim); font-size:.9rem}
 footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0 1rem; flex-wrap:wrap}
@@ -120,6 +125,17 @@ footer.site ul{list-style:none; display:flex; gap:1.25rem; padding:0; margin:0 0
   and exported as a <code>.glb</code>.</p>
 
   <p><a class="cta" href="/">Open Polynite and press Create</a></p>
+
+  <h2>Made with Polynite</h2>
+  <p class="lead">Four creations shared straight from the app, kept as their authors left them: the light,
+  the floor, the framing. Open one, spin it, remix it.</p>
+  <div class="grid examples">
+    <a href="https://share.polynite.io/8nFeVXI2pr"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=8nFeVXI2pr" width="1200" height="630" alt="A black dragon with glowing red eyes, wings spread, on a tiled floor in low light"><span>Dragon in the dark &middot; by glasstyping-beep</span></a>
+    <a href="https://share.polynite.io/JhFlJTaMhu"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=JhFlJTaMhu" width="1200" height="630" alt="A cartoon beagle puppy standing on a checkered floor under a violet sky"><span>Puppy &middot; by glasstyping-beep</span></a>
+    <a href="https://share.polynite.io/jPbTT9chVl"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=jPbTT9chVl" width="1200" height="630" alt="A small toy T-rex with yellow eyes on a blue tiled floor, lit from above"><span>Little T-rex &middot; by Black-Wolf-Legendary</span></a>
+    <a href="https://share.polynite.io/4SWFJ47WNj"><img loading="lazy" src="https://api.polynite.io/api/share/image?id=4SWFJ47WNj" width="1200" height="630" alt="A chocolate chip cookie on a checkered floor in a pool of warm light"><span>Cookie &middot; by Black-Wolf-Legendary</span></a>
+  </div>
+  <p><a href="/free-glb-models/">More, published by their creators, in the free models gallery &rarr;</a></p>
 
   <h2>Three ways to create</h2>
   <p><strong>Procedural, in one tap.</strong> A castle with its walls, towers, keep and village;
