@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://polynite.io/</loc>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>https://polynite.io/sitemap-app.xml</loc></sitemap>
+  <sitemap><loc>https://explore.polynite.io/sitemap-pages.xml</loc></sitemap>
+  <sitemap><loc>https://explore.polynite.io/sitemap-models.xml</loc></sitemap>
+</sitemapindex>

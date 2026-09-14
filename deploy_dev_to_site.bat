@@ -150,7 +150,7 @@ REM ---------------------------------------------------------------
 
 echo  [polynite] Site files into web\ (pages, robots, sitemaps, manifest) ...
 
-for %%F in (robots.txt sitemap.xml site.webmanifest sw.js 404.html _redirects) do (
+for %%F in (robots.txt sitemap.xml sitemap-app.xml site.webmanifest sw.js 404.html _redirects) do (
     if exist "%DST%\%%F" copy /y "%DST%\%%F" "%WEB%\%%F" >nul
 )
 
