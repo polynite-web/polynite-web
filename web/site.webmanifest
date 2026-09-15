@@ -1,7 +1,7 @@
 {
   "name": "Polynite",
   "short_name": "Polynite",
-  "description": "A 3D viewer and creation environment in your browser, with MCP connectivity.",
+  "description": "View, optimize and share 3D models in your browser.",
   "id": "/",
   "start_url": "/",
   "scope": "/",

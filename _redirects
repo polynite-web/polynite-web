@@ -11,8 +11,8 @@
 /glb-optimizer https://explore.polynite.io/glb-optimizer/ 301
 /reduce-polygons/* https://explore.polynite.io/reduce-polygons/:splat 301
 /reduce-polygons https://explore.polynite.io/reduce-polygons/ 301
-/explore/* https://explore.polynite.io/:splat 301
-/explore https://explore.polynite.io/ 301
-/free-glb-models/* https://explore.polynite.io/:splat 301
-/free-glb-models https://explore.polynite.io/ 301
+/explore/* https://explore.polynite.io/discover/:splat 301
+/explore https://explore.polynite.io/discover/ 301
+/free-glb-models/* https://explore.polynite.io/discover/:splat 301
+/free-glb-models https://explore.polynite.io/discover/ 301
 /sitemap-pages.xml https://explore.polynite.io/sitemap-pages.xml 301
