@@ -2,6 +2,7 @@ arunangshubanerjee-g-clef-1600.glb 969280
 arunangshubanerjee-g-clef-1600.high.glb 559836
 Dragon_Model.glb 364472
 Dragon_Model.high.glb 179140
+ergoninane-potion-76.glb 2573408
 gal-b-die-4221.glb 906060
 gal-b-die-4221.high.glb 640308
 gal-b-lantern-4120.glb 220508
