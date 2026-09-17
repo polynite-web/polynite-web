@@ -1,0 +1,5934 @@
+{
+  "advance_lc_uc_padding": 10,
+  "advance_padding": 14,
+  "advance_ratio": 1.05,
+  "default_advance": 64,
+  "glyph_count": 52,
+  "monospace_spacing": 64,
+  "name": "Numeris Ancient Tech",
+  "padding": 4,
+  "snap": 1,
+  "space_advance": 32,
+  "spacing_mode": 0,
+  "units_per_em": 64,
+  "version": 1,
+  "glyphs": {
+    "G0": {
+      "codepoint": 65,
+      "label": "Ancient gear",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 11,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            13.0,
+            32.0
+          ],
+          "end": [
+            21.0,
+            32.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            9.19238815542512,
+            41.19238815542512
+          ],
+          "end": [
+            14.849242404917499,
+            46.8492424049175
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            7.960204194457795e-16,
+            45.0
+          ],
+          "end": [
+            1.2858791391047208e-15,
+            53.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -9.192388155425117,
+            41.19238815542512
+          ],
+          "end": [
+            -14.849242404917497,
+            46.8492424049175
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -13.0,
+            32.0
+          ],
+          "end": [
+            -21.0,
+            32.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            -9.19238815542512,
+            22.807611844574883
+          ],
+          "end": [
+            -14.8492424049175,
+            17.150757595082503
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            -2.3880612583373385e-15,
+            19.0
+          ],
+          "end": [
+            -3.857637417314163e-15,
+            11.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            9.192388155425116,
+            22.80761184457488
+          ],
+          "end": [
+            14.849242404917494,
+            17.1507575950825
+          ],
+          "thickness": 3,
+          "type": 1
+        }
+      }
+    },
+    "G1": {
+      "codepoint": 97,
+      "label": "Ancient gear alternate",
+      "stroke_count": 12,
+      "strokes": {
+        "S0": {
+          "start": [
+            0.0,
+            31.4
+          ],
+          "end": [
+            0.0,
+            31.4
+          ],
+          "arc_radius": 9.9,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0.0,
+            31.4
+          ],
+          "end": [
+            0.0,
+            31.4
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -11.96,
+            31.4
+          ],
+          "end": [
+            -19.32,
+            31.4
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -8.457,
+            40.1328
+          ],
+          "end": [
+            -13.6613,
+            45.5068
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -0.0,
+            43.75
+          ],
+          "end": [
+            -0.0,
+            51.35
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            8.457,
+            40.1328
+          ],
+          "end": [
+            13.6613,
+            45.5068
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            11.96,
+            31.4
+          ],
+          "end": [
+            19.32,
+            31.4
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            8.457,
+            22.6672
+          ],
+          "end": [
+            13.6613,
+            17.2932
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            0.0,
+            19.05
+          ],
+          "end": [
+            0.0,
+            11.45
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            -8.457,
+            22.6672
+          ],
+          "end": [
+            -13.6613,
+            17.2932
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S10": {
+          "arc_radius": 22,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S11": {
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G2": {
+      "codepoint": 66,
+      "label": "Rune chip",
+      "stroke_count": 11,
+      "strokes": {
+        "S0": {
+          "start": [
+            -12,
+            20
+          ],
+          "end": [
+            12,
+            20
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            12,
+            20
+          ],
+          "end": [
+            12,
+            44
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            12,
+            44
+          ],
+          "end": [
+            -12,
+            44
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -12,
+            44
+          ],
+          "end": [
+            -12,
+            20
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.1,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            -20,
+            24
+          ],
+          "end": [
+            -12,
+            24
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            12,
+            24
+          ],
+          "end": [
+            20,
+            24
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            -20,
+            32
+          ],
+          "end": [
+            -12,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            12,
+            32
+          ],
+          "end": [
+            20,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            -20,
+            40
+          ],
+          "end": [
+            -12,
+            40
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S10": {
+          "start": [
+            12,
+            40
+          ],
+          "end": [
+            20,
+            40
+          ],
+          "thickness": 1.8,
+          "type": 1
+        }
+      }
+    },
+    "G3": {
+      "codepoint": 98,
+      "label": "Rune chip alternate",
+      "stroke_count": 14,
+      "strokes": {
+        "S0": {
+          "start": [
+            -9.4,
+            43.48
+          ],
+          "end": [
+            13.4,
+            43.48
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            13.4,
+            43.48
+          ],
+          "end": [
+            13.4,
+            21.4
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            13.4,
+            21.4
+          ],
+          "end": [
+            -9.4,
+            21.4
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -9.4,
+            21.4
+          ],
+          "end": [
+            -9.4,
+            43.48
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            2.0,
+            32.44
+          ],
+          "end": [
+            2.0,
+            32.44
+          ],
+          "arc_radius": 4.5,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.1,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            -17.0,
+            39.8
+          ],
+          "end": [
+            -9.4,
+            39.8
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            13.4,
+            39.8
+          ],
+          "end": [
+            21.0,
+            39.8
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            -17.0,
+            32.44
+          ],
+          "end": [
+            -9.4,
+            32.44
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            13.4,
+            32.44
+          ],
+          "end": [
+            21.0,
+            32.44
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            -17.0,
+            25.08
+          ],
+          "end": [
+            -9.4,
+            25.08
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S10": {
+          "start": [
+            13.4,
+            25.08
+          ],
+          "end": [
+            21.0,
+            25.08
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S11": {
+          "end": [
+            -14,
+            32
+          ],
+          "start": [
+            -22,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S12": {
+          "end": [
+            22,
+            32
+          ],
+          "start": [
+            14,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S13": {
+          "arc_radius": 2.2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            52
+          ],
+          "start": [
+            0,
+            52
+          ],
+          "thickness": 2.2,
+          "type": 2
+        }
+      }
+    },
+    "G4": {
+      "codepoint": 67,
+      "label": "Portal",
+      "stroke_count": 4,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 18,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 11,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -12,
+            36
+          ],
+          "end": [
+            12,
+            28
+          ],
+          "bulge": 0.5,
+          "thickness": 2,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -12,
+            28
+          ],
+          "end": [
+            12,
+            36
+          ],
+          "bulge": -0.5,
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G5": {
+      "codepoint": 99,
+      "label": "Portal alternate",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 16.2,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 9.9,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            8.56,
+            28.64
+          ],
+          "end": [
+            -12.56,
+            35.68
+          ],
+          "bulge": -0.5,
+          "thickness": 2,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            8.56,
+            35.68
+          ],
+          "end": [
+            -12.56,
+            28.64
+          ],
+          "bulge": 0.5,
+          "thickness": 2,
+          "type": 2
+        },
+        "S4": {
+          "end": [
+            0,
+            4
+          ],
+          "start": [
+            -18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "end": [
+            18,
+            12
+          ],
+          "start": [
+            0,
+            4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "end": [
+            -18,
+            12
+          ],
+          "start": [
+            18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        }
+      }
+    },
+    "G6": {
+      "codepoint": 68,
+      "label": "Obelisk",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            54
+          ],
+          "end": [
+            10,
+            42
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            10,
+            42
+          ],
+          "end": [
+            8,
+            8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            8,
+            8
+          ],
+          "end": [
+            -8,
+            8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -8,
+            8
+          ],
+          "end": [
+            -10,
+            42
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -10,
+            42
+          ],
+          "end": [
+            0,
+            54
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            0,
+            39
+          ],
+          "end": [
+            5,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            5,
+            32
+          ],
+          "end": [
+            0,
+            25
+          ],
+          "thickness": 1.8,
+          "type": 1
+        }
+      }
+    },
+    "G7": {
+      "codepoint": 100,
+      "label": "Obelisk alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            51.6
+          ],
+          "end": [
+            7.0,
+            40.8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            7.0,
+            40.8
+          ],
+          "end": [
+            5.2,
+            10.2
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            5.2,
+            10.2
+          ],
+          "end": [
+            -9.2,
+            10.2
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -9.2,
+            10.2
+          ],
+          "end": [
+            -11.0,
+            40.8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -11.0,
+            40.8
+          ],
+          "end": [
+            -2.0,
+            51.6
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -2.0,
+            38.1
+          ],
+          "end": [
+            2.5,
+            31.8
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            2.5,
+            31.8
+          ],
+          "end": [
+            -2.0,
+            25.5
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S7": {
+          "bulge": 0.35,
+          "end": [
+            20,
+            26
+          ],
+          "start": [
+            -20,
+            26
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S8": {
+          "bulge": -0.35,
+          "end": [
+            20,
+            38
+          ],
+          "start": [
+            -20,
+            38
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S9": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G8": {
+      "codepoint": 69,
+      "label": "Sentinel eye",
+      "stroke_count": 6,
+      "strokes": {
+        "S0": {
+          "start": [
+            -18,
+            32
+          ],
+          "end": [
+            0,
+            40
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            40
+          ],
+          "end": [
+            18,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            18,
+            32
+          ],
+          "end": [
+            0,
+            24
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0,
+            24
+          ],
+          "end": [
+            -18,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 3.5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 9,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 1.7,
+          "type": 2
+        }
+      }
+    },
+    "G9": {
+      "codepoint": 101,
+      "label": "Sentinel eye alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            16.56,
+            31.4
+          ],
+          "end": [
+            0.0,
+            39.0
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0.0,
+            39.0
+          ],
+          "end": [
+            -16.56,
+            31.4
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -16.56,
+            31.4
+          ],
+          "end": [
+            0.0,
+            23.8
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0.0,
+            23.8
+          ],
+          "end": [
+            16.56,
+            31.4
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            0.0,
+            31.4
+          ],
+          "end": [
+            0.0,
+            31.4
+          ],
+          "arc_radius": 3.15,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            0.0,
+            31.4
+          ],
+          "end": [
+            0.0,
+            31.4
+          ],
+          "arc_radius": 8.1,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 1.7,
+          "type": 2
+        },
+        "S6": {
+          "end": [
+            0,
+            48
+          ],
+          "start": [
+            0,
+            56
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "end": [
+            4,
+            52
+          ],
+          "start": [
+            -4,
+            52
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            -18,
+            18
+          ],
+          "start": [
+            -18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S9": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            18,
+            18
+          ],
+          "start": [
+            18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G10": {
+      "codepoint": 70,
+      "label": "Energy key",
+      "stroke_count": 4,
+      "strokes": {
+        "S0": {
+          "start": [
+            -9,
+            40
+          ],
+          "end": [
+            -9,
+            40
+          ],
+          "arc_radius": 7,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2,
+            35
+          ],
+          "end": [
+            17,
+            16
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            8,
+            25
+          ],
+          "end": [
+            14,
+            31
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            12,
+            21
+          ],
+          "end": [
+            18,
+            27
+          ],
+          "thickness": 2.6,
+          "type": 1
+        }
+      }
+    },
+    "G11": {
+      "codepoint": 102,
+      "label": "Energy key alternate",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -6.55,
+            25.08
+          ],
+          "end": [
+            -6.55,
+            25.08
+          ],
+          "arc_radius": 6.3,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0.1,
+            29.68
+          ],
+          "end": [
+            18.15,
+            47.16
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            9.6,
+            38.88
+          ],
+          "end": [
+            15.3,
+            33.36
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            13.4,
+            42.56
+          ],
+          "end": [
+            19.1,
+            37.04
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S4": {
+          "end": [
+            18,
+            16
+          ],
+          "start": [
+            -18,
+            48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "end": [
+            18,
+            48
+          ],
+          "start": [
+            -18,
+            16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "arc_radius": 3,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.3,
+          "type": 2
+        }
+      }
+    },
+    "G12": {
+      "codepoint": 71,
+      "label": "Reactor core",
+      "stroke_count": 8,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 7,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 15,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            16.0,
+            32.0
+          ],
+          "end": [
+            22.0,
+            32.0
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            8.000000000000002,
+            45.856406460551014
+          ],
+          "end": [
+            11.000000000000002,
+            51.052558883257646
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -7.9999999999999964,
+            45.85640646055102
+          ],
+          "end": [
+            -10.999999999999995,
+            51.05255888325765
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -16.0,
+            32.0
+          ],
+          "end": [
+            -22.0,
+            32.0
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -8.000000000000007,
+            18.143593539448986
+          ],
+          "end": [
+            -11.00000000000001,
+            12.947441116742354
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            8.000000000000002,
+            18.143593539448982
+          ],
+          "end": [
+            11.000000000000002,
+            12.94744111674235
+          ],
+          "thickness": 2,
+          "type": 1
+        }
+      }
+    },
+    "G13": {
+      "codepoint": 103,
+      "label": "Reactor core alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 6.3,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 13.5,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -16.08,
+            32.16
+          ],
+          "end": [
+            -21.36,
+            32.16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -9.04,
+            19.9664
+          ],
+          "end": [
+            -11.68,
+            15.3937
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            5.04,
+            19.9664
+          ],
+          "end": [
+            7.68,
+            15.3937
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            12.08,
+            32.16
+          ],
+          "end": [
+            17.36,
+            32.16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            5.04,
+            44.3536
+          ],
+          "end": [
+            7.68,
+            48.9263
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            -9.04,
+            44.3536
+          ],
+          "end": [
+            -11.68,
+            48.9263
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "arc_radius": 22,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S9": {
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G14": {
+      "codepoint": 72,
+      "label": "Antenna",
+      "stroke_count": 6,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            12
+          ],
+          "end": [
+            0,
+            42
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -18,
+            45
+          ],
+          "end": [
+            0,
+            56
+          ],
+          "bulge": 0.4,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            0,
+            56
+          ],
+          "end": [
+            18,
+            45
+          ],
+          "bulge": 0.4,
+          "thickness": 2,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -12,
+            40
+          ],
+          "end": [
+            0,
+            48
+          ],
+          "bulge": 0.4,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            0,
+            48
+          ],
+          "end": [
+            12,
+            40
+          ],
+          "bulge": 0.4,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            -10,
+            12
+          ],
+          "end": [
+            10,
+            12
+          ],
+          "thickness": 2.5,
+          "type": 1
+        }
+      }
+    },
+    "G15": {
+      "codepoint": 104,
+      "label": "Antenna alternate",
+      "stroke_count": 9,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            13.8
+          ],
+          "end": [
+            -2.0,
+            40.8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -18.2,
+            43.5
+          ],
+          "end": [
+            -2.0,
+            53.4
+          ],
+          "bulge": 0.4,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -2.0,
+            53.4
+          ],
+          "end": [
+            14.2,
+            43.5
+          ],
+          "bulge": 0.4,
+          "thickness": 2,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -12.8,
+            39.0
+          ],
+          "end": [
+            -2.0,
+            46.2
+          ],
+          "bulge": 0.4,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -2.0,
+            46.2
+          ],
+          "end": [
+            8.8,
+            39.0
+          ],
+          "bulge": 0.4,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            -11.0,
+            13.8
+          ],
+          "end": [
+            7.0,
+            13.8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S6": {
+          "end": [
+            -14,
+            32
+          ],
+          "start": [
+            -22,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "end": [
+            22,
+            32
+          ],
+          "start": [
+            14,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "arc_radius": 2.2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            52
+          ],
+          "start": [
+            0,
+            52
+          ],
+          "thickness": 2.2,
+          "type": 2
+        }
+      }
+    },
+    "G16": {
+      "codepoint": 73,
+      "label": "Glyph battery",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -12,
+            12
+          ],
+          "end": [
+            12,
+            12
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            12,
+            12
+          ],
+          "end": [
+            12,
+            48
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            12,
+            48
+          ],
+          "end": [
+            -12,
+            48
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -12,
+            48
+          ],
+          "end": [
+            -12,
+            12
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -5,
+            50
+          ],
+          "end": [
+            5,
+            50
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -5,
+            30
+          ],
+          "end": [
+            5,
+            30
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            0,
+            25
+          ],
+          "end": [
+            0,
+            35
+          ],
+          "thickness": 2,
+          "type": 1
+        }
+      }
+    },
+    "G17": {
+      "codepoint": 105,
+      "label": "Glyph battery alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            11.04,
+            12.4
+          ],
+          "end": [
+            -11.04,
+            12.4
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -11.04,
+            12.4
+          ],
+          "end": [
+            -11.04,
+            46.6
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -11.04,
+            46.6
+          ],
+          "end": [
+            11.04,
+            46.6
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            11.04,
+            46.6
+          ],
+          "end": [
+            11.04,
+            12.4
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            4.6,
+            48.5
+          ],
+          "end": [
+            -4.6,
+            48.5
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            4.6,
+            29.5
+          ],
+          "end": [
+            -4.6,
+            29.5
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            0.0,
+            24.75
+          ],
+          "end": [
+            0.0,
+            34.25
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "end": [
+            0,
+            4
+          ],
+          "start": [
+            -18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "end": [
+            18,
+            12
+          ],
+          "start": [
+            0,
+            4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S9": {
+          "end": [
+            -18,
+            12
+          ],
+          "start": [
+            18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        }
+      }
+    },
+    "G18": {
+      "codepoint": 74,
+      "label": "Drone",
+      "stroke_count": 9,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 8,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -8,
+            32
+          ],
+          "end": [
+            -20,
+            45
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            8,
+            32
+          ],
+          "end": [
+            20,
+            45
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -8,
+            32
+          ],
+          "end": [
+            -20,
+            19
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            8,
+            32
+          ],
+          "end": [
+            20,
+            19
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -22,
+            47
+          ],
+          "end": [
+            -22,
+            47
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S6": {
+          "start": [
+            22,
+            47
+          ],
+          "end": [
+            22,
+            47
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S7": {
+          "start": [
+            -22,
+            17
+          ],
+          "end": [
+            -22,
+            17
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S8": {
+          "start": [
+            22,
+            17
+          ],
+          "end": [
+            22,
+            17
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G19": {
+      "codepoint": 106,
+      "label": "Drone alternate",
+      "stroke_count": 12,
+      "strokes": {
+        "S0": {
+          "start": [
+            2.0,
+            32.44
+          ],
+          "end": [
+            2.0,
+            32.44
+          ],
+          "arc_radius": 7.2,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -5.6,
+            32.44
+          ],
+          "end": [
+            -17.0,
+            20.48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            9.6,
+            32.44
+          ],
+          "end": [
+            21.0,
+            20.48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -5.6,
+            32.44
+          ],
+          "end": [
+            -17.0,
+            44.4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            9.6,
+            32.44
+          ],
+          "end": [
+            21.0,
+            44.4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -18.9,
+            18.64
+          ],
+          "end": [
+            -18.9,
+            18.64
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S6": {
+          "start": [
+            22.9,
+            18.64
+          ],
+          "end": [
+            22.9,
+            18.64
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S7": {
+          "start": [
+            -18.9,
+            46.24
+          ],
+          "end": [
+            -18.9,
+            46.24
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S8": {
+          "start": [
+            22.9,
+            46.24
+          ],
+          "end": [
+            22.9,
+            46.24
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S9": {
+          "bulge": 0.35,
+          "end": [
+            20,
+            26
+          ],
+          "start": [
+            -20,
+            26
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S10": {
+          "bulge": -0.35,
+          "end": [
+            20,
+            38
+          ],
+          "start": [
+            -20,
+            38
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S11": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G20": {
+      "codepoint": 75,
+      "label": "Mechanism",
+      "stroke_count": 12,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 11,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            13.0,
+            32.0
+          ],
+          "end": [
+            21.0,
+            32.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            9.19238815542512,
+            41.19238815542512
+          ],
+          "end": [
+            14.849242404917499,
+            46.8492424049175
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            7.960204194457795e-16,
+            45.0
+          ],
+          "end": [
+            1.2858791391047208e-15,
+            53.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -9.192388155425117,
+            41.19238815542512
+          ],
+          "end": [
+            -14.849242404917497,
+            46.8492424049175
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -13.0,
+            32.0
+          ],
+          "end": [
+            -21.0,
+            32.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            -9.19238815542512,
+            22.807611844574883
+          ],
+          "end": [
+            -14.8492424049175,
+            17.150757595082503
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            -2.3880612583373385e-15,
+            19.0
+          ],
+          "end": [
+            -3.857637417314163e-15,
+            11.0
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            9.192388155425116,
+            22.80761184457488
+          ],
+          "end": [
+            14.849242404917494,
+            17.1507575950825
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S10": {
+          "start": [
+            -14,
+            18
+          ],
+          "end": [
+            14,
+            46
+          ],
+          "thickness": 1.6,
+          "type": 1
+        },
+        "S11": {
+          "start": [
+            -14,
+            46
+          ],
+          "end": [
+            14,
+            18
+          ],
+          "thickness": 1.6,
+          "type": 1
+        }
+      }
+    },
+    "G21": {
+      "codepoint": 107,
+      "label": "Mechanism alternate",
+      "stroke_count": 16,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 9.9,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -13.44,
+            32.16
+          ],
+          "end": [
+            -20.48,
+            32.16
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -10.0893,
+            24.0707
+          ],
+          "end": [
+            -15.0673,
+            19.0927
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -2.0,
+            20.72
+          ],
+          "end": [
+            -2.0,
+            13.68
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            6.0893,
+            24.0707
+          ],
+          "end": [
+            11.0673,
+            19.0927
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            9.44,
+            32.16
+          ],
+          "end": [
+            16.48,
+            32.16
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            6.0893,
+            40.2493
+          ],
+          "end": [
+            11.0673,
+            45.2273
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            -2.0,
+            43.6
+          ],
+          "end": [
+            -2.0,
+            50.64
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            -10.0893,
+            40.2493
+          ],
+          "end": [
+            -15.0673,
+            45.2273
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S10": {
+          "start": [
+            10.32,
+            44.48
+          ],
+          "end": [
+            -14.32,
+            19.84
+          ],
+          "thickness": 1.6,
+          "type": 1
+        },
+        "S11": {
+          "start": [
+            10.32,
+            19.84
+          ],
+          "end": [
+            -14.32,
+            44.48
+          ],
+          "thickness": 1.6,
+          "type": 1
+        },
+        "S12": {
+          "end": [
+            0,
+            48
+          ],
+          "start": [
+            0,
+            56
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S13": {
+          "end": [
+            4,
+            52
+          ],
+          "start": [
+            -4,
+            52
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S14": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            -18,
+            18
+          ],
+          "start": [
+            -18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S15": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            18,
+            18
+          ],
+          "start": [
+            18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G22": {
+      "codepoint": 76,
+      "label": "Lens",
+      "stroke_count": 3,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            35
+          ],
+          "end": [
+            0,
+            35
+          ],
+          "arc_radius": 13,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            9,
+            25
+          ],
+          "end": [
+            20,
+            12
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            0,
+            35
+          ],
+          "end": [
+            0,
+            35
+          ],
+          "arc_radius": 5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 1.8,
+          "type": 2
+        }
+      }
+    },
+    "G23": {
+      "codepoint": 108,
+      "label": "Lens alternate",
+      "stroke_count": 6,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            34.5
+          ],
+          "end": [
+            -2.0,
+            34.5
+          ],
+          "arc_radius": 11.7,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            6.1,
+            25.5
+          ],
+          "end": [
+            16.0,
+            13.8
+          ],
+          "thickness": 3,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -2.0,
+            34.5
+          ],
+          "end": [
+            -2.0,
+            34.5
+          ],
+          "arc_radius": 4.5,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S3": {
+          "end": [
+            18,
+            16
+          ],
+          "start": [
+            -18,
+            48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "end": [
+            18,
+            48
+          ],
+          "start": [
+            -18,
+            16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "arc_radius": 3,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.3,
+          "type": 2
+        }
+      }
+    },
+    "G24": {
+      "codepoint": 77,
+      "label": "Monolith",
+      "stroke_count": 6,
+      "strokes": {
+        "S0": {
+          "start": [
+            -9,
+            9
+          ],
+          "end": [
+            9,
+            9
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            9,
+            9
+          ],
+          "end": [
+            9,
+            55
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            9,
+            55
+          ],
+          "end": [
+            -9,
+            55
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -9,
+            55
+          ],
+          "end": [
+            -9,
+            9
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -9,
+            10
+          ],
+          "end": [
+            9,
+            54
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            9,
+            10
+          ],
+          "end": [
+            -9,
+            54
+          ],
+          "thickness": 1.7,
+          "type": 1
+        }
+      }
+    },
+    "G25": {
+      "codepoint": 109,
+      "label": "Monolith alternate",
+      "stroke_count": 8,
+      "strokes": {
+        "S0": {
+          "start": [
+            8.28,
+            9.55
+          ],
+          "end": [
+            -8.28,
+            9.55
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -8.28,
+            9.55
+          ],
+          "end": [
+            -8.28,
+            53.25
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -8.28,
+            53.25
+          ],
+          "end": [
+            8.28,
+            53.25
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            8.28,
+            53.25
+          ],
+          "end": [
+            8.28,
+            9.55
+          ],
+          "thickness": 2.6,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            8.28,
+            10.5
+          ],
+          "end": [
+            -8.28,
+            52.3
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -8.28,
+            10.5
+          ],
+          "end": [
+            8.28,
+            52.3
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S6": {
+          "arc_radius": 22,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S7": {
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G26": {
+      "codepoint": 78,
+      "label": "Node network",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -14,
+            42
+          ],
+          "end": [
+            -14,
+            42
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            14,
+            42
+          ],
+          "end": [
+            14,
+            42
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            0,
+            18
+          ],
+          "end": [
+            0,
+            18
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -10,
+            40
+          ],
+          "end": [
+            -3,
+            34
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            10,
+            40
+          ],
+          "end": [
+            3,
+            34
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            0,
+            28
+          ],
+          "end": [
+            0,
+            22
+          ],
+          "thickness": 1.7,
+          "type": 1
+        }
+      }
+    },
+    "G27": {
+      "codepoint": 110,
+      "label": "Node network alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            -11.3,
+            23.24
+          ],
+          "end": [
+            -11.3,
+            23.24
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            15.3,
+            23.24
+          ],
+          "end": [
+            15.3,
+            23.24
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            2.0,
+            45.32
+          ],
+          "end": [
+            2.0,
+            45.32
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            2.0,
+            32.44
+          ],
+          "end": [
+            2.0,
+            32.44
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -7.5,
+            25.08
+          ],
+          "end": [
+            -0.85,
+            30.6
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            11.5,
+            25.08
+          ],
+          "end": [
+            4.85,
+            30.6
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            2.0,
+            36.12
+          ],
+          "end": [
+            2.0,
+            41.64
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S7": {
+          "end": [
+            -14,
+            32
+          ],
+          "start": [
+            -22,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "end": [
+            22,
+            32
+          ],
+          "start": [
+            14,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S9": {
+          "arc_radius": 2.2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            52
+          ],
+          "start": [
+            0,
+            52
+          ],
+          "thickness": 2.2,
+          "type": 2
+        }
+      }
+    },
+    "G28": {
+      "codepoint": 79,
+      "label": "Orb",
+      "stroke_count": 4,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 16,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 6,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -15,
+            32
+          ],
+          "end": [
+            15,
+            32
+          ],
+          "bulge": 0.45,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -15,
+            32
+          ],
+          "end": [
+            15,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 1.8,
+          "type": 2
+        }
+      }
+    },
+    "G29": {
+      "codepoint": 111,
+      "label": "Orb alternate",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 14.4,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.3,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 5.4,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            11.2,
+            32.16
+          ],
+          "end": [
+            -15.2,
+            32.16
+          ],
+          "bulge": -0.45,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            11.2,
+            32.16
+          ],
+          "end": [
+            -15.2,
+            32.16
+          ],
+          "bulge": 0.45,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S4": {
+          "end": [
+            0,
+            4
+          ],
+          "start": [
+            -18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "end": [
+            18,
+            12
+          ],
+          "start": [
+            0,
+            4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "end": [
+            -18,
+            12
+          ],
+          "start": [
+            18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        }
+      }
+    },
+    "G30": {
+      "codepoint": 80,
+      "label": "Power conduit",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -22,
+            20
+          ],
+          "end": [
+            -8,
+            20
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -8,
+            20
+          ],
+          "end": [
+            -8,
+            44
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -8,
+            44
+          ],
+          "end": [
+            8,
+            44
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            8,
+            44
+          ],
+          "end": [
+            8,
+            20
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            8,
+            20
+          ],
+          "end": [
+            22,
+            20
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -22,
+            20
+          ],
+          "end": [
+            -22,
+            20
+          ],
+          "arc_radius": 3,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S6": {
+          "start": [
+            22,
+            20
+          ],
+          "end": [
+            22,
+            20
+          ],
+          "arc_radius": 3,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G31": {
+      "codepoint": 112,
+      "label": "Power conduit alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            -21.8,
+            21.0
+          ],
+          "end": [
+            -9.2,
+            21.0
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -9.2,
+            21.0
+          ],
+          "end": [
+            -9.2,
+            42.6
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -9.2,
+            42.6
+          ],
+          "end": [
+            5.2,
+            42.6
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            5.2,
+            42.6
+          ],
+          "end": [
+            5.2,
+            21.0
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            5.2,
+            21.0
+          ],
+          "end": [
+            17.8,
+            21.0
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -21.8,
+            21.0
+          ],
+          "end": [
+            -21.8,
+            21.0
+          ],
+          "arc_radius": 2.7,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S6": {
+          "start": [
+            17.8,
+            21.0
+          ],
+          "end": [
+            17.8,
+            21.0
+          ],
+          "arc_radius": 2.7,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S7": {
+          "bulge": 0.35,
+          "end": [
+            20,
+            26
+          ],
+          "start": [
+            -20,
+            26
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S8": {
+          "bulge": -0.35,
+          "end": [
+            20,
+            38
+          ],
+          "start": [
+            -20,
+            38
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S9": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G32": {
+      "codepoint": 81,
+      "label": "Quantum gate",
+      "stroke_count": 3,
+      "strokes": {
+        "S0": {
+          "start": [
+            -8,
+            32
+          ],
+          "end": [
+            -8,
+            32
+          ],
+          "arc_radius": 12,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            8,
+            32
+          ],
+          "end": [
+            8,
+            32
+          ],
+          "arc_radius": 12,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            0,
+            10
+          ],
+          "end": [
+            0,
+            54
+          ],
+          "thickness": 1.8,
+          "type": 1
+        }
+      }
+    },
+    "G33": {
+      "codepoint": 113,
+      "label": "Quantum gate alternate",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            7.36,
+            31.4
+          ],
+          "end": [
+            7.36,
+            31.4
+          ],
+          "arc_radius": 10.8,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -7.36,
+            31.4
+          ],
+          "end": [
+            -7.36,
+            31.4
+          ],
+          "arc_radius": 10.8,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.2,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            0.0,
+            10.5
+          ],
+          "end": [
+            0.0,
+            52.3
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S3": {
+          "end": [
+            0,
+            48
+          ],
+          "start": [
+            0,
+            56
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "end": [
+            4,
+            52
+          ],
+          "start": [
+            -4,
+            52
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            -18,
+            18
+          ],
+          "start": [
+            -18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S6": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            18,
+            18
+          ],
+          "start": [
+            18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G34": {
+      "codepoint": 82,
+      "label": "Relay",
+      "stroke_count": 4,
+      "strokes": {
+        "S0": [
+          {
+            "start": [
+              -17,
+              25
+            ],
+            "end": [
+              -3,
+              25
+            ],
+            "thickness": 2,
+            "type": 1
+          },
+          {
+            "start": [
+              -3,
+              25
+            ],
+            "end": [
+              -3,
+              39
+            ],
+            "thickness": 2,
+            "type": 1
+          },
+          {
+            "start": [
+              -3,
+              39
+            ],
+            "end": [
+              -17,
+              39
+            ],
+            "thickness": 2,
+            "type": 1
+          },
+          {
+            "start": [
+              -17,
+              39
+            ],
+            "end": [
+              -17,
+              25
+            ],
+            "thickness": 2,
+            "type": 1
+          }
+        ],
+        "S1": [
+          {
+            "start": [
+              3,
+              25
+            ],
+            "end": [
+              17,
+              25
+            ],
+            "thickness": 2,
+            "type": 1
+          },
+          {
+            "start": [
+              17,
+              25
+            ],
+            "end": [
+              17,
+              39
+            ],
+            "thickness": 2,
+            "type": 1
+          },
+          {
+            "start": [
+              17,
+              39
+            ],
+            "end": [
+              3,
+              39
+            ],
+            "thickness": 2,
+            "type": 1
+          },
+          {
+            "start": [
+              3,
+              39
+            ],
+            "end": [
+              3,
+              25
+            ],
+            "thickness": 2,
+            "type": 1
+          }
+        ],
+        "S2": {
+          "start": [
+            -3,
+            32
+          ],
+          "end": [
+            3,
+            32
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -17,
+            20
+          ],
+          "end": [
+            17,
+            44
+          ],
+          "thickness": 1.5,
+          "type": 1
+        }
+      }
+    },
+    "G35": {
+      "codepoint": 114,
+      "label": "Relay alternate",
+      "stroke_count": 13,
+      "strokes": {
+        "S0": {
+          "start": [
+            -14.15,
+            38.88
+          ],
+          "end": [
+            -0.85,
+            38.88
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            -0.85,
+            38.88
+          ],
+          "end": [
+            -0.85,
+            26.0
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -0.85,
+            26.0
+          ],
+          "end": [
+            -14.15,
+            26.0
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -14.15,
+            26.0
+          ],
+          "end": [
+            -14.15,
+            38.88
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            4.85,
+            38.88
+          ],
+          "end": [
+            18.15,
+            38.88
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            18.15,
+            38.88
+          ],
+          "end": [
+            18.15,
+            26.0
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            18.15,
+            26.0
+          ],
+          "end": [
+            4.85,
+            26.0
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            4.85,
+            26.0
+          ],
+          "end": [
+            4.85,
+            38.88
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            -0.85,
+            32.44
+          ],
+          "end": [
+            4.85,
+            32.44
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            -14.15,
+            43.48
+          ],
+          "end": [
+            18.15,
+            21.4
+          ],
+          "thickness": 1.5,
+          "type": 1
+        },
+        "S10": {
+          "end": [
+            18,
+            16
+          ],
+          "start": [
+            -18,
+            48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S11": {
+          "end": [
+            18,
+            48
+          ],
+          "start": [
+            -18,
+            16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S12": {
+          "arc_radius": 3,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.3,
+          "type": 2
+        }
+      }
+    },
+    "G36": {
+      "codepoint": 83,
+      "label": "Scanner",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -18,
+            32
+          ],
+          "end": [
+            0,
+            40
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            40
+          ],
+          "end": [
+            18,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            18,
+            32
+          ],
+          "end": [
+            0,
+            24
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0,
+            24
+          ],
+          "end": [
+            -18,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 3.5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            -24,
+            16
+          ],
+          "end": [
+            24,
+            16
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -24,
+            48
+          ],
+          "end": [
+            24,
+            48
+          ],
+          "thickness": 1.8,
+          "type": 1
+        }
+      }
+    },
+    "G37": {
+      "codepoint": 115,
+      "label": "Scanner alternate",
+      "stroke_count": 9,
+      "strokes": {
+        "S0": {
+          "start": [
+            13.84,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            25.12
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            25.12
+          ],
+          "end": [
+            -17.84,
+            32.16
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -17.84,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            39.2
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -2.0,
+            39.2
+          ],
+          "end": [
+            13.84,
+            32.16
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 3.15,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            19.12,
+            46.24
+          ],
+          "end": [
+            -23.12,
+            46.24
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            19.12,
+            18.08
+          ],
+          "end": [
+            -23.12,
+            18.08
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S7": {
+          "arc_radius": 22,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S8": {
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G38": {
+      "codepoint": 84,
+      "label": "Turbine",
+      "stroke_count": 5,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            37
+          ],
+          "end": [
+            15,
+            48
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            5,
+            32
+          ],
+          "end": [
+            16,
+            18
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0,
+            27
+          ],
+          "end": [
+            -15,
+            16
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -5,
+            32
+          ],
+          "end": [
+            -16,
+            46
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        }
+      }
+    },
+    "G39": {
+      "codepoint": 116,
+      "label": "Turbine alternate",
+      "stroke_count": 8,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            31.8
+          ],
+          "end": [
+            -2.0,
+            31.8
+          ],
+          "arc_radius": 4.5,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            36.3
+          ],
+          "end": [
+            11.5,
+            46.2
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            2.5,
+            31.8
+          ],
+          "end": [
+            12.4,
+            19.2
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -2.0,
+            27.3
+          ],
+          "end": [
+            -15.5,
+            17.4
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -6.5,
+            31.8
+          ],
+          "end": [
+            -16.4,
+            44.4
+          ],
+          "bulge": 0.5,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S5": {
+          "end": [
+            -14,
+            32
+          ],
+          "start": [
+            -22,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "end": [
+            22,
+            32
+          ],
+          "start": [
+            14,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "arc_radius": 2.2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            52
+          ],
+          "start": [
+            0,
+            52
+          ],
+          "thickness": 2.2,
+          "type": 2
+        }
+      }
+    },
+    "G40": {
+      "codepoint": 85,
+      "label": "Uplink",
+      "stroke_count": 4,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            12
+          ],
+          "end": [
+            0,
+            38
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": [
+          {
+            "start": [
+              0,
+              54
+            ],
+            "end": [
+              9,
+              36
+            ],
+            "thickness": 2.2,
+            "type": 1
+          },
+          {
+            "start": [
+              9,
+              36
+            ],
+            "end": [
+              -9,
+              36
+            ],
+            "thickness": 2.2,
+            "type": 1
+          },
+          {
+            "start": [
+              -9,
+              36
+            ],
+            "end": [
+              0,
+              54
+            ],
+            "thickness": 2.2,
+            "type": 1
+          }
+        ],
+        "S2": {
+          "start": [
+            -18,
+            38
+          ],
+          "end": [
+            0,
+            52
+          ],
+          "bulge": 0.35,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0,
+            52
+          ],
+          "end": [
+            18,
+            38
+          ],
+          "bulge": 0.35,
+          "thickness": 1.8,
+          "type": 2
+        }
+      }
+    },
+    "G41": {
+      "codepoint": 117,
+      "label": "Uplink alternate",
+      "stroke_count": 9,
+      "strokes": {
+        "S0": {
+          "start": [
+            0.0,
+            12.4
+          ],
+          "end": [
+            0.0,
+            37.1
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            0.0,
+            52.3
+          ],
+          "end": [
+            -8.28,
+            35.2
+          ],
+          "thickness": 2.2,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -8.28,
+            35.2
+          ],
+          "end": [
+            8.28,
+            35.2
+          ],
+          "thickness": 2.2,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            8.28,
+            35.2
+          ],
+          "end": [
+            0.0,
+            52.3
+          ],
+          "thickness": 2.2,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            16.56,
+            37.1
+          ],
+          "end": [
+            0.0,
+            50.4
+          ],
+          "bulge": -0.35,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            0.0,
+            50.4
+          ],
+          "end": [
+            -16.56,
+            37.1
+          ],
+          "bulge": -0.35,
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S6": {
+          "end": [
+            0,
+            4
+          ],
+          "start": [
+            -18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S7": {
+          "end": [
+            18,
+            12
+          ],
+          "start": [
+            0,
+            4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "end": [
+            -18,
+            12
+          ],
+          "start": [
+            18,
+            12
+          ],
+          "thickness": 2,
+          "type": 1
+        }
+      }
+    },
+    "G42": {
+      "codepoint": 86,
+      "label": "Vault",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -18,
+            14
+          ],
+          "end": [
+            18,
+            14
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            18,
+            14
+          ],
+          "end": [
+            18,
+            50
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            18,
+            50
+          ],
+          "end": [
+            -18,
+            50
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -18,
+            50
+          ],
+          "end": [
+            -18,
+            14
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 8,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            0,
+            24
+          ],
+          "end": [
+            0,
+            40
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -8,
+            32
+          ],
+          "end": [
+            8,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 1
+        }
+      }
+    },
+    "G43": {
+      "codepoint": 118,
+      "label": "Vault alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            -15.1,
+            49.0
+          ],
+          "end": [
+            19.1,
+            49.0
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            19.1,
+            49.0
+          ],
+          "end": [
+            19.1,
+            15.88
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            19.1,
+            15.88
+          ],
+          "end": [
+            -15.1,
+            15.88
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -15.1,
+            15.88
+          ],
+          "end": [
+            -15.1,
+            49.0
+          ],
+          "thickness": 2.4,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            2.0,
+            32.44
+          ],
+          "end": [
+            2.0,
+            32.44
+          ],
+          "arc_radius": 7.2,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            2.0,
+            39.8
+          ],
+          "end": [
+            2.0,
+            25.08
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -5.6,
+            32.44
+          ],
+          "end": [
+            9.6,
+            32.44
+          ],
+          "thickness": 1.8,
+          "type": 1
+        },
+        "S7": {
+          "bulge": 0.35,
+          "end": [
+            20,
+            26
+          ],
+          "start": [
+            -20,
+            26
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S8": {
+          "bulge": -0.35,
+          "end": [
+            20,
+            38
+          ],
+          "start": [
+            -20,
+            38
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S9": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G44": {
+      "codepoint": 87,
+      "label": "Watcher",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            -18,
+            32
+          ],
+          "end": [
+            0,
+            40
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            40
+          ],
+          "end": [
+            18,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            18,
+            32
+          ],
+          "end": [
+            0,
+            24
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            0,
+            24
+          ],
+          "end": [
+            -18,
+            32
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 3.5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            19.0,
+            32.0
+          ],
+          "end": [
+            23.0,
+            32.0
+          ],
+          "thickness": 1.5,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            1.1634144591899855e-15,
+            51.0
+          ],
+          "end": [
+            1.4083438190194562e-15,
+            55.0
+          ],
+          "thickness": 1.5,
+          "type": 1
+        }
+      }
+    },
+    "G45": {
+      "codepoint": 119,
+      "label": "Watcher alternate",
+      "stroke_count": 11,
+      "strokes": {
+        "S0": {
+          "start": [
+            13.84,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            25.12
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            -2.0,
+            25.12
+          ],
+          "end": [
+            -17.84,
+            32.16
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            -17.84,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            39.2
+          ],
+          "bulge": -0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            -2.0,
+            39.2
+          ],
+          "end": [
+            13.84,
+            32.16
+          ],
+          "bulge": 0.45,
+          "thickness": 2.4,
+          "type": 2
+        },
+        "S4": {
+          "start": [
+            -2.0,
+            32.16
+          ],
+          "end": [
+            -2.0,
+            32.16
+          ],
+          "arc_radius": 3.15,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2.6,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            -18.72,
+            32.16
+          ],
+          "end": [
+            -22.24,
+            32.16
+          ],
+          "thickness": 1.5,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -2.0,
+            15.44
+          ],
+          "end": [
+            -2.0,
+            11.92
+          ],
+          "thickness": 1.5,
+          "type": 1
+        },
+        "S7": {
+          "end": [
+            0,
+            48
+          ],
+          "start": [
+            0,
+            56
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "end": [
+            4,
+            52
+          ],
+          "start": [
+            -4,
+            52
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S9": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            -18,
+            18
+          ],
+          "start": [
+            -18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        },
+        "S10": {
+          "arc_radius": 2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            18,
+            18
+          ],
+          "start": [
+            18,
+            18
+          ],
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G46": {
+      "codepoint": 88,
+      "label": "X-core",
+      "stroke_count": 7,
+      "strokes": {
+        "S0": {
+          "start": [
+            0,
+            50
+          ],
+          "end": [
+            15,
+            32
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            15,
+            32
+          ],
+          "end": [
+            0,
+            14
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            0,
+            14
+          ],
+          "end": [
+            -15,
+            32
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -15,
+            32
+          ],
+          "end": [
+            0,
+            50
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -16,
+            16
+          ],
+          "end": [
+            16,
+            48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -16,
+            48
+          ],
+          "end": [
+            16,
+            16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            0,
+            32
+          ],
+          "end": [
+            0,
+            32
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.5,
+          "type": 2
+        }
+      }
+    },
+    "G47": {
+      "codepoint": 120,
+      "label": "X-core alternate",
+      "stroke_count": 10,
+      "strokes": {
+        "S0": {
+          "start": [
+            -2.0,
+            48.0
+          ],
+          "end": [
+            11.5,
+            31.8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            11.5,
+            31.8
+          ],
+          "end": [
+            -2.0,
+            15.6
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -2.0,
+            15.6
+          ],
+          "end": [
+            -15.5,
+            31.8
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            -15.5,
+            31.8
+          ],
+          "end": [
+            -2.0,
+            48.0
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            -16.4,
+            17.4
+          ],
+          "end": [
+            12.4,
+            46.2
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -16.4,
+            46.2
+          ],
+          "end": [
+            12.4,
+            17.4
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -2.0,
+            31.8
+          ],
+          "end": [
+            -2.0,
+            31.8
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S7": {
+          "end": [
+            18,
+            16
+          ],
+          "start": [
+            -18,
+            48
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S8": {
+          "end": [
+            18,
+            48
+          ],
+          "start": [
+            -18,
+            16
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S9": {
+          "arc_radius": 3,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.3,
+          "type": 2
+        }
+      }
+    },
+    "G48": {
+      "codepoint": 89,
+      "label": "Yoke",
+      "stroke_count": 4,
+      "strokes": {
+        "S0": {
+          "start": [
+            -18,
+            48
+          ],
+          "end": [
+            0,
+            30
+          ],
+          "bulge": -0.3,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0,
+            30
+          ],
+          "end": [
+            18,
+            48
+          ],
+          "bulge": -0.3,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            0,
+            30
+          ],
+          "end": [
+            0,
+            10
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            0,
+            20
+          ],
+          "end": [
+            0,
+            20
+          ],
+          "arc_radius": 5,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        }
+      }
+    },
+    "G49": {
+      "codepoint": 121,
+      "label": "Yoke alternate",
+      "stroke_count": 6,
+      "strokes": {
+        "S0": {
+          "start": [
+            16.56,
+            46.6
+          ],
+          "end": [
+            0.0,
+            29.5
+          ],
+          "bulge": 0.3,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S1": {
+          "start": [
+            0.0,
+            29.5
+          ],
+          "end": [
+            -16.56,
+            46.6
+          ],
+          "bulge": 0.3,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S2": {
+          "start": [
+            0.0,
+            29.5
+          ],
+          "end": [
+            0.0,
+            10.5
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            0.0,
+            20.0
+          ],
+          "end": [
+            0.0,
+            20.0
+          ],
+          "arc_radius": 4.5,
+          "arc_start": 3.14159,
+          "bulge": 1000,
+          "thickness": 2,
+          "type": 2
+        },
+        "S4": {
+          "arc_radius": 22,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 1.8,
+          "type": 2
+        },
+        "S5": {
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            32
+          ],
+          "start": [
+            0,
+            32
+          ],
+          "thickness": 2.4,
+          "type": 2
+        }
+      }
+    },
+    "G50": {
+      "codepoint": 90,
+      "label": "Zenith beacon",
+      "stroke_count": 8,
+      "strokes": {
+        "S0": [
+          {
+            "start": [
+              0,
+              30
+            ],
+            "end": [
+              10,
+              10
+            ],
+            "thickness": 2.3,
+            "type": 1
+          },
+          {
+            "start": [
+              10,
+              10
+            ],
+            "end": [
+              -10,
+              10
+            ],
+            "thickness": 2.3,
+            "type": 1
+          },
+          {
+            "start": [
+              -10,
+              10
+            ],
+            "end": [
+              0,
+              30
+            ],
+            "thickness": 2.3,
+            "type": 1
+          }
+        ],
+        "S1": {
+          "start": [
+            0,
+            30
+          ],
+          "end": [
+            0,
+            48
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            0,
+            52
+          ],
+          "end": [
+            0,
+            52
+          ],
+          "arc_radius": 4,
+          "arc_start": 0,
+          "bulge": 1000,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S3": {
+          "start": [
+            7.0,
+            52.0
+          ],
+          "end": [
+            18.0,
+            52.0
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            2.163118960624632,
+            58.657395614066075
+          ],
+          "end": [
+            5.562305898749054,
+            69.11901729331277
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S5": {
+          "start": [
+            -5.663118960624631,
+            56.11449676604731
+          ],
+          "end": [
+            -14.562305898749052,
+            62.58013454126452
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            -5.663118960624633,
+            47.88550323395269
+          ],
+          "end": [
+            -14.562305898749056,
+            41.41986545873549
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            2.1631189606246304,
+            45.342604385933925
+          ],
+          "end": [
+            5.562305898749051,
+            34.880982706687234
+          ],
+          "thickness": 1.7,
+          "type": 1
+        }
+      }
+    },
+    "G51": {
+      "codepoint": 122,
+      "label": "Zenith beacon alternate",
+      "stroke_count": 13,
+      "strokes": {
+        "S0": {
+          "start": [
+            2.0,
+            34.28
+          ],
+          "end": [
+            11.5,
+            52.68
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S1": {
+          "start": [
+            11.5,
+            52.68
+          ],
+          "end": [
+            -7.5,
+            52.68
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S2": {
+          "start": [
+            -7.5,
+            52.68
+          ],
+          "end": [
+            2.0,
+            34.28
+          ],
+          "thickness": 2.3,
+          "type": 1
+        },
+        "S3": {
+          "start": [
+            2.0,
+            34.28
+          ],
+          "end": [
+            2.0,
+            17.72
+          ],
+          "thickness": 2.5,
+          "type": 1
+        },
+        "S4": {
+          "start": [
+            2.0,
+            14.04
+          ],
+          "end": [
+            2.0,
+            14.04
+          ],
+          "arc_radius": 3.6,
+          "arc_start": 0.0,
+          "bulge": 1000,
+          "thickness": 2.5,
+          "type": 2
+        },
+        "S5": {
+          "start": [
+            8.65,
+            14.04
+          ],
+          "end": [
+            19.1,
+            14.04
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S6": {
+          "start": [
+            4.055,
+            7.9152
+          ],
+          "end": [
+            7.2842,
+            -1.7095
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S7": {
+          "start": [
+            -3.38,
+            10.2547
+          ],
+          "end": [
+            -11.8342,
+            4.3063
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S8": {
+          "start": [
+            -3.38,
+            17.8253
+          ],
+          "end": [
+            -11.8342,
+            23.7737
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S9": {
+          "start": [
+            4.055,
+            20.1648
+          ],
+          "end": [
+            7.2842,
+            29.7895
+          ],
+          "thickness": 1.7,
+          "type": 1
+        },
+        "S10": {
+          "end": [
+            -14,
+            32
+          ],
+          "start": [
+            -22,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S11": {
+          "end": [
+            22,
+            32
+          ],
+          "start": [
+            14,
+            32
+          ],
+          "thickness": 2,
+          "type": 1
+        },
+        "S12": {
+          "arc_radius": 2.2,
+          "arc_start": 0,
+          "bulge": 1000,
+          "end": [
+            0,
+            52
+          ],
+          "start": [
+            0,
+            52
+          ],
+          "thickness": 2.2,
+          "type": 2
+        }
+      }
+    }
+  }
+}

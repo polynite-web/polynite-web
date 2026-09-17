@@ -16,6 +16,10 @@
     "pane/options.pane",
     "layout/layout.json",
     "Rc/defaults/app.json",
+    /* The film's default SDF font (vmesh_text.hh): 48 KB of strokes, small
+     * enough to ride with the boot so the first title never waits. The
+     * symbol fonts are fetched the first time a clip names one. */
+    "Rc/font/legacy_clean.sdffont.json",
     /* models/index.txt carries every model's byte size, and the FIRST model
      * starts downloading before main() has had a chance to fetch anything of
      * its own. Fetched late, that download begins with no denominator and its
