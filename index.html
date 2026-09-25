@@ -156,7 +156,12 @@ body {
   outline: 0;
   background: #000;
   z-index: 0;
+  opacity: 0;
+  transform: scale(1.008);
+  transition: opacity 900ms cubic-bezier(.2, .72, .22, 1),
+              transform 1200ms cubic-bezier(.2, .72, .22, 1);
 }
+body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
 /* A strip at the bottom, not a black sheet over the whole window. It used to
    cover everything, which meant the only thing anyone could read while the
    engine loaded was a spinner. The intro underneath is the better use of those
@@ -174,9 +179,54 @@ body {
   z-index: 50;
   pointer-events: none;       /* the links inside take theirs back below */
   opacity: 1;
-  transition: opacity 700ms ease;
+  transition: opacity 820ms cubic-bezier(.4, 0, .2, 1);
 }
 #startup.gone { opacity: 0; }
+
+/* One badge, two roles. It begins as part of the launch signature, then moves
+   out of the picture instead of blinking away and quietly marks this build as
+   unfinished. Fixed coordinates make the same move work above WebGPU and GL. */
+.alpha-preview {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  z-index: 51;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px 5px 7px;
+  border: 1px solid rgba(255, 197, 79, 0.4);
+  border-radius: 999px;
+  background: rgba(20, 16, 8, 0.72);
+  box-shadow: 0 0 20px rgba(255, 177, 42, 0.08), inset 0 0 12px rgba(255, 205, 104, 0.04);
+  color: rgba(255, 211, 126, 0.92);
+  font: 600 9px/1 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(50%, 100px);
+  transition: top 900ms cubic-bezier(.2, .72, .22, 1),
+              right 900ms cubic-bezier(.2, .72, .22, 1),
+              transform 900ms cubic-bezier(.2, .72, .22, 1),
+              opacity 500ms ease, background 500ms ease;
+}
+.alpha-preview::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffc552;
+  box-shadow: 0 0 8px rgba(255, 190, 67, 0.9);
+  animation: alpha-breathe 1.8s ease-in-out infinite;
+}
+body.scene-ready .alpha-preview {
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
+  transform: translate(0, 0);
+  background: rgba(11, 13, 18, 0.66);
+}
+.alpha-preview.settled { opacity: 0.58; }
 
 /* The dark the model comes out of. Under the intro and the spinner, over the
    canvas - so the first committed frame is not a half-drawn buffer appearing
@@ -300,15 +350,23 @@ body {
   0%, 100% { transform: scale(0.82); opacity: 0.58; }
   50%      { transform: scale(1.18); opacity: 1; }
 }
+@keyframes alpha-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(0.82); }
+  50%      { opacity: 1; transform: scale(1.15); }
+}
 @media (prefers-reduced-motion: reduce) {
   #startup { transition-duration: 1ms; }
+  .game-canvas, .alpha-preview { transition-duration: 1ms; }
   .loader-ring-fill { animation: none; stroke-dashoffset: 18; opacity: 0.9; }
   .loader-satellite { animation: none; }
+  .alpha-preview::before { animation: none; }
 }
 @media (max-height: 420px) {
   .app-loader { gap: 9px; }
   .loader-mark { width: 66px; }
   .loader-wordmark { display: none; }
+  .alpha-preview { transform: translate(50%, 64px); }
+  body.scene-ready .alpha-preview { transform: none; }
 }
 .gpu-notice {
   position: fixed;
@@ -476,6 +534,7 @@ body {
 <body translate="no" class="notranslate">
 <noscript><style>
   .app-loader { display: none; }
+  .alpha-preview { display: none; }
   .seo-content { display: flex; }
 </style></noscript>
 <div id="startup">
@@ -544,6 +603,7 @@ body {
   <div id="loaderText">Loading engine...</div>
 </div>
 </div>
+<div class="alpha-preview" id="alphaPreview" aria-label="Polynite Alpha Preview">Alpha Preview</div>
 <div class="install-chip" id="installChip">
   <span>Install Polynite on this device</span>
   <button class="go" id="installGo" type="button">Install</button>
@@ -564,6 +624,7 @@ body {
   var canvas = document.getElementById("canvas");
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
+  var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugButton = document.getElementById("debugButton");
   var logNative = console.log ? console.log.bind(console) : function () {};
@@ -912,6 +973,7 @@ body {
     if (loaderHidden) return;
     if (engineAborted) return;
     loaderHidden = true;
+    document.body.classList.add("scene-ready");
     /* One class, one fade. The intro is not decoration to be swept away: it is
        what the page says while there is nothing to look at yet, and the first
        committed frame is the moment there is - so it dissolves INTO the model
@@ -923,6 +985,8 @@ body {
       startup.classList.add("gone");
       setTimeout(function () { startup.style.display = "none"; }, 900);
     }
+    if (alphaPreview)
+      setTimeout(function () { alphaPreview.classList.add("settled"); }, 4200);
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
