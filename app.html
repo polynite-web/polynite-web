@@ -973,6 +973,7 @@ body.scene-ready .alpha-preview {
 
   function mirrorConsole(kind, args) {
     var parts = [], i, el, fatal;
+    var followTail = debugLog.scrollHeight - debugLog.scrollTop - debugLog.clientHeight <= 12;
     for (i = 0; i < args.length; ++i) parts.push(stringifyArg(args[i]));
     var joined = parts.join(" ");
     fatal = kind === "error" && fatalConsoleText(joined);
@@ -997,7 +998,7 @@ body.scene-ready .alpha-preview {
       debugLog.removeChild(victim);
       lineCount--;
     }
-    debugLog.scrollTop = debugLog.scrollHeight;
+    if (followTail) debugLog.scrollTop = debugLog.scrollHeight;
     if (kind === "error" && (devMode || fatal)) {
       debugConsole.classList.add("has-error");
       debugCopy.classList.add("visible");
