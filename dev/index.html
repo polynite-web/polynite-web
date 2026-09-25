@@ -159,7 +159,13 @@ body {
   opacity: 0;
   transform: scale(1.008);
   transition: opacity 700ms cubic-bezier(.2, .72, .22, 1),
-              transform 900ms cubic-bezier(.2, .72, .22, 1);
+              transform 900ms cubic-bezier(.2, .72, .22, 1),
+              filter 700ms ease;
+}
+body.scene-entry-ready .game-canvas {
+  opacity: 0.42;
+  transform: scale(1.003);
+  filter: brightness(0.42) saturate(0.72) blur(1.5px);
 }
 body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
 /* A strip at the bottom, not a black sheet over the whole window. It used to
@@ -182,6 +188,7 @@ body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
   transition: opacity 520ms cubic-bezier(.4, 0, .2, 1);
 }
 #startup.gone { opacity: 0; }
+body.scene-entry-ready #startup { pointer-events: auto; cursor: pointer; }
 
 /* One badge, two roles. It begins as part of the launch signature, then becomes
    a short-lived watermark below the top HUD without competing with its actions. */
@@ -240,6 +247,12 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   inset: 0;
   background: #0b0d12;
   z-index: 1;
+  transition: background 700ms ease, backdrop-filter 700ms ease;
+}
+body.scene-entry-ready #curtain {
+  background: rgba(5, 8, 14, 0.76);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 
 /* The first frame belongs to the product, not to a generic spinner. The mark
@@ -318,6 +331,11 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
 .app-loader.model-loading .loader-mark { animation: loader-wait 1.7s ease-in-out infinite; }
 .app-loader.complete .loader-progress { animation: none; opacity: 0.9; stroke-dashoffset: 0; }
 .app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
+.app-loader.await-entry { pointer-events: auto; }
+.app-loader.await-entry .loader-mark { animation: loader-wait 2.2s ease-in-out infinite; }
+.app-loader.await-entry .loader-satellite-static { opacity: 0; }
+.app-loader.await-entry .loader-satellite-moving { opacity: 1; animation: loader-moon-glow 1.5s ease-in-out infinite; }
+.app-loader.await-entry .loader-meters { display: none; }
 .app-loader.model-loading.static-loading:not(.complete) .loader-progress {
   animation: none;
   transition: none;
@@ -343,6 +361,22 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   color: rgba(147, 164, 186, 0.72);
   font-size: 12px;
   letter-spacing: 0.02em;
+}
+.loader-state {
+  display: none;
+  margin-bottom: -8px;
+  color: rgba(210, 229, 250, 0.74);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.app-loader.await-entry .loader-state { display: block; }
+.app-loader.await-entry #loaderText {
+  color: rgba(225, 238, 255, 0.94);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 18px rgba(111, 174, 255, 0.44);
 }
 .loader-meters {
   width: min(220px, calc(100vw - 44px));
@@ -752,6 +786,7 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
     </svg>
   </div>
   <div class="loader-wordmark" aria-hidden="true">Polynite</div>
+  <div class="loader-state" id="loaderState">Scene ready</div>
   <div id="loaderText" role="status" aria-live="polite">Loading engine...</div>
   <div class="loader-meters" aria-hidden="true">
     <div class="loader-meter" id="loaderDownload">
@@ -786,6 +821,7 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   var canvas = document.getElementById("canvas");
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
+  var loaderState = document.getElementById("loaderState");
   var loaderEngineRing = loader ? loader.querySelector(".loader-ring-fill") : null;
   var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
   var loaderDownload = document.getElementById("loaderDownload");
@@ -1186,6 +1222,8 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   var loaderLastStage = -1;
   var loaderHadDownload = false;
   var engineAborted = false;
+  var sceneEntryReady = false;
+  window.vmeshSceneEntered = false;
 
   function loaderMeter(row, fill, value, progress) {
     if (!row || !fill || !value) return;
@@ -1232,35 +1270,51 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
     }
   };
 
-  function hideLoader() {
-    if (loaderHidden || loaderHideRequested) return;
-    if (engineAborted) return;
-    loaderHideRequested = true;
-    if (loader) {
-      loader.classList.remove("unknown-progress");
-      loader.classList.add("model-loading", "complete");
-    }
-    if (loaderText) loaderText.textContent = "Opening scene...";
-    /* Do not wait for another animation frame: scene initialization can keep
-       the main thread busy. The SVG orbit runs independently from this call. */
+  function enterScene(e) {
+    if (!sceneEntryReady || loaderHidden) return;
+    if (e && e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
     loaderHidden = true;
+    window.vmeshSceneEntered = true;
+    document.body.classList.remove("scene-entry-ready");
     document.body.classList.add("scene-ready");
-    /* One class, one fade. The intro is not decoration to be swept away: it is
-       what the page says while there is nothing to look at yet, and the first
-       committed frame is the moment there is - so it dissolves INTO the model
-       rather than being cut off mid-sentence.
-       Removed from the document only once the fade is over: it is already
-       pointer-events:none, so it is out of the way long before that. */
+    if (loaderText) loaderText.textContent = "Opening scene...";
     var startup = document.getElementById("startup");
     if (startup) {
       startup.classList.add("gone");
+      startup.removeAttribute("role");
+      startup.removeAttribute("tabindex");
       setTimeout(function () { startup.style.display = "none"; }, 600);
     }
+    window.dispatchEvent(new CustomEvent("polynite:scene-entered"));
+    setTimeout(function () { if (canvas) canvas.focus(); }, 620);
     if (alphaPreview) {
       setTimeout(function () { alphaPreview.classList.add("settled"); }, 2400);
       setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 8000);
     }
   }
+
+  function hideLoader(fallback) {
+    if (loaderHidden || loaderHideRequested) return;
+    if (engineAborted) return;
+    loaderHideRequested = true;
+    sceneEntryReady = true;
+    if (loader) {
+      loader.classList.remove("unknown-progress");
+      loader.classList.add("model-loading", "complete", "await-entry");
+    }
+    if (loaderState) loaderState.textContent = fallback ? "Scene available" : "Scene ready";
+    if (loaderText) loaderText.textContent = fallback ? "Tap to continue" : "Tap to enter";
+    document.body.classList.add("scene-entry-ready");
+    var startup = document.getElementById("startup");
+    if (startup) {
+      startup.setAttribute("role", "button");
+      startup.setAttribute("tabindex", "0");
+      startup.setAttribute("aria-label", fallback ? "Continue to Polynite" : "Enter the ready scene");
+    }
+  }
+
+  document.getElementById("startup").addEventListener("pointerup", enterScene);
+  window.addEventListener("keydown", enterScene, true);
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
      numerisHideLoader stays as an alias: same shell, same contract. */
@@ -1411,9 +1465,7 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
     });
     /* The session clock starts when there is something to look at, not when
        the page was requested: a slow first load is not time spent deciding. */
-    var armed = window.vmeshHideLoader;
-    window.vmeshHideLoader = function () { armed(); t0 = Date.now(); };
-    window.numerisHideLoader = window.vmeshHideLoader;
+    window.addEventListener("polynite:scene-entered", function () { t0 = Date.now(); }, { once: true });
     if (chip) {
       document.getElementById("installGo").addEventListener("click", function () {
         window.__pnInstall();
@@ -1455,7 +1507,7 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
     setTimeout(function () {
       if (engineAborted || loaderHidden || loaderHideRequested) return;
       var now = performance.now ? performance.now() : Date.now();
-      if (now - loaderLastSignal > 25000) hideLoader();
+      if (now - loaderLastSignal > 25000) hideLoader(true);
       else loaderWatchdog();
     }, 5000);
   })();
