@@ -188,40 +188,69 @@ body {
   z-index: 1;
 }
 
-/* Dead centre, where a spinner belongs. Transparent, not an opaque sheet:
-   the intro sits underneath in the lower part of the screen and the two never
-   fight for the same pixels. */
+/* The first frame belongs to the product, not to a generic spinner. The mark
+   is inline SVG: no request, no raster scaling and only two animated strokes. */
 .app-loader {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 14px;
   color: rgba(255, 255, 255, 0.42);
   font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   pointer-events: none;
   z-index: 50;
 }
-/* The message is placed UNDER the spinner rather than stacked with it in a
-   column. Stacked, a message that wrapped to two lines made the column taller
-   and pushed the wheel up - which is why it was centred on some loads and not
-   on others. Out of the flow, the wheel is centred on all of them. */
-#loaderText {
-  position: absolute;
-  top: calc(50% + 36px);
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 0 1.25rem;
+.loader-mark {
+  width: clamp(78px, 11vw, 104px);
+  aspect-ratio: 1;
+  color: #8fc2ff;
+  filter: drop-shadow(0 0 12px rgba(65, 136, 255, 0.22));
 }
-.app-spinner {
-  width: 40px;
-  height: 40px;
-  flex: none;
-  border: 4px solid rgba(255, 255, 255, 0.08);
-  border-top-color: rgba(255, 255, 255, 0.42);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.loader-logo { display: block; width: 100%; height: 100%; overflow: visible; }
+.loader-ring-base,
+.loader-ring-fill,
+.loader-orbit {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+.loader-ring-base { stroke: rgba(143, 194, 255, 0.14); stroke-width: 5; }
+.loader-ring-fill {
+  stroke: url(#loaderBlue);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: loader-fill 2.35s cubic-bezier(.45, 0, .2, 1) infinite;
+}
+.loader-orbit {
+  stroke: rgba(220, 236, 255, 0.82);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.loader-satellite {
+  fill: #eef7ff;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: loader-pulse 1.25s ease-in-out infinite;
+}
+.loader-wordmark {
+  margin-right: -0.32em;
+  color: rgba(219, 230, 243, 0.82);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+#loaderText {
+  min-height: 1.4em;
+  max-width: min(28rem, calc(100vw - 2.5rem));
+  text-align: center;
+  color: rgba(147, 164, 186, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
 /* The install offer. Chrome would put its own banner over the viewer at a
    moment it chooses; this takes the event instead and asks quietly, once the
@@ -261,14 +290,26 @@ body {
   background: transparent;
   color: #7f8ea3;
 }
-@keyframes intro-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes loader-fill {
+  0%   { stroke-dashoffset: 100; opacity: 0.28; }
+  76%  { stroke-dashoffset: 5; opacity: 1; }
+  90%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(0.82); opacity: 0.58; }
+  50%      { transform: scale(1.18); opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .seo-content { animation-duration: 1ms; }
+  #startup { transition-duration: 1ms; }
+  .loader-ring-fill { animation: none; stroke-dashoffset: 18; opacity: 0.9; }
+  .loader-satellite { animation: none; }
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-height: 420px) {
+  .app-loader { gap: 9px; }
+  .loader-mark { width: 66px; }
+  .loader-wordmark { display: none; }
+}
 .gpu-notice {
   position: fixed;
   inset: 0;
@@ -395,18 +436,15 @@ body {
  * frame. It was a 1px clipped block before: text written for search engines
  * and shown to nobody, which is exactly what search engines penalise.
  */
-/* It appears only if the wait is long enough to be worth filling.
-   A CSS delay, not a script: the text is in the document from the first byte,
-   where crawlers and screen readers find it, and a load that finishes in half a
-   second hides the whole start-up screen before the animation ever starts. No
-   flash of text on a fast connection, and something to read on a slow one. */
+/* Search and fallback content stays semantic in the document, but JavaScript
+   users never see it flash through the loader. The noscript rule below makes
+   it the actual page when the application cannot start at all. */
 .seo-content {
-  animation: intro-in 380ms ease 1100ms both;
+  display: none;
   pointer-events: auto;       /* #startup gives them up; the links want them */
   position: absolute;
   inset: auto 0 0 0;              /* the lower band, clear of the spinner */
   z-index: 5;
-  display: flex;
   flex-direction: column;
   gap: 0.8rem;
   max-height: 38vh;
@@ -436,6 +474,10 @@ body {
 </style>
 </head>
 <body translate="no" class="notranslate">
+<noscript><style>
+  .app-loader { display: none; }
+  .seo-content { display: flex; }
+</style></noscript>
 <div id="startup">
 <div id="curtain"></div>
 <main class="seo-content" id="intro">
@@ -480,8 +522,25 @@ body {
   </nav>
 </main>
 
-<div class="app-loader" id="loader">
-  <div class="app-spinner"></div>
+<div class="app-loader" id="loader" role="status" aria-live="polite">
+  <div class="loader-mark" aria-hidden="true">
+    <svg class="loader-logo" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="loaderBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d9ecff"/>
+          <stop offset="0.52" stop-color="#7db6ff"/>
+          <stop offset="1" stop-color="#397cff"/>
+        </linearGradient>
+      </defs>
+      <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
+      <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
+      <g transform="rotate(-24 50 50)">
+        <ellipse class="loader-orbit" cx="50" cy="50" rx="43" ry="12"/>
+        <circle class="loader-satellite" cx="92" cy="50" r="3.8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div id="loaderText">Loading engine...</div>
 </div>
 </div>
