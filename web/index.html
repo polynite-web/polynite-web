@@ -275,8 +275,9 @@ body.scene-ready .alpha-preview {
   stroke-linecap: round;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  animation: loader-fill 1.05s cubic-bezier(.22, .72, .2, 1) forwards;
+  animation: loader-engine-fill 6s cubic-bezier(.12, .62, .2, 1) forwards;
 }
+.app-loader.engine-ready .loader-ring-fill { animation: none; stroke-dashoffset: 0; }
 .loader-progress {
   stroke: rgba(159, 207, 255, 0.8);
   stroke-width: 1.7;
@@ -284,9 +285,7 @@ body.scene-ready .alpha-preview {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: stroke-dashoffset 180ms linear, opacity 220ms ease;
+  transition: stroke-dashoffset 260ms ease-out, opacity 220ms ease;
 }
 .loader-orbit {
   stroke: rgba(220, 236, 255, 0.82);
@@ -301,12 +300,10 @@ body.scene-ready .alpha-preview {
 }
 .app-loader.model-loading .loader-progress { opacity: 0.78; }
 .app-loader.model-loading.unknown-progress .loader-progress {
-  stroke-dasharray: 18 82;
-  stroke-dashoffset: 0;
-  animation: loader-orbit 1.25s linear infinite;
+  animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
 }
 .app-loader.model-loading .loader-mark { animation: loader-wait 1.7s ease-in-out infinite; }
-.app-loader.complete .loader-progress { opacity: 0; }
+.app-loader.complete .loader-progress { animation: none; opacity: 0.9; stroke-dashoffset: 0; }
 .app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
 .loader-wordmark {
   margin-right: -0.32em;
@@ -323,32 +320,6 @@ body.scene-ready .alpha-preview {
   color: rgba(147, 164, 186, 0.72);
   font-size: 12px;
   letter-spacing: 0.02em;
-}
-.loader-model-progress {
-  display: none;
-  width: min(180px, 46vw);
-  height: 3px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(143, 194, 255, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(143, 194, 255, 0.06);
-}
-.app-loader.model-loading .loader-model-progress { display: block; }
-.loader-model-progress > i {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #397cff, #a7d7ff, #eef7ff);
-  box-shadow: 0 0 10px rgba(91, 164, 255, 0.72);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 180ms linear;
-}
-.app-loader.unknown-progress .loader-model-progress > i {
-  width: 42%;
-  transform: translateX(-120%);
-  animation: loader-scan 1.05s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 /* The install offer. Chrome would put its own banner over the viewer at a
    moment it chooses; this takes the event instead and asks quietly, once the
@@ -388,10 +359,13 @@ body.scene-ready .alpha-preview {
   background: transparent;
   color: #7f8ea3;
 }
-@keyframes loader-fill {
+@keyframes loader-engine-fill {
   0%   { stroke-dashoffset: 100; opacity: 0.28; }
-  82%  { stroke-dashoffset: 4; opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 8; opacity: 1; }
+}
+@keyframes loader-scene-fill {
+  0%   { stroke-dashoffset: 100; opacity: 0.3; }
+  100% { stroke-dashoffset: 14; opacity: 0.9; }
 }
 @keyframes loader-pulse {
   0%, 100% { transform: scale(0.82); opacity: 0.58; }
@@ -400,11 +374,6 @@ body.scene-ready .alpha-preview {
 @keyframes alpha-breathe {
   0%, 100% { opacity: 0.5; transform: scale(0.82); }
   50%      { opacity: 1; transform: scale(1.15); }
-}
-@keyframes loader-orbit { to { transform: rotate(270deg); } }
-@keyframes loader-scan {
-  0%   { transform: translateX(-120%); }
-  100% { transform: translateX(350%); }
 }
 @keyframes loader-wait {
   0%, 100% { transform: scale(0.985); opacity: 0.78; }
@@ -419,10 +388,10 @@ body.scene-ready .alpha-preview {
   #startup { transition-duration: 1ms; }
   .game-canvas, .alpha-preview { transition-duration: 1ms; }
   .loader-ring-fill { animation: none; stroke-dashoffset: 18; opacity: 0.9; }
+  .app-loader.engine-ready .loader-ring-fill { stroke-dashoffset: 0; }
   .loader-satellite { animation: none; }
   .app-loader.model-loading .loader-mark,
   .app-loader.model-loading.unknown-progress .loader-progress,
-  .app-loader.unknown-progress .loader-model-progress > i,
   .app-loader.complete .loader-mark { animation: none; }
   .alpha-preview::before { animation: none; }
 }
@@ -721,7 +690,6 @@ body.scene-ready .alpha-preview {
   </div>
   <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div id="loaderText">Loading engine...</div>
-  <div class="loader-model-progress" aria-hidden="true"><i></i></div>
 </div>
 </div>
 <div class="alpha-preview" id="alphaPreview" aria-label="Polynite Alpha Preview">Alpha Preview</div>
@@ -746,7 +714,6 @@ body.scene-ready .alpha-preview {
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
   var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
-  var loaderBar = loader ? loader.querySelector(".loader-model-progress > i") : null;
   var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugLog = document.getElementById("debugLog");
@@ -1143,12 +1110,14 @@ body.scene-ready .alpha-preview {
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
       loaderProgress.style.strokeDashoffset = String(100 - progress);
-      if (loaderBar) loaderBar.style.transform = "scaleX(" + (progress / 100) + ")";
+    } else if (loaderProgress && phase === 2 && loaderProgress.style.strokeDashoffset) {
+      loader.classList.remove("unknown-progress");
+      loaderProgress.style.strokeDashoffset = "4";
     }
     if (!loaderText) return;
     if (phase === 1)
-      loaderText.textContent = progress >= 0 ? "Downloading model... " + progress + "%" : "Downloading model...";
-    else if (phase === 2) loaderText.textContent = "Preparing model...";
+      loaderText.textContent = progress >= 0 ? "Loading scene... " + progress + "%" : "Loading scene...";
+    else if (phase === 2) loaderText.textContent = "Preparing scene...";
   };
 
   function hideLoader() {
@@ -1682,6 +1651,7 @@ body.scene-ready .alpha-preview {
     },
     onRuntimeInitialized: function () {
       window.vmeshRuntimeInitialized = true;
+      if (loader) loader.classList.add("engine-ready");
       resizeCanvas();
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
