@@ -1144,18 +1144,17 @@ body.scene-ready .alpha-preview {
     if (loaderHidden || loaderHideRequested) return;
     if (engineAborted) return;
     loaderHideRequested = true;
-    var now = performance.now ? performance.now() : Date.now();
-    var wait = Math.max(0, 950 - (now - loaderStartedAt));
-    setTimeout(function () {
+    if (loader) {
+      loader.classList.remove("unknown-progress");
+      loader.classList.add("model-loading", "complete");
+    }
+    if (loaderText) loaderText.textContent = "Opening scene...";
+    /* Ready starts the transition; it is not a screen of its own. The moon
+       keeps orbiting while this whole layer dissolves into the first frame. */
+    requestAnimationFrame(function () {
       if (engineAborted) { loaderHideRequested = false; return; }
-      if (loader) {
-        loader.classList.remove("model-loading", "unknown-progress");
-        loader.classList.add("complete");
-      }
-      if (loaderText) loaderText.textContent = "Ready";
-      setTimeout(function () {
-        loaderHidden = true;
-        document.body.classList.add("scene-ready");
+      loaderHidden = true;
+      document.body.classList.add("scene-ready");
     /* One class, one fade. The intro is not decoration to be swept away: it is
        what the page says while there is nothing to look at yet, and the first
        committed frame is the moment there is - so it dissolves INTO the model
@@ -1169,8 +1168,7 @@ body.scene-ready .alpha-preview {
         }
         if (alphaPreview)
           setTimeout(function () { alphaPreview.classList.add("settled"); }, 4200);
-      }, 280);
-    }, wait);
+    });
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
