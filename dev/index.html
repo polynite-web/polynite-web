@@ -183,9 +183,8 @@ body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
 }
 #startup.gone { opacity: 0; }
 
-/* One badge, two roles. It begins as part of the launch signature, then moves
-   out of the picture instead of blinking away and quietly marks this build as
-   unfinished. Fixed coordinates make the same move work above WebGPU and GL. */
+/* One badge, two roles. It begins as part of the launch signature, then becomes
+   a short-lived watermark below the top HUD without competing with its actions. */
 .alpha-preview {
   position: fixed;
   top: 50%;
@@ -221,13 +220,17 @@ body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
   animation: alpha-breathe 1.8s ease-in-out infinite;
 }
 body.scene-ready .alpha-preview {
-  top: 46px;
-  top: calc(env(safe-area-inset-top) + 40px);
-  right: max(10px, env(safe-area-inset-right));
-  transform: translate(0, 0);
-  background: rgba(11, 13, 18, 0.66);
+  top: clamp(64px, 12vh, 96px);
+  right: 50%;
+  padding: 2px 5px;
+  border-color: transparent;
+  box-shadow: none;
+  background: transparent;
+  transform: translate(50%, 0);
 }
-.alpha-preview.settled { opacity: 0.58; }
+body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
+.alpha-preview.settled { opacity: 0.24; }
+.alpha-preview.dismissed { opacity: 0; }
 
 /* The dark the model comes out of. Under the intro and the spinner, over the
    canvas - so the first committed frame is not a half-drawn buffer appearing
@@ -403,7 +406,7 @@ body.scene-ready .alpha-preview {
   .loader-mark { width: 66px; }
   .loader-wordmark { display: none; }
   .alpha-preview { transform: translate(50%, 64px); }
-  body.scene-ready .alpha-preview { transform: none; }
+  body.scene-ready .alpha-preview { top: 48px; transform: translate(50%, 0); }
 }
 .gpu-notice {
   position: fixed;
@@ -1166,8 +1169,10 @@ body.scene-ready .alpha-preview {
           startup.classList.add("gone");
           setTimeout(function () { startup.style.display = "none"; }, 900);
         }
-        if (alphaPreview)
-          setTimeout(function () { alphaPreview.classList.add("settled"); }, 4200);
+        if (alphaPreview) {
+          setTimeout(function () { alphaPreview.classList.add("settled"); }, 2400);
+          setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 8000);
+        }
     });
   }
 
