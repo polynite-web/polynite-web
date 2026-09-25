@@ -264,7 +264,7 @@ body.scene-ready .alpha-preview {
 .loader-ring-base,
 .loader-ring-fill,
 .loader-progress,
-.loader-orbit {
+.loader-orbit-base {
   fill: none;
   vector-effect: non-scaling-stroke;
 }
@@ -275,30 +275,34 @@ body.scene-ready .alpha-preview {
   stroke-linecap: round;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  animation: loader-engine-fill 6s cubic-bezier(.12, .62, .2, 1) forwards;
+  animation: loader-engine-fill 8s cubic-bezier(.12, .62, .2, 1) forwards;
+  transition: stroke-dashoffset 650ms cubic-bezier(.2, .72, .22, 1);
 }
-.app-loader.engine-ready .loader-ring-fill { animation: none; stroke-dashoffset: 0; }
 .loader-progress {
   stroke: rgba(159, 207, 255, 0.8);
-  stroke-width: 1.7;
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   opacity: 0;
   transition: stroke-dashoffset 260ms ease-out, opacity 220ms ease;
 }
-.loader-orbit {
-  stroke: rgba(220, 236, 255, 0.82);
-  stroke-width: 2;
-  stroke-linecap: round;
+.loader-orbit-base {
+  stroke: rgba(143, 194, 255, 0.15);
+  stroke-width: 1.5;
+  opacity: 0;
+  transition: opacity 220ms ease;
 }
 .loader-satellite {
   fill: #eef7ff;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: loader-pulse 1.25s ease-in-out infinite;
+  opacity: 0;
 }
+.app-loader.model-loading .loader-orbit-base { opacity: 1; }
 .app-loader.model-loading .loader-progress { opacity: 0.78; }
+.app-loader.model-loading .loader-satellite {
+  opacity: 1;
+  animation: loader-moon-glow 1.25s ease-in-out infinite;
+}
 .app-loader.model-loading.unknown-progress .loader-progress {
   animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
 }
@@ -367,9 +371,9 @@ body.scene-ready .alpha-preview {
   0%   { stroke-dashoffset: 100; opacity: 0.3; }
   100% { stroke-dashoffset: 14; opacity: 0.9; }
 }
-@keyframes loader-pulse {
-  0%, 100% { transform: scale(0.82); opacity: 0.58; }
-  50%      { transform: scale(1.18); opacity: 1; }
+@keyframes loader-moon-glow {
+  0%, 100% { opacity: 0.58; }
+  50%      { opacity: 1; }
 }
 @keyframes alpha-breathe {
   0%, 100% { opacity: 0.5; transform: scale(0.82); }
@@ -388,8 +392,7 @@ body.scene-ready .alpha-preview {
   #startup { transition-duration: 1ms; }
   .game-canvas, .alpha-preview { transition-duration: 1ms; }
   .loader-ring-fill { animation: none; stroke-dashoffset: 18; opacity: 0.9; }
-  .app-loader.engine-ready .loader-ring-fill { stroke-dashoffset: 0; }
-  .loader-satellite { animation: none; }
+  .loader-satellite { display: none; animation: none; }
   .app-loader.model-loading .loader-mark,
   .app-loader.model-loading.unknown-progress .loader-progress,
   .app-loader.complete .loader-mark { animation: none; }
@@ -681,10 +684,13 @@ body.scene-ready .alpha-preview {
       </defs>
       <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
       <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
-      <circle class="loader-progress" cx="50" cy="50" r="36" pathLength="100" transform="rotate(-90 50 50)"/>
       <g transform="rotate(-24 50 50)">
-        <ellipse class="loader-orbit" cx="50" cy="50" rx="43" ry="12"/>
-        <circle class="loader-satellite" cx="92" cy="50" r="3.8"/>
+        <ellipse class="loader-orbit-base" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
+        <ellipse class="loader-progress" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
+        <circle class="loader-satellite" r="3.8">
+          <animateMotion id="loaderMoonMotion" begin="indefinite" dur="1.8s" repeatCount="indefinite"
+            path="M93 50 A43 12 0 1 1 7 50 A43 12 0 1 1 93 50"/>
+        </circle>
       </g>
     </svg>
   </div>
@@ -713,7 +719,10 @@ body.scene-ready .alpha-preview {
   var canvas = document.getElementById("canvas");
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
+  var loaderEngineRing = loader ? loader.querySelector(".loader-ring-fill") : null;
   var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
+  var loaderMoonMotion = document.getElementById("loaderMoonMotion");
+  var loaderMoonStarted = false;
   var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugLog = document.getElementById("debugLog");
@@ -1100,12 +1109,23 @@ body.scene-ready .alpha-preview {
   var loaderHideRequested = false;
   var loaderStartedAt = performance.now ? performance.now() : Date.now();
   var loaderLastSignal = loaderStartedAt;
+  var loaderLastPhase = -1;
+  var loaderLastProgress = -2;
   var engineAborted = false;
 
   window.vmeshLoaderPhase = function (phase, progress) {
     if (!loader || loaderHideRequested || loaderHidden) return;
-    loaderLastSignal = performance.now ? performance.now() : Date.now();
+    if (phase !== loaderLastPhase || progress !== loaderLastProgress) {
+      loaderLastSignal = performance.now ? performance.now() : Date.now();
+      loaderLastPhase = phase;
+      loaderLastProgress = progress;
+    }
     loader.classList.toggle("model-loading", phase === 1 || phase === 2);
+    if (!loaderMoonStarted && (phase === 1 || phase === 2) &&
+        loaderMoonMotion && typeof loaderMoonMotion.beginElement === "function") {
+      loaderMoonStarted = true;
+      loaderMoonMotion.beginElement();
+    }
     loader.classList.toggle("unknown-progress", phase === 2 || progress <= 0);
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
@@ -1339,14 +1359,14 @@ body.scene-ready .alpha-preview {
     });
   }
 
-  /* A watchdog, not a deadline: active downloads and model preparation signal
-     every frame and may take as long as they need. Only a silent engine for a
-     full minute releases the curtain so a signalling bug cannot trap the UI. */
+  /* Progress, not repeated calls, feeds this watchdog. A phase stuck on the
+     same value is not activity; after 25 s the usable viewer is preferable to
+     a curtain which can never explain why it is still there. */
   (function loaderWatchdog() {
     setTimeout(function () {
       if (engineAborted || loaderHidden || loaderHideRequested) return;
       var now = performance.now ? performance.now() : Date.now();
-      if (now - loaderLastSignal > 60000) hideLoader();
+      if (now - loaderLastSignal > 25000) hideLoader();
       else loaderWatchdog();
     }, 5000);
   })();
@@ -1651,7 +1671,12 @@ body.scene-ready .alpha-preview {
     },
     onRuntimeInitialized: function () {
       window.vmeshRuntimeInitialized = true;
-      if (loader) loader.classList.add("engine-ready");
+      if (loaderEngineRing) {
+        var off = getComputedStyle(loaderEngineRing).strokeDashoffset;
+        loaderEngineRing.style.animation = "none";
+        loaderEngineRing.style.strokeDashoffset = off;
+        requestAnimationFrame(function () { loaderEngineRing.style.strokeDashoffset = "0"; });
+      }
       resizeCanvas();
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
