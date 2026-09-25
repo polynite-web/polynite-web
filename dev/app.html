@@ -302,9 +302,15 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
 }
 .app-loader.model-loading .loader-orbit-base { opacity: 1; }
 .app-loader.model-loading .loader-progress { opacity: 0.78; }
-.app-loader.model-loading .loader-satellite {
+.app-loader.model-loading .loader-satellite-moving {
   opacity: 1;
   animation: loader-moon-glow 1.25s ease-in-out infinite;
+}
+.app-loader.model-loading .loader-satellite-static { opacity: 0; }
+.app-loader.static-loading .loader-satellite-moving { opacity: 0; }
+.app-loader.static-loading .loader-satellite-static {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(177, 218, 255, 0.82));
 }
 .app-loader.model-loading.unknown-progress .loader-progress {
   animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
@@ -312,6 +318,16 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
 .app-loader.model-loading .loader-mark { animation: loader-wait 1.7s ease-in-out infinite; }
 .app-loader.complete .loader-progress { animation: none; opacity: 0.9; stroke-dashoffset: 0; }
 .app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
+.app-loader.model-loading.static-loading:not(.complete) .loader-progress {
+  animation: none;
+  transition: none;
+  opacity: 0.9;
+  stroke-dashoffset: 14;
+}
+.app-loader.model-loading.static-loading:not(.complete) .loader-mark {
+  animation: none;
+  filter: drop-shadow(0 0 15px rgba(91, 164, 255, 0.42));
+}
 .loader-wordmark {
   margin-right: -0.32em;
   color: rgba(219, 230, 243, 0.82);
@@ -327,6 +343,33 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   color: rgba(147, 164, 186, 0.72);
   font-size: 12px;
   letter-spacing: 0.02em;
+}
+.loader-meters {
+  width: min(220px, calc(100vw - 44px));
+  margin-top: -6px;
+  display: grid;
+  gap: 7px;
+  color: rgba(151, 174, 201, 0.68);
+  font: 9px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.loader-meter { display: none; gap: 4px; }
+.loader-meter.visible { display: grid; }
+.loader-meter-head { display: flex; justify-content: space-between; gap: 12px; }
+.loader-meter-track { height: 2px; overflow: hidden; background: rgba(143, 194, 255, 0.12); }
+.loader-meter-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(79, 137, 255, 0.52), rgba(190, 225, 255, 0.92));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease-out;
+}
+.loader-meter.unknown .loader-meter-fill {
+  width: 38%;
+  animation: loader-meter-wait 1.25s ease-in-out infinite alternate;
 }
 /* The install offer. Chrome would put its own banner over the viewer at a
    moment it chooses; this takes the event instead and asks quietly, once the
@@ -377,6 +420,10 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
 @keyframes loader-moon-glow {
   0%, 100% { opacity: 0.58; }
   50%      { opacity: 1; }
+}
+@keyframes loader-meter-wait {
+  0%   { transform: translateX(-105%); }
+  100% { transform: translateX(265%); }
 }
 @keyframes alpha-breathe {
   0%, 100% { opacity: 0.5; transform: scale(0.82); }
@@ -690,7 +737,8 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
       <g transform="rotate(-24 50 50)">
         <ellipse class="loader-orbit-base" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
         <ellipse class="loader-progress" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
-        <circle class="loader-satellite" r="3.8">
+        <circle class="loader-satellite loader-satellite-static" cx="93" cy="50" r="3.8"/>
+        <circle class="loader-satellite loader-satellite-moving" r="3.8">
           <animateMotion begin="0s" dur="1.8s" repeatCount="indefinite"
             path="M93 50 A43 12 0 1 1 7 50 A43 12 0 1 1 93 50"/>
         </circle>
@@ -698,7 +746,17 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
     </svg>
   </div>
   <div class="loader-wordmark" aria-hidden="true">Polynite</div>
-  <div id="loaderText">Loading engine...</div>
+  <div id="loaderText" role="status" aria-live="polite">Loading engine...</div>
+  <div class="loader-meters" aria-hidden="true">
+    <div class="loader-meter" id="loaderDownload">
+      <div class="loader-meter-head"><span>Model download</span><span id="loaderDownloadValue">0%</span></div>
+      <div class="loader-meter-track"><i class="loader-meter-fill" id="loaderDownloadFill"></i></div>
+    </div>
+    <div class="loader-meter" id="loaderBuild">
+      <div class="loader-meter-head"><span>Scene build</span><span id="loaderBuildValue">0%</span></div>
+      <div class="loader-meter-track"><i class="loader-meter-fill" id="loaderBuildFill"></i></div>
+    </div>
+  </div>
 </div>
 </div>
 <div class="alpha-preview" id="alphaPreview" aria-label="Polynite Alpha Preview">Alpha Preview</div>
@@ -724,6 +782,12 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   var loaderText = document.getElementById("loaderText");
   var loaderEngineRing = loader ? loader.querySelector(".loader-ring-fill") : null;
   var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
+  var loaderDownload = document.getElementById("loaderDownload");
+  var loaderDownloadFill = document.getElementById("loaderDownloadFill");
+  var loaderDownloadValue = document.getElementById("loaderDownloadValue");
+  var loaderBuild = document.getElementById("loaderBuild");
+  var loaderBuildFill = document.getElementById("loaderBuildFill");
+  var loaderBuildValue = document.getElementById("loaderBuildValue");
   var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugLog = document.getElementById("debugLog");
@@ -1112,28 +1176,53 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   var loaderLastSignal = loaderStartedAt;
   var loaderLastPhase = -1;
   var loaderLastProgress = -2;
+  var loaderLastStage = -1;
+  var loaderHadDownload = false;
   var engineAborted = false;
 
-  window.vmeshLoaderPhase = function (phase, progress) {
+  function loaderMeter(row, fill, value, progress) {
+    if (!row || !fill || !value) return;
+    row.classList.add("visible");
+    row.classList.toggle("unknown", progress < 0);
+    if (progress < 0) { value.textContent = "..."; return; }
+    progress = Math.max(0, Math.min(100, progress));
+    fill.style.transform = "scaleX(" + (progress * 0.01) + ")";
+    value.textContent = progress + "%";
+  }
+
+  window.vmeshLoaderPhase = function (phase, progress, stage, sub) {
     if (!loader || loaderHideRequested || loaderHidden) return;
-    if (phase !== loaderLastPhase || progress !== loaderLastProgress) {
+    /* Older cached builds only send phase + progress. Keep their loader
+       coherent until the matching WASM/JS pair replaces them. */
+    if (typeof stage !== "number") stage = phase === 1 ? 1 : 2;
+    if (typeof sub !== "number") sub = -1;
+    if (phase !== loaderLastPhase || progress !== loaderLastProgress || stage !== loaderLastStage) {
       loaderLastSignal = performance.now ? performance.now() : Date.now();
       loaderLastPhase = phase;
       loaderLastProgress = progress;
+      loaderLastStage = stage;
     }
     loader.classList.toggle("model-loading", phase === 1 || phase === 2);
-    loader.classList.toggle("unknown-progress", phase === 2 || progress <= 0);
+    loader.classList.toggle("static-loading", phase === 2 && stage >= 2);
+    loader.classList.toggle("unknown-progress", progress < 0);
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
       loaderProgress.style.strokeDashoffset = String(100 - progress);
-    } else if (loaderProgress && phase === 2 && loaderProgress.style.strokeDashoffset) {
-      loader.classList.remove("unknown-progress");
-      loaderProgress.style.strokeDashoffset = "4";
-    }
+    } else if (loaderProgress && phase === 2) loaderProgress.style.removeProperty("stroke-dashoffset");
     if (!loaderText) return;
-    if (phase === 1)
-      loaderText.textContent = progress >= 0 ? "Loading scene... " + progress + "%" : "Loading scene...";
-    else if (phase === 2) loaderText.textContent = "Preparing scene...";
+    if (phase === 1) {
+      loaderHadDownload = true;
+      loaderMeter(loaderDownload, loaderDownloadFill, loaderDownloadValue, progress);
+      loaderText.textContent = "Downloading model";
+    } else if (phase === 2) {
+      var names = ["Preparing files", "Downloading model", "Reading model", "Parsing scene",
+        "Decoding textures", "Building geometry", "Baking occlusion", "Building clusters",
+        "Generating mipmaps", "Uploading to GPU", "Ready", "Load failed"];
+      if (loaderHadDownload) loaderMeter(loaderDownload, loaderDownloadFill, loaderDownloadValue, 100);
+      if (stage >= 2) loaderMeter(loaderBuild, loaderBuildFill, loaderBuildValue, progress);
+      loaderText.textContent = names[stage] || "Preparing scene";
+      if (stage === 4 && sub > 0) loaderText.textContent += " · " + Math.min(4, Math.ceil(sub * 0.04)) + "/4";
+    }
   };
 
   function hideLoader() {
