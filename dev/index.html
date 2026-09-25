@@ -319,12 +319,6 @@ body.scene-entry-ready #curtain {
   opacity: 1;
   animation: loader-moon-glow 1.25s ease-in-out infinite;
 }
-.app-loader.model-loading .loader-satellite-static { opacity: 0; }
-.app-loader.static-loading .loader-satellite-moving { opacity: 0; }
-.app-loader.static-loading .loader-satellite-static {
-  opacity: 1;
-  filter: drop-shadow(0 0 4px rgba(177, 218, 255, 0.82));
-}
 .app-loader.model-loading.unknown-progress .loader-progress {
   animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
 }
@@ -333,7 +327,6 @@ body.scene-entry-ready #curtain {
 .app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
 .app-loader.await-entry { pointer-events: auto; }
 .app-loader.await-entry .loader-mark { animation: loader-wait 2.2s ease-in-out infinite; }
-.app-loader.await-entry .loader-satellite-static { opacity: 0; }
 .app-loader.await-entry .loader-satellite-moving { opacity: 1; animation: loader-moon-glow 1.5s ease-in-out infinite; }
 .app-loader.await-entry .loader-meters { display: none; }
 .app-loader.model-loading.static-loading:not(.complete) .loader-progress {
@@ -777,7 +770,6 @@ body.scene-entry-ready #curtain {
       <g transform="rotate(-24 50 50)">
         <ellipse class="loader-orbit-base" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
         <ellipse class="loader-progress" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
-        <circle class="loader-satellite loader-satellite-static" cx="93" cy="50" r="3.8"/>
         <circle class="loader-satellite loader-satellite-moving" r="3.8">
           <animateMotion begin="0s" dur="1.8s" repeatCount="indefinite"
             path="M93 50 A43 12 0 1 1 7 50 A43 12 0 1 1 93 50"/>
