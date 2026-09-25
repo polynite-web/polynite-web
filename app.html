@@ -156,7 +156,12 @@ body {
   outline: 0;
   background: #000;
   z-index: 0;
+  opacity: 0;
+  transform: scale(1.008);
+  transition: opacity 900ms cubic-bezier(.2, .72, .22, 1),
+              transform 1200ms cubic-bezier(.2, .72, .22, 1);
 }
+body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
 /* A strip at the bottom, not a black sheet over the whole window. It used to
    cover everything, which meant the only thing anyone could read while the
    engine loaded was a spinner. The intro underneath is the better use of those
@@ -174,9 +179,55 @@ body {
   z-index: 50;
   pointer-events: none;       /* the links inside take theirs back below */
   opacity: 1;
-  transition: opacity 700ms ease;
+  transition: opacity 820ms cubic-bezier(.4, 0, .2, 1);
 }
 #startup.gone { opacity: 0; }
+
+/* One badge, two roles. It begins as part of the launch signature, then moves
+   out of the picture instead of blinking away and quietly marks this build as
+   unfinished. Fixed coordinates make the same move work above WebGPU and GL. */
+.alpha-preview {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  z-index: 51;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px 5px 7px;
+  border: 1px solid rgba(255, 197, 79, 0.4);
+  border-radius: 999px;
+  background: rgba(20, 16, 8, 0.72);
+  box-shadow: 0 0 20px rgba(255, 177, 42, 0.08), inset 0 0 12px rgba(255, 205, 104, 0.04);
+  color: rgba(255, 211, 126, 0.92);
+  font: 600 9px/1 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(50%, 100px);
+  transition: top 900ms cubic-bezier(.2, .72, .22, 1),
+              right 900ms cubic-bezier(.2, .72, .22, 1),
+              transform 900ms cubic-bezier(.2, .72, .22, 1),
+              opacity 500ms ease, background 500ms ease;
+}
+.alpha-preview::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffc552;
+  box-shadow: 0 0 8px rgba(255, 190, 67, 0.9);
+  animation: alpha-breathe 1.8s ease-in-out infinite;
+}
+body.scene-ready .alpha-preview {
+  top: 46px;
+  top: calc(env(safe-area-inset-top) + 40px);
+  right: max(10px, env(safe-area-inset-right));
+  transform: translate(0, 0);
+  background: rgba(11, 13, 18, 0.66);
+}
+.alpha-preview.settled { opacity: 0.58; }
 
 /* The dark the model comes out of. Under the intro and the spinner, over the
    canvas - so the first committed frame is not a half-drawn buffer appearing
@@ -188,40 +239,87 @@ body {
   z-index: 1;
 }
 
-/* Dead centre, where a spinner belongs. Transparent, not an opaque sheet:
-   the intro sits underneath in the lower part of the screen and the two never
-   fight for the same pixels. */
+/* The first frame belongs to the product, not to a generic spinner. The mark
+   is inline SVG: no request, no raster scaling and only two animated strokes. */
 .app-loader {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 14px;
   color: rgba(255, 255, 255, 0.42);
   font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   pointer-events: none;
   z-index: 50;
 }
-/* The message is placed UNDER the spinner rather than stacked with it in a
-   column. Stacked, a message that wrapped to two lines made the column taller
-   and pushed the wheel up - which is why it was centred on some loads and not
-   on others. Out of the flow, the wheel is centred on all of them. */
-#loaderText {
-  position: absolute;
-  top: calc(50% + 36px);
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 0 1.25rem;
+.loader-mark {
+  width: clamp(78px, 11vw, 104px);
+  aspect-ratio: 1;
+  color: #8fc2ff;
+  filter: drop-shadow(0 0 12px rgba(65, 136, 255, 0.22));
 }
-.app-spinner {
-  width: 40px;
-  height: 40px;
-  flex: none;
-  border: 4px solid rgba(255, 255, 255, 0.08);
-  border-top-color: rgba(255, 255, 255, 0.42);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.loader-logo { display: block; width: 100%; height: 100%; overflow: visible; }
+.loader-ring-base,
+.loader-ring-fill,
+.loader-progress,
+.loader-orbit {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+.loader-ring-base { stroke: rgba(143, 194, 255, 0.14); stroke-width: 5; }
+.loader-ring-fill {
+  stroke: url(#loaderBlue);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: loader-engine-fill 6s cubic-bezier(.12, .62, .2, 1) forwards;
+}
+.app-loader.engine-ready .loader-ring-fill { animation: none; stroke-dashoffset: 0; }
+.loader-progress {
+  stroke: rgba(159, 207, 255, 0.8);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  opacity: 0;
+  transition: stroke-dashoffset 260ms ease-out, opacity 220ms ease;
+}
+.loader-orbit {
+  stroke: rgba(220, 236, 255, 0.82);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.loader-satellite {
+  fill: #eef7ff;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: loader-pulse 1.25s ease-in-out infinite;
+}
+.app-loader.model-loading .loader-progress { opacity: 0.78; }
+.app-loader.model-loading.unknown-progress .loader-progress {
+  animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
+}
+.app-loader.model-loading .loader-mark { animation: loader-wait 1.7s ease-in-out infinite; }
+.app-loader.complete .loader-progress { animation: none; opacity: 0.9; stroke-dashoffset: 0; }
+.app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
+.loader-wordmark {
+  margin-right: -0.32em;
+  color: rgba(219, 230, 243, 0.82);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+#loaderText {
+  min-height: 1.4em;
+  max-width: min(28rem, calc(100vw - 2.5rem));
+  text-align: center;
+  color: rgba(147, 164, 186, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
 /* The install offer. Chrome would put its own banner over the viewer at a
    moment it chooses; this takes the event instead and asks quietly, once the
@@ -261,14 +359,49 @@ body {
   background: transparent;
   color: #7f8ea3;
 }
-@keyframes intro-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes loader-engine-fill {
+  0%   { stroke-dashoffset: 100; opacity: 0.28; }
+  100% { stroke-dashoffset: 8; opacity: 1; }
+}
+@keyframes loader-scene-fill {
+  0%   { stroke-dashoffset: 100; opacity: 0.3; }
+  100% { stroke-dashoffset: 14; opacity: 0.9; }
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(0.82); opacity: 0.58; }
+  50%      { transform: scale(1.18); opacity: 1; }
+}
+@keyframes alpha-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(0.82); }
+  50%      { opacity: 1; transform: scale(1.15); }
+}
+@keyframes loader-wait {
+  0%, 100% { transform: scale(0.985); opacity: 0.78; }
+  50%      { transform: scale(1.035); opacity: 1; }
+}
+@keyframes loader-ready {
+  0%   { transform: scale(1); filter: drop-shadow(0 0 12px rgba(65, 136, 255, 0.22)); }
+  55%  { transform: scale(1.09); filter: drop-shadow(0 0 24px rgba(148, 210, 255, 0.72)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(91, 164, 255, 0.42)); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .seo-content { animation-duration: 1ms; }
+  #startup { transition-duration: 1ms; }
+  .game-canvas, .alpha-preview { transition-duration: 1ms; }
+  .loader-ring-fill { animation: none; stroke-dashoffset: 18; opacity: 0.9; }
+  .app-loader.engine-ready .loader-ring-fill { stroke-dashoffset: 0; }
+  .loader-satellite { animation: none; }
+  .app-loader.model-loading .loader-mark,
+  .app-loader.model-loading.unknown-progress .loader-progress,
+  .app-loader.complete .loader-mark { animation: none; }
+  .alpha-preview::before { animation: none; }
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-height: 420px) {
+  .app-loader { gap: 9px; }
+  .loader-mark { width: 66px; }
+  .loader-wordmark { display: none; }
+  .alpha-preview { transform: translate(50%, 64px); }
+  body.scene-ready .alpha-preview { transform: none; }
+}
 .gpu-notice {
   position: fixed;
   inset: 0;
@@ -323,32 +456,30 @@ body {
   right: 10px;
   bottom: 48px;
   display: none;
-  max-height: 50vh;
-  overflow: auto;
+  height: min(72vh, calc(100vh - 64px));
+  overflow: hidden;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 0;
   color: #a8efa8;
   background: rgba(0, 0, 0, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   font: 12px/1.4 Consolas, Monaco, monospace;
-  white-space: pre-wrap;
-  word-break: break-word;
   user-select: text;
   -webkit-user-select: text;
   z-index: 100;
 }
-.debug-console.visible { display: block; }
+.debug-console.visible { display: flex; flex-direction: column; }
 .debug-console.has-error {
-  color: #ff9b9b;
   border-color: rgba(255, 90, 90, 0.75);
 }
-/* Banner pinned at the top of the DEV panel: binary and backend identity.
-   It must not scroll with the logs, or it vanishes on the first line. */
+/* Hardware facts and logs scroll independently. A sticky banner in the same
+   scroller consumed almost the whole popup and left an error visible through
+   a one-line slit at its foot. */
 .dev-info {
-  position: sticky;
-  top: -10px;
-  margin: -10px -10px 8px -10px;
+  flex: 0 1 auto;
+  max-height: 42vh;
+  overflow: auto;
   padding: 8px 10px;
   background: #06131b;
   border-bottom: 1px solid rgba(120, 220, 255, 0.35);
@@ -358,6 +489,62 @@ body {
 .dev-info b { color: #ffffff; font-weight: 600; }
 .dev-info .k { color: #6fb6cc; display: inline-block; min-width: 78px; }
 .dev-info .row { white-space: pre-wrap; word-break: break-word; }
+.debug-log-shell {
+  flex: 1 1 10em;
+  min-height: 5.6em;
+  max-height: 32vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.debug-log-head {
+  flex: none;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 6px 3px 10px;
+  color: rgba(168, 239, 168, 0.62);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.debug-copy {
+  display: none;
+  padding: 3px 8px;
+  color: #ffc0c0;
+  background: rgba(110, 22, 22, 0.35);
+  border: 1px solid rgba(255, 90, 90, 0.5);
+  border-radius: 5px;
+  font: 600 10px/1.3 system-ui, sans-serif;
+  cursor: pointer;
+}
+.debug-copy.visible { display: block; }
+.debug-copy:active { transform: translateY(1px); }
+.debug-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 9px 10px 12px;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  scrollbar-gutter: stable;
+}
+.debug-line { display: block; margin: 0 0 3px; }
+.debug-line.error {
+  padding-left: 7px;
+  color: #ffb0b0;
+  border-left: 2px solid rgba(255, 90, 90, 0.78);
+}
+.debug-line.warn { color: #ffd58a; }
+@media (max-height: 420px) {
+  .debug-console { height: calc(100vh - 54px); bottom: 44px; }
+  .dev-info { max-height: 48vh; }
+  .debug-log-shell { min-height: 4.8em; max-height: none; }
+}
 .dev-info .ok  { color: #8ef0a8; }
 .dev-info .bad { color: #ff9b9b; }
 .debug-button {
@@ -395,18 +582,15 @@ body {
  * frame. It was a 1px clipped block before: text written for search engines
  * and shown to nobody, which is exactly what search engines penalise.
  */
-/* It appears only if the wait is long enough to be worth filling.
-   A CSS delay, not a script: the text is in the document from the first byte,
-   where crawlers and screen readers find it, and a load that finishes in half a
-   second hides the whole start-up screen before the animation ever starts. No
-   flash of text on a fast connection, and something to read on a slow one. */
+/* Search and fallback content stays semantic in the document, but JavaScript
+   users never see it flash through the loader. The noscript rule below makes
+   it the actual page when the application cannot start at all. */
 .seo-content {
-  animation: intro-in 380ms ease 1100ms both;
+  display: none;
   pointer-events: auto;       /* #startup gives them up; the links want them */
   position: absolute;
   inset: auto 0 0 0;              /* the lower band, clear of the spinner */
   z-index: 5;
-  display: flex;
   flex-direction: column;
   gap: 0.8rem;
   max-height: 38vh;
@@ -436,6 +620,11 @@ body {
 </style>
 </head>
 <body translate="no" class="notranslate">
+<noscript><style>
+  .app-loader { display: none; }
+  .alpha-preview { display: none; }
+  .seo-content { display: flex; }
+</style></noscript>
 <div id="startup">
 <div id="curtain"></div>
 <main class="seo-content" id="intro">
@@ -480,17 +669,36 @@ body {
   </nav>
 </main>
 
-<div class="app-loader" id="loader">
-  <div class="app-spinner"></div>
+<div class="app-loader" id="loader" role="status" aria-live="polite">
+  <div class="loader-mark" aria-hidden="true">
+    <svg class="loader-logo" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="loaderBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d9ecff"/>
+          <stop offset="0.52" stop-color="#7db6ff"/>
+          <stop offset="1" stop-color="#397cff"/>
+        </linearGradient>
+      </defs>
+      <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
+      <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
+      <circle class="loader-progress" cx="50" cy="50" r="36" pathLength="100" transform="rotate(-90 50 50)"/>
+      <g transform="rotate(-24 50 50)">
+        <ellipse class="loader-orbit" cx="50" cy="50" rx="43" ry="12"/>
+        <circle class="loader-satellite" cx="92" cy="50" r="3.8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div id="loaderText">Loading engine...</div>
 </div>
 </div>
+<div class="alpha-preview" id="alphaPreview" aria-label="Polynite Alpha Preview">Alpha Preview</div>
 <div class="install-chip" id="installChip">
   <span>Install Polynite on this device</span>
   <button class="go" id="installGo" type="button">Install</button>
   <button class="no" id="installNo" type="button" aria-label="Not now">&times;</button>
 </div>
-<div class="debug-console" id="debugConsole"></div>
+<div class="debug-console" id="debugConsole"><div class="debug-log-shell"><div class="debug-log-head"><span>Log</span><button class="debug-copy" id="debugCopy" type="button">Copy error</button></div><div class="debug-log" id="debugLog" role="log" aria-live="polite"></div></div></div>
 <button class="debug-button" id="debugButton" type="button">...</button>
 <canvas class="game-canvas" id="canvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
 <script>
@@ -505,7 +713,11 @@ body {
   var canvas = document.getElementById("canvas");
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
+  var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
+  var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
+  var debugLog = document.getElementById("debugLog");
+  var debugCopy = document.getElementById("debugCopy");
   var debugButton = document.getElementById("debugButton");
   var logNative = console.log ? console.log.bind(console) : function () {};
   var infoNative = console.info ? console.info.bind(console) : logNative;
@@ -728,6 +940,7 @@ body {
     consoleOpen = true;
     devInfoRender();
     debugConsole.classList.add("visible");
+    requestAnimationFrame(function () { debugLog.scrollTop = debugLog.scrollHeight; });
   }
   function consoleHide() {
     consoleOpen = false;
@@ -750,10 +963,19 @@ body {
     return String(v);
   }
 
+  function fatalConsoleText(t) {
+    t = String(t);
+    if (/^\[abort\]/i.test(t)) return true;
+    if (/^\[gpu-bootstrap\].*(?:failed|refused)/i.test(t)) return true;
+    if (/^\[stderr\].*(?:panic|fatal|device lost|out of memory)/i.test(t)) return true;
+    return /^\[error\]/i.test(t) && !window.vmeshRuntimeInitialized;
+  }
+
   function mirrorConsole(kind, args) {
-    var parts = [], i, el;
+    var parts = [], i, el, fatal;
     for (i = 0; i < args.length; ++i) parts.push(stringifyArg(args[i]));
     var joined = parts.join(" ");
+    fatal = kind === "error" && fatalConsoleText(joined);
     /* The engine reports the backend it ACTUALLY brought up. That is the only
        source of truth: the loader picks a file, but the wasm is compiled for
        one backend and one only. */
@@ -761,23 +983,24 @@ body {
       devInfo.runtime = joined.replace(/^.*\[vmesh_backend\]:\s*/, "");
       try { devInfoRender(); } catch (eB) {}
     }
-    /* Outside dev mode the panel keeps only what a user can act on. */
-    if (!devMode && kind !== "error") return;
+    /* A recovered refusal is useful while developing, but it is not a reason
+       to leave a red diagnostic button on somebody's production scene. */
+    if (!devMode && !fatal) return;
     el = document.createElement("div");
+    el.className = "debug-line " + kind;
     el.textContent = userSafe(joined);
-    debugConsole.appendChild(el);
+    debugLog.appendChild(el);
     lineCount++;
     while (lineCount > 400) {
-      /* firstChild may be the pinned info banner: only drop log lines. */
-      var victim = debugConsole.firstChild;
-      if (victim === devInfoEl) victim = victim.nextSibling;
+      var victim = debugLog.firstChild;
       if (!victim) break;
-      debugConsole.removeChild(victim);
+      debugLog.removeChild(victim);
       lineCount--;
     }
-    debugConsole.scrollTop = debugConsole.scrollHeight;
-    if (kind === "error") {
+    debugLog.scrollTop = debugLog.scrollHeight;
+    if (kind === "error" && (devMode || fatal)) {
       debugConsole.classList.add("has-error");
+      debugCopy.classList.add("visible");
       debugButton.classList.add("visible", "has-error");
       debugButton.classList.remove("idle");   /* something is wrong: be seen */
       /* The WebGPU panel is already a complete explanation: popping the error
@@ -786,6 +1009,33 @@ body {
       if (devMode && !window.__spinNoticeShown) consoleShow();
     }
   }
+
+  function copyErrors() {
+    var lines = debugLog.querySelectorAll(".debug-line.error"), text = "", i;
+    for (i = 0; i < lines.length; i++) text += (text ? "\n" : "") + lines[i].textContent;
+    if (!text) return;
+    text = window.spinviewGfxInfo() + "\n\n" + text;
+    function copied() {
+      debugCopy.textContent = "Copied";
+      setTimeout(function () { debugCopy.textContent = "Copy error"; }, 1400);
+    }
+    function oldCopy() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+    if (oldCopy()) copied();
+    else if (navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(text).then(copied).catch(function () {});
+  }
+  debugCopy.addEventListener("click", copyErrors);
 
   function resizeCanvas() {
     canvas.style.width = window.innerWidth + "px";
@@ -847,23 +1097,60 @@ body {
   });
 
   var loaderHidden = false;
+  var loaderHideRequested = false;
+  var loaderStartedAt = performance.now ? performance.now() : Date.now();
+  var loaderLastSignal = loaderStartedAt;
   var engineAborted = false;
 
+  window.vmeshLoaderPhase = function (phase, progress) {
+    if (!loader || loaderHideRequested || loaderHidden) return;
+    loaderLastSignal = performance.now ? performance.now() : Date.now();
+    loader.classList.toggle("model-loading", phase === 1 || phase === 2);
+    loader.classList.toggle("unknown-progress", phase === 2 || progress <= 0);
+    if (loaderProgress && progress >= 0) {
+      progress = Math.max(0, Math.min(100, progress));
+      loaderProgress.style.strokeDashoffset = String(100 - progress);
+    } else if (loaderProgress && phase === 2 && loaderProgress.style.strokeDashoffset) {
+      loader.classList.remove("unknown-progress");
+      loaderProgress.style.strokeDashoffset = "4";
+    }
+    if (!loaderText) return;
+    if (phase === 1)
+      loaderText.textContent = progress >= 0 ? "Loading scene... " + progress + "%" : "Loading scene...";
+    else if (phase === 2) loaderText.textContent = "Preparing scene...";
+  };
+
   function hideLoader() {
-    if (loaderHidden) return;
+    if (loaderHidden || loaderHideRequested) return;
     if (engineAborted) return;
-    loaderHidden = true;
+    loaderHideRequested = true;
+    var now = performance.now ? performance.now() : Date.now();
+    var wait = Math.max(0, 950 - (now - loaderStartedAt));
+    setTimeout(function () {
+      if (engineAborted) { loaderHideRequested = false; return; }
+      if (loader) {
+        loader.classList.remove("model-loading", "unknown-progress");
+        loader.classList.add("complete");
+      }
+      if (loaderText) loaderText.textContent = "Ready";
+      setTimeout(function () {
+        loaderHidden = true;
+        document.body.classList.add("scene-ready");
     /* One class, one fade. The intro is not decoration to be swept away: it is
        what the page says while there is nothing to look at yet, and the first
        committed frame is the moment there is - so it dissolves INTO the model
        rather than being cut off mid-sentence.
        Removed from the document only once the fade is over: it is already
        pointer-events:none, so it is out of the way long before that. */
-    var startup = document.getElementById("startup");
-    if (startup) {
-      startup.classList.add("gone");
-      setTimeout(function () { startup.style.display = "none"; }, 900);
-    }
+        var startup = document.getElementById("startup");
+        if (startup) {
+          startup.classList.add("gone");
+          setTimeout(function () { startup.style.display = "none"; }, 900);
+        }
+        if (alphaPreview)
+          setTimeout(function () { alphaPreview.classList.add("settled"); }, 4200);
+      }, 280);
+    }, wait);
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
@@ -1052,10 +1339,17 @@ body {
     });
   }
 
-  /* Safety fallback only if the engine did not abort */
-  setTimeout(function () {
-    if (!engineAborted) hideLoader();
-  }, 8000);
+  /* A watchdog, not a deadline: active downloads and model preparation signal
+     every frame and may take as long as they need. Only a silent engine for a
+     full minute releases the curtain so a signalling bug cannot trap the UI. */
+  (function loaderWatchdog() {
+    setTimeout(function () {
+      if (engineAborted || loaderHidden || loaderHideRequested) return;
+      var now = performance.now ? performance.now() : Date.now();
+      if (now - loaderLastSignal > 60000) hideLoader();
+      else loaderWatchdog();
+    }, 5000);
+  })();
 
   updateVersionLabel();
 
@@ -1357,6 +1651,7 @@ body {
     },
     onRuntimeInitialized: function () {
       window.vmeshRuntimeInitialized = true;
+      if (loader) loader.classList.add("engine-ready");
       resizeCanvas();
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
