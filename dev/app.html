@@ -156,7 +156,12 @@ body {
   outline: 0;
   background: #000;
   z-index: 0;
+  opacity: 0;
+  transform: scale(1.008);
+  transition: opacity 900ms cubic-bezier(.2, .72, .22, 1),
+              transform 1200ms cubic-bezier(.2, .72, .22, 1);
 }
+body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
 /* A strip at the bottom, not a black sheet over the whole window. It used to
    cover everything, which meant the only thing anyone could read while the
    engine loaded was a spinner. The intro underneath is the better use of those
@@ -174,9 +179,55 @@ body {
   z-index: 50;
   pointer-events: none;       /* the links inside take theirs back below */
   opacity: 1;
-  transition: opacity 700ms ease;
+  transition: opacity 820ms cubic-bezier(.4, 0, .2, 1);
 }
 #startup.gone { opacity: 0; }
+
+/* One badge, two roles. It begins as part of the launch signature, then moves
+   out of the picture instead of blinking away and quietly marks this build as
+   unfinished. Fixed coordinates make the same move work above WebGPU and GL. */
+.alpha-preview {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  z-index: 51;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px 5px 7px;
+  border: 1px solid rgba(255, 197, 79, 0.4);
+  border-radius: 999px;
+  background: rgba(20, 16, 8, 0.72);
+  box-shadow: 0 0 20px rgba(255, 177, 42, 0.08), inset 0 0 12px rgba(255, 205, 104, 0.04);
+  color: rgba(255, 211, 126, 0.92);
+  font: 600 9px/1 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(50%, 100px);
+  transition: top 900ms cubic-bezier(.2, .72, .22, 1),
+              right 900ms cubic-bezier(.2, .72, .22, 1),
+              transform 900ms cubic-bezier(.2, .72, .22, 1),
+              opacity 500ms ease, background 500ms ease;
+}
+.alpha-preview::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffc552;
+  box-shadow: 0 0 8px rgba(255, 190, 67, 0.9);
+  animation: alpha-breathe 1.8s ease-in-out infinite;
+}
+body.scene-ready .alpha-preview {
+  top: 46px;
+  top: calc(env(safe-area-inset-top) + 40px);
+  right: max(10px, env(safe-area-inset-right));
+  transform: translate(0, 0);
+  background: rgba(11, 13, 18, 0.66);
+}
+.alpha-preview.settled { opacity: 0.58; }
 
 /* The dark the model comes out of. Under the intro and the spinner, over the
    canvas - so the first committed frame is not a half-drawn buffer appearing
@@ -188,40 +239,69 @@ body {
   z-index: 1;
 }
 
-/* Dead centre, where a spinner belongs. Transparent, not an opaque sheet:
-   the intro sits underneath in the lower part of the screen and the two never
-   fight for the same pixels. */
+/* The first frame belongs to the product, not to a generic spinner. The mark
+   is inline SVG: no request, no raster scaling and only two animated strokes. */
 .app-loader {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 14px;
   color: rgba(255, 255, 255, 0.42);
   font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   pointer-events: none;
   z-index: 50;
 }
-/* The message is placed UNDER the spinner rather than stacked with it in a
-   column. Stacked, a message that wrapped to two lines made the column taller
-   and pushed the wheel up - which is why it was centred on some loads and not
-   on others. Out of the flow, the wheel is centred on all of them. */
-#loaderText {
-  position: absolute;
-  top: calc(50% + 36px);
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 0 1.25rem;
+.loader-mark {
+  width: clamp(78px, 11vw, 104px);
+  aspect-ratio: 1;
+  color: #8fc2ff;
+  filter: drop-shadow(0 0 12px rgba(65, 136, 255, 0.22));
 }
-.app-spinner {
-  width: 40px;
-  height: 40px;
-  flex: none;
-  border: 4px solid rgba(255, 255, 255, 0.08);
-  border-top-color: rgba(255, 255, 255, 0.42);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.loader-logo { display: block; width: 100%; height: 100%; overflow: visible; }
+.loader-ring-base,
+.loader-ring-fill,
+.loader-orbit {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+.loader-ring-base { stroke: rgba(143, 194, 255, 0.14); stroke-width: 5; }
+.loader-ring-fill {
+  stroke: url(#loaderBlue);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: loader-fill 2.35s cubic-bezier(.45, 0, .2, 1) infinite;
+}
+.loader-orbit {
+  stroke: rgba(220, 236, 255, 0.82);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.loader-satellite {
+  fill: #eef7ff;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: loader-pulse 1.25s ease-in-out infinite;
+}
+.loader-wordmark {
+  margin-right: -0.32em;
+  color: rgba(219, 230, 243, 0.82);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+#loaderText {
+  min-height: 1.4em;
+  max-width: min(28rem, calc(100vw - 2.5rem));
+  text-align: center;
+  color: rgba(147, 164, 186, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
 /* The install offer. Chrome would put its own banner over the viewer at a
    moment it chooses; this takes the event instead and asks quietly, once the
@@ -261,14 +341,34 @@ body {
   background: transparent;
   color: #7f8ea3;
 }
-@keyframes intro-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes loader-fill {
+  0%   { stroke-dashoffset: 100; opacity: 0.28; }
+  76%  { stroke-dashoffset: 5; opacity: 1; }
+  90%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(0.82); opacity: 0.58; }
+  50%      { transform: scale(1.18); opacity: 1; }
+}
+@keyframes alpha-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(0.82); }
+  50%      { opacity: 1; transform: scale(1.15); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .seo-content { animation-duration: 1ms; }
+  #startup { transition-duration: 1ms; }
+  .game-canvas, .alpha-preview { transition-duration: 1ms; }
+  .loader-ring-fill { animation: none; stroke-dashoffset: 18; opacity: 0.9; }
+  .loader-satellite { animation: none; }
+  .alpha-preview::before { animation: none; }
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-height: 420px) {
+  .app-loader { gap: 9px; }
+  .loader-mark { width: 66px; }
+  .loader-wordmark { display: none; }
+  .alpha-preview { transform: translate(50%, 64px); }
+  body.scene-ready .alpha-preview { transform: none; }
+}
 .gpu-notice {
   position: fixed;
   inset: 0;
@@ -395,18 +495,15 @@ body {
  * frame. It was a 1px clipped block before: text written for search engines
  * and shown to nobody, which is exactly what search engines penalise.
  */
-/* It appears only if the wait is long enough to be worth filling.
-   A CSS delay, not a script: the text is in the document from the first byte,
-   where crawlers and screen readers find it, and a load that finishes in half a
-   second hides the whole start-up screen before the animation ever starts. No
-   flash of text on a fast connection, and something to read on a slow one. */
+/* Search and fallback content stays semantic in the document, but JavaScript
+   users never see it flash through the loader. The noscript rule below makes
+   it the actual page when the application cannot start at all. */
 .seo-content {
-  animation: intro-in 380ms ease 1100ms both;
+  display: none;
   pointer-events: auto;       /* #startup gives them up; the links want them */
   position: absolute;
   inset: auto 0 0 0;              /* the lower band, clear of the spinner */
   z-index: 5;
-  display: flex;
   flex-direction: column;
   gap: 0.8rem;
   max-height: 38vh;
@@ -436,6 +533,11 @@ body {
 </style>
 </head>
 <body translate="no" class="notranslate">
+<noscript><style>
+  .app-loader { display: none; }
+  .alpha-preview { display: none; }
+  .seo-content { display: flex; }
+</style></noscript>
 <div id="startup">
 <div id="curtain"></div>
 <main class="seo-content" id="intro">
@@ -480,11 +582,29 @@ body {
   </nav>
 </main>
 
-<div class="app-loader" id="loader">
-  <div class="app-spinner"></div>
+<div class="app-loader" id="loader" role="status" aria-live="polite">
+  <div class="loader-mark" aria-hidden="true">
+    <svg class="loader-logo" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="loaderBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d9ecff"/>
+          <stop offset="0.52" stop-color="#7db6ff"/>
+          <stop offset="1" stop-color="#397cff"/>
+        </linearGradient>
+      </defs>
+      <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
+      <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
+      <g transform="rotate(-24 50 50)">
+        <ellipse class="loader-orbit" cx="50" cy="50" rx="43" ry="12"/>
+        <circle class="loader-satellite" cx="92" cy="50" r="3.8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div id="loaderText">Loading engine...</div>
 </div>
 </div>
+<div class="alpha-preview" id="alphaPreview" aria-label="Polynite Alpha Preview">Alpha Preview</div>
 <div class="install-chip" id="installChip">
   <span>Install Polynite on this device</span>
   <button class="go" id="installGo" type="button">Install</button>
@@ -505,6 +625,7 @@ body {
   var canvas = document.getElementById("canvas");
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
+  var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugButton = document.getElementById("debugButton");
   var logNative = console.log ? console.log.bind(console) : function () {};
@@ -853,6 +974,7 @@ body {
     if (loaderHidden) return;
     if (engineAborted) return;
     loaderHidden = true;
+    document.body.classList.add("scene-ready");
     /* One class, one fade. The intro is not decoration to be swept away: it is
        what the page says while there is nothing to look at yet, and the first
        committed frame is the moment there is - so it dissolves INTO the model
@@ -864,6 +986,8 @@ body {
       startup.classList.add("gone");
       setTimeout(function () { startup.style.display = "none"; }, 900);
     }
+    if (alphaPreview)
+      setTimeout(function () { alphaPreview.classList.add("settled"); }, 4200);
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
