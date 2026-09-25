@@ -158,8 +158,8 @@ body {
   z-index: 0;
   opacity: 0;
   transform: scale(1.008);
-  transition: opacity 900ms cubic-bezier(.2, .72, .22, 1),
-              transform 1200ms cubic-bezier(.2, .72, .22, 1);
+  transition: opacity 700ms cubic-bezier(.2, .72, .22, 1),
+              transform 900ms cubic-bezier(.2, .72, .22, 1);
 }
 body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
 /* A strip at the bottom, not a black sheet over the whole window. It used to
@@ -179,7 +179,7 @@ body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
   z-index: 50;
   pointer-events: none;       /* the links inside take theirs back below */
   opacity: 1;
-  transition: opacity 820ms cubic-bezier(.4, 0, .2, 1);
+  transition: opacity 520ms cubic-bezier(.4, 0, .2, 1);
 }
 #startup.gone { opacity: 0; }
 
@@ -691,7 +691,7 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
         <ellipse class="loader-orbit-base" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
         <ellipse class="loader-progress" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
         <circle class="loader-satellite" r="3.8">
-          <animateMotion id="loaderMoonMotion" begin="indefinite" dur="1.8s" repeatCount="indefinite"
+          <animateMotion begin="0s" dur="1.8s" repeatCount="indefinite"
             path="M93 50 A43 12 0 1 1 7 50 A43 12 0 1 1 93 50"/>
         </circle>
       </g>
@@ -724,8 +724,6 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   var loaderText = document.getElementById("loaderText");
   var loaderEngineRing = loader ? loader.querySelector(".loader-ring-fill") : null;
   var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
-  var loaderMoonMotion = document.getElementById("loaderMoonMotion");
-  var loaderMoonStarted = false;
   var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugLog = document.getElementById("debugLog");
@@ -1124,11 +1122,6 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
       loaderLastProgress = progress;
     }
     loader.classList.toggle("model-loading", phase === 1 || phase === 2);
-    if (!loaderMoonStarted && (phase === 1 || phase === 2) &&
-        loaderMoonMotion && typeof loaderMoonMotion.beginElement === "function") {
-      loaderMoonStarted = true;
-      loaderMoonMotion.beginElement();
-    }
     loader.classList.toggle("unknown-progress", phase === 2 || progress <= 0);
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
@@ -1152,28 +1145,25 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
       loader.classList.add("model-loading", "complete");
     }
     if (loaderText) loaderText.textContent = "Opening scene...";
-    /* Ready starts the transition; it is not a screen of its own. The moon
-       keeps orbiting while this whole layer dissolves into the first frame. */
-    requestAnimationFrame(function () {
-      if (engineAborted) { loaderHideRequested = false; return; }
-      loaderHidden = true;
-      document.body.classList.add("scene-ready");
+    /* Do not wait for another animation frame: scene initialization can keep
+       the main thread busy. The SVG orbit runs independently from this call. */
+    loaderHidden = true;
+    document.body.classList.add("scene-ready");
     /* One class, one fade. The intro is not decoration to be swept away: it is
        what the page says while there is nothing to look at yet, and the first
        committed frame is the moment there is - so it dissolves INTO the model
        rather than being cut off mid-sentence.
        Removed from the document only once the fade is over: it is already
        pointer-events:none, so it is out of the way long before that. */
-        var startup = document.getElementById("startup");
-        if (startup) {
-          startup.classList.add("gone");
-          setTimeout(function () { startup.style.display = "none"; }, 900);
-        }
-        if (alphaPreview) {
-          setTimeout(function () { alphaPreview.classList.add("settled"); }, 2400);
-          setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 8000);
-        }
-    });
+    var startup = document.getElementById("startup");
+    if (startup) {
+      startup.classList.add("gone");
+      setTimeout(function () { startup.style.display = "none"; }, 600);
+    }
+    if (alphaPreview) {
+      setTimeout(function () { alphaPreview.classList.add("settled"); }, 2400);
+      setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 8000);
+    }
   }
 
   /* Called by the engine on its first committed frame (vmesh_hud.hh).
