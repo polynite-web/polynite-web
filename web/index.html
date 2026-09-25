@@ -996,10 +996,19 @@ body.scene-ready .alpha-preview {
     return String(v);
   }
 
+  function fatalConsoleText(t) {
+    t = String(t);
+    if (/^\[abort\]/i.test(t)) return true;
+    if (/^\[gpu-bootstrap\].*(?:failed|refused)/i.test(t)) return true;
+    if (/^\[stderr\].*(?:panic|fatal|device lost|out of memory)/i.test(t)) return true;
+    return /^\[error\]/i.test(t) && !window.vmeshRuntimeInitialized;
+  }
+
   function mirrorConsole(kind, args) {
-    var parts = [], i, el;
+    var parts = [], i, el, fatal;
     for (i = 0; i < args.length; ++i) parts.push(stringifyArg(args[i]));
     var joined = parts.join(" ");
+    fatal = kind === "error" && fatalConsoleText(joined);
     /* The engine reports the backend it ACTUALLY brought up. That is the only
        source of truth: the loader picks a file, but the wasm is compiled for
        one backend and one only. */
@@ -1007,8 +1016,9 @@ body.scene-ready .alpha-preview {
       devInfo.runtime = joined.replace(/^.*\[vmesh_backend\]:\s*/, "");
       try { devInfoRender(); } catch (eB) {}
     }
-    /* Outside dev mode the panel keeps only what a user can act on. */
-    if (!devMode && kind !== "error") return;
+    /* A recovered refusal is useful while developing, but it is not a reason
+       to leave a red diagnostic button on somebody's production scene. */
+    if (!devMode && !fatal) return;
     el = document.createElement("div");
     el.className = "debug-line " + kind;
     el.textContent = userSafe(joined);
@@ -1021,7 +1031,7 @@ body.scene-ready .alpha-preview {
       lineCount--;
     }
     debugLog.scrollTop = debugLog.scrollHeight;
-    if (kind === "error") {
+    if (kind === "error" && (devMode || fatal)) {
       debugConsole.classList.add("has-error");
       debugCopy.classList.add("visible");
       debugButton.classList.add("visible", "has-error");
@@ -1042,18 +1052,21 @@ body.scene-ready .alpha-preview {
       debugCopy.textContent = "Copied";
       setTimeout(function () { debugCopy.textContent = "Copy error"; }, 1400);
     }
-    if (navigator.clipboard && navigator.clipboard.writeText)
-      navigator.clipboard.writeText(text).then(copied).catch(function () {});
-    else {
+    function oldCopy() {
       var ta = document.createElement("textarea");
       ta.value = text;
       ta.style.position = "fixed";
       ta.style.opacity = "0";
       document.body.appendChild(ta);
       ta.select();
-      try { if (document.execCommand("copy")) copied(); } catch (e) {}
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
       document.body.removeChild(ta);
+      return ok;
     }
+    if (oldCopy()) copied();
+    else if (navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(text).then(copied).catch(function () {});
   }
   debugCopy.addEventListener("click", copyErrors);
 
