@@ -221,7 +221,8 @@ body.scene-ready .game-canvas { opacity: 1; transform: scale(1); }
   animation: alpha-breathe 1.8s ease-in-out infinite;
 }
 body.scene-ready .alpha-preview {
-  top: max(10px, env(safe-area-inset-top));
+  top: 46px;
+  top: calc(env(safe-area-inset-top) + 40px);
   right: max(10px, env(safe-area-inset-right));
   transform: translate(0, 0);
   background: rgba(11, 13, 18, 0.66);
