@@ -1223,7 +1223,7 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
     } else if (phase === 2) {
       var names = ["Preparing files", "Downloading model", "Reading model", "Parsing scene",
         "Decoding textures", "Building geometry", "Baking occlusion", "Building clusters",
-        "Generating mipmaps", "Uploading to GPU", "Ready", "Load failed"];
+        "Generating mipmaps", "Uploading to GPU", "Preparing first frame", "Load failed"];
       if (loaderHadDownload) loaderMeter(loaderDownload, loaderDownloadFill, loaderDownloadValue, 100);
       if (stage >= 2) loaderMeter(loaderBuild, loaderBuildFill, loaderBuildValue, progress);
       loaderText.textContent = names[stage] || "Preparing scene";
