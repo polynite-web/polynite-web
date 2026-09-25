@@ -284,6 +284,8 @@ body.scene-ready .alpha-preview {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
   transition: stroke-dashoffset 180ms linear, opacity 220ms ease;
 }
 .loader-orbit {
@@ -321,6 +323,32 @@ body.scene-ready .alpha-preview {
   color: rgba(147, 164, 186, 0.72);
   font-size: 12px;
   letter-spacing: 0.02em;
+}
+.loader-model-progress {
+  display: none;
+  width: min(180px, 46vw);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(143, 194, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(143, 194, 255, 0.06);
+}
+.app-loader.model-loading .loader-model-progress { display: block; }
+.loader-model-progress > i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #397cff, #a7d7ff, #eef7ff);
+  box-shadow: 0 0 10px rgba(91, 164, 255, 0.72);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 180ms linear;
+}
+.app-loader.unknown-progress .loader-model-progress > i {
+  width: 42%;
+  transform: translateX(-120%);
+  animation: loader-scan 1.05s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 /* The install offer. Chrome would put its own banner over the viewer at a
    moment it chooses; this takes the event instead and asks quietly, once the
@@ -374,6 +402,10 @@ body.scene-ready .alpha-preview {
   50%      { opacity: 1; transform: scale(1.15); }
 }
 @keyframes loader-orbit { to { transform: rotate(270deg); } }
+@keyframes loader-scan {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(350%); }
+}
 @keyframes loader-wait {
   0%, 100% { transform: scale(0.985); opacity: 0.78; }
   50%      { transform: scale(1.035); opacity: 1; }
@@ -390,6 +422,7 @@ body.scene-ready .alpha-preview {
   .loader-satellite { animation: none; }
   .app-loader.model-loading .loader-mark,
   .app-loader.model-loading.unknown-progress .loader-progress,
+  .app-loader.unknown-progress .loader-model-progress > i,
   .app-loader.complete .loader-mark { animation: none; }
   .alpha-preview::before { animation: none; }
 }
@@ -454,7 +487,7 @@ body.scene-ready .alpha-preview {
   right: 10px;
   bottom: 48px;
   display: none;
-  max-height: min(72vh, calc(100vh - 64px));
+  height: min(72vh, calc(100vh - 64px));
   overflow: hidden;
   box-sizing: border-box;
   padding: 0;
@@ -469,7 +502,6 @@ body.scene-ready .alpha-preview {
 }
 .debug-console.visible { display: flex; flex-direction: column; }
 .debug-console.has-error {
-  color: #ff9b9b;
   border-color: rgba(255, 90, 90, 0.75);
 }
 /* Hardware facts and logs scroll independently. A sticky banner in the same
@@ -488,10 +520,42 @@ body.scene-ready .alpha-preview {
 .dev-info b { color: #ffffff; font-weight: 600; }
 .dev-info .k { color: #6fb6cc; display: inline-block; min-width: 78px; }
 .dev-info .row { white-space: pre-wrap; word-break: break-word; }
-.debug-log {
+.debug-log-shell {
   flex: 1 1 10em;
   min-height: 5.6em;
   max-height: 32vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.debug-log-head {
+  flex: none;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 6px 3px 10px;
+  color: rgba(168, 239, 168, 0.62);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.debug-copy {
+  display: none;
+  padding: 3px 8px;
+  color: #ffc0c0;
+  background: rgba(110, 22, 22, 0.35);
+  border: 1px solid rgba(255, 90, 90, 0.5);
+  border-radius: 5px;
+  font: 600 10px/1.3 system-ui, sans-serif;
+  cursor: pointer;
+}
+.debug-copy.visible { display: block; }
+.debug-copy:active { transform: translateY(1px); }
+.debug-log {
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: auto;
   padding: 9px 10px 12px;
   box-sizing: border-box;
@@ -506,10 +570,11 @@ body.scene-ready .alpha-preview {
   color: #ffb0b0;
   border-left: 2px solid rgba(255, 90, 90, 0.78);
 }
+.debug-line.warn { color: #ffd58a; }
 @media (max-height: 420px) {
-  .debug-console { max-height: calc(100vh - 54px); bottom: 44px; }
+  .debug-console { height: calc(100vh - 54px); bottom: 44px; }
   .dev-info { max-height: 48vh; }
-  .debug-log { min-height: 4.4em; max-height: none; }
+  .debug-log-shell { min-height: 4.8em; max-height: none; }
 }
 .dev-info .ok  { color: #8ef0a8; }
 .dev-info .bad { color: #ff9b9b; }
@@ -656,6 +721,7 @@ body.scene-ready .alpha-preview {
   </div>
   <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div id="loaderText">Loading engine...</div>
+  <div class="loader-model-progress" aria-hidden="true"><i></i></div>
 </div>
 </div>
 <div class="alpha-preview" id="alphaPreview" aria-label="Polynite Alpha Preview">Alpha Preview</div>
@@ -664,7 +730,7 @@ body.scene-ready .alpha-preview {
   <button class="go" id="installGo" type="button">Install</button>
   <button class="no" id="installNo" type="button" aria-label="Not now">&times;</button>
 </div>
-<div class="debug-console" id="debugConsole"><div class="debug-log" id="debugLog" role="log" aria-live="polite"></div></div>
+<div class="debug-console" id="debugConsole"><div class="debug-log-shell"><div class="debug-log-head"><span>Log</span><button class="debug-copy" id="debugCopy" type="button">Copy error</button></div><div class="debug-log" id="debugLog" role="log" aria-live="polite"></div></div></div>
 <button class="debug-button" id="debugButton" type="button">...</button>
 <canvas class="game-canvas" id="canvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
 <script>
@@ -680,9 +746,11 @@ body.scene-ready .alpha-preview {
   var loader = document.getElementById("loader");
   var loaderText = document.getElementById("loaderText");
   var loaderProgress = loader ? loader.querySelector(".loader-progress") : null;
+  var loaderBar = loader ? loader.querySelector(".loader-model-progress > i") : null;
   var alphaPreview = document.getElementById("alphaPreview");
   var debugConsole = document.getElementById("debugConsole");
   var debugLog = document.getElementById("debugLog");
+  var debugCopy = document.getElementById("debugCopy");
   var debugButton = document.getElementById("debugButton");
   var logNative = console.log ? console.log.bind(console) : function () {};
   var infoNative = console.info ? console.info.bind(console) : logNative;
@@ -955,6 +1023,7 @@ body.scene-ready .alpha-preview {
     debugLog.scrollTop = debugLog.scrollHeight;
     if (kind === "error") {
       debugConsole.classList.add("has-error");
+      debugCopy.classList.add("visible");
       debugButton.classList.add("visible", "has-error");
       debugButton.classList.remove("idle");   /* something is wrong: be seen */
       /* The WebGPU panel is already a complete explanation: popping the error
@@ -963,6 +1032,30 @@ body.scene-ready .alpha-preview {
       if (devMode && !window.__spinNoticeShown) consoleShow();
     }
   }
+
+  function copyErrors() {
+    var lines = debugLog.querySelectorAll(".debug-line.error"), text = "", i;
+    for (i = 0; i < lines.length; i++) text += (text ? "\n" : "") + lines[i].textContent;
+    if (!text) return;
+    text = window.spinviewGfxInfo() + "\n\n" + text;
+    function copied() {
+      debugCopy.textContent = "Copied";
+      setTimeout(function () { debugCopy.textContent = "Copy error"; }, 1400);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(text).then(copied).catch(function () {});
+    else {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { if (document.execCommand("copy")) copied(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  }
+  debugCopy.addEventListener("click", copyErrors);
 
   function resizeCanvas() {
     canvas.style.width = window.innerWidth + "px";
@@ -1033,10 +1126,11 @@ body.scene-ready .alpha-preview {
     if (!loader || loaderHideRequested || loaderHidden) return;
     loaderLastSignal = performance.now ? performance.now() : Date.now();
     loader.classList.toggle("model-loading", phase === 1 || phase === 2);
-    loader.classList.toggle("unknown-progress", phase === 2 || progress < 0);
+    loader.classList.toggle("unknown-progress", phase === 2 || progress <= 0);
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
       loaderProgress.style.strokeDashoffset = String(100 - progress);
+      if (loaderBar) loaderBar.style.transform = "scaleX(" + (progress / 100) + ")";
     }
     if (!loaderText) return;
     if (phase === 1)
