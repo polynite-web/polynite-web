@@ -226,17 +226,20 @@ body.scene-entry-ready #startup { pointer-events: auto; cursor: pointer; }
   box-shadow: 0 0 8px rgba(255, 190, 67, 0.9);
   animation: alpha-breathe 1.8s ease-in-out infinite;
 }
+body.scene-entry-ready .alpha-preview,
 body.scene-ready .alpha-preview {
-  top: clamp(64px, 12vh, 96px);
-  right: 50%;
-  padding: 2px 5px;
+  top: auto;
+  right: max(10px, env(safe-area-inset-right));
+  bottom: max(10px, env(safe-area-inset-bottom));
+  padding: 2px 4px;
   border-color: transparent;
   box-shadow: none;
   background: transparent;
-  transform: translate(50%, 0);
+  opacity: 0.28;
+  transform: none;
 }
 body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
-.alpha-preview.settled { opacity: 0.24; }
+.alpha-preview.settled { opacity: 0.18; }
 .alpha-preview.dismissed { opacity: 0; }
 
 /* The dark the model comes out of. Under the intro and the spinner, over the
@@ -250,7 +253,8 @@ body.scene-ready .alpha-preview::before { opacity: 0.45; box-shadow: none; }
   transition: background 700ms ease, backdrop-filter 700ms ease;
 }
 body.scene-entry-ready #curtain {
-  background: rgba(5, 8, 14, 0.76);
+  background: radial-gradient(circle at 50% 42%, rgba(52, 103, 178, 0.14), transparent 38%),
+              rgba(5, 8, 14, 0.76);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
@@ -280,10 +284,12 @@ body.scene-entry-ready #curtain {
 .loader-ring-base,
 .loader-ring-fill,
 .loader-progress,
-.loader-orbit-base {
+.loader-orbit-base,
+.loader-orbit-front {
   fill: none;
   vector-effect: non-scaling-stroke;
 }
+.loader-planet-mask { fill: #0b0d12; }
 .loader-ring-base { stroke: rgba(143, 194, 255, 0.14); stroke-width: 5; }
 .loader-ring-fill {
   stroke: url(#loaderBlue);
@@ -309,15 +315,28 @@ body.scene-entry-ready #curtain {
   opacity: 0;
   transition: opacity 220ms ease;
 }
+.loader-orbit-front {
+  stroke: rgba(181, 216, 255, 0.72);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
 .loader-satellite {
   fill: #eef7ff;
-  opacity: 0;
 }
+.loader-satellite-moving { opacity: 0; }
 .app-loader.model-loading .loader-orbit-base { opacity: 1; }
+.app-loader.model-loading .loader-orbit-front { opacity: 1; }
 .app-loader.model-loading .loader-progress { opacity: 0.78; }
 .app-loader.model-loading .loader-satellite-moving {
+  animation: loader-moon-orbit 1.8s linear infinite;
+}
+.app-loader.static-loading .loader-satellite-moving {
+  animation: none;
+  transform: translate(0, 0);
   opacity: 1;
-  animation: loader-moon-glow 1.25s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px rgba(177, 218, 255, 0.82));
 }
 .app-loader.model-loading.unknown-progress .loader-progress {
   animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
@@ -326,9 +345,11 @@ body.scene-entry-ready #curtain {
 .app-loader.complete .loader-progress { animation: none; opacity: 0.9; stroke-dashoffset: 0; }
 .app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
 .app-loader.await-entry { pointer-events: auto; }
-.app-loader.await-entry .loader-mark { animation: loader-wait 2.2s ease-in-out infinite; }
-.app-loader.await-entry .loader-satellite-moving { opacity: 1; animation: loader-moon-glow 1.5s ease-in-out infinite; }
+.app-loader.await-entry .loader-mark { animation: loader-ready-float 2.8s ease-in-out infinite; }
+.app-loader.await-entry .loader-satellite-moving { animation: loader-moon-orbit 1.8s linear infinite; }
 .app-loader.await-entry .loader-meters { display: none; }
+.app-loader.await-entry .loader-state { animation: loader-copy-in 500ms 80ms ease-out both; }
+.app-loader.await-entry #loaderText { animation: loader-copy-in 560ms 180ms ease-out both; }
 .app-loader.model-loading.static-loading:not(.complete) .loader-progress {
   animation: none;
   transition: none;
@@ -444,9 +465,15 @@ body.scene-entry-ready #curtain {
   0%   { stroke-dashoffset: 100; opacity: 0.3; }
   100% { stroke-dashoffset: 14; opacity: 0.9; }
 }
-@keyframes loader-moon-glow {
-  0%, 100% { opacity: 0.58; }
-  50%      { opacity: 1; }
+@keyframes loader-moon-orbit {
+  0%, 100% { transform: translate(0, 0); opacity: 1; filter: drop-shadow(0 0 5px rgba(177, 218, 255, 0.9)); }
+  12.5% { transform: translate(-12.6px, -8.5px); opacity: 0.72; }
+  25%   { transform: translate(-43px, -12px); opacity: 0.48; filter: none; }
+  37.5% { transform: translate(-73.4px, -8.5px); opacity: 0.38; }
+  50%   { transform: translate(-86px, 0); opacity: 0.34; filter: none; }
+  62.5% { transform: translate(-73.4px, 8.5px); opacity: 0.52; }
+  75%   { transform: translate(-43px, 12px); opacity: 0.9; }
+  87.5% { transform: translate(-12.6px, 8.5px); opacity: 1; }
 }
 @keyframes loader-meter-wait {
   0%   { transform: translateX(-105%); }
@@ -465,6 +492,14 @@ body.scene-entry-ready #curtain {
   55%  { transform: scale(1.09); filter: drop-shadow(0 0 24px rgba(148, 210, 255, 0.72)); }
   100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(91, 164, 255, 0.42)); }
 }
+@keyframes loader-ready-float {
+  0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 14px rgba(65, 136, 255, 0.3)); }
+  50%      { transform: translateY(-3px) scale(1.025); filter: drop-shadow(0 0 22px rgba(116, 183, 255, 0.52)); }
+}
+@keyframes loader-copy-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 @media (prefers-reduced-motion: reduce) {
   #startup { transition-duration: 1ms; }
   .game-canvas, .alpha-preview { transition-duration: 1ms; }
@@ -480,7 +515,8 @@ body.scene-entry-ready #curtain {
   .loader-mark { width: 66px; }
   .loader-wordmark { display: none; }
   .alpha-preview { transform: translate(50%, 64px); }
-  body.scene-ready .alpha-preview { top: 48px; transform: translate(50%, 0); }
+  body.scene-entry-ready .alpha-preview,
+  body.scene-ready .alpha-preview { top: auto; transform: none; }
 }
 .gpu-notice {
   position: fixed;
@@ -765,15 +801,16 @@ body.scene-entry-ready #curtain {
           <stop offset="1" stop-color="#397cff"/>
         </linearGradient>
       </defs>
-      <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
-      <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
       <g transform="rotate(-24 50 50)">
         <ellipse class="loader-orbit-base" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
         <ellipse class="loader-progress" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
-        <circle class="loader-satellite loader-satellite-moving" r="3.8">
-          <animateMotion begin="0s" dur="1.8s" repeatCount="indefinite"
-            path="M93 50 A43 12 0 1 1 7 50 A43 12 0 1 1 93 50"/>
-        </circle>
+      </g>
+      <circle class="loader-planet-mask" cx="50" cy="50" r="30"/>
+      <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
+      <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
+      <g transform="rotate(-24 50 50)">
+        <path class="loader-orbit-front" d="M7 50 A43 12 0 0 0 93 50"/>
+        <g class="loader-satellite-moving"><circle class="loader-satellite" cx="93" cy="50" r="3.8"/></g>
       </g>
     </svg>
   </div>
@@ -786,7 +823,7 @@ body.scene-entry-ready #curtain {
       <div class="loader-meter-track"><i class="loader-meter-fill" id="loaderDownloadFill"></i></div>
     </div>
     <div class="loader-meter" id="loaderBuild">
-      <div class="loader-meter-head"><span>Scene build</span><span id="loaderBuildValue">0%</span></div>
+      <div class="loader-meter-head"><span id="loaderBuildLabel">Preparing scene</span><span id="loaderBuildValue">0%</span></div>
       <div class="loader-meter-track"><i class="loader-meter-fill" id="loaderBuildFill"></i></div>
     </div>
   </div>
@@ -820,6 +857,7 @@ body.scene-entry-ready #curtain {
   var loaderDownloadFill = document.getElementById("loaderDownloadFill");
   var loaderDownloadValue = document.getElementById("loaderDownloadValue");
   var loaderBuild = document.getElementById("loaderBuild");
+  var loaderBuildLabel = document.getElementById("loaderBuildLabel");
   var loaderBuildFill = document.getElementById("loaderBuildFill");
   var loaderBuildValue = document.getElementById("loaderBuildValue");
   var alphaPreview = document.getElementById("alphaPreview");
@@ -1255,10 +1293,15 @@ body.scene-entry-ready #curtain {
       var names = ["Preparing files", "Downloading model", "Reading model", "Parsing scene",
         "Decoding textures", "Building geometry", "Baking occlusion", "Building clusters",
         "Generating mipmaps", "Uploading to GPU", "Preparing first frame", "Load failed"];
+      var stepName = names[stage] || "Preparing scene";
       if (loaderHadDownload) loaderMeter(loaderDownload, loaderDownloadFill, loaderDownloadValue, 100);
       if (stage >= 2) loaderMeter(loaderBuild, loaderBuildFill, loaderBuildValue, progress);
-      loaderText.textContent = names[stage] || "Preparing scene";
-      if (stage === 4 && sub > 0) loaderText.textContent += " · " + Math.min(4, Math.ceil(sub * 0.04)) + "/4";
+      if (loaderBuildLabel && stage >= 2) loaderBuildLabel.textContent = stepName;
+      loaderText.textContent = stepName;
+      if (stage === 4 && sub > 0) {
+        loaderText.textContent += " · " + Math.min(4, Math.ceil(sub * 0.04)) + "/4";
+        if (loaderBuildLabel) loaderBuildLabel.textContent = loaderText.textContent;
+      }
     }
   };
 
@@ -1280,8 +1323,8 @@ body.scene-entry-ready #curtain {
     window.dispatchEvent(new CustomEvent("polynite:scene-entered"));
     setTimeout(function () { if (canvas) canvas.focus(); }, 620);
     if (alphaPreview) {
-      setTimeout(function () { alphaPreview.classList.add("settled"); }, 2400);
-      setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 8000);
+      setTimeout(function () { alphaPreview.classList.add("settled"); }, 1200);
+      setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 5000);
     }
   }
 
@@ -1291,7 +1334,7 @@ body.scene-entry-ready #curtain {
     loaderHideRequested = true;
     sceneEntryReady = true;
     if (loader) {
-      loader.classList.remove("unknown-progress");
+      loader.classList.remove("unknown-progress", "static-loading");
       loader.classList.add("model-loading", "complete", "await-entry");
     }
     if (loaderState) loaderState.textContent = fallback ? "Scene available" : "Scene ready";
