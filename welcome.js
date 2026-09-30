@@ -6,6 +6,16 @@
   var arrival = window.pnArrival = { id: id, mode: id ? 'shared' : 'restore',
     data: null, previewTaken: false, requested: false, busy: true,
     journey: false, touched: false, failed: false };
+  // Studio belongs to this browser, never to a minted scene or its author.
+  var studioKey = 'polynite.studio';
+  var studioSaved = false, studioTouched = false;
+  try { studioSaved = localStorage.getItem(studioKey) === '1'; } catch (_) {}
+  window.vmeshStudio = id ? false : studioSaved;
+  window.vmeshStudioSet = function (enabled) {
+    studioTouched = true;
+    window.vmeshStudio = !!enabled;
+    try { localStorage.setItem(studioKey, enabled ? '1' : '0'); } catch (_) {}
+  };
   window.vmeshSceneEntered = false;
   window.vmeshAudioEntered = false;
   window.vmeshCommittedFrames = 0;
@@ -48,11 +58,12 @@
     author.textContent = data.author ? 'by ' + data.author : '';
     start.hidden = arrival.failed || arrival.mode === 'discover';
     start.disabled = arrival.requested && arrival.busy;
-    start.textContent = arrival.requested ? 'Your world is awakening' : 'Tap to awaken';
+    start.textContent = arrival.requested ? 'Awakening...'  : 'Tap to awaken';
     hint.textContent = arrival.failed ? 'This scene could not be opened.' :
       arrival.requested && arrival.busy ? 'Continue exploring \u00b7 we\u2019ll begin when ready' :
       arrival.requested ? '' : 'Sound on with a touch \u00b7 drag to explore';
     discover.hidden = !arrival.failed && (arrival.mode !== 'restore' || !arrival.busy);
+    panel.classList.toggle('has-discover', !discover.hidden);
     panel.classList.toggle('quiet', !arrival.busy && (arrival.requested || arrival.mode === 'discover'));
   }
   function awaken() {
@@ -75,6 +86,7 @@
   };
   window.vmeshArrivalState = function (mode, busy, journey, failed) {
     arrival.mode = mode;
+    if (mode === 'discover' && !studioTouched) window.vmeshStudio = false;
     arrival.busy = !!busy;
     arrival.failed = !!failed;
     arrival.journey = !!journey || !!(arrival.data && arrival.data.journey && busy);
@@ -88,6 +100,8 @@
   window.vmeshArrivalBegin = function (nextId) {
     if (nextId === arrival.id) return;
     arrival.id = nextId;
+    window.vmeshStudio = false;
+    studioTouched = false;
     arrival.mode = 'shared';
     arrival.data = null;
     arrival.previewTaken = false;
