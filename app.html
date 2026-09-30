@@ -325,18 +325,14 @@ body.scene-entry-ready #curtain {
 .loader-satellite {
   fill: #eef7ff;
 }
-.loader-satellite-moving { opacity: 0; }
+.loader-satellite-moving { opacity: 1; }
+.loader-satellite-still { display: none; }
 .app-loader.model-loading .loader-orbit-base { opacity: 1; }
 .app-loader.model-loading .loader-orbit-front { opacity: 1; }
 .app-loader.model-loading .loader-progress { opacity: 0.78; }
-.app-loader.model-loading .loader-satellite-moving {
-  animation: loader-moon-orbit 1.8s linear infinite;
-}
-.app-loader.static-loading .loader-satellite-moving {
-  animation: none;
-  transform: translate(0, 0);
-  opacity: 1;
-  filter: drop-shadow(0 0 4px rgba(177, 218, 255, 0.82));
+@media (prefers-reduced-motion: reduce) {
+  .loader-satellite-moving { display: none; }
+  .loader-satellite-still { display: block; }
 }
 .app-loader.model-loading.unknown-progress .loader-progress {
   animation: loader-scene-fill 6.5s cubic-bezier(.12, .62, .2, 1) forwards;
@@ -346,7 +342,7 @@ body.scene-entry-ready #curtain {
 .app-loader.complete .loader-mark { animation: loader-ready 300ms ease-out both; }
 .app-loader.await-entry { pointer-events: auto; }
 .app-loader.await-entry .loader-mark { animation: loader-ready-float 2.8s ease-in-out infinite; }
-.app-loader.await-entry .loader-satellite-moving { animation: loader-moon-orbit 1.8s linear infinite; }
+
 .app-loader.await-entry .loader-meters { display: none; }
 .app-loader.await-entry .loader-state { animation: loader-copy-in 500ms 80ms ease-out both; }
 .app-loader.await-entry #loaderText { animation: loader-copy-in 560ms 180ms ease-out both; }
@@ -464,16 +460,6 @@ body.scene-entry-ready #curtain {
 @keyframes loader-scene-fill {
   0%   { stroke-dashoffset: 100; opacity: 0.3; }
   100% { stroke-dashoffset: 14; opacity: 0.9; }
-}
-@keyframes loader-moon-orbit {
-  0%, 100% { transform: translate(0, 0); opacity: 1; filter: drop-shadow(0 0 5px rgba(177, 218, 255, 0.9)); }
-  12.5% { transform: translate(-12.6px, -8.5px); opacity: 0.72; }
-  25%   { transform: translate(-43px, -12px); opacity: 0.48; filter: none; }
-  37.5% { transform: translate(-73.4px, -8.5px); opacity: 0.38; }
-  50%   { transform: translate(-86px, 0); opacity: 0.34; filter: none; }
-  62.5% { transform: translate(-73.4px, 8.5px); opacity: 0.52; }
-  75%   { transform: translate(-43px, 12px); opacity: 0.9; }
-  87.5% { transform: translate(-12.6px, 8.5px); opacity: 1; }
 }
 @keyframes loader-meter-wait {
   0%   { transform: translateX(-105%); }
@@ -800,17 +786,27 @@ body.scene-entry-ready #curtain {
           <stop offset="0.52" stop-color="#7db6ff"/>
           <stop offset="1" stop-color="#397cff"/>
         </linearGradient>
+        <clipPath id="loaderMoonBack"><rect x="0" y="0" width="100" height="50"/></clipPath>
+        <clipPath id="loaderMoonFront"><rect x="0" y="50" width="100" height="50"/></clipPath>
       </defs>
       <g transform="rotate(-24 50 50)">
         <ellipse class="loader-orbit-base" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
         <ellipse class="loader-progress" cx="50" cy="50" rx="43" ry="12" pathLength="100"/>
       </g>
+      <g transform="rotate(-24 50 50)"><g class="loader-satellite-moving" clip-path="url(#loaderMoonBack)"><circle class="loader-satellite" r="3.8">
+          <animateMotion dur="1.8s" repeatCount="indefinite" calcMode="linear"
+            path="M93 50 A43 12 0 0 0 7 50 A43 12 0 0 0 93 50"/>
+        </circle></g></g>
       <circle class="loader-planet-mask" cx="50" cy="50" r="30"/>
       <circle class="loader-ring-base" cx="50" cy="50" r="27" pathLength="100"/>
       <circle class="loader-ring-fill" cx="50" cy="50" r="27" pathLength="100" transform="rotate(-90 50 50)"/>
       <g transform="rotate(-24 50 50)">
         <path class="loader-orbit-front" d="M7 50 A43 12 0 0 0 93 50"/>
-        <g class="loader-satellite-moving"><circle class="loader-satellite" cx="93" cy="50" r="3.8"/></g>
+        <g class="loader-satellite-moving" clip-path="url(#loaderMoonFront)"><circle class="loader-satellite" r="3.8">
+          <animateMotion dur="1.8s" repeatCount="indefinite" calcMode="linear"
+            path="M93 50 A43 12 0 0 0 7 50 A43 12 0 0 0 93 50"/>
+        </circle></g>
+        <circle class="loader-satellite loader-satellite-still" cx="93" cy="50" r="3.8"/>
       </g>
     </svg>
   </div>
@@ -1279,6 +1275,7 @@ body.scene-entry-ready #curtain {
     }
     loader.classList.toggle("model-loading", phase === 1 || phase === 2);
     loader.classList.remove("static-loading");
+    loader.classList.toggle("downloading", phase === 1);
     loader.classList.toggle("unknown-progress", progress < 0);
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
