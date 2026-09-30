@@ -22,7 +22,7 @@
   var panel = document.createElement('div');
   panel.id = 'arrival';
   panel.innerHTML = '<div id="arrivalTitle"></div><div id="arrivalAuthor"></div>' +
-    '<button id="journeyStart" type="button">Tap to awaken</button>' +
+    '<button id="journeyStart" type="button" disabled>Preparing your world...</button>' +
     '<div id="journeyHint" role="status" aria-live="polite"></div>' +
     '<button id="arrivalDiscover" type="button">Explore Discover</button>';
   document.body.appendChild(panel);
@@ -57,10 +57,10 @@
     title.textContent = data.title || (arrival.mode === 'restore' && arrival.busy ? 'Returning to your world' : '');
     author.textContent = data.author ? 'by ' + data.author : '';
     start.hidden = arrival.failed || arrival.mode === 'discover';
-    start.disabled = arrival.requested && arrival.busy;
-    start.textContent = arrival.requested ? 'Awakening...'  : 'Tap to awaken';
+    start.disabled = arrival.busy;
+    start.textContent = arrival.busy ? 'Preparing your world...' : arrival.requested ? 'Awakening...' : 'Tap to awaken';
     hint.textContent = arrival.failed ? 'This scene could not be opened.' :
-      arrival.requested && arrival.busy ? 'Continue exploring \u00b7 we\u2019ll begin when ready' :
+      arrival.busy ? '' :
       arrival.requested ? '' : 'Sound on with a touch \u00b7 drag to explore';
     discover.hidden = !arrival.failed && (arrival.mode !== 'restore' || !arrival.busy);
     panel.classList.toggle('has-discover', !discover.hidden);
