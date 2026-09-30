@@ -1,0 +1,54 @@
+/* The world remains the main surface, including while its assets arrive. */
+body.world-visible .game-canvas { opacity: 1; transform: none; filter: none; }
+body.world-visible #curtain { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+body.world-visible #startup { pointer-events: none; }
+body.world-visible .app-loader {
+  inset: auto auto max(22px, env(safe-area-inset-bottom)) 24px;
+  width: min(250px, 38vw); padding: 0; align-items: flex-start;
+  background: none; transform: none;
+}
+body.world-visible .loader-mark,
+body.world-visible .loader-wordmark,
+body.world-visible .loader-state { display: none; }
+body.world-visible #loaderText { font-size: 11px; color: #b5c1cf; text-align: left; }
+body.world-visible .loader-meters { width: 100%; }
+body.world-visible:not(.arrival-busy):not(.arrival-failed) .app-loader { opacity: 0; visibility: hidden; }
+body.world-visible .alpha-preview { opacity: 0; pointer-events: none; }
+#arrival {
+  position: fixed; z-index: 51; left: 50%; bottom: calc(100px + env(safe-area-inset-bottom));
+  transform: translateX(-50%); width: min(380px, 85vw); text-align: center;
+  color: #e2e9ee; opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 350ms ease; text-shadow: 0 1px 9px #0008;
+}
+body.world-visible #arrival { opacity: 1; visibility: visible; }
+body.arrival-shared #arrival { bottom: calc(164px + env(safe-area-inset-bottom)); }
+body.scene-ready #arrivalTitle, body.scene-ready #arrivalAuthor { display: none; }
+#arrivalTitle { font-size: 16px; letter-spacing: .04em; overflow-wrap: anywhere; max-height: 2.8em; overflow: hidden; }
+#arrivalAuthor { font-size: 11px; opacity: .65; margin: 5px 0 12px; }
+#arrivalTitle:empty, #arrivalAuthor:empty { display: none; }
+#arrival button { pointer-events: auto; font: inherit; cursor: pointer; }
+#journeyStart {
+  border: 1px solid #d6e9ff30; border-radius: 30px; padding: 12px 24px;
+  box-shadow: 0 4px 22px #08131b24; letter-spacing: .035em;
+  color: #eef5ff; background: #142231a6; font-size: 13px !important;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+#journeyStart:hover { background: #233b50df; border-color: #d6e9ff80; }
+#journeyStart:focus-visible, #arrivalDiscover:focus-visible { outline: 2px solid #bbdbed; outline-offset: 4px; }
+#journeyStart:disabled { cursor: default; opacity: .65; }
+#journeyHint { margin-top: 10px; font-size: 11px; opacity: .7; }
+#arrivalDiscover { display: inline-block; margin-top: 12px; padding: 5px 9px; border: 0; color: #cfdae5; background: none; font-size: 11px !important; }
+#arrival [hidden] { display: none; }
+body.world-visible #arrival.quiet { opacity: 0; visibility: hidden; }
+@media(max-width: 640px) {
+  body.world-visible .app-loader { left: 20px; right: 20px; bottom: auto; top: 72px; width: auto; }
+  body.world-visible .loader-meters { max-width: 190px; }
+  #arrival { bottom: calc(100px + env(safe-area-inset-bottom)); }
+}
+@media(max-height: 450px) {
+  #arrival { bottom: calc(112px + env(safe-area-inset-bottom)); }
+  body.arrival-shared #arrival { bottom: calc(156px + env(safe-area-inset-bottom)); }
+  #arrivalTitle, #arrivalAuthor { display: none; }
+  #journeyStart { padding: 10px 22px; }
+}
+@media(prefers-reduced-motion: reduce) { #arrival { transition: none; } }

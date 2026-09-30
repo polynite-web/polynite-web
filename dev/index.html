@@ -837,7 +837,9 @@ body.scene-entry-ready #curtain {
 </div>
 <div class="debug-console" id="debugConsole"><div class="debug-log-shell"><div class="debug-log-head"><span>Log</span><button class="debug-copy" id="debugCopy" type="button">Copy error</button></div><div class="debug-log" id="debugLog" role="log" aria-live="polite"></div></div></div>
 <button class="debug-button" id="debugButton" type="button">...</button>
+<link rel="stylesheet" href="welcome.css">
 <canvas class="game-canvas" id="canvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+<script src="welcome.js"></script>
 <script>
 /* Source of truth for the web shell — copied by build.cwc to {pOut}index.html
  * (and {pOut}App.html, replacing emscripten's own WebGL launcher). Same shell
@@ -1252,8 +1254,6 @@ body.scene-entry-ready #curtain {
   var loaderLastStage = -1;
   var loaderHadDownload = false;
   var engineAborted = false;
-  var sceneEntryReady = false;
-  window.vmeshSceneEntered = false;
 
   function loaderMeter(row, fill, value, progress) {
     if (!row || !fill || !value) return;
@@ -1305,54 +1305,18 @@ body.scene-entry-ready #curtain {
     }
   };
 
-  function enterScene(e) {
-    if (!sceneEntryReady || loaderHidden) return;
-    if (e && e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
-    loaderHidden = true;
-    window.vmeshSceneEntered = true;
-    document.body.classList.remove("scene-entry-ready");
-    document.body.classList.add("scene-ready");
-    if (loaderText) loaderText.textContent = "Opening scene...";
-    var startup = document.getElementById("startup");
-    if (startup) {
-      startup.classList.add("gone");
-      startup.removeAttribute("role");
-      startup.removeAttribute("tabindex");
-      setTimeout(function () { startup.style.display = "none"; }, 600);
-    }
-    window.dispatchEvent(new CustomEvent("polynite:scene-entered"));
-    setTimeout(function () { if (canvas) canvas.focus(); }, 620);
-    if (alphaPreview) {
-      setTimeout(function () { alphaPreview.classList.add("settled"); }, 1200);
-      setTimeout(function () { alphaPreview.classList.add("dismissed"); }, 5000);
-    }
-  }
-
+  /* Compatibility with cached engines: new builds report the first committed
+     frame and content readiness separately. Never put a gesture over the canvas. */
   function hideLoader(fallback) {
-    if (loaderHidden || loaderHideRequested) return;
-    if (engineAborted) return;
+    if (engineAborted || fallback) return;
+    loaderHidden = true;
     loaderHideRequested = true;
-    sceneEntryReady = true;
-    if (loader) {
-      loader.classList.remove("unknown-progress", "static-loading");
-      loader.classList.add("model-loading", "complete", "await-entry");
+    if (!window.vmeshCommittedFrames) {
+      window.vmeshCommittedFrames = 1;
+      window.vmeshWorldFrame();
     }
-    if (loaderState) loaderState.textContent = fallback ? "Scene available" : "Scene ready";
-    if (loaderText) loaderText.textContent = fallback ? "Tap to continue" : "Tap to enter";
-    document.body.classList.add("scene-entry-ready");
-    var startup = document.getElementById("startup");
-    if (startup) {
-      startup.setAttribute("role", "button");
-      startup.setAttribute("tabindex", "0");
-      startup.setAttribute("aria-label", fallback ? "Continue to Polynite" : "Enter the ready scene");
-    }
+    window.vmeshArrivalState(window.pnArrival.mode, 0, 1, 0);
   }
-
-  document.getElementById("startup").addEventListener("pointerup", enterScene);
-  window.addEventListener("keydown", enterScene, true);
-
-  /* Called by the engine on its first committed frame (vmesh_hud.hh).
-     numerisHideLoader stays as an alias: same shell, same contract. */
   window.vmeshHideLoader = hideLoader;
   window.numerisHideLoader = hideLoader;
 
