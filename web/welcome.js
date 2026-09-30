@@ -30,7 +30,9 @@
       panel.classList.add('docked');
       var loader = document.getElementById('loader');
       if (loader) {
-        loader.style.left = x + 'px'; loader.style.top = y + 'px';
+        // One parent owns the frame, loader and their visibility transition.
+        panel.appendChild(loader);
+        loader.style.left = '0px'; loader.style.top = '0px';
         loader.style.height = h + 'px';
         loader.style.width = w + 'px'; loader.classList.add('docked-loader');
       }
@@ -51,7 +53,7 @@
       arrival.requested && arrival.busy ? 'Continue exploring \u00b7 we\u2019ll begin when ready' :
       arrival.requested ? '' : 'Sound on with a touch \u00b7 drag to explore';
     discover.hidden = !arrival.failed && (arrival.mode !== 'restore' || !arrival.busy);
-    panel.classList.toggle('quiet', (arrival.requested && !arrival.busy) || arrival.mode === 'discover');
+    panel.classList.toggle('quiet', !arrival.busy && (arrival.requested || arrival.mode === 'discover'));
   }
   function awaken() {
     if (arrival.requested || arrival.failed || arrival.mode === 'discover') return;
