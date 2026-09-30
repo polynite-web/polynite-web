@@ -1266,7 +1266,7 @@ body.scene-entry-ready #curtain {
   }
 
   window.vmeshLoaderPhase = function (phase, progress, stage, sub) {
-    if (!loader || loaderHideRequested || loaderHidden) return;
+    if (!loader) return;
     /* Older cached builds only send phase + progress. Keep their loader
        coherent until the matching WASM/JS pair replaces them. */
     if (typeof stage !== "number") stage = phase === 1 ? 1 : 2;
@@ -1278,7 +1278,7 @@ body.scene-entry-ready #curtain {
       loaderLastStage = stage;
     }
     loader.classList.toggle("model-loading", phase === 1 || phase === 2);
-    loader.classList.toggle("static-loading", phase === 2 && stage >= 2);
+    loader.classList.remove("static-loading");
     loader.classList.toggle("unknown-progress", progress < 0);
     if (loaderProgress && progress >= 0) {
       progress = Math.max(0, Math.min(100, progress));
@@ -1286,6 +1286,7 @@ body.scene-entry-ready #curtain {
     } else if (loaderProgress && phase === 2) loaderProgress.style.removeProperty("stroke-dashoffset");
     if (!loaderText) return;
     if (phase === 1) {
+      if (loaderBuild) loaderBuild.classList.remove("visible");
       loaderHadDownload = true;
       loaderMeter(loaderDownload, loaderDownloadFill, loaderDownloadValue, progress);
       loaderText.textContent = "Downloading model";
@@ -1295,7 +1296,11 @@ body.scene-entry-ready #curtain {
         "Generating mipmaps", "Uploading to GPU", "Preparing first frame", "Load failed"];
       var stepName = names[stage] || "Preparing scene";
       if (loaderHadDownload) loaderMeter(loaderDownload, loaderDownloadFill, loaderDownloadValue, 100);
-      if (stage >= 2) loaderMeter(loaderBuild, loaderBuildFill, loaderBuildValue, progress);
+      // Preparation reports actual stages, not a fictitious byte percentage.
+      loaderMeter(loaderBuild, loaderBuildFill, loaderBuildValue,
+        stage >= 2 && stage <= 10 ? (stage - 2) * 12.5 : -1);
+      if (loaderBuildValue && stage >= 2 && stage <= 10)
+        loaderBuildValue.textContent = (stage - 1) + '/9';
       if (loaderBuildLabel && stage >= 2) loaderBuildLabel.textContent = stepName;
       loaderText.textContent = stepName;
       if (stage === 4 && sub > 0) {

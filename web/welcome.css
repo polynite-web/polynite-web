@@ -88,3 +88,59 @@ body.scene-ready #arrival.docked #arrivalAuthor { display: block; opacity: 0; }
   #arrival.docked #arrivalDiscover { bottom: calc(100% + 34px); }
 }
 @media(prefers-reduced-motion: reduce) { #arrival.docked { transition: none; } }
+
+/* One capsule: the button owns its glass and hit area; progress is an overlay. */
+body.world-visible .app-loader.docked-loader {
+  position: fixed; bottom: auto; right: auto; box-sizing: border-box;
+  display: grid; grid-template-columns: 36px minmax(0, 1fr);
+  grid-template-rows: 1fr; gap: 16px; padding: 8px 16px;
+  align-items: center; background: none; transform: none;
+  pointer-events: none; z-index: 52;
+  transition: opacity 220ms ease, visibility 220ms;
+}
+body.world-visible .docked-loader .loader-mark {
+  display: block; width: 36px; grid-column: 1; grid-row: 1;
+  animation: none; filter: none;
+}
+body.world-visible .docked-loader #loaderText { display: none; }
+body.world-visible .docked-loader .loader-meters {
+  grid-column: 2; grid-row: 1; align-self: end;
+  width: 100%; max-width: none; margin: 0; gap: 0;
+}
+body.world-visible .docked-loader .loader-meter-head {
+  font-size: 8px; letter-spacing: .035em; color: #c1d2e1;
+}
+body.world-visible .docked-loader .loader-meter-track { height: 2px; border-radius: 2px; }
+body.world-visible .docked-loader.downloading #loaderBuild,
+body.world-visible .docked-loader:not(.downloading) #loaderDownload { display: none; }
+body.arrival-busy #arrival.docked #journeyStart {
+  text-align: left; padding: 0 16px 22px 68px; letter-spacing: .025em;
+}
+body.arrival-busy #arrival.docked #journeyStart:disabled { opacity: 1; }
+body.arrival-busy #arrival.docked #journeyHint { display: none; }
+body.arrival-busy #arrival.docked #arrivalDiscover { bottom: calc(100% + 12px); }
+body.arrival-busy:not(.arrival-shared) #arrival.docked #arrivalTitle,
+body.arrival-busy:not(.arrival-shared) #arrival.docked #arrivalAuthor { display: none; }
+.app-loader .loader-satellite-moving { will-change: transform; }
+@media(prefers-reduced-motion: reduce) {
+  body.world-visible .app-loader.docked-loader { transition: none; }
+}
+body:not(.world-visible) .app-loader .loader-orbit-base,
+body:not(.world-visible) .app-loader .loader-orbit-front { opacity: 1; }
+body:not(.world-visible) .app-loader .loader-satellite-moving {
+  animation: loader-moon-orbit 1.8s linear infinite;
+}
+@media(prefers-reduced-motion: reduce) {
+  body:not(.world-visible) .app-loader .loader-satellite-moving {
+    animation: none; opacity: 1;
+  }
+}
+
+@media(min-height: 451px) {
+  body.arrival-busy.arrival-shared #arrival.docked #arrivalTitle {
+    display: block; bottom: calc(100% + 52px);
+  }
+  body.arrival-busy.arrival-shared #arrival.docked #arrivalAuthor {
+    display: block; bottom: calc(100% + 34px);
+  }
+}
