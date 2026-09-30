@@ -12,7 +12,7 @@
   var panel = document.createElement('div');
   panel.id = 'arrival';
   panel.innerHTML = '<div id="arrivalTitle"></div><div id="arrivalAuthor"></div>' +
-    '<button id="journeyStart" type="button">Touch to awaken</button>' +
+    '<button id="journeyStart" type="button">Tap to awaken</button>' +
     '<div id="journeyHint" role="status" aria-live="polite"></div>' +
     '<button id="arrivalDiscover" type="button">Explore Discover</button>';
   document.body.appendChild(panel);
@@ -21,19 +21,31 @@
   var start = document.getElementById('journeyStart');
   var hint = document.getElementById('journeyHint');
   var discover = document.getElementById('arrivalDiscover');
+  window.vmeshArrivalDock = function (x, y, w, h) {
+    var geometry = [x, y, w, h].join(',');
+    if (panel.dataset.dock !== geometry) {
+      panel.dataset.dock = geometry;
+      panel.style.left = x + 'px'; panel.style.top = y + 'px';
+      panel.style.width = w + 'px'; panel.style.height = h + 'px';
+      panel.classList.add('docked');
+    }
+    var open = arrival.requested || arrival.mode === 'discover' || arrival.failed;
+    if (!open) { arrival.dockStarted = null; return 0; }
+    if (arrival.dockStarted == null) arrival.dockStarted = performance.now();
+    return Math.min(1, (performance.now() - arrival.dockStarted) / 320);
+  };
   function paint() {
     var data = arrival.data || {};
     title.textContent = data.title || (arrival.mode === 'restore' && arrival.busy ? 'Returning to your world' : '');
     author.textContent = data.author ? 'by ' + data.author : '';
-    start.hidden = arrival.failed || arrival.mode === 'discover' ||
-      (arrival.requested && !arrival.busy) || (!arrival.busy && !arrival.journey && window.vmeshAudioEntered);
+    start.hidden = arrival.failed || arrival.mode === 'discover';
     start.disabled = arrival.requested && arrival.busy;
-    start.textContent = arrival.requested ? 'Your world is awakening' : 'Touch to awaken';
+    start.textContent = arrival.requested ? 'Your world is awakening' : 'Tap to awaken';
     hint.textContent = arrival.failed ? 'This scene could not be opened.' :
       arrival.requested && arrival.busy ? 'Continue exploring \u00b7 we\u2019ll begin when ready' :
       arrival.requested ? '' : 'Sound on with a touch \u00b7 drag to explore';
     discover.hidden = !arrival.failed && (arrival.mode !== 'restore' || !arrival.busy);
-    panel.classList.toggle('quiet', !arrival.busy && window.vmeshSceneEntered && arrival.requested);
+    panel.classList.toggle('quiet', arrival.requested || arrival.mode === 'discover');
   }
   function awaken() {
     if (arrival.requested || arrival.failed || arrival.mode === 'discover') return;
@@ -72,6 +84,7 @@
     arrival.data = null;
     arrival.previewTaken = false;
     arrival.requested = false;
+    arrival.dockStarted = null;
     arrival.touched = false;
     arrival.busy = true;
     arrival.failed = false;

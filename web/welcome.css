@@ -52,3 +52,39 @@ body.world-visible #arrival.quiet { opacity: 0; visibility: hidden; }
   #journeyStart { padding: 10px 22px; }
 }
 @media(prefers-reduced-motion: reduce) { #arrival { transition: none; } }
+
+/* One fixed capsule becomes the toolbar. Supporting copy never lays it out. */
+#arrival.docked {
+  bottom: auto; transform: none; max-width: none;
+  transition: opacity 320ms ease, visibility 320ms;
+}
+#arrival.docked #journeyStart {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  box-sizing: border-box; border-radius: 22px; padding: 0 20px;
+  background: #09101880; border-color: #b2d3eb42; box-shadow: none;
+  font-size: 13px !important; letter-spacing: .06em;
+}
+#arrival.docked #journeyStart:hover { background: #172b3cb8; border-color: #b2d3eb80; }
+#arrival.docked #journeyHint {
+  position: absolute; bottom: calc(100% + 12px); left: 0; right: 0;
+  margin: 0; font-size: 10px; opacity: .8;
+}
+#arrival.docked #arrivalTitle {
+  position: absolute; bottom: calc(100% + 52px); left: 0; right: 0;
+  font-size: 13px; letter-spacing: .02em; transition: opacity 220ms;
+}
+#arrival.docked #arrivalAuthor {
+  position: absolute; bottom: calc(100% + 34px); left: 0; right: 0;
+  margin: 0; transition: opacity 220ms;
+}
+body.scene-ready #arrival.docked #arrivalTitle,
+body.scene-ready #arrival.docked #arrivalAuthor { display: block; opacity: 0; }
+#arrival.docked #arrivalDiscover {
+  position: absolute; bottom: calc(100% + 78px); left: 50%;
+  transform: translateX(-50%); margin: 0; white-space: nowrap;
+}
+@media(max-height: 450px) {
+  #arrival.docked #arrivalTitle, #arrival.docked #arrivalAuthor { display: none; }
+  #arrival.docked #arrivalDiscover { bottom: calc(100% + 34px); }
+}
+@media(prefers-reduced-motion: reduce) { #arrival.docked { transition: none; } }
