@@ -11,9 +11,15 @@
   var studioSaved = false, studioTouched = false;
   try { studioSaved = localStorage.getItem(studioKey) === '1'; } catch (_) {}
   window.vmeshStudio = id ? false : studioSaved;
+  function studioState(enabled) {
+    enabled = !!enabled;
+    if (window.vmeshStudio === enabled) return;
+    window.vmeshStudio = enabled;
+    window.dispatchEvent(new CustomEvent('polynite:studio-changed', { detail: { enabled: enabled } }));
+  }
   window.vmeshStudioSet = function (enabled) {
     studioTouched = true;
-    window.vmeshStudio = !!enabled;
+    studioState(enabled);
     try { localStorage.setItem(studioKey, enabled ? '1' : '0'); } catch (_) {}
   };
   window.vmeshSceneEntered = false;
@@ -86,7 +92,7 @@
   };
   window.vmeshArrivalState = function (mode, busy, journey, failed) {
     arrival.mode = mode;
-    if (mode === 'discover' && !studioTouched) window.vmeshStudio = false;
+    if (mode === 'discover' && !studioTouched) studioState(false);
     arrival.busy = !!busy;
     arrival.failed = !!failed;
     arrival.journey = !!journey || !!(arrival.data && arrival.data.journey && busy);
@@ -100,7 +106,7 @@
   window.vmeshArrivalBegin = function (nextId) {
     if (nextId === arrival.id) return;
     arrival.id = nextId;
-    window.vmeshStudio = false;
+    studioState(false);
     studioTouched = false;
     arrival.mode = 'shared';
     arrival.data = null;

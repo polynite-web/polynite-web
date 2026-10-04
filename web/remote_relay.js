@@ -11,7 +11,7 @@ export function createRemoteRelay({api, rpc, fetcher=fetch, changed=()=>{}, now=
   async function post(route,body,signal){
     const r=await fetcher(new URL('/api/remote/'+route,base),{method:'POST',credentials:'include',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal});
     if(r.status===204)return null;
-    if(!r.ok)throw new Error(`remote HTTP ${r.status}`);
+    if(!r.ok){let message;try{message=(await r.json()).error;}catch{}throw new Error(typeof message==='string'?`${message} (HTTP ${r.status})`:`remote HTTP ${r.status}`);}
     return r.json();
   }
   const call=async(method)=>{const r=await rpc(JSON.stringify({jsonrpc:'2.0',id:0,method,params:['scene.cinematic','scene.interaction'].includes(method)?{request:{command:'status'}}:{}}));if(!r?.result)throw new Error('engine RPC unavailable');return r.result;};
