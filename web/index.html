@@ -2,6 +2,7 @@
 <html lang="en" translate="no">
 <head>
 <meta charset="utf-8">
+<script src="startup_profile.js"></script>
 <meta name="google" content="notranslate">
 <title>Polynite: View, Optimize and Share 3D Models in Your Browser</title>
 <meta name="description" content="A modern 3D environment in your browser: open GLB files, inspect them, make them lighter, share them as one interactive link. Free, WebGPU, nothing to install.">
@@ -1593,10 +1594,11 @@ body.scene-entry-ready #curtain {
      instead - same file, no fork. blobcone_fast ships both that way. */
 
   function loadEngine(base) {
+    if(window.__pnStartup) window.__pnStartup.mark("engine_script_requested");
     var sc = document.createElement("script");
     sc.src = cacheBust(base + ".js");
     sc.async = true;
-    sc.onload = function () { console.info("[gpu-bootstrap] " + base + ".js loaded", sc.src); };
+    sc.onload = function () { if(window.__pnStartup) window.__pnStartup.mark("engine_script_loaded"); console.info("[gpu-bootstrap] " + base + ".js loaded", sc.src); };
     sc.onerror = function (e) {
       console.error("[gpu-bootstrap] " + base + ".js load failed", sc.src, e);
       /* A missing or unreachable engine file is NOT a graphics problem. It
@@ -1812,6 +1814,7 @@ body.scene-entry-ready #curtain {
       }
     },
     onRuntimeInitialized: function () {
+      if(window.__pnStartup) window.__pnStartup.mark("runtime_initialized");
       window.vmeshRuntimeInitialized = true;
       if (loaderEngineRing) {
         var off = getComputedStyle(loaderEngineRing).strokeDashoffset;

@@ -88,6 +88,7 @@
     if (window.vmeshCommittedFrames !== 1) return;
     document.body.classList.add('world-visible');
     performance.mark('polynite-world-visible');
+    if(window.__pnStartup) window.__pnStartup.mark('first_visible_frame');
     console.info('[arrival] first world frame');
   };
   window.vmeshArrivalState = function (mode, busy, journey, failed) {
