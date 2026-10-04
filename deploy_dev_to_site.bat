@@ -29,6 +29,10 @@ if not exist "%SRC%\index.html" (
     goto :fail
 )
 
+REM Do not copy a launcher and WASM with incompatible generated imports.
+node "%~dp0check_engine_pair.cjs" "%SRC%"
+if errorlevel 1 goto :fail
+
 echo.
 echo  Deploying   %SRC%
 echo         to   %~dp0
