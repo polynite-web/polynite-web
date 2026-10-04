@@ -22,7 +22,7 @@ export function installRemotePanel({doc=document,win=window,fetcher=fetch}={}){
     host.hidden=disposed||!!win.vmeshStudio||state!=='connected';
   }
   const explain=e=>/HTTP 401/.test(e)||e==='sign in first'
-    ? 'Sign in to Polynite using Account at the top right, then allow control again. If already signed in, your session may have expired.' : e;
+    ? 'The relay at '+server+' has no usable sign-in session. Sign in on that relay, then allow control again. Account may be connected to a different server. From localhost, browser privacy settings can also block relay cookies.' : e;
   async function connect(){
     if(working||state==='connected')return;
     working=true;proof='';paint('connecting');
