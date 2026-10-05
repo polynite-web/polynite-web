@@ -3,6 +3,15 @@
   "elements": [
     {
       "type": "section",
+      "label": "Physics interaction",
+      "default_open": false,
+      "elements": [
+        { "type": "checkbox", "label": "Override locked physics", "path": "vm_interact_override_locked", "default": false },
+        { "type": "text_disabled", "text": "Grab dynamic objects marked non-grabbable with middle click or a long press." }
+      ]
+    },
+    {
+      "type": "section",
       "label": "Virtual mesh (LOD)",
       "default_open": true,
       "elements": [

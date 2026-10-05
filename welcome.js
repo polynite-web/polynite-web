@@ -81,6 +81,9 @@
     paint();
   }
   start.addEventListener('click', awaken);
+  window.vmeshToolsReady = function () {
+    return arrival.mode === 'discover' || arrival.editing || (arrival.requested && !arrival.busy);
+  };
   // Called only for input accepted by the world's own hit testing.
   window.vmeshArrivalGesture = function () { arrival.touched = true; awaken(); };
   discover.addEventListener('click', function () { window.vmeshDiscoverRequested = true; });
