@@ -5,7 +5,7 @@
   var id = new URL(location.href).searchParams.get('s') || '';
   var arrival = window.pnArrival = { id: id, mode: id ? 'shared' : 'restore',
     data: null, previewTaken: false, requested: false, busy: true,
-    journey: false, touched: false, failed: false };
+    journey: false, touched: false, failed: false, editing: false };
   // Studio belongs to this browser, never to a minted scene or its author.
   var studioKey = 'polynite.studio';
   var studioSaved = false, studioTouched = false;
@@ -53,7 +53,7 @@
         loader.style.width = w + 'px'; loader.classList.add('docked-loader');
       }
     }
-    var open = (arrival.requested && !arrival.busy) || arrival.mode === 'discover' || arrival.failed;
+    var open = ((arrival.requested || arrival.editing) && !arrival.busy) || arrival.mode === 'discover' || arrival.failed;
     if (!open) { arrival.dockStarted = null; return 0; }
     if (arrival.dockStarted == null) arrival.dockStarted = performance.now();
     return Math.min(1, (performance.now() - arrival.dockStarted) / 320);
@@ -62,15 +62,15 @@
     var data = arrival.data || {};
     title.textContent = data.title || (arrival.mode === 'restore' && arrival.busy ? 'Returning to your world' : '');
     author.textContent = data.author ? 'by ' + data.author : '';
-    start.hidden = arrival.failed || arrival.mode === 'discover';
+    start.hidden = arrival.failed || arrival.mode === 'discover' || arrival.editing;
     start.disabled = arrival.busy;
     start.textContent = arrival.busy ? 'Preparing your world...' : arrival.requested ? 'Awakening...' : 'Tap to awaken';
     hint.textContent = arrival.failed ? 'This scene could not be opened.' :
       arrival.busy ? '' :
-      arrival.requested ? '' : 'Sound on with a touch \u00b7 drag to explore';
+      arrival.requested || arrival.editing ? '' : 'Sound on with a touch \u00b7 drag to explore';
     discover.hidden = !arrival.failed && (arrival.mode !== 'restore' || !arrival.busy);
     panel.classList.toggle('has-discover', !discover.hidden);
-    panel.classList.toggle('quiet', !arrival.busy && (arrival.requested || arrival.mode === 'discover'));
+    panel.classList.toggle('quiet', !arrival.busy && (arrival.requested || arrival.editing || arrival.mode === 'discover'));
   }
   function awaken() {
     if (arrival.requested || arrival.failed || arrival.mode === 'discover') return;
@@ -92,6 +92,9 @@
     console.info('[arrival] first world frame');
   };
   window.vmeshArrivalState = function (mode, busy, journey, failed) {
+    // Geometry added to the already visible empty workspace is editing, not a
+    // new shared-link arrival. Keep audio gated on a real world gesture.
+    if (arrival.mode === 'discover' && mode === 'restore' && !failed) arrival.editing = true;
     arrival.mode = mode;
     if (mode === 'discover' && !studioTouched) studioState(false);
     arrival.busy = !!busy;
@@ -113,6 +116,7 @@
     arrival.data = null;
     arrival.previewTaken = false;
     arrival.requested = false;
+    arrival.editing = false;
     arrival.dockStarted = null;
     arrival.touched = false;
     arrival.busy = true;
