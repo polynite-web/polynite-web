@@ -38,6 +38,13 @@
   var hint = document.getElementById('journeyHint');
   var discover = document.getElementById('arrivalDiscover');
   window.vmeshArrivalDock = function (x, y, w, h) {
+    // Keep the invitation legible without moving its bottom edge or centre.
+    // Its dimensions do not change between loading and the ready state.
+    var viewport = window.innerWidth || w + 32;
+    var width = Math.min(Math.max(w, 360), Math.max(0, viewport - 32));
+    var height = Math.max(h, 72);
+    x += (w - width) * 0.5; y += h - height;
+    w = width; h = height;
     var geometry = [x, y, w, h].join(',');
     if (panel.dataset.dock !== geometry) {
       panel.dataset.dock = geometry;
@@ -64,7 +71,7 @@
     author.textContent = data.author ? 'by ' + data.author : '';
     start.hidden = arrival.failed || arrival.mode === 'discover' || arrival.editing;
     start.disabled = arrival.busy;
-    start.textContent = arrival.busy ? 'Preparing your world...' : arrival.requested ? 'Awakening...' : 'Tap to awaken';
+    start.textContent = arrival.busy ? 'Preparing\u2026' : arrival.requested ? 'Awakening...' : 'Tap to awaken';
     hint.textContent = arrival.failed ? 'This scene could not be opened.' :
       arrival.busy ? '' :
       arrival.requested || arrival.editing ? '' : 'Sound on with a touch \u00b7 drag to explore';
