@@ -12,8 +12,6 @@ Game_Console_Pack.high.glb 143004
 Game_Console_Pack.tiny.glb 143004
 Holofil-flying-icarus.glb 5593444
 Holofil-flying-icarus.high.glb 2680156
-Human_Skull.glb 2185768
-Human_Skull.high.glb 1045332
 nickpanek-black-knight-1689.glb 14391060
 nickpanek-black-knight-1689.high.glb 12506316
 pixellabs-battle-axe-3881.glb 43241768
