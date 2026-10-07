@@ -3,16 +3,16 @@
 "panlayout_last_session": "session/(default).session",
 "window": {
   "fullscreen_was_maximized": false,
-  "h": 1032,
-  "mode": 3,
+  "h": 867,
+  "mode": 1,
   "normal_h": 867,
   "normal_w": 1252,
-  "normal_x": 531,
-  "normal_y": 128,
+  "normal_x": 514,
+  "normal_y": 574,
   "placement_version": 2,
-  "w": 1920,
-  "x": 0,
-  "y": 0
+  "w": 1252,
+  "x": 514,
+  "y": 574
 }
 
 }
