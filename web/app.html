@@ -1799,6 +1799,7 @@ body.scene-entry-ready #curtain {
          graphics initialization. Show the same clean panel, keyed on the last
          panic message - the one the abort path throws away. */
       var why = window.__spinLastPanic || String(reason || "");
+      if(window.__pnStartup)window.__pnStartup.fail(why);
       if (typeof gpuNotice === "function" &&
           !document.querySelector(".gpu-notice") &&
           /wgpu|WGPU|webgpu|gl_|GLES|WebGL|device|adapter|context|surface|swapchain/i.test(why)) {
