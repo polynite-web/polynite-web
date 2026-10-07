@@ -1,0 +1,23 @@
+{
+ "image":"https://polynite.io/assets/og-procedural-v1.png",
+ "imageAlt":"Polynite — procedural 3D scenes, physics, animation and AI control through MCP",
+ "youtube":"https://www.youtube.com/@polynite-io",
+ "subscribe":"https://youtube.com/@polynite-io?sub_confirmation=1",
+ "pages":{
+  "app":{"title":"Polynite — Procedural 3D Creation & AI MCP","description":"Build procedural 3D scenes, control them through AI and MCP, explore physics and animation, and record MP4 videos. Import and optimize GLB models too."},
+  "mcp":{"title":"Procedural 3D Scenes with AI & MCP | Polynite","description":"Create interactive 3D scenes through conversation. Build procedural objects, experiment with physics, animate scene text and record MP4 with Polynite MCP."},
+  "docs":{"title":"Polynite Docs — Scenes, Physics, Animation & MP4","description":"Learn procedural scene creation, AI control through MCP, physics, scene text and MP4 recording with practical prompts and downloadable examples."},
+  "docs/mcp":{"title":"Polynite MCP — Connect AI, Edit Scenes & Record Video","description":"Connect ChatGPT, Claude or another compatible MCP client to Polynite. Learn scene continuity, validated commands, captures and MP4 preview and download."},
+  "support":{"title":"Polynite Support — Scenes, MCP & Video Help","description":"Get help with Polynite connections, scene restoration and MP4 recording. Find troubleshooting, browser limitations and contact Majify Technologies Inc."},
+  "privacy":{"title":"Polynite Privacy Policy | Majify Technologies Inc.","description":"How Polynite handles accounts, provider connections, scenes, recordings and service data, including retention, sharing and deletion requests."},
+  "terms":{"title":"Polynite Terms of Use | Majify Technologies Inc.","description":"Terms for using Polynite: content ownership, service limits, connected providers, acceptable use and contact information for Majify Technologies Inc."},
+  "explore":{"title":"Explore Polynite — Procedural Scenes & 3D Creations","description":"Discover Polynite: procedural scene creation, AI control through MCP, physics, animation and video. Browse public 3D creations and GLB tools."},
+  "explore-mcp":{"title":"Polynite MCP — Remote AI & Local Scene Control","description":"Control a Polynite scene from a compatible AI assistant. Find remote MCP connection guidance, local native access and supported workflow limitations."},
+  "404":{"title":"Page Not Found | Polynite","description":"Find Polynite's procedural scene creation, MCP integration, documentation and support from the correct page."},
+  "create":{"title":"Create Procedural 3D Scenes, Physics & Video | Polynite","description":"Start with procedural objects or a conversation, add physics and animated text, and record an MP4. Import GLB assets or use connected generation providers."},
+  "about":{"title":"About Polynite — Procedural 3D & Conversational Creation","description":"Polynite combines procedural 3D creation, real-time interaction, MCP control and cinematic recording. Built by Majify Technologies Inc. in Canada."},
+  "glb-viewer":{"title":"GLB Viewer — Inspect 3D Models in Polynite","description":"Open GLB models in a WebGPU browser, inspect geometry, materials and textures, and use imported assets alongside procedural scenes in Polynite."},
+  "glb-optimizer":{"title":"GLB Optimizer — Geometry & Texture Budgets | Polynite","description":"Inspect geometry and texture weight, choose optimization settings and export a GLB. Check compression compatibility with your target viewer or engine."},
+  "reduce-polygons":{"title":"Polygon Counts, Geometry Quality & GLB Size | Polynite","description":"Understand polygon count, texture resolution and compression when optimizing a GLB. Inspect the model and available quality controls in Polynite."}
+ }
+}

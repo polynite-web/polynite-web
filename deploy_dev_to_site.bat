@@ -166,7 +166,11 @@ REM The same two files the root writes for itself, so the copy is not a
 REM build that quietly believes it is something else.
 >"%WEB%\tier.txt" echo release
 REM Keep public pages reproducible and preserve a coherent immutable engine.
+if exist "%DST%\sync_app_metadata.cjs" node "%DST%\sync_app_metadata.cjs"
+if errorlevel 1 goto :fail
 if exist "%DST%\build_public_site.cjs" node "%DST%\build_public_site.cjs"
+if errorlevel 1 goto :fail
+if exist "%DST%\build_error_pages.cjs" node "%DST%\build_error_pages.cjs"
 if errorlevel 1 goto :fail
 if exist "%DST%\archive_engine_release.cjs" node "%DST%\archive_engine_release.cjs"
 if errorlevel 1 goto :fail

@@ -1,7 +1,7 @@
 {
   "name": "Polynite",
   "short_name": "Polynite",
-  "description": "View, optimize and share 3D models in your browser.",
+  "description": "Create procedural 3D scenes, explore physics and animation, and control Polynite through AI and MCP.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
