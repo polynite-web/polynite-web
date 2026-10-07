@@ -14,3 +14,12 @@
 /free-glb-models/* https://explore.polynite.io/discover/:splat 301
 /free-glb-models https://explore.polynite.io/discover/ 301
 /sitemap-pages.xml https://explore.polynite.io/sitemap-pages.xml 301
+/docs https://explore.polynite.io/docs/ 301
+/docs/ https://explore.polynite.io/docs/ 301
+/docs/index.html https://explore.polynite.io/docs/ 301
+/docs/mcp https://explore.polynite.io/docs/mcp/ 301
+/docs/mcp/ https://explore.polynite.io/docs/mcp/ 301
+/docs/mcp/index.html https://explore.polynite.io/docs/mcp/ 301
+/docs/sharing https://explore.polynite.io/docs/sharing/ 301
+/docs/sharing/ https://explore.polynite.io/docs/sharing/ 301
+/docs/sharing/index.html https://explore.polynite.io/docs/sharing/ 301

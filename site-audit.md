@@ -67,3 +67,4 @@ are retained in technical evidence only; public captions describe the example.
 The new versioned social card is og-create-view-share-v2.png. Narrow iframe
 checks cover 390px/320px frames (375px/305px actual inner widths), without
 horizontal overflow or overlapping logo/button rectangles.
+Documentation migration: the canonical Docs, MCP and Mint Link pages now live on explore.polynite.io. Nine explicit 301 rules preserve the old page URLs (including index.html variants); media URLs remain on polynite.io. The app sitemap lists only app-domain pages, while the Explore sitemap includes the three documentation pages.
