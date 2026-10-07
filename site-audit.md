@@ -1,6 +1,6 @@
 # Polynite website and SEO audit — 2026-10-07
 
-Primary positioning: procedural 3D scenes, interaction, AI control through MCP,
+Primary identity: Create / View / Share. Procedural 3D scenes, interactive Mint Links, AI control through MCP,
 animation and recording. GLB import/inspection/optimization remains a supported
 secondary workflow. The app entry still opens the renderer, not a marketing page.
 
@@ -45,7 +45,7 @@ an engine build. Source HTML is updated too; no Wake/JIT build is needed for thi
 
 ## Evidence and remaining work
 
-SEO checks cover 14 public pages, unique titles/descriptions, canonical URLs,
+SEO checks cover 15 public pages, unique titles/descriptions, canonical URLs,
 parseable structured data, social-image dimensions, sitemap coverage and unchanged
 renderer/loader scripts. Existing tests still verify local references and all 78
 immutable v253 asset hashes. Desktop and a 390px iframe layout are inspected;
@@ -58,3 +58,12 @@ or external preview-cache purge is claimed. Tool scan, domain verification,
 review-account access, real-host capture and recording endurance remain separate
 plugin submission work. Jev/BYOK app use, paid credits and local AI are not active
 public features; the docs make that distinction explicit.
+
+## Unified identity and navigation
+The shared site_chrome.mjs module now renders both static pages and the Worker's
+Discover/model pages. Logo, white/cyan branding, navigation and the Majify/Wake
+footer are common. The Mint Link guide is /docs/sharing/. Video version labels
+are retained in technical evidence only; public captions describe the example.
+The new versioned social card is og-create-view-share-v2.png. Narrow iframe
+checks cover 390px/320px frames (375px/305px actual inner widths), without
+horizontal overflow or overlapping logo/button rectangles.
