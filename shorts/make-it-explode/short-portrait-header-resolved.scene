@@ -3238,7 +3238,7 @@
         "exit_position": 60,
         "exit_softness": 0.800000012,
         "fx": "type",
-        "glow": 0.379999995,
+        "glow": 0.189999998,
         "glow_color": [
           0,
           0,
@@ -3585,7 +3585,7 @@
       "exit_position": 60,
       "exit_softness": 0.800000012,
       "fx": "type",
-      "glow": 0.379999995,
+      "glow": 0.189999998,
       "glow_color": [
         0,
         0,
