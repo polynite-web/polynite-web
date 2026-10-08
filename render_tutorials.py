@@ -42,7 +42,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-blast_title=title('EXPLODE',2);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=1.35,radius_to=1.95,size=.32,height=1.15,tilt=-10,camera_follow=1,turns=.26,exit='spatial_type',exit_position=65,exit_softness=.8,exit_direction='left',opacity_out=.2,opacity_in=.3)
+blast_title=title('EXPLODE',2);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=1.2,radius_to=2.7,size=.32,height=1.15,tilt=-10,camera_follow=1,turns=.26,exit='spatial_type',exit_position=65,exit_softness=.8,exit_direction='left',opacity_out=.4,opacity_in=.5)
 blast_title['in']=.72;blast_title['out']=1.28
 # Trigger relative to the text's exit, so later typography edits keep the sync.
 blast_at=1.157

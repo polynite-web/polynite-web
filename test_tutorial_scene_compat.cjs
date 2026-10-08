@@ -24,3 +24,11 @@ console.log('PASS: old engine closing fallback, sound anchoring, immutable refer
 const repeatedSounds={seq:[{op:'sound',at:1,play:{sample:'tick'}},{op:'sound',at:2,play:{sample:'tick'}}]};
 assert.deepEqual(restoreTutorialCues([],repeatedSounds,false),repeatedSounds.seq);
 assert.deepEqual(restoreTutorialCues(repeatedSounds.seq,repeatedSounds,false),repeatedSounds.seq);
+const spatial={seq:[{op:'text',mode:'ring',exit:'spatial_type',exit_position:65,exit_direction:'left',exit_softness:.8,radius:1.2,radius_to:2.7}]};
+assert.deepEqual(prepareTutorialDocument(spatial,true,true,true),spatial);
+const classic=prepareTutorialDocument(spatial,true,true,false);
+assert.equal(classic.seq[0].exit,'type');assert.equal(classic.seq[0].radius,1.2);
+for(const key of ['exit_position','exit_direction','exit_softness','radius_to'])assert.equal(classic.seq[0][key],undefined);
+assert.deepEqual(prepareTutorialDocument(classic,true,true,false),classic);
+assert.equal(spatial.seq[0].exit,'spatial_type');assert.equal(spatial.seq[0].radius_to,2.7);
+console.log('PASS: older viewers open spatial tutorials through an immutable classic-text fallback');

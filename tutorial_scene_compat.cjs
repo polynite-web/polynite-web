@@ -1,6 +1,11 @@
 /* Public tutorial copies can also run on the previously published engine. */
-function prepareTutorialDocument(input, tailSupported, interactive = false) {
+function prepareTutorialDocument(input, tailSupported, interactive = false, spatialSupported = true) {
   const document = structuredClone(input);
+  if (!spatialSupported) for (const clip of document.seq) {
+    if (clip.exit !== 'spatial_type') continue;
+    clip.exit = 'type';
+    for (const key of ['exit_position','exit_direction','exit_softness','radius_to']) delete clip[key];
+  }
   if (interactive) document.seq = document.seq.filter(clip => clip.branding_slot !== 'outro');
   if (tailSupported) return document;
   const tails = document.seq.filter(clip => clip.branding_slot === 'outro' && clip.branding_tail > 0);
