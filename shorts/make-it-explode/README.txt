@@ -17,7 +17,7 @@ MCP clip overrides: command_audio (boolean), typing_volume and send_volume (0..1
 Defaults: typing_volume=0.015, send_volume=0.045. No extra sound clips or prompt details needed.
 Silent seeking suppresses cues; replay resets them; recording includes them.
 
-Latest masters: short-portrait-youtube.mp4 and short-landscape-chevron.mp4.
+Latest masters: short-portrait-youtube.mp4 and short-landscape-final-v20.mp4.
 Tech construction keeps blue edges without floor birth ripples.
 The command-input preset illuminates the chevron with a cyan halo and pulses the panel for 0.24s at send_at, synchronized with the confirmation sound; no detached button rectangle.
 
@@ -61,3 +61,5 @@ Header v17 halves anticipation again: color_to=[1,0.373125,0.07125,1], thickness
 Header v18 restores the portrait ending offset 5% left: box=[0.20,0.13,0.50,0.14]. Title anticipation stays at v17 strength.
 
 Header v19 places the ending halfway between centered and the previous left offset: box x=0.225 (center x=0.475), y=0.13.
+
+Landscape final v20: 3840x2160, 60fps, Maximum quality. Current title anticipation/black halo, quiet typing/send and title/signature entrance cues are shared with portrait; landscape retains its own command placement and centered closing preset.

@@ -50,9 +50,11 @@ try:
    for clip in doc['seq']:
     if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1],anticipation_at=.45,anticipation_duration=.50,color_to=[1,.373125,.07125,1],thickness_before_burst=.023875)
   header=A.header_prompt and name=='short' and fmt=='portrait'
-  if header:
+  if name=='short':
    for clip in doc['seq']:
-    if clip.get('preset')=='command-input-v1':clip.update(box=[.075,.17,.64,.034],typing_volume=.002,send_volume=.003)
+    if clip.get('preset')=='command-input-v1':
+     clip.update(typing_volume=.002,send_volume=.003)
+     if header:clip['box']=[.075,.17,.64,.034]
    title=next(c for c in doc['seq'] if c.get('id')=='explode-title')
    doc['seq'].append({'op':'sound','id':'explode-entrance','at':title['at']+.08,'dur':.24,'lane':'audio','play':{'synth':'text_appear','volume':.003,'duration':.24,'fadein':.015,'envelop':8}})
   scene_name=fmt+('-header' if header else '')
@@ -64,10 +66,10 @@ try:
   film('load_document',document=doc,start_paused=True)
   film('set_branding',preset='polynite-ending-v3')
   resolved=film('document');resolved.pop('export',None)
-  if name=='short' and fmt=='portrait':
-   # Shift the raised portrait ending slightly left.
+  if name=='short':
+   # Shift only the raised portrait ending; landscape uses its centered preset.
    for clip in resolved['seq']:
-    if clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
+    if fmt=='portrait' and clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
      clip['box'][0]=.225
      clip['box'][1]=.13
    ending=next(c for c in resolved['seq'] if c.get('asset')=='polynite-wordmark' and c.get('branding_slot')=='outro')

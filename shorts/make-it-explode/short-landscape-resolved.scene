@@ -3219,6 +3219,8 @@
         "with": 0
       },
       {
+        "anticipation_at": 0.449999988,
+        "anticipation_duration": 0.5,
         "at": 2.8499999,
         "burst_at": 0.949999988,
         "burst_duration": 0.319999993,
@@ -3230,6 +3232,12 @@
           0.0799999982,
           1
         ],
+        "color_to": [
+          1,
+          0.373124987,
+          0.0712499991,
+          1
+        ],
         "curvature": 1,
         "dur": 1.29999995,
         "exit": "type",
@@ -3238,7 +3246,14 @@
         "exit_position": 60,
         "exit_softness": 0.800000012,
         "fx": "type",
-        "glow": 0.0250000004,
+        "glow": 0.449999988,
+        "glow_color": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "glow_radius": 0.0549999997,
         "height": 1.14999998,
         "id": "explode-title",
         "in": 0.550000012,
@@ -3259,6 +3274,7 @@
         "size": 0.230000004,
         "text": "EXPLODE",
         "thickness": 0.0179999992,
+        "thickness_before_burst": 0.023875,
         "thickness_to": 0.159999996,
         "tilt": 0,
         "turns": 0,
@@ -3344,9 +3360,24 @@
         "out": 0.180000007,
         "outline": 0,
         "preset": "command-input-v1",
-        "send_volume": 0.0450000018,
+        "send_volume": 0.00300000003,
         "text": "Make it explode",
-        "typing_volume": 0.0149999997,
+        "typing_volume": 0.00200000009,
+        "with": 0
+      },
+      {
+        "at": 2.93000007,
+        "dur": 0.239999995,
+        "id": "explode-entrance",
+        "lane": "audio",
+        "op": "sound",
+        "play": {
+          "duration": 0.239999995,
+          "envelop": 8,
+          "fadein": 0.0149999997,
+          "synth": "text_appear",
+          "volume": 0.00300000003
+        },
         "with": 0
       },
       {
@@ -3405,6 +3436,20 @@
           "volume": 0.000196880006
         },
         "with": 0
+      },
+      {
+        "op": "sound",
+        "id": "signature-entrance",
+        "at": 8.07000019,
+        "dur": 0.2,
+        "lane": "audio",
+        "play": {
+          "synth": "text_appear",
+          "volume": 0.0008,
+          "duration": 0.2,
+          "fadein": 0.025,
+          "envelop": 16
+        }
       }
     ],
     "shadow_ao": 0.340000004,
@@ -3525,6 +3570,8 @@
       "with": 0
     },
     {
+      "anticipation_at": 0.449999988,
+      "anticipation_duration": 0.5,
       "at": 2.8499999,
       "burst_at": 0.949999988,
       "burst_duration": 0.319999993,
@@ -3536,6 +3583,12 @@
         0.0799999982,
         1
       ],
+      "color_to": [
+        1,
+        0.373124987,
+        0.0712499991,
+        1
+      ],
       "curvature": 1,
       "dur": 1.29999995,
       "exit": "type",
@@ -3544,7 +3597,14 @@
       "exit_position": 60,
       "exit_softness": 0.800000012,
       "fx": "type",
-      "glow": 0.0250000004,
+      "glow": 0.449999988,
+      "glow_color": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "glow_radius": 0.0549999997,
       "height": 1.14999998,
       "id": "explode-title",
       "in": 0.550000012,
@@ -3565,6 +3625,7 @@
       "size": 0.230000004,
       "text": "EXPLODE",
       "thickness": 0.0179999992,
+      "thickness_before_burst": 0.023875,
       "thickness_to": 0.159999996,
       "tilt": 0,
       "turns": 0,
@@ -3650,9 +3711,24 @@
       "out": 0.180000007,
       "outline": 0,
       "preset": "command-input-v1",
-      "send_volume": 0.0450000018,
+      "send_volume": 0.00300000003,
       "text": "Make it explode",
-      "typing_volume": 0.0149999997,
+      "typing_volume": 0.00200000009,
+      "with": 0
+    },
+    {
+      "at": 2.93000007,
+      "dur": 0.239999995,
+      "id": "explode-entrance",
+      "lane": "audio",
+      "op": "sound",
+      "play": {
+        "duration": 0.239999995,
+        "envelop": 8,
+        "fadein": 0.0149999997,
+        "synth": "text_appear",
+        "volume": 0.00300000003
+      },
       "with": 0
     },
     {
@@ -3711,6 +3787,20 @@
         "volume": 0.000196880006
       },
       "with": 0
+    },
+    {
+      "op": "sound",
+      "id": "signature-entrance",
+      "at": 8.07000019,
+      "dur": 0.2,
+      "lane": "audio",
+      "play": {
+        "synth": "text_appear",
+        "volume": 0.0008,
+        "duration": 0.2,
+        "fadein": 0.025,
+        "envelop": 16
+      }
     }
   ],
   "version": 1
