@@ -3365,7 +3365,7 @@
         "opacity_in": 0.119999997,
         "out": 0.180000007,
         "outline": 0,
-        "preset": "command-input-v1",
+        "preset": "command-input-v2",
         "send_volume": 0.00300000003,
         "text": "Make it explode",
         "typing_volume": 0.00200000009,
@@ -3444,18 +3444,20 @@
         "with": 0
       },
       {
-        "op": "sound",
-        "id": "signature-entrance",
-        "at": 8.07000019,
-        "dur": 0.2,
+        "at": 8.07000065,
+        "branding_offset": 0.0199999996,
+        "branding_slot": "outro",
+        "dur": 0.200000003,
         "lane": "audio",
+        "op": "sound",
         "play": {
+          "duration": 0.200000003,
+          "envelop": 16,
+          "fadein": 0.0250000004,
           "synth": "text_appear",
-          "volume": 0.0008,
-          "duration": 0.2,
-          "fadein": 0.025,
-          "envelop": 16
-        }
+          "volume": 0.00079999998
+        },
+        "with": 0
       }
     ],
     "shadow_ao": 0.340000004,
@@ -3722,7 +3724,7 @@
       "opacity_in": 0.119999997,
       "out": 0.180000007,
       "outline": 0,
-      "preset": "command-input-v1",
+      "preset": "command-input-v2",
       "send_volume": 0.00300000003,
       "text": "Make it explode",
       "typing_volume": 0.00200000009,
@@ -3801,18 +3803,20 @@
       "with": 0
     },
     {
-      "op": "sound",
-      "id": "signature-entrance",
-      "at": 8.07000019,
-      "dur": 0.2,
+      "at": 8.07000065,
+      "branding_offset": 0.0199999996,
+      "branding_slot": "outro",
+      "dur": 0.200000003,
       "lane": "audio",
+      "op": "sound",
       "play": {
+        "duration": 0.200000003,
+        "envelop": 16,
+        "fadein": 0.0250000004,
         "synth": "text_appear",
-        "volume": 0.0008,
-        "duration": 0.2,
-        "fadein": 0.025,
-        "envelop": 16
-      }
+        "volume": 0.00079999998
+      },
+      "with": 0
     }
   ],
   "version": 1

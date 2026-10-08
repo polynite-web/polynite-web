@@ -29,7 +29,7 @@ def variant(offset,command=False):
   c['at']=c.get('at',0)+offset
   if c['op']=='freeze' and c['at']==offset:c.update(at=0,dur=c['dur']+offset)
  if offset:doc['seq'].insert(1,{'op':'appear','at':0,'preset':'scene-build-v1'})
- if command:doc['seq'].append({'op':'text','text':'Make it explode','at':1.2,'preset':'command-input-v1'})
+ if command:doc['seq'].append({'op':'text','text':'Make it explode','at':1.2,'preset':'command-input-v2'})
  doc['title']='Make it explode' if command else 'A burst of colour'
  return doc
 variants={'short':variant(2.85,True),'tutorial':variant(1.85),'preview':variant(0)}
@@ -52,7 +52,7 @@ try:
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if name=='short':
    for clip in doc['seq']:
-    if clip.get('preset')=='command-input-v1':
+    if clip.get('preset') in ('command-input-v1','command-input-v2'):
      clip.update(typing_volume=.002,send_volume=.003)
      if header:clip['box']=[.075,.17,.64,.034]
    title=next(c for c in doc['seq'] if c.get('id')=='explode-title')
@@ -68,7 +68,7 @@ try:
     if c['op']=='camera':c['dist']=2.8
   if name=='short':(OUT/(scene_name+'.scene')).write_text(json.dumps(doc,indent=2))
   film('load_document',document=doc,start_paused=True)
-  film('set_branding',preset='polynite-ending-v3')
+  film('set_branding',preset='polynite-ending-v4',layout='short-portrait' if fmt=='portrait' and name=='short' else 'default')
   resolved=film('document');resolved.pop('export',None)
   if name=='short':
    # Shift only the raised portrait ending; landscape uses its centered preset.
@@ -76,8 +76,6 @@ try:
     if fmt=='portrait' and clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
      clip['box'][0]=.225
      clip['box'][1]=.13
-   ending=next(c for c in resolved['seq'] if c.get('asset')=='polynite-wordmark' and c.get('branding_slot')=='outro')
-   resolved['seq'].append({'op':'sound','id':'signature-entrance','at':ending['at']+.02,'dur':.20,'lane':'audio','play':{'synth':'text_appear','volume':.0008,'duration':.20,'fadein':.025,'envelop':16}})
    resolved['initial']['seq']=copy.deepcopy(resolved['seq'])
    film('load_document',document=resolved,start_paused=True)
    (OUT/(scene_name+'.scene')).write_text(json.dumps(resolved,indent=2))

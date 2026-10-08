@@ -3602,7 +3602,7 @@
       "op": "text",
       "text": "Make it explode",
       "at": 1.2,
-      "preset": "command-input-v1"
+      "preset": "command-input-v2"
     }
   ],
   "title": "Make it explode"
