@@ -25,9 +25,9 @@ Portrait ending is shifted left by 5% of frame width for Shorts controls; the au
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
 
-Portrait header trial: short-portrait-header-v8.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Portrait header trial: short-portrait-header-v9.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
 Command row box=[0.075,0.17,0.64,0.034], typing_volume=0.002, send_volume=0.003.
-Regenerate: python render_shorts.py --format portrait --suffix header-v8 --header-prompt
+Regenerate: python render_shorts.py --format portrait --suffix header-v9 --header-prompt
 The prior lower-panel variant remains available for comparison.
 
 Five 2160x3840 thumbnails are in thumbnails-header; 01-make-it.jpg uses frame 1.80s to leave the action unexplained. Header exports regenerate this set automatically.
@@ -39,3 +39,5 @@ Header v4: validation flash, chevron halo and popup fade share the Send onset an
 Header v7: a glowing check confirms Send; the panel compresses gently and fades upward over 250ms without returning to idle. The portrait ending is raised to the EXPLODE title height (box y=0.29). Portrait export watermarks occupy the upper-left safe area instead of a bottom corner.
 
 Header v8: orange EXPLODE glow=0.55. Portrait Shorts omit the persistent watermark (watermark=0) and keep the closing signature.
+
+Header v9 reduces the EXPLODE halo to glow=0.12 for a discreet edge light without an orange cloud.
