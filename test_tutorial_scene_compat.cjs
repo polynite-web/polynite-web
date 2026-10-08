@@ -40,3 +40,9 @@ assert.equal(previousPresetEngine.seq[1].exit,'spatial_type');
 for(const clip of previousPresetEngine.seq)for(const key of ['preset','release_text','release_fraction'])assert.equal(clip[key],undefined);
 assert.equal(synced.seq[0].release_text,'title');
 console.log('PASS: earlier preset engines retain resolved cinematic timing without unsupported profile names');
+
+const flatter={seq:[{op:'text',preset:'dramatic-title-v4',curvature:.1,mode:'ring',radius:.9}]};
+const oldCurve=prepareTutorialDocument(flatter,true,true,true,false);
+assert.equal(oldCurve.seq[0].curvature,undefined);assert.equal(oldCurve.seq[0].preset,undefined);
+assert.equal(oldCurve.seq[0].radius,.9);assert.equal(flatter.seq[0].curvature,.1);
+console.log('PASS: older viewers open flattened-title scenes using resolved parameters without unsupported presets');

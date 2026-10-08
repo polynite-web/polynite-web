@@ -39,7 +39,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=4.2,cam_yaw=30*.017453292,cam_pitch=28*.017453292,tgt_x=0,tgt_y=1,tgt_z=0)
-blast_title={'op':'text','id':'explode-title','text':'EXPLODE','at':0,'preset':'dramatic-title-v3'}
+blast_title={'op':'text','id':'explode-title','text':'EXPLODE','at':0,'preset':'dramatic-title-v4'}
 # The engine resolves this release from the full glyph geometry.
 seq=[{'op':'camera','at':0,'dur':0,'dist':4.2,'pitch':28,'yaw':30},
      {'op':'freeze','at':0,'preset':'dramatic-reveal-v1','release_text':'explode-title'},
