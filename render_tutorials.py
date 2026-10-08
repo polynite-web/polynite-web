@@ -21,14 +21,14 @@ def signature(seq,end):
     # anchors the content end, otherwise the longer move would push the logo later.
     for clip in reversed(seq):
       if clip['op']=='orbit' and abs(clip.get('at',0)+clip['dur']-end)<.001:
-        old_duration=clip['dur'];clip['dur']+=.9
+        old_duration=clip['dur'];clip['dur']+=1.1
         clip['deg']*=clip['dur']/old_duration
         break
     seq.append({'op':'hold','at':end,'dur':0,'end_film':True})
     seq.extend([
       {'op':'sound','at':0,'dur':.28,'lane':'audio','branding_slot':'intro','play':{'synth':'text_appear','volume':.00013,'duration':.28,'envelop':16,'fadein':.025}},
-      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':.9,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':.9,'branding_dim':.75,'branding_fade_lead':.2},
-      {'op':'sound','at':end+.9-.65,'dur':.65,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.000196875,'duration':.65,'envelop':8,'fadein':.015}}])
+      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':1.1,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':1.1,'branding_dim':.75,'branding_fade_lead':.35},
+      {'op':'sound','at':end+1.1-.65,'dur':.65,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.000196875,'duration':.65,'envelop':8,'fadein':.015}}])
 def title(text,dur=2):return {'op':'text','text':text,'mode':'screen','box':[.12,.12,.76,.16],'at':0,'dur':dur,'in':dur*.56,'out':dur*.44,'fx':'type','thickness':.035,'glow':.025,'color':[.9,.98,1,1]}
 references=json.loads((ROOT/'public-site-src/tutorial-rendered.json').read_text());reference=next(r for r in references if r['id']=='block-explosion');base=json.loads((ROOT/reference.get('media','/docs/media/tutorials/r1/').lstrip('/')/reference['scene']).read_text())
 initial=copy.deepcopy(base['initial'])
@@ -42,7 +42,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06,exit='motion_wipe',opacity_out=.572,opacity_in=.3)
+blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06,exit='motion_wipe',opacity_out=.3,opacity_in=.3)
 # Trigger relative to the text's exit, so later typography edits keep the sync.
 blast_at=blast_title['dur']-blast_title['out']*.25
 freeze_at=blast_at+.55;resume_at=freeze_at+1.8
