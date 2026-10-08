@@ -48,7 +48,7 @@ try:
   doc=copy.deepcopy(variants[name])
   if name=='short':
    for clip in doc['seq']:
-    if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1])
+    if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1],anticipation_at=.45,anticipation_duration=.50,color_to=[1,.045,.01,1],thickness_before_burst=.065)
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
@@ -69,7 +69,7 @@ try:
    for clip in resolved['seq']:
     if clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
      clip['box'][0]-=.05
-     clip['box'][1]=.29
+     clip['box'][1]=.13
    ending=next(c for c in resolved['seq'] if c.get('asset')=='polynite-wordmark' and c.get('branding_slot')=='outro')
    resolved['seq'].append({'op':'sound','id':'signature-entrance','at':ending['at']+.02,'dur':.20,'lane':'audio','play':{'synth':'text_appear','volume':.0008,'duration':.20,'fadein':.025,'envelop':16}})
    resolved['initial']['seq']=copy.deepcopy(resolved['seq'])
