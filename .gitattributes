@@ -1,8 +1,5 @@
 * text=auto eol=lf whitespace=trailing-space,space-before-tab,cr-at-eol
 *.bat text eol=crlf
-# Immutable release manifests refer to exact bytes.
-releases/** -text
-web/releases/** -text
 *.wasm binary
 *.mp4 binary
 *.png binary

@@ -169,7 +169,7 @@ for %%D in (assets) do (
 REM The same two files the root writes for itself, so the copy is not a
 REM build that quietly believes it is something else.
 >"%WEB%\tier.txt" echo release
-REM Keep public pages reproducible and preserve a coherent immutable engine.
+REM Keep public pages reproducible in the single current publication folder.
 if exist "%DST%\sync_app_metadata.cjs" node "%DST%\sync_app_metadata.cjs"
 if errorlevel 1 goto :fail
 if exist "%DST%\build_public_site.cjs" node "%DST%\build_public_site.cjs"
@@ -178,7 +178,9 @@ if exist "%DST%\build_error_pages.cjs" node "%DST%\build_error_pages.cjs"
 if errorlevel 1 goto :fail
 node "%~dp0normalize_engine_names.cjs" "%DST%" "%WEB%" "%SRC%"
 if errorlevel 1 goto :fail
-if exist "%DST%\archive_engine_release.cjs" node "%DST%\archive_engine_release.cjs"
+node "%~dp0check_engine_pair.cjs" "%DST%"
+if errorlevel 1 goto :fail
+node "%~dp0check_engine_pair.cjs" "%WEB%"
 if errorlevel 1 goto :fail
 
 if exist "%DST%\version.txt" copy /y "%DST%\version.txt" "%WEB%\version.txt" >nul

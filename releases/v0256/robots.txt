@@ -1,9 +1,0 @@
-# https://polynite.io - the app. The public pages are Polynite Explore.
-User-agent: *
-Allow: /
-
-# The staging copy of the app.
-Disallow: /dev/
-
-Sitemap: https://polynite.io/sitemap.xml
-Sitemap: https://explore.polynite.io/sitemap.xml
