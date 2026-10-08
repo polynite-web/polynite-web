@@ -34,7 +34,8 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':5,'deg':40},title('BUILD SOMETHING')];signature(seq,5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-seq=[{'op':'camera','at':0,'dur':0,'dist':7,'pitch':28,'yaw':30},{'op':'freeze','at':0,'dur':1.3,'ease':0},{'op':'orbit','at':0,'dur':6,'deg':30},title('EXPLOSION',1.3)];signature(seq,6)
+blast_title=title('EXPLOSION',1.3);blast_title['color']=[1,.42,.08,1]
+seq=[{'op':'camera','at':0,'dur':0,'dist':7,'pitch':28,'yaw':30},{'op':'freeze','at':0,'dur':1.3,'ease':0},{'op':'freeze','at':1.85,'dur':1.8,'ease':.18},{'op':'orbit','at':1.85,'dur':1.8,'deg':55},{'op':'orbit','at':3.65,'dur':3.35,'deg':20},blast_title];signature(seq,7)
 scenes.append(('block-explosion',{'version':1,'model':'','initial':burst,'seq':seq}))
 letters=copy.deepcopy(tower);letters.update(geo={'anchor':{'t':'sphere','p':[0,1,0],'s':[.7]*3,'c':[.1,.7,.8]}},cam_dist=4,tgt_y=1,scene_radius=1.8,scene_cy=1,scene_text=[{'id':'ring','text':'CREATE / VIEW / SHARE','layout':'ring','mode':'ring','anchor':'world','p':[0,1,0],'radius':1.3,'size':.15,'height':0,'angle':90,'rotate_speed':35,'camera_follow':0,'color':[1,.8,.2,1],'glow':.03,'enabled':True}])
 letters['scene_text'][0].update(style='title',appearance='none',height=.5,size=.26,camera_follow=1,angle=0)
@@ -60,7 +61,7 @@ try:
   result=film('status')['export'];assert result['completed'],result
   movie=Path(result['files'][0]);dest=OUT/(name+'.mp4');dest.write_bytes(movie.read_bytes())
   subprocess.run(['ffmpeg','-v','error','-i',str(dest),'-f','null','-'],check=True)
-  at=2 if name=='block-explosion' else 1
+  at=2.6 if name=='block-explosion' else 1
   subprocess.run(['ffmpeg','-v','error','-y','-ss',str(at),'-i',str(dest),'-frames:v','1',str(OUT/(name+'.jpg'))],check=True)
   preview_at=1.3 if name=='block-explosion' else .6 if name=='orbiting-letters' else .4
   subprocess.run(['ffmpeg','-v','error','-y','-ss',str(preview_at),'-i',str(dest),'-t','2','-vf','scale=480:-2,fps=15','-an','-c:v','libx264','-preset','fast','-crf','28','-movflags','+faststart',str(OUT/(name+'-preview.mp4'))],check=True)

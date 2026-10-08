@@ -3,7 +3,7 @@ const root=__dirname,{esc}=require('./site_metadata.cjs');
 const reports=JSON.parse(fs.readFileSync(path.join(root,'public-site-src/tutorial-rendered.json'),'utf8'));
 const content=[
  ['colourful-tower','A colourful tower','Beginner','creation','Start with 28 blocks, then make it your own.','Create a tower with seven layers of four cubes. Use cyan, pink and yellow. Frame the whole tower and slowly orbit around it.'],
- ['block-explosion','A burst of colour','Advanced','physics','Pause, launch and watch the blocks tumble.','Create a compact 4 × 4 × 4 cluster of colourful physical blocks. Hold for 1.3 seconds, then launch the blocks outward and upward. Add a large Explosion title that fades before the blast. Record a six-second MP4.'],
+ ['block-explosion','A burst of colour','Advanced','physics','Pause, launch and watch the blocks tumble.','Create a compact 4 × 4 × 4 cluster of colourful physical blocks. Hold for 1.3 seconds, then launch the blocks outward and upward. Add a large orange Explosion title that fades before the blast. After the blocks spread, freeze the physics for 1.8 seconds while the camera orbits 55 degrees, then resume the physics. Finish with the Polynite signature on black.'],
  ['orbiting-letters','Words in orbit','Intermediate','text','A real 3D ring of letters around a simple shape.','Create a cyan sphere and a golden 3D ring reading CREATE / VIEW / SHARE around it. Anchor the ring in world space, rotate it slowly and orbit the camera.']
 ];
 const origin='https://polynite.io',media='/docs/media/tutorials/r1/';

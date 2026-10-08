@@ -23,7 +23,7 @@
       "level": "Advanced",
       "topic": "physics",
       "description": "Pause, launch and watch the blocks tumble.",
-      "prompt": "Create a compact 4 × 4 × 4 cluster of colourful physical blocks. Hold for 1.3 seconds, then launch the blocks outward and upward. Add a large Explosion title that fades before the blast. Record a six-second MP4.",
+      "prompt": "Create a compact 4 × 4 × 4 cluster of colourful physical blocks. Hold for 1.3 seconds, then launch the blocks outward and upward. Add a large orange Explosion title that fades before the blast. After the blocks spread, freeze the physics for 1.8 seconds while the camera orbits 55 degrees, then resume the physics. Finish with the Polynite signature on black.",
       "scene": "https://polynite.io/docs/media/tutorials/r1/block-explosion-18b546ec3965.scene",
       "video": "https://polynite.io/docs/media/tutorials/r1/block-explosion.mp4",
       "preview": "https://polynite.io/docs/media/tutorials/r1/block-explosion-preview.mp4",
