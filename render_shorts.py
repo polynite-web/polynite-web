@@ -58,6 +58,10 @@ try:
    title=next(c for c in doc['seq'] if c.get('id')=='explode-title')
    doc['seq'].append({'op':'sound','id':'explode-entrance','at':title['at']+.08,'dur':.24,'lane':'audio','play':{'synth':'text_appear','volume':.003,'duration':.24,'fadein':.015,'envelop':8}})
   scene_name=fmt+('-header' if header else '')
+  if name=='short' and fmt=='portrait':
+   doc['initial']['cam_yaw']=.314159265
+   for c in doc['seq']:
+    if c['op']=='camera':c['yaw']=18
   if name=='short' and fmt=='landscape':
    doc['initial']['cam_dist']=2.8
    for c in doc['seq']:
