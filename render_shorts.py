@@ -2,7 +2,7 @@
 import argparse,copy,hashlib,json,subprocess,time,urllib.request
 from pathlib import Path
 ROOT=Path(__file__).parent
-P=argparse.ArgumentParser();P.add_argument('--proof',action='store_true');P.add_argument('--publish-doc',action='store_true');A=P.parse_args()
+P=argparse.ArgumentParser();P.add_argument('--proof',action='store_true');P.add_argument('--publish-doc',action='store_true');P.add_argument('--format',choices=['both','portrait','landscape'],default='both');A=P.parse_args()
 OUT=ROOT/'shorts/make-it-explode';OUT.mkdir(parents=True,exist_ok=True)
 REPORT=Path('D:/dev/mcp-production-dry-run/short-make-it-explode');REPORT.mkdir(parents=True,exist_ok=True)
 def rpc(method,command,**kw):
@@ -42,6 +42,7 @@ assert not rpc('scene.interaction','status')['held'],'Finish current gesture fir
 report=[]
 try:
  jobs=[('short','portrait',720 if A.proof else 2160),('short','landscape',720 if A.proof else 2160)]
+ jobs=[job for job in jobs if A.format=='both' or job[1]==A.format]
  if A.publish_doc:jobs.extend([('tutorial','landscape',1080),('preview','landscape',720)])
  for name,fmt,res in jobs:
   doc=copy.deepcopy(variants[name])
