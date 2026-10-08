@@ -59,7 +59,7 @@
     "cam_orbit": 0,
     "cam_orbit_speed": 0.349999994,
     "cam_pitch": 0.488692164,
-    "cam_yaw": 1.08210409,
+    "cam_yaw": 1.39626336,
     "cel_levels": 0,
     "cloud_color": {
       "a": 1,
@@ -3191,7 +3191,7 @@
         "op": "camera",
         "pitch": 28,
         "with": 0,
-        "yaw": 62
+        "yaw": 80
       },
       {
         "at": 0,
@@ -3548,7 +3548,7 @@
       "op": "camera",
       "pitch": 28,
       "with": 0,
-      "yaw": 62
+      "yaw": 80
     },
     {
       "at": 0,

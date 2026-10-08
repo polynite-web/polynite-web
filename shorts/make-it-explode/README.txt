@@ -25,9 +25,9 @@ Portrait ending is shifted left by 5% of frame width for Shorts controls; the au
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
 
-Portrait header trial: short-portrait-header-v23-angle.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Portrait header trial: short-portrait-header-v24-angle.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
 Command row box=[0.075,0.17,0.64,0.034], typing_volume=0.002, send_volume=0.003.
-Regenerate: python render_shorts.py --format portrait --suffix header-v23-angle --header-prompt
+Regenerate: python render_shorts.py --format portrait --suffix header-v24-angle --header-prompt
 The prior lower-panel variant remains available for comparison.
 
 Five 2160x3840 thumbnails are in thumbnails-header; 01-make-it.jpg uses frame 1.80s to leave the action unexplained. Header exports regenerate this set automatically.
@@ -67,3 +67,5 @@ Landscape final v20: 3840x2160, 60fps, Maximum quality. Current title anticipati
 Portrait v22 uses a slightly more oblique camera: initial yaw=18 degrees (previously 30), retaining pitch=28 degrees and the current framing/effects.
 
 Portrait v23 views the other side at yaw=62 degrees, reducing the dominant purple face and revealing the orange side.
+
+Portrait v24 accentuates the orange-side three-quarter camera angle: initial yaw=80 degrees.

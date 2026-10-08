@@ -59,9 +59,9 @@ try:
    doc['seq'].append({'op':'sound','id':'explode-entrance','at':title['at']+.08,'dur':.24,'lane':'audio','play':{'synth':'text_appear','volume':.003,'duration':.24,'fadein':.015,'envelop':8}})
   scene_name=fmt+('-header' if header else '')
   if name=='short' and fmt=='portrait':
-   doc['initial']['cam_yaw']=1.082104136
+   doc['initial']['cam_yaw']=1.396263402
    for c in doc['seq']:
-    if c['op']=='camera':c['yaw']=62
+    if c['op']=='camera':c['yaw']=80
   if name=='short' and fmt=='landscape':
    doc['initial']['cam_dist']=2.8
    for c in doc['seq']:
