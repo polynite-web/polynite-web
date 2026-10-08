@@ -24,3 +24,8 @@ The command-input preset illuminates the chevron with a cyan halo and pulses the
 Portrait ending is shifted left by 5% of frame width for Shorts controls; the authored position survives mandatory signature installation at export.
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
+
+Portrait header trial: short-portrait-header.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Command row box=[0.075,0.27,0.64,0.034], typing_volume=0.004, send_volume=0.01.
+Regenerate: python render_shorts.py --format portrait --suffix header --header-prompt
+The prior lower-panel variant remains available for comparison.
