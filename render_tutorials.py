@@ -39,7 +39,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=3.7,cam_yaw=30*.017453292,cam_pitch=28*.017453292,tgt_x=0,tgt_y=1,tgt_z=0)
-blast_title={'op':'text','id':'explode-title','text':'EXPLODE','at':0,'preset':'shockwave-title-v1'}
+blast_title={'op':'text','id':'explode-title','text':'EXPLODE','at':0,'preset':'balloon-title-v1'}
 # The engine resolves this release from the full glyph geometry.
 seq=[{'op':'camera','at':0,'dur':0,'dist':3.7,'pitch':28,'yaw':30},
      {'op':'freeze','at':0,'dur':.95,'ease':0},
@@ -68,7 +68,7 @@ try:
    freeze_at=blast_at+.55;resume_at=freeze_at+1.8;orbit_at=blast_at+.85
    document['seq'].extend([
      {'op':'dolly','at':blast_at,'preset':'dramatic-impact-v1','by':1.2},
-     {'op':'camera_shake','at':blast_at,'preset':'explosion-shake-v1'},
+     {'op':'camera_shake','at':blast_at,'preset':'explosion-shake-v2'},
      {'op':'sound','at':blast_at,'preset':'explosion-sound-v1'},
      {'op':'freeze','at':freeze_at,'dur':1.8,'ease':.18},
      {'op':'orbit','at':orbit_at,'dur':resume_at-orbit_at,'deg':55},
