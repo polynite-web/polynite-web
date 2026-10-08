@@ -49,7 +49,7 @@ try:
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
-    if clip.get('preset')=='command-input-v1':clip.update(box=[.075,.27,.64,.034],typing_volume=.004,send_volume=.01)
+    if clip.get('preset')=='command-input-v1':clip.update(box=[.075,.17,.64,.034],typing_volume=.002,send_volume=.0045)
   scene_name=fmt+('-header' if header else '')
   if name=='short' and fmt=='landscape':
    doc['initial']['cam_dist']=2.8
@@ -90,6 +90,12 @@ try:
    for t,label in [(1,'build'),(2.1,'prompt'),(3.3,'title'),(4.1,'impact'),(8.3,'signature')] if name=='short' else [(2.2,'title'),(4.4,'impact')]:
     subprocess.run(['ffmpeg','-v','error','-y','-ss',str(t),'-i',str(dest),'-frames:v','1','-vf','scale=960:-2',str(REPORT/(name+'-'+orientation+'-'+label+'.jpg'))],check=True)
    if name=='short':subprocess.run(['ffmpeg','-v','error','-y','-ss','2.4','-i',str(dest),'-frames:v','1',str(OUT/('short-'+orientation+('-header' if header else '')+'-cover.jpg'))],check=True)
+   if header:
+    thumb_dir=OUT/'thumbnails-header';thumb_dir.mkdir(exist_ok=True)
+    frames=[('01-make-it',1.8),('02-command-ready',2.36),('03-explode-title',3.53),('04-burst',4.05),('05-colour-scatter',5.0)]
+    for thumb,t in frames:
+     subprocess.run(['ffmpeg','-v','error','-y','-ss',str(t),'-i',str(dest),'-frames:v','1','-q:v','2',str(thumb_dir/(thumb+'.jpg'))],check=True)
+    (thumb_dir/'frames.json').write_text(json.dumps({'video':dest.name,'frames':[{'file':n+'.jpg','time':t} for n,t in frames]},indent=2))
    report.append({'variant':name,'orientation':orientation,'path':str(dest),'info':info})
   print('Rendered',name,res,flush=True)
 finally:

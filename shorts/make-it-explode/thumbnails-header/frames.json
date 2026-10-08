@@ -1,0 +1,25 @@
+{
+  "video": "short-portrait-header-v2.mp4",
+  "frames": [
+    {
+      "file": "01-make-it.jpg",
+      "time": 1.8
+    },
+    {
+      "file": "02-command-ready.jpg",
+      "time": 2.36
+    },
+    {
+      "file": "03-explode-title.jpg",
+      "time": 3.53
+    },
+    {
+      "file": "04-burst.jpg",
+      "time": 4.05
+    },
+    {
+      "file": "05-colour-scatter.jpg",
+      "time": 5.0
+    }
+  ]
+}
