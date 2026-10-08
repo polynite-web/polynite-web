@@ -3350,9 +3350,24 @@
         "out": 0.180000007,
         "outline": 0,
         "preset": "command-input-v1",
-        "send_volume": 0.00449999981,
+        "send_volume": 0.00300000003,
         "text": "Make it explode",
         "typing_volume": 0.00200000009,
+        "with": 0
+      },
+      {
+        "at": 2.93000007,
+        "dur": 0.239999995,
+        "id": "explode-entrance",
+        "lane": "audio",
+        "op": "sound",
+        "play": {
+          "duration": 0.239999995,
+          "envelop": 8,
+          "fadein": 0.0149999997,
+          "synth": "text_appear",
+          "volume": 0.00300000003
+        },
         "with": 0
       },
       {
@@ -3662,9 +3677,24 @@
       "out": 0.180000007,
       "outline": 0,
       "preset": "command-input-v1",
-      "send_volume": 0.00449999981,
+      "send_volume": 0.00300000003,
       "text": "Make it explode",
       "typing_volume": 0.00200000009,
+      "with": 0
+    },
+    {
+      "at": 2.93000007,
+      "dur": 0.239999995,
+      "id": "explode-entrance",
+      "lane": "audio",
+      "op": "sound",
+      "play": {
+        "duration": 0.239999995,
+        "envelop": 8,
+        "fadein": 0.0149999997,
+        "synth": "text_appear",
+        "volume": 0.00300000003
+      },
       "with": 0
     },
     {

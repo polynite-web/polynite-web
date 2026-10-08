@@ -49,7 +49,9 @@ try:
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
-    if clip.get('preset')=='command-input-v1':clip.update(box=[.075,.17,.64,.034],typing_volume=.002,send_volume=.0045)
+    if clip.get('preset')=='command-input-v1':clip.update(box=[.075,.17,.64,.034],typing_volume=.002,send_volume=.003)
+   title=next(c for c in doc['seq'] if c.get('id')=='explode-title')
+   doc['seq'].append({'op':'sound','id':'explode-entrance','at':title['at']+.08,'dur':.24,'lane':'audio','play':{'synth':'text_appear','volume':.003,'duration':.24,'fadein':.015,'envelop':8}})
   scene_name=fmt+('-header' if header else '')
   if name=='short' and fmt=='landscape':
    doc['initial']['cam_dist']=2.8
