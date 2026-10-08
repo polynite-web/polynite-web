@@ -11,3 +11,8 @@ AI COMMAND / PROMPT DEMO is illustrative and does not execute a live assistant c
 Regenerate: python render_shorts.py
 Uses your running native instance and restores the original scene.
 New presets require the updated engine.
+
+Command input audio is included by default in command-input-v1.
+MCP clip overrides: command_audio (boolean), typing_volume and send_volume (0..1), send_at (local seconds, default in).
+Defaults: typing_volume=0.015, send_volume=0.045. No extra sound clips or prompt details needed.
+Silent seeking suppresses cues; replay resets them; recording includes them.

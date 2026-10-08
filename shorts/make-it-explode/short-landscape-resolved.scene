@@ -3344,7 +3344,9 @@
         "out": 0.180000007,
         "outline": 0,
         "preset": "command-input-v1",
+        "send_volume": 0.0450000018,
         "text": "Make it explode",
+        "typing_volume": 0.0149999997,
         "with": 0
       },
       {
@@ -3648,7 +3650,9 @@
       "out": 0.180000007,
       "outline": 0,
       "preset": "command-input-v1",
+      "send_volume": 0.0450000018,
       "text": "Make it explode",
+      "typing_volume": 0.0149999997,
       "with": 0
     },
     {
