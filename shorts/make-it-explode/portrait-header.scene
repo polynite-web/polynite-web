@@ -3238,13 +3238,14 @@
         "exit_position": 60,
         "exit_softness": 0.800000012,
         "fx": "type",
-        "glow": 0.189999998,
+        "glow": 0.449999988,
         "glow_color": [
           0,
           0,
           0,
           1
         ],
+        "glow_radius": 0.0549999997,
         "height": 1.14999998,
         "id": "explode-title",
         "in": 0.550000012,
@@ -3585,13 +3586,14 @@
       "exit_position": 60,
       "exit_softness": 0.800000012,
       "fx": "type",
-      "glow": 0.189999998,
+      "glow": 0.449999988,
       "glow_color": [
         0,
         0,
         0,
         1
       ],
+      "glow_radius": 0.0549999997,
       "height": 1.14999998,
       "id": "explode-title",
       "in": 0.550000012,

@@ -25,9 +25,9 @@ Portrait ending is shifted left by 5% of frame width for Shorts controls; the au
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
 
-Portrait header trial: short-portrait-header-v12-soft.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Portrait header trial: short-portrait-header-v13.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
 Command row box=[0.075,0.17,0.64,0.034], typing_volume=0.002, send_volume=0.003.
-Regenerate: python render_shorts.py --format portrait --suffix header-v12-soft --header-prompt
+Regenerate: python render_shorts.py --format portrait --suffix header-v13 --header-prompt
 The prior lower-panel variant remains available for comparison.
 
 Five 2160x3840 thumbnails are in thumbnails-header; 01-make-it.jpg uses frame 1.80s to leave the action unexplained. Header exports regenerate this set automatically.
@@ -47,3 +47,5 @@ Header v10 adds a quiet 200ms text_appear cue 20ms into the portrait closing log
 Header v11 replaces the orange halo with a soft black halo: glow=0.38, glow_color=[0,0,0,1]. Text clips now accept an optional RGBA glow_color through MCP; omitted colors continue inheriting the text fill.
 
 Header v12 halves the black halo strength to glow=0.19.
+
+Header v13 uses a denser, tighter black halo: glow=0.45, glow_radius=0.055 em. MCP text clips accept glow_radius (default 0.16 em).
