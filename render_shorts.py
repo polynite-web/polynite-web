@@ -48,7 +48,7 @@ try:
   doc=copy.deepcopy(variants[name])
   if name=='short':
    for clip in doc['seq']:
-    if clip.get('id')=='explode-title':clip['glow']=.12
+    if clip.get('id')=='explode-title':clip.update(glow=.38,glow_color=[0,0,0,1])
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
