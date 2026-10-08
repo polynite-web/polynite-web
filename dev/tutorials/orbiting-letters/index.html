@@ -3,7 +3,7 @@
  </style></head><body data-scene="/docs/media/tutorials/r17/orbiting-letters-1ff725339d2b.scene" data-title="Words in orbit" data-id="orbiting-letters"><header><a href="https://explore.polynite.io/docs/#examples" aria-label="Back to tutorials">← Tutorials</a><strong>Words in orbit</strong><button id="replay" disabled>Play</button><button id="pause" disabled>Pause</button><button id="save" disabled>Save scene</button><details><summary aria-label="Scene options">⋯</summary><div class="menu"><button id="reset" disabled>Reset scene</button><a href="https://polynite.io/docs/media/tutorials/r17/orbiting-letters-1ff725339d2b.scene" download>Download original scene</a><p>This is your own temporary copy. Save it to keep your changes.</p></div></details></header><p id="status" role="status">Loading scene…</p><iframe src="/tutorial-view/?tutorial_view=1" title="Polynite interactive tutorial"></iframe><script>
  function prepareTutorialDocument(input, tailSupported, interactive = false, spatialSupported = true, exitSyncSupported = true) {
   const document = structuredClone(input);
-  if (!exitSyncSupported) for(const clip of document.seq) { delete clip.preset; delete clip.release_text; delete clip.release_fraction; delete clip.curvature; }
+  if (!exitSyncSupported) for(const clip of document.seq) { if(clip.curvature !== undefined && clip.curvature < 1 && clip.exit === "spatial_type") { clip.exit="type"; clip.out=Math.max(.25,clip.opacity_out||.4); } delete clip.preset; delete clip.release_text; delete clip.release_fraction; delete clip.curvature; }
   if (!spatialSupported) for (const clip of document.seq) {
     if (clip.exit !== 'spatial_type') continue;
     clip.exit = 'type';

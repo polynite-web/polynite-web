@@ -41,8 +41,10 @@ for(const clip of previousPresetEngine.seq)for(const key of ['preset','release_t
 assert.equal(synced.seq[0].release_text,'title');
 console.log('PASS: earlier preset engines retain resolved cinematic timing without unsupported profile names');
 
-const flatter={seq:[{op:'text',preset:'dramatic-title-v4',curvature:.1,mode:'ring',radius:.9}]};
+const flatter={seq:[{op:'text',preset:'dramatic-title-v4',curvature:.1,mode:'ring',exit:'spatial_type',radius:.9}]};
 const oldCurve=prepareTutorialDocument(flatter,true,true,true,false);
 assert.equal(oldCurve.seq[0].curvature,undefined);assert.equal(oldCurve.seq[0].preset,undefined);
 assert.equal(oldCurve.seq[0].radius,.9);assert.equal(flatter.seq[0].curvature,.1);
 console.log('PASS: older viewers open flattened-title scenes using resolved parameters without unsupported presets');
+
+assert.equal(oldCurve.seq[0].exit,"type");assert.ok(oldCurve.seq[0].out>=.25);
