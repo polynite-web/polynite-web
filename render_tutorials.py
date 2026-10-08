@@ -39,7 +39,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=4.2,cam_yaw=30*.017453292,cam_pitch=28*.017453292,tgt_x=0,tgt_y=1,tgt_z=0)
-blast_title={'op':'text','id':'explode-title','text':'EXPLODE','at':0,'preset':'dramatic-title-v4'}
+blast_title={'op':'text','id':'explode-title','text':'EXPLODE','at':0,'preset':'dramatic-title-v5'}
 # The engine resolves this release from the full glyph geometry.
 seq=[{'op':'camera','at':0,'dur':0,'dist':4.2,'pitch':28,'yaw':30},
      {'op':'freeze','at':0,'preset':'dramatic-reveal-v1','release_text':'explode-title'},
@@ -67,13 +67,14 @@ try:
    blast_at=next(c['dur'] for c in resolved['seq'] if c['op']=='freeze')
    freeze_at=blast_at+.55;resume_at=freeze_at+1.8
    document['seq'].extend([
+     {'op':'dolly','at':blast_at,'preset':'dramatic-impact-v1'},
      {'op':'freeze','at':freeze_at,'dur':1.8,'ease':.18},
      {'op':'orbit','at':blast_at,'dur':resume_at-blast_at,'deg':55},
      {'op':'orbit','at':resume_at,'dur':5.2-resume_at,'deg':18}])
    signature(document['seq'],5.2)
    film('load_document',document=document,start_paused=True)
    print('Spatial release:',round(blast_at,4),'seconds',flush=True)
-  film('set_branding',preset='polynite-ending-v1')
+  film('set_branding',preset='polynite-ending-v2')
   document=film('document')
   raw=json.dumps(document,separators=(',',':')).encode();scene_name=name+'-'+hashlib.sha256(raw).hexdigest()[:12]+'.scene'
   (OUT/scene_name).write_bytes(raw)
