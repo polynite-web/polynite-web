@@ -3234,8 +3234,8 @@
         ],
         "color_to": [
           1,
-          0.232500002,
-          0.0450000018,
+          0.326249987,
+          0.0625,
           1
         ],
         "curvature": 1,
@@ -3274,7 +3274,7 @@
         "size": 0.230000004,
         "text": "EXPLODE",
         "thickness": 0.0179999992,
-        "thickness_before_burst": 0.0414999984,
+        "thickness_before_burst": 0.0297500007,
         "thickness_to": 0.159999996,
         "tilt": 0,
         "turns": 0,
@@ -3405,7 +3405,7 @@
         "asset": "polynite-wordmark",
         "at": 8.05000019,
         "box": [
-          0.2,
+          0.25,
           0.13,
           0.5,
           0.140000001
@@ -3591,8 +3591,8 @@
       ],
       "color_to": [
         1,
-        0.232500002,
-        0.0450000018,
+        0.326249987,
+        0.0625,
         1
       ],
       "curvature": 1,
@@ -3631,7 +3631,7 @@
       "size": 0.230000004,
       "text": "EXPLODE",
       "thickness": 0.0179999992,
-      "thickness_before_burst": 0.0414999984,
+      "thickness_before_burst": 0.0297500007,
       "thickness_to": 0.159999996,
       "tilt": 0,
       "turns": 0,
@@ -3762,7 +3762,7 @@
       "asset": "polynite-wordmark",
       "at": 8.05000019,
       "box": [
-        0.2,
+        0.25,
         0.13,
         0.5,
         0.140000001

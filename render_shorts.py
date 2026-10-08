@@ -48,7 +48,7 @@ try:
   doc=copy.deepcopy(variants[name])
   if name=='short':
    for clip in doc['seq']:
-    if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1],anticipation_at=.45,anticipation_duration=.50,color_to=[1,.2325,.045,1],thickness_before_burst=.0415)
+    if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1],anticipation_at=.45,anticipation_duration=.50,color_to=[1,.32625,.0625,1],thickness_before_burst=.02975)
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
@@ -65,10 +65,10 @@ try:
   film('set_branding',preset='polynite-ending-v3')
   resolved=film('document');resolved.pop('export',None)
   if name=='short' and fmt=='portrait':
-   # Centre the ending in the usable frame left of a Shorts action rail.
+   # Centre the raised ending across the full portrait frame.
    for clip in resolved['seq']:
     if clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
-     clip['box'][0]-=.05
+     clip['box'][0]=.25
      clip['box'][1]=.13
    ending=next(c for c in resolved['seq'] if c.get('asset')=='polynite-wordmark' and c.get('branding_slot')=='outro')
    resolved['seq'].append({'op':'sound','id':'signature-entrance','at':ending['at']+.02,'dur':.20,'lane':'audio','play':{'synth':'text_appear','volume':.0008,'duration':.20,'fadein':.025,'envelop':16}})
