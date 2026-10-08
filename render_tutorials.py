@@ -65,11 +65,11 @@ try:
   if name=='block-explosion':
    resolved=film('document')
    blast_at=next(c['dur'] for c in resolved['seq'] if c['op']=='freeze')
-   freeze_at=blast_at+.55;resume_at=freeze_at+1.8
+   freeze_at=blast_at+.55;resume_at=freeze_at+1.8;orbit_at=blast_at+.85
    document['seq'].extend([
      {'op':'dolly','at':blast_at,'preset':'dramatic-impact-v1'},
      {'op':'freeze','at':freeze_at,'dur':1.8,'ease':.18},
-     {'op':'orbit','at':blast_at,'dur':resume_at-blast_at,'deg':55},
+     {'op':'orbit','at':orbit_at,'dur':resume_at-orbit_at,'deg':55},
      {'op':'orbit','at':resume_at,'dur':5.2-resume_at,'deg':18}])
    signature(document['seq'],5.2)
    film('load_document',document=document,start_paused=True)
