@@ -3,48 +3,48 @@
   "items": [
     {
       "id": "colourful-tower",
-      "revision": 10,
+      "revision": 11,
       "title": "A colourful tower",
       "level": "Beginner",
       "topic": "creation",
       "description": "Start with 28 blocks, then make it your own.",
       "prompt": "Create a tower with seven layers of four cubes. Use cyan, pink and yellow. Frame the whole tower and slowly orbit around it.",
-      "scene": "https://polynite.io/docs/media/tutorials/r10/colourful-tower-5cc1fcda9136.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r10/colourful-tower.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r10/colourful-tower-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r10/colourful-tower.jpg",
+      "scene": "https://polynite.io/docs/media/tutorials/r11/colourful-tower-5236163fce57.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r11/colourful-tower.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r11/colourful-tower-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r11/colourful-tower.jpg",
       "open": "https://polynite.io/tutorials/colourful-tower/",
-      "sha256": "5cc1fcda9136ea6c31b295ad18bddcbe19971f1d9f5d7099d921a660fc0399bd"
+      "sha256": "5236163fce57ad557fa2827950798b80eaf3831e4689b14384fe80388a84f9bf"
     },
     {
       "id": "block-explosion",
-      "revision": 10,
+      "revision": 11,
       "title": "A burst of colour",
       "level": "Advanced",
       "topic": "physics",
       "description": "Launch, freeze the action, orbit and let it tumble.",
-      "prompt": "Create a compact 4 × 4 × 4 cluster of colourful physical blocks. Hold for about 1.16 seconds, then launch the blocks outward and upward. Add a bold orange EXPLODE title in 3D with a slight tilt and a small rotation during its typewriter entrance and exit. Launch the blocks three quarters of the way through its exit, with no hold on the complete word. After the blocks spread, freeze the physics for 1.8 seconds while the camera orbits 55 degrees, then resume the physics. Finish with the Polynite signature over the scene dimmed by 75%, keeping the camera orbit moving throughout the closing signature.",
-      "scene": "https://polynite.io/docs/media/tutorials/r10/block-explosion-db57a0cd0cb6.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r10/block-explosion.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r10/block-explosion-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r10/block-explosion.jpg",
+      "prompt": "Create a compact 4 × 4 × 4 cluster of colourful physical blocks. Hold for about 1.16 seconds, then launch the blocks outward and upward. Add a bold orange EXPLODE title in 3D with a slight tilt and a small rotation during its typewriter entrance, then slide it through a fixed left-edge mask while it fades in opacity. Launch the blocks three quarters of the way through its exit, with no hold on the complete word. After the blocks spread, freeze the physics for 1.8 seconds while the camera orbits 55 degrees, then resume the physics. Finish with the Polynite signature over the scene dimmed by 75%, beginning the dimming 0.2 seconds before the logo and keeping the camera orbit moving throughout the closing signature.",
+      "scene": "https://polynite.io/docs/media/tutorials/r11/block-explosion-de47a2bc54bd.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r11/block-explosion.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r11/block-explosion-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r11/block-explosion.jpg",
       "open": "https://polynite.io/tutorials/block-explosion/",
-      "sha256": "db57a0cd0cb6c34e978aa0833c3b29cf6f69ba854853893d5300f4790ff00027"
+      "sha256": "de47a2bc54bd53a6f875a103a9c11fcf43924f300911e8d24fe64f68faeaf3b1"
     },
     {
       "id": "orbiting-letters",
-      "revision": 10,
+      "revision": 11,
       "title": "Words in orbit",
       "level": "Intermediate",
       "topic": "text",
       "description": "A real 3D ring of letters around a simple shape.",
       "prompt": "Create a cyan sphere and a golden 3D ring reading CREATE / VIEW / SHARE around it. Anchor the ring in world space, rotate it slowly and orbit the camera.",
-      "scene": "https://polynite.io/docs/media/tutorials/r10/orbiting-letters-0bd8893f1c2e.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r10/orbiting-letters.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r10/orbiting-letters-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r10/orbiting-letters.jpg",
+      "scene": "https://polynite.io/docs/media/tutorials/r11/orbiting-letters-57a98b22b4d5.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r11/orbiting-letters.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r11/orbiting-letters-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r11/orbiting-letters.jpg",
       "open": "https://polynite.io/tutorials/orbiting-letters/",
-      "sha256": "0bd8893f1c2ebd958757c2a054752b87fc61bf4a4cda974018be1bd53c7956bd"
+      "sha256": "57a98b22b4d5a91ac6afcdd73d11748691ee3b4e205bf895057793eb09df437e"
     }
   ]
 }

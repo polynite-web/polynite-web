@@ -27,7 +27,7 @@ def signature(seq,end):
     seq.append({'op':'hold','at':end,'dur':0,'end_film':True})
     seq.extend([
       {'op':'sound','at':0,'dur':.28,'lane':'audio','branding_slot':'intro','play':{'synth':'text_appear','volume':.00013,'duration':.28,'envelop':16,'fadein':.025}},
-      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':.9,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':.9,'branding_dim':.75},
+      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':.9,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':.9,'branding_dim':.75,'branding_fade_lead':.2},
       {'op':'sound','at':end+.9-.65,'dur':.65,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.000196875,'duration':.65,'envelop':8,'fadein':.015}}])
 def title(text,dur=2):return {'op':'text','text':text,'mode':'screen','box':[.12,.12,.76,.16],'at':0,'dur':dur,'in':dur*.56,'out':dur*.44,'fx':'type','thickness':.035,'glow':.025,'color':[.9,.98,1,1]}
 references=json.loads((ROOT/'public-site-src/tutorial-rendered.json').read_text());reference=next(r for r in references if r['id']=='block-explosion');base=json.loads((ROOT/reference.get('media','/docs/media/tutorials/r1/').lstrip('/')/reference['scene']).read_text())
@@ -42,7 +42,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':5,'deg':40},title('BUILD SOMETHING')];signature(seq,5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06)
+blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06,exit='motion_wipe',opacity_out=.572)
 # Trigger relative to the text's exit, so later typography edits keep the sync.
 blast_at=blast_title['dur']-blast_title['out']*.25
 freeze_at=blast_at+.55;resume_at=freeze_at+1.8
@@ -53,6 +53,7 @@ letters['scene_text'][0].update(style='title',appearance='none',height=.5,size=.
 seq=[{'op':'camera','at':0,'dur':0,'dist':4,'pitch':15,'yaw':30},{'op':'orbit','at':0,'dur':6,'deg':20}];signature(seq,6)
 scenes.append(('orbiting-letters',{'version':1,'model':'','initial':letters,'seq':seq}))
 status=film('status');assert status.get('branding',{}).get('outro_tail_supported'),'Reload the updated native engine before rendering the black outro'
+assert status.get('branding',{}).get('text_motion_wipe_supported'),'Reload the updated native text engine'
 physics=rpc('scene.physics','status')
 assert not status['playing'] and not status['export']['active']
 assert not physics['body_count'] or physics['paused'],'Pause physics before rendering'
