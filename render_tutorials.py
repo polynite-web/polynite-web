@@ -39,18 +39,18 @@ for y in range(7):
  for x in range(2):
   for z in range(2):geo[f'tower_{y}_{x}_{z}']={'t':'cube','p':[(x-.5)*.44,.22+y*.44,(z-.5)*.44],'s':[.42]*3,'c':palette[y%3],'appearance':'instant'}
 tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled':False,'gravity':[0,-9.81,0],'substeps':4,'bodies':{}},scene_radius=2,scene_body_radius=2,scene_cx=0,scene_cy=1.5,scene_cz=0,tgt_y=1.5)
-seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':5,'deg':40},title('BUILD SOMETHING')];signature(seq,5)
+seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06,exit='motion_wipe',opacity_out=.572)
+blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06,exit='motion_wipe',opacity_out=.572,opacity_in=.3)
 # Trigger relative to the text's exit, so later typography edits keep the sync.
 blast_at=blast_title['dur']-blast_title['out']*.25
 freeze_at=blast_at+.55;resume_at=freeze_at+1.8
-seq=[{'op':'camera','at':0,'dur':0,'dist':7,'pitch':28,'yaw':30},{'op':'freeze','at':0,'dur':blast_at,'ease':0},{'op':'freeze','at':freeze_at,'dur':1.8,'ease':.18},{'op':'orbit','at':freeze_at,'dur':1.8,'deg':55},{'op':'orbit','at':resume_at,'dur':7-resume_at,'deg':20},blast_title];signature(seq,7)
+seq=[{'op':'camera','at':0,'dur':0,'dist':7,'pitch':28,'yaw':30},{'op':'freeze','at':0,'dur':blast_at,'ease':0},{'op':'freeze','at':freeze_at,'dur':1.8,'ease':.18},{'op':'orbit','at':freeze_at,'dur':1.8,'deg':55},{'op':'orbit','at':resume_at,'dur':5.2-resume_at,'deg':18},blast_title];signature(seq,5.2)
 scenes.append(('block-explosion',{'version':1,'model':'','initial':burst,'seq':seq}))
 letters=copy.deepcopy(tower);letters.update(geo={'anchor':{'t':'sphere','p':[0,1,0],'s':[.7]*3,'c':[.1,.7,.8],'appearance':'instant'}},cam_dist=4,tgt_y=1,scene_radius=1.8,scene_cy=1,scene_text=[{'id':'ring','text':'CREATE / VIEW / SHARE','layout':'ring','mode':'ring','anchor':'world','p':[0,1,0],'radius':1.3,'size':.15,'height':0,'angle':90,'rotate_speed':35,'camera_follow':0,'color':[1,.8,.2,1],'glow':.03,'enabled':True}])
 letters['scene_text'][0].update(style='title',appearance='none',height=.5,size=.26,camera_follow=1,angle=0,thickness=.018)
-seq=[{'op':'camera','at':0,'dur':0,'dist':4,'pitch':15,'yaw':30},{'op':'orbit','at':0,'dur':6,'deg':20}];signature(seq,6)
+seq=[{'op':'camera','at':0,'dur':0,'dist':4,'pitch':15,'yaw':30},{'op':'orbit','at':0,'dur':4,'deg':13.333333}];signature(seq,4)
 scenes.append(('orbiting-letters',{'version':1,'model':'','initial':letters,'seq':seq}))
 status=film('status');assert status.get('branding',{}).get('outro_tail_supported'),'Reload the updated native engine before rendering the black outro'
 assert status.get('branding',{}).get('text_motion_wipe_supported'),'Reload the updated native text engine'
