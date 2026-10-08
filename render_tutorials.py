@@ -19,8 +19,8 @@ def signature(seq,end):
     # Dedicated tags allow installers to replace their own clips without touching content.
     seq.extend([
       {'op':'sound','at':0,'dur':.28,'lane':'audio','branding_slot':'intro','play':{'synth':'text_appear','volume':.00065,'duration':.28,'envelop':16,'fadein':.025}},
-      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':2,'in':.7,'out':.35,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':2},
-      {'op':'sound','at':end+2-.86,'dur':.86,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.00196875,'duration':.86,'envelop':8,'fadein':.015}}])
+      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':.9,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':.9},
+      {'op':'sound','at':end+.9-.65,'dur':.65,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.000984375,'duration':.65,'envelop':8,'fadein':.015}}])
 def title(text,dur=2):return {'op':'text','text':text,'mode':'screen','box':[.12,.12,.76,.16],'at':0,'dur':dur,'in':.8,'out':.4,'fx':'type','glow':.025,'color':[.9,.98,1,1]}
 references=json.loads((ROOT/'public-site-src/tutorial-rendered.json').read_text());reference=next(r for r in references if r['id']=='block-explosion');base=json.loads((ROOT/reference.get('media','/docs/media/tutorials/r1/').lstrip('/')/reference['scene']).read_text())
 initial=copy.deepcopy(base['initial'])
