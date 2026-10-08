@@ -46,6 +46,9 @@ try:
  if A.publish_doc:jobs.extend([('tutorial','landscape',1080),('preview','landscape',720)])
  for name,fmt,res in jobs:
   doc=copy.deepcopy(variants[name])
+  if name=='short':
+   for clip in doc['seq']:
+    if clip.get('id')=='explode-title':clip['glow']=.55
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
@@ -73,7 +76,7 @@ try:
   (OUT/(name+'-'+scene_name+'-resolved.scene')).write_text(json.dumps(resolved,indent=2))
   ready=time.monotonic()+20
   while True:
-   try:film('record',directory=str(REPORT),name=name+('-proof' if A.proof else '-master'),format=fmt,resolution=res,quality=2,fps=60,watermark=1,thumbnails=0,encoder=1);break
+   try:film('record',directory=str(REPORT),name=name+('-proof' if A.proof else '-master'),format=fmt,resolution=res,quality=2,fps=60,watermark=0 if name=='short' and fmt=='portrait' else 1,thumbnails=0,encoder=1);break
    except RuntimeError as e:
     if 'wait for the model to load' not in str(e) or time.monotonic()>ready:raise
     time.sleep(.25)
