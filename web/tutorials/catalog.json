@@ -18,18 +18,18 @@
     },
     {
       "id": "block-explosion",
-      "revision": 17,
+      "revision": 20,
       "title": "A burst of colour",
       "level": "Advanced",
       "topic": "physics",
       "description": "Launch, freeze the action, orbit and let it tumble.",
       "prompt": "Create a colourful block explosion with a dramatic cinematic style.",
-      "scene": "https://polynite.io/docs/media/tutorials/r17/block-explosion-f5daeec7c66a.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r17/block-explosion.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r17/block-explosion-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r17/block-explosion.jpg",
+      "scene": "https://polynite.io/docs/media/tutorials/r20/block-explosion-992451d4487f.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r20/block-explosion.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r20/block-explosion-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r20/block-explosion.jpg",
       "open": "https://polynite.io/tutorials/block-explosion/",
-      "sha256": "f5daeec7c66a48b7134f6cfe804b2fe8bd297327304181b0004de470fd503be9"
+      "sha256": "992451d4487f81af935d28dea7e0ee779f90976134acf8a374ed488ab1d6e016"
     },
     {
       "id": "orbiting-letters",

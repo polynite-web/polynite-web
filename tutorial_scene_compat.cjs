@@ -1,6 +1,7 @@
 /* Public tutorial copies can also run on the previously published engine. */
-function prepareTutorialDocument(input, tailSupported, interactive = false, spatialSupported = true) {
+function prepareTutorialDocument(input, tailSupported, interactive = false, spatialSupported = true, exitSyncSupported = true) {
   const document = structuredClone(input);
+  if (!exitSyncSupported) for(const clip of document.seq) { delete clip.preset; delete clip.release_text; delete clip.release_fraction; }
   if (!spatialSupported) for (const clip of document.seq) {
     if (clip.exit !== 'spatial_type') continue;
     clip.exit = 'type';

@@ -32,3 +32,11 @@ for(const key of ['exit_position','exit_direction','exit_softness','radius_to'])
 assert.deepEqual(prepareTutorialDocument(classic,true,true,false),classic);
 assert.equal(spatial.seq[0].exit,'spatial_type');assert.equal(spatial.seq[0].radius_to,2.7);
 console.log('PASS: older viewers open spatial tutorials through an immutable classic-text fallback');
+
+const synced={seq:[{op:'freeze',preset:'dramatic-reveal-v1',release_text:'title',release_fraction:.75,dur:1.6},{op:'text',id:'title',preset:'dramatic-title-v2',exit:'spatial_type',radius_to:3.3}]};
+const previousPresetEngine=prepareTutorialDocument(synced,true,true,true,false);
+assert.equal(previousPresetEngine.seq[0].dur,1.6);
+assert.equal(previousPresetEngine.seq[1].exit,'spatial_type');
+for(const clip of previousPresetEngine.seq)for(const key of ['preset','release_text','release_fraction'])assert.equal(clip[key],undefined);
+assert.equal(synced.seq[0].release_text,'title');
+console.log('PASS: earlier preset engines retain resolved cinematic timing without unsupported profile names');
