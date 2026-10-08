@@ -17,6 +17,14 @@ def rpc(method,command,**kwargs):
 def film(command,**kwargs):return rpc('scene.cinematic',command,**kwargs)
 def signature(seq,end):
     # Dedicated tags allow installers to replace their own clips without touching content.
+    # Keep the last camera move running through the closing segment. The cut
+    # anchors the content end, otherwise the longer move would push the logo later.
+    for clip in reversed(seq):
+      if clip['op']=='orbit' and abs(clip.get('at',0)+clip['dur']-end)<.001:
+        old_duration=clip['dur'];clip['dur']+=.9
+        clip['deg']*=clip['dur']/old_duration
+        break
+    seq.append({'op':'hold','at':end,'dur':0,'end_film':True})
     seq.extend([
       {'op':'sound','at':0,'dur':.28,'lane':'audio','branding_slot':'intro','play':{'synth':'text_appear','volume':.00013,'duration':.28,'envelop':16,'fadein':.025}},
       {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':.9,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':.9,'branding_dim':.75},
@@ -34,8 +42,11 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':5,'deg':40},title('BUILD SOMETHING')];signature(seq,5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-blast_title=title('EXPLODE',1.3);blast_title['color']=[1,.42,.08,1]
-seq=[{'op':'camera','at':0,'dur':0,'dist':7,'pitch':28,'yaw':30},{'op':'freeze','at':0,'dur':.8,'ease':0},{'op':'freeze','at':1.35,'dur':1.8,'ease':.18},{'op':'orbit','at':1.35,'dur':1.8,'deg':55},{'op':'orbit','at':3.15,'dur':3.85,'deg':20},blast_title];signature(seq,7)
+blast_title=title('EXPLODE',1.3);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=2,size=.4,height=1.25,tilt=-10,camera_follow=1,turns=.06)
+# Trigger relative to the text's exit, so later typography edits keep the sync.
+blast_at=blast_title['dur']-blast_title['out']*.25
+freeze_at=blast_at+.55;resume_at=freeze_at+1.8
+seq=[{'op':'camera','at':0,'dur':0,'dist':7,'pitch':28,'yaw':30},{'op':'freeze','at':0,'dur':blast_at,'ease':0},{'op':'freeze','at':freeze_at,'dur':1.8,'ease':.18},{'op':'orbit','at':freeze_at,'dur':1.8,'deg':55},{'op':'orbit','at':resume_at,'dur':7-resume_at,'deg':20},blast_title];signature(seq,7)
 scenes.append(('block-explosion',{'version':1,'model':'','initial':burst,'seq':seq}))
 letters=copy.deepcopy(tower);letters.update(geo={'anchor':{'t':'sphere','p':[0,1,0],'s':[.7]*3,'c':[.1,.7,.8],'appearance':'instant'}},cam_dist=4,tgt_y=1,scene_radius=1.8,scene_cy=1,scene_text=[{'id':'ring','text':'CREATE / VIEW / SHARE','layout':'ring','mode':'ring','anchor':'world','p':[0,1,0],'radius':1.3,'size':.15,'height':0,'angle':90,'rotate_speed':35,'camera_follow':0,'color':[1,.8,.2,1],'glow':.03,'enabled':True}])
 letters['scene_text'][0].update(style='title',appearance='none',height=.5,size=.26,camera_follow=1,angle=0,thickness=.018)
