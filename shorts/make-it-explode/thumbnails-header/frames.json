@@ -1,5 +1,5 @@
 {
-  "video": "short-portrait-header-v3.mp4",
+  "video": "short-portrait-header-v4.mp4",
   "frames": [
     {
       "file": "01-make-it.jpg",
@@ -7,7 +7,7 @@
     },
     {
       "file": "02-command-ready.jpg",
-      "time": 2.36
+      "time": 2.283333
     },
     {
       "file": "03-explode-title.jpg",

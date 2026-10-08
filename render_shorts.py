@@ -94,7 +94,7 @@ try:
    if name=='short':subprocess.run(['ffmpeg','-v','error','-y','-ss','2.4','-i',str(dest),'-frames:v','1',str(OUT/('short-'+orientation+('-header' if header else '')+'-cover.jpg'))],check=True)
    if header:
     thumb_dir=OUT/'thumbnails-header';thumb_dir.mkdir(exist_ok=True)
-    frames=[('01-make-it',1.8),('02-command-ready',2.36),('03-explode-title',3.53),('04-burst',4.05),('05-colour-scatter',5.0)]
+    frames=[('01-make-it',1.8),('02-command-ready',2.283333),('03-explode-title',3.53),('04-burst',4.05),('05-colour-scatter',5.0)]
     for thumb,t in frames:
      subprocess.run(['ffmpeg','-v','error','-y','-ss',str(t),'-i',str(dest),'-frames:v','1','-q:v','2',str(thumb_dir/(thumb+'.jpg'))],check=True)
     (thumb_dir/'frames.json').write_text(json.dumps({'video':dest.name,'frames':[{'file':n+'.jpg','time':t} for n,t in frames]},indent=2))

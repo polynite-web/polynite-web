@@ -25,11 +25,13 @@ Portrait ending is shifted left by 5% of frame width for Shorts controls; the au
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
 
-Portrait header trial: short-portrait-header-v3.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Portrait header trial: short-portrait-header-v4.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
 Command row box=[0.075,0.17,0.64,0.034], typing_volume=0.002, send_volume=0.003.
-Regenerate: python render_shorts.py --format portrait --suffix header-v3 --header-prompt
+Regenerate: python render_shorts.py --format portrait --suffix header-v4 --header-prompt
 The prior lower-panel variant remains available for comparison.
 
 Five 2160x3840 thumbnails are in thumbnails-header; 01-make-it.jpg uses frame 1.80s to leave the action unexplained. Header exports regenerate this set automatically.
 
 Header v3 lowers Send by another 3.5 dB and adds a subtle 0.24s text_appear cue 0.08s after the EXPLODE title begins (volume 0.003).
+
+Header v4: validation flash, chevron halo and popup fade share the Send onset and 160ms sound duration. The popup disappears while illuminated and never returns to idle. This exit is part of command-input-v1.
