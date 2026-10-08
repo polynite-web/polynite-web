@@ -16,3 +16,7 @@ Command input audio is included by default in command-input-v1.
 MCP clip overrides: command_audio (boolean), typing_volume and send_volume (0..1), send_at (local seconds, default in).
 Defaults: typing_volume=0.015, send_volume=0.045. No extra sound clips or prompt details needed.
 Silent seeking suppresses cues; replay resets them; recording includes them.
+
+Refined masters: short-portrait-refined.mp4 and short-landscape-refined.mp4.
+Tech construction keeps blue edges without floor birth ripples.
+The command-input preset pulses its Send button and panel for 0.24s at send_at, synchronized with the confirmation sound.

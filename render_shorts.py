@@ -2,7 +2,7 @@
 import argparse,copy,hashlib,json,subprocess,time,urllib.request
 from pathlib import Path
 ROOT=Path(__file__).parent
-P=argparse.ArgumentParser();P.add_argument('--proof',action='store_true');P.add_argument('--publish-doc',action='store_true');P.add_argument('--format',choices=['both','portrait','landscape'],default='both');A=P.parse_args()
+P=argparse.ArgumentParser();P.add_argument('--proof',action='store_true');P.add_argument('--publish-doc',action='store_true');P.add_argument('--format',choices=['both','portrait','landscape'],default='both');P.add_argument('--suffix',default='',help='Optional filename suffix when an existing master is open');A=P.parse_args()
 OUT=ROOT/'shorts/make-it-explode';OUT.mkdir(parents=True,exist_ok=True)
 REPORT=Path('D:/dev/mcp-production-dry-run/short-make-it-explode');REPORT.mkdir(parents=True,exist_ok=True)
 def rpc(method,command,**kw):
@@ -67,7 +67,7 @@ try:
   result=film('status')['export'];assert result['completed'],result
   for f in result['files']:
    src=Path(f);orientation='portrait' if '.9x16.' in src.name else 'landscape'
-   dest=OUT/(name+('-proof' if A.proof else '')+'-'+orientation+'.mp4');dest.write_bytes(src.read_bytes())
+   dest=OUT/(name+('-proof' if A.proof else '')+'-'+orientation+('-'+A.suffix if A.suffix else '')+'.mp4');dest.write_bytes(src.read_bytes())
    # Preserve maximum-quality video; master the summed impact peaks with headroom.
    mastered=dest.with_name(dest.stem+'-audio.mp4')
    subprocess.run(['ffmpeg','-v','error','-y','-i',str(dest),'-c:v','copy','-af','alimiter=limit=0.79:level=false:latency=true','-c:a','aac','-b:a','320k','-movflags','+faststart',str(mastered)],check=True)
