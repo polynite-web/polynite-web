@@ -21,7 +21,7 @@ def signature(seq,end):
     # anchors the content end, otherwise the longer move would push the logo later.
     for clip in reversed(seq):
       if clip['op']=='orbit' and abs(clip.get('at',0)+clip['dur']-end)<.001:
-        old_duration=clip['dur'];clip['dur']+=1.1
+        old_duration=clip['dur'];clip['dur']+=1.7
         clip['deg']*=clip['dur']/old_duration
         break
     seq.append({'op':'hold','at':end,'dur':0,'end_film':True})
