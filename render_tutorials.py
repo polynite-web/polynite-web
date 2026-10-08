@@ -6,7 +6,7 @@ parser=argparse.ArgumentParser();parser.add_argument('--revision',type=int,defau
 OUT=ROOT/f'docs/media/tutorials/r{args.revision}'
 if any(OUT.glob('*.mp4')) and not args.replace_draft:raise SystemExit('Choose a new --revision for published media; --replace-draft is only for unpublished drafts')
 OUT.mkdir(parents=True,exist_ok=True)
-REPORT=Path('D:/dev/mcp-production-dry-run/tutorials-r1')
+REPORT=Path(f'D:/dev/mcp-production-dry-run/tutorials-r{args.revision}')
 REPORT.mkdir(parents=True,exist_ok=True)
 def rpc(method,command,**kwargs):
     req={'jsonrpc':'2.0','id':1,'method':method,'params':{'request':{'command':command,**kwargs}}}
@@ -19,8 +19,8 @@ def signature(seq,end):
     # Dedicated tags allow installers to replace their own clips without touching content.
     seq.extend([
       {'op':'sound','at':0,'dur':.28,'lane':'audio','branding_slot':'intro','play':{'synth':'text_appear','volume':.00065,'duration':.28,'envelop':16,'fadein':.025}},
-      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.72,.50,.14],'at':end-1.5,'dur':1.5,'in':.45,'out':.3,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro'},
-      {'op':'sound','at':end-.86,'dur':.86,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.002625,'duration':.86,'envelop':8,'fadein':.015}}])
+      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':2,'in':.7,'out':.35,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':2},
+      {'op':'sound','at':end+2-.86,'dur':.86,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.00196875,'duration':.86,'envelop':8,'fadein':.015}}])
 def title(text,dur=2):return {'op':'text','text':text,'mode':'screen','box':[.12,.12,.76,.16],'at':0,'dur':dur,'in':.8,'out':.4,'fx':'type','glow':.025,'color':[.9,.98,1,1]}
 references=json.loads((ROOT/'public-site-src/tutorial-rendered.json').read_text());reference=next(r for r in references if r['id']=='block-explosion');base=json.loads((ROOT/reference.get('media','/docs/media/tutorials/r1/').lstrip('/')/reference['scene']).read_text())
 initial=copy.deepcopy(base['initial'])
@@ -40,7 +40,8 @@ letters=copy.deepcopy(tower);letters.update(geo={'anchor':{'t':'sphere','p':[0,1
 letters['scene_text'][0].update(style='title',appearance='none',height=.5,size=.26,camera_follow=1,angle=0)
 seq=[{'op':'camera','at':0,'dur':0,'dist':4,'pitch':15,'yaw':30},{'op':'orbit','at':0,'dur':6,'deg':20}];signature(seq,6)
 scenes.append(('orbiting-letters',{'version':1,'model':'','initial':letters,'seq':seq}))
-status=film('status');physics=rpc('scene.physics','status')
+status=film('status');assert status.get('branding',{}).get('outro_tail_supported'),'Reload the updated native engine before rendering the black outro'
+physics=rpc('scene.physics','status')
 assert not status['playing'] and not status['export']['active']
 assert not physics['body_count'] or physics['paused'],'Pause physics before rendering'
 assert not rpc('scene.interaction','status')['held'] and not rpc('scene.physics_test','status')['active']
