@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const {prepareTutorialDocument} = require('./tutorial_scene_compat.cjs');
+const {prepareTutorialDocument,restoreTutorialCues} = require('./tutorial_scene_compat.cjs');
 const input = {seq:[{op:'orbit',at:0,dur:5},{op:'text',asset:'polynite-wordmark',at:5,dur:2,branding_slot:'outro',branding_tail:2},{op:'sound',at:6.14,dur:.86,branding_slot:'outro'}]};
 const supported = prepareTutorialDocument(input,true);
 assert.deepEqual(supported,input); assert.notEqual(supported,input);
@@ -12,4 +12,15 @@ assert.deepEqual(legacy.seq[4],{op:'hold',at:5,dur:2});
 assert.equal(input.seq.length,3); assert.equal(input.seq[1].branding_tail,2);
 assert.deepEqual(prepareTutorialDocument(legacy,false),legacy);
 assert.deepEqual(prepareTutorialDocument({seq:[{op:'hold',dur:5}]},false),{seq:[{op:'hold',dur:5}]});
+const interactive = prepareTutorialDocument(input,false,true);
+assert.equal(interactive.seq.length,1);
+assert.equal(interactive.seq[0].op,'orbit');
+const restored = restoreTutorialCues(interactive.seq,input,true);
+assert.deepEqual(restored,input.seq);
+assert.deepEqual(restoreTutorialCues(restored,input,true),restored);
+assert.equal(restoreTutorialCues(interactive.seq,input,false).length,1);
 console.log('PASS: old engine closing fallback, sound anchoring, immutable reference and repeated preparation');
+
+const repeatedSounds={seq:[{op:'sound',at:1,play:{sample:'tick'}},{op:'sound',at:2,play:{sample:'tick'}}]};
+assert.deepEqual(restoreTutorialCues([],repeatedSounds,false),repeatedSounds.seq);
+assert.deepEqual(restoreTutorialCues(repeatedSounds.seq,repeatedSounds,false),repeatedSounds.seq);

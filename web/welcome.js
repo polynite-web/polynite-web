@@ -93,6 +93,25 @@
   };
   // Called only for input accepted by the world's own hit testing.
   window.vmeshArrivalGesture = function () { arrival.touched = true; awaken(); };
+  // A same-origin embed's Play button is also a real user gesture. Keep the
+  // shared graph and browser policy; never dispatch pretend pointer events.
+  window.vmeshAudioGesture = function () {
+    var active = !navigator.userActivation || navigator.userActivation.isActive;
+    try { active = active || (parent !== window && parent.navigator.userActivation && parent.navigator.userActivation.isActive); } catch (_) {}
+    if (!active) return Promise.resolve(false);
+    arrival.touched = true;
+    awaken();
+    window.vmeshAudioEntered = true;
+    var tasks = [], bus = window.Module && window.Module.sound_worker_proto && window.Module.sound_worker_proto.bus;
+    try {
+      if (bus) {
+        if (bus.primeGesture) bus.primeGesture();
+        if (bus.startAudio) tasks.push(bus.startAudio());
+      }
+      if (window.__pnSnd && window.__pnSnd.ctx) tasks.push(window.__pnSnd.ctx.resume());
+    } catch (error) { console.warn('[audio-gesture] '+error.message); return Promise.resolve(false); }
+    return Promise.all(tasks).then(function () { return true; }, function (error) { console.warn('[audio-gesture] '+error.message); return false; });
+  };
   discover.addEventListener('click', function () { window.vmeshDiscoverRequested = true; });
   window.vmeshWorldFrame = function () {
     if (window.vmeshCommittedFrames !== 1) return;
