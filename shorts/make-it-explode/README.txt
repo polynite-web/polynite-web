@@ -25,9 +25,9 @@ Portrait ending is shifted left by 5% of frame width for Shorts controls; the au
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
 
-Portrait header trial: short-portrait-header-v14.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Portrait header trial: short-portrait-header-v15.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
 Command row box=[0.075,0.17,0.64,0.034], typing_volume=0.002, send_volume=0.003.
-Regenerate: python render_shorts.py --format portrait --suffix header-v14 --header-prompt
+Regenerate: python render_shorts.py --format portrait --suffix header-v15 --header-prompt
 The prior lower-panel variant remains available for comparison.
 
 Five 2160x3840 thumbnails are in thumbnails-header; 01-make-it.jpg uses frame 1.80s to leave the action unexplained. Header exports regenerate this set automatically.
@@ -51,3 +51,5 @@ Header v12 halves the black halo strength to glow=0.19.
 Header v13 uses a denser, tighter black halo: glow=0.45, glow_radius=0.055 em. MCP text clips accept glow_radius (default 0.16 em).
 
 Portrait v14 settings: ending box y=0.13 places the logo at the command-panel height. EXPLODE anticipates its burst from local 0.45s over 0.50s: color_to=[1,0.045,0.01,1], thickness_before_burst=0.065 em. These text controls are reusable via MCP. Physics pauses let already-triggered impacts finish; motion voices decay over 50ms.
+
+Header v15 halves the anticipation change from the original orange/thickness: color_to=[1,0.2325,0.045,1], thickness_before_burst=0.0415 em. Burst timing, final burst and other effects remain the same.
