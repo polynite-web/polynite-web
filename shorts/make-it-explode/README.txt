@@ -17,6 +17,8 @@ MCP clip overrides: command_audio (boolean), typing_volume and send_volume (0..1
 Defaults: typing_volume=0.015, send_volume=0.045. No extra sound clips or prompt details needed.
 Silent seeking suppresses cues; replay resets them; recording includes them.
 
-Latest masters: short-portrait-chevron.mp4 and short-landscape-chevron.mp4.
+Latest masters: short-portrait-final-left.mp4 and short-landscape-chevron.mp4.
 Tech construction keeps blue edges without floor birth ripples.
 The command-input preset illuminates the chevron with a cyan halo and pulses the panel for 0.24s at send_at, synchronized with the confirmation sound; no detached button rectangle.
+
+Portrait ending is shifted left by 5% of frame width for Shorts controls; the authored position survives mandatory signature installation at export.

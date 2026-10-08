@@ -54,6 +54,14 @@ try:
   film('load_document',document=doc,start_paused=True)
   film('set_branding',preset='polynite-ending-v3')
   resolved=film('document');resolved.pop('export',None)
+  if name=='short' and fmt=='portrait':
+   # Centre the ending in the usable frame left of a Shorts action rail.
+   for clip in resolved['seq']:
+    if clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
+     clip['box'][0]-=.05
+   resolved['initial']['seq']=copy.deepcopy(resolved['seq'])
+   film('load_document',document=resolved,start_paused=True)
+   (OUT/(fmt+'.scene')).write_text(json.dumps(resolved,indent=2))
   (OUT/(name+'-'+fmt+'-resolved.scene')).write_text(json.dumps(resolved,indent=2))
   ready=time.monotonic()+20
   while True:

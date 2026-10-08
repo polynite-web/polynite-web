@@ -1,6 +1,4 @@
 {
-  "version": 1,
-  "model": "",
   "initial": {
     "amb_gnd": {
       "a": 1,
@@ -212,7 +210,7 @@
     "film_audio_text": 1,
     "film_audio_tick": 1,
     "film_audio_wings": 1,
-    "film_branding_mode": 0,
+    "film_branding_mode": 2,
     "film_fade": 0,
     "film_focus_behind": 0.0299999993,
     "film_focus_offscreen": 0.119999997,
@@ -3197,14 +3195,23 @@
       },
       {
         "at": 0,
-        "dur": 0.949999988,
+        "dur": 0.349999994,
+        "lane": "scene",
+        "op": "appear",
+        "preset": "scene-build-v1",
+        "target": "geometry",
+        "with": 0
+      },
+      {
+        "at": 0,
+        "dur": 3.79999995,
         "ease": 0,
         "lane": "scene",
         "op": "freeze",
         "with": 0
       },
       {
-        "at": 0,
+        "at": 2.8499999,
         "by": 1.08000004,
         "dur": 0.949999988,
         "lane": "camera",
@@ -3212,7 +3219,7 @@
         "with": 0
       },
       {
-        "at": 0,
+        "at": 2.8499999,
         "burst_at": 0.949999988,
         "burst_duration": 0.319999993,
         "camera_facing": 0,
@@ -3258,7 +3265,7 @@
         "with": 0
       },
       {
-        "at": 0.949999988,
+        "at": 3.79999995,
         "by": 1.20000005,
         "dur": 0.850000024,
         "lane": "camera",
@@ -3268,7 +3275,7 @@
         "with": 0
       },
       {
-        "at": 0.949999988,
+        "at": 3.79999995,
         "dur": 0.319999993,
         "intensity": 0.00899999961,
         "lane": "camera",
@@ -3277,7 +3284,7 @@
         "with": 0
       },
       {
-        "at": 0.949999988,
+        "at": 3.79999995,
         "dur": 0.449999988,
         "lane": "audio",
         "op": "sound",
@@ -3286,13 +3293,13 @@
           "envelop": 8,
           "fadein": 0.00400000019,
           "synth": "explosion",
-          "volume": 0.0350000001
+          "volume": 0.0120000001
         },
-        "preset": "explosion-sound-v1",
+        "preset": "explosion-sound-v2",
         "with": 0
       },
       {
-        "at": 1.5,
+        "at": 4.3499999,
         "dur": 1.79999995,
         "ease": 0.180000007,
         "lane": "scene",
@@ -3300,7 +3307,7 @@
         "with": 0
       },
       {
-        "at": 1.79999995,
+        "at": 4.6500001,
         "deg": 55,
         "dur": 1.5,
         "lane": "camera",
@@ -3308,7 +3315,7 @@
         "with": 0
       },
       {
-        "at": 3.29999995,
+        "at": 6.1500001,
         "deg": 34.1052628,
         "dur": 3.5999999,
         "lane": "camera",
@@ -3316,11 +3323,30 @@
         "with": 0
       },
       {
-        "at": 5.19999981,
+        "at": 8.05000019,
         "dur": 0,
         "end_film": true,
         "lane": "scene",
         "op": "hold",
+        "with": 0
+      },
+      {
+        "asset": "command-input",
+        "at": 1.20000005,
+        "dur": 1.64999998,
+        "fx": "fade",
+        "glow": 0,
+        "in": 1.04999995,
+        "lane": "text",
+        "mode": "screen",
+        "op": "text",
+        "opacity_in": 0.119999997,
+        "out": 0.180000007,
+        "outline": 0,
+        "preset": "command-input-v1",
+        "send_volume": 0.0450000018,
+        "text": "Make it explode",
+        "typing_volume": 0.0149999997,
         "with": 0
       },
       {
@@ -3340,9 +3366,9 @@
       },
       {
         "asset": "polynite-wordmark",
-        "at": 5.19999981,
+        "at": 8.05000019,
         "box": [
-          0.25,
+          0.2,
           0.360000014,
           0.5,
           0.140000001
@@ -3366,7 +3392,7 @@
         "with": 0
       },
       {
-        "at": 5.64999962,
+        "at": 8.50000095,
         "branding_slot": "outro",
         "dur": 0.649999976,
         "lane": "audio",
@@ -3461,6 +3487,7 @@
     "use_texture": 1,
     "vignette": 0.25
   },
+  "model": "",
   "seq": [
     {
       "at": 0,
@@ -3473,20 +3500,24 @@
       "yaw": 30
     },
     {
-      "op": "appear",
       "at": 0,
-      "preset": "scene-build-v1"
+      "dur": 0.349999994,
+      "lane": "scene",
+      "op": "appear",
+      "preset": "scene-build-v1",
+      "target": "geometry",
+      "with": 0
     },
     {
       "at": 0,
-      "dur": 3.799999988,
+      "dur": 3.79999995,
       "ease": 0,
       "lane": "scene",
       "op": "freeze",
       "with": 0
     },
     {
-      "at": 2.85,
+      "at": 2.8499999,
       "by": 1.08000004,
       "dur": 0.949999988,
       "lane": "camera",
@@ -3494,7 +3525,7 @@
       "with": 0
     },
     {
-      "at": 2.85,
+      "at": 2.8499999,
       "burst_at": 0.949999988,
       "burst_duration": 0.319999993,
       "camera_facing": 0,
@@ -3540,7 +3571,7 @@
       "with": 0
     },
     {
-      "at": 3.799999988,
+      "at": 3.79999995,
       "by": 1.20000005,
       "dur": 0.850000024,
       "lane": "camera",
@@ -3550,7 +3581,7 @@
       "with": 0
     },
     {
-      "at": 3.799999988,
+      "at": 3.79999995,
       "dur": 0.319999993,
       "intensity": 0.00899999961,
       "lane": "camera",
@@ -3559,15 +3590,22 @@
       "with": 0
     },
     {
-      "at": 3.799999988,
+      "at": 3.79999995,
       "dur": 0.449999988,
       "lane": "audio",
       "op": "sound",
+      "play": {
+        "duration": 0.449999988,
+        "envelop": 8,
+        "fadein": 0.00400000019,
+        "synth": "explosion",
+        "volume": 0.0120000001
+      },
       "preset": "explosion-sound-v2",
       "with": 0
     },
     {
-      "at": 4.35,
+      "at": 4.3499999,
       "dur": 1.79999995,
       "ease": 0.180000007,
       "lane": "scene",
@@ -3575,7 +3613,7 @@
       "with": 0
     },
     {
-      "at": 4.64999995,
+      "at": 4.6500001,
       "deg": 55,
       "dur": 1.5,
       "lane": "camera",
@@ -3583,7 +3621,7 @@
       "with": 0
     },
     {
-      "at": 6.14999995,
+      "at": 6.1500001,
       "deg": 34.1052628,
       "dur": 3.5999999,
       "lane": "camera",
@@ -3591,7 +3629,7 @@
       "with": 0
     },
     {
-      "at": 8.04999981,
+      "at": 8.05000019,
       "dur": 0,
       "end_film": true,
       "lane": "scene",
@@ -3599,11 +3637,81 @@
       "with": 0
     },
     {
+      "asset": "command-input",
+      "at": 1.20000005,
+      "dur": 1.64999998,
+      "fx": "fade",
+      "glow": 0,
+      "in": 1.04999995,
+      "lane": "text",
+      "mode": "screen",
       "op": "text",
+      "opacity_in": 0.119999997,
+      "out": 0.180000007,
+      "outline": 0,
+      "preset": "command-input-v1",
+      "send_volume": 0.0450000018,
       "text": "Make it explode",
-      "at": 1.2,
-      "preset": "command-input-v1"
+      "typing_volume": 0.0149999997,
+      "with": 0
+    },
+    {
+      "at": 0,
+      "branding_slot": "intro",
+      "dur": 0.280000001,
+      "lane": "audio",
+      "op": "sound",
+      "play": {
+        "duration": 0.280000001,
+        "envelop": 16,
+        "fadein": 0.0250000004,
+        "synth": "text_appear",
+        "volume": 0.00013
+      },
+      "with": 0
+    },
+    {
+      "asset": "polynite-wordmark",
+      "at": 8.05000019,
+      "box": [
+        0.2,
+        0.360000014,
+        0.5,
+        0.140000001
+      ],
+      "branding_bloom": 4.5,
+      "branding_dim": 0.75,
+      "branding_fade_duration": 0.649999976,
+      "branding_fade_lead": 0.349999994,
+      "branding_slot": "outro",
+      "branding_tail": 1.10000002,
+      "dur": 1.10000002,
+      "fx": "fade",
+      "glow": 0.699999988,
+      "hold_on_black": 1,
+      "in": 0.25,
+      "lane": "text",
+      "mode": "screen",
+      "op": "text",
+      "out": 0.200000003,
+      "text": "polynite.io",
+      "with": 0
+    },
+    {
+      "at": 8.50000095,
+      "branding_slot": "outro",
+      "dur": 0.649999976,
+      "lane": "audio",
+      "op": "sound",
+      "play": {
+        "duration": 0.649999976,
+        "envelop": 8,
+        "fadein": 0.0149999997,
+        "synth": "polynite_signature",
+        "volume": 0.000196880006
+      },
+      "with": 0
     }
   ],
-  "title": "Make it explode"
+  "version": 1
 }
