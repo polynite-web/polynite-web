@@ -28,14 +28,13 @@ def variant(offset,command=False):
   if c['op']=='camera':continue
   c['at']=c.get('at',0)+offset
   if c['op']=='freeze' and c['at']==offset:c.update(at=0,dur=c['dur']+offset)
- if offset:doc['seq'].insert(1,{'op':'appear','at':.03,'preset':'scene-build-v1'})
+ if offset:doc['seq'].insert(1,{'op':'appear','at':0,'preset':'scene-build-v1'})
  if command:doc['seq'].append({'op':'text','text':'Make it explode','at':1.2,'preset':'command-input-v1'})
  doc['title']='Make it explode' if command else 'A burst of colour'
  return doc
 variants={'short':variant(2.85,True),'tutorial':variant(1.85),'preview':variant(0)}
 (OUT/'explosion-master.scene').write_text(json.dumps(base,indent=2))
 for name,doc in variants.items():(OUT/(name+'.scene')).write_text(json.dumps(doc,indent=2))
-(OUT/'README.txt').write_text('Make it explode — 3 variants from explosion-master.scene\nshort.scene: construction + illustrative AI command + explosion\ntutorial.scene: construction + explosion, without command UI\npreview.scene: direct explosion, without construction or command UI\nMasters: 4K 60fps quality Maximum, both orientations. Branding is applied by the shared export preset.\nUse render_shorts.py to regenerate.\n')
 original=film('document');physics=rpc('scene.physics','status');status=film('status')
 assert not status['playing'] and not status['export']['active'],'Finish current playback/export first'
 assert not rpc('scene.interaction','status')['held'],'Finish current gesture first'
@@ -76,6 +75,7 @@ try:
    info=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(dest)]))
    for t,label in [(1,'build'),(2.1,'prompt'),(3.3,'title'),(4.1,'impact'),(8.3,'signature')] if name=='short' else [(2.2,'title'),(4.4,'impact')]:
     subprocess.run(['ffmpeg','-v','error','-y','-ss',str(t),'-i',str(dest),'-frames:v','1','-vf','scale=960:-2',str(REPORT/(name+'-'+orientation+'-'+label+'.jpg'))],check=True)
+   if name=='short':subprocess.run(['ffmpeg','-v','error','-y','-ss','2.4','-i',str(dest),'-frames:v','1',str(OUT/('short-'+orientation+'-cover.jpg'))],check=True)
    report.append({'variant':name,'orientation':orientation,'path':str(dest),'info':info})
   print('Rendered',name,res,flush=True)
 finally:

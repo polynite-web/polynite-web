@@ -3474,7 +3474,7 @@
     },
     {
       "op": "appear",
-      "at": 0.03,
+      "at": 0,
       "preset": "scene-build-v1"
     },
     {
