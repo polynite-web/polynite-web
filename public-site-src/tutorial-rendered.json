@@ -1,17 +1,23 @@
 [
   {
     "id": "colourful-tower",
-    "scene": "colourful-tower-7633ecea01d6.scene",
+    "revision": 2,
+    "media": "/docs/media/tutorials/r2/",
+    "scene": "colourful-tower-2c029937c841.scene",
     "video": "colourful-tower.mp4"
   },
   {
     "id": "block-explosion",
-    "scene": "block-explosion-18b546ec3965.scene",
+    "revision": 2,
+    "media": "/docs/media/tutorials/r2/",
+    "scene": "block-explosion-2a14599566f3.scene",
     "video": "block-explosion.mp4"
   },
   {
     "id": "orbiting-letters",
-    "scene": "orbiting-letters-54906dc96718.scene",
+    "revision": 2,
+    "media": "/docs/media/tutorials/r2/",
+    "scene": "orbiting-letters-dd2547dcfbd8.scene",
     "video": "orbiting-letters.mp4"
   }
 ]
