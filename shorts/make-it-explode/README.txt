@@ -25,9 +25,9 @@ Portrait ending is shifted left by 5% of frame width for Shorts controls; the au
 
 Portrait command panel is narrower and shifted left, keeping the rightmost 17.5% of the frame clear at the prompt height.
 
-Portrait header trial: short-portrait-header-v16.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
+Portrait header trial: short-portrait-header-v17.mp4, portrait-header.scene and short-portrait-header-resolved.scene.
 Command row box=[0.075,0.17,0.64,0.034], typing_volume=0.002, send_volume=0.003.
-Regenerate: python render_shorts.py --format portrait --suffix header-v16 --header-prompt
+Regenerate: python render_shorts.py --format portrait --suffix header-v17 --header-prompt
 The prior lower-panel variant remains available for comparison.
 
 Five 2160x3840 thumbnails are in thumbnails-header; 01-make-it.jpg uses frame 1.80s to leave the action unexplained. Header exports regenerate this set automatically.
@@ -55,3 +55,5 @@ Portrait v14 settings: ending box y=0.13 places the logo at the command-panel he
 Header v15 halves the anticipation change from the original orange/thickness: color_to=[1,0.2325,0.045,1], thickness_before_burst=0.0415 em. Burst timing, final burst and other effects remain the same.
 
 Header v16 halves the anticipation again: color_to=[1,0.32625,0.0625,1], thickness_before_burst=0.02975 em. The raised portrait ending is horizontally centered at box x=0.25, width=0.5.
+
+Header v17 halves anticipation again: color_to=[1,0.373125,0.07125,1], thickness_before_burst=0.023875 em.

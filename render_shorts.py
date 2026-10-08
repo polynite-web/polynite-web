@@ -48,7 +48,7 @@ try:
   doc=copy.deepcopy(variants[name])
   if name=='short':
    for clip in doc['seq']:
-    if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1],anticipation_at=.45,anticipation_duration=.50,color_to=[1,.32625,.0625,1],thickness_before_burst=.02975)
+    if clip.get('id')=='explode-title':clip.update(glow=.45,glow_radius=.055,glow_color=[0,0,0,1],anticipation_at=.45,anticipation_duration=.50,color_to=[1,.373125,.07125,1],thickness_before_burst=.023875)
   header=A.header_prompt and name=='short' and fmt=='portrait'
   if header:
    for clip in doc['seq']:
