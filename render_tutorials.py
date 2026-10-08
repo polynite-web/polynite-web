@@ -77,13 +77,13 @@ try:
    film('load_document',document=document,start_paused=True)
    print('Spatial release:',round(blast_at,4),'seconds',flush=True)
   film('set_branding',preset='polynite-ending-v3')
-  document=film('document')
+  document=film('document');document.pop('export',None)
   raw=json.dumps(document,separators=(',',':')).encode();scene_name=name+'-'+hashlib.sha256(raw).hexdigest()[:12]+'.scene'
   (OUT/scene_name).write_bytes(raw)
   ready_until=time.monotonic()+20
   while True:
    try:
-    film('record',directory=str(REPORT),name=name,format='landscape',resolution=720,fps=60,watermark=1,thumbnails=0)
+    film('record',directory=str(REPORT),name=name,format='landscape',resolution=1080,quality=2,encoder=1,fps=60,watermark=1,thumbnails=0)
     break
    except RuntimeError as error:
     if 'wait for the model to load' not in str(error) or time.monotonic()>ready_until:raise

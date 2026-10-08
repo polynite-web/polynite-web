@@ -29,6 +29,10 @@ if not exist "%SRC%\index.html" (
     goto :fail
 )
 
+REM Normalize the actual Windows filenames before checking the engine pair.
+node "%~dp0normalize_engine_names.cjs" "%SRC%"
+if errorlevel 1 goto :fail
+
 REM Do not copy a launcher and WASM with incompatible generated imports.
 node "%~dp0check_engine_pair.cjs" "%SRC%"
 if errorlevel 1 goto :fail
@@ -154,7 +158,7 @@ REM ---------------------------------------------------------------
 
 echo  [polynite] Site files into web\ (pages, robots, sitemaps, manifest) ...
 
-for %%F in (robots.txt sitemap.xml sitemap-app.xml site.webmanifest sw.js 404.html _redirects favicon.ico) do (
+for %%F in (_headers robots.txt sitemap.xml sitemap-app.xml site.webmanifest sw.js 404.html _redirects favicon.ico) do (
     if exist "%DST%\%%F" copy /y "%DST%\%%F" "%WEB%\%%F" >nul
 )
 
@@ -172,6 +176,8 @@ if exist "%DST%\build_public_site.cjs" node "%DST%\build_public_site.cjs"
 if errorlevel 1 goto :fail
 if exist "%DST%\build_error_pages.cjs" node "%DST%\build_error_pages.cjs"
 if errorlevel 1 goto :fail
+node "%~dp0normalize_engine_names.cjs" "%DST%" "%WEB%" "%SRC%"
+if errorlevel 1 goto :fail
 if exist "%DST%\archive_engine_release.cjs" node "%DST%\archive_engine_release.cjs"
 if errorlevel 1 goto :fail
 
@@ -186,15 +192,9 @@ echo.
 echo  [polynite] Deployed.
 echo.
 
-if exist "%DST%\App.js" (
-    echo  WARNING: App.js is still here. Windows keeps the OLD case when it
-    echo           overwrites; GitHub Pages is case-sensitive and the page asks
-    echo           for app.js. Delete App.* here and in dev\, then rebuild.
-)
-
-if exist "%DST%\App.wasm" (
-    echo  WARNING: App.wasm is still here - same problem.
-)
+REM Check real directory entry spelling; IF EXIST is case-insensitive on Windows.
+node "%~dp0normalize_engine_names.cjs" "%DST%" "%WEB%" "%SRC%"
+if errorlevel 1 goto :fail
 
 if not exist "%DST%\app.js" (
     echo  WARNING: app.js is MISSING - the site will show the WebGPU notice.
@@ -245,13 +245,13 @@ git diff --cached --quiet
 
 if not errorlevel 1 (
     echo  [polynite] Nothing changed. Nothing to commit.
-    goto :success
+    goto :publish
 )
 
 echo.
 echo  [polynite] Commit: Deploy Polynite %VERSION%
 
-git commit -m "Deploy Polynite %VERSION%"
+git commit -m "-- Deploy Polynite %VERSION%"
 
 if errorlevel 1 (
     echo.
@@ -269,6 +269,11 @@ if errorlevel 1 (
     echo  [polynite] Git push FAILED.
     goto :fail
 )
+
+:publish
+REM Git push alone does not publish the Cloudflare Pages site.
+node "%~dp0publish_pages.cjs"
+if errorlevel 1 goto :fail
 
 goto :success
 

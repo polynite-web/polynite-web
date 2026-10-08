@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><base href="/"><script>window.vmeshAutoDiscover=false;</script>
+<head><script id="pn-build-version">window.__pnBuildVersion="v0261";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
 <meta charset="utf-8">
 <script src="startup_profile.js"></script>
 <script src="webgpu_bindgroup_guard.js"></script>
 <meta name="google" content="notranslate">
 <title>Polynite — Create, View &amp; Share Procedural 3D</title>
 <meta name="description" content="Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4.">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="index, follow">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0b0d12">
@@ -943,7 +943,7 @@ body.scene-entry-ready #curtain {
     if (window.__spinVerFrozen) return window.__spinVerFrozen;
     var v;
     try {
-      if (typeof window.getCurrentVersion === "function") v = window.getCurrentVersion();
+      if (typeof window.getCurrentVersion === "function") v = window.__pnBuildVersion || window.getCurrentVersion();
       /* No localStorage fallback: that key is per ORIGIN, so a sibling app on
          the same host would hand us ITS version. ?_v or "dev" - the label is
          corrected by spinviewSetDisplayVersion once version.txt lands. */

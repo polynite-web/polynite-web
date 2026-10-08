@@ -16,10 +16,11 @@ for(const base of [root,path.join(root,'web'),path.join(root,'dev')]){
  fs.mkdirSync(path.join(base,'assets/public-site'),{recursive:true});fs.writeFileSync(path.join(base,'assets/public-site',scriptName),script);
  fs.mkdirSync(path.join(base,media),{recursive:true});for(const i of items)for(const url of [i.scene,i.video,i.preview,i.poster]){const rel=new URL(url).pathname;const source=path.join(root,rel);fs.mkdirSync(path.dirname(path.join(base,rel)),{recursive:true});if(base!==root)fs.copyFileSync(source,path.join(base,rel));}
  const viewerDir=path.join(base,'tutorial-view');fs.mkdirSync(viewerDir,{recursive:true});
- const runtime=fs.readFileSync(path.join(base,'app.html'),'utf8');
+ const runtime=fs.readFileSync(path.join(base,'app.html'),'utf8').replace(/<script id="pn-build-version">[^]*?<\/script>/g,'');
  const isolate=`function(){const persistentMount=FS.mount;FS.mount=function(type,options,mountpoint){return persistentMount.call(FS,type===IDBFS?MEMFS:type,options,mountpoint);};console.info('[tutorial] scene filesystem is temporary; saved scenes are untouched');}`;
  if(!runtime.includes('preRun: [],'))throw Error('Engine bootstrap changed: review tutorial filesystem isolation');
- const ephemeral='<base href="/"><script>window.vmeshAutoDiscover=false;</script>';
+ const release=fs.readFileSync(path.join(root,'version.txt'),'utf8').trim();
+ const ephemeral='<script id="pn-build-version">window.__pnBuildVersion='+JSON.stringify(release)+';</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>';
  fs.writeFileSync(path.join(viewerDir,'index.html'),runtime.replace('<head>','<head>'+ephemeral).replace('preRun: [],','preRun: ['+isolate+'],').replace('src="welcome.js"','src="welcome.js?v='+crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'welcome.js'))).digest('hex').slice(0,12)+'"'));
  const dir=path.join(base,'tutorials');fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'catalog.json'),JSON.stringify({version:1,items},null,2));
  for(const i of items){const entry=path.join(dir,i.id);fs.mkdirSync(entry,{recursive:true});fs.writeFileSync(path.join(entry,'index.html'),require('./tutorial_view_page.cjs')(i));}

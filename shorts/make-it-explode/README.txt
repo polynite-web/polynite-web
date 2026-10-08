@@ -1,12 +1,13 @@
-MAKE IT EXPLODE — Polynite
+Make it explode
 
-portrait.scene / short-portrait.mp4: vertical 9:16, 2160 x 3840, 60 fps.
-landscape.scene / short-landscape.mp4: horizontal 16:9, 3840 x 2160, 60 fps.
-Duration about 9.2 seconds; Maximum video quality, stereo AAC 320 kbps, impact limiter with headroom.
+short.scene / portrait.scene / landscape.scene: blue construction, illustrative AI command, explosion.
+tutorial.scene: construction and explosion without command UI.
+preview.scene: immediate explosion without construction or input.
 
-Blue-edge construction, illustrative AI command, EXPLODE, physical burst, smooth pullback and orbit, automatic Polynite ending. The prompt is an animation, not a live AI request.
+Masters: 4K 60fps, Maximum quality, stereo audio with headroom.
+The shared ending preset installs branding implicitly.
+AI COMMAND / PROMPT DEMO is illustrative and does not execute a live assistant call.
 
-Shared source: explosion-master.scene. short.scene includes the command. tutorial.scene adds construction without command UI. preview.scene starts directly on the explosion. Resolved scenes preserve generated settings.
-
-Regenerate: python render_shorts.py --publish-doc
-Uses your running native instance and restores its original scene. New presets require the updated engine.
+Regenerate: python render_shorts.py
+Uses your running native instance and restores the original scene.
+New presets require the updated engine.

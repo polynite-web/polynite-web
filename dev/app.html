@@ -943,7 +943,7 @@ body.scene-entry-ready #curtain {
     if (window.__spinVerFrozen) return window.__spinVerFrozen;
     var v;
     try {
-      if (typeof window.getCurrentVersion === "function") v = window.getCurrentVersion();
+      if (typeof window.getCurrentVersion === "function") v = window.__pnBuildVersion || window.getCurrentVersion();
       /* No localStorage fallback: that key is per ORIGIN, so a sibling app on
          the same host would hand us ITS version. ?_v or "dev" - the label is
          corrected by spinviewSetDisplayVersion once version.txt lands. */
