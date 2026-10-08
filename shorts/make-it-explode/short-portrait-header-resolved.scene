@@ -3426,6 +3426,20 @@
           "volume": 0.000196880006
         },
         "with": 0
+      },
+      {
+        "op": "sound",
+        "id": "signature-entrance",
+        "at": 8.07000019,
+        "dur": 0.2,
+        "lane": "audio",
+        "play": {
+          "synth": "text_appear",
+          "volume": 0.0008,
+          "duration": 0.2,
+          "fadein": 0.025,
+          "envelop": 16
+        }
       }
     ],
     "shadow_ao": 0.340000004,
@@ -3753,6 +3767,20 @@
         "volume": 0.000196880006
       },
       "with": 0
+    },
+    {
+      "op": "sound",
+      "id": "signature-entrance",
+      "at": 8.07000019,
+      "dur": 0.2,
+      "lane": "audio",
+      "play": {
+        "synth": "text_appear",
+        "volume": 0.0008,
+        "duration": 0.2,
+        "fadein": 0.025,
+        "envelop": 16
+      }
     }
   ],
   "version": 1

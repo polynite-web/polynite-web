@@ -70,6 +70,8 @@ try:
     if clip.get('asset')=='polynite-wordmark' and clip.get('branding_slot')=='outro':
      clip['box'][0]-=.05
      clip['box'][1]=.29
+   ending=next(c for c in resolved['seq'] if c.get('asset')=='polynite-wordmark' and c.get('branding_slot')=='outro')
+   resolved['seq'].append({'op':'sound','id':'signature-entrance','at':ending['at']+.02,'dur':.20,'lane':'audio','play':{'synth':'text_appear','volume':.0008,'duration':.20,'fadein':.025,'envelop':16}})
    resolved['initial']['seq']=copy.deepcopy(resolved['seq'])
    film('load_document',document=resolved,start_paused=True)
    (OUT/(scene_name+'.scene')).write_text(json.dumps(resolved,indent=2))
