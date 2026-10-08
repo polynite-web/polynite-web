@@ -25,14 +25,11 @@ def signature(seq,end):
         clip['deg']*=clip['dur']/old_duration
         break
     seq.append({'op':'hold','at':end,'dur':0,'end_film':True})
-    seq.extend([
-      {'op':'sound','at':0,'dur':.28,'lane':'audio','branding_slot':'intro','play':{'synth':'text_appear','volume':.00013,'duration':.28,'envelop':16,'fadein':.025}},
-      {'op':'text','asset':'polynite-wordmark','text':'polynite.io','mode':'screen','box':[.25,.36,.50,.14],'at':end,'dur':1.1,'in':.25,'out':.2,'fx':'fade','glow':.7,'hold_on_black':1,'branding_slot':'outro','branding_tail':1.1,'branding_dim':.75,'branding_fade_lead':.35,'branding_fade_duration':.65},
-      {'op':'sound','at':end+1.1-.65,'dur':.65,'lane':'audio','branding_slot':'outro','play':{'synth':'polynite_signature','volume':.000196875,'duration':.65,'envelop':8,'fadein':.015}}])
+
 def title(text,dur=2):return {'op':'text','text':text,'mode':'screen','box':[.12,.12,.76,.16],'at':0,'dur':dur,'in':dur*.56,'out':dur*.44,'fx':'type','thickness':.035,'glow':.025,'color':[.9,.98,1,1]}
 references=json.loads((ROOT/'public-site-src/tutorial-rendered.json').read_text());reference=next(r for r in references if r['id']=='block-explosion');base=json.loads((ROOT/reference.get('media','/docs/media/tutorials/r1/').lstrip('/')/reference['scene']).read_text())
 initial=copy.deepcopy(base['initial'])
-initial.update(model_hidden=1,scene_only=1,scene_text=[],cr_enable=0,bd_enable=0,film_output_volume=.65,film_sound_volume=.55,film_audio_appear=.15,film_music_volume=0,film_sounds_fade_at=-1,film_fade=0,cam_yaw=.55,cam_pitch=.5,cam_dist=6,tgt_x=0,tgt_y=1,tgt_z=0,floor_mirror=.12,bg={'r':.015,'g':.02,'b':.03,'a':1},sky_on=0,star_on=0,cloud_on=0,fog_density=0)
+initial.update(model_hidden=1,scene_only=1,scene_text=[],cr_enable=0,bd_enable=0,film_output_volume=.65,film_sound_volume=.55,film_branding_mode=0,film_audio_appear=.15,film_music_volume=0,film_sounds_fade_at=-1,film_fade=0,cam_yaw=.55,cam_pitch=.5,cam_dist=6,tgt_x=0,tgt_y=1,tgt_z=0,floor_mirror=.12,bg={'r':.015,'g':.02,'b':.03,'a':1},sky_on=0,star_on=0,cloud_on=0,fog_density=0)
 palette=[[.12,.8,.9],[.9,.4,.65],[.95,.72,.22]]
 geo={}
 for y in range(7):
@@ -42,8 +39,7 @@ tower=copy.deepcopy(initial);tower.update(geo=geo,physics={'version':1,'enabled'
 seq=[{'op':'camera','at':0,'dur':0,'dist':6,'pitch':22,'yaw':30},{'op':'orbit','at':0,'dur':3.5,'deg':28},title('BUILD SOMETHING')];signature(seq,3.5)
 scenes=[('colourful-tower',{'version':1,'model':'','initial':tower,'seq':seq})]
 burst=copy.deepcopy(initial);burst.update(geo=base['initial']['geo'],physics=base['initial']['physics'],cam_dist=7)
-blast_title=title('EXPLODE',2);blast_title.update(color=[1,.42,.08,1],mode='ring',radius=1.2,radius_to=2.7,size=.32,height=1.15,tilt=-10,camera_follow=1,turns=.26,exit='spatial_type',exit_position=65,exit_softness=.8,exit_direction='left',opacity_out=.4,opacity_in=.5)
-blast_title['in']=.72;blast_title['out']=1.28
+blast_title={'op':'text','text':'EXPLODE','at':0,'preset':'dramatic-title-v1'}
 # Trigger relative to the text's exit, so later typography edits keep the sync.
 blast_at=1.157
 freeze_at=blast_at+.55;resume_at=freeze_at+1.8
@@ -54,7 +50,7 @@ letters['scene_text'][0].update(style='title',appearance='none',height=.5,size=.
 seq=[{'op':'camera','at':0,'dur':0,'dist':4,'pitch':15,'yaw':30},{'op':'orbit','at':0,'dur':4,'deg':13.333333}];signature(seq,4)
 scenes.append(('orbiting-letters',{'version':1,'model':'','initial':letters,'seq':seq}))
 status=film('status');assert status.get('branding',{}).get('outro_tail_supported'),'Reload the updated native engine before rendering the black outro'
-assert status.get('branding',{}).get('text_spatial_exit_supported'),'Reload the updated native spatial text engine'
+assert status.get('branding',{}).get('preset_supported'),'Reload the updated native spatial text engine'
 physics=rpc('scene.physics','status')
 assert not status['playing'] and not status['export']['active']
 assert not physics['body_count'] or physics['paused'],'Pause physics before rendering'
@@ -64,9 +60,11 @@ report=[]
 try:
  for name,document in scenes:
   document['title']=name.replace('-',' ').title()
+  film('load_document',document=document,start_paused=True)
+  film('set_branding',preset='polynite-ending-v1')
+  document=film('document')
   raw=json.dumps(document,separators=(',',':')).encode();scene_name=name+'-'+hashlib.sha256(raw).hexdigest()[:12]+'.scene'
   (OUT/scene_name).write_bytes(raw)
-  film('load_document',document=document,start_paused=True)
   film('record',directory=str(REPORT),name=name,format='landscape',resolution=720,fps=60,watermark=1,thumbnails=0)
   until=time.monotonic()+100
   while film('status')['export']['active']:
