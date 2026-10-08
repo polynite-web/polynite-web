@@ -1,0 +1,350 @@
+{
+  "version": "v0261",
+  "format": 1,
+  "files": {
+    "85ef0b560cb79cf375d6f23d3891180c.txt": {
+      "bytes": 34,
+      "sha256": "809b90af61277ce74c3029dea5ada5993f91a6e727fd092744912a943407461f"
+    },
+    "app.js": {
+      "bytes": 332696,
+      "sha256": "cd39a03b64248b51193c38627eecbdc6eddf0bfd679df7884b647031659e6191"
+    },
+    "app.wasm": {
+      "bytes": 3765653,
+      "sha256": "244fd56a1a1c53f7c51bb813dcc76c45251e3ca65e76922f4c92ef9f7e897b53"
+    },
+    "backend.js": {
+      "bytes": 403,
+      "sha256": "a3409bcbec4b421267790b93c5900eec91852c453b2b66546b3b89dfd2a56279"
+    },
+    "fs_assets.js": {
+      "bytes": 5996,
+      "sha256": "a9b2c1be540c11a129daee4dfcb716a66aa6b6e7f5b0b75a5a7ca3ae7af973db"
+    },
+    "remote_panel.js": {
+      "bytes": 4953,
+      "sha256": "c34a0a18eb53ecfcdb0215a18f31d4a909623a82dee323fd5bb653a30d284a5a"
+    },
+    "remote_relay.js": {
+      "bytes": 5231,
+      "sha256": "2958f73e4e10b975a7390ca9aa727047fb140423252d806dacf065e0bb323579"
+    },
+    "robots.txt": {
+      "bytes": 217,
+      "sha256": "9ec94c98dee9dc82340479a469d5835395950f25a4c59828e69cb1ea210f4c7d"
+    },
+    "sound_bus.js": {
+      "bytes": 213836,
+      "sha256": "a28c3fad25af83dd978d35d2671bd512a8227e4fb40098f1ab71d1583febf244"
+    },
+    "startup_profile.js": {
+      "bytes": 7232,
+      "sha256": "87320ed7ac09355a43eb7cbbb0d9e6ef847b8c4bf85ca634e7054697f6aef07b"
+    },
+    "sw.js": {
+      "bytes": 1492,
+      "sha256": "0d65f7598548ac6fe81c2218e983be842c4429001c9c74985142f9153565d491"
+    },
+    "tier.txt": {
+      "bytes": 9,
+      "sha256": "4e849abdc801751949bcd426f3a46ebe35fce480733d743d97b57118b044195d"
+    },
+    "version.js": {
+      "bytes": 5475,
+      "sha256": "78db6b1cb4607babaeeebf3f0e79672947661c1cd2f508fe2a48e58cf91b93b1"
+    },
+    "version.txt": {
+      "bytes": 7,
+      "sha256": "ccf3e1e5be7b158c55100ee1e4fbb1d05e384819544ada6223aea811bc23aa1e"
+    },
+    "webgpu_bindgroup_guard.js": {
+      "bytes": 1576,
+      "sha256": "6c4bfb2992a06dd831675425227156f6d93b946fde41d1ac3094e35688426eff"
+    },
+    "welcome.css": {
+      "bytes": 8376,
+      "sha256": "4f80548ecee667005bb5e11bff310446cafcd0c823b6d958800ee5567f27f316"
+    },
+    "welcome.js": {
+      "bytes": 9025,
+      "sha256": "df17499609eae49dae0df2e783c887dd7b76f2fcd36674668de467f4a47d82f2"
+    },
+    "app.html": {
+      "bytes": 82301,
+      "sha256": "53964aeab9f045043a5715aee3ad5464168d592aaf9ad99b9500421071f7c4bb"
+    },
+    "Rc/defaults/app.json": {
+      "bytes": 312,
+      "sha256": "84d3dd4affb022e5e29198e8215bc66ee15ec26df5e50a424d8366e7cb4e9435"
+    },
+    "Rc/font/legacy_clean.sdffont.json": {
+      "bytes": 51132,
+      "sha256": "f1b00a9335a32245d19e98e4aca09be7cb318e0ba7d890e9df8e656e7534bb72"
+    },
+    "Rc/font/numeris_ancient_tech_v2.sdffont.json": {
+      "bytes": 113243,
+      "sha256": "442f4783ddc4c04e34700accafd6875a29dc081b449f9e9fea013587ba580ce9"
+    },
+    "Rc/font/numeris_cosmic.sdffont.json": {
+      "bytes": 114315,
+      "sha256": "0c26ec9184341fa7e11c2bbceb2e2afdaedc71721447560616a8e44b0af0462f"
+    },
+    "pane/options.pane": {
+      "bytes": 16100,
+      "sha256": "6a36a13a8f9bdc0f3db51e253cfc73c962bda80e38fa6d2083d81ca418743484"
+    },
+    "layout/current layout.layout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "layout/layout.json": {
+      "bytes": 308,
+      "sha256": "975ed81643ecf48449ec2b29ec97bf48b4cee3099e363d2165013d99d864ff1f"
+    },
+    "layout/test.layout": {
+      "bytes": 1855,
+      "sha256": "fd2df57385775c1d4ea127bfee7f824ebc45b9e912884f2b85cffa7bd6ea6bff"
+    },
+    "layout/test2.layout": {
+      "bytes": 1247,
+      "sha256": "92da4a864fdd2016802cb2528b69571059f766972d8ede483ea704b13a12ff62"
+    },
+    "assets/apple-touch-icon.png": {
+      "bytes": 14369,
+      "sha256": "ee7fbdaedf0b0fd2cf281641ea19a1d4746fcdf0be8522ffdc021c040aeee77f"
+    },
+    "assets/banner/19655f65-27ac-46e1-b354-4666f73ed6f7.png": {
+      "bytes": 1737402,
+      "sha256": "ee25ee5203eb199b9878e5a965854b4e2ad091c4ec0add32f1762c3141aa3008"
+    },
+    "assets/banner/51c6aefa-56f6-4fa8-b128-0cd03d2f3af1.png": {
+      "bytes": 1746940,
+      "sha256": "5ff0b06278f64fca921f38c44bad609c6835332df72243559ce4518f7d0efb22"
+    },
+    "assets/banner/8b171b9e-a919-4f51-be1b-3125c50ff3a7.png": {
+      "bytes": 2320097,
+      "sha256": "8a5622c8c79d6019be969b63a31de9ff1c0ab95317e69a5ec4fa08dc803ec2f9"
+    },
+    "assets/banner/9390f6a2-261a-4888-8aeb-8feb39f05c78.png": {
+      "bytes": 1796672,
+      "sha256": "a6580940a53ef4268faebe027670ac9149c600fcf9dab6a7f45d6decd2463b65"
+    },
+    "assets/banner/aaefd092-0287-492f-a489-cd7677e28819.png": {
+      "bytes": 1703650,
+      "sha256": "41962788f431a7b1936e1c13cd2e551766bb0d5fc8a8f8ce2e9c1418e37764d0"
+    },
+    "assets/banner/banner.png": {
+      "bytes": 1497209,
+      "sha256": "2edc9c244c5ba8cd340dcfbb1c7e9920a4f1026b303106636cf88e3f42118e6f"
+    },
+    "assets/banner/banner2.png": {
+      "bytes": 1617627,
+      "sha256": "abb112bad0302ef18de46c71b85bef0b9cd38a8888c6d77579ed106f321b6227"
+    },
+    "assets/banner/banner3.png": {
+      "bytes": 1630049,
+      "sha256": "ca5da6e81ecfc630e270b0359cc9304763cce67365731fae102a388be9f2f303"
+    },
+    "assets/banner/banner4.png": {
+      "bytes": 1875407,
+      "sha256": "78890dbe11130d02bc1455a31ecdf4d7ec656f95fd183884de91d3f58bebb490"
+    },
+    "assets/banner/banner5.png": {
+      "bytes": 1809835,
+      "sha256": "ee945c90e68eefcf9e45236a63abb335e19c4c9c5de49d48ad85554b903e00f6"
+    },
+    "assets/banner/banner6.png": {
+      "bytes": 1771310,
+      "sha256": "46bd118857dd335b6a94cf235e491a6023424d25e7caffdcad9ce82b1f5ceddf"
+    },
+    "assets/banner/banner7.png": {
+      "bytes": 2298274,
+      "sha256": "b369ddcc07c5195623d45735a874f8f095b1d1b2e67b4bbd181d07a4eca3a48a"
+    },
+    "assets/banner/banner8.png": {
+      "bytes": 2274934,
+      "sha256": "7ec62ade8dd29b26e97f009faa070440d41cca1f8d77ca41914adeb66db21636"
+    },
+    "assets/banner/banner9.png": {
+      "bytes": 2203757,
+      "sha256": "9c9a155d009b302d103aaf47ec3521ec459580b709cc3fb34294c0f801d3a366"
+    },
+    "assets/banner/banner_test.png": {
+      "bytes": 1507393,
+      "sha256": "ccde478c1c8bed70ea5b819fd1f918dd2385482e76f71845466bf66465826332"
+    },
+    "assets/banner/banner_test2.png": {
+      "bytes": 1505436,
+      "sha256": "e931fdfb691de21943f70f7593bd829fc75d88c810ee8c91f8e37cd92b806b04"
+    },
+    "assets/banner/bba69a76-9255-41dc-bbd4-f664e069ac82.png": {
+      "bytes": 2138106,
+      "sha256": "9fdaaca6a2805f4ee62e0ea2c9895c1886cca243075daa4b9c886a75b0a09928"
+    },
+    "assets/banner/best.png": {
+      "bytes": 1896990,
+      "sha256": "93e8a779770e2ed348138ed59b62b669f983eb25a42e971657ca6e28292e18d7"
+    },
+    "assets/banner/best1.png": {
+      "bytes": 1819765,
+      "sha256": "f58c41890109efabe46517189b8cb0178c4377e7c74e58f95b70b463940ceea5"
+    },
+    "assets/banner/best2.png": {
+      "bytes": 1682146,
+      "sha256": "59de96ccedd412b04722bacec1c3715f23bb1385811e901e6feb4f1bf405244f"
+    },
+    "assets/banner/d80d5850-1220-433c-abbd-29481a2ac41a.png": {
+      "bytes": 1795647,
+      "sha256": "ee0fc1893df6830d623b714d303c8700b2254811ab96c3cec806b98d55380b10"
+    },
+    "assets/banner/ea7dcd12-e360-4ba3-b0bd-2bb71fe0f6c3.png": {
+      "bytes": 2044564,
+      "sha256": "7734ba4d4e7e3b4d2273a3a1ff7f4c46fc9a20884a354be6f30c3aa52fde8a6e"
+    },
+    "assets/banner/polynite_anime.jpg": {
+      "bytes": 2123453,
+      "sha256": "5bbc8ae7ab880cd811538b95254c2a1759a8b804b157b3be4f7ae083fa723240"
+    },
+    "assets/banner/polynite_anime.png": {
+      "bytes": 10822667,
+      "sha256": "209d6d0909cf6ab06e79037ab47135166452d711d4f60a6f056d4c49e5a4733e"
+    },
+    "assets/banner/polynite_anime2.jpg": {
+      "bytes": 1625288,
+      "sha256": "d0a3b5dd63571d18a003f21c7b68c98718345a058bb0739c201572258496c0d0"
+    },
+    "assets/banner/polynite_realesrga.png": {
+      "bytes": 14778160,
+      "sha256": "d095d26adb578ab2bccc2277ba50eb6d65b8c592917057ae9926a05cb9ddd7c6"
+    },
+    "assets/banner/polynite_realesrnet-.png": {
+      "bytes": 9751106,
+      "sha256": "22b1a8bb6304d950e8edf143cef533dbba6f589de9c63b3ea8d5e55f8ed6b5b3"
+    },
+    "assets/card-wordmark.png": {
+      "bytes": 16784,
+      "sha256": "52b278aa4d269fd29122d0b22d958f01d9ec8336a50e77867b2015282e4464c3"
+    },
+    "assets/favicon-32.png": {
+      "bytes": 1288,
+      "sha256": "553b6388e986f4c7e1b0c3a2e51f8bf0a3a51e48d04b139b8dcc64af6e0576b1"
+    },
+    "assets/favicon.ico": {
+      "bytes": 4238,
+      "sha256": "e82671cbbf0334e6d30a277dd77a4f67ff7b0b320590eeba3802d447af0c64c3"
+    },
+    "assets/favicon_polynite.png": {
+      "bytes": 216634,
+      "sha256": "26a1c7b9bfc1eeb4fbfdb8e308463aed01bc8d9b35676ecba1d9b70f3e870a2b"
+    },
+    "assets/favicon_polynite_black.png": {
+      "bytes": 891687,
+      "sha256": "0f6af6233308de05c3b8d5f9bd8a23b5ccd88304f5d0b7a2f6494b54f0a737dc"
+    },
+    "assets/favicon_polynite_orie.png": {
+      "bytes": 451484,
+      "sha256": "13ea493c7c63894c49bff2d3161fa5e92812e712159314da9fec0e249b952208"
+    },
+    "assets/icon-192-maskable.png": {
+      "bytes": 8749,
+      "sha256": "f883fd923aae1b5da0a7a71da90a9c4efe82efab82d48bb20f2d758d194afd04"
+    },
+    "assets/icon-192.png": {
+      "bytes": 13278,
+      "sha256": "e82f4468dffc97ded5daa4bd1a9f077e9e6dfb05dcc6e1d9a38fafb82edd7e76"
+    },
+    "assets/icon-512-maskable.png": {
+      "bytes": 48339,
+      "sha256": "cbb3987324a2371fa14f61dcea8f6a914d233a9bdb7c029db50ec21dab03cfb7"
+    },
+    "assets/icon-512.png": {
+      "bytes": 100677,
+      "sha256": "2f1fa508331faec6beb9319873e779438b68a39114152d8d26ddedef02e9ced2"
+    },
+    "assets/icon-96.png": {
+      "bytes": 3842,
+      "sha256": "29468a93f730756c3a0f16f4abe7918860927dec5ecc28cedc636964cb3388c9"
+    },
+    "assets/og-cover.png": {
+      "bytes": 98427,
+      "sha256": "6913910cccf38fa1e0dd17c6b82445bc7b90f6fe6166a0fac89a56ae92725057"
+    },
+    "assets/og-create-view-share-v2.png": {
+      "bytes": 98427,
+      "sha256": "6913910cccf38fa1e0dd17c6b82445bc7b90f6fe6166a0fac89a56ae92725057"
+    },
+    "assets/og-procedural-v1.png": {
+      "bytes": 98591,
+      "sha256": "f7afe8774b3e799ee8b4c215deb5dbb195ccd141d0c90b272310d0cc745d03d7"
+    },
+    "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
+      "bytes": 1229851,
+      "sha256": "312c8fd847e58a116351ed2ee62d412c47c3c217b500cc3694a2e971a2e0f672"
+    },
+    "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d.png": {
+      "bytes": 1229851,
+      "sha256": "312c8fd847e58a116351ed2ee62d412c47c3c217b500cc3694a2e971a2e0f672"
+    },
+    "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d_flipy.png": {
+      "bytes": 1487508,
+      "sha256": "fbb9609147f3a77d33d745fbf8206ae144993937be8e2361a248f1d5e4a1efd9"
+    },
+    "assets/Polynod/54443e07-44ec-4028-b494-8c9ffedde25e.png": {
+      "bytes": 416697,
+      "sha256": "4fea3a2c270f2c7c6186c74865e57b1b0a4283aa39bb9dcdb966792dc72fb45d"
+    },
+    "assets/Polynod/7e960067-cd61-497d-9190-b8bc04c1168d.png": {
+      "bytes": 1202951,
+      "sha256": "60f6b175187b1cd6d1f3ac0754218982906da5ccfd59a0e4cd279202f036cc4c"
+    },
+    "assets/Polynod/8cb3a62d-4ab2-4e5d-ac85-3f5b225d84a8.png": {
+      "bytes": 1168160,
+      "sha256": "7cb338853cc854c1b9c9b6366d3bd411de59036546ff4fe1f1f1e10a6418e4cd"
+    },
+    "assets/Polynod/f5e21825-7d90-40ef-91ad-e3381037070f.png": {
+      "bytes": 1177564,
+      "sha256": "cabe0815c396ad2f481b6e9033ff0f689bf5d665486e131472bc9cdf84546074"
+    },
+    "assets/Polynod/og-cover.png": {
+      "bytes": 64896,
+      "sha256": "ed45349f7c6169fd99aa88cd94c15438fb05cec2526925888857f36333f6ab4e"
+    },
+    "assets/public-site/chrome-8a38b3493a58.css": {
+      "bytes": 3131,
+      "sha256": "8a38b3493a58c7bd892687de048698f576bf63f278ee6af5844e3f5c33d21e51"
+    },
+    "assets/public-site/chrome.css": {
+      "bytes": 3131,
+      "sha256": "8a38b3493a58c7bd892687de048698f576bf63f278ee6af5844e3f5c33d21e51"
+    },
+    "assets/public-site/style-7014082f4d65.css": {
+      "bytes": 3714,
+      "sha256": "7014082f4d65308c4a973c0e5486730979dc663dc7b538f55657446f7f5f17b5"
+    },
+    "assets/public-site/style-7c97aa645816.css": {
+      "bytes": 5967,
+      "sha256": "7c97aa6458169de242ea062a0bb510cdc6cb2d282ea4b3c29da86ebe27410fe6"
+    },
+    "assets/public-site/style-b0ee83d09777.css": {
+      "bytes": 6198,
+      "sha256": "b0ee83d0977700477eca70b9f598b2aa59a7ca1c72c51f11d4f6fcc0bb5719c2"
+    },
+    "assets/public-site/style.css": {
+      "bytes": 6198,
+      "sha256": "b0ee83d0977700477eca70b9f598b2aa59a7ca1c72c51f11d4f6fcc0bb5719c2"
+    },
+    "assets/public-site/tutorials-67c92c3e7bd7.js": {
+      "bytes": 3065,
+      "sha256": "67c92c3e7bd7b50c4918775f0bd120e535d5d9020551d730e8b35d83daafce6a"
+    },
+    "assets/seev/Seev_info.png": {
+      "bytes": 2008064,
+      "sha256": "bcf0cb0a8fe9ef6d30dc790e7cd23d98a757359ecea5e04fd3942170b07de601"
+    },
+    "assets/seev/Seev_info2.png": {
+      "bytes": 1709085,
+      "sha256": "0d78ce8e0d74786d845736d6d90458b22218de1c3db73d83152d81b5e21df861"
+    }
+  }
+}
