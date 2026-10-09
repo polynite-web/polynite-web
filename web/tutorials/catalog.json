@@ -32,6 +32,39 @@
       "sha256": "e637143ca8eb07f7d778fa6979a8e56848a57f9326320d8b41cb2851b5f31d5c"
     },
     {
+      "id": "brick-wall",
+      "portrait": true,
+      "steps": [
+        "Watch the ball make a breach through the wall, with each chain link simulated independently.",
+        "Open Scene settings and choose Doux, Percée or Démolition.",
+        "Adjust impact speed, ball mass, brick mass, release angle or friction. Changes return the construction to its starting pose, paused.",
+        "Use Replay to run the existing sequence with the new values, without recording.",
+        "Save scene keeps your settings and the sequence for later.",
+        "Ask your assistant to add different custom controls to another scene: each scene owns its own panel."
+      ],
+      "control": {
+        "operation": "settings_set",
+        "action_id": "replace-with-a-fresh-uuid",
+        "values": {
+          "impact_speed": 7,
+          "ball_mass": 100
+        }
+      },
+      "control_note": "This changes the impact settings of the opened scene and returns it to the start, paused. Use settings_replay to compare the result. These controls require an updated Polynite viewer.",
+      "revision": 35,
+      "title": "Break through a brick wall",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "A physical chain, procedural bricks and an impact you can tune.",
+      "prompt": "Build a brick wall and swing a wrecking ball on a physical chain through it. Add scene controls for impact speed, masses, release angle and friction, with gentle, breach and demolition presets. Use procedural clay and reflective marble.",
+      "scene": "https://polynite.io/docs/media/tutorials/r35/brick-wall-2bd4d620a019.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r35/brick-wall.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r35/brick-wall-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r35/brick-wall.jpg",
+      "open": "https://polynite.io/tutorials/brick-wall/",
+      "sha256": "2bd4d620a019d147f8219affce20609e3265a5d28733e468d656e35607ccf8b2"
+    },
+    {
       "id": "orbiting-letters",
       "revision": 33,
       "title": "Words in orbit",

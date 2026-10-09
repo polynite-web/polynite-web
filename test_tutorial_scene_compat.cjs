@@ -48,3 +48,12 @@ assert.equal(oldCurve.seq[0].radius,.9);assert.equal(flatter.seq[0].curvature,.1
 console.log('PASS: older viewers open flattened-title scenes using resolved parameters without unsupported presets');
 
 assert.equal(oldCurve.seq[0].exit,"type");assert.ok(oldCurve.seq[0].out>=.25);
+
+const {preserveTutorialControls}=require('./tutorial_scene_compat.cjs');
+const controlsReference={initial:{scene_controls:{version:1,controls:{mass:{value:70}}}}};
+const restoredControls=preserveTutorialControls({geo:{ball:{}}},controlsReference);
+assert.equal(restoredControls.scene_controls.controls.mass.value,70);
+restoredControls.scene_controls.controls.mass.value=90;
+assert.equal(controlsReference.initial.scene_controls.controls.mass.value,70);
+assert.equal(preserveTutorialControls({scene_controls:{version:1,controls:{mass:{value:100}}}},controlsReference).scene_controls.controls.mass.value,100);
+console.log('PASS: legacy downloads preserve custom controls; current edited controls take precedence');

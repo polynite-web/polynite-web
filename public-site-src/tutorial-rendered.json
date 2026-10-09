@@ -75,5 +75,12 @@
     "media": "/docs/media/tutorials/r34/",
     "scene": "domino-chain-e3aaaef09548.scene",
     "video": "domino-chain.mp4"
+  },
+  {
+    "id": "brick-wall",
+    "revision": 35,
+    "media": "/docs/media/tutorials/r35/",
+    "scene": "brick-wall-2bd4d620a019.scene",
+    "video": "brick-wall.mp4"
   }
 ]

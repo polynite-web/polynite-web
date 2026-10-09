@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path');
 const {esc}=require('./site_metadata.cjs');
-const {prepareTutorialDocument,restoreTutorialCues}=require('./tutorial_scene_compat.cjs');
+const {prepareTutorialDocument,restoreTutorialCues,preserveTutorialControls}=require('./tutorial_scene_compat.cjs');
 module.exports=function tutorialViewPage(i){
  const version=fs.readFileSync(path.join(__dirname,'version.txt'),'utf8').trim();if(!/^v\d{4,6}$/.test(version))throw Error('Invalid engine release');
  const script=fs.readFileSync(path.join(__dirname,'public-site-src/tutorial-view.js'),'utf8');
@@ -9,6 +9,7 @@ module.exports=function tutorialViewPage(i){
  </style></head><body data-scene="${esc(new URL(i.scene).pathname)}" data-title="${esc(i.title)}" data-id="${esc(i.id)}" data-ending-preview="${i.preset==='polynite-ending-v4'}"><header><a href="https://explore.polynite.io/docs/#examples" aria-label="Back to tutorials">← Tutorials</a><strong>${esc(i.title)}</strong><button id="replay" disabled>Play</button><button id="pause" disabled>Pause</button><button id="save" disabled>Save scene</button><details><summary aria-label="Scene options">⋯</summary><div class="menu"><button id="reset" disabled>Reset scene</button><a href="${i.scene}" download>Download original scene</a>${i.steps?`<details class="guide"><summary>Tutorial steps</summary><ol>${i.steps.map(step=>`<li>${esc(step)}</li>`).join('')}</ol></details>`:''}<p>This is your own temporary copy. Save it to keep your changes.</p></div></details></header><p id="status" role="status">Loading scene…</p><iframe src="/tutorial-view/?tutorial_view=1&amp;_v=${version}" title="Polynite interactive tutorial"></iframe><script>
  ${prepareTutorialDocument.toString()}
  ${restoreTutorialCues.toString()}
+ ${preserveTutorialControls.toString()}
  ${script}
  </script></body></html>`;
 };

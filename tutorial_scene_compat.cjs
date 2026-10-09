@@ -26,4 +26,9 @@ function restoreTutorialCues(seq, reference, includeOutro) {
   }
   return copy;
 }
-module.exports = {prepareTutorialDocument, restoreTutorialCues};
+function preserveTutorialControls(initial, reference) {
+  const copy = structuredClone(initial);
+  if (!copy.scene_controls && reference.initial?.scene_controls) copy.scene_controls = structuredClone(reference.initial.scene_controls);
+  return copy;
+}
+module.exports = {prepareTutorialDocument, restoreTutorialCues, preserveTutorialControls};
