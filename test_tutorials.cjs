@@ -4,5 +4,8 @@ for(const item of catalog.items){assert.ok(['Beginner','Intermediate','Advanced'
 const docs=fs.readFileSync(path.join(root,'docs/index.html'),'utf8');assert.ok(docs.includes('tutorial-player'));assert.ok(!docs.includes('title.mp4'));assert.ok(docs.includes('data-copy'));assert.ok(docs.includes('data-filter'));
 console.log('PASS: shared catalogue, scene hashes, hidden model safety, managed signatures, media references and playable entries');
 
-for(const item of catalog.items){assert.ok(item.prompt.length<300,'Public tutorial prompt grew too large');assert.ok(!/signature|branding|fade_lead|spatial_type/i.test(item.prompt),'Public prompt must describe the creation, not the export identity');}
+for(const item of catalog.items){assert.ok(item.prompt.length<300,'Public tutorial prompt grew too large');if(item.id!=='ending-signature')assert.ok(!/signature|branding|fade_lead|spatial_type/i.test(item.prompt),'Creation prompts keep export identity implicit');}
 console.log('PASS: short tutorial prompts keep branding implicit');
+
+for(const id of ['three-shapes','falling-blocks','camera-reveal','command-input','ending-signature','record-mp4','forest-rain','domino-chain']){const i=catalog.items.find(i=>i.id===id);assert.ok(i?.steps?.length>=3,'Missing teaching steps: '+id);}
+assert.equal(catalog.items.find(i=>i.id==='command-input').preset,'command-input-v2');assert.equal(catalog.items.find(i=>i.id==='ending-signature').preset,'polynite-ending-v4');

@@ -45,6 +45,196 @@
       "poster": "https://polynite.io/docs/media/tutorials/r33/orbiting-letters.jpg",
       "open": "https://polynite.io/tutorials/orbiting-letters/",
       "sha256": "6c79ac852832d5a0a5f90d3f1a5b6c4bf1cfce8eca7a53b28996e2566a84a9cf"
+    },
+    {
+      "id": "three-shapes",
+      "steps": [
+        "Create three objects and compare their silhouettes.",
+        "Ask: Make the sphere larger and change the cube to purple.",
+        "Use Save scene to download a .scene file. Reopen it later to keep editing."
+      ],
+      "revision": 34,
+      "title": "Your first three shapes",
+      "level": "Beginner",
+      "topic": "creation",
+      "description": "Create, recolour and resize three simple objects.",
+      "prompt": "Create a cyan cube, a pink sphere and a golden cone side by side. Let them appear with blue edges and slowly orbit the camera.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/three-shapes-e07953f6e124.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/three-shapes.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/three-shapes-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/three-shapes.jpg",
+      "open": "https://polynite.io/tutorials/three-shapes/",
+      "sha256": "e07953f6e124919b0f9275d381c11f0767ffa6a4d809a5f73cc7f70ac6bb7946"
+    },
+    {
+      "id": "falling-blocks",
+      "steps": [
+        "Create the objects with dynamic physics.",
+        "Start the simulation and listen to the impacts.",
+        "Pause to inspect a collision, then resume. Reset returns to the starting poses."
+      ],
+      "revision": 34,
+      "title": "Let gravity do the work",
+      "level": "Beginner",
+      "topic": "physics",
+      "description": "Watch blocks and balls fall, bounce and settle.",
+      "prompt": "Create a small stack of colourful blocks and balls above the ground. Let them fall with realistic collisions and subtle impact sounds.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/falling-blocks-6cb2e3d99f35.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/falling-blocks.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/falling-blocks-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/falling-blocks.jpg",
+      "open": "https://polynite.io/tutorials/falling-blocks/",
+      "sha256": "6cb2e3d99f358318c4cbbd1d6d58120bf247fa3866c439e96c34ef0ccd5bd8ce"
+    },
+    {
+      "id": "camera-reveal",
+      "steps": [
+        "Frame the subject close without cutting it off.",
+        "Pull back, then blend smoothly into the orbit.",
+        "Ask: Show it from the other side, keeping the motion smooth."
+      ],
+      "revision": 34,
+      "title": "A closer look",
+      "level": "Beginner",
+      "topic": "camera",
+      "description": "Move from a close detail to a smooth wider orbit.",
+      "prompt": "Create a small colourful sculpture. Start the camera close, slowly pull back to reveal it and blend into a gentle orbit.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/camera-reveal-36e94a49d78d.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/camera-reveal.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/camera-reveal-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/camera-reveal.jpg",
+      "open": "https://polynite.io/tutorials/camera-reveal/",
+      "sha256": "36e94a49d78dd20369a22255f18a30c2d80b40551a67722d65db9606657830db"
+    },
+    {
+      "id": "command-input",
+      "steps": [
+        "The command field is an illustrative film overlay; it does not contact an AI.",
+        "Typing and validation sounds come from command-input-v2.",
+        "The scene change is authored in the same timeline, after validation."
+      ],
+      "preset": "command-input-v2",
+      "control": {
+        "command": "replace",
+        "seq": [
+          {
+            "op": "hold",
+            "at": 0,
+            "dur": 4
+          },
+          {
+            "op": "text",
+            "preset": "command-input-v2",
+            "text": "Make it blue",
+            "at": 0.4
+          }
+        ]
+      },
+      "control_note": "This snippet adds the illustrative command field only. The blue colour change is a separate action in the downloadable scene.",
+      "revision": 34,
+      "title": "A command comes to life",
+      "level": "Intermediate",
+      "topic": "cinematic",
+      "description": "Animated typing, quiet cues and a glowing confirmation.",
+      "prompt": "Show an animated command field typing “Make it blue”, then validate it softly and turn the sculpture blue. Use command-input-v2.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/command-input-8a29fdbe2db9.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/command-input.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/command-input-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/command-input.jpg",
+      "open": "https://polynite.io/tutorials/command-input/",
+      "sha256": "8a29fdbe2db92574f68daa914359a89cbe6257b6030ae561932de3086063b27a"
+    },
+    {
+      "id": "ending-signature",
+      "steps": [
+        "Exports install the required signature automatically; creation prompts do not need to mention it.",
+        "For a custom ending, stop the film and install polynite-ending-v4.",
+        "Choose default or short-portrait placement and adjust volume. The fade, shine-only bloom and quiet cues stay together.",
+        "The signature remains required at export; paid removal is not enabled."
+      ],
+      "preset": "polynite-ending-v4",
+      "control": {
+        "command": "set_branding",
+        "preset": "polynite-ending-v4",
+        "layout": "short-portrait",
+        "volume": 0.5
+      },
+      "revision": 34,
+      "title": "Make the ending yours",
+      "level": "Intermediate",
+      "topic": "cinematic",
+      "description": "Keep the Polynite signature, choose its placement and soften its sound.",
+      "prompt": "Use polynite-ending-v4 for this film. Put the closing signature higher with the short-portrait layout and lower its sound volume to 0.5.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/ending-signature-ad2d66f2364d.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/ending-signature.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/ending-signature-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/ending-signature.jpg",
+      "open": "https://polynite.io/tutorials/ending-signature/",
+      "sha256": "ad2d66f2364d0ee079340280996e65d86c24560019aef009dcd4528f1336162e"
+    },
+    {
+      "id": "record-mp4",
+      "steps": [
+        "Prepare a film with the scene and camera moves. Save a .scene copy if you want to edit it later.",
+        "Record from the beginning; do not pre-play the film. Choose landscape or portrait and 30 or 60 FPS.",
+        "After recording, open Gallery > Videos. Preview with sound, then download the MP4 or use Open folder on desktop.",
+        "A .scene stays editable. An MP4 is the rendered movie. A Mint Link opens the interactive creation.",
+        "Download cloud videos you want to keep: uploaded MCP videos have seven-day retention."
+      ],
+      "revision": 34,
+      "title": "From scene to MP4",
+      "level": "Beginner",
+      "topic": "export",
+      "description": "Record a smooth film, preview it and keep your own copy.",
+      "prompt": "Record this scene from the beginning as a landscape MP4 at 1080p and 60 FPS. Keep the sounds subtle, then show me where to download the video.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/record-mp4-24555983cd5d.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/record-mp4.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/record-mp4-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/record-mp4.jpg",
+      "open": "https://polynite.io/tutorials/record-mp4/",
+      "sha256": "24555983cd5de457c4bc54fb1c4903e661d98377e4901c1020b169f80e01290f"
+    },
+    {
+      "id": "forest-rain",
+      "steps": [
+        "Keep the tree trunks and canopies static, with colliders.",
+        "Use dynamic bodies only for the falling shapes.",
+        "Test a small rain first, then increase the count.",
+        "Frame the whole forest so the collisions remain easy to follow."
+      ],
+      "revision": 34,
+      "title": "A forest under colourful rain",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "Static tree colliders meet falling spheres and cubes.",
+      "prompt": "Create a small stylised forest with solid trunks and canopies. Drop colourful spheres and cubes onto it, with collisions, subtle sounds and a slow camera orbit.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/forest-rain-b0773786b56e.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/forest-rain.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/forest-rain-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/forest-rain.jpg",
+      "open": "https://polynite.io/tutorials/forest-rain/",
+      "sha256": "b0773786b56ec579c13867bcd8418fc9304cd84ebf7ac18b9a6d8c858c1ca643"
+    },
+    {
+      "id": "domino-chain",
+      "steps": [
+        "Use thin upright blocks and leave enough space for one to touch the next as it falls.",
+        "Give only the first block an initial tilt and angular velocity.",
+        "Use Reset scene to replay from the authored poses.",
+        "Change the spacing or friction and compare how far the chain travels."
+      ],
+      "revision": 34,
+      "title": "One push, a chain reaction",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "A small impulse sends a row of coloured dominos tumbling.",
+      "prompt": "Create a row of colourful dominos. Give the first one a gentle push and let the chain reaction unfold. Keep the camera close enough to see every collision.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/domino-chain-e3aaaef09548.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/domino-chain.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/domino-chain-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/domino-chain.jpg",
+      "open": "https://polynite.io/tutorials/domino-chain/",
+      "sha256": "e3aaaef095485e7780bbbf74183dc5de5cadc85b886eebf1a8f95eb877e91d9e"
     }
   ]
 }

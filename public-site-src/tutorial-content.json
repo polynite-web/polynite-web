@@ -1,0 +1,160 @@
+[
+  {
+    "id": "colourful-tower",
+    "title": "A colourful tower",
+    "level": "Beginner",
+    "topic": "creation",
+    "description": "Start with 28 blocks, then make it your own.",
+    "prompt": "Create a tower with seven layers of four cubes. Use cyan, pink and yellow. Frame the whole tower and slowly orbit around it."
+  },
+  {
+    "id": "block-explosion",
+    "title": "A burst of colour",
+    "level": "Advanced",
+    "topic": "physics",
+    "description": "Launch, freeze the action, orbit and let it tumble.",
+    "prompt": "Create a colourful block explosion with a dramatic cinematic style."
+  },
+  {
+    "id": "orbiting-letters",
+    "title": "Words in orbit",
+    "level": "Intermediate",
+    "topic": "text",
+    "description": "A real 3D ring of letters around a simple shape.",
+    "prompt": "Create a cyan sphere and a golden 3D ring reading CREATE / VIEW / SHARE around it. Anchor the ring in world space, rotate it slowly and orbit the camera."
+  },
+  {
+    "id": "three-shapes",
+    "title": "Your first three shapes",
+    "level": "Beginner",
+    "topic": "creation",
+    "description": "Create, recolour and resize three simple objects.",
+    "prompt": "Create a cyan cube, a pink sphere and a golden cone side by side. Let them appear with blue edges and slowly orbit the camera.",
+    "steps": [
+      "Create three objects and compare their silhouettes.",
+      "Ask: Make the sphere larger and change the cube to purple.",
+      "Use Save scene to download a .scene file. Reopen it later to keep editing."
+    ]
+  },
+  {
+    "id": "falling-blocks",
+    "title": "Let gravity do the work",
+    "level": "Beginner",
+    "topic": "physics",
+    "description": "Watch blocks and balls fall, bounce and settle.",
+    "prompt": "Create a small stack of colourful blocks and balls above the ground. Let them fall with realistic collisions and subtle impact sounds.",
+    "steps": [
+      "Create the objects with dynamic physics.",
+      "Start the simulation and listen to the impacts.",
+      "Pause to inspect a collision, then resume. Reset returns to the starting poses."
+    ]
+  },
+  {
+    "id": "camera-reveal",
+    "title": "A closer look",
+    "level": "Beginner",
+    "topic": "camera",
+    "description": "Move from a close detail to a smooth wider orbit.",
+    "prompt": "Create a small colourful sculpture. Start the camera close, slowly pull back to reveal it and blend into a gentle orbit.",
+    "steps": [
+      "Frame the subject close without cutting it off.",
+      "Pull back, then blend smoothly into the orbit.",
+      "Ask: Show it from the other side, keeping the motion smooth."
+    ]
+  },
+  {
+    "id": "command-input",
+    "title": "A command comes to life",
+    "level": "Intermediate",
+    "topic": "cinematic",
+    "preset": "command-input-v2",
+    "description": "Animated typing, quiet cues and a glowing confirmation.",
+    "prompt": "Show an animated command field typing “Make it blue”, then validate it softly and turn the sculpture blue. Use command-input-v2.",
+    "steps": [
+      "The command field is an illustrative film overlay; it does not contact an AI.",
+      "Typing and validation sounds come from command-input-v2.",
+      "The scene change is authored in the same timeline, after validation."
+    ],
+    "control": {
+      "command": "replace",
+      "seq": [
+        {
+          "op": "hold",
+          "at": 0,
+          "dur": 4
+        },
+        {
+          "op": "text",
+          "preset": "command-input-v2",
+          "text": "Make it blue",
+          "at": 0.4
+        }
+      ]
+    },
+    "control_note": "This snippet adds the illustrative command field only. The blue colour change is a separate action in the downloadable scene."
+  },
+  {
+    "id": "ending-signature",
+    "title": "Make the ending yours",
+    "level": "Intermediate",
+    "topic": "cinematic",
+    "preset": "polynite-ending-v4",
+    "description": "Keep the Polynite signature, choose its placement and soften its sound.",
+    "prompt": "Use polynite-ending-v4 for this film. Put the closing signature higher with the short-portrait layout and lower its sound volume to 0.5.",
+    "steps": [
+      "Exports install the required signature automatically; creation prompts do not need to mention it.",
+      "For a custom ending, stop the film and install polynite-ending-v4.",
+      "Choose default or short-portrait placement and adjust volume. The fade, shine-only bloom and quiet cues stay together.",
+      "The signature remains required at export; paid removal is not enabled."
+    ],
+    "control": {
+      "command": "set_branding",
+      "preset": "polynite-ending-v4",
+      "layout": "short-portrait",
+      "volume": 0.5
+    }
+  },
+  {
+    "id": "record-mp4",
+    "title": "From scene to MP4",
+    "level": "Beginner",
+    "topic": "export",
+    "description": "Record a smooth film, preview it and keep your own copy.",
+    "prompt": "Record this scene from the beginning as a landscape MP4 at 1080p and 60 FPS. Keep the sounds subtle, then show me where to download the video.",
+    "steps": [
+      "Prepare a film with the scene and camera moves. Save a .scene copy if you want to edit it later.",
+      "Record from the beginning; do not pre-play the film. Choose landscape or portrait and 30 or 60 FPS.",
+      "After recording, open Gallery > Videos. Preview with sound, then download the MP4 or use Open folder on desktop.",
+      "A .scene stays editable. An MP4 is the rendered movie. A Mint Link opens the interactive creation.",
+      "Download cloud videos you want to keep: uploaded MCP videos have seven-day retention."
+    ]
+  },
+  {
+    "id": "forest-rain",
+    "title": "A forest under colourful rain",
+    "level": "Advanced",
+    "topic": "physics",
+    "description": "Static tree colliders meet falling spheres and cubes.",
+    "prompt": "Create a small stylised forest with solid trunks and canopies. Drop colourful spheres and cubes onto it, with collisions, subtle sounds and a slow camera orbit.",
+    "steps": [
+      "Keep the tree trunks and canopies static, with colliders.",
+      "Use dynamic bodies only for the falling shapes.",
+      "Test a small rain first, then increase the count.",
+      "Frame the whole forest so the collisions remain easy to follow."
+    ]
+  },
+  {
+    "id": "domino-chain",
+    "title": "One push, a chain reaction",
+    "level": "Advanced",
+    "topic": "physics",
+    "description": "A small impulse sends a row of coloured dominos tumbling.",
+    "prompt": "Create a row of colourful dominos. Give the first one a gentle push and let the chain reaction unfold. Keep the camera close enough to see every collision.",
+    "steps": [
+      "Use thin upright blocks and leave enough space for one to touch the next as it falls.",
+      "Give only the first block an initial tilt and angular velocity.",
+      "Use Reset scene to replay from the authored poses.",
+      "Change the spacing or friction and compare how far the chain travels."
+    ]
+  }
+]

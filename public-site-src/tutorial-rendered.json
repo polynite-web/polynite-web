@@ -19,5 +19,61 @@
     "media": "/docs/media/tutorials/r33/",
     "scene": "orbiting-letters-6c79ac852832.scene",
     "video": "orbiting-letters.mp4"
+  },
+  {
+    "id": "three-shapes",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "three-shapes-e07953f6e124.scene",
+    "video": "three-shapes.mp4"
+  },
+  {
+    "id": "falling-blocks",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "falling-blocks-6cb2e3d99f35.scene",
+    "video": "falling-blocks.mp4"
+  },
+  {
+    "id": "camera-reveal",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "camera-reveal-36e94a49d78d.scene",
+    "video": "camera-reveal.mp4"
+  },
+  {
+    "id": "command-input",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "command-input-8a29fdbe2db9.scene",
+    "video": "command-input.mp4"
+  },
+  {
+    "id": "ending-signature",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "ending-signature-ad2d66f2364d.scene",
+    "video": "ending-signature.mp4"
+  },
+  {
+    "id": "record-mp4",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "record-mp4-24555983cd5d.scene",
+    "video": "record-mp4.mp4"
+  },
+  {
+    "id": "forest-rain",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "forest-rain-b0773786b56e.scene",
+    "video": "forest-rain.mp4"
+  },
+  {
+    "id": "domino-chain",
+    "revision": 34,
+    "media": "/docs/media/tutorials/r34/",
+    "scene": "domino-chain-e3aaaef09548.scene",
+    "video": "domino-chain.mp4"
   }
 ]
