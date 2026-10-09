@@ -36,7 +36,7 @@
       "portrait": true,
       "steps": [
         "Watch the ball make a breach through the wall, with each chain link simulated independently.",
-        "Open Scene settings and choose Doux, Percée or Démolition.",
+        "Open Scene options (⋯), then Scene settings, and choose Doux, Percée or Démolition.",
         "Adjust impact speed, ball mass, brick mass, release angle or friction. Changes return the construction to its starting pose, paused.",
         "Use Replay to run the existing sequence with the new values, without recording.",
         "Save scene keeps your settings and the sequence for later.",
