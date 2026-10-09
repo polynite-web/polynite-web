@@ -77,31 +77,31 @@
       "value": 2
     },
     "dust": {
+      "label": "Poussi\u00e8re aux impacts",
+      "type": "toggle",
+      "default": true,
+      "value": true,
       "bindings": [
         {
-          "property": "dust_on",
-          "target": "scene"
+          "target": "scene",
+          "property": "dust_on"
         }
-      ],
-      "default": true,
-      "label": "Impact dust",
-      "type": "toggle",
-      "value": true
+      ]
     },
     "dust_amount": {
+      "label": "Quantit\u00e9 de poussi\u00e8re",
+      "type": "slider",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "default": 0.85,
+      "value": 0.85,
       "bindings": [
         {
-          "property": "dust_amount",
-          "target": "scene"
+          "target": "scene",
+          "property": "dust_amount"
         }
-      ],
-      "default": 0.699999988,
-      "label": "Dust amount",
-      "max": 1,
-      "min": 0,
-      "step": 0.0500000007,
-      "type": "slider",
-      "value": 0.699999988
+      ]
     },
     "impact_speed": {
       "bindings": [
@@ -756,6 +756,69 @@
       "step": 0.00999999978,
       "type": "slider",
       "value": 0.075000003
+    },
+    "dust_size": {
+      "label": "Taille des nuages",
+      "type": "slider",
+      "min": 0.02,
+      "max": 0.75,
+      "step": 0.01,
+      "default": 0.28,
+      "value": 0.28,
+      "bindings": [
+        {
+          "target": "scene",
+          "property": "dust_size"
+        }
+      ],
+      "unit": "m"
+    },
+    "dust_lifetime": {
+      "label": "Dur\u00e9e de la poussi\u00e8re",
+      "type": "slider",
+      "min": 0.2,
+      "max": 4,
+      "step": 0.1,
+      "default": 2.4,
+      "value": 2.4,
+      "bindings": [
+        {
+          "target": "scene",
+          "property": "dust_lifetime"
+        }
+      ],
+      "unit": "s"
+    },
+    "dust_opacity": {
+      "label": "Opacit\u00e9 de la poussi\u00e8re",
+      "type": "slider",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "default": 0.65,
+      "value": 0.65,
+      "bindings": [
+        {
+          "target": "scene",
+          "property": "dust_opacity"
+        }
+      ]
+    },
+    "dust_threshold": {
+      "label": "Seuil des impacts",
+      "type": "slider",
+      "min": 0,
+      "max": 100,
+      "step": 0.5,
+      "default": 1,
+      "value": 1,
+      "bindings": [
+        {
+          "target": "scene",
+          "property": "dust_threshold"
+        }
+      ],
+      "unit": "J"
     }
   },
   "presets": {

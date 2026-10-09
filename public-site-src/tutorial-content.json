@@ -25,9 +25,11 @@
     "prompt": "Build a brick wall and swing a wrecking ball on a physical chain through it. Add scene controls for impact speed, masses, release angle and friction, with gentle, breach and demolition presets. Use procedural clay and reflective marble.",
     "steps": [
       "Watch the ball make a breach through the wall, with each chain link simulated independently.",
-      "Open Scene options (⋯), then Scene settings, and choose Doux, Percée or Démolition.",
+      "Open Scene options (\u22ef), then Scene settings, and choose Doux, Perc\u00e9e or D\u00e9molition.",
       "Adjust impact speed, ball mass, brick mass, release angle or friction. Changes return the construction to its starting pose, paused.",
+      "Enable impact dust, then adjust amount, cloud size, lifetime, opacity or minimum impact energy in Scene settings.",
       "Use Replay to run the existing sequence with the new values, without recording.",
+      "Cinematic previews play without the Polynite signature; MP4 recording includes it.",
       "Save scene keeps your settings and the sequence for later.",
       "Ask your assistant to add different custom controls to another scene: each scene owns its own panel."
     ],
@@ -36,7 +38,10 @@
       "action_id": "replace-with-a-fresh-uuid",
       "values": {
         "impact_speed": 7,
-        "ball_mass": 100
+        "ball_mass": 100,
+        "dust": true,
+        "dust_amount": 0.85,
+        "dust_opacity": 0.65
       }
     },
     "control_note": "This changes the impact settings of the opened scene and returns it to the start, paused. Use settings_replay to compare the result. These controls require an updated Polynite viewer."
@@ -95,7 +100,7 @@
     "topic": "cinematic",
     "preset": "command-input-v2",
     "description": "Animated typing, quiet cues and a glowing confirmation.",
-    "prompt": "Show an animated command field typing “Make it blue”, then validate it softly and turn the sculpture blue. Use command-input-v2.",
+    "prompt": "Show an animated command field typing \u201cMake it blue\u201d, then validate it softly and turn the sculpture blue. Use command-input-v2.",
     "steps": [
       "The command field is an illustrative film overlay; it does not contact an AI.",
       "Typing and validation sounds come from command-input-v2.",

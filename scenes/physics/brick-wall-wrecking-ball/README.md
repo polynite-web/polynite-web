@@ -10,7 +10,13 @@ Open brick-wall-wrecking-ball.scene and play the timeline to replay the impact. 
 
 ## Custom scene settings
 
-The Settings icon opens this scene's generated controls: impact speed, ball mass, brick mass, release angle, friction and chain visibility. The defaults form the Percée preset (100 kg ball, 6 m/s launch, 2 kg bricks); Doux and Démolition offer contrasting presets. Replay restarts the existing sequence without recording. Reset settings restores the declared defaults. Editing a slider applies on release and returns the full construction to its initial pose paused.
+The Settings icon opens this scene's generated controls: impact speed, ball mass, brick mass, release angle, friction, chain visibility and impact dust. Dust exposes activation, amount, cloud size, lifetime, opacity and minimum impact energy. The defaults form the Percée preset (100 kg ball, 6 m/s launch, 2 kg bricks); Doux and Démolition offer contrasting presets. Replay restarts the existing sequence without recording. Reset settings restores the declared defaults. Editing a slider applies on release and returns the full construction to its initial pose paused.
+
+Cinematic play and seek show the scene without the managed Polynite signature,
+its sounds or closing fade. The saved signature remains present for MP4 recording
+and naturally appears when viewing the recorded video. The export controls are
+labelled “MP4 signature”. Dust defaults to enabled in the main tutorial; the
+baseline comparison variant deliberately keeps it off.
 
 `settings.json` contains the reusable declarative schema. Install it with `polynite_scene operation=settings_define schema=<contents> action_id=<fresh UUID>`. Read with settings_status; edit with settings_set values={impact_speed:7,ball_mass:90}; select with settings_preset preset=breach|gentle|demolition. settings_reset restores defaults; settings_replay starts the sequence. Definitions and values are embedded in the .scene and the MP4's companion film document. Native equivalents use scene.controls request.command=define|status|set|preset|reset|replay. Check capabilities.commands.scene_controls before use; WebGPU requires the owner's rebuild.
 
