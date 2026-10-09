@@ -854,6 +854,20 @@
     "vignette": 0.219999999
   },
   "model": "",
-  "seq": [],
+  "seq": [
+    {
+      "op": "orbit",
+      "lane": "camera",
+      "deg": 20,
+      "dur": 5
+    },
+    {
+      "op": "hold",
+      "lane": "scene",
+      "at": 5,
+      "dur": 0.5,
+      "end_film": true
+    }
+  ],
   "version": 1
 }
