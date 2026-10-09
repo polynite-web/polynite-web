@@ -1,0 +1,670 @@
+{
+  "controls": {
+    "ball_mass": {
+      "bindings": [
+        {
+          "ids": [
+            "wrecking_ball"
+          ],
+          "property": "mass",
+          "target": "physics_body"
+        }
+      ],
+      "default": 100,
+      "label": "Masse de la boule",
+      "max": 100,
+      "min": 10,
+      "step": 5,
+      "type": "slider",
+      "unit": "kg",
+      "value": 100
+    },
+    "brick_friction": {
+      "bindings": [
+        {
+          "prefix": "brick_",
+          "property": "friction",
+          "target": "physics_body"
+        }
+      ],
+      "default": 0.850000024,
+      "label": "Frottement",
+      "max": 1.5,
+      "min": 0.100000001,
+      "step": 0.0500000007,
+      "type": "slider",
+      "unit": "coefficient",
+      "value": 0.850000024
+    },
+    "brick_mass": {
+      "bindings": [
+        {
+          "dynamic_only": true,
+          "prefix": "brick_",
+          "property": "mass",
+          "target": "physics_body"
+        }
+      ],
+      "default": 2,
+      "label": "Masse des briques",
+      "max": 10,
+      "min": 0.5,
+      "step": 0.25,
+      "type": "slider",
+      "unit": "kg",
+      "value": 2
+    },
+    "impact_speed": {
+      "bindings": [
+        {
+          "ids": [
+            "wrecking_ball"
+          ],
+          "property": "velocity_z",
+          "scale": -1,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_00"
+          ],
+          "property": "velocity_z",
+          "scale": -0.0259332713,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_01"
+          ],
+          "property": "velocity_z",
+          "scale": -0.0777998194,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_02"
+          ],
+          "property": "velocity_z",
+          "scale": -0.129666358,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_03"
+          ],
+          "property": "velocity_z",
+          "scale": -0.181532905,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_04"
+          ],
+          "property": "velocity_z",
+          "scale": -0.233399451,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_05"
+          ],
+          "property": "velocity_z",
+          "scale": -0.285265982,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_06"
+          ],
+          "property": "velocity_z",
+          "scale": -0.337132543,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_07"
+          ],
+          "property": "velocity_z",
+          "scale": -0.388999075,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_08"
+          ],
+          "property": "velocity_z",
+          "scale": -0.440865636,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_09"
+          ],
+          "property": "velocity_z",
+          "scale": -0.492732167,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_10"
+          ],
+          "property": "velocity_z",
+          "scale": -0.544598699,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_11"
+          ],
+          "property": "velocity_z",
+          "scale": -0.59646523,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_12"
+          ],
+          "property": "velocity_z",
+          "scale": -0.648331821,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_13"
+          ],
+          "property": "velocity_z",
+          "scale": -0.700198352,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_14"
+          ],
+          "property": "velocity_z",
+          "scale": -0.752064884,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_15"
+          ],
+          "property": "velocity_z",
+          "scale": -0.803931415,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "ball_eye"
+          ],
+          "property": "velocity_z",
+          "scale": -0.855797946,
+          "target": "physics_body"
+        }
+      ],
+      "default": 6,
+      "label": "Puissance de l’impact",
+      "max": 15,
+      "min": 1,
+      "step": 0.5,
+      "type": "slider",
+      "unit": "m/s",
+      "value": 6
+    },
+    "release_angle": {
+      "bindings": [
+        {
+          "ids": [
+            "anchor",
+            "chain_00",
+            "chain_01",
+            "chain_02",
+            "chain_03",
+            "chain_04",
+            "chain_05",
+            "chain_06",
+            "chain_07",
+            "chain_08",
+            "chain_09",
+            "chain_10",
+            "chain_11",
+            "chain_12",
+            "chain_13",
+            "chain_14",
+            "chain_15",
+            "ball_eye",
+            "wrecking_ball"
+          ],
+          "property": "rotation_x",
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "anchor"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": 0.0863231346,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "anchor"
+          ],
+          "property": "position_z",
+          "scale": -0.0863231346,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_00"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.0863231346,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_00"
+          ],
+          "property": "position_z",
+          "scale": 0.0863231346,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_01"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.258969396,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_01"
+          ],
+          "property": "position_z",
+          "scale": 0.258969396,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_02"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.43161568,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_02"
+          ],
+          "property": "position_z",
+          "scale": 0.43161568,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_03"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.604261935,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_03"
+          ],
+          "property": "position_z",
+          "scale": 0.604261935,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_04"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.776908219,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_04"
+          ],
+          "property": "position_z",
+          "scale": 0.776908219,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_05"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.949554443,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_05"
+          ],
+          "property": "position_z",
+          "scale": 0.949554443,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_06"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.12220073,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_06"
+          ],
+          "property": "position_z",
+          "scale": 1.12220073,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_07"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.29484701,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_07"
+          ],
+          "property": "position_z",
+          "scale": 1.29484701,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_08"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.4674933,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_08"
+          ],
+          "property": "position_z",
+          "scale": 1.4674933,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_09"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.64013958,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_09"
+          ],
+          "property": "position_z",
+          "scale": 1.64013958,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_10"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.81278574,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_10"
+          ],
+          "property": "position_z",
+          "scale": 1.81278574,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_11"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.98543203,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_11"
+          ],
+          "property": "position_z",
+          "scale": 1.98543203,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_12"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.15807843,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_12"
+          ],
+          "property": "position_z",
+          "scale": 2.15807843,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_13"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.33072448,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_13"
+          ],
+          "property": "position_z",
+          "scale": 2.33072448,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_14"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.50337076,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_14"
+          ],
+          "property": "position_z",
+          "scale": 2.50337076,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_15"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.67601705,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_15"
+          ],
+          "property": "position_z",
+          "scale": 2.67601705,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "ball_eye"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.84866333,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "ball_eye"
+          ],
+          "property": "position_z",
+          "scale": 2.84866333,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "wrecking_ball"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -3.32866335,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "wrecking_ball"
+          ],
+          "property": "position_z",
+          "scale": 3.32866335,
+          "target": "geometry"
+        }
+      ],
+      "default": 32.7352257,
+      "label": "Angle de départ",
+      "max": 55,
+      "min": 5,
+      "step": 1,
+      "type": "slider",
+      "unit": "deg",
+      "value": 32.7352257
+    },
+    "show_chain": {
+      "bindings": [
+        {
+          "prefix": "chain_",
+          "property": "visible",
+          "target": "geometry"
+        },
+        {
+          "ids": [
+            "anchor",
+            "ball_eye"
+          ],
+          "property": "visible",
+          "target": "geometry"
+        }
+      ],
+      "default": true,
+      "label": "Afficher la chaîne",
+      "type": "toggle",
+      "value": true
+    }
+  },
+  "presets": {
+    "breach": {
+      "label": "Percée",
+      "values": {
+        "ball_mass": 100,
+        "brick_friction": 0.850000024,
+        "brick_mass": 2,
+        "impact_speed": 6,
+        "release_angle": 32.7352257,
+        "show_chain": true
+      }
+    },
+    "demolition": {
+      "label": "Démolition",
+      "values": {
+        "ball_mass": 100,
+        "brick_friction": 0.850000024,
+        "brick_mass": 0.75,
+        "impact_speed": 12,
+        "release_angle": 45,
+        "show_chain": true
+      }
+    },
+    "gentle": {
+      "label": "Doux",
+      "values": {
+        "ball_mass": 50,
+        "brick_friction": 0.850000024,
+        "brick_mass": 6,
+        "impact_speed": 2,
+        "release_angle": 20,
+        "show_chain": true
+      }
+    }
+  },
+  "title": "Réglages du mur",
+  "version": 1
+}
