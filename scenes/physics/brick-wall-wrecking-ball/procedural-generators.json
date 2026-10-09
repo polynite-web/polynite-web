@@ -1,0 +1,105 @@
+{
+  "chain": {
+    "alternate_rotation": [
+      0,
+      90,
+      0
+    ],
+    "column_step": [
+      0,
+      -0.145229816,
+      0.0933600962
+    ],
+    "count": 16,
+    "geometry": {
+      "appearance": "instant",
+      "m": "chain_steel",
+      "r": [
+        32.735199,
+        0,
+        0
+      ],
+      "s": [
+        0.189999998,
+        0.300000012,
+        0.189999998
+      ],
+      "t": "torus"
+    },
+    "origin": [
+      0,
+      5.02739,
+      0.0466798991
+    ],
+    "prefix": "chain_",
+    "type": "line"
+  },
+  "wall": {
+    "color_variation": 0.075000003,
+    "column_step": [
+      0.310000002,
+      0,
+      0
+    ],
+    "columns": 10,
+    "geometry": {
+      "appearance": "instant",
+      "bevel": 0.00400000019,
+      "bump": 0.00392156886,
+      "c": [
+        0.920000017,
+        0.899999976,
+        0.870000005
+      ],
+      "m": "clay",
+      "r": [
+        0,
+        0,
+        0
+      ],
+      "s": [
+        0.300000012,
+        0.136000007,
+        0.219999999
+      ],
+      "t": "cube"
+    },
+    "origin": [
+      -1.39499998,
+      0.0680000037,
+      0
+    ],
+    "physics": {
+      "angular_velocity": [
+        0,
+        0,
+        0
+      ],
+      "friction": 0.850000024,
+      "grabbable": true,
+      "linear_velocity": [
+        0,
+        0,
+        0
+      ],
+      "mass": 2,
+      "motion": "dynamic",
+      "restitution": 0.0399999991
+    },
+    "prefix": "brick_",
+    "row_step": [
+      0,
+      0.142000005,
+      0
+    ],
+    "rows": 30,
+    "seed": 1234,
+    "stagger": [
+      0.155000001,
+      0,
+      0
+    ],
+    "static_rows": 1,
+    "type": "grid"
+  }
+}

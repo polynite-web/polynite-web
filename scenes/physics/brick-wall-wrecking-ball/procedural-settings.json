@@ -1,0 +1,798 @@
+{
+  "controls": {
+    "ball_mass": {
+      "bindings": [
+        {
+          "ids": [
+            "wrecking_ball"
+          ],
+          "property": "mass",
+          "target": "physics_body"
+        }
+      ],
+      "default": 100,
+      "label": "Masse de la boule",
+      "max": 100,
+      "min": 10,
+      "step": 5,
+      "type": "slider",
+      "unit": "kg",
+      "value": 100
+    },
+    "brick_bevel": {
+      "bindings": [
+        {
+          "ids": [
+            "wall"
+          ],
+          "property": "bevel",
+          "target": "generator"
+        }
+      ],
+      "default": 0.00400000019,
+      "label": "Brick edge radius",
+      "max": 0.00800000038,
+      "min": 0,
+      "step": 0.00100000005,
+      "type": "slider",
+      "unit": "m",
+      "value": 0.00400000019
+    },
+    "brick_friction": {
+      "bindings": [
+        {
+          "ids": [
+            "wall"
+          ],
+          "property": "friction",
+          "target": "generator"
+        }
+      ],
+      "default": 0.850000024,
+      "label": "Frottement",
+      "max": 1.5,
+      "min": 0.100000001,
+      "step": 0.0500000007,
+      "type": "slider",
+      "unit": "coefficient",
+      "value": 0.850000024
+    },
+    "brick_mass": {
+      "bindings": [
+        {
+          "ids": [
+            "wall"
+          ],
+          "property": "mass",
+          "target": "generator"
+        }
+      ],
+      "default": 2,
+      "label": "Masse des briques",
+      "max": 10,
+      "min": 0.5,
+      "step": 0.25,
+      "type": "slider",
+      "unit": "kg",
+      "value": 2
+    },
+    "dust": {
+      "bindings": [
+        {
+          "property": "dust_on",
+          "target": "scene"
+        }
+      ],
+      "default": true,
+      "label": "Impact dust",
+      "type": "toggle",
+      "value": true
+    },
+    "dust_amount": {
+      "bindings": [
+        {
+          "property": "dust_amount",
+          "target": "scene"
+        }
+      ],
+      "default": 0.699999988,
+      "label": "Dust amount",
+      "max": 1,
+      "min": 0,
+      "step": 0.0500000007,
+      "type": "slider",
+      "value": 0.699999988
+    },
+    "impact_speed": {
+      "bindings": [
+        {
+          "ids": [
+            "wrecking_ball"
+          ],
+          "property": "velocity_z",
+          "scale": -1,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_00"
+          ],
+          "property": "velocity_z",
+          "scale": -0.0259332992,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_01"
+          ],
+          "property": "velocity_z",
+          "scale": -0.0777997971,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_02"
+          ],
+          "property": "velocity_z",
+          "scale": -0.129666001,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_03"
+          ],
+          "property": "velocity_z",
+          "scale": -0.181532994,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_04"
+          ],
+          "property": "velocity_z",
+          "scale": -0.233399004,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_05"
+          ],
+          "property": "velocity_z",
+          "scale": -0.285266012,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_06"
+          ],
+          "property": "velocity_z",
+          "scale": -0.33713299,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_07"
+          ],
+          "property": "velocity_z",
+          "scale": -0.388998985,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_08"
+          ],
+          "property": "velocity_z",
+          "scale": -0.440865993,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_09"
+          ],
+          "property": "velocity_z",
+          "scale": -0.492731988,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_10"
+          ],
+          "property": "velocity_z",
+          "scale": -0.544598997,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_11"
+          ],
+          "property": "velocity_z",
+          "scale": -0.596464992,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_12"
+          ],
+          "property": "velocity_z",
+          "scale": -0.648332,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_13"
+          ],
+          "property": "velocity_z",
+          "scale": -0.700197995,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_14"
+          ],
+          "property": "velocity_z",
+          "scale": -0.752065003,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "chain_15"
+          ],
+          "property": "velocity_z",
+          "scale": -0.803930998,
+          "target": "physics_body"
+        },
+        {
+          "ids": [
+            "ball_eye"
+          ],
+          "property": "velocity_z",
+          "scale": -0.855798006,
+          "target": "physics_body"
+        }
+      ],
+      "default": 6,
+      "label": "Puissance de l\u2019impact",
+      "max": 15,
+      "min": 1,
+      "step": 0.5,
+      "type": "slider",
+      "unit": "m/s",
+      "value": 6
+    },
+    "motion_blur": {
+      "bindings": [
+        {
+          "property": "motion_blur",
+          "target": "scene"
+        }
+      ],
+      "default": 0.600000024,
+      "label": "Motion blur (off on Mobile)",
+      "max": 1,
+      "min": 0,
+      "step": 0.0500000007,
+      "type": "slider",
+      "value": 0.649999976
+    },
+    "quality": {
+      "bindings": [
+        {
+          "property": "geometry_quality",
+          "target": "scene"
+        }
+      ],
+      "default": 1,
+      "label": "Quality",
+      "max": 2,
+      "min": 0,
+      "options": [
+        {
+          "label": "Mobile",
+          "value": 0
+        },
+        {
+          "label": "Balanced",
+          "value": 1
+        },
+        {
+          "label": "Export",
+          "value": 2
+        }
+      ],
+      "type": "select",
+      "value": 2
+    },
+    "release_angle": {
+      "bindings": [
+        {
+          "ids": [
+            "anchor",
+            "chain_00",
+            "chain_01",
+            "chain_02",
+            "chain_03",
+            "chain_04",
+            "chain_05",
+            "chain_06",
+            "chain_07",
+            "chain_08",
+            "chain_09",
+            "chain_10",
+            "chain_11",
+            "chain_12",
+            "chain_13",
+            "chain_14",
+            "chain_15",
+            "ball_eye",
+            "wrecking_ball"
+          ],
+          "property": "rotation_x",
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "anchor"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": 0.0863230973,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "anchor"
+          ],
+          "property": "position_z",
+          "scale": -0.0863230973,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_00"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.0863230973,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_00"
+          ],
+          "property": "position_z",
+          "scale": 0.0863230973,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_01"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.258969009,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_01"
+          ],
+          "property": "position_z",
+          "scale": 0.258969009,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_02"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.431616008,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_02"
+          ],
+          "property": "position_z",
+          "scale": 0.431616008,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_03"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.604261994,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_03"
+          ],
+          "property": "position_z",
+          "scale": 0.604261994,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_04"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.77690798,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_04"
+          ],
+          "property": "position_z",
+          "scale": 0.77690798,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_05"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -0.949554026,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_05"
+          ],
+          "property": "position_z",
+          "scale": 0.949554026,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_06"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.12220001,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_06"
+          ],
+          "property": "position_z",
+          "scale": 1.12220001,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_07"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.29484999,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_07"
+          ],
+          "property": "position_z",
+          "scale": 1.29484999,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_08"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.46748996,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_08"
+          ],
+          "property": "position_z",
+          "scale": 1.46748996,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_09"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.64014006,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_09"
+          ],
+          "property": "position_z",
+          "scale": 1.64014006,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_10"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.81279004,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_10"
+          ],
+          "property": "position_z",
+          "scale": 1.81279004,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_11"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -1.98543,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_11"
+          ],
+          "property": "position_z",
+          "scale": 1.98543,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_12"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.1580801,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_12"
+          ],
+          "property": "position_z",
+          "scale": 2.1580801,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_13"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.33071995,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_13"
+          ],
+          "property": "position_z",
+          "scale": 2.33071995,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_14"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.50337005,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_14"
+          ],
+          "property": "position_z",
+          "scale": 2.50337005,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "chain_15"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.67601991,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "chain_15"
+          ],
+          "property": "position_z",
+          "scale": 2.67601991,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "ball_eye"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -2.84865999,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "ball_eye"
+          ],
+          "property": "position_z",
+          "scale": 2.84865999,
+          "target": "geometry"
+        },
+        {
+          "curve": "cos_degrees",
+          "ids": [
+            "wrecking_ball"
+          ],
+          "offset": 5.0999999,
+          "property": "position_y",
+          "scale": -3.32866001,
+          "target": "geometry"
+        },
+        {
+          "curve": "sin_degrees",
+          "ids": [
+            "wrecking_ball"
+          ],
+          "property": "position_z",
+          "scale": 3.32866001,
+          "target": "geometry"
+        }
+      ],
+      "default": 32.735199,
+      "label": "Angle de d\u00e9part",
+      "max": 55,
+      "min": 5,
+      "step": 1,
+      "type": "slider",
+      "unit": "deg",
+      "value": 32.735199
+    },
+    "rows": {
+      "bindings": [
+        {
+          "ids": [
+            "wall"
+          ],
+          "property": "rows",
+          "target": "generator"
+        }
+      ],
+      "default": 30,
+      "label": "Wall rows",
+      "max": 30,
+      "min": 5,
+      "step": 1,
+      "type": "slider",
+      "value": 30
+    },
+    "show_chain": {
+      "bindings": [
+        {
+          "prefix": "chain_",
+          "property": "visible",
+          "target": "geometry"
+        },
+        {
+          "ids": [
+            "anchor",
+            "ball_eye"
+          ],
+          "property": "visible",
+          "target": "geometry"
+        }
+      ],
+      "default": true,
+      "label": "Afficher la cha\u00eene",
+      "type": "toggle",
+      "value": true
+    },
+    "variation": {
+      "bindings": [
+        {
+          "ids": [
+            "wall"
+          ],
+          "property": "color_variation",
+          "target": "generator"
+        }
+      ],
+      "default": 0.075000003,
+      "label": "Brick colour variation",
+      "max": 0.300000012,
+      "min": 0,
+      "step": 0.00999999978,
+      "type": "slider",
+      "value": 0.075000003
+    }
+  },
+  "presets": {
+    "breach": {
+      "label": "Perc\u00e9e",
+      "values": {
+        "ball_mass": 100,
+        "brick_friction": 0.850000024,
+        "brick_mass": 2,
+        "impact_speed": 6,
+        "release_angle": 32.735199,
+        "show_chain": true
+      }
+    },
+    "demolition": {
+      "label": "D\u00e9molition",
+      "values": {
+        "ball_mass": 100,
+        "brick_friction": 0.850000024,
+        "brick_mass": 0.75,
+        "impact_speed": 12,
+        "release_angle": 45,
+        "show_chain": true
+      }
+    },
+    "gentle": {
+      "label": "Doux",
+      "values": {
+        "ball_mass": 50,
+        "brick_friction": 0.850000024,
+        "brick_mass": 6,
+        "impact_speed": 2,
+        "release_angle": 20,
+        "show_chain": true
+      }
+    }
+  },
+  "title": "R\u00e9glages du mur",
+  "version": 1
+}
