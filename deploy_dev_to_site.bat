@@ -247,7 +247,7 @@ git diff --cached --quiet
 
 if not errorlevel 1 (
     echo  [polynite] Nothing changed. Nothing to commit.
-    goto :publish
+    goto :success
 )
 
 echo.
@@ -272,11 +272,6 @@ if errorlevel 1 (
     goto :fail
 )
 
-:publish
-REM Git push alone does not publish the Cloudflare Pages site.
-node "%~dp0publish_pages.cjs"
-if errorlevel 1 goto :fail
-
 goto :success
 
 
@@ -288,7 +283,7 @@ REM ===============================================================
 
 echo.
 echo  ========================================
-echo   Polynite %VERSION% published
+echo   Polynite %VERSION% prepared - Git sync complete
 echo  ========================================
 echo.
 
