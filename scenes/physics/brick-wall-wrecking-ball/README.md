@@ -21,3 +21,5 @@ The Settings icon opens this scene's generated controls: impact speed, ball mass
 - `material_status` and `floor_status` read; `material_reset` and `floor_reset` restore defaults.
 
 Native method equivalents are scene.material and scene.floor, params.request.command=status|configure|reset. Geometry, bodies and joints must be assembled atomically with physics_build. Check capabilities.commands.procedural_materials, procedural_floor and physics_torus. Recompile WebGPU before using these new features in the web viewer. Individual brick fracture and airborne dust are not implemented yet.
+
+Optional photo study: photoreal-study.scene keeps the same physical construction and controls, with finer cube bevels, dark steel, subdued fired clay and cloudy marble. It needs capabilities.commands.geometry_bevel; rebuild WebGPU before using its edge settings in the browser. The original tutorial and its preview remain separate.
