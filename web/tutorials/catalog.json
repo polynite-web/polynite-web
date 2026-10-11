@@ -36,7 +36,7 @@
       "portrait": true,
       "steps": [
         "Open Scene options (⋯), then Scene settings. The downloaded scene contains 17 controls and five presets.",
-        "Start with Breach. On a recent viewer, edits stay pending and Play turns gold: choose Apply to reset paused, or Apply & Play / Replay to run the new values. Discard keeps the current scene unchanged.",
+        "Start with Breach. On the latest viewer, dust, render quality, chain visibility, masses and friction update live. Launch angle/speed and wall structure stay pending: Apply resets paused, Apply & Play / Replay starts the new setup, and Discard cancels only pending setup edits.",
         "Compare Gentle and Demolition. Keep the same camera and watch how mass and impact speed change the opening and the scattered bricks.",
         "Enable impact dust. Try amount 0.85, cloud size 0.28 m, lifetime 2.4 s, opacity 0.65 and minimum impact energy 1 J.",
         "Choose Mobile for 18 wall rows, lighter shading/LOD and a smaller dust budget. Compare it with Cinematic; do not enable motion blur for the mobile test.",
@@ -206,7 +206,7 @@
           "text": "Choose Cinematic for a desktop video. Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
         }
       ],
-      "viewer_note": "Some controls need an updated viewer. Older viewers apply edits immediately and may omit dust opacity/energy threshold. Queued edits, live grabbing, camera modes and speed controls require a recent build.",
+      "viewer_note": "Live effects/body properties and queued initial-setup edits need the latest viewer. Earlier viewers either queue all edits or reset on release, and may omit dust opacity/energy threshold. Live grabbing, camera modes and speed controls also require a recent build.",
       "revision": 37,
       "title": "Brick wall lab",
       "level": "Advanced",
