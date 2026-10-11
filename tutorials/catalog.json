@@ -35,39 +35,190 @@
       "id": "brick-wall",
       "portrait": true,
       "steps": [
-        "Watch the ball make a breach through the wall, with each chain link simulated independently.",
-        "Open Scene options (⋯), then Scene settings, and choose Doux, Percée or Démolition.",
-        "Adjust impact speed, ball mass, brick mass, release angle or friction. Changes return the construction to its starting pose, paused.",
-        "Enable impact dust, then adjust amount, cloud size, lifetime, opacity or minimum impact energy in Scene settings.",
-        "Use Replay to run the existing sequence with the new values, without recording.",
-        "Cinematic previews play without the Polynite signature; MP4 recording includes it.",
-        "Save scene keeps your settings and the sequence for later.",
-        "Ask your assistant to add different custom controls to another scene: each scene owns its own panel."
+        "Open Scene options (⋯), then Scene settings. The downloaded scene contains 17 controls and five presets.",
+        "Start with Breach. On a recent viewer, edits stay pending and Play turns gold: choose Apply to reset paused, or Apply & Play / Replay to run the new values. Discard keeps the current scene unchanged.",
+        "Compare Gentle and Demolition. Keep the same camera and watch how mass and impact speed change the opening and the scattered bricks.",
+        "Enable impact dust. Try amount 0.85, cloud size 0.28 m, lifetime 2.4 s, opacity 0.65 and minimum impact energy 1 J.",
+        "Choose Mobile for 18 wall rows, lighter shading/LOD and a smaller dust budget. Compare it with Cinematic; do not enable motion blur for the mobile test.",
+        "On a recent viewer, hold a brick or the ball while the film plays, then drag and release. The hold wheel is larger and offset on touch screens.",
+        "Use the camera toggle to explore freely. Pause leaves the camera movable; scene-camera playback adds its movement to your own framing. The speed slider changes preview speed without changing the MP4.",
+        "Save scene preserves custom settings, procedural recipes and the complete film sequence. Record MP4 from the initial state; the ending signature appears in the recorded video, not the live preview."
       ],
       "control": {
-        "operation": "settings_set",
+        "operation": "settings_preset",
         "action_id": "replace-with-a-fresh-uuid",
-        "values": {
-          "impact_speed": 7,
-          "ball_mass": 100,
-          "dust": true,
-          "dust_amount": 0.85,
-          "dust_opacity": 0.65
-        }
+        "preset": "mobile"
       },
-      "control_note": "This changes the impact settings of the opened scene and returns it to the start, paused. Use settings_replay to compare the result. These controls require an updated Polynite viewer.",
-      "revision": 36,
-      "title": "Break through a brick wall",
+      "control_note": "Select the Mobile preset in the current scene. An explicit MCP settings_preset applies immediately and resets paused; use settings_replay to run it. UI edits on a recent viewer remain pending until you choose Apply or Play.",
+      "settings_groups": [
+        {
+          "title": "Impact and structure",
+          "items": [
+            {
+              "id": "impact_speed",
+              "label": "Impact speed",
+              "hint": "Initial push in metres per second. Increase speed before reducing brick mass.",
+              "range": "1–15 m/s",
+              "type": "slider"
+            },
+            {
+              "id": "ball_mass",
+              "label": "Ball mass",
+              "hint": "A heavier ball carries more momentum at the same speed.",
+              "range": "10–100 kg",
+              "type": "slider"
+            },
+            {
+              "id": "brick_mass",
+              "label": "Brick mass",
+              "hint": "Heavier bricks resist the impact; lighter bricks scatter more easily.",
+              "range": "0.5–10 kg",
+              "type": "slider"
+            },
+            {
+              "id": "brick_friction",
+              "label": "Brick friction",
+              "hint": "Higher friction reduces sliding after the impact.",
+              "range": "0.1–1.5 coefficient",
+              "type": "slider"
+            },
+            {
+              "id": "release_angle",
+              "label": "Release angle",
+              "hint": "Starting angle of the suspended ball, measured in degrees.",
+              "range": "5–55 deg",
+              "type": "slider"
+            },
+            {
+              "id": "rows",
+              "label": "Wall rows",
+              "hint": "Generate a shorter or taller wall without placing each brick manually.",
+              "range": "5–30",
+              "type": "slider"
+            },
+            {
+              "id": "show_chain",
+              "label": "Show chain",
+              "hint": "Show or hide the link meshes; the suspension physics remains active.",
+              "range": "On / Off",
+              "type": "toggle"
+            }
+          ]
+        },
+        {
+          "title": "Impact dust",
+          "items": [
+            {
+              "id": "dust",
+              "label": "Impact dust",
+              "hint": "Enable the bounded collision-particle effect.",
+              "range": "On / Off",
+              "type": "toggle"
+            },
+            {
+              "id": "dust_amount",
+              "label": "Dust amount",
+              "hint": "More visible dust without creating more physical bodies.",
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "dust_size",
+              "label": "Cloud size",
+              "hint": "Size of the individual dust puffs, in metres.",
+              "range": "0.02–0.75 m",
+              "type": "slider"
+            },
+            {
+              "id": "dust_lifetime",
+              "label": "Cloud lifetime",
+              "hint": "How long each puff remains visible.",
+              "range": "0.2–4 s",
+              "type": "slider"
+            },
+            {
+              "id": "dust_opacity",
+              "label": "Dust opacity",
+              "hint": "Control transparency separately from cloud size and lifetime.",
+              "updated_viewer": true,
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "dust_threshold",
+              "label": "Minimum impact energy",
+              "hint": "Only collisions above this energy emit dust. Lower it for gentler impacts.",
+              "updated_viewer": true,
+              "range": "0–100 J",
+              "type": "slider"
+            }
+          ]
+        },
+        {
+          "title": "Surface and performance",
+          "items": [
+            {
+              "id": "quality",
+              "label": "Render quality",
+              "hint": "Mobile uses lighter geometry and effects; Balanced is the everyday profile; Export uses full meshes.",
+              "range": "Mobile / Balanced / Export",
+              "type": "select"
+            },
+            {
+              "id": "motion_blur",
+              "label": "Motion blur",
+              "hint": "Rigid-object motion blur. It is disabled by the Mobile profile.",
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "brick_bevel",
+              "label": "Brick edge radius",
+              "hint": "Small bevels catch light along the edges. This remains bounded for the physics shape.",
+              "range": "0–0.008 m",
+              "type": "slider"
+            },
+            {
+              "id": "variation",
+              "label": "Brick colour variation",
+              "hint": "Seeded colour variation shared by the procedural wall recipe.",
+              "range": "0–0.3",
+              "type": "slider"
+            }
+          ]
+        }
+      ],
+      "experiments": [
+        {
+          "title": "1. Gentle versus Demolition",
+          "text": "Try Gentle (50 kg ball, 6 kg bricks, 2 m/s), then Demolition (100 kg ball, 0.75 kg bricks, 12 m/s). Apply and replay each preset; compare the opening and the debris."
+        },
+        {
+          "title": "2. Make dust easier to see",
+          "text": "Use Breach, then increase cloud size to 0.4 m and lifetime to 3 s. Change only one value at a time. On an updated viewer, lower the energy threshold for lighter impacts."
+        },
+        {
+          "title": "3. Build for a phone",
+          "text": "Choose Mobile: 18 rows, no motion blur and bounded dust. Check responsiveness on a real phone. Visual LOD does not change the physical colliders."
+        },
+        {
+          "title": "4. Frame and record",
+          "text": "Choose Cinematic for a desktop video. Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
+        }
+      ],
+      "viewer_note": "Some controls need an updated viewer. Older viewers apply edits immediately and may omit dust opacity/energy threshold. Queued edits, live grabbing, camera modes and speed controls require a recent build.",
+      "revision": 37,
+      "title": "Brick wall lab",
       "level": "Advanced",
       "topic": "physics",
-      "description": "A physical chain, procedural bricks and an impact you can tune.",
-      "prompt": "Build a brick wall and swing a wrecking ball on a physical chain through it. Add scene controls for impact speed, masses, release angle and friction, with gentle, breach and demolition presets. Use procedural clay and reflective marble.",
-      "scene": "https://polynite.io/docs/media/tutorials/r36/brick-wall-de161a7adf56.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r36/brick-wall.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r36/brick-wall-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r36/brick-wall.jpg",
+      "description": "Tune the impact, dust and render budget with 17 scene-owned controls.",
+      "prompt": "Create a procedural brick wall and a wrecking ball on a physical chain. Add custom controls for impact, masses, wall height, dust and render quality, with Gentle, Breach, Demolition, Mobile and Cinematic presets.",
+      "scene": "https://polynite.io/docs/media/tutorials/r37/brick-wall-03b46a4c19af.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r37/brick-wall.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r37/brick-wall-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r37/brick-wall.jpg",
       "open": "https://polynite.io/tutorials/brick-wall/",
-      "sha256": "de161a7adf56e4d776c416f6172498c37aa115641b8421557b2964bd9ec19d57"
+      "sha256": "03b46a4c19af055d745c8075653cfd17756d6fb258e51ae59b494dabdba33ef0"
     },
     {
       "id": "orbiting-letters",

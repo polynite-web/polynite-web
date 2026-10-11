@@ -26,9 +26,25 @@ function restoreTutorialCues(seq, reference, includeOutro) {
   }
   return copy;
 }
+function prepareTutorialSettings(input, modernControls) {
+  const copy = structuredClone(input);
+  if (modernControls || !copy.initial?.scene_controls) return copy;
+  const schema = copy.initial.scene_controls;
+  const unsupported = new Set(Object.entries(schema.controls).filter(([id,c]) => c.bindings?.some(b => b.target === 'scene' && ['dust_opacity','dust_threshold'].includes(b.property))).map(([id]) => id));
+  for (const id of unsupported) delete schema.controls[id];
+  for (const preset of Object.values(schema.presets || {})) for (const id of unsupported) delete preset.values[id];
+  return copy;
+}
 function preserveTutorialControls(initial, reference) {
   const copy = structuredClone(initial);
   if (!copy.scene_controls && reference.initial?.scene_controls) copy.scene_controls = structuredClone(reference.initial.scene_controls);
+  if (copy.scene_controls && reference.initial?.scene_controls) {
+    copy.scene_controls.controls = {...structuredClone(reference.initial.scene_controls.controls), ...copy.scene_controls.controls};
+    for (const [id,preset] of Object.entries(copy.scene_controls.presets || {})) {
+      const original = reference.initial.scene_controls.presets?.[id];
+      preset.values = {...original?.values, ...preset.values};
+    }
+  }
   return copy;
 }
-module.exports = {prepareTutorialDocument, restoreTutorialCues, preserveTutorialControls};
+module.exports = {prepareTutorialDocument, prepareTutorialSettings, restoreTutorialCues, preserveTutorialControls};

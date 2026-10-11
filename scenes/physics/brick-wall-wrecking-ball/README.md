@@ -10,7 +10,7 @@ Open brick-wall-wrecking-ball.scene and play the timeline to replay the impact. 
 
 ## Custom scene settings
 
-The Settings icon opens this scene's generated controls: impact speed, ball mass, brick mass, release angle, friction, chain visibility and impact dust. Dust exposes activation, amount, cloud size, lifetime, opacity and minimum impact energy. The defaults form the Percée preset (100 kg ball, 6 m/s launch, 2 kg bricks); Doux and Démolition offer contrasting presets. Replay restarts the existing sequence without recording. Reset settings restores the declared defaults. Editing a slider applies on release and returns the full construction to its initial pose paused.
+The Settings icon opens this scene's generated controls: impact speed, ball mass, brick mass, release angle, friction, chain visibility and impact dust. Dust exposes activation, amount, cloud size, lifetime, opacity and minimum impact energy. The defaults form the Percée preset (100 kg ball, 6 m/s launch, 2 kg bricks); Doux and Démolition offer contrasting presets. Replay restarts the existing sequence without recording. Reset settings restores the declared defaults. In current viewers, UI edits remain pending until Apply or Apply & Play; Discard cancels them. Direct MCP settings_set/settings_preset calls apply immediately and reset the construction paused. Older viewers apply slider edits on release.
 
 Cinematic play and seek show the scene without the managed Polynite signature,
 its sounds or closing fade. The saved signature remains present for MP4 recording
@@ -64,3 +64,28 @@ Native round trips, sparse overrides, rejected invalid loads, controls, profile
 transitions and MP4 exports were tested. The owner compiled/deployed v0266 for
 WebGPU; browser verification is recorded in the engine implementation notes.
 No performance claim is made for an actual phone without a device measurement.
+
+
+## Advanced website tutorial
+
+[tutorial-advanced.scene](tutorial-advanced.scene) is the Brick wall lab tutorial.
+It saves deterministic wall/chain recipes, 17 custom controls and five complete
+presets: Breach, Gentle, Demolition, Mobile and Cinematic. The file is about 67 KB;
+geometry and texture pixels are regenerated rather than embedded.
+
+The website guide lists each control's range directly from this schema, grouped
+by impact/structure, dust, and surface/performance. Four experiments explain mass
+versus speed, dust visibility, the mobile budget, and cinematic preview/MP4.
+
+Mobile selects 18 rows, lighter rendering and bounded dust without motion blur.
+Cinematic selects full detail and motion blur. These are quality budgets, not a
+claim of measured smartphone performance. The public v0267 viewer omits unsupported
+dust opacity/energy bindings in its working copy; downloads preserve all 17
+controls for current viewers. New transport, queued edits and live grabbing are
+marked as requiring an updated viewer.
+
+MCP: settings_preset preset=mobile|cinematic|breach|gentle|demolition with a fresh
+action_id applies the preset in the existing scene, paused. settings_replay with
+another fresh action_id starts its authored sequence. To record, retain the
+initial document and sequence; start recording at zero rather than recording an
+already-collapsed wall. The managed signature belongs to the MP4 export.
