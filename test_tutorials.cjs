@@ -4,8 +4,11 @@ for(const item of catalog.items){assert.ok(['Beginner','Intermediate','Advanced'
 const docs=fs.readFileSync(path.join(root,'docs/index.html'),'utf8');assert.ok(docs.includes('tutorial-player'));assert.ok(!docs.includes('title.mp4'));assert.ok(docs.includes('data-copy'));assert.ok(docs.includes('data-filter'));
 console.log('PASS: shared catalogue, scene hashes, hidden model safety, managed signatures, media references and playable entries');
 
-for(const item of catalog.items){assert.ok(item.prompt.length<300,'Public tutorial prompt grew too large');if(item.id!=='ending-signature')assert.ok(!/signature|branding|fade_lead|spatial_type/i.test(item.prompt),'Creation prompts keep export identity implicit');}
-console.log('PASS: short tutorial prompts keep branding implicit');
+for(const item of catalog.items){assert.ok(item.prompt.length<2200,'Keep creation prompts bounded');if(item.id!=='ending-signature')assert.ok(!/signature|branding|fade_lead|spatial_type/i.test(item.prompt),'Creation prompts keep export identity implicit');}
+console.log('PASS: bounded creation prompts keep branding implicit');
 
-for(const id of ['three-shapes','falling-blocks','camera-reveal','command-input','ending-signature','record-mp4','forest-rain','domino-chain']){const i=catalog.items.find(i=>i.id===id);assert.ok(i?.steps?.length>=3,'Missing teaching steps: '+id);}
+for(const id of ['three-shapes','falling-blocks','camera-reveal','command-input','ending-signature','record-mp4','forest-rain','domino-chain']){const i=catalog.items.find(i=>i.id===id);assert.ok(i?.prompt.split('\n- ').length>=4,'Missing standalone creation requirements: '+id);}
 assert.equal(catalog.items.find(i=>i.id==='command-input').preset,'command-input-v2');assert.equal(catalog.items.find(i=>i.id==='ending-signature').preset,'polynite-ending-v4');
+
+for(const item of catalog.items){assert.ok(!item.steps,'UI instructions must not be presented as creation steps');assert.ok(!/Doux|Percée|Démolition|Open Scene options|Save scene keeps|Ask your assistant/i.test(item.prompt),'English creation requirements only');assert.ok(!/this scene|this film/i.test(item.prompt),'Each prompt is self-contained');}
+assert.ok(catalog.items.find(i=>i.id==='brick-wall').prompt.includes('Define scene-owned MCP custom values'));
