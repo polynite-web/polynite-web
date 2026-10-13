@@ -82,5 +82,12 @@
     "media": "/docs/media/tutorials/r37/",
     "scene": "brick-wall-03b46a4c19af.scene",
     "video": "brick-wall.mp4"
+  },
+  {
+    "id": "autumn-lantern-cottage",
+    "revision": 38,
+    "media": "/docs/media/tutorials/r38/",
+    "scene": "autumn-lantern-cottage-e52d68a4d27f.scene",
+    "video": "autumn-lantern-cottage.mp4"
   }
 ]

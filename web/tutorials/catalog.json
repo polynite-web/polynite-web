@@ -369,6 +369,22 @@
       "poster": "https://polynite.io/docs/media/tutorials/r34/domino-chain.jpg",
       "open": "https://polynite.io/tutorials/domino-chain/",
       "sha256": "e3aaaef095485e7780bbbf74183dc5de5cadc85b886eebf1a8f95eb877e91d9e"
+    },
+    {
+      "id": "autumn-lantern-cottage",
+      "viewer_note": "The saved example is the reference seed 0; the prompt asks for a new nonzero seed. The silent preview loops its first 15 seconds; the full film includes a short ending. Detailed cards cost more than rounded foliage. Exact visual endpoints were verified natively; this is not a claim that every physics or audio simulation loops.",
+      "revision": 38,
+      "title": "Autumn Lantern Cottage",
+      "level": "Advanced",
+      "topic": "cinematic",
+      "description": "A moonlit cottage, coherent seeded variants and a seamless 15-second visual loop.",
+      "prompt": "Create a warm autumn cottage diorama in Polynite with a perfect 15-second visual loop.\n\n- Discover the connected engine capabilities. Save the current editable film and restore it after any temporary tests.\n- Generate a coherent random cottage with a recorded nonzero integer seed, detail 0.68, fantasy 0.3 and roof_curve 1.15. Preserve version 1 recipes and the chosen seed for reproduction.\n- Generate the dependent path, garden and trees, in that order. Place ivy around the walls while keeping windows, shutters and the door clear. Include stone paving, pumpkins and longer grass near walls and trunks.\n- Use seeded cards trees with autumn foliage, count 3, detail 0.68 and leaf_density 1. Offer rounded or hybrid trees for lower budgets without silently changing style on rerolls.\n- Set a blue-violet twilight sky, subtle stars and Milky Way, a cool moon above the horizon and a sun below it. Keep window and lantern light warm, with restrained bloom and god rays.\n- Synchronize shared spatial wind, grass, smoke and falling leaves to 15 seconds. Leaves settle and fade on the ground. Keep sky twinkle and cloud/aurora speeds zero for this loop.\n- Make one continuous 15-second camera orbit. Windows turn on with a brief rustic flicker; keep smoke anchored to the chimney. Expose scene-owned lighting, wind, vegetation and quality controls.\n- Inspect real frames, compare render endpoints at 0 and 15 seconds, and save the expanded editable scene. Keep the chosen random seed; do not claim that random generation alone guarantees a perfect loop.",
+      "scene": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage-e52d68a4d27f.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.jpg",
+      "open": "https://polynite.io/tutorials/autumn-lantern-cottage/",
+      "sha256": "e52d68a4d27f201d21db539e63d74703d6fa2b2c9fa3b500bb90ed50943e22a9"
     }
   ]
 }
