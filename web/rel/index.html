@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0271";</script>
+<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0276";window.__pnEngineBase="engine/1bed359f4b253ee5d377857c0ebb004abd63d2e89e5be207346dbb5d37a2f6ec/";</script>
 <script src="scene-file-drop.js?v=1"></script>
 <meta charset="utf-8">
 <script src="startup_profile.js"></script>
@@ -72,6 +72,7 @@
 </script>
 <script src="backend.js"></script>
 <script src="version.js"></script>
+<script src="engine_cache.js"></script>
 <script src="engine_loader.js"></script>
 <style>
 html, body {
@@ -967,6 +968,8 @@ body.scene-entry-ready #curtain {
     var sep = path.indexOf("?") >= 0 ? "&" : "?";
         var dev = window.__pnDeployTier === "dev" ||
       (!window.__pnDeployTier && typeof window.spinviewIsLocalDevelopmentHost === "function" && window.spinviewIsLocalDevelopmentHost());
+    if(window.__pnEngineBase && /^(app\.(js|wasm))$/.test(path))
+      return window.__pnEngineBase + path + (dev ? "?_t=" + bootToken() : "");
     return path + sep + "_v=" + encodeURIComponent(version) + (dev ? "&_t=" + bootToken() : "");
   }
 
@@ -1173,6 +1176,9 @@ body.scene-entry-ready #curtain {
 
   window.vmeshLoaderPhase = function (phase, progress, stage, sub) {
     if (!loader) return;
+    var engineInfo = document.getElementById("loaderEngineInfo");
+    if(engineInfo) engineInfo.hidden = true;
+    if(window.__pnStartup) window.__pnStartup.mark("scene_stage_" + stage);
     /* Older cached builds only send phase + progress. Keep their loader
        coherent until the matching WASM/JS pair replaces them. */
     if (typeof stage !== "number") stage = phase === 1 ? 1 : 2;
@@ -1219,8 +1225,18 @@ body.scene-entry-ready #curtain {
 
   /* Compatibility with cached engines: new builds report the first committed
      frame and content readiness separately. Never put a gesture over the canvas. */
+  function loaderFailed(reason) {
+    if(window.__spinNoticeShown) return;
+    engineAborted = true;
+    if(window.vmeshRuntimeInitialized && Module.pauseMainLoop) Module.pauseMainLoop();
+    gpuNotice(FR ? "Le chargement s'est interrompu. Rechargez la page pour reessayer." :
+      "Loading stopped. Reload the page to try again.", reason,
+      FR ? "Chargement interrompu" : "Loading interrupted");
+  }
+
   function hideLoader(fallback) {
-    if (engineAborted || fallback) return;
+    if (engineAborted) return;
+    if (fallback) { loaderFailed("Startup made no progress for 25 seconds"); return; }
     loaderHidden = true;
     loaderHideRequested = true;
     if (!window.vmeshCommittedFrames) {
@@ -1418,6 +1434,7 @@ body.scene-entry-ready #curtain {
     setTimeout(function () {
       if (engineAborted || loaderHidden || loaderHideRequested) return;
       var now = performance.now ? performance.now() : Date.now();
+      if(window.pnEngineLoading) { loaderWatchdog(); return; }
       if (now - loaderLastSignal > 25000) hideLoader(true);
       else loaderWatchdog();
     }, 5000);
@@ -1506,6 +1523,7 @@ body.scene-entry-ready #curtain {
     window.__spinVerFrozen = getCurrentVersion();
     console.info("[gpu-bootstrap] version frozen for this page: " + window.__spinVerFrozen);
     if (loaderText) loaderText.textContent = FR ? "Chargement du moteur" : "Loading engine";
+    if(window.pnPrefetchWasm) window.pnPrefetchWasm(cacheBust(base + ".wasm"));
     if(window.__pnStartup) window.__pnStartup.mark("engine_script_requested");
     var sc = document.createElement("script");
     sc.src = cacheBust(base + ".js");
@@ -1529,6 +1547,7 @@ body.scene-entry-ready #curtain {
   }
 
   function gpuNotice(reason, detail, title) {
+    if(window.pnCancelWasm) window.pnCancelWasm();
     try { if (loader) loader.style.display = "none"; } catch (eL) {}
     /* The intro STAYS. A visitor whose browser cannot run the engine should
        still be told what this page is, and the notice sits over it. */
@@ -1704,12 +1723,13 @@ body.scene-entry-ready #curtain {
     },
     monitorRunDependencies: function () {},
     instantiateWasm: function (imports, receive) {
+      if(engineAborted) return {};
       window.pnLoadWasm(cacheBust("app.wasm"), imports, receive, function (phase, detail) {
         if (phase && !window.vmeshRuntimeInitialized && loaderText) loaderText.textContent = phase;
         var info = document.getElementById("loaderEngineInfo");
-        if (info && detail != null) info.textContent = (FR ? "Moteur · " : "Engine · ") + detail;
+        if (info && detail != null && devMode) info.textContent = (FR ? "Moteur · " : "Engine · ") + detail;
         loaderLastSignal = performance.now ? performance.now() : Date.now();
-      }).catch(function (error) { Module.onAbort(error.message || String(error)); });
+      }).catch(function (error) { Module.onAbort(error.message || String(error)); loaderFailed(error.message || String(error)); });
       return {};
     },
     onAbort: function (reason) {
@@ -1748,7 +1768,9 @@ body.scene-entry-ready #curtain {
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
        * (vmeshHideLoader, called by the engine). */
-      if (loaderText) loaderText.textContent = "Preparing... " + shownVersion();
+      if (loaderText) loaderText.textContent = FR ? "Preparation de l affichage" : "Preparing display";
+      var info = document.getElementById("loaderEngineInfo");
+      if(info) info.hidden = true;
       console.info("[runtime] Ready.");
     }
   };

@@ -15,8 +15,24 @@ write('dev/models/a model.glb','model');write('dev/models/index.txt','stale.glb 
 write('site.webmanifest',JSON.stringify({id:'/',start_url:'/',scope:'/',icons:[{src:'/assets/icon.png'}]}));write('assets/icon.png','icon');
 write('web/version.txt','v0267\n');write('web/app.js','old public js');write('web/app.wasm','old public wasm');write('web/robots.txt','public robots');write('web/custom.txt','keep');
 const before=hash(fs.readFileSync(path.join(root,'web/app.wasm')));
-prepare(root);
+// Recompilation after the first directory swap must not affect the second stage.
+const rename=fs.renameSync;let changedDuringPrepare=false;
+fs.renameSync=function(source,target){const result=rename(source,target);if(target===path.join(root,'web/dev')&&!changedDuringPrepare){changedDuringPrepare=true;fs.appendFileSync(path.join(root,'dev/app.js'),'/* concurrent build */');}return result;};
+try{prepare(root);}finally{fs.renameSync=rename;}
+assert(changedDuringPrepare);
 const dev=verify(path.join(root,'web/dev')),rel=verify(path.join(root,'web/rel'));
+function cachePolicy(url){
+ const text=fs.readFileSync(path.join(root,'web/_headers'),'utf8');let match=false,values=[];
+ for(const line of text.split(/\r?\n/)){
+  if(line.startsWith('/'))match=new RegExp('^'+line.replace(/[.+?^$(){}|[\]\\]/g,'\\$&').replace(/\*/g,'.*')+'$').test(url);
+  else if(match && /^\s+Cache-Control:/i.test(line))values.push(line.split(':').slice(1).join(':').trim());
+ }
+ return values.join(', ');
+}
+for(const url of ['/rel/'+rel.engineBase+'app.wasm','/'+rel.engineBase+'app.js'])
+ assert.equal(cachePolicy(url),'public, max-age=31536000, immutable','hashed engine must not also inherit no-cache');
+assert.equal(cachePolicy('/rel/version.txt'),'no-cache');assert.equal(cachePolicy('/rel/'),'no-cache');
+assert.equal(cachePolicy('/dev/'+dev.engineBase+'app.wasm'),'no-cache');
 assert.equal(dev.version,'v0268');assert.equal(rel.version,dev.version);assert.equal(dev.tier,'dev');assert.equal(rel.tier,'release');
 assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),before);
 assert.equal(dev.files['app.wasm'].sha256,rel.files['app.wasm'].sha256);
@@ -31,6 +47,12 @@ assert.equal(hash(zlib.brotliDecompressSync(fs.readFileSync(path.join(root,'web/
 const original=fs.readFileSync(path.join(root,'web/rel/app.js'));fs.appendFileSync(path.join(root,'web/rel/app.js'),'tampered');
 assert.throws(()=>publish(root),/Candidate changed/);assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),before);
 fs.writeFileSync(path.join(root,'web/rel/app.js'),original);
+// Failure after moving the public directory must restore the complete old site.
+let rejectedSwap=false;
+fs.renameSync=function(source,target){if(target===path.join(root,'web')&&source.includes('public-full-')&&!rejectedSwap){rejectedSwap=true;throw Error('simulated promotion failure');}return rename(source,target);};
+try{assert.throws(()=>publish(root),/simulated promotion failure/);}finally{fs.renameSync=rename;}
+assert(rejectedSwap);assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),before);
+assert.equal(fs.readFileSync(path.join(root,'web/custom.txt'),'utf8'),'keep');
 publish(root);
 assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),rel.files['app.wasm'].sha256);
 assert.equal(hash(fs.readFileSync(path.join(root,'web/app.js'))),rel.files['app.js'].sha256);
@@ -40,3 +62,31 @@ assert(fs.readFileSync(path.join(root,'web/index.html'),'utf8').includes('conten
 assert.equal(verify(path.join(root,'web/rel')).version,rel.version);
 assert.equal(verify(path.join(root,'web/dev')).tier,'dev');
 console.log('PASS: dev/rel modes, versions, identical engines, compression, public isolation, tamper rejection and promotion.');
+
+assert(rel.engineBase.startsWith('engine/'));
+assert.equal(rel.files[rel.engineBase+'app.wasm'].sha256,rel.files['app.wasm'].sha256);
+const firstEngine=rel.engineBase;
+// A new publication keeps the old immutable URLs available to open pages.
+prepare(root);publish(root);
+const next=verify(path.join(root,'web/rel'));
+assert.notEqual(next.engineBase,firstEngine);
+assert(fs.existsSync(path.join(root,'web',firstEngine,'app.wasm')));
+for(let i=0;i<3;i++){fs.appendFileSync(path.join(root,'dev/app.js'),'/* revision '+i+' */');prepare(root);publish(root);}
+const publicManifest=JSON.parse(fs.readFileSync(path.join(root,'web/deploy-manifest.json'),'utf8'));
+assert.equal(publicManifest.engineHistory.length,3);
+assert(!fs.existsSync(path.join(root,'web',firstEngine,'app.wasm')));
+console.log('PASS: recompilation race fixed, complete publication rollback, immutable engine URLs and bounded archive retention.');
+// Changes during snapshot capture are rejected before replacing either stage.
+const stageVersion=verify(path.join(root,'web/rel')).version;
+const sourceJS=fs.readFileSync(path.join(root,'dev/app.js')),writeFile=fs.writeFileSync;
+let changedDuringCapture=false;
+fs.writeFileSync=function(file,...args){const result=writeFile(file,...args);if(String(file).includes('snapshot-')&&String(file).endsWith('app.js')&&!changedDuringCapture){changedDuringCapture=true;fs.appendFileSync(path.join(root,'dev/app.js'),'/* changed during capture */');}return result;};
+try{assert.throws(()=>prepare(root),/Build changed during snapshot/);}finally{fs.writeFileSync=writeFile;fs.writeFileSync(path.join(root,'dev/app.js'),sourceJS);}
+assert(changedDuringCapture);assert.equal(verify(path.join(root,'web/rel')).version,stageVersion);
+// The first replacement is restored if the second replacement cannot be installed.
+const devVersion=verify(path.join(root,'web/dev')).version;
+let failedRel=false;
+fs.renameSync=function(source,target){if(target===path.join(root,'web/rel')&&String(source).includes('.deploy-work')&&!failedRel){failedRel=true;throw Error('simulated rel swap failure');}return rename(source,target);};
+try{assert.throws(()=>prepare(root),/simulated rel swap failure/);}finally{fs.renameSync=rename;}
+assert(failedRel);assert.equal(verify(path.join(root,'web/dev')).version,devVersion);assert.equal(verify(path.join(root,'web/rel')).version,stageVersion);
+console.log('PASS: changing snapshot inputs rejected; both prior stage directories restored after a partial stage swap.');

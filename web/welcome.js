@@ -71,6 +71,7 @@
     author.textContent = data.author ? 'by ' + data.author : '';
     start.hidden = arrival.failed || arrival.mode === 'discover' || arrival.editing;
     start.disabled = arrival.busy;
+    start.setAttribute("aria-hidden", arrival.busy ? "true" : "false");
     start.textContent = arrival.busy ? 'Preparing\u2026' : arrival.requested ? 'Awakening...' : 'Tap to awaken';
     hint.textContent = arrival.failed ? 'This scene could not be opened.' :
       arrival.busy ? '' :

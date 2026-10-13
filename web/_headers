@@ -2,10 +2,58 @@
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
 
-# Polynite test deployments
+# Polynite engine cache
 /dev/*
   X-Robots-Tag: noindex
   Cache-Control: no-cache
 /rel/*
   X-Robots-Tag: noindex
+/
   Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/app.html
+  Cache-Control: no-cache
+/version.txt
+  Cache-Control: no-cache
+/version.js
+  Cache-Control: no-cache
+/engine_loader.js
+  Cache-Control: no-cache
+/engine_cache.js
+  Cache-Control: no-cache
+/welcome.js
+  Cache-Control: no-cache
+/welcome.css
+  Cache-Control: no-cache
+/backend.js
+  Cache-Control: no-cache
+/startup_profile.js
+  Cache-Control: no-cache
+/engine/*
+  Cache-Control: public, max-age=31536000, immutable
+/rel/
+  Cache-Control: no-cache
+/rel/index.html
+  Cache-Control: no-cache
+/rel/app.html
+  Cache-Control: no-cache
+/rel/version.txt
+  Cache-Control: no-cache
+/rel/version.js
+  Cache-Control: no-cache
+/rel/engine_loader.js
+  Cache-Control: no-cache
+/rel/engine_cache.js
+  Cache-Control: no-cache
+/rel/welcome.js
+  Cache-Control: no-cache
+/rel/welcome.css
+  Cache-Control: no-cache
+/rel/backend.js
+  Cache-Control: no-cache
+/rel/startup_profile.js
+  Cache-Control: no-cache
+/rel/engine/*
+  Cache-Control: public, max-age=31536000, immutable
+# End Polynite engine cache

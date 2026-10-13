@@ -12,6 +12,9 @@ body.world-visible .loader-wordmark,
 body.world-visible .loader-state { display: none; }
 body.world-visible #loaderText { font-size: 11px; color: #b5c1cf; text-align: left; }
 body.world-visible .loader-meters { width: 100%; }
+.app-loader.downloading #loaderBuild,
+.app-loader.model-loading:not(.downloading) #loaderDownload { display: none; }
+body.world-visible #loaderEngineInfo { display: none; }
 body.world-visible:not(.arrival-busy):not(.arrival-failed) .app-loader { opacity: 0; visibility: hidden; }
 body.world-visible .alpha-preview { opacity: 0; pointer-events: none; }
 #arrival {
@@ -39,7 +42,7 @@ body.scene-ready #arrivalTitle, body.scene-ready #arrivalAuthor { display: none;
 #journeyHint { margin-top: 10px; font-size: 11px; opacity: .7; }
 #arrivalDiscover { display: inline-block; margin-top: 12px; padding: 5px 9px; border: 0; color: #cfdae5; background: none; font-size: 11px !important; }
 #arrival [hidden] { display: none; }
-body.world-visible #arrival.quiet { opacity: 0; visibility: hidden; }
+body.world-visible:not(.arrival-busy) #arrival.quiet { opacity: 0; visibility: hidden; }
 @media(max-width: 640px) {
   body.world-visible .app-loader { left: 20px; right: 20px; bottom: auto; top: 72px; width: auto; }
   body.world-visible .loader-meters { max-width: 190px; }
@@ -109,9 +112,13 @@ body.world-visible .docked-loader .loader-mark {
   display: block; width: 36px; grid-column: 1; grid-row: 1;
   animation: none; filter: none;
 }
-body.world-visible .docked-loader #loaderText { display: none; }
+/* Keep the live status available to assistive technology without duplicating copy. */
+body.world-visible .docked-loader #loaderText {
+  position: absolute; width: 1px; height: 1px; min-height: 0; margin: -1px;
+  padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
 body.world-visible .docked-loader .loader-meters {
-  grid-column: 2; grid-row: 1; align-self: end;
+  grid-column: 2; grid-row: 1; align-self: center;
   width: 100%; max-width: none; margin: 0; gap: 0; min-width: 0;
 }
 body.world-visible #arrival.has-discover .app-loader.docked-loader { width: calc(100% - 112px) !important; }
@@ -128,7 +135,7 @@ body.arrival-busy #arrival.docked #journeyStart {
   text-align: left; padding: 0 16px 30px 68px; letter-spacing: .025em;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 18px;
 }
-body.arrival-busy #arrival.docked #journeyStart:disabled { opacity: 1; }
+body.arrival-busy #arrival.docked #journeyStart:disabled { visibility: hidden; }
 body.arrival-busy #arrival.docked #journeyHint { display: none; }
 body.arrival-busy:not(.arrival-shared) #arrival.docked #arrivalTitle,
 body.arrival-busy:not(.arrival-shared) #arrival.docked #arrivalAuthor { display: none; }
