@@ -1,0 +1,7 @@
+# Polynite: interactive application, procedural creation and MCP documentation.
+User-agent: *
+Allow: /
+Disallow: /dev/
+
+Sitemap: https://polynite.io/sitemap.xml
+Sitemap: https://explore.polynite.io/sitemap.xml

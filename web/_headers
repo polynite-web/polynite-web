@@ -1,3 +1,11 @@
 /docs/media/tutorials/*
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
+
+# Polynite test deployments
+/dev/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache
+/rel/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache

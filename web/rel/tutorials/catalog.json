@@ -1,0 +1,390 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "colourful-tower",
+      "revision": 33,
+      "title": "A colourful tower",
+      "level": "Beginner",
+      "topic": "creation",
+      "description": "Start with 28 blocks, then make it your own.",
+      "prompt": "Create a colourful procedural tower in Polynite.\n\n- Build seven layers of four cubes, alternating cyan, pink and yellow.\n- Frame the whole tower and make a smooth five-second camera orbit.\n- Add a short animated 3D title reading BUILD SOMETHING.",
+      "scene": "https://polynite.io/docs/media/tutorials/r33/colourful-tower-2714782ca734.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r33/colourful-tower.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r33/colourful-tower-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r33/colourful-tower.jpg",
+      "open": "https://polynite.io/tutorials/colourful-tower/",
+      "sha256": "2714782ca734e2eb48624fd6f69cc56f2e5750a7dec540b21c0c98f6e5236ec7"
+    },
+    {
+      "id": "block-explosion",
+      "revision": 32,
+      "title": "A burst of colour",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "Launch, freeze the action, orbit and let it tumble.",
+      "prompt": "Create a colourful physics block explosion in Polynite.\n\n- Arrange 64 cubes as a compact cluster and launch them outwards with collisions and gravity.\n- Show an animated EXPLODE title, a brief camera push and subtle impact sound.\n- Freeze the action briefly, orbit around the suspended debris, then resume the fall.\n- Keep the whole effect visible in a replayable Cinematic sequence.",
+      "scene": "https://polynite.io/docs/media/tutorials/r32/block-explosion-e637143ca8eb.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r32/block-explosion.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r32/block-explosion-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r32/block-explosion.jpg",
+      "open": "https://polynite.io/tutorials/block-explosion/",
+      "sha256": "e637143ca8eb07f7d778fa6979a8e56848a57f9326320d8b41cb2851b5f31d5c"
+    },
+    {
+      "id": "brick-wall",
+      "portrait": true,
+      "control": {
+        "operation": "settings_preset",
+        "action_id": "replace-with-a-fresh-uuid",
+        "preset": "mobile"
+      },
+      "control_note": "These MCP arguments select an existing preset. The creation prompt above asks the assistant to define all custom values and their bindings when building the scene.",
+      "settings_groups": [
+        {
+          "title": "Impact and structure",
+          "items": [
+            {
+              "id": "impact_speed",
+              "label": "Impact speed",
+              "hint": "Initial push in metres per second. Increase speed before reducing brick mass.",
+              "range": "1–15 m/s",
+              "type": "slider"
+            },
+            {
+              "id": "ball_mass",
+              "label": "Ball mass",
+              "hint": "A heavier ball carries more momentum at the same speed.",
+              "range": "10–100 kg",
+              "type": "slider"
+            },
+            {
+              "id": "brick_mass",
+              "label": "Brick mass",
+              "hint": "Heavier bricks resist the impact; lighter bricks scatter more easily.",
+              "range": "0.5–10 kg",
+              "type": "slider"
+            },
+            {
+              "id": "brick_friction",
+              "label": "Brick friction",
+              "hint": "Higher friction reduces sliding after the impact.",
+              "range": "0.1–1.5 coefficient",
+              "type": "slider"
+            },
+            {
+              "id": "release_angle",
+              "label": "Release angle",
+              "hint": "Starting angle of the suspended ball, measured in degrees.",
+              "range": "5–55 deg",
+              "type": "slider"
+            },
+            {
+              "id": "rows",
+              "label": "Wall rows",
+              "hint": "Generate a shorter or taller wall without placing each brick manually.",
+              "range": "5–30",
+              "type": "slider"
+            },
+            {
+              "id": "show_chain",
+              "label": "Show chain",
+              "hint": "Show or hide the link meshes; the suspension physics remains active.",
+              "range": "On / Off",
+              "type": "toggle"
+            }
+          ]
+        },
+        {
+          "title": "Impact dust",
+          "items": [
+            {
+              "id": "dust",
+              "label": "Impact dust",
+              "hint": "Enable the bounded collision-particle effect.",
+              "range": "On / Off",
+              "type": "toggle"
+            },
+            {
+              "id": "dust_amount",
+              "label": "Dust amount",
+              "hint": "More visible dust without creating more physical bodies.",
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "dust_size",
+              "label": "Cloud size",
+              "hint": "Size of the individual dust puffs, in metres.",
+              "range": "0.02–0.75 m",
+              "type": "slider"
+            },
+            {
+              "id": "dust_lifetime",
+              "label": "Cloud lifetime",
+              "hint": "How long each puff remains visible.",
+              "range": "0.2–4 s",
+              "type": "slider"
+            },
+            {
+              "id": "dust_opacity",
+              "label": "Dust opacity",
+              "hint": "Control transparency separately from cloud size and lifetime.",
+              "updated_viewer": true,
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "dust_threshold",
+              "label": "Minimum impact energy",
+              "hint": "Only collisions above this energy emit dust. Lower it for gentler impacts.",
+              "updated_viewer": true,
+              "range": "0–100 J",
+              "type": "slider"
+            }
+          ]
+        },
+        {
+          "title": "Surface and performance",
+          "items": [
+            {
+              "id": "quality",
+              "label": "Render quality",
+              "hint": "Mobile uses lighter geometry and effects; Balanced is the everyday profile; Export uses full meshes.",
+              "range": "Mobile / Balanced / Export",
+              "type": "select"
+            },
+            {
+              "id": "motion_blur",
+              "label": "Motion blur",
+              "hint": "Rigid-object motion blur. It is disabled by the Mobile profile.",
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "brick_bevel",
+              "label": "Brick edge radius",
+              "hint": "Small bevels catch light along the edges. This remains bounded for the physics shape.",
+              "range": "0–0.008 m",
+              "type": "slider"
+            },
+            {
+              "id": "variation",
+              "label": "Brick colour variation",
+              "hint": "Seeded colour variation shared by the procedural wall recipe.",
+              "range": "0–0.3",
+              "type": "slider"
+            }
+          ]
+        }
+      ],
+      "experiments": [
+        {
+          "title": "1. Gentle versus Demolition",
+          "text": "Try Gentle (50 kg ball, 6 kg bricks, 2 m/s), then Demolition (100 kg ball, 0.75 kg bricks, 12 m/s). Apply and replay each preset; compare the opening and the debris."
+        },
+        {
+          "title": "2. Make dust easier to see",
+          "text": "Use Breach, then increase cloud size to 0.4 m and lifetime to 3 s. Change only one value at a time. On an updated viewer, lower the energy threshold for lighter impacts."
+        },
+        {
+          "title": "3. Build for a phone",
+          "text": "Choose Mobile: 18 rows, no motion blur and bounded dust. Check responsiveness on a real phone. Visual LOD does not change the physical colliders."
+        },
+        {
+          "title": "4. Frame and record",
+          "text": "Choose Cinematic for a desktop video. Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
+        }
+      ],
+      "viewer_note": "Live effects/body properties and queued initial-setup edits need the latest viewer. Earlier viewers either queue all edits or reset on release, and may omit dust opacity/energy threshold. Live grabbing, camera modes and speed controls also require a recent build.",
+      "revision": 37,
+      "title": "Brick wall lab",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "Tune the impact, dust and render budget with 17 scene-owned controls.",
+      "prompt": "Create an advanced procedural brick-wall demolition scene in Polynite.\n\n- Generate a staggered wall of 30 rows by 10 columns of individually simulated red clay bricks, with rough grain, small bevels and seeded colour variation.\n- Suspend a dark steel wrecking ball from 18 alternating physical chain links and swing it through the wall. Use a textured aggregate floor, contact shadows and warm/cool lighting.\n- Define scene-owned MCP custom values: impact speed 6 m/s (1–15), ball mass 100 kg (10–100), brick mass 2 kg (0.5–10), friction 0.85 (0.1–1.5), release angle 33° (5–55), rows 30 (5–30), and chain visibility.\n- Add dust controls: enabled, amount 0.85 (0–1), size 0.28 m (0.02–0.75), lifetime 2.4 s (0.2–4), opacity 0.65 (0–1), and minimum impact energy 1 J (0–100).\n- Add render quality Mobile/Balanced/Export, motion blur 0 (0–1), brick bevel 0.004 m (0–0.008), and colour variation 0.075 (0–0.3).\n- Define English-labelled Gentle, Breach, Demolition, Mobile and Cinematic presets. Mobile uses 18 rows, lighter LOD and dust, and no motion blur.\n- Author a roughly ten-second replayable Cinematic sequence: start with the intact wall, release the ball, then orbit gently through the collision and falling debris.",
+      "scene": "https://polynite.io/docs/media/tutorials/r37/brick-wall-03b46a4c19af.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r37/brick-wall.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r37/brick-wall-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r37/brick-wall.jpg",
+      "open": "https://polynite.io/tutorials/brick-wall/",
+      "sha256": "03b46a4c19af055d745c8075653cfd17756d6fb258e51ae59b494dabdba33ef0"
+    },
+    {
+      "id": "orbiting-letters",
+      "revision": 33,
+      "title": "Words in orbit",
+      "level": "Intermediate",
+      "topic": "text",
+      "description": "A real 3D ring of letters around a simple shape.",
+      "prompt": "Create a cyan sphere with a golden 3D ring of letters in Polynite.\n\n- Make the ring read CREATE / VIEW / SHARE, anchored in world space around the sphere.\n- Rotate the letters slowly and orbit the camera for about six seconds.\n- Use soft lighting and keep the whole ring readable.",
+      "scene": "https://polynite.io/docs/media/tutorials/r33/orbiting-letters-6c79ac852832.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r33/orbiting-letters.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r33/orbiting-letters-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r33/orbiting-letters.jpg",
+      "open": "https://polynite.io/tutorials/orbiting-letters/",
+      "sha256": "6c79ac852832d5a0a5f90d3f1a5b6c4bf1cfce8eca7a53b28996e2566a84a9cf"
+    },
+    {
+      "id": "three-shapes",
+      "revision": 34,
+      "title": "Your first three shapes",
+      "level": "Beginner",
+      "topic": "creation",
+      "description": "Create, recolour and resize three simple objects.",
+      "prompt": "Create a cyan cube, a pink sphere and a golden cone side by side in Polynite.\n\n- Use contrasting silhouettes on a reflective ground plane.\n- Make the objects appear with a subtle blue edge reveal.\n- Create a smooth six-second Cinematic camera orbit that keeps all three shapes in view.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/three-shapes-e07953f6e124.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/three-shapes.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/three-shapes-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/three-shapes.jpg",
+      "open": "https://polynite.io/tutorials/three-shapes/",
+      "sha256": "e07953f6e124919b0f9275d381c11f0767ffa6a4d809a5f73cc7f70ac6bb7946"
+    },
+    {
+      "id": "falling-blocks",
+      "revision": 34,
+      "title": "Let gravity do the work",
+      "level": "Beginner",
+      "topic": "physics",
+      "description": "Watch blocks and balls fall, bounce and settle.",
+      "prompt": "Create a colourful gravity-and-collision demo in Polynite.\n\n- Arrange eight dynamic cubes and four dynamic spheres above a solid ground plane.\n- Let them fall, bounce and settle with realistic collisions and subtle impact sounds.\n- Pause the initial pose briefly, then release the simulation and orbit the camera for about seven seconds.\n- Keep the initial state and sequence replayable.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/falling-blocks-6cb2e3d99f35.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/falling-blocks.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/falling-blocks-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/falling-blocks.jpg",
+      "open": "https://polynite.io/tutorials/falling-blocks/",
+      "sha256": "6cb2e3d99f358318c4cbbd1d6d58120bf247fa3866c439e96c34ef0ccd5bd8ce"
+    },
+    {
+      "id": "camera-reveal",
+      "revision": 34,
+      "title": "A closer look",
+      "level": "Beginner",
+      "topic": "camera",
+      "description": "Move from a close detail to a smooth wider orbit.",
+      "prompt": "Create a small colourful sculpture made from six cubes in Polynite.\n\n- Begin with a close view of one detail.\n- Pull the camera back over about 2.4 seconds to reveal the whole sculpture.\n- Blend smoothly into a four-second orbit, keeping the subject inside the frame.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/camera-reveal-36e94a49d78d.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/camera-reveal.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/camera-reveal-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/camera-reveal.jpg",
+      "open": "https://polynite.io/tutorials/camera-reveal/",
+      "sha256": "36e94a49d78dd20369a22255f18a30c2d80b40551a67722d65db9606657830db"
+    },
+    {
+      "id": "command-input",
+      "preset": "command-input-v2",
+      "control": {
+        "command": "replace",
+        "seq": [
+          {
+            "op": "hold",
+            "at": 0,
+            "dur": 4
+          },
+          {
+            "op": "text",
+            "preset": "command-input-v2",
+            "text": "Make it blue",
+            "at": 0.4
+          }
+        ]
+      },
+      "control_note": "This snippet adds the illustrative command field only. The blue colour change is a separate action in the downloadable scene.",
+      "revision": 34,
+      "title": "A command comes to life",
+      "level": "Intermediate",
+      "topic": "cinematic",
+      "description": "Animated typing, quiet cues and a glowing confirmation.",
+      "prompt": "Create a cyan cube and a pink sphere in Polynite, then animate a command confirmation.\n\n- Use command-input-v2 to type Make it blue in an illustrative command overlay, with discreet sounds and a glowing checkmark.\n- After confirmation, turn the sculpture blue and fade the overlay gently.\n- Create a roughly six-second camera orbit around the updated sculpture.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/command-input-8a29fdbe2db9.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/command-input.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/command-input-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/command-input.jpg",
+      "open": "https://polynite.io/tutorials/command-input/",
+      "sha256": "8a29fdbe2db92574f68daa914359a89cbe6257b6030ae561932de3086063b27a"
+    },
+    {
+      "id": "ending-signature",
+      "preset": "polynite-ending-v4",
+      "control": {
+        "command": "set_branding",
+        "preset": "polynite-ending-v4",
+        "layout": "short-portrait",
+        "volume": 0.5
+      },
+      "revision": 34,
+      "title": "Make the ending yours",
+      "level": "Intermediate",
+      "topic": "cinematic",
+      "description": "Keep the Polynite signature, choose its placement and soften its sound.",
+      "prompt": "Create a simple cyan cube and pink sphere scene in Polynite with a customised film ending.\n\n- Make a smooth 4.5-second camera orbit.\n- Use polynite-ending-v4 with the required Polynite signature in the short-portrait layout, placed higher in the frame, and sound volume 0.5.\n- Keep the scene fade, shine-only bloom and discreet ending sounds coordinated.\n- Record a portrait MP4 to show the ending; keep the live scene preview free of the closing signature.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/ending-signature-ad2d66f2364d.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/ending-signature.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/ending-signature-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/ending-signature.jpg",
+      "open": "https://polynite.io/tutorials/ending-signature/",
+      "sha256": "ad2d66f2364d0ee079340280996e65d86c24560019aef009dcd4528f1336162e"
+    },
+    {
+      "id": "record-mp4",
+      "revision": 34,
+      "title": "From scene to MP4",
+      "level": "Beginner",
+      "topic": "export",
+      "description": "Record a smooth film, preview it and keep your own copy.",
+      "prompt": "Create and record a small procedural sculpture in Polynite.\n\n- Arrange nine colourful spheres above a softly reflective ground plane.\n- Add a subtle appearance reveal and a smooth six-second Cinematic camera orbit.\n- Record the authored sequence from its initial state as a landscape MP4 at 1080p and 60 FPS, with discreet sounds.\n- Wait for completion, then provide the actual downloadable MP4 and an editable .scene containing the scene and its sequence.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/record-mp4-24555983cd5d.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/record-mp4.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/record-mp4-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/record-mp4.jpg",
+      "open": "https://polynite.io/tutorials/record-mp4/",
+      "sha256": "24555983cd5de457c4bc54fb1c4903e661d98377e4901c1020b169f80e01290f"
+    },
+    {
+      "id": "forest-rain",
+      "revision": 34,
+      "title": "A forest under colourful rain",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "Static tree colliders meet falling spheres and cubes.",
+      "prompt": "Create a small stylised forest under colourful rain in Polynite.\n\n- Build tree trunks and canopies as static colliders.\n- Drop ten colourful spheres and ten cubes above the forest as dynamic bodies.\n- Make them collide with the trees and ground, with gravity and discreet impact sounds.\n- Create a slow seven-second camera orbit that keeps the forest and collisions visible.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/forest-rain-b0773786b56e.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/forest-rain.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/forest-rain-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/forest-rain.jpg",
+      "open": "https://polynite.io/tutorials/forest-rain/",
+      "sha256": "b0773786b56ec579c13867bcd8418fc9304cd84ebf7ac18b9a6d8c858c1ca643"
+    },
+    {
+      "id": "domino-chain",
+      "revision": 34,
+      "title": "One push, a chain reaction",
+      "level": "Advanced",
+      "topic": "physics",
+      "description": "A small impulse sends a row of coloured dominos tumbling.",
+      "prompt": "Create a row of 20 colourful physics dominos in Polynite.\n\n- Use upright blocks at least 0.10 m thick, spaced closely enough to strike the next piece when they fall.\n- Give only the first domino a gentle initial tilt and angular velocity.\n- Let the chain reaction unfold with realistic collisions and subtle impact sounds.\n- Keep the camera close enough to see each collision in a replayable eight-second Cinematic sequence.",
+      "scene": "https://polynite.io/docs/media/tutorials/r34/domino-chain-e3aaaef09548.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r34/domino-chain.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r34/domino-chain-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r34/domino-chain.jpg",
+      "open": "https://polynite.io/tutorials/domino-chain/",
+      "sha256": "e3aaaef095485e7780bbbf74183dc5de5cadc85b886eebf1a8f95eb877e91d9e"
+    },
+    {
+      "id": "autumn-lantern-cottage",
+      "viewer_note": "The saved example is the reference seed 0; the prompt asks for a new nonzero seed. The silent preview loops its first 15 seconds; the full film includes a short ending. Detailed cards cost more than rounded foliage. Exact visual endpoints were verified natively; this is not a claim that every physics or audio simulation loops.",
+      "revision": 38,
+      "title": "Autumn Lantern Cottage",
+      "level": "Advanced",
+      "topic": "cinematic",
+      "description": "A moonlit cottage, coherent seeded variants and a seamless 15-second visual loop.",
+      "prompt": "Create a warm autumn cottage diorama in Polynite with a perfect 15-second visual loop.\n\n- Discover the connected engine capabilities. Save the current editable film and restore it after any temporary tests.\n- Generate a coherent random cottage with a recorded nonzero integer seed, detail 0.68, fantasy 0.3 and roof_curve 1.15. Preserve version 1 recipes and the chosen seed for reproduction.\n- Generate the dependent path, garden and trees, in that order. Place ivy around the walls while keeping windows, shutters and the door clear. Include stone paving, pumpkins and longer grass near walls and trunks.\n- Use seeded cards trees with autumn foliage, count 3, detail 0.68 and leaf_density 1. Offer rounded or hybrid trees for lower budgets without silently changing style on rerolls.\n- Set a blue-violet twilight sky, subtle stars and Milky Way, a cool moon above the horizon and a sun below it. Keep window and lantern light warm, with restrained bloom and god rays.\n- Synchronize shared spatial wind, grass, smoke and falling leaves to 15 seconds. Leaves settle and fade on the ground. Keep sky twinkle and cloud/aurora speeds zero for this loop.\n- Make one continuous 15-second camera orbit. Windows turn on with a brief rustic flicker; keep smoke anchored to the chimney. Expose scene-owned lighting, wind, vegetation and quality controls.\n- Inspect real frames, compare render endpoints at 0 and 15 seconds, and save the expanded editable scene. Keep the chosen random seed; do not claim that random generation alone guarantees a perfect loop.",
+      "scene": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage-e52d68a4d27f.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.jpg",
+      "open": "https://polynite.io/tutorials/autumn-lantern-cottage/",
+      "sha256": "e52d68a4d27f201d21db539e63d74703d6fa2b2c9fa3b500bb90ed50943e22a9"
+    }
+  ]
+}

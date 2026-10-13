@@ -1,0 +1,2576 @@
+{
+  "format": 1,
+  "tier": "dev",
+  "version": "v0271",
+  "sourceVersion": "v0158",
+  "files": {
+    "404.html": {
+      "bytes": 5653,
+      "sha256": "fefab912a060394e6642f84cf7700da7e3c41be217c7fbe21ba6a482eadc9381"
+    },
+    "404.html.br": {
+      "bytes": 1211,
+      "sha256": "e68ed79d79a177d27bc3f50aaeac983565d62c67b9a1478371049e3cf0f9c3c7"
+    },
+    "404.html.gz": {
+      "bytes": 1613,
+      "sha256": "7e32e49f255b0f0eb3f4310554bfe624f46f6c4c599b1a32173c22be1d93bf6a"
+    },
+    "Rc/defaults/app.json": {
+      "bytes": 311,
+      "sha256": "731fbdbeb3e3cf628a6faec55255ff67c8ab157a0e1e2e94b297fcb5921a88e6"
+    },
+    "Rc/font/legacy_clean.sdffont.json": {
+      "bytes": 48571,
+      "sha256": "e27aa702cbf6559e34324c91ce31bae59f3ce7a5ed65cffc1bc9af4003118e3f"
+    },
+    "Rc/font/legacy_clean.sdffont.json.br": {
+      "bytes": 3335,
+      "sha256": "1ae50fd8c248da73754004b7b09cfe9766c6c06adc832fb1f802d4581b163646"
+    },
+    "Rc/font/legacy_clean.sdffont.json.gz": {
+      "bytes": 3923,
+      "sha256": "c8120bfae737850c4e5348fcef8d95f6e99696626c49b7dc63b7123a807b51f2"
+    },
+    "Rc/font/numeris_ancient_tech_v2.sdffont.json": {
+      "bytes": 107310,
+      "sha256": "3dba7fbf0d42da646a6ae03931781eb3bc1a5e4a71ab2a39a56a0ca2a75da5e1"
+    },
+    "Rc/font/numeris_ancient_tech_v2.sdffont.json.br": {
+      "bytes": 4709,
+      "sha256": "3b09ecc195c26245cb02e13188effffe186ec6b6c5681fb1645967c229de6fc2"
+    },
+    "Rc/font/numeris_ancient_tech_v2.sdffont.json.gz": {
+      "bytes": 6065,
+      "sha256": "477d85b625f456ec65a68568af91cdc5b9fd6f8cbce0613fa94e416f8937f454"
+    },
+    "Rc/font/numeris_cosmic.sdffont.json": {
+      "bytes": 108476,
+      "sha256": "94de75d2b2c5881ca882806df8e67c5ed195f82fb29f2212c6d1a42e4c1a7f4a"
+    },
+    "Rc/font/numeris_cosmic.sdffont.json.br": {
+      "bytes": 4972,
+      "sha256": "398ff468ee8cde595a2e55d6713f8adb8d753207499ec09d18e977dea7208e8e"
+    },
+    "Rc/font/numeris_cosmic.sdffont.json.gz": {
+      "bytes": 6321,
+      "sha256": "b2579275555c7eaa8e50b43658f276cc0ffbea621b24e59bdf36735884742406"
+    },
+    "_headers": {
+      "bytes": 110,
+      "sha256": "11bcb86397f29f9a09c770ad5559e34d06ca33ac272ec3c124c68eb48af76783"
+    },
+    "_redirects": {
+      "bytes": 1461,
+      "sha256": "6883b73cfbb85e95cf2922d77acb83e3d57c90697f20c9b6c72fa1fb55f62f33"
+    },
+    "app.html": {
+      "bytes": 81907,
+      "sha256": "19637ae84afd569975aa9ebd3e9c67acab1af2780bc172dd8f50d1a151e8a32c"
+    },
+    "app.html.br": {
+      "bytes": 22173,
+      "sha256": "237766c217a11b2abf4b039f0bf4b93fc53bbd0b2501d5c48be2ba8813a259e8"
+    },
+    "app.html.gz": {
+      "bytes": 26008,
+      "sha256": "f59679ed83906311bf77f53990f805a772b94f9a031aab3f1e276699e93c165f"
+    },
+    "app.js": {
+      "bytes": 334116,
+      "sha256": "103dfe4f06b70531c2b5d3a3edf94b15d33414a3ddb2594af4ee16e724b4c578"
+    },
+    "app.js.br": {
+      "bytes": 71715,
+      "sha256": "fb7e233b1d1a15732087476bbada6c8d09f56b621e98ffe37bbb19c7df3ddf6e"
+    },
+    "app.js.gz": {
+      "bytes": 83548,
+      "sha256": "a75fc92df98fb55c7ec77ab51d9e1335fbb211dab83da40ae6c0b8b899b0b127"
+    },
+    "app.wasm": {
+      "bytes": 4196016,
+      "sha256": "39cbc9853abbbeed972754f55efc8cc1e332eb6ca8f44d2973fcef3d07b9a490"
+    },
+    "app.wasm.br": {
+      "bytes": 1350881,
+      "sha256": "89b09cb62de39d8a26bcb40eb96b0a19ae5e4f71a85c9b27e2d9be3c35ca4e1c"
+    },
+    "app.wasm.gz": {
+      "bytes": 1735768,
+      "sha256": "72dd9d640199b997dbe052ec0db28487e3dd77e5569c47640bca782199957017"
+    },
+    "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
+      "bytes": 1229851,
+      "sha256": "312c8fd847e58a116351ed2ee62d412c47c3c217b500cc3694a2e971a2e0f672"
+    },
+    "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d.png": {
+      "bytes": 1229851,
+      "sha256": "312c8fd847e58a116351ed2ee62d412c47c3c217b500cc3694a2e971a2e0f672"
+    },
+    "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d_flipy.png": {
+      "bytes": 1487508,
+      "sha256": "fbb9609147f3a77d33d745fbf8206ae144993937be8e2361a248f1d5e4a1efd9"
+    },
+    "assets/Polynod/54443e07-44ec-4028-b494-8c9ffedde25e.png": {
+      "bytes": 416697,
+      "sha256": "4fea3a2c270f2c7c6186c74865e57b1b0a4283aa39bb9dcdb966792dc72fb45d"
+    },
+    "assets/Polynod/7e960067-cd61-497d-9190-b8bc04c1168d.png": {
+      "bytes": 1202951,
+      "sha256": "60f6b175187b1cd6d1f3ac0754218982906da5ccfd59a0e4cd279202f036cc4c"
+    },
+    "assets/Polynod/8cb3a62d-4ab2-4e5d-ac85-3f5b225d84a8.png": {
+      "bytes": 1168160,
+      "sha256": "7cb338853cc854c1b9c9b6366d3bd411de59036546ff4fe1f1f1e10a6418e4cd"
+    },
+    "assets/Polynod/f5e21825-7d90-40ef-91ad-e3381037070f.png": {
+      "bytes": 1177564,
+      "sha256": "cabe0815c396ad2f481b6e9033ff0f689bf5d665486e131472bc9cdf84546074"
+    },
+    "assets/Polynod/og-cover.png": {
+      "bytes": 64896,
+      "sha256": "ed45349f7c6169fd99aa88cd94c15438fb05cec2526925888857f36333f6ab4e"
+    },
+    "assets/apple-touch-icon.png": {
+      "bytes": 14369,
+      "sha256": "ee7fbdaedf0b0fd2cf281641ea19a1d4746fcdf0be8522ffdc021c040aeee77f"
+    },
+    "assets/banner/19655f65-27ac-46e1-b354-4666f73ed6f7.png": {
+      "bytes": 1737402,
+      "sha256": "ee25ee5203eb199b9878e5a965854b4e2ad091c4ec0add32f1762c3141aa3008"
+    },
+    "assets/banner/51c6aefa-56f6-4fa8-b128-0cd03d2f3af1.png": {
+      "bytes": 1746940,
+      "sha256": "5ff0b06278f64fca921f38c44bad609c6835332df72243559ce4518f7d0efb22"
+    },
+    "assets/banner/8b171b9e-a919-4f51-be1b-3125c50ff3a7.png": {
+      "bytes": 2320097,
+      "sha256": "8a5622c8c79d6019be969b63a31de9ff1c0ab95317e69a5ec4fa08dc803ec2f9"
+    },
+    "assets/banner/9390f6a2-261a-4888-8aeb-8feb39f05c78.png": {
+      "bytes": 1796672,
+      "sha256": "a6580940a53ef4268faebe027670ac9149c600fcf9dab6a7f45d6decd2463b65"
+    },
+    "assets/banner/aaefd092-0287-492f-a489-cd7677e28819.png": {
+      "bytes": 1703650,
+      "sha256": "41962788f431a7b1936e1c13cd2e551766bb0d5fc8a8f8ce2e9c1418e37764d0"
+    },
+    "assets/banner/banner.png": {
+      "bytes": 1497209,
+      "sha256": "2edc9c244c5ba8cd340dcfbb1c7e9920a4f1026b303106636cf88e3f42118e6f"
+    },
+    "assets/banner/banner2.png": {
+      "bytes": 1617627,
+      "sha256": "abb112bad0302ef18de46c71b85bef0b9cd38a8888c6d77579ed106f321b6227"
+    },
+    "assets/banner/banner3.png": {
+      "bytes": 1630049,
+      "sha256": "ca5da6e81ecfc630e270b0359cc9304763cce67365731fae102a388be9f2f303"
+    },
+    "assets/banner/banner4.png": {
+      "bytes": 1875407,
+      "sha256": "78890dbe11130d02bc1455a31ecdf4d7ec656f95fd183884de91d3f58bebb490"
+    },
+    "assets/banner/banner5.png": {
+      "bytes": 1809835,
+      "sha256": "ee945c90e68eefcf9e45236a63abb335e19c4c9c5de49d48ad85554b903e00f6"
+    },
+    "assets/banner/banner6.png": {
+      "bytes": 1771310,
+      "sha256": "46bd118857dd335b6a94cf235e491a6023424d25e7caffdcad9ce82b1f5ceddf"
+    },
+    "assets/banner/banner7.png": {
+      "bytes": 2298274,
+      "sha256": "b369ddcc07c5195623d45735a874f8f095b1d1b2e67b4bbd181d07a4eca3a48a"
+    },
+    "assets/banner/banner8.png": {
+      "bytes": 2274934,
+      "sha256": "7ec62ade8dd29b26e97f009faa070440d41cca1f8d77ca41914adeb66db21636"
+    },
+    "assets/banner/banner9.png": {
+      "bytes": 2203757,
+      "sha256": "9c9a155d009b302d103aaf47ec3521ec459580b709cc3fb34294c0f801d3a366"
+    },
+    "assets/banner/banner_test.png": {
+      "bytes": 1507393,
+      "sha256": "ccde478c1c8bed70ea5b819fd1f918dd2385482e76f71845466bf66465826332"
+    },
+    "assets/banner/banner_test2.png": {
+      "bytes": 1505436,
+      "sha256": "e931fdfb691de21943f70f7593bd829fc75d88c810ee8c91f8e37cd92b806b04"
+    },
+    "assets/banner/bba69a76-9255-41dc-bbd4-f664e069ac82.png": {
+      "bytes": 2138106,
+      "sha256": "9fdaaca6a2805f4ee62e0ea2c9895c1886cca243075daa4b9c886a75b0a09928"
+    },
+    "assets/banner/best.png": {
+      "bytes": 1896990,
+      "sha256": "93e8a779770e2ed348138ed59b62b669f983eb25a42e971657ca6e28292e18d7"
+    },
+    "assets/banner/best1.png": {
+      "bytes": 1819765,
+      "sha256": "f58c41890109efabe46517189b8cb0178c4377e7c74e58f95b70b463940ceea5"
+    },
+    "assets/banner/best2.png": {
+      "bytes": 1682146,
+      "sha256": "59de96ccedd412b04722bacec1c3715f23bb1385811e901e6feb4f1bf405244f"
+    },
+    "assets/banner/d80d5850-1220-433c-abbd-29481a2ac41a.png": {
+      "bytes": 1795647,
+      "sha256": "ee0fc1893df6830d623b714d303c8700b2254811ab96c3cec806b98d55380b10"
+    },
+    "assets/banner/ea7dcd12-e360-4ba3-b0bd-2bb71fe0f6c3.png": {
+      "bytes": 2044564,
+      "sha256": "7734ba4d4e7e3b4d2273a3a1ff7f4c46fc9a20884a354be6f30c3aa52fde8a6e"
+    },
+    "assets/banner/polynite_anime.jpg": {
+      "bytes": 2123453,
+      "sha256": "5bbc8ae7ab880cd811538b95254c2a1759a8b804b157b3be4f7ae083fa723240"
+    },
+    "assets/banner/polynite_anime.png": {
+      "bytes": 10822667,
+      "sha256": "209d6d0909cf6ab06e79037ab47135166452d711d4f60a6f056d4c49e5a4733e"
+    },
+    "assets/banner/polynite_anime2.jpg": {
+      "bytes": 1625288,
+      "sha256": "d0a3b5dd63571d18a003f21c7b68c98718345a058bb0739c201572258496c0d0"
+    },
+    "assets/banner/polynite_realesrga.png": {
+      "bytes": 14778160,
+      "sha256": "d095d26adb578ab2bccc2277ba50eb6d65b8c592917057ae9926a05cb9ddd7c6"
+    },
+    "assets/banner/polynite_realesrnet-.png": {
+      "bytes": 9751106,
+      "sha256": "22b1a8bb6304d950e8edf143cef533dbba6f589de9c63b3ea8d5e55f8ed6b5b3"
+    },
+    "assets/card-wordmark.png": {
+      "bytes": 16784,
+      "sha256": "52b278aa4d269fd29122d0b22d958f01d9ec8336a50e77867b2015282e4464c3"
+    },
+    "assets/favicon-32.png": {
+      "bytes": 1288,
+      "sha256": "553b6388e986f4c7e1b0c3a2e51f8bf0a3a51e48d04b139b8dcc64af6e0576b1"
+    },
+    "assets/favicon.ico": {
+      "bytes": 4238,
+      "sha256": "e82671cbbf0334e6d30a277dd77a4f67ff7b0b320590eeba3802d447af0c64c3"
+    },
+    "assets/favicon_polynite.png": {
+      "bytes": 216634,
+      "sha256": "26a1c7b9bfc1eeb4fbfdb8e308463aed01bc8d9b35676ecba1d9b70f3e870a2b"
+    },
+    "assets/favicon_polynite_black.png": {
+      "bytes": 891687,
+      "sha256": "0f6af6233308de05c3b8d5f9bd8a23b5ccd88304f5d0b7a2f6494b54f0a737dc"
+    },
+    "assets/favicon_polynite_orie.png": {
+      "bytes": 451484,
+      "sha256": "13ea493c7c63894c49bff2d3161fa5e92812e712159314da9fec0e249b952208"
+    },
+    "assets/icon-192-maskable.png": {
+      "bytes": 8749,
+      "sha256": "f883fd923aae1b5da0a7a71da90a9c4efe82efab82d48bb20f2d758d194afd04"
+    },
+    "assets/icon-192.png": {
+      "bytes": 13278,
+      "sha256": "e82f4468dffc97ded5daa4bd1a9f077e9e6dfb05dcc6e1d9a38fafb82edd7e76"
+    },
+    "assets/icon-512-maskable.png": {
+      "bytes": 48339,
+      "sha256": "cbb3987324a2371fa14f61dcea8f6a914d233a9bdb7c029db50ec21dab03cfb7"
+    },
+    "assets/icon-512.png": {
+      "bytes": 100677,
+      "sha256": "2f1fa508331faec6beb9319873e779438b68a39114152d8d26ddedef02e9ced2"
+    },
+    "assets/icon-96.png": {
+      "bytes": 3842,
+      "sha256": "29468a93f730756c3a0f16f4abe7918860927dec5ecc28cedc636964cb3388c9"
+    },
+    "assets/og-cover.png": {
+      "bytes": 98427,
+      "sha256": "6913910cccf38fa1e0dd17c6b82445bc7b90f6fe6166a0fac89a56ae92725057"
+    },
+    "assets/og-create-view-share-v2.png": {
+      "bytes": 98427,
+      "sha256": "6913910cccf38fa1e0dd17c6b82445bc7b90f6fe6166a0fac89a56ae92725057"
+    },
+    "assets/og-procedural-v1.png": {
+      "bytes": 98591,
+      "sha256": "f7afe8774b3e799ee8b4c215deb5dbb195ccd141d0c90b272310d0cc745d03d7"
+    },
+    "assets/public-site/chrome-8a38b3493a58.css": {
+      "bytes": 3131,
+      "sha256": "8a38b3493a58c7bd892687de048698f576bf63f278ee6af5844e3f5c33d21e51"
+    },
+    "assets/public-site/chrome-8a38b3493a58.css.br": {
+      "bytes": 823,
+      "sha256": "19d10d3dc57abc8b8a032168a4215ceae9b3eb9ff2cc6fc911fbef30fed285c5"
+    },
+    "assets/public-site/chrome-8a38b3493a58.css.gz": {
+      "bytes": 993,
+      "sha256": "e16951386d87d78b5beda3fe0e8ac5a8636b2ae28600eb52bca8d13151c9527c"
+    },
+    "assets/public-site/chrome.css": {
+      "bytes": 3131,
+      "sha256": "8a38b3493a58c7bd892687de048698f576bf63f278ee6af5844e3f5c33d21e51"
+    },
+    "assets/public-site/chrome.css.br": {
+      "bytes": 823,
+      "sha256": "19d10d3dc57abc8b8a032168a4215ceae9b3eb9ff2cc6fc911fbef30fed285c5"
+    },
+    "assets/public-site/chrome.css.gz": {
+      "bytes": 993,
+      "sha256": "e16951386d87d78b5beda3fe0e8ac5a8636b2ae28600eb52bca8d13151c9527c"
+    },
+    "assets/public-site/style-0e30726a01b7.css": {
+      "bytes": 6659,
+      "sha256": "0e30726a01b7abf3ff4c127f43ab0420e8fb53fdedc34a9568059b18ccce9b0b"
+    },
+    "assets/public-site/style-0e30726a01b7.css.br": {
+      "bytes": 1779,
+      "sha256": "cd482c4b76cd9cc5349be94d5f102a0bf3bebeecb0aab46b9093a72a0a00f78b"
+    },
+    "assets/public-site/style-0e30726a01b7.css.gz": {
+      "bytes": 2116,
+      "sha256": "14535587f071d2a2126e7b03c51c12a289a547e73eb3a23c8e2935e5e9b3b75f"
+    },
+    "assets/public-site/style-7014082f4d65.css": {
+      "bytes": 3712,
+      "sha256": "5c9f89e9ad53f2a89a0cdbbd065efb1f1e3d36977b930e5fabc202bd80976aaa"
+    },
+    "assets/public-site/style-7014082f4d65.css.br": {
+      "bytes": 1136,
+      "sha256": "7f0a298935b8ecc8de777894de10d0da312185af80093ffee32d3cf24ee10a42"
+    },
+    "assets/public-site/style-7014082f4d65.css.gz": {
+      "bytes": 1383,
+      "sha256": "227defe89191c32f3d1439a3db1b43e3175afeb59f55accc01a8bb3d2c70fa14"
+    },
+    "assets/public-site/style-7c97aa645816.css": {
+      "bytes": 5966,
+      "sha256": "f0749fd1d1a50ff3be6b00613fb4d676eb432be5e0fe8586d3c95e9244f43061"
+    },
+    "assets/public-site/style-7c97aa645816.css.br": {
+      "bytes": 1581,
+      "sha256": "b08d4085dcff57aa89aaeac77f03c4e1b0de3f8f528911324b50d3f53bba2fe5"
+    },
+    "assets/public-site/style-7c97aa645816.css.gz": {
+      "bytes": 1896,
+      "sha256": "950ac0e9fbf062592c8544e219e63092b9f8dd530df9759a0dada3fddb7a064f"
+    },
+    "assets/public-site/style-b0ee83d09777.css": {
+      "bytes": 6192,
+      "sha256": "ef13918f37d14c2548790cb89ff8be20be766ff8e9bab0ad54dbe14fc4ea47ee"
+    },
+    "assets/public-site/style-b0ee83d09777.css.br": {
+      "bytes": 1637,
+      "sha256": "85e3ab20cee6426517562cb26c99c95ad26f1ef3825bd039ef6db839b3c76f9f"
+    },
+    "assets/public-site/style-b0ee83d09777.css.gz": {
+      "bytes": 1957,
+      "sha256": "c0c9473779e804c7ac27cc712d0e413b20da6072edee528e701a652c4a591f20"
+    },
+    "assets/public-site/style-f2bc645226cb.css": {
+      "bytes": 6582,
+      "sha256": "f2bc645226cba902f2a5dae5633cf322f1bda67e8c52936783c43425af436a77"
+    },
+    "assets/public-site/style-f2bc645226cb.css.br": {
+      "bytes": 1758,
+      "sha256": "22a222021ffbc6ec007ba963fac360ef9fd4395bf99545ebe9c8845430e3c382"
+    },
+    "assets/public-site/style-f2bc645226cb.css.gz": {
+      "bytes": 2091,
+      "sha256": "d4263042c6f183a5cfc5113451b570506f8e455711dbd62bd6c51e7998aaaa4b"
+    },
+    "assets/public-site/style.css": {
+      "bytes": 6659,
+      "sha256": "0e30726a01b7abf3ff4c127f43ab0420e8fb53fdedc34a9568059b18ccce9b0b"
+    },
+    "assets/public-site/style.css.br": {
+      "bytes": 1779,
+      "sha256": "cd482c4b76cd9cc5349be94d5f102a0bf3bebeecb0aab46b9093a72a0a00f78b"
+    },
+    "assets/public-site/style.css.gz": {
+      "bytes": 2116,
+      "sha256": "14535587f071d2a2126e7b03c51c12a289a547e73eb3a23c8e2935e5e9b3b75f"
+    },
+    "assets/public-site/tutorials-67c92c3e7bd7.js": {
+      "bytes": 3027,
+      "sha256": "9c05b8618e77d09b932557a1c39c90ca518c6842e88353be7e1b6c091959e391"
+    },
+    "assets/public-site/tutorials-67c92c3e7bd7.js.br": {
+      "bytes": 965,
+      "sha256": "db87441de68d2476b6620b33be1525dc60b4a0195def068ceecb4f5149931c8d"
+    },
+    "assets/public-site/tutorials-67c92c3e7bd7.js.gz": {
+      "bytes": 1171,
+      "sha256": "66f3e88dae4a56961ae8c460decc67526229266764259e931b3f270a602449fb"
+    },
+    "assets/seev/Seev_info.png": {
+      "bytes": 2008064,
+      "sha256": "bcf0cb0a8fe9ef6d30dc790e7cd23d98a757359ecea5e04fd3942170b07de601"
+    },
+    "assets/seev/Seev_info2.png": {
+      "bytes": 1709085,
+      "sha256": "0d78ce8e0d74786d845736d6d90458b22218de1c3db73d83152d81b5e21df861"
+    },
+    "backend.js": {
+      "bytes": 397,
+      "sha256": "16f76885c33077eabde0af24beb43bfd9d951fb1dfc8f9d21698e4cabb2b15eb"
+    },
+    "demo/knot.glb": {
+      "bytes": 10090356,
+      "sha256": "dc387d3d6195a2af1717d5036351c8c1827c8d6740ed27f1c1077505d3bfe3a0"
+    },
+    "demo/loop_house/loop-house.scene": {
+      "bytes": 645533,
+      "sha256": "efa956330afe7dbea0efdd6e7fce941ee3d029f0389bedab2107572c4627a48c"
+    },
+    "demo/pirate.glb": {
+      "bytes": 24696,
+      "sha256": "0fb46b7aa48c73994285ff8645fcb7be3541afcfdfa5c4add3a7bfe42b78c426"
+    },
+    "demo/pirate.mtl": {
+      "bytes": 629,
+      "sha256": "15cbcb352d641b7df9a8edadcdf5419f54ed8b24eb1140ca1e94f4a289dc3c06"
+    },
+    "demo/pirate.obj": {
+      "bytes": 380320,
+      "sha256": "d0f5be36ff81e047b550852c34eadcdca6d88039836e284829ca9740467d34ab"
+    },
+    "demo/pirate_rigged.glb": {
+      "bytes": 254208,
+      "sha256": "e11c8d44219e8977a9bbbf0cd146295edcd2aabcfbbb17a0ebc6c32e0403b057"
+    },
+    "docs/index.html": {
+      "bytes": 40759,
+      "sha256": "f95e59eb9c42885c226216da840060b61e6fc1872e70f8b07fb2f9f7ae18f361"
+    },
+    "docs/index.html.br": {
+      "bytes": 8511,
+      "sha256": "692e5979f521b36525c9f758f60bae0c4a4ce596e7ba42413ff598c3edac0482"
+    },
+    "docs/index.html.gz": {
+      "bytes": 10398,
+      "sha256": "d03e032101948edce601f571fc0c855e45b89d3e13919df4ee22c01cc8f98312"
+    },
+    "docs/mcp/index.html": {
+      "bytes": 23790,
+      "sha256": "4284da266d509f4418fd37159ba6d273d22ec44445ce5a119cbde8f79956697d"
+    },
+    "docs/mcp/index.html.br": {
+      "bytes": 6748,
+      "sha256": "7a95e7035b4f8bf36ec51240b5bf680320c4f5d20d9c5c9f20bb634426bd9f71"
+    },
+    "docs/mcp/index.html.gz": {
+      "bytes": 8240,
+      "sha256": "617147eaaa14a462bd8dbf8908bdfc5d795902134e4ebd40613cb3b49e1532b4"
+    },
+    "docs/media/tutorials/r1/block-explosion-18b546ec3965.scene": {
+      "bytes": 27192,
+      "sha256": "18b546ec39656b57f5cd49bb83ac8f903f07f62ab546edea6f9becb4a706247b"
+    },
+    "docs/media/tutorials/r1/block-explosion-preview.mp4": {
+      "bytes": 80952,
+      "sha256": "8e68051f993a71525602a55a57df1f94a3eb841be091a713326564b9c99b8141"
+    },
+    "docs/media/tutorials/r1/block-explosion.jpg": {
+      "bytes": 82177,
+      "sha256": "973050a5d8fa1cf89a9fbd23f0dafe86d8577ff43c520797f7a7457aa493edab"
+    },
+    "docs/media/tutorials/r1/block-explosion.mp4": {
+      "bytes": 9884686,
+      "sha256": "eb49e7e154b7dc46f7172cd48e02a9ea822b0041bcecb0cf680fe38a85b42aea"
+    },
+    "docs/media/tutorials/r1/colourful-tower-7633ecea01d6.scene": {
+      "bytes": 13453,
+      "sha256": "7633ecea01d6e272620e1d486955c25cb3f43f15fdc62f37d12122a278ab3c15"
+    },
+    "docs/media/tutorials/r1/colourful-tower-preview.mp4": {
+      "bytes": 45208,
+      "sha256": "14acc86211007e8db86800c35178a41fefaa74c823680f8961e44d4c42d622d2"
+    },
+    "docs/media/tutorials/r1/colourful-tower.jpg": {
+      "bytes": 67735,
+      "sha256": "750c9b8ceaa3fb5924d9881ee6b4d729b56384cc1343134b1294fbaa25a78b1e"
+    },
+    "docs/media/tutorials/r1/colourful-tower.mp4": {
+      "bytes": 7044751,
+      "sha256": "21ccb76c0d4621c613a8498f4432705679f0824f7b112d47d231e18baaf4f497"
+    },
+    "docs/media/tutorials/r1/orbiting-letters-54906dc96718.scene": {
+      "bytes": 10371,
+      "sha256": "54906dc96718252adb560cc3d073c40f5018cb700a94a2166808d732c05679f2"
+    },
+    "docs/media/tutorials/r1/orbiting-letters-preview.mp4": {
+      "bytes": 41596,
+      "sha256": "a306b812dbc3ee0bd974e8b00e2a3b5479f6a3171ef813e65c91633a7d40d704"
+    },
+    "docs/media/tutorials/r1/orbiting-letters.jpg": {
+      "bytes": 62658,
+      "sha256": "6dc140eee9c2a2eac613d4ac41fbc158495a9e576fd35cbfe4e16859e5de8889"
+    },
+    "docs/media/tutorials/r1/orbiting-letters.mp4": {
+      "bytes": 8109509,
+      "sha256": "656446563ad0dc2ff53219fb1ff532aa34ceaabbed8de2cb394f1e88b640876a"
+    },
+    "docs/media/tutorials/r10/block-explosion-db57a0cd0cb6.scene": {
+      "bytes": 27524,
+      "sha256": "db57a0cd0cb6c34e978aa0833c3b29cf6f69ba854853893d5300f4790ff00027"
+    },
+    "docs/media/tutorials/r10/block-explosion-preview.mp4": {
+      "bytes": 77006,
+      "sha256": "2a19bac76fa731f4e7356c335d238c96b554c5e7fedb9b3f2ede657f1a6e5a91"
+    },
+    "docs/media/tutorials/r10/block-explosion.jpg": {
+      "bytes": 77427,
+      "sha256": "e6949bdb291c4627344ec5c4f5d9518eee5f074ec80bfe62806cd336a6fa85fa"
+    },
+    "docs/media/tutorials/r10/block-explosion.mp4": {
+      "bytes": 21184003,
+      "sha256": "3ff10b0ac163511904591d6f06f13dcb8926b3eeef7254bb4d77bb8ebfdddafc"
+    },
+    "docs/media/tutorials/r10/colourful-tower-5cc1fcda9136.scene": {
+      "bytes": 13566,
+      "sha256": "5cc1fcda9136ea6c31b295ad18bddcbe19971f1d9f5d7099d921a660fc0399bd"
+    },
+    "docs/media/tutorials/r10/colourful-tower-preview.mp4": {
+      "bytes": 45006,
+      "sha256": "1219fb775c10533209dcb52ad78bd990e5207cf0f1c55ef2d22ddde5ab3efbec"
+    },
+    "docs/media/tutorials/r10/colourful-tower.jpg": {
+      "bytes": 66779,
+      "sha256": "78a0e5ec70fb1c1837a8a6a0f823af4fb363be3bb83bc94a7afb5c00e217eca5"
+    },
+    "docs/media/tutorials/r10/colourful-tower.mp4": {
+      "bytes": 15227436,
+      "sha256": "80b473e616d485463adb96768aeb691e9863870411b407164b14fce13b00cd67"
+    },
+    "docs/media/tutorials/r10/orbiting-letters-0bd8893f1c2e.scene": {
+      "bytes": 10519,
+      "sha256": "0bd8893f1c2ebd958757c2a054752b87fc61bf4a4cda974018be1bd53c7956bd"
+    },
+    "docs/media/tutorials/r10/orbiting-letters-preview.mp4": {
+      "bytes": 45174,
+      "sha256": "56b3b1699884c4f2a2acc9814c3f4fcea9e1de6498f8a798abeb98138b5affc5"
+    },
+    "docs/media/tutorials/r10/orbiting-letters.jpg": {
+      "bytes": 63640,
+      "sha256": "3e492f7e36f0c61c2f6399419713c8f97bf222dc04e55e1753e168ef9ef8753d"
+    },
+    "docs/media/tutorials/r10/orbiting-letters.mp4": {
+      "bytes": 15928679,
+      "sha256": "c517a1237534ff0c48b55f6740bb48b86b09c0f8d1e27395fa2e28e8fa7d2a4f"
+    },
+    "docs/media/tutorials/r11/block-explosion-de47a2bc54bd.scene": {
+      "bytes": 27590,
+      "sha256": "de47a2bc54bd53a6f875a103a9c11fcf43924f300911e8d24fe64f68faeaf3b1"
+    },
+    "docs/media/tutorials/r11/block-explosion-preview.mp4": {
+      "bytes": 76807,
+      "sha256": "bf2b0a6928ec043ca3d9d6ba82882c4829de150851cc4c0359bcb48fccf48594"
+    },
+    "docs/media/tutorials/r11/block-explosion.jpg": {
+      "bytes": 77675,
+      "sha256": "0b5a4bbac2fe18111098f6396e48288a6722b0eb28b4f2505b066508b290d261"
+    },
+    "docs/media/tutorials/r11/block-explosion.mp4": {
+      "bytes": 20892711,
+      "sha256": "0936199d7b4259dcfec517afce0c3015e30ae5b3e9d30095c31da60297f31370"
+    },
+    "docs/media/tutorials/r11/colourful-tower-5236163fce57.scene": {
+      "bytes": 13591,
+      "sha256": "5236163fce57ad557fa2827950798b80eaf3831e4689b14384fe80388a84f9bf"
+    },
+    "docs/media/tutorials/r11/colourful-tower-preview.mp4": {
+      "bytes": 44922,
+      "sha256": "9036721d309244b0bc08b75a85a105500da7408ec87e60a596213aa7169340ed"
+    },
+    "docs/media/tutorials/r11/colourful-tower.jpg": {
+      "bytes": 66806,
+      "sha256": "c4c38de36864bd3d81ebccdc66e3a7dbd16b64f2deed7d42ab53c399f625bc34"
+    },
+    "docs/media/tutorials/r11/colourful-tower.mp4": {
+      "bytes": 14792258,
+      "sha256": "d660593c302634b3067a2680030ba9bf6f3c9bdd283d5ab8e4c89d6a3e10ed1d"
+    },
+    "docs/media/tutorials/r11/orbiting-letters-57a98b22b4d5.scene": {
+      "bytes": 10544,
+      "sha256": "57a98b22b4d5a91ac6afcdd73d11748691ee3b4e205bf895057793eb09df437e"
+    },
+    "docs/media/tutorials/r11/orbiting-letters-preview.mp4": {
+      "bytes": 45338,
+      "sha256": "8ec1e90806c13bf52449038e7976bdcf5055e8c77525a619ce58dd8f838e433c"
+    },
+    "docs/media/tutorials/r11/orbiting-letters.jpg": {
+      "bytes": 63655,
+      "sha256": "90e653aba1eb193cc7805dc81112649868f267ac8855829dd25477abb1ab7ead"
+    },
+    "docs/media/tutorials/r11/orbiting-letters.mp4": {
+      "bytes": 15656268,
+      "sha256": "f76f69ae0e5ec7d8805a76e7b052d3b663d75209e3c0cf7ac5ea98d501120d2b"
+    },
+    "docs/media/tutorials/r12/block-explosion-10ff5000f0a0.scene": {
+      "bytes": 27611,
+      "sha256": "10ff5000f0a0ff1115aae63e597a58f20cb3df4733242440e6d9b8d9a586a2c3"
+    },
+    "docs/media/tutorials/r12/block-explosion-preview.mp4": {
+      "bytes": 76056,
+      "sha256": "7148b8c81d92336e3b4245d9d9ef6a6644148ce86844464ce537ee55f8402ee9"
+    },
+    "docs/media/tutorials/r12/block-explosion.jpg": {
+      "bytes": 77675,
+      "sha256": "0b5a4bbac2fe18111098f6396e48288a6722b0eb28b4f2505b066508b290d261"
+    },
+    "docs/media/tutorials/r12/block-explosion.mp4": {
+      "bytes": 16568866,
+      "sha256": "ad40b7b90cacf4f40bbf823f712bc38f17b944a7c29ecf10639d5a0e9d5e6dae"
+    },
+    "docs/media/tutorials/r12/colourful-tower-fcdd56d0a726.scene": {
+      "bytes": 13609,
+      "sha256": "fcdd56d0a7264914b06119d06916fdacd2066be64f8fc4e2eb57c3a05994b6c0"
+    },
+    "docs/media/tutorials/r12/colourful-tower-preview.mp4": {
+      "bytes": 47531,
+      "sha256": "60ff40798d7d4a67f651a7d605e45f7ee36c03493e6022c255fbf2be9722bbf6"
+    },
+    "docs/media/tutorials/r12/colourful-tower.jpg": {
+      "bytes": 66684,
+      "sha256": "962cfcfc2eda2460ceb80df13e66a298f257fd71be38ec1eb603cbd584008215"
+    },
+    "docs/media/tutorials/r12/colourful-tower.mp4": {
+      "bytes": 10687283,
+      "sha256": "2d5621bb8c8f35d2636acf9a9ec9dec93060052169b734e1fbce76617fcdb33d"
+    },
+    "docs/media/tutorials/r12/orbiting-letters-a53289f1d2e9.scene": {
+      "bytes": 10538,
+      "sha256": "a53289f1d2e999463cf0d0a3a2e01e432ae0d8e158c06dcfe8953500062717c8"
+    },
+    "docs/media/tutorials/r12/orbiting-letters-preview.mp4": {
+      "bytes": 48334,
+      "sha256": "173fb1c19d4bafb6c29452ca69ceeb1369d333f02ad10e76a2eefd6df39c2ba3"
+    },
+    "docs/media/tutorials/r12/orbiting-letters.jpg": {
+      "bytes": 63633,
+      "sha256": "639a3bebe284e1c3520f2293de6b86475c3c0dc29feed78f93f8f6376ad8c683"
+    },
+    "docs/media/tutorials/r12/orbiting-letters.mp4": {
+      "bytes": 11127722,
+      "sha256": "d1a2ef5f660150125014860bd97ce6fa310f568c26efcdd3f9f421871552c2c5"
+    },
+    "docs/media/tutorials/r14/block-explosion-427cd0c6cbe2.scene": {
+      "bytes": 27610,
+      "sha256": "427cd0c6cbe2b802c0f91937e135d974b76d1d4531bf18d0d003383d798872b3"
+    },
+    "docs/media/tutorials/r14/block-explosion-preview.mp4": {
+      "bytes": 76247,
+      "sha256": "bbd966b6bf0a55e5363d166c35c4a85ba00a06b470cb9b701b0582a61fd85d3b"
+    },
+    "docs/media/tutorials/r14/block-explosion.jpg": {
+      "bytes": 77744,
+      "sha256": "2e94be2b32893c335e714b9eef819b807fe418b471ed068bf18f77892fca4bc3"
+    },
+    "docs/media/tutorials/r14/block-explosion.mp4": {
+      "bytes": 16494054,
+      "sha256": "c7aa080c29055fd3f17fba9fd6f6a3ac392863627f6c247939be3c8373afa04f"
+    },
+    "docs/media/tutorials/r14/colourful-tower-1ba477aef5f0.scene": {
+      "bytes": 13610,
+      "sha256": "1ba477aef5f03160ef88408ec84ca53cb0d28885bc868cb1901ce452bd207535"
+    },
+    "docs/media/tutorials/r14/colourful-tower-preview.mp4": {
+      "bytes": 47421,
+      "sha256": "062c0e0f1e526608357c09e712089b9742da0d70cb2102f0fe8f619cc9cc7ad8"
+    },
+    "docs/media/tutorials/r14/colourful-tower.jpg": {
+      "bytes": 66562,
+      "sha256": "b1aae0e5e4a58aa572a0a923d5bd1bb35710346afdf9823b47d729333f5f92f3"
+    },
+    "docs/media/tutorials/r14/colourful-tower.mp4": {
+      "bytes": 10647645,
+      "sha256": "894c30ebd295e03cdde495057ac048d50d0c4e4c9cd8d481a8b32b807ab82dc4"
+    },
+    "docs/media/tutorials/r14/orbiting-letters-710bb732aa26.scene": {
+      "bytes": 10558,
+      "sha256": "710bb732aa26766d0a9177ff18a8b6d7f63dee397f4f77c27cd5a8d8b3dd13e7"
+    },
+    "docs/media/tutorials/r14/orbiting-letters-preview.mp4": {
+      "bytes": 47774,
+      "sha256": "d0fc18640650be8a89db5251b9a4585b9ecace82249c2b0d38991c48b442d468"
+    },
+    "docs/media/tutorials/r14/orbiting-letters.jpg": {
+      "bytes": 63640,
+      "sha256": "0f09cf0270696d15b9d0372b696abfeb7c7696fc94047a4bba85bd736d17d7b2"
+    },
+    "docs/media/tutorials/r14/orbiting-letters.mp4": {
+      "bytes": 11063252,
+      "sha256": "12b5a2145ea2782242484d2464d6f43307c33f055641e2b765e7f4d883f8f3e7"
+    },
+    "docs/media/tutorials/r15/block-explosion-597f8449d981.scene": {
+      "bytes": 27695,
+      "sha256": "597f8449d981abd5791c33159c62700f1e03b948583cf0d1b955e67eb309293f"
+    },
+    "docs/media/tutorials/r15/block-explosion-preview.mp4": {
+      "bytes": 78599,
+      "sha256": "ca542d9f098d0277167bdff2659a2abc7e29f413a6c3cdd419128a84dcaeeeec"
+    },
+    "docs/media/tutorials/r15/block-explosion.jpg": {
+      "bytes": 77766,
+      "sha256": "fbbe3be049e6e14d0a0543e092821dc5f4f1d520e1f81b508fd7acbedaadc824"
+    },
+    "docs/media/tutorials/r15/block-explosion.mp4": {
+      "bytes": 16703315,
+      "sha256": "fa0d48833b15765f86c20657a374cc6876157dddc529b51fd926b484e5e4e2bb"
+    },
+    "docs/media/tutorials/r15/colourful-tower-d32686e3b08c.scene": {
+      "bytes": 13640,
+      "sha256": "d32686e3b08caee509e2b771dcf3ead7533da913535b805be54c6ab4c7f9f9ac"
+    },
+    "docs/media/tutorials/r15/colourful-tower-preview.mp4": {
+      "bytes": 47621,
+      "sha256": "4807ac116188c030cafe148385a34a1023363dfa4a1bd6657b19cdae8e2d657f"
+    },
+    "docs/media/tutorials/r15/colourful-tower.jpg": {
+      "bytes": 66567,
+      "sha256": "93c286e319c605243d78769c23dabbd29fbbeb75f91a408d23193fd916fce380"
+    },
+    "docs/media/tutorials/r15/colourful-tower.mp4": {
+      "bytes": 11021689,
+      "sha256": "2131be0619fae59aed1d1c383ef67c734e8f807c8ff7cb8bdd37aa33ae3da3dd"
+    },
+    "docs/media/tutorials/r15/orbiting-letters-d6205d309d81.scene": {
+      "bytes": 10588,
+      "sha256": "d6205d309d8141e53b13626abb9738479ebdfd3f1d2f3f88f8150c33481be011"
+    },
+    "docs/media/tutorials/r15/orbiting-letters-preview.mp4": {
+      "bytes": 48153,
+      "sha256": "b2f9b811b75822a2337fc72b4d39913b54a4c73f414369e940c8b0d714102cd6"
+    },
+    "docs/media/tutorials/r15/orbiting-letters.jpg": {
+      "bytes": 63609,
+      "sha256": "5fb8718de039e436093f6304bd8e8cfd6d7f1986ef1c4d4dcbd0b5499af7aa1b"
+    },
+    "docs/media/tutorials/r15/orbiting-letters.mp4": {
+      "bytes": 11598938,
+      "sha256": "007b17767450a265f6c2534fa8c4614ea8449f82a1caaf2b90bdc9e0f0eca0a3"
+    },
+    "docs/media/tutorials/r16/block-explosion-ab2e74efecb0.scene": {
+      "bytes": 27693,
+      "sha256": "ab2e74efecb0533f1da77594be813f8f3412e659bda9df37b1f12b909e2c3b52"
+    },
+    "docs/media/tutorials/r16/block-explosion-preview.mp4": {
+      "bytes": 81129,
+      "sha256": "90e61ab4bda7baf1da10af41b108740f93adae7664a0f080c21b46cbff2be85c"
+    },
+    "docs/media/tutorials/r16/block-explosion.jpg": {
+      "bytes": 77670,
+      "sha256": "4a6a15632fc5138b99511a9303a09ad73ebf69274c3a6b0265edcc89c9079137"
+    },
+    "docs/media/tutorials/r16/block-explosion.mp4": {
+      "bytes": 16773549,
+      "sha256": "c9cd2aca283eceb23f3d970973d2d4628d8dd48496844a90ce71086bb406565c"
+    },
+    "docs/media/tutorials/r16/colourful-tower-d32686e3b08c.scene": {
+      "bytes": 13640,
+      "sha256": "d32686e3b08caee509e2b771dcf3ead7533da913535b805be54c6ab4c7f9f9ac"
+    },
+    "docs/media/tutorials/r16/colourful-tower-preview.mp4": {
+      "bytes": 47482,
+      "sha256": "01efc0e0724413bca7cd87e531cf0f2d13489c93d6fb6fe37dcdcda0ebcabec3"
+    },
+    "docs/media/tutorials/r16/colourful-tower.jpg": {
+      "bytes": 66494,
+      "sha256": "461a8680d26ac566791ce03973b467bf961e13780a01891825a5ddbbc8b583d7"
+    },
+    "docs/media/tutorials/r16/colourful-tower.mp4": {
+      "bytes": 11017553,
+      "sha256": "16d39dd7dc3578f4e9be4aecc459695532146785d432c120f72e772791531894"
+    },
+    "docs/media/tutorials/r16/orbiting-letters-d6205d309d81.scene": {
+      "bytes": 10588,
+      "sha256": "d6205d309d8141e53b13626abb9738479ebdfd3f1d2f3f88f8150c33481be011"
+    },
+    "docs/media/tutorials/r16/orbiting-letters-preview.mp4": {
+      "bytes": 47954,
+      "sha256": "400efef42b1c1451f9506a1519df2b7ac52d60c309a0b4c5e23a8404c59b5223"
+    },
+    "docs/media/tutorials/r16/orbiting-letters.jpg": {
+      "bytes": 63625,
+      "sha256": "f209e0f11993a4a4ea58da0f3fdd8fb818ba97ffd3876d421620bed400162358"
+    },
+    "docs/media/tutorials/r16/orbiting-letters.mp4": {
+      "bytes": 11596259,
+      "sha256": "4aad3bb7c786ed805318ffde9624aa10f5b64344324881c70cf1563007e2f019"
+    },
+    "docs/media/tutorials/r17/block-explosion-f5daeec7c66a.scene": {
+      "bytes": 43880,
+      "sha256": "f5daeec7c66a48b7134f6cfe804b2fe8bd297327304181b0004de470fd503be9"
+    },
+    "docs/media/tutorials/r17/block-explosion-preview.mp4": {
+      "bytes": 83259,
+      "sha256": "984cfa3532b95d5177922aad2152d14afa25559c90be1a59c7b4a572bbb3d1f5"
+    },
+    "docs/media/tutorials/r17/block-explosion.jpg": {
+      "bytes": 77766,
+      "sha256": "fbbe3be049e6e14d0a0543e092821dc5f4f1d520e1f81b508fd7acbedaadc824"
+    },
+    "docs/media/tutorials/r17/block-explosion.mp4": {
+      "bytes": 16854542,
+      "sha256": "8955bd9c67b71630f7987310fd5fa72c91f2278c49a33df37190534c080532ae"
+    },
+    "docs/media/tutorials/r17/colourful-tower-65ecc3508c1d.scene": {
+      "bytes": 24901,
+      "sha256": "65ecc3508c1dc7d1bc09af5812a81881f93c73f89408d41801c66a1e3d2b76db"
+    },
+    "docs/media/tutorials/r17/colourful-tower-preview.mp4": {
+      "bytes": 47540,
+      "sha256": "ddcd6e9c41771ad55d0ae7066b2a6b5d20cfcc263b6e9c30733d5b5d7d736493"
+    },
+    "docs/media/tutorials/r17/colourful-tower.jpg": {
+      "bytes": 66567,
+      "sha256": "93c286e319c605243d78769c23dabbd29fbbeb75f91a408d23193fd916fce380"
+    },
+    "docs/media/tutorials/r17/colourful-tower.mp4": {
+      "bytes": 11017069,
+      "sha256": "06c3ffaf516c7794a0defcf633e7a99a82a50ab898870084290853937ee22bc7"
+    },
+    "docs/media/tutorials/r17/orbiting-letters-1ff725339d2b.scene": {
+      "bytes": 19931,
+      "sha256": "1ff725339d2b99c5794c5073010764f3c27856ef83b25a2a3d19191c31cebc58"
+    },
+    "docs/media/tutorials/r17/orbiting-letters-preview.mp4": {
+      "bytes": 48267,
+      "sha256": "f8359fa484e6ac776e43d879b3cb5802f4a4a4a7e036f31724fa9b1a8e33f735"
+    },
+    "docs/media/tutorials/r17/orbiting-letters.jpg": {
+      "bytes": 63609,
+      "sha256": "5fb8718de039e436093f6304bd8e8cfd6d7f1986ef1c4d4dcbd0b5499af7aa1b"
+    },
+    "docs/media/tutorials/r17/orbiting-letters.mp4": {
+      "bytes": 11596279,
+      "sha256": "c17416c2273fa8480f6eded871b4fe8a8827cf1707fc97e8ad845a893f8d4708"
+    },
+    "docs/media/tutorials/r19/block-explosion.mp4": {
+      "bytes": 18367873,
+      "sha256": "b41e4efbfcc78a5a31f29326d1dcc19d38adc7a0f8eac3754579f888b33967a5"
+    },
+    "docs/media/tutorials/r2/block-explosion-2a14599566f3.scene": {
+      "bytes": 27307,
+      "sha256": "2a14599566f32d90dd64bf32a934e30b79e731aeef5d35a7071fa36c84baa2f2"
+    },
+    "docs/media/tutorials/r2/block-explosion-preview.mp4": {
+      "bytes": 84069,
+      "sha256": "8f845d89b2e486d8702bfc352b882ae5791e5ada7d03eeaeb8945492ba32bd4d"
+    },
+    "docs/media/tutorials/r2/block-explosion.jpg": {
+      "bytes": 81620,
+      "sha256": "fdef3a4cdb60195692f3d906fc762391d0f72a620c567aa1a727156c49ff437e"
+    },
+    "docs/media/tutorials/r2/block-explosion.mp4": {
+      "bytes": 13790110,
+      "sha256": "70b3de4c87ff1a98446d0a7f03520c12ba69db58abce50bd876402021d9c8e03"
+    },
+    "docs/media/tutorials/r2/colourful-tower-2c029937c841.scene": {
+      "bytes": 13469,
+      "sha256": "2c029937c8416ee5b35d05fdb2cc4eb1aab7d8e967c961cbae2f8e7e07cc39bb"
+    },
+    "docs/media/tutorials/r2/colourful-tower-preview.mp4": {
+      "bytes": 45309,
+      "sha256": "4ec3b4983b46a0db01cf5cf9888bf9252d03d0fd4e9f3cf517ac603c2205e3cb"
+    },
+    "docs/media/tutorials/r2/colourful-tower.jpg": {
+      "bytes": 67753,
+      "sha256": "1d945a71d3b3b5e1cb830ae020d00806fd3ef24cd4de9136e23efe33095a63df"
+    },
+    "docs/media/tutorials/r2/colourful-tower.mp4": {
+      "bytes": 8152587,
+      "sha256": "e2ac97c5081239e3f1417d018a382d62d4d916b957948353ec424054854e1755"
+    },
+    "docs/media/tutorials/r2/orbiting-letters-dd2547dcfbd8.scene": {
+      "bytes": 10387,
+      "sha256": "dd2547dcfbd89e22ce56e4b5b16928408a6bdf65d985574093139092adc4eff8"
+    },
+    "docs/media/tutorials/r2/orbiting-letters-preview.mp4": {
+      "bytes": 41383,
+      "sha256": "099dacd893fc97551c7442bdcb654f8d369c106072ecbb982e68390b069e6cc1"
+    },
+    "docs/media/tutorials/r2/orbiting-letters.jpg": {
+      "bytes": 62697,
+      "sha256": "2afd5fad16af6e5bc1e9a844d6477fab8d0aa82ac231b96f78784e832550e862"
+    },
+    "docs/media/tutorials/r2/orbiting-letters.mp4": {
+      "bytes": 9029797,
+      "sha256": "8b3df348221560f86e178a952107e0830290b21ca75e0dc6737f03ea925e7cda"
+    },
+    "docs/media/tutorials/r20/block-explosion-992451d4487f.scene": {
+      "bytes": 44341,
+      "sha256": "992451d4487f81af935d28dea7e0ee779f90976134acf8a374ed488ab1d6e016"
+    },
+    "docs/media/tutorials/r20/block-explosion-preview.mp4": {
+      "bytes": 95184,
+      "sha256": "e93eaf6cf049e9ff1f366f47f7bb45f7e02a098273f36ee04004926f7baf9d28"
+    },
+    "docs/media/tutorials/r20/block-explosion.jpg": {
+      "bytes": 80885,
+      "sha256": "f4282efaec9a9ddca515997feb9caeb768777650899b60b2bf99eea8a5775acc"
+    },
+    "docs/media/tutorials/r20/block-explosion.mp4": {
+      "bytes": 18417100,
+      "sha256": "7d933d2b70acdc8b2df2ecfc3d015e0ea53c2ef588925c9e67db9c57194a6fdf"
+    },
+    "docs/media/tutorials/r21/block-explosion-fee17d08bf91.scene": {
+      "bytes": 44147,
+      "sha256": "fee17d08bf91d182e9632b933bb014023c2730b7a5fa1eaeca86dbfe9a834f6d"
+    },
+    "docs/media/tutorials/r21/block-explosion-preview.mp4": {
+      "bytes": 98820,
+      "sha256": "d2bc0316cc9d639d84d49fc729f817fbcab4355285033c605b330ce888898c02"
+    },
+    "docs/media/tutorials/r21/block-explosion.jpg": {
+      "bytes": 81186,
+      "sha256": "19bfabaab2c177868379f422abbf17a00a9ceb956531f392043c6c0d5a6e5628"
+    },
+    "docs/media/tutorials/r21/block-explosion.mp4": {
+      "bytes": 18189220,
+      "sha256": "acd3a35221844201ffcc8523629a4703d2d83d16edd70abe806d152f9e35188a"
+    },
+    "docs/media/tutorials/r22/block-explosion-9bba56b25345.scene": {
+      "bytes": 44145,
+      "sha256": "9bba56b2534516d6eb9d9fab9c998902a1e39b31c5446e96a87c8532b97d9a59"
+    },
+    "docs/media/tutorials/r22/block-explosion-preview.mp4": {
+      "bytes": 96310,
+      "sha256": "2e7fa5b2ba83ac7a3da3f8e1213c12457c87d211fdd35b631aa42b4350f351b7"
+    },
+    "docs/media/tutorials/r22/block-explosion.jpg": {
+      "bytes": 81863,
+      "sha256": "7f41b97de3719f504c7cd9e51d503c3f076718ea2cb2be9dd4b63a84e5897e58"
+    },
+    "docs/media/tutorials/r22/block-explosion.mp4": {
+      "bytes": 18181988,
+      "sha256": "5da51c3cd325ff59232a71568236fc65a3eac202049b7279544f03eae83479e0"
+    },
+    "docs/media/tutorials/r23/block-explosion-56c77de19aae.scene": {
+      "bytes": 44244,
+      "sha256": "56c77de19aae7e282073f82ebe6e813c45790e23a8f341d8ae18d1881b9448c4"
+    },
+    "docs/media/tutorials/r23/block-explosion-preview.mp4": {
+      "bytes": 89171,
+      "sha256": "8eb8ed9d6347e1e61a386f58e7bb176b084b1715871b8599bd6a3356570108a7"
+    },
+    "docs/media/tutorials/r23/block-explosion.jpg": {
+      "bytes": 81291,
+      "sha256": "bd1cb59c04a33b9dc5383738d4ee40f6f93e253e1eae4a93897b28c3f9a05acb"
+    },
+    "docs/media/tutorials/r23/block-explosion.mp4": {
+      "bytes": 18001851,
+      "sha256": "73102706fe389c951b6c66a6ec69b5e236a664ec5b3605c3247a03bff92cd9f3"
+    },
+    "docs/media/tutorials/r24/block-explosion-c1e5f55e5408.scene": {
+      "bytes": 44238,
+      "sha256": "c1e5f55e5408241daf4e6434b3ca8fafe51b464f45e06d35bd3066803f603f2c"
+    },
+    "docs/media/tutorials/r24/block-explosion-preview.mp4": {
+      "bytes": 94095,
+      "sha256": "8c4864e46bc95bacf9eeacd670301558bb6a607f137957b1010bbc529da1dd13"
+    },
+    "docs/media/tutorials/r24/block-explosion.jpg": {
+      "bytes": 80974,
+      "sha256": "501377634e1ca2393867435f3c0befb96683c9cd260af76de9d622d23284655f"
+    },
+    "docs/media/tutorials/r24/block-explosion.mp4": {
+      "bytes": 18094945,
+      "sha256": "f549f28931200d1233e7457ce90a57ed759305aae44d5cc6b909d78ce6cca09f"
+    },
+    "docs/media/tutorials/r25/block-explosion-40bfce1ed61c.scene": {
+      "bytes": 44445,
+      "sha256": "40bfce1ed61c598d67983318b82a1fb4c30db6c67cae55b480099cd285a6fe2a"
+    },
+    "docs/media/tutorials/r25/block-explosion-preview.mp4": {
+      "bytes": 85610,
+      "sha256": "3cb188b7207d7400e9f7b9f72e9027ed5c9e37cc68c246719d93c2a5acc4019e"
+    },
+    "docs/media/tutorials/r25/block-explosion.jpg": {
+      "bytes": 74035,
+      "sha256": "84dea4a0372d83c918f0131b0d8ad39dfb9064ba005f1f784c80c5e24e21662b"
+    },
+    "docs/media/tutorials/r25/block-explosion.mp4": {
+      "bytes": 18426749,
+      "sha256": "1d41d5658bcbb9a9417282e0cc13bb5f452294b0235b0e2b0ebeee15ebd31755"
+    },
+    "docs/media/tutorials/r26/block-explosion-63a3e54adad9.scene": {
+      "bytes": 44614,
+      "sha256": "63a3e54adad9507f1e2286d3ca9ef9b509237a77d786c398ca7983ac935a4931"
+    },
+    "docs/media/tutorials/r26/block-explosion-preview.mp4": {
+      "bytes": 90890,
+      "sha256": "bc4f71bea9b304e2651f691a30a57f5c30f17a7230e82fa6991156ad185852ce"
+    },
+    "docs/media/tutorials/r26/block-explosion.jpg": {
+      "bytes": 73985,
+      "sha256": "857c22a565ddf09a14703ad206226fd574cfc454bc76ff3475be2a697bbde0aa"
+    },
+    "docs/media/tutorials/r26/block-explosion.mp4": {
+      "bytes": 18480791,
+      "sha256": "984266ad8d444709c2ecf2a194adfe1f2f172ef1cc9c7080a3bb5412ff29ee7e"
+    },
+    "docs/media/tutorials/r27/block-explosion-671b627ad4cd.scene": {
+      "bytes": 44913,
+      "sha256": "671b627ad4cd5896316b38581eb5dcd27ee3844f254543620254071ce3ae3409"
+    },
+    "docs/media/tutorials/r27/block-explosion-preview.mp4": {
+      "bytes": 122260,
+      "sha256": "268168126790422b40b0f24afbad66de37fe5be5c1fcee6653a7173fb09af0d0"
+    },
+    "docs/media/tutorials/r27/block-explosion.jpg": {
+      "bytes": 82156,
+      "sha256": "b298919f31e0551f03e7e6c0e23fae8c3175b6516a583a32ef8d6b60e2977876"
+    },
+    "docs/media/tutorials/r27/block-explosion.mp4": {
+      "bytes": 18886724,
+      "sha256": "7d33a1eee527fd6037ea2de60fcd23b371dc59a0b0e4def3c587b310b8cb94df"
+    },
+    "docs/media/tutorials/r28/block-explosion-5753faf8b078.scene": {
+      "bytes": 45173,
+      "sha256": "5753faf8b0782b16bc4f3b470bfc65ead160e747b9fa49dc9db38c87890e102d"
+    },
+    "docs/media/tutorials/r28/block-explosion-bafa9addf228.scene": {
+      "bytes": 45156,
+      "sha256": "bafa9addf228ad12381590630a2f7a2698ae9e886651d77063f811452b63bb79"
+    },
+    "docs/media/tutorials/r28/block-explosion-preview.mp4": {
+      "bytes": 122260,
+      "sha256": "268168126790422b40b0f24afbad66de37fe5be5c1fcee6653a7173fb09af0d0"
+    },
+    "docs/media/tutorials/r28/block-explosion.jpg": {
+      "bytes": 82156,
+      "sha256": "b298919f31e0551f03e7e6c0e23fae8c3175b6516a583a32ef8d6b60e2977876"
+    },
+    "docs/media/tutorials/r28/block-explosion.mp4": {
+      "bytes": 18859252,
+      "sha256": "2435269935a7199e56e9f4d27b11ce28a8aa88939767e30c115806e27d7d25a7"
+    },
+    "docs/media/tutorials/r28/colourful-tower-1b4c57ec000d.scene": {
+      "bytes": 24489,
+      "sha256": "1b4c57ec000d8adeff5d30899af9f07753dca524b26aca4bb49ae65ce71a04c0"
+    },
+    "docs/media/tutorials/r28/colourful-tower-411ffcafbd5f.scene": {
+      "bytes": 24693,
+      "sha256": "411ffcafbd5f44a9cb2d79fae9d231e09da05b8f0a37a5b78aac8c6810537909"
+    },
+    "docs/media/tutorials/r28/colourful-tower-preview.mp4": {
+      "bytes": 38469,
+      "sha256": "7196feae8407b6bff4204f64da852f6019f6fb7d276b6c7bb9c61c9afa9221b2"
+    },
+    "docs/media/tutorials/r28/colourful-tower.jpg": {
+      "bytes": 59004,
+      "sha256": "f00092fd4f84106a1e060c3b15b09c80c1dd05ce3f2df4c851d99a50fbead892"
+    },
+    "docs/media/tutorials/r28/colourful-tower.mp4": {
+      "bytes": 10491920,
+      "sha256": "79304c1b128f28af395756f8d2c9aeb10e222d41922f54021087a86330e93d43"
+    },
+    "docs/media/tutorials/r28/orbiting-letters-16a4b62f3129.scene": {
+      "bytes": 19707,
+      "sha256": "16a4b62f3129ab9a73f8c61afa5bf015be57b8e57c60b61f2734dfb9b119a2a7"
+    },
+    "docs/media/tutorials/r28/orbiting-letters-4a24612ebc39.scene": {
+      "bytes": 19715,
+      "sha256": "4a24612ebc390f1eddf7280495b24294e292af619cf6e19945b6639afeac9259"
+    },
+    "docs/media/tutorials/r28/orbiting-letters-preview.mp4": {
+      "bytes": 40307,
+      "sha256": "78b859861c7e2392874036e1eac2b877dbf237b8da9925dd55c36f5f58eb0c4f"
+    },
+    "docs/media/tutorials/r28/orbiting-letters.jpg": {
+      "bytes": 63180,
+      "sha256": "2e7d5e28bda6b35391d574d4dc8070a01a5e9318cee6f5daa0333597aba299c1"
+    },
+    "docs/media/tutorials/r28/orbiting-letters.mp4": {
+      "bytes": 11286926,
+      "sha256": "c6d913003527e23025eb8cdac5e7652057093b11595862a42b0b23a9d271e6e9"
+    },
+    "docs/media/tutorials/r29/block-explosion-51d714691b02.scene": {
+      "bytes": 44991,
+      "sha256": "51d714691b02413d4a0208f60d11c337d60caf3d31175562eeb3af699ef9b75f"
+    },
+    "docs/media/tutorials/r29/block-explosion-preview.mp4": {
+      "bytes": 126153,
+      "sha256": "d0655aec553a23c623c65fd2da8073f5a59e055c22f0863d1c6c29c869420ee6"
+    },
+    "docs/media/tutorials/r29/block-explosion.jpg": {
+      "bytes": 82156,
+      "sha256": "b298919f31e0551f03e7e6c0e23fae8c3175b6516a583a32ef8d6b60e2977876"
+    },
+    "docs/media/tutorials/r29/block-explosion.mp4": {
+      "bytes": 19454969,
+      "sha256": "ee29789d8cd837b9e96326f617098fb9c01a824c7680dffda15e8ba0d1861bfd"
+    },
+    "docs/media/tutorials/r3/block-explosion-2a14599566f3.scene": {
+      "bytes": 27307,
+      "sha256": "2a14599566f32d90dd64bf32a934e30b79e731aeef5d35a7071fa36c84baa2f2"
+    },
+    "docs/media/tutorials/r3/block-explosion-preview.mp4": {
+      "bytes": 76424,
+      "sha256": "5018361d934ee36aa3a634791e828381b5d793bef55308aad71125783fc63144"
+    },
+    "docs/media/tutorials/r3/block-explosion.jpg": {
+      "bytes": 75824,
+      "sha256": "5606b95bd29b3b12cf6d0e0d3461e276d4c94f7a60c62f54fc03fc00aa7d271e"
+    },
+    "docs/media/tutorials/r3/block-explosion.mp4": {
+      "bytes": 12488276,
+      "sha256": "024d479b2de45d82cde51382bee7a4d667610e84d571ac3b83c32e766e4ff4dc"
+    },
+    "docs/media/tutorials/r3/colourful-tower-2c029937c841.scene": {
+      "bytes": 13469,
+      "sha256": "2c029937c8416ee5b35d05fdb2cc4eb1aab7d8e967c961cbae2f8e7e07cc39bb"
+    },
+    "docs/media/tutorials/r3/colourful-tower-preview.mp4": {
+      "bytes": 40141,
+      "sha256": "d278fb09f8a958a6ae9700a1ad9a3b0ad7fdaa44dd765dc5dde02e493a701c3c"
+    },
+    "docs/media/tutorials/r3/colourful-tower.jpg": {
+      "bytes": 64371,
+      "sha256": "8d4ebb681d417c575d8c8cab3cc11bad672b50ed1a20ebc73ae75863be621052"
+    },
+    "docs/media/tutorials/r3/colourful-tower.mp4": {
+      "bytes": 8127632,
+      "sha256": "158545e15572cf4b9bfffa18c7c59e510daabbf6e71de74f98c2d64b857aea61"
+    },
+    "docs/media/tutorials/r3/orbiting-letters-dd2547dcfbd8.scene": {
+      "bytes": 10387,
+      "sha256": "dd2547dcfbd89e22ce56e4b5b16928408a6bdf65d985574093139092adc4eff8"
+    },
+    "docs/media/tutorials/r3/orbiting-letters-preview.mp4": {
+      "bytes": 37882,
+      "sha256": "22b0a1ead6799ead67ba5c6bcfe7cafa3cd188cb20eb05f354da6313b677c31b"
+    },
+    "docs/media/tutorials/r3/orbiting-letters.jpg": {
+      "bytes": 62484,
+      "sha256": "fb84d1a7c7f93db77c65a34cb0e92444af651d42bb2470fb2acd06995b4814ee"
+    },
+    "docs/media/tutorials/r3/orbiting-letters.mp4": {
+      "bytes": 9227251,
+      "sha256": "28adb641a51b35222e95ce3b1634d9596d6bcfbaf378c418cb7af8d3c273a43a"
+    },
+    "docs/media/tutorials/r30/block-explosion-b8f856ee95dc.scene": {
+      "bytes": 44953,
+      "sha256": "b8f856ee95dc31457e55e3750a01283008e701ef8c053cd17a821f4335b383ce"
+    },
+    "docs/media/tutorials/r30/block-explosion-preview.mp4": {
+      "bytes": 125623,
+      "sha256": "a217d006b1ae9560e539ba47522a77a743144ddf785cadd6e54353ecd923c037"
+    },
+    "docs/media/tutorials/r30/block-explosion.jpg": {
+      "bytes": 82156,
+      "sha256": "b298919f31e0551f03e7e6c0e23fae8c3175b6516a583a32ef8d6b60e2977876"
+    },
+    "docs/media/tutorials/r30/block-explosion.mp4": {
+      "bytes": 19491406,
+      "sha256": "59816aaf7f5f6bce1ba582940f9d0ad09d0c1a0f126089d13a2e0ae44e13f568"
+    },
+    "docs/media/tutorials/r31/block-explosion-69262f65848a.scene": {
+      "bytes": 44949,
+      "sha256": "69262f65848af555ab194c3a3499b8e22e6b9d763c179c15c1c7bbaab39b87c6"
+    },
+    "docs/media/tutorials/r31/block-explosion-preview.mp4": {
+      "bytes": 124926,
+      "sha256": "b1a23a0403ccb684e3f90fbce7bf251ce8288449e85f8a9eb90aca55389e2af2"
+    },
+    "docs/media/tutorials/r31/block-explosion.jpg": {
+      "bytes": 82156,
+      "sha256": "b298919f31e0551f03e7e6c0e23fae8c3175b6516a583a32ef8d6b60e2977876"
+    },
+    "docs/media/tutorials/r31/block-explosion.mp4": {
+      "bytes": 19430661,
+      "sha256": "56cb5e500ceb99423b63502d248bd98f4905a450f96c897de4d2535fb593e11a"
+    },
+    "docs/media/tutorials/r32/block-explosion-e637143ca8eb.scene": {
+      "bytes": 74210,
+      "sha256": "cb03e53e37c34cd18ff8d9fe1ce122a7001d8072b5325c2ad1c8ab5f87ea0d4c"
+    },
+    "docs/media/tutorials/r32/block-explosion-preview.mp4": {
+      "bytes": 669898,
+      "sha256": "8f070855cc5768befc0d09eed4d54dfe8f1f44a658c2bb19b353e959d602ae9a"
+    },
+    "docs/media/tutorials/r32/block-explosion.jpg": {
+      "bytes": 83907,
+      "sha256": "0ead8f940bfce5358cd4d46e99536b7919fae11965bcc22839c895dd0c822bdd"
+    },
+    "docs/media/tutorials/r32/block-explosion.mp4": {
+      "bytes": 11677195,
+      "sha256": "1efcdd5ecad2d7495624763d8f6d4a0ac2392b8ec705e849f4c6c7abcfd4395c"
+    },
+    "docs/media/tutorials/r33/colourful-tower-2714782ca734.scene": {
+      "bytes": 17358,
+      "sha256": "2714782ca734e2eb48624fd6f69cc56f2e5750a7dec540b21c0c98f6e5236ec7"
+    },
+    "docs/media/tutorials/r33/colourful-tower-preview.mp4": {
+      "bytes": 45162,
+      "sha256": "aa269a26bf833f44abd9372a3bb0fd5b7e35d4534c5b980dbefa0bdcfbc88855"
+    },
+    "docs/media/tutorials/r33/colourful-tower.jpg": {
+      "bytes": 117278,
+      "sha256": "9c89a3517e03120a8dde937a668df5d248252ed42bfbbd85496ef56a9eaa3368"
+    },
+    "docs/media/tutorials/r33/colourful-tower.mp4": {
+      "bytes": 23370724,
+      "sha256": "abe1f425e147c93cb5cc597a135bd090cd0242d43624df951b6ee7f46a35835b"
+    },
+    "docs/media/tutorials/r33/orbiting-letters-6c79ac852832.scene": {
+      "bytes": 12290,
+      "sha256": "6c79ac852832d5a0a5f90d3f1a5b6c4bf1cfce8eca7a53b28996e2566a84a9cf"
+    },
+    "docs/media/tutorials/r33/orbiting-letters-preview.mp4": {
+      "bytes": 47560,
+      "sha256": "fa8fc82a409b36573eba40d3a899b81bb253ebdf60b910452f596d8991850945"
+    },
+    "docs/media/tutorials/r33/orbiting-letters.jpg": {
+      "bytes": 118321,
+      "sha256": "6faedf0c730d95f635ca8d82fcbb3c3a07e74bea6c83dc8e9ddc98f5a4bc4e6e"
+    },
+    "docs/media/tutorials/r33/orbiting-letters.mp4": {
+      "bytes": 22480823,
+      "sha256": "0d9c316b7bdc63d52c59d2c828f907aa421ca88b266f1642d9836d9d7980219f"
+    },
+    "docs/media/tutorials/r34/camera-reveal-36e94a49d78d.scene": {
+      "bytes": 13426,
+      "sha256": "36e94a49d78dd20369a22255f18a30c2d80b40551a67722d65db9606657830db"
+    },
+    "docs/media/tutorials/r34/camera-reveal-preview.mp4": {
+      "bytes": 74187,
+      "sha256": "dad4a5aac629b804d8c9b7f4133ee66e70fbe92c49cdc80b86d63f0a7be565ce"
+    },
+    "docs/media/tutorials/r34/camera-reveal.jpg": {
+      "bytes": 95708,
+      "sha256": "710a9add73d3689b35fe6b9c041a53eaef9af708c5a63a4fe73c3db4b72fe2ef"
+    },
+    "docs/media/tutorials/r34/camera-reveal.mp4": {
+      "bytes": 3485821,
+      "sha256": "04daad7a57cf582eeadbde01bf80052cfcd607c2c84d6a686ecb047955d7b769"
+    },
+    "docs/media/tutorials/r34/command-input-8a29fdbe2db9.scene": {
+      "bytes": 14050,
+      "sha256": "8a29fdbe2db92574f68daa914359a89cbe6257b6030ae561932de3086063b27a"
+    },
+    "docs/media/tutorials/r34/command-input-preview.mp4": {
+      "bytes": 61229,
+      "sha256": "14760eaf6314e2621752fb94c824b0257efe7244a26e187bec415829a0e1ba4f"
+    },
+    "docs/media/tutorials/r34/command-input.jpg": {
+      "bytes": 116421,
+      "sha256": "fafffbd9767e4143cd43773fd2ea62eda9ae27e9cbe15449520b6f746139bcf3"
+    },
+    "docs/media/tutorials/r34/command-input.mp4": {
+      "bytes": 3244483,
+      "sha256": "048692c071879665996274e01eb91a995f55336488541f3e60dc3a13109604be"
+    },
+    "docs/media/tutorials/r34/domino-chain-e3aaaef09548.scene": {
+      "bytes": 19299,
+      "sha256": "e3aaaef095485e7780bbbf74183dc5de5cadc85b886eebf1a8f95eb877e91d9e"
+    },
+    "docs/media/tutorials/r34/domino-chain-preview.mp4": {
+      "bytes": 60890,
+      "sha256": "803a552857290552f3db624328674fccfca4875253659b9adcfd51df98309ab5"
+    },
+    "docs/media/tutorials/r34/domino-chain.jpg": {
+      "bytes": 122269,
+      "sha256": "59c542a234e2122807aca91b8852aea0d814a8d5951bea3787b5016b07d173bd"
+    },
+    "docs/media/tutorials/r34/domino-chain.mp4": {
+      "bytes": 3937892,
+      "sha256": "0e28257b9da092a98f23b5184ca3c687af87e50b6e149a9870bd4e1b6e5cecbd"
+    },
+    "docs/media/tutorials/r34/ending-signature-ad2d66f2364d.scene": {
+      "bytes": 12591,
+      "sha256": "ad2d66f2364d0ee079340280996e65d86c24560019aef009dcd4528f1336162e"
+    },
+    "docs/media/tutorials/r34/ending-signature-preview.mp4": {
+      "bytes": 123282,
+      "sha256": "4dc7e10604b4b5f2b111891ca56c5a23856af8db0f09dd927677090b50aea744"
+    },
+    "docs/media/tutorials/r34/ending-signature.jpg": {
+      "bytes": 44796,
+      "sha256": "0a2c2c59f3628aa9b6180a43e35b6edee1c02469345ce2c7de6e44b3199c08e5"
+    },
+    "docs/media/tutorials/r34/ending-signature.mp4": {
+      "bytes": 1994005,
+      "sha256": "7e96e35dabb91131c0c4052c3d04021ef40d430768ca4b088beac99682302bcd"
+    },
+    "docs/media/tutorials/r34/falling-blocks-6cb2e3d99f35.scene": {
+      "bytes": 16548,
+      "sha256": "6cb2e3d99f358318c4cbbd1d6d58120bf247fa3866c439e96c34ef0ccd5bd8ce"
+    },
+    "docs/media/tutorials/r34/falling-blocks-preview.mp4": {
+      "bytes": 70468,
+      "sha256": "69ead0009b9b68d4ed627c7e3559b1aba9df9a0db90cb0d1819c34aabfb8daf0"
+    },
+    "docs/media/tutorials/r34/falling-blocks.jpg": {
+      "bytes": 129020,
+      "sha256": "e2435698a6a7b188af80e243ef7205ef4bf32fea0c6a9c85a622c41412e6329c"
+    },
+    "docs/media/tutorials/r34/falling-blocks.mp4": {
+      "bytes": 3755117,
+      "sha256": "498aea913aa1652b7148bc17de7bbcefe043f843e733cc64cf57ca05273ad1f0"
+    },
+    "docs/media/tutorials/r34/forest-rain-b0773786b56e.scene": {
+      "bytes": 22329,
+      "sha256": "b0773786b56ec579c13867bcd8418fc9304cd84ebf7ac18b9a6d8c858c1ca643"
+    },
+    "docs/media/tutorials/r34/forest-rain-preview.mp4": {
+      "bytes": 64676,
+      "sha256": "098472653fb07aa31baf8e08c3c63728eb35d6959977a86f7dd7f7b50802a7e8"
+    },
+    "docs/media/tutorials/r34/forest-rain.jpg": {
+      "bytes": 125381,
+      "sha256": "ba4c7b712e745b70721d56b09756272334956181af982526dba3019de2faaa73"
+    },
+    "docs/media/tutorials/r34/forest-rain.mp4": {
+      "bytes": 4080137,
+      "sha256": "aa932cd4c2d74340141a57e02826eed485bc7c41aefabe8ecfa10f7a3fe4b095"
+    },
+    "docs/media/tutorials/r34/record-mp4-24555983cd5d.scene": {
+      "bytes": 13979,
+      "sha256": "24555983cd5de457c4bc54fb1c4903e661d98377e4901c1020b169f80e01290f"
+    },
+    "docs/media/tutorials/r34/record-mp4-preview.mp4": {
+      "bytes": 75048,
+      "sha256": "59c6dd10076ecc157be923ff678a57f9b0788de1902cb36a429baf0e12b0878c"
+    },
+    "docs/media/tutorials/r34/record-mp4.jpg": {
+      "bytes": 122696,
+      "sha256": "ef9bfd7188a4dc44bf93781fc9d93ac66367a34df935d66a0b6bf97dae81b62e"
+    },
+    "docs/media/tutorials/r34/record-mp4.mp4": {
+      "bytes": 3745691,
+      "sha256": "b234c507a2b1245d047ba4b3d66fae975439229dd2df0483c5b96c4ca0c2159b"
+    },
+    "docs/media/tutorials/r34/three-shapes-e07953f6e124.scene": {
+      "bytes": 12837,
+      "sha256": "e07953f6e124919b0f9275d381c11f0767ffa6a4d809a5f73cc7f70ac6bb7946"
+    },
+    "docs/media/tutorials/r34/three-shapes-preview.mp4": {
+      "bytes": 70330,
+      "sha256": "1378b2d6b5b778fef5e1761418a84fa96fe1e4cfeb997a75dee381d5b1e8357e"
+    },
+    "docs/media/tutorials/r34/three-shapes.jpg": {
+      "bytes": 123432,
+      "sha256": "1a84a649809e261c762222c811a75e2bfff70421971ab6ac9b202c8bec47013b"
+    },
+    "docs/media/tutorials/r34/three-shapes.mp4": {
+      "bytes": 3234528,
+      "sha256": "40e25ef5f1d8fbe4c013257887eeb29cf6ac25833cf493d2d235a78899c061b7"
+    },
+    "docs/media/tutorials/r35/brick-wall-2bd4d620a019.scene": {
+      "bytes": 143785,
+      "sha256": "2bd4d620a019d147f8219affce20609e3265a5d28733e468d656e35607ccf8b2"
+    },
+    "docs/media/tutorials/r35/brick-wall-preview.mp4": {
+      "bytes": 255177,
+      "sha256": "71f86bb68c700f13a6c5857d2f39886574d591f58115ae2643e4341502590a3a"
+    },
+    "docs/media/tutorials/r35/brick-wall.jpg": {
+      "bytes": 225872,
+      "sha256": "6a14c204d6e57cda39ce83d156789a3d445899834ce23b6a215f6f7401d7173e"
+    },
+    "docs/media/tutorials/r35/brick-wall.mp4": {
+      "bytes": 3856115,
+      "sha256": "4777abef5c89e2f64a45c38a886195108482af45a1d14d60a15947aa8ca976d6"
+    },
+    "docs/media/tutorials/r36/brick-wall-de161a7adf56.scene": {
+      "bytes": 145008,
+      "sha256": "de161a7adf56e4d776c416f6172498c37aa115641b8421557b2964bd9ec19d57"
+    },
+    "docs/media/tutorials/r36/brick-wall-preview.mp4": {
+      "bytes": 219205,
+      "sha256": "9595c9739a7a2f8e8709eff4181cc419187969ede0779893895a5486b9ed0bd8"
+    },
+    "docs/media/tutorials/r36/brick-wall.jpg": {
+      "bytes": 101139,
+      "sha256": "5ef8fc598d791455a7c3e22aeac9eee2eb6df92a9360ff5a368035a5d44b1af9"
+    },
+    "docs/media/tutorials/r36/brick-wall.mp4": {
+      "bytes": 3800822,
+      "sha256": "b3e69bca9b86f765a90a00ee02042bfd10d2bc2c593973d232bebc291616ed03"
+    },
+    "docs/media/tutorials/r37/brick-wall-03b46a4c19af.scene": {
+      "bytes": 67155,
+      "sha256": "03b46a4c19af055d745c8075653cfd17756d6fb258e51ae59b494dabdba33ef0"
+    },
+    "docs/media/tutorials/r37/brick-wall-preview.mp4": {
+      "bytes": 167166,
+      "sha256": "91260132ef737a54c55f11ed3e25d6d0a3fb4c15f37531b994eb9603d88d9eac"
+    },
+    "docs/media/tutorials/r37/brick-wall.jpg": {
+      "bytes": 151199,
+      "sha256": "e53405d9d59451d7e4356b854cc5e232150fbd7e53b6d8c08eb84281f1253c22"
+    },
+    "docs/media/tutorials/r37/brick-wall.mp4": {
+      "bytes": 3186424,
+      "sha256": "6db46ad503ba68b48e090ad411d463d1a1e75239ebe8889b44c2a878ce73d048"
+    },
+    "docs/media/tutorials/r38/autumn-lantern-cottage-e52d68a4d27f.scene": {
+      "bytes": 496580,
+      "sha256": "e52d68a4d27f201d21db539e63d74703d6fa2b2c9fa3b500bb90ed50943e22a9"
+    },
+    "docs/media/tutorials/r38/autumn-lantern-cottage-preview.mp4": {
+      "bytes": 879855,
+      "sha256": "7b3a19bcf8e630395431b0d5f6bc7373c0957a4da5b892fdd1383f488dbf13f8"
+    },
+    "docs/media/tutorials/r38/autumn-lantern-cottage.jpg": {
+      "bytes": 85998,
+      "sha256": "21ab916459a3ceb2bfb24bee9db6aa9737ea6abddc2beb43c6781aacb8cc8412"
+    },
+    "docs/media/tutorials/r38/autumn-lantern-cottage.mp4": {
+      "bytes": 6471956,
+      "sha256": "5b10a739806885a3b905dedec4e3b3707628dc60893c1f7bf0e86ec1457aace6"
+    },
+    "docs/media/tutorials/r4/block-explosion-2a14599566f3.scene": {
+      "bytes": 27307,
+      "sha256": "2a14599566f32d90dd64bf32a934e30b79e731aeef5d35a7071fa36c84baa2f2"
+    },
+    "docs/media/tutorials/r4/block-explosion-preview.mp4": {
+      "bytes": 83386,
+      "sha256": "23ac74ad5693e1c15f1c914a3adc192d7a7f0a0efb1f3579e66b003664c915e7"
+    },
+    "docs/media/tutorials/r4/block-explosion.jpg": {
+      "bytes": 81295,
+      "sha256": "a8d7cde7da5caf90eee046e41daffb418781d3779202598caec80a4dee7f4143"
+    },
+    "docs/media/tutorials/r4/block-explosion.mp4": {
+      "bytes": 13387957,
+      "sha256": "75df0dd40e4f6f426979b494a91f256cc8722403d66d0b0b0ed3b50eba959b03"
+    },
+    "docs/media/tutorials/r4/colourful-tower-2c029937c841.scene": {
+      "bytes": 13469,
+      "sha256": "2c029937c8416ee5b35d05fdb2cc4eb1aab7d8e967c961cbae2f8e7e07cc39bb"
+    },
+    "docs/media/tutorials/r4/colourful-tower-preview.mp4": {
+      "bytes": 45657,
+      "sha256": "8ac0c71ed2a6721b0358f7107d394186071c4e608d8e3e6d0f36c9e979a042e2"
+    },
+    "docs/media/tutorials/r4/colourful-tower.jpg": {
+      "bytes": 67858,
+      "sha256": "e33efcb7fec860faca19a950a914ee27158af8c543dbc42acb24f52a2d547432"
+    },
+    "docs/media/tutorials/r4/colourful-tower.mp4": {
+      "bytes": 8193623,
+      "sha256": "3e3914629ade04d689f4800f885bd52fcfe02a4cb094d33ed152dadde5d7adc2"
+    },
+    "docs/media/tutorials/r4/orbiting-letters-dd2547dcfbd8.scene": {
+      "bytes": 10387,
+      "sha256": "dd2547dcfbd89e22ce56e4b5b16928408a6bdf65d985574093139092adc4eff8"
+    },
+    "docs/media/tutorials/r4/orbiting-letters-preview.mp4": {
+      "bytes": 40932,
+      "sha256": "6b2dea1c76faf996c446d28a3e0bd511acaf44fcd8fff509396f9643560790b2"
+    },
+    "docs/media/tutorials/r4/orbiting-letters.jpg": {
+      "bytes": 63150,
+      "sha256": "04d4ae3a9e4697859c9cc6d2c62668cb363c95ce3c150c0c26af012c2d26eda4"
+    },
+    "docs/media/tutorials/r4/orbiting-letters.mp4": {
+      "bytes": 9076258,
+      "sha256": "1b02122fa9971de4135429e3eb780fcf169f4c54e58575b061427229538227a3"
+    },
+    "docs/media/tutorials/r5/block-explosion-5a9fbc64c144.scene": {
+      "bytes": 27312,
+      "sha256": "5a9fbc64c1443568ffa8b6af7469c5182fd7ea20e38ed88e7680a08c274d7658"
+    },
+    "docs/media/tutorials/r5/block-explosion-preview.mp4": {
+      "bytes": 83854,
+      "sha256": "033ecde64fe88e9f634aa251b8de6d31c6fdf85e944963ab5afedfe0684b5bd3"
+    },
+    "docs/media/tutorials/r5/block-explosion.jpg": {
+      "bytes": 81430,
+      "sha256": "d24e1003d9df0750da176516ad4bb679f35195f14ae101400b7a87dd69cf4db2"
+    },
+    "docs/media/tutorials/r5/block-explosion.mp4": {
+      "bytes": 12894908,
+      "sha256": "20b070d254527fe4066ec9573b1673c4eda45385c7e4af66a11b0d81fc213b9c"
+    },
+    "docs/media/tutorials/r5/colourful-tower-498ef25546e4.scene": {
+      "bytes": 13474,
+      "sha256": "498ef25546e4231c00b846c8503e18e9962d58d7fb75f83d530efa82afde8cd0"
+    },
+    "docs/media/tutorials/r5/colourful-tower-preview.mp4": {
+      "bytes": 45714,
+      "sha256": "a8b7f96d6bda42a6c4a8f871762868280a88d1b35921dcb747e27edd2e244038"
+    },
+    "docs/media/tutorials/r5/colourful-tower.jpg": {
+      "bytes": 67873,
+      "sha256": "4500d4ce37f306aafd1bc51f62741ae8da11130340344665f4acc197e1618e4b"
+    },
+    "docs/media/tutorials/r5/colourful-tower.mp4": {
+      "bytes": 7587207,
+      "sha256": "cd56bd05582a6803fe4a173320bc837f5011b301fea77929a3711cb2f5063fe8"
+    },
+    "docs/media/tutorials/r5/orbiting-letters-1498115c07ef.scene": {
+      "bytes": 10392,
+      "sha256": "1498115c07efa5e5889d581aba944e4765cbf772afcc801ffb01f18230ec3d7f"
+    },
+    "docs/media/tutorials/r5/orbiting-letters-preview.mp4": {
+      "bytes": 41479,
+      "sha256": "d8b4affb4f9bb1f8790cb2d5eb28ea750f7bdcc0f747462a39bd6e8ad68048f1"
+    },
+    "docs/media/tutorials/r5/orbiting-letters.jpg": {
+      "bytes": 63194,
+      "sha256": "8db6cf4a40b0c47f55037fc3a42823f85cea88e49f34493334d235bc085e9536"
+    },
+    "docs/media/tutorials/r5/orbiting-letters.mp4": {
+      "bytes": 8519219,
+      "sha256": "1814946da53bc7e716742429c6ffcde26771a171ca5962e90296b34a6d82c747"
+    },
+    "docs/media/tutorials/r6/block-explosion-5a9fbc64c144.scene": {
+      "bytes": 27312,
+      "sha256": "5a9fbc64c1443568ffa8b6af7469c5182fd7ea20e38ed88e7680a08c274d7658"
+    },
+    "docs/media/tutorials/r6/block-explosion-preview.mp4": {
+      "bytes": 83854,
+      "sha256": "033ecde64fe88e9f634aa251b8de6d31c6fdf85e944963ab5afedfe0684b5bd3"
+    },
+    "docs/media/tutorials/r6/block-explosion.jpg": {
+      "bytes": 81430,
+      "sha256": "d24e1003d9df0750da176516ad4bb679f35195f14ae101400b7a87dd69cf4db2"
+    },
+    "docs/media/tutorials/r6/block-explosion.mp4": {
+      "bytes": 12894908,
+      "sha256": "20b070d254527fe4066ec9573b1673c4eda45385c7e4af66a11b0d81fc213b9c"
+    },
+    "docs/media/tutorials/r6/colourful-tower-498ef25546e4.scene": {
+      "bytes": 13474,
+      "sha256": "498ef25546e4231c00b846c8503e18e9962d58d7fb75f83d530efa82afde8cd0"
+    },
+    "docs/media/tutorials/r6/colourful-tower-preview.mp4": {
+      "bytes": 45714,
+      "sha256": "a8b7f96d6bda42a6c4a8f871762868280a88d1b35921dcb747e27edd2e244038"
+    },
+    "docs/media/tutorials/r6/colourful-tower.jpg": {
+      "bytes": 67873,
+      "sha256": "4500d4ce37f306aafd1bc51f62741ae8da11130340344665f4acc197e1618e4b"
+    },
+    "docs/media/tutorials/r6/colourful-tower.mp4": {
+      "bytes": 7587207,
+      "sha256": "cd56bd05582a6803fe4a173320bc837f5011b301fea77929a3711cb2f5063fe8"
+    },
+    "docs/media/tutorials/r6/orbiting-letters-1498115c07ef.scene": {
+      "bytes": 10392,
+      "sha256": "1498115c07efa5e5889d581aba944e4765cbf772afcc801ffb01f18230ec3d7f"
+    },
+    "docs/media/tutorials/r6/orbiting-letters-preview.mp4": {
+      "bytes": 41479,
+      "sha256": "d8b4affb4f9bb1f8790cb2d5eb28ea750f7bdcc0f747462a39bd6e8ad68048f1"
+    },
+    "docs/media/tutorials/r6/orbiting-letters.jpg": {
+      "bytes": 63194,
+      "sha256": "8db6cf4a40b0c47f55037fc3a42823f85cea88e49f34493334d235bc085e9536"
+    },
+    "docs/media/tutorials/r6/orbiting-letters.mp4": {
+      "bytes": 8519219,
+      "sha256": "1814946da53bc7e716742429c6ffcde26771a171ca5962e90296b34a6d82c747"
+    },
+    "docs/media/tutorials/r7/block-explosion-081b24148486.scene": {
+      "bytes": 27356,
+      "sha256": "081b2414848691aff443a662bca4bd73c0c7787bf634c3f442bf238e7013a6ae"
+    },
+    "docs/media/tutorials/r7/block-explosion-preview.mp4": {
+      "bytes": 80138,
+      "sha256": "f18e6c072aff42d7d762684d7b989f149538b4d99be6be8aeead6e06b23933e2"
+    },
+    "docs/media/tutorials/r7/block-explosion.jpg": {
+      "bytes": 81099,
+      "sha256": "25d92d2341c86c9d165b87aebda64647aa707e2c40d4a9fc8f701cf75dd10e44"
+    },
+    "docs/media/tutorials/r7/block-explosion.mp4": {
+      "bytes": 12980225,
+      "sha256": "d20bbb546d94de0434d84db469da241c1d797a827b1b69db23cc40cecda1bc4d"
+    },
+    "docs/media/tutorials/r7/colourful-tower-2fc542e47281.scene": {
+      "bytes": 13492,
+      "sha256": "2fc542e47281e3b258f86253c1a552edc1717219a2b069f17cdb500689b9c9f4"
+    },
+    "docs/media/tutorials/r7/colourful-tower-preview.mp4": {
+      "bytes": 50258,
+      "sha256": "278992b7038b843e313f7b0a215f4828edeaa419c675c0ec42dc6a519a75ce4d"
+    },
+    "docs/media/tutorials/r7/colourful-tower.jpg": {
+      "bytes": 65431,
+      "sha256": "593f1a0af5570261e9a873844d31d4f7e6017258f5d2b223983bce91190a41c3"
+    },
+    "docs/media/tutorials/r7/colourful-tower.mp4": {
+      "bytes": 7483190,
+      "sha256": "a5ab8670d212d2c4081333eb6b287e347079f2fdb0134a8efbae5a04d4473613"
+    },
+    "docs/media/tutorials/r7/orbiting-letters-2be9334cdd67.scene": {
+      "bytes": 10408,
+      "sha256": "2be9334cdd67038567c6db62d04d71587de6cf6a27fb557fba435df11f1d175e"
+    },
+    "docs/media/tutorials/r7/orbiting-letters-preview.mp4": {
+      "bytes": 42789,
+      "sha256": "4d7e659c4ed87b0d43b57d80e39c77281a7077b48529780d54b56ca382c808d8"
+    },
+    "docs/media/tutorials/r7/orbiting-letters.jpg": {
+      "bytes": 63812,
+      "sha256": "1d546573f258c3fa3dd5fdd310e94c9712d7396581f4c13ea57daa1f8764c840"
+    },
+    "docs/media/tutorials/r7/orbiting-letters.mp4": {
+      "bytes": 8594222,
+      "sha256": "86d7370022d7230615ce41fe1cc26b4f3423cb689c4ad51957dfa5a4087217c3"
+    },
+    "docs/media/tutorials/r9/block-explosion-a7836fd17479.scene": {
+      "bytes": 27381,
+      "sha256": "a7836fd17479b2ffbac9a6976dea6e37fc2ed4d46acb41ca1638b268234bc696"
+    },
+    "docs/media/tutorials/r9/block-explosion-preview.mp4": {
+      "bytes": 89306,
+      "sha256": "f8ea2bddd68788a534c2174e2f72997c32b52041eec0a74d30b2d075cf85acfb"
+    },
+    "docs/media/tutorials/r9/block-explosion.jpg": {
+      "bytes": 79560,
+      "sha256": "1ee08e5a37f21163f7b25ae4cb68123e5b2eaf4ff88bf1f1386a3d841e200f22"
+    },
+    "docs/media/tutorials/r9/block-explosion.mp4": {
+      "bytes": 20816278,
+      "sha256": "8c1c21d84c018aa4bd5bd0479c73ae870a3d4cd5bbaedabee831d76b2b7a35a9"
+    },
+    "docs/media/tutorials/r9/colourful-tower-df912f401407.scene": {
+      "bytes": 13517,
+      "sha256": "df912f401407724b0ad5756ead9952059322e090fefe0c0b59cfc57b7a1353ac"
+    },
+    "docs/media/tutorials/r9/colourful-tower-preview.mp4": {
+      "bytes": 46580,
+      "sha256": "05648b90fa709ac83bf0035a424e6f8d6c399883af09b67e96d3661b592356d0"
+    },
+    "docs/media/tutorials/r9/colourful-tower.jpg": {
+      "bytes": 66648,
+      "sha256": "cc149440a33fc30d714a1d1134ec8a1c73dcbda90db485d81aebb16d3e1bba86"
+    },
+    "docs/media/tutorials/r9/colourful-tower.mp4": {
+      "bytes": 14624479,
+      "sha256": "9d5b850acced695e2a19cc9999fac08f01f7e959474eef200829b0883f256d45"
+    },
+    "docs/media/tutorials/r9/orbiting-letters-d33c51b134bc.scene": {
+      "bytes": 10456,
+      "sha256": "d33c51b134bcce2941080c932b295a3069353a1a485ec27572aad9c476d39e72"
+    },
+    "docs/media/tutorials/r9/orbiting-letters-preview.mp4": {
+      "bytes": 47122,
+      "sha256": "90d4475cd026513d978757a28fb632850d8e2735c137682cdd964813562c2f46"
+    },
+    "docs/media/tutorials/r9/orbiting-letters.jpg": {
+      "bytes": 63750,
+      "sha256": "947543fc98102dc5cf1e08434258529ae6c084c9158b5cd015ee5372bf15d200"
+    },
+    "docs/media/tutorials/r9/orbiting-letters.mp4": {
+      "bytes": 15119649,
+      "sha256": "404d6b90f6f8b25bd39f0d5c16532429a092c845ef371f846ed70dab1a683f9e"
+    },
+    "docs/media/v1/explosion.jpg": {
+      "bytes": 31759,
+      "sha256": "c9bc0ec6c4c251041a392a4e5c1a46d6a2f33b444182f7eed6c038eb7624e918"
+    },
+    "docs/media/v1/explosion.mp4": {
+      "bytes": 1288585,
+      "sha256": "ee184a19c6653f444208dc33f09a1ae719f26b49c97651cfb16ce5c143d4adbc"
+    },
+    "docs/media/v1/title.jpg": {
+      "bytes": 24229,
+      "sha256": "821c87d1672f5a259e80725b228d8a8e3242c8f14d0f3d9013a245ae27441115"
+    },
+    "docs/media/v1/title.mp4": {
+      "bytes": 632477,
+      "sha256": "fddf40d1f551dcdefa52ff08d6967dcd6005660c1c1f17e4d414c385635ef335"
+    },
+    "docs/media/v2/explosion-action.png": {
+      "bytes": 372769,
+      "sha256": "c425ae75709a7ff6bf364612457ad29ee2e899941d2513feacbfc2ec216fcdb7"
+    },
+    "docs/media/v2/explosion.jpg": {
+      "bytes": 22494,
+      "sha256": "6d33edd3527f9f66f97d68a23e8a327f5edf3e63fcca2e130cfe6665f0bada6e"
+    },
+    "docs/media/v2/explosion.mp4": {
+      "bytes": 3651347,
+      "sha256": "b3d56f0ebefe41fc1b6c4dd40871d958605052a8c134608e1f095faeea837580"
+    },
+    "docs/media/v2/title.jpg": {
+      "bytes": 24229,
+      "sha256": "821c87d1672f5a259e80725b228d8a8e3242c8f14d0f3d9013a245ae27441115"
+    },
+    "docs/media/v2/title.mp4": {
+      "bytes": 632477,
+      "sha256": "fddf40d1f551dcdefa52ff08d6967dcd6005660c1c1f17e4d414c385635ef335"
+    },
+    "docs/sharing/index.html": {
+      "bytes": 8620,
+      "sha256": "6a4b08a87dd6fb7a7870c3db3b66fa191a8318289f8369cbe0783a94b64959d6"
+    },
+    "docs/sharing/index.html.br": {
+      "bytes": 2070,
+      "sha256": "63be48dd43dbe68100adbe96306c702cbb12f5507ef33a45a5c0f3c5007922f9"
+    },
+    "docs/sharing/index.html.gz": {
+      "bytes": 2674,
+      "sha256": "a251ae7a5723e637e0f6f44c35c10c0aea35b17e1b70ebc9bf88d95d51dfb7f0"
+    },
+    "engine_loader.js": {
+      "bytes": 3201,
+      "sha256": "db5970fa092dfe80e5f544de0b973e392891e8220c546b5bcac692c8fee58d49"
+    },
+    "engine_loader.js.br": {
+      "bytes": 1032,
+      "sha256": "8da8dd14843d2355d1fcf683432b2a095dde6ca01c0cfc03a9773e4f51f59715"
+    },
+    "engine_loader.js.gz": {
+      "bytes": 1237,
+      "sha256": "c63420c0277e7d674874f1ba52cf213d70a42a1d46fefa12fd469bda019aace3"
+    },
+    "favicon.ico": {
+      "bytes": 4238,
+      "sha256": "e82671cbbf0334e6d30a277dd77a4f67ff7b0b320590eeba3802d447af0c64c3"
+    },
+    "fs_assets.js": {
+      "bytes": 5871,
+      "sha256": "364a299e34f6fce6b270a1c735b6607e534d50c18b10f19e683525ccb2c2ab76"
+    },
+    "fs_assets.js.br": {
+      "bytes": 2114,
+      "sha256": "f2a7c0d50231b9a2eacd06e840400f4452983fcec8b58d082eb91944ebf53dc1"
+    },
+    "fs_assets.js.gz": {
+      "bytes": 2572,
+      "sha256": "d7589825c6566360feca0b5c3fa81e65193d631c9bcbce57be47d1e57561fa70"
+    },
+    "index.html": {
+      "bytes": 81907,
+      "sha256": "19637ae84afd569975aa9ebd3e9c67acab1af2780bc172dd8f50d1a151e8a32c"
+    },
+    "index.html.br": {
+      "bytes": 22173,
+      "sha256": "237766c217a11b2abf4b039f0bf4b93fc53bbd0b2501d5c48be2ba8813a259e8"
+    },
+    "index.html.gz": {
+      "bytes": 26008,
+      "sha256": "f59679ed83906311bf77f53990f805a772b94f9a031aab3f1e276699e93c165f"
+    },
+    "layout/current layout.layout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "layout/layout.json": {
+      "bytes": 295,
+      "sha256": "851c83239f2d2c79620582c3faf9b0e4b3826fa85c1c048f825ebc5ce13c52b7"
+    },
+    "layout/test.layout": {
+      "bytes": 1752,
+      "sha256": "cc5fc9614f5225ed521d0eede1081052071aabc1826175e91179514403b925d9"
+    },
+    "layout/test.layout.br": {
+      "bytes": 454,
+      "sha256": "6326df7967c70b4fbc604553d8e355970f093fe3652a16c7dad4d2d823ac28a6"
+    },
+    "layout/test.layout.gz": {
+      "bytes": 508,
+      "sha256": "776ee31ddf6ec791b2886cd59dee8f1c22eaa02b0c96cff40fb472cc3af1f5f3"
+    },
+    "layout/test2.layout": {
+      "bytes": 1178,
+      "sha256": "5a0ad0f44238faefcb5cc3359f20bc9687758bd478a928dc423e786880a3a137"
+    },
+    "layout/test2.layout.br": {
+      "bytes": 273,
+      "sha256": "4c9a0230e8f29aad5c3882172063e85cf2fd876bb7862f33f30576af87b54f76"
+    },
+    "layout/test2.layout.gz": {
+      "bytes": 326,
+      "sha256": "7aee3d72ea205ff229cd3e4ad987051a8215a64c63fb09fda5d9f832fe0d3756"
+    },
+    "mcp/index.html": {
+      "bytes": 8478,
+      "sha256": "43e39c0299001e2ade98591714b77a311390711d7ae9a0f796b3653853548359"
+    },
+    "mcp/index.html.br": {
+      "bytes": 2009,
+      "sha256": "ec64323bfdcb9aaf711db64338f98f05eeef6efe30ceeed39f169b75611a17c5"
+    },
+    "mcp/index.html.gz": {
+      "bytes": 2571,
+      "sha256": "d8f5597073320c85e45605f34205aa0475b3e0f46ce3b76748a9d470ea6f299a"
+    },
+    "models/Dragon_Model.glb": {
+      "bytes": 364472,
+      "sha256": "bacb1a140bd0949526e01045e3b5a5c2f04d0c1c59662d3f986482ab2f2e2e3f"
+    },
+    "models/Dragon_Model.glb.wmesh": {
+      "bytes": 1257948,
+      "sha256": "c129ced855d849efa48dab663d85b243b0de17b08bad7df8937d148a98b8b786"
+    },
+    "models/Dragon_Model.high.glb": {
+      "bytes": 179140,
+      "sha256": "7c95a9d36d0e2d0385014cb9c78257a6febd6f08ef64290fafdb9928de41a4b2"
+    },
+    "models/Game_Console_Pack.glb": {
+      "bytes": 387676,
+      "sha256": "d6e69f5e611ce0f263a07475f6cf5b82a9064a07a9007ed006dd8052127cbc64"
+    },
+    "models/Game_Console_Pack.high.glb": {
+      "bytes": 143004,
+      "sha256": "3ea672ad80e46ee94e8656422b58e7f2aecb0cac7e8e954824643ac6e5c37753"
+    },
+    "models/Game_Console_Pack.tiny.glb": {
+      "bytes": 143004,
+      "sha256": "3ea672ad80e46ee94e8656422b58e7f2aecb0cac7e8e954824643ac6e5c37753"
+    },
+    "models/Game_Console_Pack.tiny.glb.wmesh": {
+      "bytes": 591080,
+      "sha256": "be7c589555fb4fd97f77506be2c4e2d1879202c1fc41229ece528a3e4a3fb04c"
+    },
+    "models/Holofil-flying-icarus.glb": {
+      "bytes": 5593444,
+      "sha256": "80b63d3b1a1394ed762ff2b01f84de32b9ea0021aa79081f5d9c1d12744faaea"
+    },
+    "models/Holofil-flying-icarus.glb.wmesh": {
+      "bytes": 9814864,
+      "sha256": "4a6e673e06f964ca518ded5a8eb1d7715cc290af6fc90d66e2b16932421cb842"
+    },
+    "models/Holofil-flying-icarus.high.glb": {
+      "bytes": 2680156,
+      "sha256": "63cd6c6ed72a719a02f735fce2a5cfd0191e991a675b00d4967ef33555f7d0cd"
+    },
+    "models/Human_Skull.glb.wmesh": {
+      "bytes": 4334928,
+      "sha256": "03a6929a36f379e73fdf318c1ad77266d98166c16098ddce0480c2e00e44d3dc"
+    },
+    "models/arunangshubanerjee-g-clef-1600.glb": {
+      "bytes": 969280,
+      "sha256": "e84bf47daefc633ba824ff22e20c526dc2546459273ebc0e867b166f187fff10"
+    },
+    "models/arunangshubanerjee-g-clef-1600.glb.wmesh": {
+      "bytes": 5984120,
+      "sha256": "985354ea29f5c47c8c050053f957b8647b1be01572f1a30c52fff0b8efac805a"
+    },
+    "models/arunangshubanerjee-g-clef-1600.high.glb": {
+      "bytes": 559836,
+      "sha256": "aa5c655dd25a41500eacfa71715d27019f5496d1ea619d644fe4a989bdb69d34"
+    },
+    "models/ergoninane-potion-76.glb": {
+      "bytes": 2573408,
+      "sha256": "14c2c752f1e6af481eabaaee215a23a4139ce23b2d47d064ce188e0926465091"
+    },
+    "models/gal-b-die-4221.glb": {
+      "bytes": 906060,
+      "sha256": "b1e155a432e5f6812d597d44c010bc5c84a90bbba9bf68cc10f7c982c05d83e8"
+    },
+    "models/gal-b-die-4221.glb.wmesh": {
+      "bytes": 2916256,
+      "sha256": "9aad5693784af46848455b1f3c0e2a0d5ecbfd179cb03fc96bf7165db7590f59"
+    },
+    "models/gal-b-die-4221.high.glb": {
+      "bytes": 640308,
+      "sha256": "5d5444b1e1e0483a116f289036717a143c872d7de6aaf0afac4aecf51c6686b3"
+    },
+    "models/gal-b-lantern-4120.glb": {
+      "bytes": 220508,
+      "sha256": "5a58581738a7d5460e4b6e5a70b427805813722a89f2bad4493ed85de879bcea"
+    },
+    "models/gal-b-lantern-4120.glb.wmesh": {
+      "bytes": 532532,
+      "sha256": "5c5acbc76c94834f1ac1d89db1497c17e1b8ac1404c4d2ed87830cd50abeb91f"
+    },
+    "models/gal-b-lantern-4120.high.glb": {
+      "bytes": 142072,
+      "sha256": "f4b5b878a6e924bea5ff6692d3e309ea2fca86acdb5fdd5c5118c3d16ec5ee50"
+    },
+    "models/index.txt": {
+      "bytes": 3834,
+      "sha256": "7c385ec895f7b3b59138c6081a2fe78fbb7583d459e42e71577ba25edc0a7582"
+    },
+    "models/index.txt.br": {
+      "bytes": 1038,
+      "sha256": "4dcb9051eac01b0124b19995c88590284b507df55f12adfb77ef8944e06ebc78"
+    },
+    "models/index.txt.gz": {
+      "bytes": 1206,
+      "sha256": "3ce2562b92ce6dc5a8ecf8b7672b65611bf9d28e1f6ae3d382ba7ffdf3bd6f29"
+    },
+    "models/nickpanek-black-knight-1689.glb": {
+      "bytes": 14391060,
+      "sha256": "b78046e72cdcfc1a8b9400e24b91fa8beefe7191a54a6ba673ab6876e3bebf73"
+    },
+    "models/nickpanek-black-knight-1689.high.glb": {
+      "bytes": 12506316,
+      "sha256": "07a4ed9ca5aee34cf377b2775a2b9f80a525a78d9fc16c2ad3d9e44d0865d220"
+    },
+    "models/pixellabs-battle-axe-3881.high.glb": {
+      "bytes": 1326828,
+      "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
+    },
+    "models/pixellabs-battle-axe-3881.low.glb": {
+      "bytes": 3008236,
+      "sha256": "fb5d5a5a7d1a8997066e39d52ddae2486623d9301a60a46f4a5edd498eb062a2"
+    },
+    "models/pixellabs-battle-axe-3881.tiny.glb": {
+      "bytes": 1326828,
+      "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
+    },
+    "models/pixellabs-battle-axe-3881.tiny.glb.wmesh": {
+      "bytes": 11210656,
+      "sha256": "bc5a69a29b89e6e933c2dbcaa7b7793b262c770f34ebdcde6acf91487440637b"
+    },
+    "models/pixellabs-battle-axe-3881_optimized.high.glb": {
+      "bytes": 1326828,
+      "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
+    },
+    "models/pixellabs-battle-axe-3881_optimized.low.glb": {
+      "bytes": 2938260,
+      "sha256": "ea898e5a3ad8e8d1ea2ffbf2237bea344f4b6fceab2b272c815235d821ca365d"
+    },
+    "models/pixellabs-battle-axe-3881_optimized.tiny.glb": {
+      "bytes": 1326828,
+      "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
+    },
+    "models/pixellabs-battle-axe-3881_optimized.tiny.glb.wmesh": {
+      "bytes": 11210656,
+      "sha256": "bc5a69a29b89e6e933c2dbcaa7b7793b262c770f34ebdcde6acf91487440637b"
+    },
+    "models/pixellabs-bone-spear-3640.high.glb": {
+      "bytes": 7181364,
+      "sha256": "8eb606f4130e7d54812815a7883b5b2fcdfa86eb564347a8bae740d8d9932602"
+    },
+    "models/pixellabs-creepy-creature-3319.high.glb": {
+      "bytes": 5590284,
+      "sha256": "3c571b425275893247c7b9bed960c1638f28319987403d8b9a8eef675a939db4"
+    },
+    "models/pixellabs-cute-grim-reaper-cat-3d-model-2477.glb": {
+      "bytes": 2140076,
+      "sha256": "27dba0fa9de6de395a120f3259cc60c59d6ffa877a3479229e9e8cb624bf6ea2"
+    },
+    "models/pixellabs-cute-grim-reaper-cat-3d-model-2477.high.glb": {
+      "bytes": 735916,
+      "sha256": "1ab6e2bed352ecd6818e20af99be099c1c75fda3d55a6f777b137785ac31d8be"
+    },
+    "models/pixellabs-dead-tree-3551.high.glb": {
+      "bytes": 8713028,
+      "sha256": "cd552e285f6119725f1efbbdcd024e8a3031f3240936d85bf060f46a58281975"
+    },
+    "models/pixellabs-fantasy-art-4885.high.glb": {
+      "bytes": 9634676,
+      "sha256": "e4e8b245d5d502d481bb538482d28e4f0fdaf5a0aa1d9949e02ed59175429f35"
+    },
+    "models/pixellabs-fantasy-battle-axe-3006.high.glb": {
+      "bytes": 5689332,
+      "sha256": "86e4a4c3b51e06af03d422da0ca868d296b26553c51362ebe7cbc891a5d15bec"
+    },
+    "models/pixellabs-fantasy-signpost-3561.high.glb": {
+      "bytes": 7395024,
+      "sha256": "54b76ef7a1648a1efb9ae3da7a78986b5557adcc268526befbebf04e841072b6"
+    },
+    "models/pixellabs-fantasy-weapon-3419.high.glb": {
+      "bytes": 5096384,
+      "sha256": "6e6a495fc5721e89b7b57f7101f8ab0e078d7bb998d8742f4bc7db22a9eff635"
+    },
+    "models/pixellabs-fantasy-weapon-3466.high.glb": {
+      "bytes": 6505624,
+      "sha256": "8d0fd96517ebd21c8348d0b661ef65f61721e8f40510cfc9416b41a9c152626b"
+    },
+    "models/pixellabs-futuristic-crab-machine-2554.glb": {
+      "bytes": 25101836,
+      "sha256": "49f37edbf82a47f633a76bd2b812658433167155b28acf367af8c71e964746b1"
+    },
+    "models/pixellabs-futuristic-crab-machine-2554.high.glb": {
+      "bytes": 7655656,
+      "sha256": "b8e45f8fdf3dd7bdebde412cf0bae63c8f4a01112013881430f8737f62c55aa4"
+    },
+    "models/pixellabs-futuristic-crab-machine-2554.tiny.glb": {
+      "bytes": 7655656,
+      "sha256": "b8e45f8fdf3dd7bdebde412cf0bae63c8f4a01112013881430f8737f62c55aa4"
+    },
+    "models/pixellabs-futuristic-mech-armor-3d-model-2552.high.glb": {
+      "bytes": 12072456,
+      "sha256": "2ed1b66b85fb5813371a2806bc213395a48d9f6ac4112fcca5a22762fdf99573"
+    },
+    "models/pixellabs-ghost-spirit-3368.high.glb": {
+      "bytes": 5137384,
+      "sha256": "432b2f061b3edcb9241f6583d1aa33c41514586a8eb98f31b198c26e48dd979c"
+    },
+    "models/pixellabs-glb-3347.high.glb": {
+      "bytes": 10015016,
+      "sha256": "e063ecc07d2e076d7d87f3fc4d0702b72c995358bbad418db837c9cd9c1dca80"
+    },
+    "models/pixellabs-glb-3350.high.glb": {
+      "bytes": 8692916,
+      "sha256": "34322d8fee6989d44620cde80a2468245c56b72b807fbe5c051f2a98c7014a5a"
+    },
+    "models/pixellabs-glb-3351.high.glb": {
+      "bytes": 8941084,
+      "sha256": "b15d48bd650314ae355bdaf9af39abd5748d9e31652906acb540361a93c53ee1"
+    },
+    "models/pixellabs-glb-3393.high.glb": {
+      "bytes": 8116356,
+      "sha256": "af0efe7b645547905ffea36221f617cfe15b1fb8760fb835ae4117c8693120bc"
+    },
+    "models/pixellabs-glb-3394.high.glb": {
+      "bytes": 8405300,
+      "sha256": "1468ad1436c4e4a42cc78fd4602f77527ff98569a7f2921d0a24457941ff4b24"
+    },
+    "models/pixellabs-glb-3395.high.glb": {
+      "bytes": 10156692,
+      "sha256": "b34b84b5f7b5c407f392d315c7fdcf0c0e4ad572af040be246f3a0dbc7bcd204"
+    },
+    "models/pixellabs-glb-3821.high.glb": {
+      "bytes": 6748404,
+      "sha256": "e1cabf27c368c40ed28c516e31e6fca2a0a6048ca962ef6d765add9364c2b778"
+    },
+    "models/pixellabs-glb-3823.high.glb": {
+      "bytes": 9148328,
+      "sha256": "ef03c895c5995c4be9d57980270ab227963d4561633af29a67493c0195e1b0a0"
+    },
+    "models/pixellabs-glb-skeleton_mage.high.glb": {
+      "bytes": 5487488,
+      "sha256": "e09f86cc5a9cd12ba8c3e39a1829405a26430f2f034b33c52799eb103aa85152"
+    },
+    "models/pixellabs-grim-reaper-3d-3011.glb": {
+      "bytes": 26007468,
+      "sha256": "eb91d3cba65601f0b915fe797729ecaac4830c1ca43bd86b2f209ba1c6b30fc7"
+    },
+    "models/pixellabs-grim-reaper-3d-3011.high.glb": {
+      "bytes": 4196752,
+      "sha256": "e24a42593a255acadec3878ad35bf30d23c2a918688fe1fc36ca8e58c799a883"
+    },
+    "models/pixellabs-halloween-mummy-2823.high.glb": {
+      "bytes": 6033268,
+      "sha256": "f6e486cbf22cb0d04227261a9e2f639453943d2406a4d434ea649741dc04c70c"
+    },
+    "models/pixellabs-halloween-witch-hat-3d-model-2705 (1).high.glb": {
+      "bytes": 5499856,
+      "sha256": "fb797cfefc0264478b6404a8bcdf56c339408c854983225b550a902e39364acf"
+    },
+    "models/pixellabs-halloween-witch-hat-3d-model-2705.high.glb": {
+      "bytes": 5499856,
+      "sha256": "fb797cfefc0264478b6404a8bcdf56c339408c854983225b550a902e39364acf"
+    },
+    "models/pixellabs-haunted-house-2825.high.glb": {
+      "bytes": 8223112,
+      "sha256": "2a5035892cbde391b9c21a9307a5370cd1e20e681c62c5c62294d30455207edc"
+    },
+    "models/pixellabs-house-3623.high.glb": {
+      "bytes": 5640800,
+      "sha256": "6df4026b79eb5ac6f367450119c125c019d4f3e193a58f7994f8c3891275c9a2"
+    },
+    "models/pixellabs-magic-potion-3d-model-2688.high.glb": {
+      "bytes": 4188008,
+      "sha256": "c0cd9c0719211151d9686ba829799c759bc8c7e4a86fa24be92395c6b4e85a81"
+    },
+    "models/pixellabs-orc-mug-3550.high.glb": {
+      "bytes": 8176696,
+      "sha256": "aeea02e5761c6680da9d2201bcd89375a69421085d790e5ab3955d5c43f10016"
+    },
+    "models/pixellabs-pickaxe-3560.high.glb": {
+      "bytes": 7642376,
+      "sha256": "8e48b3db51cdc081f3822e31ce749e97b1b1e1488bec2e4c27663dfc59b585ad"
+    },
+    "models/pixellabs-potion-3883.high.glb": {
+      "bytes": 7319092,
+      "sha256": "b4fda3ba008289739e26651d0aa58cee4de61382b96b4c61bf42b788c62ecbd1"
+    },
+    "models/pixellabs-potion-bottle-3421.high.glb": {
+      "bytes": 5996540,
+      "sha256": "8cfbd25f5f0182c1626bb480df67fd952eeea877f6e9a8e7ccb6ebf70fa537ac"
+    },
+    "models/pixellabs-robot-3332.high.glb": {
+      "bytes": 8738300,
+      "sha256": "8320b8547a491195be92d1b25ca821c57d13d369d2f7fce5805821bd22c9a8f2"
+    },
+    "models/pixellabs-scroll-3468.high.glb": {
+      "bytes": 5609020,
+      "sha256": "0c0f7b1571d4a230995dc043618d38a07ce70fab3995fa6b3bf78f28e67f0f8c"
+    },
+    "models/pixellabs-skull-3331.high.glb": {
+      "bytes": 7244496,
+      "sha256": "475ef28720ac971f4c22715dd5977bf84e83975ca7d761aae04d3fbe6d34032a"
+    },
+    "models/pixellabs-stylized-snail-3d-model-4856.high.glb": {
+      "bytes": 6256236,
+      "sha256": "052703787623b5af422cb30e33c53ea64f5c5aec28e6918393c8e077045237a8"
+    },
+    "models/pixellabs-vintage-bottle-4972.high.glb": {
+      "bytes": 8823080,
+      "sha256": "8390b38699fb98b7b18f1e77e0a44867f2b3ad4c8e214d7ba34f85cc7433fdb5"
+    },
+    "models/pixellabs-voodoo-3762.high.glb": {
+      "bytes": 7716464,
+      "sha256": "94cc29301f1ef06eeb2b47750676c6c1a9ed232d0013323ad24b72a060824b47"
+    },
+    "models/pixellabs-voodoo-doll-3469.high.glb": {
+      "bytes": 9072484,
+      "sha256": "f5428fe1ca221bb93c361c368d2dd814fa9649258267126dcfe67f467aa6537f"
+    },
+    "models/pixellabs-voodoo-doll-3706.high.glb": {
+      "bytes": 7721948,
+      "sha256": "4aa756280f8fe99948054db86cba724f00d6e3af612e9b77ee848f119ea2eabe"
+    },
+    "models/pixellabs-zombie-3403.high.glb": {
+      "bytes": 8029584,
+      "sha256": "1c49d8590db09d8e2cd094ed971fc9f25058a9477c19b4b24b9046e49e79c3bf"
+    },
+    "models/tiny_planet_friends_3d-animal-4055.high.glb": {
+      "bytes": 10672324,
+      "sha256": "a506057cd1d5e55f1ef2fef6e34a6c3ff66c6576263fd50d529374401f358ff3"
+    },
+    "models/tiny_planet_friends_3d-defective-product-4083.glb": {
+      "bytes": 24269912,
+      "sha256": "36fc6f97f606c3d149f88b75e6f9e28343a2101f724c3c07e77264689fbe260a"
+    },
+    "models/tiny_planet_friends_3d-defective-product-4083.high.glb": {
+      "bytes": 10730692,
+      "sha256": "22a44589e81b896c98e63d6b1d46c23e6fbe537e0869d4038d202261267b9d5a"
+    },
+    "models/tiny_planet_friends_3d-dinosaurs-4032.glb": {
+      "bytes": 24490700,
+      "sha256": "adc8928ed84cc7b596d4b6492e76f7b63c9ae42e948d9d96fbf9ef3909c9a56e"
+    },
+    "models/tiny_planet_friends_3d-dinosaurs-4032.high.glb": {
+      "bytes": 10222076,
+      "sha256": "ebcda560ba3626b81b14619d90e6aa3bf8b339ee60a922b1a12da15a6ad92152"
+    },
+    "models/tiny_planet_friends_3d-robot-4440.high.glb": {
+      "bytes": 25934468,
+      "sha256": "feb739b74b3ac2774a3d881519eda082c4c7e62777a1803977f355c19cb0d8b5"
+    },
+    "models/tiny_planet_friends_3d-shield-3207.high.glb": {
+      "bytes": 11155216,
+      "sha256": "5fcec0a1e822024b828fb3531046e08072a6fa5cb1b922c1c6c753dd9c5b40c6"
+    },
+    "models/tiny_planet_friends_3d-star-3034.glb": {
+      "bytes": 21500524,
+      "sha256": "fcbe9f15eaaed1ec1c182a596ecd1be0cb005c3ca26b60612632ad8faf5985f2"
+    },
+    "models/tiny_planet_friends_3d-star-3034.high.glb": {
+      "bytes": 8774440,
+      "sha256": "fcd1c7537f8d7dd9e84024cbe533a6a404b78fea2f0498ca353ac6ea9e5ec7e8"
+    },
+    "models/tiny_planet_friends_3d-tiger-3542.high.glb": {
+      "bytes": 11398100,
+      "sha256": "56f81c2edd1999ddac83aed85df491a0db550172562dfac6787ca75625e89f60"
+    },
+    "models/tiny_planet_friends_3d-walrus-4189.glb": {
+      "bytes": 24440924,
+      "sha256": "6989bc791b92741ab31c11db6d82d807d5f88141b70bd9acaa8e386c3eedbd44"
+    },
+    "models/tiny_planet_friends_3d-walrus-4189.high.glb": {
+      "bytes": 10029148,
+      "sha256": "b17deefe1461a60c86b3090f00ba98e1e237ab08b40dd209c003717d4272c5c5"
+    },
+    "models/wings_of_freedom-chicken-3460.glb": {
+      "bytes": 25110952,
+      "sha256": "b34eb47728bc8463978a12e0ee06953004a8b99349315f5e3d5e8721444f9aa3"
+    },
+    "models/wings_of_freedom-chicken-3460.high.glb": {
+      "bytes": 10427028,
+      "sha256": "c5fa3162b9bb1f4191f6245d3d376ec6796edffff9bd6d261cc7e6beb3f3d93e"
+    },
+    "models/wings_of_freedom-child-3741.high.glb": {
+      "bytes": 12561684,
+      "sha256": "c90744eed6ac995dce4d05aa901854a1c3cf7784aaf2eaa4ca24a56a3034c3e7"
+    },
+    "models/wings_of_freedom-house-4442.glb": {
+      "bytes": 24058904,
+      "sha256": "5fe8f0ad4575db9c764a374913b2fe44d0109757bfdcd4dab199b31a059b789a"
+    },
+    "models/wings_of_freedom-house-4442.high.glb": {
+      "bytes": 16631028,
+      "sha256": "c15d8d7a56a1566e4b9194444da94d44241d80fc93e1742a34a9bcb805cc0198"
+    },
+    "models/wings_of_freedom-items-4535.glb": {
+      "bytes": 9922908,
+      "sha256": "02050cdce8f7e61b3fed9e625a0f4701394b622d32d0e08ac6c1e33842b18bb8"
+    },
+    "models/wings_of_freedom-items-4535.high.glb": {
+      "bytes": 8203620,
+      "sha256": "beaceaf89eb651a74cd8e5f09593509b8a61403751c52c3f44ae106cd5bedd3e"
+    },
+    "pane/options.pane": {
+      "bytes": 15883,
+      "sha256": "ee66430f95576a0d04be4a29088169f07ab24ee83abb1a1fa5aa9b9af56dcdc0"
+    },
+    "pane/options.pane.br": {
+      "bytes": 2372,
+      "sha256": "f6dd3d64422084068f81c4c9e297817d7b745e61289e2cc28cf7ae752796620e"
+    },
+    "pane/options.pane.gz": {
+      "bytes": 2750,
+      "sha256": "6efdb5ccb6b6bb7f916382c0d482be09986c8e24d3e6e9bf7b1816e2c6d3dfa5"
+    },
+    "privacy/index.html": {
+      "bytes": 8541,
+      "sha256": "01c573bfb06fe576e7d85ec8532edadafd5da80aff7eff486734d60ef251f558"
+    },
+    "privacy/index.html.br": {
+      "bytes": 2164,
+      "sha256": "84741e573c90a71b650f5a4fc24ed2496c580edf2d68a7e02bf6796f88c950e2"
+    },
+    "privacy/index.html.gz": {
+      "bytes": 2855,
+      "sha256": "f29ac7c547184d46e8311ddf275ff9af610c57ad043f27b152a45281b51494dc"
+    },
+    "remote_panel.js": {
+      "bytes": 4952,
+      "sha256": "37b76216d63e6a5af3fc261fb48616b2d62ca1213355b20dcb9f9fb93f9dea2e"
+    },
+    "remote_panel.js.br": {
+      "bytes": 1825,
+      "sha256": "d43ffd47bdb53fe0c84351980c538ff07e3032698d0b46b92f0f34d22c3ce6a2"
+    },
+    "remote_panel.js.gz": {
+      "bytes": 2260,
+      "sha256": "9b15d7e3bd4b346459b76c580bf896268e17711bb61ff22ed2697ea5a674cd2a"
+    },
+    "remote_relay.js": {
+      "bytes": 5231,
+      "sha256": "2958f73e4e10b975a7390ca9aa727047fb140423252d806dacf065e0bb323579"
+    },
+    "remote_relay.js.br": {
+      "bytes": 1752,
+      "sha256": "4cdcd18bafe3fbe8ba8b6db4354ec4028a18e2c1ea988493179fa86ce31fdd38"
+    },
+    "remote_relay.js.gz": {
+      "bytes": 2040,
+      "sha256": "39bb318c5146d5cbe73309798110d76503246d7c1430b9b1d5a2ed763b7fc4ba"
+    },
+    "robots.txt": {
+      "bytes": 210,
+      "sha256": "d23c7fa8ea877b73d7aa062f8d0eae9a3ffea38cddf1f38d652d938f45206dd2"
+    },
+    "scene-file-drop.js": {
+      "bytes": 2658,
+      "sha256": "1f492ed7533075222d6af4115fda7e7e3e7ed61cfa7a8170e59c0af8b268e54f"
+    },
+    "scene-file-drop.js.br": {
+      "bytes": 930,
+      "sha256": "aa841606fc96e4889156722f7d570f7c77e48f19b5c252249f2a04bfdadb5f22"
+    },
+    "scene-file-drop.js.gz": {
+      "bytes": 1216,
+      "sha256": "6e6d3f2be0846a7714978117bd0690f72db42fdfed276c1e0dbf5e1fb508325d"
+    },
+    "site.webmanifest": {
+      "bytes": 1020,
+      "sha256": "92bb2706b1d1c84a87f4467f2bad50cfe29adfcec4e8c856f8aefe31cda92489"
+    },
+    "site.webmanifest.br": {
+      "bytes": 292,
+      "sha256": "bf0ee88424f4335e806519b1c434b762e8678409dec8a65d5bbd3f532a03a58a"
+    },
+    "site.webmanifest.gz": {
+      "bytes": 358,
+      "sha256": "3511cc697019fc90c74c128acdf1c8e3f9a8d456981bf5046f009675b9a534bb"
+    },
+    "sitemap-app.xml": {
+      "bytes": 1211,
+      "sha256": "4c45d3b663792b9601f0e9befdc8fd572fba21e3fbcb0e29480b086acf602160"
+    },
+    "sitemap.xml": {
+      "bytes": 347,
+      "sha256": "77509a93659d4e6c4be408e8ed49200645e7904bd06decf41f544ebfb780f835"
+    },
+    "sound_bus.js": {
+      "bytes": 213836,
+      "sha256": "a28c3fad25af83dd978d35d2671bd512a8227e4fb40098f1ab71d1583febf244"
+    },
+    "sound_bus.js.br": {
+      "bytes": 50045,
+      "sha256": "4dcf41cc4fa09c9aba90ceb897b9dc64f8e67d70de9ab93aea2578a95f0e0a98"
+    },
+    "sound_bus.js.gz": {
+      "bytes": 60158,
+      "sha256": "cf1433a7eac780ae5a86c6ee83888a4f1714f9f73fa6a05e2c472fc527453313"
+    },
+    "startup_profile.js": {
+      "bytes": 7133,
+      "sha256": "4d45693dc0fe4b045a2d243eed2be49c86d1d4ecc62cb0506524379149145580"
+    },
+    "startup_profile.js.br": {
+      "bytes": 2101,
+      "sha256": "5f133bb6d52692b9d378233528142ced77ba0c11e71ed21acdf239335d5a9313"
+    },
+    "startup_profile.js.gz": {
+      "bytes": 2429,
+      "sha256": "f5e34054efa2f0d3d879f6a9286f49bbb75bb268ebf3bd35d46c4261d2dffc37"
+    },
+    "support/index.html": {
+      "bytes": 7505,
+      "sha256": "cb1f3370123c0bac7173d269eb8c9264d57f1dc916311cf3e4dcfaf1274b3379"
+    },
+    "support/index.html.br": {
+      "bytes": 1808,
+      "sha256": "1f7c7a013ef9423da0c31c4fc14ba72ac11557848652c0224ddc95b542799583"
+    },
+    "support/index.html.gz": {
+      "bytes": 2431,
+      "sha256": "dd2b09f67614ef49d0055ba42fd8e242c03a4f545ecc3704a0d9be20be29ff63"
+    },
+    "sw.js": {
+      "bytes": 1458,
+      "sha256": "ac07746bd294e79d48f25626369af115ebc1f850690bc2b8da9602527a700429"
+    },
+    "sw.js.br": {
+      "bytes": 633,
+      "sha256": "56f6ec9bc4d8eef085a85237c649394f5d25469cb6fc5169435cf55601980a8e"
+    },
+    "sw.js.gz": {
+      "bytes": 773,
+      "sha256": "4db38feb767cc19429fc8718258b9d0c3508805898c3cfa3e12a128aefc48ea4"
+    },
+    "terms/index.html": {
+      "bytes": 8098,
+      "sha256": "4d3807e5f64f31b868254902b3296b143ce5060e3b2630b808cd312c62dfcfb7"
+    },
+    "terms/index.html.br": {
+      "bytes": 1993,
+      "sha256": "e2b053b8cb30b4ef6bda47dd03162db362d6fa24c5068c8f01749b9e8692d203"
+    },
+    "terms/index.html.gz": {
+      "bytes": 2655,
+      "sha256": "4dfbbee2d9b438a2604497425bfb9f77dbe28189cd5342574005cfa4101344e6"
+    },
+    "tier.txt": {
+      "bytes": 4,
+      "sha256": "9c5955fc99a60b8f6dee6cf582c4420d91e1b3e2a201f532c91e2cbdfce7fa51"
+    },
+    "tutorial-view/index.html": {
+      "bytes": 81006,
+      "sha256": "df9e140ab3b832e5bf4b39ff435833f6916e57007a9a57a5d4829870dd3da11d"
+    },
+    "tutorial-view/index.html.br": {
+      "bytes": 22007,
+      "sha256": "33cac2a75b44e42bca124d54c212a701537059c86d8d126be97164630892e3da"
+    },
+    "tutorial-view/index.html.gz": {
+      "bytes": 25826,
+      "sha256": "7db430e08edaf5ef9072d0e89f36f15d4fd7ed8a4ff1e4803e866985625d1d4a"
+    },
+    "tutorials/autumn-lantern-cottage/index.html": {
+      "bytes": 18072,
+      "sha256": "0ad89f525ca7733b822e861c1597924381f4df91069ce68fe1f917cb7e31a638"
+    },
+    "tutorials/autumn-lantern-cottage/index.html.br": {
+      "bytes": 5101,
+      "sha256": "0571edd005fdcf3ecafaf569a9467dbd1bfe014eff6dbd3ddc309d4eaaf8bab8"
+    },
+    "tutorials/autumn-lantern-cottage/index.html.gz": {
+      "bytes": 6031,
+      "sha256": "ce528f6546fced5ef83a3c926b7e0d04ede79fa7792f3f6d3b8cf99c49f7b392"
+    },
+    "tutorials/block-explosion/index.html": {
+      "bytes": 16414,
+      "sha256": "1067eb68a6de835f4a02312e699fe5cc8a2a32382acb56a25c45fd7313532480"
+    },
+    "tutorials/block-explosion/index.html.br": {
+      "bytes": 4467,
+      "sha256": "a53b0e0d9a6b1bd245c62218f35c9ea72093e949771ee27b6cbbed14ac813b56"
+    },
+    "tutorials/block-explosion/index.html.gz": {
+      "bytes": 5286,
+      "sha256": "ec52a060599f103425c1c1b9d0dff39a6b13cb6585b1e6f33c0aa8730e9708b9"
+    },
+    "tutorials/brick-wall/index.html": {
+      "bytes": 21245,
+      "sha256": "2d13443f7399cee1ac46dc670a4148ae36d4732c28e2d207b66bbe8a0f768bd8"
+    },
+    "tutorials/brick-wall/index.html.br": {
+      "bytes": 5961,
+      "sha256": "6d8148300b2228a63167b1d0249906ad7197cf16ec4b97768f8ca21b4b50619e"
+    },
+    "tutorials/brick-wall/index.html.gz": {
+      "bytes": 7089,
+      "sha256": "e5847cda8e06fb178352b783822da01b6b66cf866017e6a363553ab98cea0652"
+    },
+    "tutorials/camera-reveal/index.html": {
+      "bytes": 16266,
+      "sha256": "a32049aa7323091ad858ed9b7d4fcc0a5c83b849505e33c227630e0757caa40c"
+    },
+    "tutorials/camera-reveal/index.html.br": {
+      "bytes": 4394,
+      "sha256": "009ce283964c1d2e9bb124cbce8a547ed80d6ade76926ee99904bf4abc0b6492"
+    },
+    "tutorials/camera-reveal/index.html.gz": {
+      "bytes": 5220,
+      "sha256": "a52c3572c1596bac857f5409869af9dd8c89c32355da725093071de224e48102"
+    },
+    "tutorials/catalog.json": {
+      "bytes": 24244,
+      "sha256": "ed7348b919210e57c41710a40a560e229364f63f69591f6261a63b4268279a39"
+    },
+    "tutorials/catalog.json.br": {
+      "bytes": 5589,
+      "sha256": "3de2dd2445c26f6e8e85859702740eafbb8ad1c4ccd19fb8d3c740d3bf61d66e"
+    },
+    "tutorials/catalog.json.gz": {
+      "bytes": 6784,
+      "sha256": "236d30055ac7afbcd20f1b9f97b2b95702707fe6a38270dfe6882a1dbb956f93"
+    },
+    "tutorials/colourful-tower/index.html": {
+      "bytes": 16262,
+      "sha256": "270ec4cca6c25840af87cf273b4a04afd0196ec29f0b7b0c0c04d1179612b890"
+    },
+    "tutorials/colourful-tower/index.html.br": {
+      "bytes": 4395,
+      "sha256": "243d404728d49ab6022d3a46a2782df230de03b0f5fb65792c38a66135425f95"
+    },
+    "tutorials/colourful-tower/index.html.gz": {
+      "bytes": 5219,
+      "sha256": "8bb61452c820d00ebe671ef2f656a7ce0a3113e1e9bfc8b8512fd158017cfff8"
+    },
+    "tutorials/command-input/index.html": {
+      "bytes": 16412,
+      "sha256": "2d3905387880cb910f9b092c3c691a9e81cbe91b53f523e3c8ee942b9d8bbf88"
+    },
+    "tutorials/command-input/index.html.br": {
+      "bytes": 4444,
+      "sha256": "00c1d1a99cadb31f0458e09a1e8f6a861eb6d212f85e99daf93ba3fcf5dab2ef"
+    },
+    "tutorials/command-input/index.html.gz": {
+      "bytes": 5246,
+      "sha256": "4ec4bd82e6e0ce6c8ac3025679f2324a37319fc3dd7192c1333589e61f186993"
+    },
+    "tutorials/domino-chain/index.html": {
+      "bytes": 16485,
+      "sha256": "b85a53a29fe1f4826b0cb8ed57bd6412dbc0d97ee470d43bf5666960fdf9601b"
+    },
+    "tutorials/domino-chain/index.html.br": {
+      "bytes": 4494,
+      "sha256": "4eb03999c8d3aaac014b7b3c994762d91f0a6e1926eb8d066519dbbb34306ea9"
+    },
+    "tutorials/domino-chain/index.html.gz": {
+      "bytes": 5303,
+      "sha256": "8bd6e470cc86bfd561ac97ba9c612816c3238e39adbfa3db6b465e44bfa131d2"
+    },
+    "tutorials/ending-signature/index.html": {
+      "bytes": 16549,
+      "sha256": "760e9a223fa3c65b2b9df0b21316aaf59e7fa8959245d96781bf155aef657782"
+    },
+    "tutorials/ending-signature/index.html.br": {
+      "bytes": 4480,
+      "sha256": "d9bb30429d28db4668669c8bf1e21a8f126cc371b0b829abc432cb0d220c8e53"
+    },
+    "tutorials/ending-signature/index.html.gz": {
+      "bytes": 5305,
+      "sha256": "98fcd11248d1041aaa064ef78406565e8e89e20495a271672ad7f606d0a37b8e"
+    },
+    "tutorials/falling-blocks/index.html": {
+      "bytes": 16428,
+      "sha256": "94c891ffe88a391289f37d2ede3d8a456770135dde908f1dabdd3af5db456969"
+    },
+    "tutorials/falling-blocks/index.html.br": {
+      "bytes": 4450,
+      "sha256": "b7cfca068d6c16046490963ab72d874a07f9e264c49f78db3fecc59a40a061d7"
+    },
+    "tutorials/falling-blocks/index.html.gz": {
+      "bytes": 5262,
+      "sha256": "3800e7e047d106efda7bb6b32eccc20fbf41cf2f7b7b18ee9adbc51eb84472f1"
+    },
+    "tutorials/forest-rain/index.html": {
+      "bytes": 16433,
+      "sha256": "8c457b41a8df4168852bc14b8cb08523f7bd04d74f175445d0f8ecd58884c1e3"
+    },
+    "tutorials/forest-rain/index.html.br": {
+      "bytes": 4445,
+      "sha256": "6bc01852d85acb7247b9381c7bc7ea83ef416ea884b74862c86357e87e2cccb4"
+    },
+    "tutorials/forest-rain/index.html.gz": {
+      "bytes": 5256,
+      "sha256": "4f50be08d0d9e93725321ef068767db0b79c8504e272e36a27af738fdbadc1bb"
+    },
+    "tutorials/orbiting-letters/index.html": {
+      "bytes": 16299,
+      "sha256": "9089357a5199b7897d1d06478c198463af3fdb2fc3d5ba6b649fbe444364fdaa"
+    },
+    "tutorials/orbiting-letters/index.html.br": {
+      "bytes": 4401,
+      "sha256": "5456e611e0406028b08aed0bc726eec51a1f8e5e3971a170dceccb7c19b1bad1"
+    },
+    "tutorials/orbiting-letters/index.html.gz": {
+      "bytes": 5233,
+      "sha256": "63b8dae4005e5cc5537aec4767dabfbd74cc41af0fc94abb8adea6cc289b57ba"
+    },
+    "tutorials/record-mp4/index.html": {
+      "bytes": 16467,
+      "sha256": "cdb23d33d8a2989bb7c2d05da74a0536f423a7446f4dad9bb770b3a265fe3750"
+    },
+    "tutorials/record-mp4/index.html.br": {
+      "bytes": 4471,
+      "sha256": "f02ece956dc6f51964ac49339537d6dad5d02f2e3476d3b1a7887b1ff94c7928"
+    },
+    "tutorials/record-mp4/index.html.gz": {
+      "bytes": 5305,
+      "sha256": "0eddbbec83942ace5743e498ee2b520da34579e8ea3412e223d20f7544703ef7"
+    },
+    "tutorials/three-shapes/index.html": {
+      "bytes": 16318,
+      "sha256": "53ca26ed672ce05aa880351d9bc8346625ad065454541874fffce6fc76fccb4d"
+    },
+    "tutorials/three-shapes/index.html.br": {
+      "bytes": 4429,
+      "sha256": "c997a3071d8ba117a797ca8ed6d07c0d1afae7a70479481b350b2fc7e6a71a7e"
+    },
+    "tutorials/three-shapes/index.html.gz": {
+      "bytes": 5233,
+      "sha256": "97fbf2db4705965b2559ad6962683669d8171709a3ef1354388e53c2bbfaaa31"
+    },
+    "version.js": {
+      "bytes": 6012,
+      "sha256": "6869bfd1c3fceb9a86520e57893332caf69c22f9240c76131eb84df7319c48ed"
+    },
+    "version.js.br": {
+      "bytes": 1608,
+      "sha256": "bb1086d38ed512e363c73d37a5953fc4e87e453981754bee97ac32c2bf6e6c26"
+    },
+    "version.js.gz": {
+      "bytes": 1906,
+      "sha256": "77387a879d0ad8cb8e3aa231ccfc29ad897cb2b7fe78016c4cc86aa0194538a7"
+    },
+    "version.txt": {
+      "bytes": 6,
+      "sha256": "526b0102e5270a2a63760ab99adcd928e3074c0b30434a5027f47897270c1a4e"
+    },
+    "webgpu_bindgroup_guard.js": {
+      "bytes": 1576,
+      "sha256": "6c4bfb2992a06dd831675425227156f6d93b946fde41d1ac3094e35688426eff"
+    },
+    "webgpu_bindgroup_guard.js.br": {
+      "bytes": 654,
+      "sha256": "63cdc609abecd77c14263d81c5f2606c654bd17fb22a8507064ea8c7138593f9"
+    },
+    "webgpu_bindgroup_guard.js.gz": {
+      "bytes": 798,
+      "sha256": "7addadd1ec9370bdfbec9a8d59fb01f1bc5e542966ecac6c1a691f4b38eddb86"
+    },
+    "welcome.css": {
+      "bytes": 8247,
+      "sha256": "3a99b7c5a8870da1af28cb80a567e54a6006e3869ed883640ab8d7068c29baf9"
+    },
+    "welcome.css.br": {
+      "bytes": 1791,
+      "sha256": "4e52d165e85c4164fd5e5606b45f3c755f43d556261cd4d609622d386aaf6a5f"
+    },
+    "welcome.css.gz": {
+      "bytes": 2157,
+      "sha256": "0f3cfa2fe95b678a917b82edb16e45a5ee00506dc77debf6b35b83bf1765a8df"
+    },
+    "welcome.js": {
+      "bytes": 8850,
+      "sha256": "3b80e982067c38567bb9b59e1871b7210cae70e2ff2766315f87a67bbf145ae6"
+    },
+    "welcome.js.br": {
+      "bytes": 2424,
+      "sha256": "42522f71d1079d02586f55a6800a3ca133a58babebfd07daa665165dadb1f9a9"
+    },
+    "welcome.js.gz": {
+      "bytes": 2911,
+      "sha256": "078d75f7356f8c3ba58a7149d91a2401dbbcce8f5f95d3be378bc9b0a97c3f8f"
+    }
+  }
+}

@@ -72,6 +72,7 @@
 </script>
 <script src="backend.js"></script>
 <script src="version.js"></script>
+<script src="engine_loader.js"></script>
 <style>
 html, body {
   margin: 0;
@@ -720,6 +721,7 @@ body.scene-entry-ready #curtain {
   <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div class="loader-state" id="loaderState">Scene ready</div>
   <div id="loaderText" role="status" aria-live="polite">Loading engine...</div>
+  <div id="loaderEngineInfo" style="font-size:11px;opacity:.65;margin-top:6px"></div>
   <div class="loader-meters" aria-hidden="true">
     <div class="loader-meter" id="loaderDownload">
       <div class="loader-meter-head"><span>Model download</span><span id="loaderDownloadValue">0%</span></div>
@@ -944,15 +946,14 @@ body.scene-entry-ready #curtain {
     if (window.__spinVerFrozen) return window.__spinVerFrozen;
     var v;
     try {
-      if (typeof window.getCurrentVersion === "function") v = window.__pnBuildVersion || window.getCurrentVersion();
+      if (typeof window.getCurrentVersion === "function") v = window.getCurrentVersion();
       /* No localStorage fallback: that key is per ORIGIN, so a sibling app on
          the same host would hand us ITS version. ?_v or "dev" - the label is
          corrected by spinviewSetDisplayVersion once version.txt lands. */
       if (!v) v = new URL(location.href).searchParams.get("_v") || "dev";
     } catch (e) { v = "dev"; }
     if (!v) v = "dev";
-    window.__spinVerFrozen = v;
-    try { console.log("[gpu-bootstrap] version frozen for this page: " + v); } catch (e2) {}
+    /* Freeze only when the engine starts, after version.txt has answered. */
     return v;
   }
 
@@ -964,7 +965,9 @@ body.scene-entry-ready #curtain {
   function cacheBust(path) {
     var version = getCurrentVersion();
     var sep = path.indexOf("?") >= 0 ? "&" : "?";
-    return path + sep + "_v=" + encodeURIComponent(version) + "&_t=" + bootToken();
+        var dev = window.__pnDeployTier === "dev" ||
+      (!window.__pnDeployTier && typeof window.spinviewIsLocalDevelopmentHost === "function" && window.spinviewIsLocalDevelopmentHost());
+    return path + sep + "_v=" + encodeURIComponent(version) + (dev ? "&_t=" + bootToken() : "");
   }
 
   /* Label only: version.js pushes the real version.txt value here once it
@@ -1500,6 +1503,9 @@ body.scene-entry-ready #curtain {
      instead - same file, no fork. blobcone_fast ships both that way. */
 
   function loadEngine(base) {
+    window.__spinVerFrozen = getCurrentVersion();
+    console.info("[gpu-bootstrap] version frozen for this page: " + window.__spinVerFrozen);
+    if (loaderText) loaderText.textContent = FR ? "Chargement du moteur" : "Loading engine";
     if(window.__pnStartup) window.__pnStartup.mark("engine_script_requested");
     var sc = document.createElement("script");
     sc.src = cacheBust(base + ".js");
@@ -1697,6 +1703,15 @@ body.scene-entry-ready #curtain {
       if (devMode && msg) console.info("[status]", msg);
     },
     monitorRunDependencies: function () {},
+    instantiateWasm: function (imports, receive) {
+      window.pnLoadWasm(cacheBust("app.wasm"), imports, receive, function (phase, detail) {
+        if (phase && !window.vmeshRuntimeInitialized && loaderText) loaderText.textContent = phase;
+        var info = document.getElementById("loaderEngineInfo");
+        if (info && detail != null) info.textContent = (FR ? "Moteur · " : "Engine · ") + detail;
+        loaderLastSignal = performance.now ? performance.now() : Date.now();
+      }).catch(function (error) { Module.onAbort(error.message || String(error)); });
+      return {};
+    },
     onAbort: function (reason) {
       engineAborted = true;
       console.error("[abort]", reason);
@@ -1785,8 +1800,12 @@ body.scene-entry-ready #curtain {
 
   console.info("[gpu-bootstrap] build backend:", BUILD_BACKEND,
     window.__spinBuildBackend ? "(backend.js)" : "(backend.js absent -> default)");
-  if (IS_GL) glPreflight(function () { loadEngine("app"); });
-  else       gpuPreflight(function () { loadEngine("app"); });
+  function startEngine() {
+    if (window.pnVersionReloading) return;
+    if (IS_GL) glPreflight(function () { loadEngine("app"); });
+    else       gpuPreflight(function () { loadEngine("app"); });
+  }
+  Promise.resolve(window.pnVersionReady).then(startEngine, startEngine);
   setTimeout(function () {
     console.info("[gpu-bootstrap] 5s state",
       "runtimeInitialized=", window.vmeshRuntimeInitialized === true,

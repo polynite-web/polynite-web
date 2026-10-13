@@ -61,7 +61,7 @@
     }
 
     /*
-        THE FROZEN VERSION COMES FROM THE URL OR NOWHERE.
+        THE ENGINE VERSION IS CHECKED BEFORE STARTUP.
 
         localStorage is per ORIGIN, not per app. Several apps served from the
         same host - spinview.app/nanite, /numeris, /raytracer, or one local
@@ -72,18 +72,23 @@
 
         So: ?_v when the page carries one (authoritative, and production puts
         it there with the reload below), otherwise "dev". Cache-busting does
-        not suffer - every URL also carries a per-load _t. The real version is
+        not suffer: release URLs are stable per version; dev keeps a per-load _t. The real version is
         pushed to the label by spinviewSetDisplayVersion as soon as
         version.txt lands.
     */
+    var currentVersion = getPageVersion() || window.__pnBuildVersion || DEFAULT_VERSION;
     function getCurrentVersion(){
-        return getPageVersion() || DEFAULT_VERSION;
+        return currentVersion;
+    }
+
+    function isDeploymentDev(){
+        if(window.__pnDeployTier === "dev") return true;
+        if(window.__pnDeployTier === "release") return false;
+        return hasDebugParameter() || isLocalDevelopmentHost();
     }
 
     function updateDebugState(){
-        var enabled =
-            hasDebugParameter() ||
-            isLocalDevelopmentHost();
+        var enabled = isDeploymentDev();
 
         window.spinviewDebugEnabled = enabled;
 
@@ -99,9 +104,7 @@
     window.getCurrentVersion = getCurrentVersion;
     window.spinviewHasDebugParameter = hasDebugParameter;
     window.spinviewIsLocalDevelopmentHost = isLocalDevelopmentHost;
-    window.spinviewDebugEnabled =
-        hasDebugParameter() ||
-        isLocalDevelopmentHost();
+    window.spinviewDebugEnabled = isDeploymentDev();
 
     var storedVersion =
         readStorage(localStorage,VERSION_KEY);
@@ -111,10 +114,13 @@
 
     updateDebugState();
 
-    fetch(
+    var versionController = typeof AbortController === "function" ? new AbortController() : null;
+    var versionTimer = versionController ? setTimeout(function(){ versionController.abort(); }, 8000) : null;
+    window.pnVersionReady = fetch(
         VERSION_FILE + "?_=" + Date.now(),
         {
-            cache:"no-store"
+            cache:"no-store",
+            signal:versionController ? versionController.signal : undefined
         }
     )
     .then(function(response){
@@ -136,6 +142,7 @@
         if(!remoteVersion){
             return;
         }
+        currentVersion = remoteVersion;
 
         writeStorage(
             localStorage,
@@ -150,7 +157,7 @@
 
         updateDebugState();
 
-        if(pageVersion === remoteVersion){
+        if(pageVersion === remoteVersion || (!pageVersion && window.__pnBuildVersion === remoteVersion)){
             return;
         }
 
@@ -188,6 +195,7 @@
             remoteVersion
         );
 
+        window.pnVersionReloading = true;
         location.replace(
             url.toString()
         );
@@ -203,5 +211,7 @@
         );
 
         updateDebugState();
+    }).finally(function(){
+        if(versionTimer) clearTimeout(versionTimer);
     });
 })();
