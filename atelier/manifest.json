@@ -208,6 +208,105 @@
         "period": 15
       },
       "audio": "none"
+    },
+    {
+      "id": "mill-20261014-142451-living",
+      "title": "Le moulin de l’aube — lumière et vie",
+      "summary": [
+        "Un moulin à ailes et son logement dans une prairie fleurie de bouleaux.",
+        "Ailes animées, soleil rasant, brume dorée et végétation vivante.",
+        "Allumage progressif, porte et grincement, deux oiseaux en vol et chants synchronisés.",
+        "Boucle native de 15 secondes, portrait 1080p, raccord audio calme et sans signature de fin."
+      ],
+      "note": "Nouvelle version avec sons synchronisés. Active le son du lecteur. Le .scene nécessite le moteur animation v2 ; les vidéos se lisent directement sur mobile.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T14:24:51-04:00",
+      "published_at": "2026-10-14T18:31:00.883973+00:00",
+      "revision": "90e5d991e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "mill-dawn-619",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 8300417,
+      "sha256": "1c88f4146eede75aa865ad47112c6e6487bfac42df285c515ead5a885e1c5de9",
+      "video": "media/mill-20261014-142451-living.mp4",
+      "poster": "media/mill-20261014-142451-living.jpg",
+      "scene": "media/mill-20261014-142451-living.scene",
+      "generator": {
+        "seed": 619,
+        "architecture": "mill",
+        "environment": "dawn",
+        "period": 15
+      }
+    },
+    {
+      "id": "refuge-20261014-142504-living",
+      "title": "Le refuge des brumes — lumière et vie",
+      "summary": [
+        "Un refuge en bois et ardoise, une mare et des roseaux sous une grande lune.",
+        "Forêt ramifiée, brume au sol, fenêtres en retrait et lumière lunaire froide.",
+        "Allumage progressif, porte et grincement, deux oiseaux en vol et chants synchronisés.",
+        "Boucle native de 15 secondes, portrait 1080p, raccord audio calme et sans signature de fin."
+      ],
+      "note": "Nouvelle version avec sons synchronisés. Active le son du lecteur. Le .scene nécessite le moteur animation v2 ; les vidéos se lisent directement sur mobile.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T14:25:04-04:00",
+      "published_at": "2026-10-14T18:31:04.545920+00:00",
+      "revision": "90e5d991e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "refuge-moonlit-137",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 6602428,
+      "sha256": "242e0f38373a04ee30d583c46037a9ecf907a0415883dac65ed764e5b6cd6061",
+      "video": "media/refuge-20261014-142504-living.mp4",
+      "poster": "media/refuge-20261014-142504-living.jpg",
+      "scene": "media/refuge-20261014-142504-living.scene",
+      "generator": {
+        "seed": 137,
+        "architecture": "refuge",
+        "environment": "moonlit",
+        "period": 15
+      }
+    },
+    {
+      "id": "keeper-20261014-142514-living",
+      "title": "La maison du gardien — lumière et vie",
+      "summary": [
+        "Une maison en pierre avec sa tour, au milieu des arbres d’automne.",
+        "Soleil bas, halos ambrés, tapis de feuilles et éclairage chaud des ouvertures.",
+        "Allumage progressif, porte et grincement, deux oiseaux en vol et chants synchronisés.",
+        "Boucle native de 15 secondes, portrait 1080p, raccord audio calme et sans signature de fin."
+      ],
+      "note": "Nouvelle version avec sons synchronisés. Active le son du lecteur. Le .scene nécessite le moteur animation v2 ; les vidéos se lisent directement sur mobile.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T14:25:14-04:00",
+      "published_at": "2026-10-14T18:31:08.535327+00:00",
+      "revision": "90e5d991e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "keeper-amber-283",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 8442195,
+      "sha256": "b10cf6a1c37c998a5c9970a1f3764eb84581de4b8dc7331b4b505ba156604d48",
+      "video": "media/keeper-20261014-142514-living.mp4",
+      "poster": "media/keeper-20261014-142514-living.jpg",
+      "scene": "media/keeper-20261014-142514-living.scene",
+      "generator": {
+        "seed": 283,
+        "architecture": "keeper",
+        "environment": "amber",
+        "period": 15
+      }
     }
   ]
 }
