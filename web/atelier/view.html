@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Scène Atelier · Polynite</title>
+<style>
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#101612;color:#e2e8df;font:15px system-ui;display:flex;flex-direction:column;height:100dvh}header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px 16px}a{color:#b5d8c4}h1{font-size:16px;margin:0;flex:1;min-width:160px}button{font:inherit;color:inherit;background:#21382b;border:1px solid #567a64;border-radius:6px;padding:8px 14px;cursor:pointer}button:disabled{opacity:.5;cursor:default}#status{margin:0;padding:0 16px 10px;color:#bbcbbf}iframe,video{flex:1;width:100%;border:0;min-height:0}iframe.pending{opacity:0;pointer-events:none}video{object-fit:contain}
+</style>
+</head>
+<body>
+<header><a id="back" href="./">← Atelier</a><h1 id="title">Chargement de la scène…</h1><button id="play" disabled>Jouer avec le son</button><a id="video" hidden>Voir le MP4</a><a id="download" hidden download>Télécharger la scène</a></header>
+<p id="status" role="status">Préparation du rendu interactif…</p>
+<iframe id="viewer" class="pending" title="Scène interactive Polynite" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<video id="fallback" controls playsinline loop preload="none" hidden aria-label="Vidéo originale du rendu"></video>
+<script src="view.js?v=1"></script>
+</body>
+</html>

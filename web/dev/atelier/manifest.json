@@ -1,0 +1,312 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "loop-house-20261014-075035-portrait-reference",
+      "title": "Cottage au clair de lune — référence portrait",
+      "summary": [
+        "Rotation de 15 secondes avec filigrane et sans signature de fin.",
+        "Composition entière conservée dans un fichier portrait 1080p."
+      ],
+      "note": "Référence issue du rendu paysage de 07:50, adaptée en portrait avec des marges. Les corrections récentes des fenêtres, du chemin et du socle ne sont pas encore visibles ici. Le rendu natif de 11:11 est disponible plus haut dans ce carnet.",
+      "captured_at": "2026-10-14T07:50:35-04:00",
+      "published_at": "2026-10-14T14:51:58.456087+00:00",
+      "revision": "rendu du 14 octobre à 07:50",
+      "reference": true,
+      "framing": "full composition padded to portrait",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 4300470,
+      "sha256": "11818550ab59523257d8bf1ce60054369d64eccfce25bb614ae3682eb40c08a8",
+      "video": "media/loop-house-20261014-075035-portrait-reference.mp4",
+      "poster": "media/loop-house-20261014-075035-portrait-reference.jpg",
+      "scene": "media/loop-house-20261014-075035-portrait-reference.scene"
+    },
+    {
+      "id": "loop-house-20261014-075035-landscape-reference",
+      "title": "Cottage au clair de lune — composition originale",
+      "summary": [
+        "Version paysage pour comparer le cadrage et la rotation.",
+        "Filigrane continu, sans signature de fin."
+      ],
+      "note": "Référence enregistrée à 07:50, avant les dernières corrections des fenêtres, du chemin et du socle.",
+      "captured_at": "2026-10-14T07:50:35-04:00",
+      "published_at": "2026-10-14T14:53:48.988291+00:00",
+      "revision": "rendu du 14 octobre à 07:50",
+      "reference": true,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 15.018,
+      "bytes": 12122886,
+      "sha256": "013ad1ff60c0b3d0fe20c111c5de9ac5134cd67e5374582c54842e197a8cdb63",
+      "video": "media/loop-house-20261014-075035-landscape-reference.mp4",
+      "poster": "media/loop-house-20261014-075035-landscape-reference.jpg",
+      "scene": "media/loop-house-20261014-075035-landscape-reference.scene"
+    },
+    {
+      "id": "loop-house-20261014-111158-portrait",
+      "title": "Cottage — fenêtres en profondeur et socle en bois",
+      "summary": [
+        "Vrai rendu portrait 1080 × 1920, 30 images/s, rotation de 15 secondes.",
+        "Fonds lumineux des fenêtres en retrait, chemin plus continu et bois du socle plus lisible.",
+        "Troisième arbre et troisième citrouille présents, ouverture de porte retardée.",
+        "Filigrane conservé, aucune signature de fin ajoutée."
+      ],
+      "note": "À évaluer : cadrage, lumière de la porte, profondeur des fenêtres et lisibilité du bois. La nouvelle courbure des brins et la correction des feuilles superposées restent non validées : le générateur du shader de végétation plante, ce rendu utilise sa dernière version compilée.",
+      "captured_at": "2026-10-14T11:11:58-04:00",
+      "published_at": "2026-10-14T15:13:37.772598+00:00",
+      "revision": "182433829",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 18716356,
+      "sha256": "b6363a7e4eb99338a9651baad7b1431377d7e72891d7ff969bb2a9f2330bdecf",
+      "video": "media/loop-house-20261014-111158-portrait.mp4",
+      "poster": "media/loop-house-20261014-111158-portrait.jpg",
+      "scene": "media/loop-house-20261014-111158-portrait.scene"
+    },
+    {
+      "id": "loop-house-20261014-114748-window-recess",
+      "title": "Fenêtres — profondeur physique et fonds élargis",
+      "summary": [
+        "Fonds opaques reculés à 16 cm et élargis de 10 cm en largeur et hauteur.",
+        "Encadrements prolongés vers le fond ; faces extérieures et croisillons conservés.",
+        "Matériaux, caméra, horaires lumineux et autres réglages conservés."
+      ],
+      "note": "Correction géométrique vérifiée de biais et sur la lucarne. Les captures avant/après emploient le même cadrage et activent temporairement les lumières des fenêtres pour examiner le renfoncement ; leurs horaires sont ensuite restaurés. La limite de génération du shader de végétation reste inchangée.",
+      "captured_at": "2026-10-14T11:47:48-04:00",
+      "published_at": "2026-10-14T15:51:53.522126+00:00",
+      "revision": "91f5184c3",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 18651944,
+      "sha256": "035992d2e35dfa0261efff749bfc2523bf1c910cdf820012a5bb55011f1ec60c",
+      "video": "media/loop-house-20261014-114748-window-recess.mp4",
+      "poster": "media/loop-house-20261014-114748-window-recess.jpg",
+      "scene": "media/loop-house-20261014-114748-window-recess.scene",
+      "inspections": [
+        {
+          "image": "media/loop-house-20261014-114748-window-recess-inspection-01.png",
+          "caption": "Avant — fond à 6 cm, fenêtre éclairée pour inspection."
+        },
+        {
+          "image": "media/loop-house-20261014-114748-window-recess-inspection-02.png",
+          "caption": "Après — fond à 16 cm, plus large, avec retours profonds. Même caméra et éclairage de test."
+        }
+      ]
+    },
+    {
+      "id": "refuge-20261014-132419-atmosphere",
+      "title": "Le refuge des brumes",
+      "summary": [
+        "Un refuge en bois et ardoise, une mare et des roseaux sous une grande lune.",
+        "Forêt ramifiée, brume au sol, fenêtres en retrait et lumière lunaire froide.",
+        "Boucle native de 15 secondes, portrait 1080p, sans signature de fin."
+      ],
+      "note": "Comparaison visuelle sans son. Choisis ta préférée avec le bouton de favoris ; la scène originale est conservée.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T13:24:19-04:00",
+      "published_at": "2026-10-14T17:25:04.203357+00:00",
+      "revision": "90ac38cf5",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "refuge-moonlit-137",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.0,
+      "bytes": 6473849,
+      "sha256": "f44941a013a4cf5df1f46f5fe342313b7fa333e4755b1396527dcf08b584d047",
+      "video": "media/refuge-20261014-132419-atmosphere.mp4",
+      "poster": "media/refuge-20261014-132419-atmosphere.jpg",
+      "scene": "media/refuge-20261014-132419-atmosphere.scene",
+      "generator": {
+        "seed": 137,
+        "architecture": "refuge",
+        "environment": "moonlit",
+        "period": 15
+      },
+      "audio": "none"
+    },
+    {
+      "id": "keeper-20261014-132427-atmosphere",
+      "title": "La maison du gardien",
+      "summary": [
+        "Une maison en pierre avec sa tour, au milieu des arbres d’automne.",
+        "Soleil bas, halos ambrés, tapis de feuilles et éclairage chaud des ouvertures.",
+        "Boucle native de 15 secondes, portrait 1080p, sans signature de fin."
+      ],
+      "note": "Comparaison visuelle sans son. Choisis ta préférée avec le bouton de favoris ; la scène originale est conservée.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T13:24:27-04:00",
+      "published_at": "2026-10-14T17:25:07.710469+00:00",
+      "revision": "90ac38cf5",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "keeper-amber-283",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.0,
+      "bytes": 8327890,
+      "sha256": "e792974a5c62765611dae53dda956f17ee22c281e3acf94d2d1a99825881c762",
+      "video": "media/keeper-20261014-132427-atmosphere.mp4",
+      "poster": "media/keeper-20261014-132427-atmosphere.jpg",
+      "scene": "media/keeper-20261014-132427-atmosphere.scene",
+      "generator": {
+        "seed": 283,
+        "architecture": "keeper",
+        "environment": "amber",
+        "period": 15
+      },
+      "audio": "none"
+    },
+    {
+      "id": "mill-20261014-132437-atmosphere",
+      "title": "Le moulin de l’aube",
+      "summary": [
+        "Un moulin à ailes et son logement dans une prairie fleurie de bouleaux.",
+        "Ailes animées, soleil rasant, brume dorée et végétation vivante.",
+        "Boucle native de 15 secondes, portrait 1080p, sans signature de fin."
+      ],
+      "note": "Comparaison visuelle sans son. Choisis ta préférée avec le bouton de favoris ; la scène originale est conservée.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T13:24:37-04:00",
+      "published_at": "2026-10-14T17:25:11.326699+00:00",
+      "revision": "90ac38cf5",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "mill-dawn-619",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.0,
+      "bytes": 8579942,
+      "sha256": "e046a9a1a509c843e6a2374cd59f10a2e29d7e87a5f711ae7583c311232e2fa8",
+      "video": "media/mill-20261014-132437-atmosphere.mp4",
+      "poster": "media/mill-20261014-132437-atmosphere.jpg",
+      "scene": "media/mill-20261014-132437-atmosphere.scene",
+      "generator": {
+        "seed": 619,
+        "architecture": "mill",
+        "environment": "dawn",
+        "period": 15
+      },
+      "audio": "none"
+    },
+    {
+      "id": "mill-20261014-142451-living",
+      "title": "Le moulin de l’aube — lumière et vie",
+      "summary": [
+        "Un moulin à ailes et son logement dans une prairie fleurie de bouleaux.",
+        "Ailes animées, soleil rasant, brume dorée et végétation vivante.",
+        "Allumage progressif, porte et grincement, deux oiseaux en vol et chants synchronisés.",
+        "Boucle native de 15 secondes, portrait 1080p, raccord audio calme et sans signature de fin."
+      ],
+      "note": "Nouvelle version avec sons synchronisés. Active le son du lecteur. Le .scene nécessite le moteur animation v2 ; les vidéos se lisent directement sur mobile.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T14:24:51-04:00",
+      "published_at": "2026-10-14T18:31:00.883973+00:00",
+      "revision": "90e5d991e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "mill-dawn-619",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 8300417,
+      "sha256": "1c88f4146eede75aa865ad47112c6e6487bfac42df285c515ead5a885e1c5de9",
+      "video": "media/mill-20261014-142451-living.mp4",
+      "poster": "media/mill-20261014-142451-living.jpg",
+      "scene": "media/mill-20261014-142451-living.scene",
+      "generator": {
+        "seed": 619,
+        "architecture": "mill",
+        "environment": "dawn",
+        "period": 15
+      }
+    },
+    {
+      "id": "refuge-20261014-142504-living",
+      "title": "Le refuge des brumes — lumière et vie",
+      "summary": [
+        "Un refuge en bois et ardoise, une mare et des roseaux sous une grande lune.",
+        "Forêt ramifiée, brume au sol, fenêtres en retrait et lumière lunaire froide.",
+        "Allumage progressif, porte et grincement, deux oiseaux en vol et chants synchronisés.",
+        "Boucle native de 15 secondes, portrait 1080p, raccord audio calme et sans signature de fin."
+      ],
+      "note": "Nouvelle version avec sons synchronisés. Active le son du lecteur. Le .scene nécessite le moteur animation v2 ; les vidéos se lisent directement sur mobile.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T14:25:04-04:00",
+      "published_at": "2026-10-14T18:31:04.545920+00:00",
+      "revision": "90e5d991e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "refuge-moonlit-137",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 6602428,
+      "sha256": "242e0f38373a04ee30d583c46037a9ecf907a0415883dac65ed764e5b6cd6061",
+      "video": "media/refuge-20261014-142504-living.mp4",
+      "poster": "media/refuge-20261014-142504-living.jpg",
+      "scene": "media/refuge-20261014-142504-living.scene",
+      "generator": {
+        "seed": 137,
+        "architecture": "refuge",
+        "environment": "moonlit",
+        "period": 15
+      }
+    },
+    {
+      "id": "keeper-20261014-142514-living",
+      "title": "La maison du gardien — lumière et vie",
+      "summary": [
+        "Une maison en pierre avec sa tour, au milieu des arbres d’automne.",
+        "Soleil bas, halos ambrés, tapis de feuilles et éclairage chaud des ouvertures.",
+        "Allumage progressif, porte et grincement, deux oiseaux en vol et chants synchronisés.",
+        "Boucle native de 15 secondes, portrait 1080p, raccord audio calme et sans signature de fin."
+      ],
+      "note": "Nouvelle version avec sons synchronisés. Active le son du lecteur. Le .scene nécessite le moteur animation v2 ; les vidéos se lisent directement sur mobile.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T14:25:14-04:00",
+      "published_at": "2026-10-14T18:31:08.535327+00:00",
+      "revision": "90e5d991e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "keeper-amber-283",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 8442195,
+      "sha256": "b10cf6a1c37c998a5c9970a1f3764eb84581de4b8dc7331b4b505ba156604d48",
+      "video": "media/keeper-20261014-142514-living.mp4",
+      "poster": "media/keeper-20261014-142514-living.jpg",
+      "scene": "media/keeper-20261014-142514-living.scene",
+      "generator": {
+        "seed": 283,
+        "architecture": "keeper",
+        "environment": "amber",
+        "period": 15
+      }
+    }
+  ]
+}

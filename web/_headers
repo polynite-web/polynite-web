@@ -2,13 +2,6 @@
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
 
-/atelier/*
-  X-Robots-Tag: noindex
-  Cache-Control: no-cache
-/atelier/media/*
-  Cache-Control: public, max-age=31536000, immutable
-  Access-Control-Allow-Origin: *
-
 # Polynite engine cache
 /dev/*
   X-Robots-Tag: noindex

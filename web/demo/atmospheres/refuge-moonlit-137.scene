@@ -1,0 +1,9724 @@
+{
+  "film_reset_camera": true,
+  "initial": {
+    "amb_gnd": {
+      "a": 1,
+      "b": 0.0450000018,
+      "g": 0.0549999997,
+      "r": 0.0649999976
+    },
+    "amb_intensity": 0.55,
+    "amb_sky": {
+      "a": 1,
+      "b": 0.419999987,
+      "g": 0.25,
+      "r": 0.159999996
+    },
+    "anim_auto": 0,
+    "anim_clip": 0,
+    "anim_on": 1,
+    "anim_speed": 1,
+    "ao_strength": 1.25,
+    "aurora_color": {
+      "a": 1,
+      "b": 0.479999989,
+      "g": 0.550000012,
+      "r": 0.119999997
+    },
+    "aurora_height": 0.119999997,
+    "aurora_intensity": 0.119999997,
+    "aurora_on": 0,
+    "aurora_scale": 3.5999999,
+    "aurora_speed": 0,
+    "aurora_width": 0.100000001,
+    "aurora_yaw": 2.53072739,
+    "bd_count": 6,
+    "bd_doppler": 3,
+    "bd_enable": 0,
+    "bd_lowpass": 1,
+    "bd_pan_flip": 0,
+    "bd_perch_model": 1,
+    "bd_seed": 4242,
+    "bd_sing": 1,
+    "bd_size": 1,
+    "bd_spatial": 1,
+    "bd_waves": 0.699999988,
+    "bg": {
+      "a": 1,
+      "b": 0.200000003,
+      "g": 0.105899997,
+      "r": 0.0784000009
+    },
+    "bloom_fast": 0,
+    "bloom_intensity": 0.18,
+    "bloom_knee": 0.280000001,
+    "bloom_linear": 1,
+    "bloom_on": 1,
+    "bloom_radius": 1,
+    "bloom_threshold": 0.85,
+    "cam_dist": 8.643913613014925,
+    "cam_orbit": 0,
+    "cam_orbit_speed": 0.349999994,
+    "cam_pitch": 0.20307001390903073,
+    "cam_yaw": -1.2772502829664796,
+    "cel_levels": 0,
+    "cloud_color": {
+      "a": 1,
+      "b": 0.319999993,
+      "g": 0.340000004,
+      "r": 0.479999989
+    },
+    "cloud_cover": 0.3,
+    "cloud_on": 1,
+    "cloud_scale": 3.29999995,
+    "cloud_softness": 0.75,
+    "cloud_speed": 0,
+    "cr_accent": {
+      "a": 1,
+      "b": 0.349999994,
+      "g": 0.850000024,
+      "r": 1
+    },
+    "cr_belly": {
+      "a": 1,
+      "b": 0.660000026,
+      "g": 0.779999971,
+      "r": 0.819999993
+    },
+    "cr_body": {
+      "a": 1,
+      "b": 0.360000014,
+      "g": 0.319999993,
+      "r": 0.180000007
+    },
+    "cr_body_len": 1,
+    "cr_bounce": 1,
+    "cr_chubby": 1,
+    "cr_coat": 0,
+    "cr_coat_clump": 0.400000006,
+    "cr_coat_dens": 0.5,
+    "cr_coat_gloss": 0.5,
+    "cr_coat_lean": 0.600000024,
+    "cr_coat_len": 1,
+    "cr_coat_lod": 0,
+    "cr_coat_roots": 0,
+    "cr_coat_shadow": 0,
+    "cr_coat_spread": 0,
+    "cr_coat_stiff": 0.5,
+    "cr_coat_wid": 1,
+    "cr_coat_wind": 0.300000012,
+    "cr_count": 3,
+    "cr_enable": 0,
+    "cr_fur": {
+      "a": 1,
+      "b": 0.25,
+      "g": 0.449999988,
+      "r": 0.949999988
+    },
+    "cr_fur_damp": 6.5,
+    "cr_fur_len": 1,
+    "cr_fur_stiff": 26,
+    "cr_gait_speed": 0.934122026,
+    "cr_heel_scale": 0.200000003,
+    "cr_ik_bend": 0.620000005,
+    "cr_impact_influence_0": 1,
+    "cr_impact_influence_1": 1,
+    "cr_impact_influence_2": 1,
+    "cr_impact_influence_3": 1,
+    "cr_leg_len": 1,
+    "cr_motion_seed": 0,
+    "cr_neck_len": 1,
+    "cr_placement_seed_0": 0,
+    "cr_placement_seed_1": 0,
+    "cr_placement_seed_2": 0,
+    "cr_placement_seed_3": 0,
+    "cr_roam": 1,
+    "cr_roam_mode": 1,
+    "cr_roam_radius": 1.60000002,
+    "cr_seed": -515364992,
+    "cr_size": 0.572973013,
+    "cr_step_height": 0.280000001,
+    "cr_tail_len": 1,
+    "cr_toe_scale": 0.300000012,
+    "cr_version": 1,
+    "debug_mode": 0,
+    "dof_blur": 0.75,
+    "dof_far": 1,
+    "dof_focus": 4.55000019,
+    "dof_on": 1,
+    "dof_range": 1.5,
+    "dust_amount": 0.649999976,
+    "dust_color": {
+      "a": 1,
+      "b": 0.219999999,
+      "g": 0.360000014,
+      "r": 0.550000012
+    },
+    "dust_gray": 0,
+    "dust_lifetime": 1.5,
+    "dust_on": 0,
+    "dust_opacity": 0.600000024,
+    "dust_size": 0.180000007,
+    "dust_threshold": 2,
+    "edge_col": {
+      "a": 1,
+      "b": 0.620000005,
+      "g": 0.379999995,
+      "r": 0.419999987
+    },
+    "edge_intensity": 0.564408004,
+    "edge_on": 0,
+    "edge_width": 1.20000005,
+    "emissive_strength": 1,
+    "exposure": 1.0,
+    "fade_col": {
+      "a": 1,
+      "b": 0.379999995,
+      "g": 0.200000003,
+      "r": 0.200000003
+    },
+    "fade_from_sky": 1,
+    "film_audio_air": 0,
+    "film_audio_appear": 0,
+    "film_audio_background": 0,
+    "film_audio_bass": 0,
+    "film_audio_birds": 0,
+    "film_audio_chimes": 0,
+    "film_audio_click": 0,
+    "film_audio_close": 0,
+    "film_audio_confirm": 0,
+    "film_audio_copied": 0,
+    "film_audio_explosion": 0,
+    "film_audio_fur_text": 0,
+    "film_audio_growth": 0,
+    "film_audio_magic": 0,
+    "film_audio_more_text": 0,
+    "film_audio_off": 0,
+    "film_audio_pluck": 0,
+    "film_audio_refuse": 0,
+    "film_audio_shake": 0,
+    "film_audio_shutter": 0,
+    "film_audio_signature": 0,
+    "film_audio_sniff": 0,
+    "film_audio_steps": 0,
+    "film_audio_text": 0,
+    "film_audio_tick": 0,
+    "film_audio_wings": 0,
+    "film_branding_mode": 0,
+    "film_fade": 0,
+    "film_focus_behind": 0.0299999993,
+    "film_focus_offscreen": 0.119999997,
+    "film_focus_on": 0,
+    "film_focus_softness": 0.349999994,
+    "film_music_fade_at": -1,
+    "film_music_fade_duration": 3.5,
+    "film_music_volume": 0,
+    "film_output_volume": 0.62,
+    "film_portrait_distance": 1,
+    "film_preview_portrait": 1,
+    "film_reset_camera": 1,
+    "film_sound_volume": 0.7,
+    "film_sounds_fade_at": -1,
+    "film_sounds_fade_duration": 3.5,
+    "flare_on": 1,
+    "flare_radius": 0.075,
+    "flare_strength": 0.1,
+    "floor_a": {
+      "a": 1,
+      "b": 0.264999986,
+      "g": 0.314999998,
+      "r": 0.360000014
+    },
+    "floor_amb": 0,
+    "floor_auto_reach": 1,
+    "floor_b": {
+      "a": 1,
+      "b": 0.0949999988,
+      "g": 0.104999997,
+      "r": 0.109999999
+    },
+    "floor_bump": 0,
+    "floor_contact": 1,
+    "floor_enable": 0,
+    "floor_fade": 19.0135002,
+    "floor_groove": 0.00999999978,
+    "floor_lamps": 0.975000024,
+    "floor_line": 0,
+    "floor_marble_scale": 0.714286029,
+    "floor_marble_seed": 73,
+    "floor_marble_strength": 0.680000007,
+    "floor_material": 2,
+    "floor_mirror": 0,
+    "floor_mirror_blur": 0.119999997,
+    "floor_mirror_fade": 0.800000012,
+    "floor_mirror_glow": 1,
+    "floor_mirror_reach": 12,
+    "floor_mirror_shadow": 0.600000024,
+    "floor_mirror_tint": 0.600000024,
+    "floor_rotation": 0,
+    "floor_spec": 0.5,
+    "floor_sun": 0.671999991,
+    "floor_texture": "marble",
+    "floor_tile": 0.26699999,
+    "floor_variant": 4,
+    "floor_vein_width": 0.0949999988,
+    "floor_warp": 1,
+    "fog_density": 0,
+    "fov": 44,
+    "fov_dolly": 0,
+    "galaxy_base": 0.119999997,
+    "galaxy_dust": 0.699999988,
+    "galaxy_pitch": 0.383972436,
+    "galaxy_width": 0.319999993,
+    "galaxy_yaw": -2.53072739,
+    "geo": {
+      "house_front_0_0": {
+        "t": "cube",
+        "p": [
+          -0.572304,
+          0.18,
+          0.209464
+        ],
+        "s": [
+          0.132805,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_0_1": {
+        "t": "cube",
+        "p": [
+          -0.572304,
+          0.51,
+          0.209464
+        ],
+        "s": [
+          0.132805,
+          0.3,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_0_2": {
+        "t": "cube",
+        "p": [
+          -0.572304,
+          0.67,
+          0.209464
+        ],
+        "s": [
+          0.132805,
+          0.02,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_0_3": {
+        "t": "cube",
+        "p": [
+          -0.572304,
+          0.791546,
+          0.209464
+        ],
+        "s": [
+          0.132805,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_1_0": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.18,
+          0.209464
+        ],
+        "s": [
+          0.23,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_1_3": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.791546,
+          0.209464
+        ],
+        "s": [
+          0.23,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_2_0": {
+        "t": "cube",
+        "p": [
+          -0.113274,
+          0.18,
+          0.209464
+        ],
+        "s": [
+          0.325255,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_2_1": {
+        "t": "cube",
+        "p": [
+          -0.113274,
+          0.51,
+          0.209464
+        ],
+        "s": [
+          0.325255,
+          0.3,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_2_2": {
+        "t": "cube",
+        "p": [
+          -0.113274,
+          0.67,
+          0.209464
+        ],
+        "s": [
+          0.325255,
+          0.02,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_2_3": {
+        "t": "cube",
+        "p": [
+          -0.113274,
+          0.791546,
+          0.209464
+        ],
+        "s": [
+          0.325255,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_3_2": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.67,
+          0.209464
+        ],
+        "s": [
+          0.24,
+          0.02,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_3_3": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.791546,
+          0.209464
+        ],
+        "s": [
+          0.24,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_4_0": {
+        "t": "cube",
+        "p": [
+          0.36403,
+          0.18,
+          0.209464
+        ],
+        "s": [
+          0.149353,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_4_1": {
+        "t": "cube",
+        "p": [
+          0.36403,
+          0.51,
+          0.209464
+        ],
+        "s": [
+          0.149353,
+          0.3,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_4_2": {
+        "t": "cube",
+        "p": [
+          0.36403,
+          0.67,
+          0.209464
+        ],
+        "s": [
+          0.149353,
+          0.02,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_front_4_3": {
+        "t": "cube",
+        "p": [
+          0.36403,
+          0.791546,
+          0.209464
+        ],
+        "s": [
+          0.149353,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "house_back_0_0": {
+        "t": "cube",
+        "p": [
+          0.226853,
+          0.2,
+          -0.649464
+        ],
+        "s": [
+          0.423707,
+          0.4,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_0_1": {
+        "t": "cube",
+        "p": [
+          0.226853,
+          0.56,
+          -0.649464
+        ],
+        "s": [
+          0.423707,
+          0.32,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_0_2": {
+        "t": "cube",
+        "p": [
+          0.226853,
+          0.811546,
+          -0.649464
+        ],
+        "s": [
+          0.423707,
+          0.183092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_1_0": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.2,
+          -0.649464
+        ],
+        "s": [
+          0.23,
+          0.4,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_1_2": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.811546,
+          -0.649464
+        ],
+        "s": [
+          0.23,
+          0.183092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_2_0": {
+        "t": "cube",
+        "p": [
+          -0.426853,
+          0.2,
+          -0.649464
+        ],
+        "s": [
+          0.423707,
+          0.4,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_2_1": {
+        "t": "cube",
+        "p": [
+          -0.426853,
+          0.56,
+          -0.649464
+        ],
+        "s": [
+          0.423707,
+          0.32,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_back_2_2": {
+        "t": "cube",
+        "p": [
+          -0.426853,
+          0.811546,
+          -0.649464
+        ],
+        "s": [
+          0.423707,
+          0.183092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "house_side-1_0_0": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.18,
+          -0.492232
+        ],
+        "s": [
+          0.314464,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_0_1": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.52,
+          -0.492232
+        ],
+        "s": [
+          0.314464,
+          0.32,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_0_2": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.791546,
+          -0.492232
+        ],
+        "s": [
+          0.314464,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_1_0": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.18,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_1_2": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.791546,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_2_0": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.18,
+          0.052232
+        ],
+        "s": [
+          0.314464,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_2_1": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.52,
+          0.052232
+        ],
+        "s": [
+          0.314464,
+          0.32,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side-1_2_2": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.791546,
+          0.052232
+        ],
+        "s": [
+          0.314464,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1l": {
+        "t": "cube",
+        "p": [
+          -0.583707,
+          0.52,
+          -0.353
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1r": {
+        "t": "cube",
+        "p": [
+          -0.583707,
+          0.52,
+          -0.087
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1t": {
+        "t": "cube",
+        "p": [
+          -0.583707,
+          0.698,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1b": {
+        "t": "cube",
+        "p": [
+          -0.583707,
+          0.342,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1back": {
+        "t": "cube",
+        "p": [
+          -0.518707,
+          0.52,
+          -0.22
+        ],
+        "s": [
+          0.31,
+          0.4,
+          0.012
+        ],
+        "m": "lodge_glow",
+        "appearance": "instant",
+        "glow": {
+          "light": "window_side-1",
+          "gain": 1.1
+        },
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1mv": {
+        "t": "cube",
+        "p": [
+          -0.653707,
+          0.52,
+          -0.22
+        ],
+        "s": [
+          0.015,
+          0.32,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1mh": {
+        "t": "cube",
+        "p": [
+          -0.653707,
+          0.52,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.015,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "window_side-1sill": {
+        "t": "cube",
+        "p": [
+          -0.678707,
+          0.32,
+          -0.22
+        ],
+        "s": [
+          0.36,
+          0.055,
+          0.22
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.008,
+        "r": [
+          0,
+          -90,
+          0
+        ]
+      },
+      "house_side1_0_0": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.18,
+          0.052232
+        ],
+        "s": [
+          0.314464,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_0_1": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.52,
+          0.052232
+        ],
+        "s": [
+          0.314464,
+          0.32,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_0_2": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.791546,
+          0.052232
+        ],
+        "s": [
+          0.314464,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_1_0": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.18,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_1_2": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.791546,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_2_0": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.18,
+          -0.492232
+        ],
+        "s": [
+          0.314464,
+          0.36,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_2_1": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.52,
+          -0.492232
+        ],
+        "s": [
+          0.314464,
+          0.32,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "house_side1_2_2": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.791546,
+          -0.492232
+        ],
+        "s": [
+          0.314464,
+          0.223092,
+          0.13
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1l": {
+        "t": "cube",
+        "p": [
+          0.383707,
+          0.52,
+          -0.087
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1r": {
+        "t": "cube",
+        "p": [
+          0.383707,
+          0.52,
+          -0.353
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1t": {
+        "t": "cube",
+        "p": [
+          0.383707,
+          0.698,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1b": {
+        "t": "cube",
+        "p": [
+          0.383707,
+          0.342,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1back": {
+        "t": "cube",
+        "p": [
+          0.318707,
+          0.52,
+          -0.22
+        ],
+        "s": [
+          0.31,
+          0.4,
+          0.012
+        ],
+        "m": "lodge_glow",
+        "appearance": "instant",
+        "glow": {
+          "light": "window_side1",
+          "gain": 1.1
+        },
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1mv": {
+        "t": "cube",
+        "p": [
+          0.453707,
+          0.52,
+          -0.22
+        ],
+        "s": [
+          0.015,
+          0.32,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1mh": {
+        "t": "cube",
+        "p": [
+          0.453707,
+          0.52,
+          -0.22
+        ],
+        "s": [
+          0.23,
+          0.015,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_side1sill": {
+        "t": "cube",
+        "p": [
+          0.478707,
+          0.32,
+          -0.22
+        ],
+        "s": [
+          0.36,
+          0.055,
+          0.22
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.008,
+        "r": [
+          0,
+          90,
+          0
+        ]
+      },
+      "window_frontl": {
+        "t": "cube",
+        "p": [
+          -0.523902,
+          0.52,
+          0.154464
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontr": {
+        "t": "cube",
+        "p": [
+          -0.257902,
+          0.52,
+          0.154464
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontt": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.698,
+          0.154464
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontb": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.342,
+          0.154464
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontback": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.52,
+          0.089464
+        ],
+        "s": [
+          0.31,
+          0.4,
+          0.012
+        ],
+        "m": "lodge_glow",
+        "appearance": "instant",
+        "glow": {
+          "light": "window_front",
+          "gain": 1.1
+        },
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontmv": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.52,
+          0.224464
+        ],
+        "s": [
+          0.015,
+          0.32,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontmh": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.52,
+          0.224464
+        ],
+        "s": [
+          0.23,
+          0.015,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_frontsill": {
+        "t": "cube",
+        "p": [
+          -0.390902,
+          0.32,
+          0.249464
+        ],
+        "s": [
+          0.36,
+          0.055,
+          0.22
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.008,
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "window_backl": {
+        "t": "cube",
+        "p": [
+          0.033,
+          0.56,
+          -0.594464
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backr": {
+        "t": "cube",
+        "p": [
+          -0.233,
+          0.56,
+          -0.594464
+        ],
+        "s": [
+          0.036,
+          0.39,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backt": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.738,
+          -0.594464
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backb": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.382,
+          -0.594464
+        ],
+        "s": [
+          0.23,
+          0.036,
+          0.16
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "bevel": 0.005,
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backback": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.56,
+          -0.529464
+        ],
+        "s": [
+          0.31,
+          0.4,
+          0.012
+        ],
+        "m": "lodge_glow",
+        "appearance": "instant",
+        "glow": {
+          "light": "window_back",
+          "gain": 1.1
+        },
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backmv": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.56,
+          -0.664464
+        ],
+        "s": [
+          0.015,
+          0.32,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backmh": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.56,
+          -0.664464
+        ],
+        "s": [
+          0.23,
+          0.015,
+          0.035
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant",
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "window_backsill": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.36,
+          -0.689464
+        ],
+        "s": [
+          0.36,
+          0.055,
+          0.22
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.008,
+        "r": [
+          0,
+          180,
+          0
+        ]
+      },
+      "door_hinge": {
+        "t": "group",
+        "p": [
+          0.049353,
+          0,
+          0.214464
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "door": {
+        "t": "cube",
+        "p": [
+          0.11,
+          0.33,
+          0
+        ],
+        "s": [
+          0.22,
+          0.63,
+          0.045
+        ],
+        "m": "painted_door",
+        "appearance": "instant",
+        "bevel": 0.008,
+        "parent": "door_hinge"
+      },
+      "door_handle": {
+        "t": "sphere",
+        "p": [
+          0.18,
+          0.33,
+          0.035
+        ],
+        "s": [
+          0.025,
+          0.025,
+          0.025
+        ],
+        "m": "rim_copper",
+        "appearance": "instant",
+        "parent": "door_hinge"
+      },
+      "door_luminous_back": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.33,
+          0.069464
+        ],
+        "s": [
+          0.31,
+          0.72,
+          0.012
+        ],
+        "m": "lodge_glow",
+        "appearance": "instant",
+        "glow": {
+          "light": "door_light",
+          "gain": 1.25
+        }
+      },
+      "door_lintel": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.7,
+          0.209464
+        ],
+        "s": [
+          0.36,
+          0.08,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.01
+      },
+      "door_step0": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.045,
+          0.329464
+        ],
+        "s": [
+          0.36,
+          0.06,
+          0.19
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.012
+      },
+      "door_step1": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.025,
+          0.489464
+        ],
+        "s": [
+          0.36,
+          0.06,
+          0.19
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.012
+      },
+      "house_post-1_-1": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.451546,
+          -0.649464
+        ],
+        "s": [
+          0.065,
+          0.903092,
+          0.065
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "house_post-1_1": {
+        "t": "cube",
+        "p": [
+          -0.638707,
+          0.451546,
+          0.209464
+        ],
+        "s": [
+          0.065,
+          0.903092,
+          0.065
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "house_post1_-1": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.451546,
+          -0.649464
+        ],
+        "s": [
+          0.065,
+          0.903092,
+          0.065
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "house_post1_1": {
+        "t": "cube",
+        "p": [
+          0.438707,
+          0.451546,
+          0.209464
+        ],
+        "s": [
+          0.065,
+          0.903092,
+          0.065
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "roof_tile-1_0_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.349504,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.350448,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.350606,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.349837,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.35073,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.350485,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.349857,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_0_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.349079,
+          -0.257819
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.281089,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.281272,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.280239,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.280286,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.282183,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.280518,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.282025,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_1_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.28059,
+          -0.333457
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.21325,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.213383,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.213587,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.213266,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.212302,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.211683,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.212463,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_2_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.211798,
+          -0.409094
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.143807,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.144113,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.143488,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.144287,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.144985,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.144179,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.144193,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_3_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.144502,
+          -0.484732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.074598,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.076093,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.074718,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.075555,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.076137,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.074527,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.075958,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_4_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.076218,
+          -0.56037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.006443,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.007758,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.007835,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.006217,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.007437,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.007614,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.006411,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_5_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.007509,
+          -0.636007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          0.937928,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          0.938697,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          0.93832,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          0.937679,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          0.939012,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          0.938815,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          0.938812,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile-1_6_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          0.939157,
+          -0.711645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          -42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_fascia-1": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.878092,
+          -0.749464
+        ],
+        "s": [
+          1.277413,
+          0.065,
+          0.045
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "roof_tile1_0_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.349585,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.350607,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.349842,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.350678,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.349105,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.349006,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.35013,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_0_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.349078,
+          -0.182181
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.281777,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.281541,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.281415,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.281955,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.280835,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.281952,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.2822,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_1_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.280647,
+          -0.106543
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.21305,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.212052,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.21279,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.213258,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.212452,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.213218,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.212432,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_2_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.212221,
+          -0.030906
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.145068,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.143851,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.144486,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.144534,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.143177,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.144655,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.144654,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_3_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.144905,
+          0.044732
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.074712,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.07513,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.076424,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.076042,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.074547,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.075961,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.075158,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_4_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.074542,
+          0.12037
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          1.006073,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          1.006337,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          1.007704,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          1.00704,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          1.006885,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          1.007214,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          1.007189,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_5_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          1.006221,
+          0.196007
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_0": {
+        "t": "cube",
+        "p": [
+          -0.658868,
+          0.939325,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_1": {
+        "t": "cube",
+        "p": [
+          -0.499192,
+          0.937435,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_2": {
+        "t": "cube",
+        "p": [
+          -0.339515,
+          0.937771,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_3": {
+        "t": "cube",
+        "p": [
+          -0.179838,
+          0.939052,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_4": {
+        "t": "cube",
+        "p": [
+          -0.020162,
+          0.93752,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_5": {
+        "t": "cube",
+        "p": [
+          0.139515,
+          0.938361,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_6": {
+        "t": "cube",
+        "p": [
+          0.299192,
+          0.938913,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_tile1_6_7": {
+        "t": "cube",
+        "p": [
+          0.458868,
+          0.937662,
+          0.271645
+        ],
+        "s": [
+          0.156677,
+          0.026,
+          0.112303
+        ],
+        "m": "slate",
+        "appearance": "instant",
+        "bevel": 0.003,
+        "r": [
+          42.194735047844475,
+          0,
+          0
+        ]
+      },
+      "roof_fascia1": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.878092,
+          0.309464
+        ],
+        "s": [
+          1.277413,
+          0.065,
+          0.045
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "roof_ridge": {
+        "t": "cylinder",
+        "p": [
+          -0.1,
+          1.418092,
+          -0.22
+        ],
+        "s": [
+          0.075,
+          1.307413,
+          0.075
+        ],
+        "m": "ridge_clay",
+        "appearance": "instant",
+        "r": [
+          0,
+          0,
+          90
+        ]
+      },
+      "house_gable": {
+        "t": "wedge",
+        "p": [
+          -0.1,
+          1.113092,
+          -0.22
+        ],
+        "s": [
+          1.077413,
+          0.42,
+          0.858928
+        ],
+        "m": "silvery_wood",
+        "appearance": "instant"
+      },
+      "house_foundation": {
+        "t": "cube",
+        "p": [
+          -0.1,
+          0.025,
+          -0.22
+        ],
+        "s": [
+          1.207413,
+          0.1,
+          0.988928
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "bevel": 0.015
+      },
+      "chimney": {
+        "t": "cube",
+        "p": [
+          0.244772,
+          1.303092,
+          -0.37
+        ],
+        "s": [
+          0.14,
+          0.73,
+          0.17
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "bevel": 0.006
+      },
+      "chimney_cap": {
+        "t": "cube",
+        "p": [
+          0.244772,
+          1.683092,
+          -0.37
+        ],
+        "s": [
+          0.2,
+          0.055,
+          0.23
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.008
+      },
+      "base_body": {
+        "t": "cylinder",
+        "p": [
+          0,
+          -0.17,
+          0
+        ],
+        "s": [
+          3.7,
+          0.24,
+          3.7
+        ],
+        "m": "lacquer",
+        "appearance": "instant"
+      },
+      "base_bead": {
+        "t": "cylinder",
+        "p": [
+          0,
+          -0.055,
+          0
+        ],
+        "s": [
+          3.725,
+          0.035,
+          3.725
+        ],
+        "m": "rim_copper",
+        "appearance": "instant"
+      },
+      "base_soil": {
+        "t": "cylinder",
+        "p": [
+          0,
+          -0.019,
+          0
+        ],
+        "s": [
+          3.7,
+          0.055,
+          3.7
+        ],
+        "m": "meadow",
+        "appearance": "instant"
+      },
+      "pool_bank": {
+        "t": "sphere",
+        "p": [
+          1.0,
+          0.01,
+          -0.55
+        ],
+        "s": [
+          0.84,
+          0.055,
+          1.02
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant"
+      },
+      "pool_surface": {
+        "t": "sphere",
+        "p": [
+          1.0,
+          0.038,
+          -0.55
+        ],
+        "s": [
+          0.7,
+          0.02,
+          0.89
+        ],
+        "m": "stream",
+        "appearance": "instant"
+      },
+      "path_slab0": {
+        "t": "cube",
+        "p": [
+          0.169353,
+          0.025898,
+          0.639464
+        ],
+        "s": [
+          0.32,
+          0.045,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.018,
+        "r": [
+          0,
+          0,
+          0
+        ]
+      },
+      "path_slab1": {
+        "t": "cube",
+        "p": [
+          0.20565,
+          0.024096,
+          0.877263
+        ],
+        "s": [
+          0.32,
+          0.045,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.018,
+        "r": [
+          0,
+          -6.339415583678318,
+          0
+        ]
+      },
+      "path_slab2": {
+        "t": "cube",
+        "p": [
+          0.11181,
+          0.024611,
+          1.079557
+        ],
+        "s": [
+          0.32,
+          0.045,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.018,
+        "r": [
+          0,
+          -43.40989413298853,
+          0
+        ]
+      },
+      "path_slab3": {
+        "t": "cube",
+        "p": [
+          -0.062457,
+          0.023515,
+          1.259907
+        ],
+        "s": [
+          0.32,
+          0.045,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.018,
+        "r": [
+          0,
+          -36.048128156207454,
+          0
+        ]
+      },
+      "path_slab4": {
+        "t": "cube",
+        "p": [
+          -0.156296,
+          0.026008,
+          1.462201
+        ],
+        "s": [
+          0.32,
+          0.045,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.018,
+        "r": [
+          0,
+          -6.802389498619611,
+          0
+        ]
+      },
+      "path_slab5": {
+        "t": "cube",
+        "p": [
+          -0.12,
+          0.025936,
+          1.7
+        ],
+        "s": [
+          0.32,
+          0.045,
+          0.2
+        ],
+        "m": "flagstone",
+        "appearance": "instant",
+        "bevel": 0.018,
+        "r": [
+          0,
+          15.230743459827309,
+          0
+        ]
+      },
+      "tree_v0_branch0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.8648720332625366,
+          0.6474699348532436,
+          0.9437356547699496
+        ],
+        "r": [
+          33.0228043,
+          0,
+          -6.84820986
+        ],
+        "s": [
+          0.04668456651586322,
+          0.40476154489487365,
+          0.04668456651586322
+        ],
+        "t": "cone"
+      },
+      "tree_v0_branch1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.696733630902601,
+          0.6873220991996644,
+          1.0899383226544204
+        ],
+        "r": [
+          -13.5257359,
+          0,
+          52.3078194
+        ],
+        "s": [
+          0.04668456651586322,
+          0.4198123127396374,
+          0.04668456651586322
+        ],
+        "t": "cone"
+      },
+      "tree_v0_branch2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.9418903883827043,
+          0.6244532976204246,
+          1.1108236062874188
+        ],
+        "r": [
+          -23.3023357,
+          0,
+          -39.5675011
+        ],
+        "s": [
+          0.04668456651586322,
+          0.35109561584406535,
+          0.04668456651586322
+        ],
+        "t": "cone"
+      },
+      "tree_v0_buttress0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.8647206054461846,
+          0.021033717120236974,
+          1.1328243143187338
+        ],
+        "r": [
+          -56.3327827,
+          0,
+          -131.874847
+        ],
+        "s": [
+          0.03785291763226418,
+          0.16142156789782522,
+          0.03785291763226418
+        ],
+        "t": "cone"
+      },
+      "tree_v0_buttress1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.8985273805111371,
+          0.021033717120236974,
+          1.0555603844635093
+        ],
+        "r": [
+          7.82049799,
+          0,
+          -113.986794
+        ],
+        "s": [
+          0.04474571655347673,
+          0.14831486307766087,
+          0.04474571655347673
+        ],
+        "t": "cone"
+      },
+      "tree_v0_buttress2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.8410358677307304,
+          0.021033717120236974,
+          0.9980678890308492
+        ],
+        "r": [
+          65.0929489,
+          0,
+          -162.126328
+        ],
+        "s": [
+          0.045635546076486115,
+          0.149026956938484,
+          0.045635546076486115
+        ],
+        "t": "cone"
+      },
+      "tree_v0_buttress3": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.7777695527681239,
+          0.021033717120236974,
+          1.04020180208849
+        ],
+        "r": [
+          22.5164871,
+          0,
+          119.111237
+        ],
+        "s": [
+          0.04012948375453214,
+          0.13291150929941098,
+          0.04012948375453214
+        ],
+        "t": "cone"
+      },
+      "tree_v0_buttress4": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          0.7779596551273209,
+          0.021033717120236974,
+          1.11993105555332
+        ],
+        "r": [
+          -41.5596962,
+          0,
+          119.197777
+        ],
+        "s": [
+          0.037916437672455026,
+          0.16364202045443724,
+          0.037916437672455026
+        ],
+        "t": "cone"
+      },
+      "tree_v0_root": {
+        "appearance": "instant",
+        "bump": 0.117647059,
+        "c": [
+          0.899999976,
+          0.899999976,
+          0.899999976
+        ],
+        "m": "bark",
+        "p": [
+          0.8297225430207463,
+          0.008832829317620588,
+          1.0677951116446354
+        ],
+        "s": [
+          0.15082706103992627,
+          0.10304967524956203,
+          0.15082706103992627
+        ],
+        "t": "sphere"
+      },
+      "tree_v0_trunk": {
+        "appearance": "instant",
+        "bump": 0.0392156877,
+        "m": "bark",
+        "p": [
+          0.8466737522268188,
+          0.5130172389120892,
+          1.0461853961604979
+        ],
+        "r": [
+          2.41071248,
+          0,
+          -1.89248908
+        ],
+        "s": [
+          0.10055138531301043,
+          1.0275037924704322,
+          0.10055138531301043
+        ],
+        "t": "cone"
+      },
+      "tree_v0_twig0": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          0.922210824217107,
+          0.7416251961650955,
+          0.907254443279454
+        ],
+        "r": [
+          16.2602406,
+          0,
+          -33.9906502
+        ],
+        "s": [
+          0.02693340645429719,
+          0.20870905553555233,
+          0.02693340645429719
+        ],
+        "t": "cone"
+      },
+      "tree_v0_twig1": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          0.842189928396298,
+          0.8029342246216551,
+          0.8476039110058964
+        ],
+        "r": [
+          28.4149914,
+          0,
+          21.9429836
+        ],
+        "s": [
+          0.02693340645429719,
+          0.19385358964213387,
+          0.02693340645429719
+        ],
+        "t": "cone"
+      },
+      "tree_v0_twig2": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          0.6127292954443593,
+          0.7780709659282493,
+          1.0572253727760057
+        ],
+        "r": [
+          18.0958462,
+          0,
+          41.6127777
+        ],
+        "s": [
+          0.02693340645429719,
+          0.23183838126779735,
+          0.02693340645429719
+        ],
+        "t": "cone"
+      },
+      "tree_v0_twig3": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          0.5789593518052161,
+          0.81948299393385,
+          1.1843075121462856
+        ],
+        "r": [
+          -39.4863892,
+          0,
+          30.4330063
+        ],
+        "s": [
+          0.02693340645429719,
+          0.226538484246662,
+          0.02693340645429719
+        ],
+        "t": "cone"
+      },
+      "tree_v0_twig4": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          0.9523185561363492,
+          0.6879493095714526,
+          1.1739471334128122
+        ],
+        "r": [
+          -46.3916702,
+          0,
+          -4.29449368
+        ],
+        "s": [
+          0.02693340645429719,
+          0.16272918509159273,
+          0.02693340645429719
+        ],
+        "t": "cone"
+      },
+      "tree_v0_twig5": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.0495192014926626,
+          0.7497511193633285,
+          1.124421378874026
+        ],
+        "r": [
+          10.5672846,
+          0,
+          -41.5066833
+        ],
+        "s": [
+          0.02693340645429719,
+          0.18970536253411746,
+          0.02693340645429719
+        ],
+        "t": "cone"
+      },
+      "tree_v1_branch0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.191229647955582,
+          0.7710373156855063,
+          0.2444520433659047
+        ],
+        "r": [
+          -10.1697178,
+          0,
+          -37.2243233
+        ],
+        "s": [
+          0.05046815614212616,
+          0.48850707668989324,
+          0.05046815614212616
+        ],
+        "t": "cone"
+      },
+      "tree_v1_branch1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.3678511514935763,
+          0.7028067722414667,
+          0.026286590099742213
+        ],
+        "r": [
+          48.8280869,
+          0,
+          14.2660961
+        ],
+        "s": [
+          0.05046815614212616,
+          0.4925526994871867,
+          0.05046815614212616
+        ],
+        "t": "cone"
+      },
+      "tree_v1_branch2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.3985012050337642,
+          0.7460426283946813,
+          0.3179368567351539
+        ],
+        "r": [
+          -40.549057,
+          0,
+          33.6170349
+        ],
+        "s": [
+          0.05046815614212616,
+          0.3692320912058276,
+          0.05046815614212616
+        ],
+        "t": "cone"
+      },
+      "tree_v1_buttress0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.3234584933877331,
+          0.022901183631838604,
+          0.23615501172072612
+        ],
+        "r": [
+          -57.1563187,
+          0,
+          -139.499191
+        ],
+        "s": [
+          0.042627272790878204,
+          0.1581944473371605,
+          0.042627272790878204
+        ],
+        "t": "cone"
+      },
+      "tree_v1_buttress1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.285253014657876,
+          0.022901183631838604,
+          0.16198115624326875
+        ],
+        "r": [
+          5.98151636,
+          0,
+          -116.277542
+        ],
+        "s": [
+          0.04827096326639454,
+          0.14816723198438728,
+          0.04827096326639454
+        ],
+        "t": "cone"
+      },
+      "tree_v1_buttress2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.3363769932352465,
+          0.022901183631838604,
+          0.09776621016493367
+        ],
+        "r": [
+          63.4912415,
+          0,
+          -155.388733
+        ],
+        "s": [
+          0.04973273642865813,
+          0.1607726943954346,
+          0.04973273642865813
+        ],
+        "t": "cone"
+      },
+      "tree_v1_buttress3": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.4142583189346467,
+          0.022901183631838604,
+          0.13091397969538326
+        ],
+        "r": [
+          28.685154,
+          0,
+          117.39653
+        ],
+        "s": [
+          0.04991988596257998,
+          0.16161472334219834,
+          0.04991988596257998
+        ],
+        "t": "cone"
+      },
+      "tree_v1_buttress4": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.4021314914150982,
+          0.022901183631838604,
+          0.21116959267824503
+        ],
+        "r": [
+          -34.4801598,
+          0,
+          122.699028
+        ],
+        "s": [
+          0.03999398599199048,
+          0.14650002037133894,
+          0.03999398599199048
+        ],
+        "t": "cone"
+      },
+      "tree_v1_root": {
+        "appearance": "instant",
+        "bump": 0.117647059,
+        "c": [
+          0.899999976,
+          0.899999976,
+          0.899999976
+        ],
+        "m": "bark",
+        "p": [
+          -1.3536806606363638,
+          0.009718540812204924,
+          0.16616860413508808
+        ],
+        "s": [
+          0.16305096330635016,
+          0.11338297600741105,
+          0.16305096330635016
+        ],
+        "t": "sphere"
+      },
+      "tree_v1_trunk": {
+        "appearance": "instant",
+        "bump": 0.0392156877,
+        "m": "bark",
+        "p": [
+          -1.3300922964018063,
+          0.554595141103749,
+          0.2014560043534089
+        ],
+        "r": [
+          -3.63738918,
+          0,
+          -2.43546939
+        ],
+        "s": [
+          0.10870065030301738,
+          1.112434003912707,
+          0.10870065030301738
+        ],
+        "t": "cone"
+      },
+      "tree_v1_twig0": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.1417941524472854,
+          0.8772502179815387,
+          0.3110702363593236
+        ],
+        "r": [
+          -32.2316284,
+          0,
+          -22.9459686
+        ],
+        "s": [
+          0.029116245663158423,
+          0.2385894833152307,
+          0.029116245663158423
+        ],
+        "t": "cone"
+      },
+      "tree_v1_twig1": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.061636875708934,
+          0.9483416349866135,
+          0.21371022331474054
+        ],
+        "r": [
+          24.765749,
+          0,
+          -35.0954895
+        ],
+        "s": [
+          0.029116245663158423,
+          0.24112970334338035,
+          0.029116245663158423
+        ],
+        "t": "cone"
+      },
+      "tree_v1_twig2": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.3184573647225846,
+          0.7928922623680408,
+          -0.06134694945475186
+        ],
+        "r": [
+          38.247097,
+          0,
+          -33.3964996
+        ],
+        "s": [
+          0.029116245663158423,
+          0.24140287775540212,
+          0.029116245663158423
+        ],
+        "t": "cone"
+      },
+      "tree_v1_twig3": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.4481066195082055,
+          0.8606797091944004,
+          -0.11146704326850718
+        ],
+        "r": [
+          26.4874878,
+          0,
+          35.8193321
+        ],
+        "s": [
+          0.029116245663158423,
+          0.23647299895186774,
+          0.029116245663158423
+        ],
+        "t": "cone"
+      },
+      "tree_v1_twig4": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.4659159911762718,
+          0.8206755067484418,
+          0.33774992424212713
+        ],
+        "r": [
+          -7.8139658,
+          0,
+          42.8546295
+        ],
+        "s": [
+          0.029116245663158423,
+          0.18637512010246718,
+          0.029116245663158423
+        ],
+        "t": "cone"
+      },
+      "tree_v1_twig5": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.4160924335266993,
+          0.8650850589175896,
+          0.44350621628959275
+        ],
+        "r": [
+          -46.2134247,
+          0,
+          -14.1839037
+        ],
+        "s": [
+          0.029116245663158423,
+          0.1999798469208902,
+          0.029116245663158423
+        ],
+        "t": "cone"
+      },
+      "tree_v2_branch0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.8832675100897992,
+          0.76749169721802,
+          -1.3526533295486534
+        ],
+        "r": [
+          33.0228043,
+          0,
+          -6.84820986
+        ],
+        "s": [
+          0.05533850339671554,
+          0.4797923553475375,
+          0.05533850339671554
+        ],
+        "t": "cone"
+      },
+      "tree_v2_branch1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -1.082573795753863,
+          0.8147312733057942,
+          -1.1793490142866814
+        ],
+        "r": [
+          -13.5257359,
+          0,
+          52.3078194
+        ],
+        "s": [
+          0.05533850339671554,
+          0.49763309008409384,
+          0.05533850339671554
+        ],
+        "t": "cone"
+      },
+      "tree_v2_branch2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.7919722314889235,
+          0.7402084566794895,
+          -1.1545922172224239
+        ],
+        "r": [
+          -23.3023357,
+          0,
+          -39.5675011
+        ],
+        "s": [
+          0.05533850339671554,
+          0.4161783514334832,
+          0.05533850339671554
+        ],
+        "t": "cone"
+      },
+      "tree_v2_buttress0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.8834470081414028,
+          0.024932745726754774,
+          -1.1285132290902888
+        ],
+        "r": [
+          -56.3327827,
+          0,
+          -131.874847
+        ],
+        "s": [
+          0.04486972820572012,
+          0.19134434889486682,
+          0.04486972820572012
+        ],
+        "t": "cone"
+      },
+      "tree_v2_buttress1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.8433734575788592,
+          0.024932745726754774,
+          -1.2200996047136778
+        ],
+        "r": [
+          7.82049799,
+          0,
+          -113.986794
+        ],
+        "s": [
+          0.053040248036610844,
+          0.17580804892806823,
+          0.053040248036610844
+        ],
+        "t": "cone"
+      },
+      "tree_v2_buttress2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.9115221952178773,
+          0.024932745726754774,
+          -1.288249507159593
+        ],
+        "r": [
+          65.0929489,
+          0,
+          -162.126328
+        ],
+        "s": [
+          0.05409502561636669,
+          0.17665214391441775,
+          0.05409502561636669
+        ],
+        "t": "cone"
+      },
+      "tree_v2_buttress3": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.9865162124433822,
+          0.024932745726754774,
+          -1.2383052136838273
+        ],
+        "r": [
+          22.5164871,
+          0,
+          119.111237
+        ],
+        "s": [
+          0.047568302306160035,
+          0.15754936926165533,
+          0.047568302306160035
+        ],
+        "t": "cone"
+      },
+      "tree_v2_buttress4": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          -0.9862908707333639,
+          0.024932745726754774,
+          -1.1437965164212773
+        ],
+        "r": [
+          -41.5596962,
+          0,
+          119.197777
+        ],
+        "s": [
+          0.044945022981321525,
+          0.19397640763540516,
+          0.044945022981321525
+        ],
+        "t": "cone"
+      },
+      "tree_v2_root": {
+        "appearance": "instant",
+        "bump": 0.117647059,
+        "c": [
+          0.899999976,
+          0.899999976,
+          0.899999976
+        ],
+        "m": "bark",
+        "p": [
+          -0.9249326754818177,
+          0.010470174442546552,
+          -1.2055969212317486
+        ],
+        "s": [
+          0.17878593403750384,
+          0.12215203501762402,
+          0.17878593403750384
+        ],
+        "t": "sphere"
+      },
+      "tree_v2_trunk": {
+        "appearance": "instant",
+        "bump": 0.0392156877,
+        "m": "bark",
+        "p": [
+          -0.9048392138040717,
+          0.60811545092667,
+          -1.2312124383709009
+        ],
+        "r": [
+          2.41071248,
+          0,
+          -1.89248908
+        ],
+        "s": [
+          0.11919063607022534,
+          1.21797258394682,
+          0.11919063607022534
+        ],
+        "t": "cone"
+      },
+      "tree_v2_twig0": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -0.8152998043829277,
+          0.8791005572072004,
+          -1.3958970778931326
+        ],
+        "r": [
+          16.2602406,
+          0,
+          -33.9906502
+        ],
+        "s": [
+          0.03192606284669678,
+          0.2473975371444208,
+          0.03192606284669678
+        ],
+        "t": "cone"
+      },
+      "tree_v2_twig1": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -0.9101542058623409,
+          0.951774464939423,
+          -1.4666050533375334
+        ],
+        "r": [
+          28.4149914,
+          0,
+          21.9429836
+        ],
+        "s": [
+          0.03192606284669678,
+          0.22978830756051988,
+          0.03192606284669678
+        ],
+        "t": "cone"
+      },
+      "tree_v2_twig2": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.1821500486792305,
+          0.9223022939770789,
+          -1.2181259768477046
+        ],
+        "r": [
+          18.0958462,
+          0,
+          41.6127777
+        ],
+        "s": [
+          0.03192606284669678,
+          0.27481435529486165,
+          0.03192606284669678
+        ],
+        "t": "cone"
+      },
+      "tree_v2_twig3": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -1.2221799403597415,
+          0.971390886278222,
+          -1.067486570164674
+        ],
+        "r": [
+          -39.4863892,
+          0,
+          30.4330063
+        ],
+        "s": [
+          0.03192606284669678,
+          0.26853201423024703,
+          0.03192606284669678
+        ],
+        "t": "cone"
+      },
+      "tree_v2_twig4": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -0.7796109900825048,
+          0.8154747499165894,
+          -1.079767456472974
+        ],
+        "r": [
+          -46.3916702,
+          0,
+          -4.29449368
+        ],
+        "s": [
+          0.03192606284669678,
+          0.19289435961402643,
+          0.03192606284669678
+        ],
+        "t": "cone"
+      },
+      "tree_v2_twig5": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          -0.6643922219830827,
+          0.8887327860585504,
+          -1.138473820059712
+        ],
+        "r": [
+          10.5672846,
+          0,
+          -41.5066833
+        ],
+        "s": [
+          0.03192606284669678,
+          0.2248711219242495,
+          0.03192606284669678
+        ],
+        "t": "cone"
+      },
+      "tree_v3_branch0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.6840978596522154,
+          0.6583994347557744,
+          0.3749984249554769
+        ],
+        "r": [
+          -10.1697178,
+          0,
+          -37.2243233
+        ],
+        "s": [
+          0.04309545699172785,
+          0.4171429535558435,
+          0.04309545699172785
+        ],
+        "t": "cone"
+      },
+      "tree_v3_branch1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.5332783134001087,
+          0.6001364294215964,
+          0.18870392507647604
+        ],
+        "r": [
+          48.8280869,
+          0,
+          14.2660961
+        ],
+        "s": [
+          0.04309545699172785,
+          0.420597566852484,
+          0.04309545699172785
+        ],
+        "t": "cone"
+      },
+      "tree_v3_branch2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.5071058084959166,
+          0.637056125360242,
+          0.4377481240960846
+        ],
+        "r": [
+          -40.549057,
+          0,
+          33.6170349
+        ],
+        "s": [
+          0.04309545699172785,
+          0.31529239272612186,
+          0.04309545699172785
+        ],
+        "t": "cone"
+      },
+      "tree_v3_buttress0": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.571185818535846,
+          0.01955563764775148,
+          0.3679134748055875
+        ],
+        "r": [
+          -57.1563187,
+          0,
+          -139.499191
+        ],
+        "s": [
+          0.0364000181829617,
+          0.13508442793807895,
+          0.0364000181829617
+        ],
+        "t": "cone"
+      },
+      "tree_v3_buttress1": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.603810005573989,
+          0.01955563764775148,
+          0.3045753930726745
+        ],
+        "r": [
+          5.98151636,
+          0,
+          -116.277542
+        ],
+        "s": [
+          0.04121924358674504,
+          0.12652204997512553,
+          0.04121924358674504
+        ],
+        "t": "cone"
+      },
+      "tree_v3_buttress2": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.5601545327284485,
+          0.01955563764775148,
+          0.24974136190356144
+        ],
+        "r": [
+          63.4912415,
+          0,
+          -155.388733
+        ],
+        "s": [
+          0.04246747192044097,
+          0.13728602878319393,
+          0.04246747192044097
+        ],
+        "t": "cone"
+      },
+      "tree_v3_buttress3": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.4936505908629027,
+          0.01955563764775148,
+          0.27804670105937024
+        ],
+        "r": [
+          28.685154,
+          0,
+          117.39653
+        ],
+        "s": [
+          0.042627281497542184,
+          0.13800504895422722,
+          0.042627281497542184
+        ],
+        "t": "cone"
+      },
+      "tree_v3_buttress4": {
+        "appearance": "instant",
+        "bump": 0.0313725509,
+        "m": "bark",
+        "p": [
+          1.5040058567129775,
+          0.01955563764775148,
+          0.3465780796955854
+        ],
+        "r": [
+          -34.4801598,
+          0,
+          122.699028
+        ],
+        "s": [
+          0.034151418141605605,
+          0.12509839490510685,
+          0.034151418141605605
+        ],
+        "t": "cone"
+      },
+      "tree_v3_root": {
+        "appearance": "instant",
+        "bump": 0.117647059,
+        "c": [
+          0.899999976,
+          0.899999976,
+          0.899999976
+        ],
+        "m": "bark",
+        "p": [
+          1.5453786916578143,
+          0.008298796500812375,
+          0.30815111278034124
+        ],
+        "s": [
+          0.1392314741366848,
+          0.09681929239421666,
+          0.1392314741366848
+        ],
+        "t": "sphere"
+      },
+      "tree_v3_trunk": {
+        "appearance": "instant",
+        "bump": 0.0392156877,
+        "m": "bark",
+        "p": [
+          1.5655211223325711,
+          0.4735764663949728,
+          0.338283512192278
+        ],
+        "r": [
+          -3.63738918,
+          0,
+          -2.43546939
+        ],
+        "s": [
+          0.09282098967345356,
+          0.9499227916460192,
+          0.09282098967345356
+        ],
+        "t": "cone"
+      },
+      "tree_v3_twig0": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.7263115134370475,
+          0.7490961019764846,
+          0.43188462192549293
+        ],
+        "r": [
+          -32.2316284,
+          0,
+          -22.9459686
+        ],
+        "s": [
+          0.024862765130621713,
+          0.20373486179946898,
+          0.024862765130621713
+        ],
+        "t": "cone"
+      },
+      "tree_v3_twig1": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.7947589213931352,
+          0.8098020468379392,
+          0.3487475593575453
+        ],
+        "r": [
+          24.765749,
+          0,
+          -35.0954895
+        ],
+        "s": [
+          0.024862765130621713,
+          0.20590399083727964,
+          0.024862765130621713
+        ],
+        "t": "cone"
+      },
+      "tree_v3_twig2": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.5754563515169215,
+          0.6770616761929547,
+          0.11387243283277157
+        ],
+        "r": [
+          38.247097,
+          0,
+          -33.3964996
+        ],
+        "s": [
+          0.024862765130621713,
+          0.2061372582483452,
+          0.024862765130621713
+        ],
+        "t": "cone"
+      },
+      "tree_v3_twig3": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.4647470585542737,
+          0.7349463151929907,
+          0.0710741910803028
+        ],
+        "r": [
+          26.4874878,
+          0,
+          35.8193321
+        ],
+        "s": [
+          0.024862765130621713,
+          0.20192756651017588,
+          0.024862765130621713
+        ],
+        "t": "cone"
+      },
+      "tree_v3_twig4": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.449539389611318,
+          0.7007861730799494,
+          0.4546667766463458
+        ],
+        "r": [
+          -7.8139658,
+          0,
+          42.8546295
+        ],
+        "s": [
+          0.024862765130621713,
+          0.15914829442321712,
+          0.024862765130621713
+        ],
+        "t": "cone"
+      },
+      "tree_v3_twig5": {
+        "appearance": "instant",
+        "bump": 0.0235294122,
+        "m": "bark",
+        "p": [
+          1.4920844150292323,
+          0.7387081042901505,
+          0.5449735380564756
+        ],
+        "r": [
+          -46.2134247,
+          0,
+          -14.1839037
+        ],
+        "s": [
+          0.024862765130621713,
+          0.17076555893822015,
+          0.024862765130621713
+        ],
+        "t": "cone"
+      },
+      "rock0": {
+        "t": "sphere",
+        "p": [
+          -0.00208,
+          0.04,
+          -1.17033
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          -13.540313350006556,
+          45.46255188449785,
+          0
+        ]
+      },
+      "rock1": {
+        "t": "sphere",
+        "p": [
+          -0.483676,
+          0.04,
+          -1.403526
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          -6.487896728357038,
+          43.356372117076454,
+          0
+        ]
+      },
+      "rock4": {
+        "t": "sphere",
+        "p": [
+          1.484864,
+          0.04,
+          -0.527679
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          2.9373138473446616,
+          121.8436815772829,
+          0
+        ]
+      },
+      "rock5": {
+        "t": "sphere",
+        "p": [
+          0.002588,
+          0.04,
+          -1.275045
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          12.664716924504344,
+          0.5413387493323119,
+          0
+        ]
+      },
+      "rock7": {
+        "t": "sphere",
+        "p": [
+          -0.617528,
+          0.04,
+          -1.44907
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          -10.95455388705539,
+          132.62185074822895,
+          0
+        ]
+      },
+      "rock8": {
+        "t": "sphere",
+        "p": [
+          0.464935,
+          0.04,
+          -1.497834
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          -1.0739178047457525,
+          72.94678794720157,
+          0
+        ]
+      },
+      "rock9": {
+        "t": "sphere",
+        "p": [
+          1.476545,
+          0.04,
+          0.084677
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          -10.830419885610358,
+          175.96218237081303,
+          0
+        ]
+      },
+      "rock10": {
+        "t": "sphere",
+        "p": [
+          -1.454076,
+          0.04,
+          0.697527
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          3.7236392151101256,
+          152.41258508384232,
+          0
+        ]
+      },
+      "rock12": {
+        "t": "sphere",
+        "p": [
+          1.353421,
+          0.04,
+          0.126895
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          14.469890247287182,
+          51.089176504139424,
+          0
+        ]
+      },
+      "rock13": {
+        "t": "sphere",
+        "p": [
+          1.316576,
+          0.04,
+          0.087347
+        ],
+        "s": [
+          0.13,
+          0.09,
+          0.18
+        ],
+        "m": "lodge_stone",
+        "appearance": "instant",
+        "r": [
+          14.398630955411843,
+          123.91078807486967,
+          0
+        ]
+      },
+      "bird_0": {
+        "t": "group",
+        "p": [
+          0.591203,
+          2.7,
+          -0.963005
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "r": [
+          0,
+          238.45360824742266,
+          0
+        ]
+      },
+      "bird_0_body": {
+        "t": "sphere",
+        "p": [
+          0,
+          0,
+          0
+        ],
+        "s": [
+          0.065,
+          0.035,
+          0.115
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0",
+        "sh": false
+      },
+      "bird_0_head": {
+        "t": "sphere",
+        "p": [
+          0,
+          0.012,
+          0.062
+        ],
+        "s": [
+          0.039,
+          0.036,
+          0.038
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0",
+        "sh": false
+      },
+      "bird_0_beak": {
+        "t": "cone",
+        "p": [
+          0,
+          0.008,
+          0.09
+        ],
+        "s": [
+          0.017,
+          0.032,
+          0.017
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0",
+        "sh": false,
+        "r": [
+          90,
+          0,
+          0
+        ]
+      },
+      "bird_0_tail": {
+        "t": "wedge",
+        "p": [
+          0,
+          0,
+          -0.069
+        ],
+        "s": [
+          0.047,
+          0.008,
+          0.055
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0",
+        "sh": false
+      },
+      "bird_0_wing-1": {
+        "t": "group",
+        "p": [
+          -0.025,
+          0.009,
+          0
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0",
+        "r": [
+          0,
+          0,
+          15
+        ]
+      },
+      "bird_0_wing-1_feathers": {
+        "t": "sphere",
+        "p": [
+          -0.07,
+          0,
+          -0.012
+        ],
+        "s": [
+          0.17,
+          0.012,
+          0.077
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0_wing-1",
+        "sh": false
+      },
+      "bird_0_wing1": {
+        "t": "group",
+        "p": [
+          0.025,
+          0.009,
+          0
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0",
+        "r": [
+          0,
+          0,
+          -15
+        ]
+      },
+      "bird_0_wing1_feathers": {
+        "t": "sphere",
+        "p": [
+          0.07,
+          0,
+          -0.012
+        ],
+        "s": [
+          0.17,
+          0.012,
+          0.077
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_0_wing1",
+        "sh": false
+      },
+      "bird_1": {
+        "t": "group",
+        "p": [
+          -0.722,
+          2.86,
+          1.176059
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "r": [
+          0,
+          418.45360824742266,
+          0
+        ]
+      },
+      "bird_1_body": {
+        "t": "sphere",
+        "p": [
+          0,
+          0,
+          0
+        ],
+        "s": [
+          0.065,
+          0.035,
+          0.115
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1",
+        "sh": false
+      },
+      "bird_1_head": {
+        "t": "sphere",
+        "p": [
+          0,
+          0.012,
+          0.062
+        ],
+        "s": [
+          0.039,
+          0.036,
+          0.038
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1",
+        "sh": false
+      },
+      "bird_1_beak": {
+        "t": "cone",
+        "p": [
+          0,
+          0.008,
+          0.09
+        ],
+        "s": [
+          0.017,
+          0.032,
+          0.017
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1",
+        "sh": false,
+        "r": [
+          90,
+          0,
+          0
+        ]
+      },
+      "bird_1_tail": {
+        "t": "wedge",
+        "p": [
+          0,
+          0,
+          -0.069
+        ],
+        "s": [
+          0.047,
+          0.008,
+          0.055
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1",
+        "sh": false
+      },
+      "bird_1_wing-1": {
+        "t": "group",
+        "p": [
+          -0.025,
+          0.009,
+          0
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1",
+        "r": [
+          0,
+          0,
+          15
+        ]
+      },
+      "bird_1_wing-1_feathers": {
+        "t": "sphere",
+        "p": [
+          -0.07,
+          0,
+          -0.012
+        ],
+        "s": [
+          0.17,
+          0.012,
+          0.077
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1_wing-1",
+        "sh": false
+      },
+      "bird_1_wing1": {
+        "t": "group",
+        "p": [
+          0.025,
+          0.009,
+          0
+        ],
+        "s": [
+          1,
+          1,
+          1
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1",
+        "r": [
+          0,
+          0,
+          -15
+        ]
+      },
+      "bird_1_wing1_feathers": {
+        "t": "sphere",
+        "p": [
+          0.07,
+          0,
+          -0.012
+        ],
+        "s": [
+          0.17,
+          0.012,
+          0.077
+        ],
+        "m": "lodge_dark",
+        "appearance": "instant",
+        "parent": "bird_1_wing1",
+        "sh": false
+      }
+    },
+    "geo_show": true,
+    "geometry_quality": 1,
+    "junction_ao": 0.35,
+    "l0": {
+      "c": {
+        "a": 1,
+        "b": 0.829999983,
+        "g": 0.600000024,
+        "r": 0.460000008
+      },
+      "cone": 0,
+      "int": 0.349999994,
+      "mode": 1,
+      "on": 1,
+      "px": -6,
+      "py": 3,
+      "pz": -5,
+      "rng": 30,
+      "sfade": 2.5,
+      "spec": 0.600000024
+    },
+    "l1": {
+      "c": {
+        "a": 1,
+        "b": 1,
+        "g": 0.689999998,
+        "r": 0.579999983
+      },
+      "cone": 0.550000012,
+      "int": 0.649999976,
+      "mode": 2,
+      "on": 0,
+      "px": 2.5999999,
+      "py": 3,
+      "pz": -1.5,
+      "rng": 7,
+      "sfade": 2.5,
+      "spec": 1
+    },
+    "l2": {
+      "c": {
+        "a": 1,
+        "b": 1,
+        "g": 0.860000014,
+        "r": 0.800000012
+      },
+      "cone": 0.550000012,
+      "int": 0.800000012,
+      "mode": 2,
+      "on": 0,
+      "px": 0,
+      "py": 3.20000005,
+      "pz": 3.20000005,
+      "rng": 6,
+      "sfade": 2.5,
+      "spec": 1
+    },
+    "lamp_aim_scene": 0,
+    "lamp_boost": 1,
+    "lamp_sat": 1.12,
+    "lamp_shadow": 1,
+    "lamp_shadow_strength": 0.850000024,
+    "lamp_shadow_tint": 0.5,
+    "lights": [
+      {
+        "id": "window_side-1",
+        "kind": "spot",
+        "p": [
+          -0.43870665842887197,
+          0.6,
+          -0.22
+        ],
+        "dir": [
+          -1.0,
+          -0.25,
+          6.123233995736766e-17
+        ],
+        "cone": [
+          65,
+          35
+        ],
+        "color": [
+          1,
+          0.58,
+          0.25
+        ],
+        "intensity": 1.4,
+        "range": 2.6,
+        "volume": 0.6,
+        "flicker": 0,
+        "portal": {
+          "c": [
+            -0.648706658428872,
+            0.52,
+            -0.22
+          ],
+          "size": [
+            0.115,
+            0.16
+          ],
+          "grid": [
+            2,
+            2
+          ],
+          "bar": 0.045,
+          "soft": 0.18,
+          "u": [
+            6.123233995736766e-17,
+            0,
+            1.0
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ]
+        },
+        "on_at": 1.05,
+        "off_at": 13.65,
+        "ramp": 0.65,
+        "fade": 0.65
+      },
+      {
+        "id": "window_side1",
+        "kind": "spot",
+        "p": [
+          0.238706658428872,
+          0.6,
+          -0.22
+        ],
+        "dir": [
+          1.0,
+          -0.25,
+          6.123233995736766e-17
+        ],
+        "cone": [
+          65,
+          35
+        ],
+        "color": [
+          1,
+          0.58,
+          0.25
+        ],
+        "intensity": 1.4,
+        "range": 2.6,
+        "volume": 0.6,
+        "flicker": 0,
+        "portal": {
+          "c": [
+            0.44870665842887203,
+            0.52,
+            -0.22
+          ],
+          "size": [
+            0.115,
+            0.16
+          ],
+          "grid": [
+            2,
+            2
+          ],
+          "bar": 0.045,
+          "soft": 0.18,
+          "u": [
+            6.123233995736766e-17,
+            0,
+            -1.0
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ]
+        },
+        "on_at": 1.22,
+        "off_at": 13.55,
+        "ramp": 0.65,
+        "fade": 0.65
+      },
+      {
+        "id": "window_front",
+        "kind": "spot",
+        "p": [
+          -0.3909015955515909,
+          0.6,
+          0.009464009408536617
+        ],
+        "dir": [
+          0.0,
+          -0.25,
+          1.0
+        ],
+        "cone": [
+          65,
+          35
+        ],
+        "color": [
+          1,
+          0.58,
+          0.25
+        ],
+        "intensity": 1.4,
+        "range": 2.6,
+        "volume": 0.6,
+        "flicker": 0,
+        "portal": {
+          "c": [
+            -0.3909015955515909,
+            0.52,
+            0.21946400940853664
+          ],
+          "size": [
+            0.115,
+            0.16
+          ],
+          "grid": [
+            2,
+            2
+          ],
+          "bar": 0.045,
+          "soft": 0.18,
+          "u": [
+            1.0,
+            0,
+            -0.0
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ]
+        },
+        "on_at": 1.3900000000000001,
+        "off_at": 13.450000000000001,
+        "ramp": 0.65,
+        "fade": 0.65
+      },
+      {
+        "id": "window_back",
+        "kind": "spot",
+        "p": [
+          -0.10000000000000003,
+          0.64,
+          -0.44946400940853665
+        ],
+        "dir": [
+          1.2246467991473532e-16,
+          -0.25,
+          -1.0
+        ],
+        "cone": [
+          65,
+          35
+        ],
+        "color": [
+          1,
+          0.58,
+          0.25
+        ],
+        "intensity": 1.4,
+        "range": 2.6,
+        "volume": 0.6,
+        "flicker": 0,
+        "portal": {
+          "c": [
+            -0.1,
+            0.56,
+            -0.6594640094085367
+          ],
+          "size": [
+            0.115,
+            0.16
+          ],
+          "grid": [
+            2,
+            2
+          ],
+          "bar": 0.045,
+          "soft": 0.18,
+          "u": [
+            -1.0,
+            0,
+            -1.2246467991473532e-16
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ]
+        },
+        "on_at": 1.56,
+        "off_at": 13.35,
+        "ramp": 0.65,
+        "fade": 0.65
+      },
+      {
+        "id": "door_light",
+        "kind": "spot",
+        "p": [
+          0.169353329214436,
+          0.5,
+          -0.010535990591463373
+        ],
+        "dir": [
+          0,
+          -0.35,
+          1
+        ],
+        "cone": [
+          75,
+          45
+        ],
+        "color": [
+          1,
+          0.54,
+          0.19
+        ],
+        "intensity": 1.4,
+        "range": 2.8,
+        "volume": 0.6,
+        "on_at": 3.35,
+        "off_at": 6.5,
+        "ramp": 0.6,
+        "fade": 0.5,
+        "flicker": 0
+      }
+    ],
+    "lights_cfg": {
+      "on": 1,
+      "gain": 4,
+      "bounce": 0.35,
+      "bounce_tint": [
+        0.4,
+        0.35,
+        0.25
+      ],
+      "binning": "cpu"
+    },
+    "look": {
+      "contrast": 1.03999996,
+      "ev": 0,
+      "gain": 1.02999997,
+      "gamma": 1,
+      "lift": -0.00499999989,
+      "on": true,
+      "saturation": 1,
+      "temperature": -0.0799999982,
+      "tint": 0,
+      "vibrance": 0.119999997
+    },
+    "loop": {
+      "period": 15,
+      "bpm": 72,
+      "beats_per_bar": 3
+    },
+    "materials": {
+      "bark": {
+        "base": "wood",
+        "cavity": 0.720000029,
+        "color_a": [
+          0.560000002,
+          0.479999989,
+          0.379999995
+        ],
+        "color_b": [
+          0.170000002,
+          0.140000001,
+          0.109999999
+        ],
+        "contrast": 1.29999995,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 1,
+        "macro": 0.400000006,
+        "macro_scale": 1.5,
+        "metallic": 0,
+        "moss": 0.25,
+        "mottling": 0.899999976,
+        "parallax": 0.0799999982,
+        "pattern": "bark",
+        "profile": 2,
+        "relief": 3.20000005,
+        "resolution": 512,
+        "rotation": 0,
+        "roughness": 0.949999988,
+        "roughness_variation": 0.25,
+        "seed": 5,
+        "tile": 2.85714293,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 2.5,
+        "world_mapping": 1
+      },
+      "flagstone": {
+        "base": "aggregate",
+        "color_a": [
+          0.560000002,
+          0.560000002,
+          0.540000021
+        ],
+        "color_b": [
+          0.319999993,
+          0.330000013,
+          0.310000002
+        ],
+        "contrast": 1,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 0.800000012,
+        "metallic": 0,
+        "mottling": 0.75,
+        "parallax": 0.0399999991,
+        "relief": 1.79999995,
+        "rotation": 0,
+        "roughness": 0.899999976,
+        "roughness_variation": 0.349999994,
+        "seed": 0,
+        "tile": 5.55556011,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1
+      },
+      "lacquer": {
+        "base": "wood",
+        "color_a": [
+          0.27,
+          0.15,
+          0.07
+        ],
+        "color_b": [
+          0.075,
+          0.045,
+          0.025
+        ],
+        "contrast": 1.32,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 0.55,
+        "metallic": 0,
+        "mottling": 0.5,
+        "relief": 1.8,
+        "rotation": 90,
+        "roughness": 0.29,
+        "roughness_variation": 0.22,
+        "seed": 47,
+        "tile": 2.2,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1,
+        "profile": 1,
+        "parallax": 0.07,
+        "resolution": 512,
+        "cavity": 0.55,
+        "macro": 0.22,
+        "macro_scale": 1.2
+      },
+      "meadow": {
+        "base": "grass",
+        "color_a": [
+          0.310000002,
+          0.340000004,
+          0.140000001
+        ],
+        "color_b": [
+          0.109999999,
+          0.129999995,
+          0.0649999976
+        ],
+        "contrast": 1,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 0.850000024,
+        "metallic": 0,
+        "mottling": 0.75,
+        "relief": 0.449999988,
+        "rotation": 0,
+        "roughness": 0.939999998,
+        "roughness_variation": 0.25,
+        "seed": 0,
+        "terrain": 1,
+        "tile": 3.125,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1
+      },
+      "painted_door": {
+        "base": "wood",
+        "color_a": [
+          0.300000012,
+          0.430000007,
+          0.300000012
+        ],
+        "color_b": [
+          0.119999997,
+          0.200000003,
+          0.129999995
+        ],
+        "contrast": 1,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 0.649999976,
+        "metallic": 0,
+        "mottling": 0.600000024,
+        "parallax": 0.0250000004,
+        "relief": 0.800000012,
+        "rotation": 0,
+        "roughness": 0.720000029,
+        "roughness_variation": 0.25,
+        "seed": 23,
+        "tile": 3.70370007,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1
+      },
+      "ridge_clay": {
+        "base": "clay",
+        "color_a": [
+          0.620000005,
+          0.280000001,
+          0.180000007
+        ],
+        "color_b": [
+          0.300000012,
+          0.119999997,
+          0.0799999982
+        ],
+        "contrast": 1,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 0.699999988,
+        "metallic": 0,
+        "mottling": 0.600000024,
+        "relief": 0.200000003,
+        "rotation": 0,
+        "roughness": 0.800000012,
+        "roughness_variation": 0.25,
+        "seed": 0,
+        "tile": 3.33332992,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1,
+        "wetness": 0.18
+      },
+      "rim_copper": {
+        "base": "metal",
+        "color_a": [
+          0.579999983,
+          0.419999987,
+          0.280000001
+        ],
+        "color_b": [
+          0.379999995,
+          0.239999995,
+          0.129999995
+        ],
+        "contrast": 1,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "grain": 0.200000003,
+        "metallic": 0.730000019,
+        "mottling": 0.400000006,
+        "relief": 0.119999997,
+        "rotation": 0,
+        "roughness": 0.239999995,
+        "roughness_variation": 0.25,
+        "seed": 0,
+        "tile": 1,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1
+      },
+      "slate": {
+        "base": "tile",
+        "cavity": 0.720000029,
+        "chip": 0.449999988,
+        "color_a": [
+          0.280000001,
+          0.300000012,
+          0.330000013
+        ],
+        "color_b": [
+          0.100000001,
+          0.109999999,
+          0.125
+        ],
+        "columns": 10,
+        "contrast": 1.02999997,
+        "crack_width": 0.0149999997,
+        "cracks": 0,
+        "dirt": 0.0199999996,
+        "grain": 0.300000012,
+        "jitter": 0.649999976,
+        "lichen_scale": 5,
+        "macro": 0.5,
+        "metallic": 0,
+        "mortar": 0.0599999987,
+        "mottling": 0.180000007,
+        "parallax": 0.219999999,
+        "profile": 1,
+        "relief": 2.20000005,
+        "rotation": 0,
+        "roughness": 0.620000005,
+        "roughness_variation": 0.349999994,
+        "rows": 12,
+        "seed": 0,
+        "tile": 1.53846002,
+        "variant": "organic",
+        "vein_strength": 1,
+        "vein_width": 0.0949999988,
+        "warp": 1,
+        "wetness": 0.18,
+        "world_mapping": 1
+      },
+      "silvery_wood": {
+        "base": "wood",
+        "variant": "organic",
+        "color_a": [
+          0.36,
+          0.29,
+          0.2
+        ],
+        "color_b": [
+          0.13,
+          0.11,
+          0.085
+        ],
+        "roughness": 0.56,
+        "relief": 1.3,
+        "grain": 0.9,
+        "tile": 3,
+        "seed": 137,
+        "world_mapping": 1
+      },
+      "lodge_stone": {
+        "base": "stone",
+        "pattern": "ashlar",
+        "color_a": [
+          0.52,
+          0.5,
+          0.43
+        ],
+        "color_b": [
+          0.26,
+          0.3,
+          0.28
+        ],
+        "roughness": 0.63,
+        "roughness_variation": 0.25,
+        "relief": 1.8,
+        "parallax": 0.04,
+        "tile": 2.4,
+        "moss": 0.25,
+        "wetness": 0.28,
+        "age": 0.5,
+        "seed": 137,
+        "world_mapping": 1
+      },
+      "lodge_glow": {
+        "base": "plain",
+        "color_a": [
+          0.023,
+          0.028,
+          0.03
+        ],
+        "color_b": [
+          0.023,
+          0.028,
+          0.03
+        ],
+        "roughness": 0.42
+      },
+      "lodge_dark": {
+        "base": "plain",
+        "color_a": [
+          0.07,
+          0.065,
+          0.055
+        ],
+        "color_b": [
+          0.055,
+          0.05,
+          0.043
+        ],
+        "roughness": 0.6
+      },
+      "stream": {
+        "base": "plain",
+        "color_a": [
+          0.06,
+          0.14,
+          0.16
+        ],
+        "color_b": [
+          0.09,
+          0.18,
+          0.21
+        ],
+        "roughness": 0.13,
+        "metallic": 0.12
+      }
+    },
+    "message_styles": [],
+    "metallic": 0,
+    "mirror_enable": 0,
+    "mist_density": 0.12,
+    "mist_on": 1,
+    "mist_start": 3,
+    "model_hidden": 1,
+    "motion_blur": 0,
+    "music_cycle_0_0": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 72,
+      "on": 0,
+      "period": 4,
+      "pulses": 4,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_0_1": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 79,
+      "on": 0,
+      "period": 3,
+      "pulses": 3,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_1_0": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 45,
+      "on": 0,
+      "period": 4,
+      "pulses": 4,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_1_1": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 45,
+      "on": 0,
+      "period": 3,
+      "pulses": 3,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_2_0": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 72,
+      "on": 0,
+      "period": 4,
+      "pulses": 4,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_2_1": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 79,
+      "on": 0,
+      "period": 3,
+      "pulses": 3,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_3_0": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 72,
+      "on": 0,
+      "period": 4,
+      "pulses": 4,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_cycle_3_1": {
+      "fade": 0.800000012,
+      "gain": 0.400000006,
+      "note": 79,
+      "on": 0,
+      "period": 3,
+      "pulses": 3,
+      "rotation": 0,
+      "steps": 8
+    },
+    "music_gain": 0.550000012,
+    "music_layout_seed": 0,
+    "music_level_0": 0.550000012,
+    "music_level_1": 0.699999988,
+    "music_level_2": 0.5,
+    "music_level_3": 0.349999994,
+    "music_on": 0,
+    "music_pos_0": [
+      -2,
+      1,
+      -2
+    ],
+    "music_pos_1": [
+      0,
+      0.5,
+      -3
+    ],
+    "music_pos_2": [
+      2,
+      1.79999995,
+      -2
+    ],
+    "music_pos_3": [
+      0,
+      2,
+      -4
+    ],
+    "music_reveal": 6,
+    "music_ring_intensity": 1.35000002,
+    "music_visible_0": 1,
+    "music_visible_1": 1,
+    "music_visible_2": 1,
+    "music_visible_3": 1,
+    "music_wave_gain": 0.219999999,
+    "music_wave_intensity": 1.45000005,
+    "music_waves": 1,
+    "normal_strength": 0.8,
+    "playback_loop": true,
+    "probe": {
+      "on": true,
+      "resolution": 128,
+      "strength": 1.14999998
+    },
+    "rays_on": 1,
+    "rays_strength": 0.25,
+    "refl_on": 1,
+    "rim_intensity": 0.14,
+    "roughness": 0.879999995,
+    "sb0": {
+      "c": {
+        "a": 1,
+        "b": 1,
+        "g": 0.769999981,
+        "r": 0.600000024
+      },
+      "detail": 0.720000029,
+      "dist": 1.2,
+      "halo": 0.8,
+      "int": 1.49079311,
+      "kind": 0,
+      "light": 1.3,
+      "on": 1,
+      "phase": 0.870000005,
+      "pitch": 0.12217304763960307,
+      "seed": 13,
+      "size": 0.075,
+      "yaw": -2.356194490192345,
+      "halo_size": 3
+    },
+    "sb1": {
+      "c": {
+        "a": 1,
+        "b": 0.280000001,
+        "g": 0.479999989,
+        "r": 0.720000029
+      },
+      "detail": 0.449999988,
+      "dist": 1.79999995,
+      "halo": 0.180000007,
+      "int": 0.800000012,
+      "kind": 1,
+      "light": 0,
+      "on": 0,
+      "phase": -1,
+      "pitch": 0.300000012,
+      "seed": 37,
+      "size": 0.0179999992,
+      "yaw": 1.70000005
+    },
+    "sb2": {
+      "c": {
+        "a": 1,
+        "b": 1,
+        "g": 0.720000029,
+        "r": 0.519999981
+      },
+      "detail": 0.600000024,
+      "dist": 1.79999995,
+      "halo": 0.349999994,
+      "int": 0.800000012,
+      "kind": 2,
+      "light": 0,
+      "on": 0,
+      "phase": 0.720000029,
+      "pitch": 0.649999976,
+      "seed": 71,
+      "size": 0.0280000009,
+      "yaw": 0.200000003
+    },
+    "scatter": [
+      {
+        "id": "smoke",
+        "kind": "rise",
+        "shape": "puff",
+        "center": [
+          0.24477226139447808,
+          1.7230922255578243,
+          -0.37
+        ],
+        "count": 32,
+        "size": [
+          0.06,
+          0.09
+        ],
+        "seed": 137,
+        "cycles": 2,
+        "flutter": 2,
+        "alpha": 0.18,
+        "sway": 0.06,
+        "grow": 2.0,
+        "spread": 0.06,
+        "drift": 0.12,
+        "colors": [
+          [
+            0.31,
+            0.4,
+            0.49
+          ],
+          [
+            0.42,
+            0.49,
+            0.55
+          ],
+          [
+            0.49,
+            0.55,
+            0.56
+          ]
+        ]
+      },
+      {
+        "id": "pool_reeds",
+        "kind": "crown",
+        "shape": "blade",
+        "center": [
+          1.27,
+          0.16,
+          -0.58
+        ],
+        "count": 180,
+        "size": [
+          0.014,
+          0.025
+        ],
+        "seed": 274,
+        "cycles": 1,
+        "flutter": 4,
+        "alpha": 1,
+        "sway": 0.035,
+        "extent": [
+          0.055,
+          0.13,
+          0.3
+        ],
+        "aspect": 3,
+        "colors": [
+          [
+            0.13,
+            0.23,
+            0.16
+          ],
+          [
+            0.26,
+            0.35,
+            0.21
+          ],
+          [
+            0.29,
+            0.39,
+            0.29
+          ]
+        ]
+      },
+      {
+        "id": "grass",
+        "kind": "ground",
+        "shape": "blade",
+        "center": [
+          0,
+          0,
+          0
+        ],
+        "count": 6400,
+        "size": [
+          0.045,
+          0.075
+        ],
+        "seed": 411,
+        "cycles": 1,
+        "flutter": 4,
+        "alpha": 1,
+        "sway": 0.035,
+        "radius": 1.79,
+        "aspect": 0.8,
+        "tall": [
+          0.2,
+          1.9
+        ],
+        "curvature": 0.7,
+        "gravity": 0.45,
+        "wind": 0.55,
+        "colors": [
+          [
+            0.13,
+            0.23,
+            0.16
+          ],
+          [
+            0.26,
+            0.35,
+            0.21
+          ],
+          [
+            0.29,
+            0.39,
+            0.29
+          ]
+        ],
+        "avoid": [
+          0.28564667078556405,
+          -0.3352679952957317,
+          1.084353329214436,
+          0.7047320047042683
+        ],
+        "path": [
+          0.169353329214436,
+          0.6394640094085366,
+          -0.12,
+          1.7
+        ],
+        "path_width": 0.32,
+        "path_bend": -0.102632022175327,
+        "stage": [
+          0,
+          0,
+          1.85
+        ],
+        "rim": 1.5,
+        "vary": 0.5,
+        "flowers": 0.015
+      },
+      {
+        "id": "rim_grass",
+        "kind": "ground",
+        "shape": "blade",
+        "center": [
+          0,
+          0,
+          0
+        ],
+        "count": 600,
+        "size": [
+          0.035,
+          0.06
+        ],
+        "seed": 548,
+        "cycles": 1,
+        "flutter": 4,
+        "alpha": 1,
+        "sway": 0.035,
+        "radius": 1.8350000000000002,
+        "rim": 12,
+        "lean": 0.6,
+        "curvature": 0.9,
+        "aspect": 1.5,
+        "tall": [
+          0.3,
+          1.5
+        ],
+        "wind": 0.45,
+        "colors": [
+          [
+            0.13,
+            0.23,
+            0.16
+          ],
+          [
+            0.26,
+            0.35,
+            0.21
+          ],
+          [
+            0.29,
+            0.39,
+            0.29
+          ]
+        ],
+        "stage": [
+          0,
+          0,
+          1.85
+        ]
+      },
+      {
+        "id": "ground_mist",
+        "kind": "orbit",
+        "shape": "puff",
+        "center": [
+          0,
+          0.1,
+          0
+        ],
+        "count": 64,
+        "size": [
+          0.45,
+          0.72
+        ],
+        "seed": 685,
+        "cycles": 1,
+        "flutter": 1,
+        "alpha": 0.085,
+        "sway": 0.035,
+        "radius": 1.6500000000000001,
+        "aspect": 0.6,
+        "extent": [
+          0.08,
+          0.04,
+          0
+        ],
+        "colors": [
+          [
+            0.31,
+            0.4,
+            0.49
+          ],
+          [
+            0.42,
+            0.49,
+            0.55
+          ],
+          [
+            0.49,
+            0.55,
+            0.56
+          ]
+        ],
+        "emissive": 0.04,
+        "fade": 0.12
+      },
+      {
+        "id": "high_mist",
+        "kind": "orbit",
+        "shape": "puff",
+        "center": [
+          0,
+          0.37,
+          0
+        ],
+        "count": 24,
+        "size": [
+          0.28,
+          0.46
+        ],
+        "seed": 822,
+        "cycles": 1,
+        "flutter": 1,
+        "alpha": 0.06,
+        "sway": 0.035,
+        "radius": 1.7000000000000002,
+        "aspect": 0.7,
+        "extent": [
+          0.04,
+          0.12,
+          0
+        ],
+        "colors": [
+          [
+            0.31,
+            0.4,
+            0.49
+          ],
+          [
+            0.42,
+            0.49,
+            0.55
+          ],
+          [
+            0.49,
+            0.55,
+            0.56
+          ]
+        ]
+      },
+      {
+        "id": "fireflies",
+        "kind": "orbit",
+        "shape": "spark",
+        "center": [
+          0,
+          0.44,
+          0
+        ],
+        "count": 20,
+        "size": [
+          0.008,
+          0.012
+        ],
+        "seed": 959,
+        "cycles": 2,
+        "flutter": 2,
+        "alpha": 0.8,
+        "sway": 0.035,
+        "radius": 1.7000000000000002,
+        "emissive": 1.6,
+        "extent": [
+          0.16,
+          0.35,
+          0.1
+        ],
+        "colors": [
+          [
+            0.6,
+            0.95,
+            0.53
+          ],
+          [
+            0.95,
+            0.76,
+            0.35
+          ],
+          [
+            0.64,
+            0.8,
+            1
+          ]
+        ],
+        "fade": 0.1
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          0.885069789341047,
+          0.8159326014157636,
+          0.8334177910240365
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.10466019224017988,
+          0.09809961126346513,
+          0.10466019224017988
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          0.8851054033085589,
+          0.8159462039727994,
+          0.8334435902461199
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          0.8446386639525835,
+          0.47899366499761875,
+          1.0540276383261775
+        ],
+        "id": "tree_v0_tip0",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 1096,
+        "shape": "leaf",
+        "size": [
+          0.026498486627937377,
+          0.041219871056714645
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          0.5352161230217346,
+          0.8121050273553089,
+          1.1390336828669096
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.10466019224017988,
+          0.09809961126346513,
+          0.10466019224017988
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          0.5352402094110139,
+          0.8121031798218586,
+          1.1390315777092732
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          0.8582270406170823,
+          0.562541017105332,
+          1.0408449866319658
+        ],
+        "id": "tree_v0_tip1",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 1233,
+        "shape": "leaf",
+        "size": [
+          0.026498486627937377,
+          0.041219871056714645
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          1.044575963001757,
+          0.7487294848902017,
+          1.1802535453116159
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.10466019224017988,
+          0.09809961126346513,
+          0.10466019224017988
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          1.0445907729329436,
+          0.7487401946956601,
+          1.1802673245252366
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          0.8391900036852513,
+          0.5001664027533963,
+          1.0413798880496012
+        ],
+        "id": "tree_v0_tip2",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 1370,
+        "shape": "leaf",
+        "size": [
+          0.026498486627937377,
+          0.041219871056714645
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          0.8605586896610472,
+          0.9436405540986729,
+          1.02781361185994
+        ],
+        "clusters": 16,
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 1900,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "emissive": 0.0500000007,
+        "extent": [
+          0.47402849834565275,
+          0.3776034582783449,
+          0.47402849834565275
+        ],
+        "fade": 0.119999997,
+        "fill": 0.699999988,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          0.8636249614328912,
+          1.026034480768455,
+          1.024575776365344
+        ],
+        "guide_fraction": 0.119999997,
+        "guide_radius": 0.20609934976305494,
+        "guide_start": [
+          0.8636249614328912,
+          0.7387448399913865,
+          1.024575776365344
+        ],
+        "id": "tree_v0_crown",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 1507,
+        "shape": "leaf",
+        "size": [
+          0.026498486627937377,
+          0.041219871056714645
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -1.045809956769493,
+          0.9624595080445504,
+          0.28755321917178756
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.11311734399287507,
+          0.10605357896892002,
+          0.11311734399287507
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -1.0457929655207812,
+          0.9624741830410546,
+          0.28757856269637944
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          -1.3366662413037593,
+          0.5796004483299579,
+          0.20132552403543003
+        ],
+        "id": "tree_v1_tip0",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 2077,
+        "shape": "leaf",
+        "size": [
+          0.02915562097883366,
+          0.04535319145580633
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -1.407825620874046,
+          0.8599288790338584,
+          -0.15909473632390256
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.11311734399287507,
+          0.10605357896892002,
+          0.11311734399287507
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -1.4078038497230512,
+          0.8599357387038578,
+          -0.1590949225959332
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          -1.3278985059061967,
+          0.5456777596160073,
+          0.21166810360529603
+        ],
+        "id": "tree_v1_tip1",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 2214,
+        "shape": "leaf",
+        "size": [
+          0.02915562097883366,
+          0.04535319145580633
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -1.476179355730516,
+          0.8628444412532235,
+          0.43794763698737194
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.11311734399287507,
+          0.10605357896892002,
+          0.11311734399287507
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -1.476165936045523,
+          0.8628621127997865,
+          0.4379555535486759
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          -1.3208364229996667,
+          0.629223193392158,
+          0.19791815992163203
+        ],
+        "id": "tree_v1_tip2",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 2351,
+        "shape": "leaf",
+        "size": [
+          0.02915562097883366,
+          0.04535319145580633
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -1.3100732930167387,
+          1.02044676867901,
+          0.23086173724217
+        ],
+        "clusters": 16,
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 1900,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "emissive": 0.0500000007,
+        "extent": [
+          0.5126530365297555,
+          0.4081787171901447,
+          0.5126530365297555
+        ],
+        "fade": 0.119999997,
+        "fill": 0.699999988,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -1.306503932167249,
+          1.1091902789679842,
+          0.23674340538160818
+        ],
+        "guide_fraction": 0.119999997,
+        "guide_radius": 0.2267659512049437,
+        "guide_start": [
+          -1.306503932167249,
+          0.7986169963216296,
+          0.23674340538160818
+        ],
+        "id": "tree_v1_crown",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 2488,
+        "shape": "leaf",
+        "size": [
+          0.02915562097883366,
+          0.04535319145580633
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -0.8593256878394654,
+          0.9671823560703847,
+          -1.4834208600889065
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.12406109419086257,
+          0.11628437567852525,
+          0.12406109419086257
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -0.8592834720964648,
+          0.967198480138892,
+          -1.4833902784546438
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          -0.907251547210619,
+          0.5677849134246337,
+          -1.2219164766192616
+        ],
+        "id": "tree_v2_tip0",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 3058,
+        "shape": "leaf",
+        "size": [
+          0.0314105217571135,
+          0.048860815141318494
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -1.2740318690650334,
+          0.962645263066133,
+          -1.1211528273956959
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.12406109419086257,
+          0.11628437567852525,
+          0.12406109419086257
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -1.274003317772081,
+          0.9626430730546636,
+          -1.1211553227872506
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          -0.8911442876958774,
+          0.6668194718118958,
+          -1.2375428017627108
+        ],
+        "id": "tree_v2_tip1",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 3195,
+        "shape": "leaf",
+        "size": [
+          0.0314105217571135,
+          0.048860815141318494
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -0.6702517905821999,
+          0.8875217707920359,
+          -1.0722920224627974
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.12406109419086257,
+          0.11628437567852525,
+          0.12406109419086257
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -0.6702342353281098,
+          0.8875344658784415,
+          -1.0722756889908032
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          -0.9137102278242399,
+          0.5928824500980809,
+          -1.2369087454540444
+        ],
+        "id": "tree_v2_tip2",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 3332,
+        "shape": "leaf",
+        "size": [
+          0.0314105217571135,
+          0.048860815141318494
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          -0.8883804199303802,
+          1.1185635833316332,
+          -1.2529898077200345
+        ],
+        "clusters": 16,
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 1900,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "emissive": 0.0500000007,
+        "extent": [
+          0.5618993518324163,
+          0.4475999632865253,
+          0.5618993518324163
+        ],
+        "fade": 0.119999997,
+        "fill": 0.699999988,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          -0.8847457521263259,
+          1.2162309053433982,
+          -1.2568278420831644
+        ],
+        "guide_fraction": 0.119999997,
+        "guide_radius": 0.24430406916273348,
+        "guide_start": [
+          -0.8847457521263259,
+          0.8756862682505197,
+          -1.2568278420831644
+        ],
+        "id": "tree_v2_crown",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 3469,
+        "shape": "leaf",
+        "size": [
+          0.0314105217571135,
+          0.048860815141318494
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          1.8082737465146521,
+          0.8218574940286311,
+          0.41180311548160625
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.09659246554074843,
+          0.09056061882670872,
+          0.09659246554074843
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          1.80828825557708,
+          0.8218700252112429,
+          0.41182475666800095
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          1.5599075397996516,
+          0.4949288443003059,
+          0.33817209324295294
+        ],
+        "id": "tree_v3_tip0",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 4039,
+        "shape": "leaf",
+        "size": [
+          0.024896388257617662,
+          0.038727717856722944
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          1.499143560763184,
+          0.734305170927672,
+          0.030404244829368987
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.09659246554074843,
+          0.09056061882670872,
+          0.09659246554074843
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          1.4991621514503235,
+          0.7343110284948199,
+          0.030404085769104083
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          1.56739443039808,
+          0.46596179092908985,
+          0.34700376507541447
+        ],
+        "id": "tree_v3_tip1",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 4176,
+        "shape": "leaf",
+        "size": [
+          0.024896388257617662,
+          0.038727717856722944
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          1.4407753605770046,
+          0.7367948098571686,
+          0.5402269902614788
+        ],
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 220,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "extent": [
+          0.09659246554074843,
+          0.09056061882670872,
+          0.09659246554074843
+        ],
+        "fade": 0.119999997,
+        "fill": 0.850000024,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          1.440786819831744,
+          0.736809899835347,
+          0.5402337503227388
+        ],
+        "guide_fraction": 0.850000024,
+        "guide_start": [
+          1.5734248407287705,
+          0.5373023930706856,
+          0.3352624978694305
+        ],
+        "id": "tree_v3_tip2",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 4313,
+        "shape": "leaf",
+        "size": [
+          0.024896388257617662,
+          0.038727717856722944
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      },
+      {
+        "alpha": 1,
+        "aspect": 1,
+        "center": [
+          1.582615626379219,
+          0.8713736184081889,
+          0.3633934744712457
+        ],
+        "clusters": 16,
+        "colors": [
+          [
+            0.15,
+            0.29,
+            0.22
+          ],
+          [
+            0.25,
+            0.39,
+            0.31
+          ],
+          [
+            0.38,
+            0.44,
+            0.32
+          ]
+        ],
+        "count": 1900,
+        "cycles": 1,
+        "drift": 0.300000012,
+        "emissive": 0.0500000007,
+        "extent": [
+          0.4377615228349021,
+          0.34854945566207196,
+          0.4377615228349021
+        ],
+        "fade": 0.119999997,
+        "fill": 0.699999988,
+        "flutter": 4,
+        "ground": 0,
+        "grow": 1,
+        "guide_end": [
+          1.5856635530073282,
+          0.9471529300236801,
+          0.3684159122957811
+        ],
+        "guide_fraction": 0.119999997,
+        "guide_radius": 0.19363858409686693,
+        "guide_start": [
+          1.5856635530073282,
+          0.6819501057442781,
+          0.3684159122957811
+        ],
+        "id": "tree_v3_crown",
+        "irregularity": 0.800000012,
+        "kind": "crown",
+        "leaf_detail": 0.85,
+        "radius": 1,
+        "rim": 0,
+        "seed": 4450,
+        "shape": "leaf",
+        "size": [
+          0.024896388257617662,
+          0.038727717856722944
+        ],
+        "speed": 0.300000012,
+        "spin": 1,
+        "sway": 0.04
+      }
+    ],
+    "scatter_cfg": {
+      "gust": 0.6,
+      "heading": 24,
+      "on": 1,
+      "quality": 1,
+      "spatial_scale": 1,
+      "translucency": 1,
+      "turbulence": 0.45
+    },
+    "scene_body_radius": 2,
+    "scene_companion_radius": 0,
+    "scene_cx": 0,
+    "scene_cy": 0.82,
+    "scene_cz": 0,
+    "scene_floor": 0,
+    "scene_name": "refuge-moonlit-137",
+    "scene_only": 1,
+    "scene_radius": 1.85,
+    "scene_text": [],
+    "scene_text_enabled": false,
+    "screen": {
+      "ao": 1,
+      "ao_radius": 0.0799999982,
+      "ssr": 1,
+      "tiers": "high"
+    },
+    "shadow_ao": 0.5,
+    "shadow_auto_fit": 1,
+    "shadow_contact": 1,
+    "shadow_enable": 1,
+    "shadow_fixed_radius": 12,
+    "shadow_soft": 0.035,
+    "shadow_strength": 0.839999974,
+    "shafts_camera": 0.349999994,
+    "shafts_offset": 0,
+    "shafts_on": 0,
+    "shafts_reach": 0.899999976,
+    "shafts_slope": -0.600000024,
+    "shafts_strength": 0.159999996,
+    "shafts_width": 0.0350000001,
+    "sky_haze": 0.159999996,
+    "sky_horizon": [
+      0.16,
+      0.24,
+      0.29,
+      1
+    ],
+    "sky_horizon_glow": 0.300000012,
+    "sky_intensity": 0.65,
+    "sky_night": 0.7,
+    "sky_on": 1,
+    "sky_rayleigh": 0.800000012,
+    "sky_sun_glow": 0.449999988,
+    "sky_sun_limb": 0.649999976,
+    "sky_sun_size": 0.00800000038,
+    "sky_zenith": [
+      0.035,
+      0.055,
+      0.115,
+      1
+    ],
+    "snd_birds": 0,
+    "snd_crows": 0,
+    "snd_echo_fb": 0,
+    "snd_echo_mix": 0,
+    "snd_echo_ms": 80,
+    "snd_level": 0,
+    "snd_rain": 0,
+    "snd_wind": 0,
+    "spec_gain": 1,
+    "spec_intensity": 0.25,
+    "spec_power": 48,
+    "star_color": 0.419999987,
+    "star_density": 0.550000012,
+    "star_galaxy": 0.479999989,
+    "star_intensity": 0.800000012,
+    "star_on": 1,
+    "star_seed": 7,
+    "star_twinkle": 0,
+    "sun_col": [
+      0.58,
+      0.73,
+      1,
+      1
+    ],
+    "sun_day_t": 0.219999999,
+    "sun_dist": 6.41393995,
+    "sun_intensity": 0.9,
+    "sun_move": 0,
+    "sun_on": 1,
+    "sun_orbit_speed": 0,
+    "sun_pitch": 0.12217304763960307,
+    "sun_yaw": -2.356194490192345,
+    "taa": {
+      "feedback": 0.879999995,
+      "on": true
+    },
+    "tgt_x": 0,
+    "tgt_y": 0.82,
+    "tgt_z": 0,
+    "two_sided": 0,
+    "unlit": 0,
+    "use_texture": 1,
+    "vignette": 0.0799999982,
+    "volume_cfg": {
+      "strength": 0.6,
+      "sharpness": 0.25,
+      "steps": 24,
+      "export_steps": 32,
+      "quality_ratio": 1,
+      "grain": 0,
+      "length": 1,
+      "cut": 1.5,
+      "sky": 4,
+      "sky_steps": 24,
+      "sky_reach": 12,
+      "sky_g": 0.55,
+      "sky_ball": [
+        0,
+        0.8,
+        0,
+        2.5
+      ],
+      "sky_falloff": 0.7
+    },
+    "scene_filename": "refuge-moonlit-137.scene",
+    "film_export_loop": 1,
+    "anims": [
+      {
+        "id": "door_hinge",
+        "ch": "r",
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "t": 3.35,
+            "v": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "t": 4.2,
+            "v": [
+              0,
+              -62,
+              0
+            ],
+            "ease": "smooth"
+          },
+          {
+            "t": 5.8,
+            "v": [
+              0,
+              -62,
+              0
+            ]
+          },
+          {
+            "t": 6.9,
+            "v": [
+              0,
+              0,
+              0
+            ],
+            "ease": "smooth"
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bird_0_wing-1",
+        "ch": "r",
+        "repeat": 24,
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              0,
+              15
+            ]
+          },
+          {
+            "t": 7.5,
+            "v": [
+              0,
+              0,
+              -40
+            ],
+            "ease": "smooth"
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              0,
+              15
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "bird_0_wing1",
+        "ch": "r",
+        "repeat": 24,
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              0,
+              -15
+            ]
+          },
+          {
+            "t": 7.5,
+            "v": [
+              0,
+              0,
+              40
+            ],
+            "ease": "smooth"
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              0,
+              -15
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "bird_0",
+        "ch": "p",
+        "repeat": 2,
+        "keys": [
+          {
+            "t": 0.0,
+            "v": [
+              0.5912033062378071,
+              2.7,
+              -0.9630050107312451
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 1.25,
+            "v": [
+              0.030494576637669767,
+              2.7,
+              -1.1295884563838676
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 2.5,
+            "v": [
+              -0.5383851501460603,
+              2.7,
+              -0.9934995873689149
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 3.75,
+            "v": [
+              -0.963005010731245,
+              2.7,
+              -0.5912033062378071
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 5.0,
+            "v": [
+              -1.1295884563838676,
+              2.7,
+              -0.030494576637669336
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 6.25,
+            "v": [
+              -0.9934995873689149,
+              2.7,
+              0.5383851501460601
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 7.5,
+            "v": [
+              -0.5912033062378074,
+              2.7,
+              0.963005010731245
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 8.75,
+            "v": [
+              -0.030494576637669402,
+              2.7,
+              1.1295884563838676
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 10.0,
+            "v": [
+              0.5383851501460601,
+              2.7,
+              0.9934995873689149
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 11.25,
+            "v": [
+              0.963005010731245,
+              2.7,
+              0.5912033062378074
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 12.5,
+            "v": [
+              1.1295884563838676,
+              2.7,
+              0.03049457663766947
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 13.75,
+            "v": [
+              0.993499587368915,
+              2.7,
+              -0.53838515014606
+            ],
+            "ease": "spline"
+          }
+        ]
+      },
+      {
+        "id": "bird_0",
+        "ch": "r",
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              238.45360824742266,
+              0
+            ]
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              958.4536082474226,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bird_1_wing-1",
+        "ch": "r",
+        "repeat": 24,
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              0,
+              15
+            ]
+          },
+          {
+            "t": 7.5,
+            "v": [
+              0,
+              0,
+              -40
+            ],
+            "ease": "smooth"
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              0,
+              15
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "bird_1_wing1",
+        "ch": "r",
+        "repeat": 24,
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              0,
+              -15
+            ]
+          },
+          {
+            "t": 7.5,
+            "v": [
+              0,
+              0,
+              40
+            ],
+            "ease": "smooth"
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              0,
+              -15
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "bird_1",
+        "ch": "p",
+        "repeat": 2,
+        "keys": [
+          {
+            "t": 0.0,
+            "v": [
+              -0.72200049788334,
+              2.8600000000000003,
+              1.1760592166452373
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 1.25,
+            "v": [
+              -0.03724116438936617,
+              2.8600000000000003,
+              1.3794974069112722
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 2.5,
+            "v": [
+              0.6574969090279318,
+              2.8600000000000003,
+              1.213300381034604
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 3.75,
+            "v": [
+              1.1760592166452373,
+              2.8600000000000003,
+              0.72200049788334
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 5.0,
+            "v": [
+              1.3794974069112722,
+              2.8600000000000003,
+              0.03724116438936626
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 6.25,
+            "v": [
+              1.2133003810346041,
+              2.8600000000000003,
+              -0.6574969090279317
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 7.5,
+            "v": [
+              0.722000497883339,
+              2.8600000000000003,
+              -1.176059216645238
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 8.75,
+            "v": [
+              0.037241164389366345,
+              2.8600000000000003,
+              -1.3794974069112722
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 10.0,
+            "v": [
+              -0.6574969090279317,
+              2.8600000000000003,
+              -1.2133003810346041
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 11.25,
+            "v": [
+              -1.1760592166452364,
+              2.8600000000000003,
+              -0.7220004978833412
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 12.5,
+            "v": [
+              -1.3794974069112722,
+              2.8600000000000003,
+              -0.03724116438936643
+            ],
+            "ease": "spline"
+          },
+          {
+            "t": 13.75,
+            "v": [
+              -1.2133003810346041,
+              2.8600000000000003,
+              0.6574969090279316
+            ],
+            "ease": "spline"
+          }
+        ]
+      },
+      {
+        "id": "bird_1",
+        "ch": "r",
+        "keys": [
+          {
+            "t": 0,
+            "v": [
+              0,
+              418.45360824742266,
+              0
+            ]
+          },
+          {
+            "t": 15,
+            "v": [
+              0,
+              1138.4536082474226,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "scene_controls": {
+      "version": 1,
+      "title": "Atmospheres · refuge",
+      "controls": {
+        "wind": {
+          "label": "Souffle du vent",
+          "type": "slider",
+          "default": 0.6,
+          "value": 0.6,
+          "min": 0,
+          "max": 2,
+          "step": 0.05,
+          "bindings": [
+            {
+              "target": "wind",
+              "property": "gust"
+            }
+          ]
+        },
+        "ground_mist": {
+          "label": "Brume au sol",
+          "type": "slider",
+          "default": 0.085,
+          "value": 0.085,
+          "min": 0,
+          "max": 0.2,
+          "step": 0.005,
+          "bindings": [
+            {
+              "target": "scatter",
+              "property": "alpha",
+              "ids": [
+                "ground_mist"
+              ]
+            }
+          ]
+        },
+        "rays": {
+          "label": "Force des rayons",
+          "type": "slider",
+          "default": 0.6,
+          "value": 0.6,
+          "min": 0,
+          "max": 2,
+          "step": 0.05,
+          "bindings": [
+            {
+              "target": "volume",
+              "property": "strength"
+            }
+          ]
+        },
+        "grass_height": {
+          "label": "Hauteur de l herbe",
+          "type": "slider",
+          "default": 0.8,
+          "value": 0.8,
+          "min": 0.2,
+          "max": 2,
+          "step": 0.05,
+          "bindings": [
+            {
+              "target": "scatter",
+              "property": "aspect",
+              "ids": [
+                "grass"
+              ]
+            }
+          ]
+        },
+        "bloom": {
+          "label": "Halo lumineux",
+          "type": "slider",
+          "default": 0.18,
+          "value": 0.18,
+          "min": 0,
+          "max": 0.5,
+          "step": 0.01,
+          "bindings": [
+            {
+              "target": "scene",
+              "property": "bloom_intensity"
+            }
+          ]
+        },
+        "flare": {
+          "label": "Flare optique",
+          "type": "slider",
+          "default": 0.1,
+          "value": 0.1,
+          "min": 0,
+          "max": 0.4,
+          "step": 0.01,
+          "bindings": [
+            {
+              "target": "scene",
+              "property": "flare_strength"
+            }
+          ]
+        },
+        "birds": {
+          "label": "Oiseaux visibles",
+          "type": "toggle",
+          "default": true,
+          "value": true,
+          "bindings": [
+            {
+              "target": "geometry",
+              "prefix": "bird_",
+              "property": "visible"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "model": "",
+  "seq": [
+    {
+      "op": "loop_orbit",
+      "lane": "camera",
+      "at": 0,
+      "dur": 15,
+      "turns": 1,
+      "front_yaw": -12,
+      "front_t": 3.2,
+      "front_speed": 0.72,
+      "dist": 8.8,
+      "pitch": 14,
+      "dip_pitch": 6,
+      "push": 0.06,
+      "push_t": 3.2,
+      "push_width": 2.5,
+      "target": [
+        0,
+        0.82,
+        0
+      ],
+      "fov": 44
+    },
+    {
+      "op": "hold",
+      "lane": "scene",
+      "at": 0,
+      "dur": 15,
+      "end_film": true
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 1.05,
+      "dur": 0.075,
+      "play": {
+        "synth": "numeris_spark",
+        "volume": 0.012,
+        "duration": 0.075,
+        "fadein": 0.002,
+        "envelop": 45,
+        "freq": [
+          0.52,
+          0.03,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 1.22,
+      "dur": 0.075,
+      "play": {
+        "synth": "numeris_spark",
+        "volume": 0.012,
+        "duration": 0.075,
+        "fadein": 0.002,
+        "envelop": 45,
+        "freq": [
+          0.52,
+          0.03,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 1.3900000000000001,
+      "dur": 0.075,
+      "play": {
+        "synth": "numeris_spark",
+        "volume": 0.012,
+        "duration": 0.075,
+        "fadein": 0.002,
+        "envelop": 45,
+        "freq": [
+          0.52,
+          0.03,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 1.56,
+      "dur": 0.075,
+      "play": {
+        "synth": "numeris_spark",
+        "volume": 0.012,
+        "duration": 0.075,
+        "fadein": 0.002,
+        "envelop": 45,
+        "freq": [
+          0.52,
+          0.03,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 3.38,
+      "dur": 0.79,
+      "play": {
+        "sample": "door_creak",
+        "gain": 0.27,
+        "pitch": 1,
+        "pan": 0
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 6.12,
+      "dur": 0.79,
+      "play": {
+        "sample": "door_creak",
+        "gain": 0.17,
+        "pitch": 1,
+        "pan": 0
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 8.1,
+      "dur": 0.6,
+      "play": {
+        "synth": "tweet",
+        "volume": 0.065,
+        "duration": 0.6,
+        "fadein": 0.01,
+        "envelop": 9,
+        "freq": [
+          1.45,
+          8,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "op": "sound",
+      "lane": "audio",
+      "at": 9.5,
+      "dur": 0.6,
+      "play": {
+        "synth": "tweet",
+        "volume": 0.065,
+        "duration": 0.6,
+        "fadein": 0.01,
+        "envelop": 9,
+        "freq": [
+          2.1799999999999997,
+          8,
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "version": 1,
+  "export": {
+    "loop": 1,
+    "watermark": 1
+  },
+  "generator": {
+    "version": 2,
+    "seed": 137,
+    "architecture": "refuge",
+    "biome": "moonlit",
+    "engine_requirements": {
+      "loop_animation": 2
+    },
+    "period": 15,
+    "tree_positions": [
+      [
+        0.8297225430207463,
+        1.0677951116446354
+      ],
+      [
+        -1.3536806606363638,
+        0.16616860413508808
+      ],
+      [
+        -0.9249326754818177,
+        -1.2055969212317486
+      ],
+      [
+        1.5453786916578143,
+        0.30815111278034124
+      ]
+    ],
+    "footprints": [
+      [
+        -0.1,
+        -0.22,
+        0.698706658428872,
+        0.5894640094085366
+      ],
+      [
+        1.0,
+        -0.55,
+        0.37,
+        0.49
+      ]
+    ],
+    "swept_volumes": [],
+    "path": [
+      0.169353329214436,
+      0.6394640094085366,
+      -0.12,
+      1.7
+    ],
+    "path_bend": -0.102632022175327,
+    "budgets": {
+      "objects": 305,
+      "emitters": 23,
+      "lights": 5,
+      "cards": 17560
+    },
+    "rules": [
+      "foundation clearance",
+      "entrance anchored path",
+      "separated trunks",
+      "recessed opaque windows",
+      "integer periodic wind",
+      "shared materials"
+    ],
+    "clearance_validation": {
+      "swept_volumes": 0,
+      "bounds_tested": 0,
+      "collisions": []
+    }
+  }
+}
