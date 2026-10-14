@@ -3,7 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),zlib=require('node:zlib'),{spawnSync}=require('node:child_process');
 const MAX_FILE=25*1024*1024,MANIFEST='deploy-manifest.json';
 const siteFiles=['robots.txt','sitemap.xml','sitemap-app.xml','site.webmanifest','sw.js','404.html','_redirects','favicon.ico'];
-const siteDirs=['docs','mcp','support','privacy','terms','tutorials','tutorial-view'];
+const siteDirs=['docs','mcp','support','privacy','terms','tutorials','tutorial-view','atelier'];
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 function inside(base,relative){
  if(path.isAbsolute(relative)||relative.split(/[\\/]/).some(p=>p==='..'||p===''))throw Error('Invalid payload path: '+relative);
