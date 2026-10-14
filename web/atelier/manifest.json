@@ -109,6 +109,105 @@
           "caption": "Après — fond à 16 cm, plus large, avec retours profonds. Même caméra et éclairage de test."
         }
       ]
+    },
+    {
+      "id": "refuge-20261014-132419-atmosphere",
+      "title": "Le refuge des brumes",
+      "summary": [
+        "Un refuge en bois et ardoise, une mare et des roseaux sous une grande lune.",
+        "Forêt ramifiée, brume au sol, fenêtres en retrait et lumière lunaire froide.",
+        "Boucle native de 15 secondes, portrait 1080p, sans signature de fin."
+      ],
+      "note": "Comparaison visuelle sans son. Choisis ta préférée avec le bouton de favoris ; la scène originale est conservée.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T13:24:19-04:00",
+      "published_at": "2026-10-14T17:25:04.203357+00:00",
+      "revision": "90ac38cf5",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "refuge-moonlit-137",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.0,
+      "bytes": 6473849,
+      "sha256": "f44941a013a4cf5df1f46f5fe342313b7fa333e4755b1396527dcf08b584d047",
+      "video": "media/refuge-20261014-132419-atmosphere.mp4",
+      "poster": "media/refuge-20261014-132419-atmosphere.jpg",
+      "scene": "media/refuge-20261014-132419-atmosphere.scene",
+      "generator": {
+        "seed": 137,
+        "architecture": "refuge",
+        "environment": "moonlit",
+        "period": 15
+      },
+      "audio": "none"
+    },
+    {
+      "id": "keeper-20261014-132427-atmosphere",
+      "title": "La maison du gardien",
+      "summary": [
+        "Une maison en pierre avec sa tour, au milieu des arbres d’automne.",
+        "Soleil bas, halos ambrés, tapis de feuilles et éclairage chaud des ouvertures.",
+        "Boucle native de 15 secondes, portrait 1080p, sans signature de fin."
+      ],
+      "note": "Comparaison visuelle sans son. Choisis ta préférée avec le bouton de favoris ; la scène originale est conservée.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T13:24:27-04:00",
+      "published_at": "2026-10-14T17:25:07.710469+00:00",
+      "revision": "90ac38cf5",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "keeper-amber-283",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.0,
+      "bytes": 8327890,
+      "sha256": "e792974a5c62765611dae53dda956f17ee22c281e3acf94d2d1a99825881c762",
+      "video": "media/keeper-20261014-132427-atmosphere.mp4",
+      "poster": "media/keeper-20261014-132427-atmosphere.jpg",
+      "scene": "media/keeper-20261014-132427-atmosphere.scene",
+      "generator": {
+        "seed": 283,
+        "architecture": "keeper",
+        "environment": "amber",
+        "period": 15
+      },
+      "audio": "none"
+    },
+    {
+      "id": "mill-20261014-132437-atmosphere",
+      "title": "Le moulin de l’aube",
+      "summary": [
+        "Un moulin à ailes et son logement dans une prairie fleurie de bouleaux.",
+        "Ailes animées, soleil rasant, brume dorée et végétation vivante.",
+        "Boucle native de 15 secondes, portrait 1080p, sans signature de fin."
+      ],
+      "note": "Comparaison visuelle sans son. Choisis ta préférée avec le bouton de favoris ; la scène originale est conservée.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-14T13:24:37-04:00",
+      "published_at": "2026-10-14T17:25:11.326699+00:00",
+      "revision": "90ac38cf5",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "mill-dawn-619",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.0,
+      "bytes": 8579942,
+      "sha256": "e046a9a1a509c843e6a2374cd59f10a2e29d7e87a5f711ae7583c311232e2fa8",
+      "video": "media/mill-20261014-132437-atmosphere.mp4",
+      "poster": "media/mill-20261014-132437-atmosphere.jpg",
+      "scene": "media/mill-20261014-132437-atmosphere.scene",
+      "generator": {
+        "seed": 619,
+        "architecture": "mill",
+        "environment": "dawn",
+        "period": 15
+      },
+      "audio": "none"
     }
   ]
 }
