@@ -43,7 +43,12 @@
     }
     function alive(compile) {
       clearTimeout(idleTimer);
-      idleTimer = setTimeout(expire, compile ? (limits.compileMs || 120000) : (limits.idleMs || 25000));
+      // An idle network/compiler is not a failed engine. Keep the in-flight
+      // request alive; only the overall request budget or a real error aborts.
+      idleTimer = setTimeout(function () {
+        if (!finished) update(FR ? "Chargement en cours" : "Still loading engine",
+          FR ? "Le chargement continue…" : "Loading continues…");
+      }, compile ? (limits.compileMs || 120000) : (limits.idleMs || 25000));
       report(null, null);
     }
     function cleanup() {

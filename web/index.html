@@ -1235,7 +1235,7 @@ body.scene-entry-ready #curtain {
 
   function hideLoader(fallback) {
     if (engineAborted) return;
-    if (fallback) { loaderFailed("Startup made no progress for 25 seconds"); return; }
+    if (fallback) { loaderText.textContent = FR ? "Preparation en cours… Le chargement continue." : "Still preparing… Loading continues."; return; }
     loaderHidden = true;
     loaderHideRequested = true;
     if (!window.vmeshCommittedFrames) {
@@ -1435,7 +1435,7 @@ body.scene-entry-ready #curtain {
       var now = performance.now ? performance.now() : Date.now();
       if(window.pnEngineLoading) { loaderWatchdog(); return; }
       if (now - loaderLastSignal > 25000) hideLoader(true);
-      else loaderWatchdog();
+      loaderWatchdog();
     }, 5000);
   })();
 
