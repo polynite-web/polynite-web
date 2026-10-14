@@ -8,7 +8,7 @@
         "Rotation de 15 secondes avec filigrane et sans signature de fin.",
         "Composition entière conservée dans un fichier portrait 1080p."
       ],
-      "note": "Référence issue du rendu paysage de 07:50, adaptée en portrait avec des marges. Les corrections récentes des fenêtres, du chemin et du socle ne sont pas encore visibles ici. Un nouveau rendu natif est prévu après réouverture du viewer.",
+      "note": "Référence issue du rendu paysage de 07:50, adaptée en portrait avec des marges. Les corrections récentes des fenêtres, du chemin et du socle ne sont pas encore visibles ici. Le rendu natif de 11:11 est disponible plus haut dans ce carnet.",
       "captured_at": "2026-10-14T07:50:35-04:00",
       "published_at": "2026-10-14T14:51:58.456087+00:00",
       "revision": "rendu du 14 octobre à 07:50",
@@ -48,6 +48,32 @@
       "video": "media/loop-house-20261014-075035-landscape-reference.mp4",
       "poster": "media/loop-house-20261014-075035-landscape-reference.jpg",
       "scene": "media/loop-house-20261014-075035-landscape-reference.scene"
+    },
+    {
+      "id": "loop-house-20261014-111158-portrait",
+      "title": "Cottage — fenêtres en profondeur et socle en bois",
+      "summary": [
+        "Vrai rendu portrait 1080 × 1920, 30 images/s, rotation de 15 secondes.",
+        "Fonds lumineux des fenêtres en retrait, chemin plus continu et bois du socle plus lisible.",
+        "Troisième arbre et troisième citrouille présents, ouverture de porte retardée.",
+        "Filigrane conservé, aucune signature de fin ajoutée."
+      ],
+      "note": "À évaluer : cadrage, lumière de la porte, profondeur des fenêtres et lisibilité du bois. La nouvelle courbure des brins et la correction des feuilles superposées restent non validées : le générateur du shader de végétation plante, ce rendu utilise sa dernière version compilée.",
+      "captured_at": "2026-10-14T11:11:58-04:00",
+      "published_at": "2026-10-14T15:13:37.772598+00:00",
+      "revision": "182433829",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 18716356,
+      "sha256": "b6363a7e4eb99338a9651baad7b1431377d7e72891d7ff969bb2a9f2330bdecf",
+      "video": "media/loop-house-20261014-111158-portrait.mp4",
+      "poster": "media/loop-house-20261014-111158-portrait.jpg",
+      "scene": "media/loop-house-20261014-111158-portrait.scene"
     }
   ]
 }
