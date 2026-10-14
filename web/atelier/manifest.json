@@ -74,6 +74,41 @@
       "video": "media/loop-house-20261014-111158-portrait.mp4",
       "poster": "media/loop-house-20261014-111158-portrait.jpg",
       "scene": "media/loop-house-20261014-111158-portrait.scene"
+    },
+    {
+      "id": "loop-house-20261014-114748-window-recess",
+      "title": "Fenêtres — profondeur physique et fonds élargis",
+      "summary": [
+        "Fonds opaques reculés à 16 cm et élargis de 10 cm en largeur et hauteur.",
+        "Encadrements prolongés vers le fond ; faces extérieures et croisillons conservés.",
+        "Matériaux, caméra, horaires lumineux et autres réglages conservés."
+      ],
+      "note": "Correction géométrique vérifiée de biais et sur la lucarne. Les captures avant/après emploient le même cadrage et activent temporairement les lumières des fenêtres pour examiner le renfoncement ; leurs horaires sont ensuite restaurés. La limite de génération du shader de végétation reste inchangée.",
+      "captured_at": "2026-10-14T11:47:48-04:00",
+      "published_at": "2026-10-14T15:51:53.522126+00:00",
+      "revision": "91f5184c3",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.018,
+      "bytes": 18651944,
+      "sha256": "035992d2e35dfa0261efff749bfc2523bf1c910cdf820012a5bb55011f1ec60c",
+      "video": "media/loop-house-20261014-114748-window-recess.mp4",
+      "poster": "media/loop-house-20261014-114748-window-recess.jpg",
+      "scene": "media/loop-house-20261014-114748-window-recess.scene",
+      "inspections": [
+        {
+          "image": "media/loop-house-20261014-114748-window-recess-inspection-01.png",
+          "caption": "Avant — fond à 6 cm, fenêtre éclairée pour inspection."
+        },
+        {
+          "image": "media/loop-house-20261014-114748-window-recess-inspection-02.png",
+          "caption": "Après — fond à 16 cm, plus large, avec retours profonds. Même caméra et éclairage de test."
+        }
+      ]
     }
   ]
 }
