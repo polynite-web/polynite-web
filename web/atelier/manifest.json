@@ -83,7 +83,7 @@
         "Encadrements prolongés vers le fond ; faces extérieures et croisillons conservés.",
         "Matériaux, caméra, horaires lumineux et autres réglages conservés."
       ],
-      "note": "Correction géométrique vérifiée de biais et sur la lucarne. Les captures avant/après emploient le même cadrage et activent temporairement les lumières des fenêtres pour examiner le renfoncement ; leurs horaires sont ensuite restaurés. La limite de génération du shader de végétation reste inchangée.",
+      "note": "Scène 3D corrigée : fond élargi reculé de 16 cm, encadrement mince et simulation des murs intérieurs désactivée. La vidéo historique ci-dessus précède cette correction. Les nouvelles captures montrent la fenêtre éclairée de deux côtés ; caméra et horaire lumineux restaurés après vérification.",
       "captured_at": "2026-10-14T11:47:48-04:00",
       "published_at": "2026-10-14T15:51:53.522126+00:00",
       "revision": "91f5184c3",
@@ -107,6 +107,14 @@
         {
           "image": "media/loop-house-20261014-114748-window-recess-inspection-02.png",
           "caption": "Après — fond à 16 cm, plus large, avec retours profonds. Même caméra et éclairage de test."
+        },
+        {
+          "image": "media/loop-house-window-clear-sides-lit-oblique.png",
+          "caption": "Correction — vitre entière visible, fond toujours reculé (lit-oblique)."
+        },
+        {
+          "image": "media/loop-house-window-clear-sides-lit-opposite.png",
+          "caption": "Correction — vitre entière visible, fond toujours reculé (lit-opposite)."
         }
       ]
     },
