@@ -1745,6 +1745,7 @@ body.scene-entry-ready #curtain {
       var why = window.__spinLastPanic || String(reason || "");
       window.__pnEngineFailure = why;
       window.vmeshRuntimeInitialized = false;
+      window.dispatchEvent(new CustomEvent("polynite:engine-failed", {detail: {message: why}}));
       if(window.__pnStartup){
         if(typeof window.__pnStartup.fail === "function")window.__pnStartup.fail(why);
         else window.__pnStartup.mark("engine_failed");
