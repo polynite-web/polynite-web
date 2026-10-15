@@ -1236,7 +1236,12 @@ body.scene-entry-ready #curtain {
 
   function hideLoader(fallback) {
     if (engineAborted) return;
-    if (fallback) { loaderText.textContent = FR ? "Preparation en cours… Le chargement continue." : "Still preparing… Loading continues."; return; }
+    // Silence is not an engine exception: MCP, assets and GPU initialization
+    // can still complete. Never pause the main loop or fabricate readiness.
+    if (fallback) {
+      loaderText.textContent = FR ? "Preparation en cours… Le chargement continue." : "Still preparing… Loading continues.";
+      return;
+    }
     loaderHidden = true;
     loaderHideRequested = true;
     if (!window.vmeshCommittedFrames) {
@@ -1427,9 +1432,8 @@ body.scene-entry-ready #curtain {
     });
   }
 
-  /* Progress, not repeated calls, feeds this watchdog. A phase stuck on the
-     same value is not activity; after 25 s the usable viewer is preferable to
-     a curtain which can never explain why it is still there. */
+  /* A quiet startup gets an informational message, never a fatal engine stop.
+     Real exceptions still use loaderFailed; subsequent progress can recover. */
   (function loaderWatchdog() {
     setTimeout(function () {
       if (engineAborted || loaderHidden || loaderHideRequested) return;
@@ -1739,7 +1743,13 @@ body.scene-entry-ready #curtain {
          graphics initialization. Show the same clean panel, keyed on the last
          panic message - the one the abort path throws away. */
       var why = window.__spinLastPanic || String(reason || "");
-      if(window.__pnStartup)window.__pnStartup.fail(why);
+      window.__pnEngineFailure = why;
+      window.vmeshRuntimeInitialized = false;
+      window.dispatchEvent(new CustomEvent("polynite:engine-failed", {detail: {message: why}}));
+      if(window.__pnStartup){
+        if(typeof window.__pnStartup.fail === "function")window.__pnStartup.fail(why);
+        else window.__pnStartup.mark("engine_failed");
+      }
       if (typeof gpuNotice === "function" &&
           !document.querySelector(".gpu-notice") &&
           /wgpu|WGPU|webgpu|gl_|GLES|WebGL|device|adapter|context|surface|swapchain/i.test(why)) {
