@@ -9,13 +9,25 @@ The Cwc WebGPU build writes `dev/`. The publication directory is `web/`.
 - Test `https://polynite.io/dev/` and `https://polynite.io/rel/` after Git publication.
 - Once validated, run `deploy_rel_to_site.bat`. It checks the frozen rel manifest
   and promotes that candidate to `web/`, preserving the tested engine and version.
-- Both scripts offer Git publication. `--local` only prepares/copies files and
-  exits without a prompt, commit, push or pause.
+- Both scripts publish through Git automatically, without confirmation. The
+  double-click workflow pauses at the end to keep the result visible. For an LLM
+  or unattended run, use `deploy_dev_to_site.bat --no-pause` and, after validation,
+  `deploy_rel_to_site.bat --no-pause`. Failures return a nonzero exit code.
+- `--local` only prepares/copies files and exits without a prompt, commit, push
+  or pause. `--help` prints usage without changing files.
+- Wait for the Cloudflare Pages build after each push before checking public URLs.
+- If Explore pages changed, run `../majify-api/worker/polynite-auth/deploy_explore.bat`
+  afterwards (`--no-pause` for unattended use). It already deploys the production
+  Worker, so a separate `deploy_polynite.bat` run is unnecessary. A change to only
+  the engine does not require an Explore or Worker deployment.
 
 Gzip and Brotli assets are prepared during packaging. Cloudflare Pages already
 serves normal asset URLs with negotiated Brotli/gzip; the `.br` and `.gz` siblings
 are retained as precompressed artifacts, not forced onto uncompressed responses.
 Check `Content-Encoding` in the browser network panel to verify the actual transfer.
+Packaging reports its steps and elapsed time, and uses Brotli quality 6 instead
+of the much slower maximum quality 11. Compression is shared between dev/rel
+for identical content; decompressed engine bytes are verified before installation.
 The app metadata, model index, compression and engine-pair hashes are validated
 before promotion. Models above the Pages 25 MiB per-file limit are excluded.
 Explicit package mode overrides localhost and debug query detection. Test manifests

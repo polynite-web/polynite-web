@@ -2,6 +2,8 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),zlib=require('node:zlib'),{spawnSync}=require('node:child_process');
 const MAX_FILE=25*1024*1024,MANIFEST='deploy-manifest.json';
+const started=Date.now();
+const progress=message=>console.log('[polynite +'+((Date.now()-started)/1000).toFixed(1)+'s] '+message);
 const siteFiles=['robots.txt','sitemap.xml','sitemap-app.xml','site.webmanifest','sw.js','404.html','_redirects','favicon.ico'];
 const siteDirs=['docs','mcp','support','privacy','terms','tutorials','tutorial-view','atelier'];
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -63,11 +65,16 @@ function configure(dir,tier,version,publicPage=false,engineBase=''){
  }
 }
 function compress(dir,cache=new Map(),selected=files(dir)){
+ progress('Compressing '+selected.length+' files (gzip + Brotli quality 6).');
+ let reported=Date.now();
  for(const name of selected){
   if(name===MANIFEST||!(/\.(?:wasm|js|css|html|json|txt|svg|pane|layout|webmanifest)$/i.test(name)))continue;
   const bytes=fs.readFileSync(inside(dir,name));if(bytes.length<512)continue;
   const key=hash(bytes);let pair=cache.get(key);
-  if(!pair){pair={gz:zlib.gzipSync(bytes,{level:9}),br:zlib.brotliCompressSync(bytes,{params:{[zlib.constants.BROTLI_PARAM_QUALITY]:11}})};cache.set(key,pair);}
+  if(!pair){
+   if(bytes.length>=1024*1024||Date.now()-reported>=2000){progress('Compressing '+name+' ('+(bytes.length/1048576).toFixed(1)+' MiB)');reported=Date.now();}
+   pair={gz:zlib.gzipSync(bytes,{level:9}),br:zlib.brotliCompressSync(bytes,{params:{[zlib.constants.BROTLI_PARAM_QUALITY]:6}})};cache.set(key,pair);
+  }
   for(const [ext,packed]of Object.entries(pair))if(packed.length<bytes.length)write(dir,name+'.'+ext,packed);
  }
 }
@@ -164,16 +171,19 @@ function stageHeaders(root,dir=path.join(root,'web')){
  fs.writeFileSync(file,text);
 }
 function prepare(root){
+ progress('Checking the compiled engine in dev/.');
  const source=path.join(root,'dev');checkPair(source);
  const work=path.join(root,'.deploy-work');fs.mkdirSync(work,{recursive:true});fs.mkdirSync(path.join(root,'web'),{recursive:true});
  const snapshot=path.join(work,'snapshot-'+process.pid);fs.mkdirSync(snapshot,{recursive:true});
  const pending=[];
  try{
+ progress('Capturing and checking the source snapshot.');
  const sourceVersion=capture(root,source,snapshot);
  const counters=[sourceVersion,...['version.txt','web/version.txt','web/dev/version.txt','web/rel/version.txt'].map(name=>{const file=path.join(root,name);return fs.existsSync(file)?fs.readFileSync(file,'utf8').trim():'';})];
  const version='v'+String(Math.max(...counters.map(v=>/^v\d+$/.test(v)?Number(v.slice(1)):0))+1).padStart(4,'0');
  const cache=new Map();
  for(const tier of ['dev','release']){
+  progress('Preparing '+(tier==='dev'?'/dev/':'/rel/')+' '+version+'.');
   const name=tier==='dev'?'dev':'rel',temp=path.join(work,name+'-'+process.pid);fs.mkdirSync(temp,{recursive:true});
   pending.push({name,source:temp});
    for(const file of files(snapshot))copy(snapshot,temp,file);
@@ -181,19 +191,22 @@ function prepare(root){
    const index=fs.readdirSync(models,{withFileTypes:true}).filter(e=>e.isFile()&&/\.(?:glb|gltf)$/i.test(e.name)).map(e=>e.name+' '+fs.statSync(path.join(models,e.name)).size).sort().join('\n');
    write(temp,'models/index.txt',index+(index?'\n':''));
    normalize(temp);const history=engines(temp,path.join(root,'web',name));
-   configure(temp,tier,version,false,history[0]);compress(temp,cache);manifest(temp,tier,version,sourceVersion,history);verify(temp);
+   configure(temp,tier,version,false,history[0]);compress(temp,cache);
+   progress('Checking '+name+' manifest and compressed engine.');manifest(temp,tier,version,sourceVersion,history);verify(temp);
  }
- replaceDirectories(root,pending);
+ progress('Installing the checked dev/rel candidates.');replaceDirectories(root,pending);
  stageHeaders(root);
  console.log('[polynite] Prepared '+version+': /dev/ (dev) and /rel/ (release); public engine unchanged.');
  }finally{for(const entry of pending)removeWork(root,entry.source);removeWork(root,snapshot);}
 }
 function publish(root){
+ progress('Checking the validated rel candidate before public promotion.');
  const source=path.join(root,'web','rel'),target=path.join(root,'web'),candidate=verify(source);
  if(candidate.tier!=='release')throw Error('Only a release candidate can be published');
  const temp=path.join(root,'.deploy-work','public-'+process.pid);fs.mkdirSync(temp,{recursive:true});
  const full=path.join(root,'.deploy-work','public-full-'+process.pid);fs.mkdirSync(full,{recursive:true});
  try{
+  progress('Preparing public files from the frozen rel snapshot.');
   for(const name of Object.keys(candidate.files))copy(source,temp,name);
   const history=engines(temp,target);
   configure(temp,'release',candidate.version,true,history[0]);stageHeaders(root,temp);
@@ -202,6 +215,7 @@ function publish(root){
   for(const name of ['app.js','app.wasm'])for(const ext of ['.gz','.br'])write(temp,history[0]+name+ext,fs.readFileSync(inside(temp,name+ext)));
   const release=manifest(temp,'release',candidate.version,candidate.sourceVersion,history);verify(temp);
   // Clone the complete local site first; no public file changes until the final swap.
+  progress('Copying the complete site before the public swap.');
   for(const name of files(target))copy(target,full,name);
   const old=path.join(target,MANIFEST);
   release.removedFiles=fs.existsSync(old)?Object.keys(JSON.parse(fs.readFileSync(old,'utf8')).files).filter(name=>!release.files[name]):[];
@@ -215,6 +229,7 @@ function publish(root){
  }finally{removeWork(root,temp);removeWork(root,full);}
 }
 function sync(root,stage){
+ progress('Checking Git and the '+stage+' snapshot before publication.');
  function git(args,allowed=[0]){const result=spawnSync('git',args,{cwd:root,encoding:'utf8',windowsHide:true});if(!allowed.includes(result.status))throw Error(result.stderr||result.stdout||'Git failed');return result;}
  if(git(['branch','--show-current']).stdout.trim()!=='main')throw Error('Switch to main before publishing');
  if(git(['diff','--cached','--quiet'],[0,1]).status!==0)throw Error('Existing staged changes: review them before publishing');
@@ -235,9 +250,12 @@ function sync(root,stage){
  names.push('tests');
  const specs=path.join(root,'.deploy-work','git-paths-'+process.pid);
  fs.writeFileSync(specs,names.map(name=>':(literal)'+name).join('\0')+'\0');
+ progress('Staging deployment files in Git.');
  try{git(['add','-A','--pathspec-from-file='+specs,'--pathspec-file-nul']);}finally{fs.unlinkSync(specs);}
  if(git(['diff','--cached','--quiet'],[0,1]).status===0){console.log('[polynite] No changes to publish');return;}
+ progress('Committing '+snapshot.version+'.');
  git(['commit','-m',(stage==='dev'?'Prepare dev/rel ':'Publish validated rel ')+snapshot.version]);
+ progress('Pushing to origin/main; waiting for the network.');
  const pushed=git(['push','--progress','origin','main:main']);process.stdout.write(pushed.stdout);process.stderr.write(pushed.stderr);
 }
 if(require.main===module){

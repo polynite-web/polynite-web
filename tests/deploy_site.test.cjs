@@ -90,3 +90,27 @@ fs.renameSync=function(source,target){if(target===path.join(root,'web/rel')&&Str
 try{assert.throws(()=>prepare(root),/simulated rel swap failure/);}finally{fs.renameSync=rename;}
 assert(failedRel);assert.equal(verify(path.join(root,'web/dev')).version,devVersion);assert.equal(verify(path.join(root,'web/rel')).version,stageVersion);
 console.log('PASS: changing snapshot inputs rejected; both prior stage directories restored after a partial stage swap.');
+// Exercise the actual batch wrappers with a stub: no real Git publication.
+if(process.platform==='win32'){
+ const {spawnSync}=require('node:child_process'),cli=path.join(root,'cli');fs.mkdirSync(cli);
+ for(const name of ['deploy_dev_to_site.bat','deploy_rel_to_site.bat'])fs.copyFileSync(path.join(__dirname,'..',name),path.join(cli,name));
+ fs.writeFileSync(path.join(cli,'deploy_site.cjs'),'require("node:fs").appendFileSync(__dirname+"/calls.txt",process.argv[2]+"\\n");if(process.argv[2]===process.env.PN_TEST_FAIL)process.exitCode=1;');
+ function run(script,args,expected,status=0,fail=''){
+  const calls=path.join(cli,'calls.txt');fs.writeFileSync(calls,'');
+  const result=spawnSync('cmd.exe',['/d','/c',script,...args],{cwd:cli,encoding:'utf8',timeout:10000,windowsHide:true,env:{...process.env,PN_TEST_FAIL:fail}});
+  assert.ifError(result.error);assert.equal(result.status,status,result.stdout+result.stderr);
+  assert.equal(fs.readFileSync(calls,'utf8'),expected.map(action=>action+'\n').join(''));
+ }
+ run('deploy_dev_to_site.bat',['--no-pause'],['prepare','sync-dev']);
+ run('deploy_rel_to_site.bat',['--no-pause'],['publish','sync-rel']);
+ run('deploy_dev_to_site.bat',['--no-pause','--local'],['prepare']);
+ run('deploy_rel_to_site.bat',['--local','--no-pause'],['publish']);
+ for(const script of ['deploy_dev_to_site.bat','deploy_rel_to_site.bat']){
+  run(script,['--help'],[]);run(script,['--no-pause','--unknown'],[],1);
+ }
+ run('deploy_dev_to_site.bat',['--no-pause'],['prepare'],1,'prepare');
+ run('deploy_dev_to_site.bat',['--no-pause'],['prepare','sync-dev'],1,'sync-dev');
+ run('deploy_rel_to_site.bat',['--no-pause'],['publish'],1,'publish');
+ run('deploy_rel_to_site.bat',['--no-pause'],['publish','sync-rel'],1,'sync-rel');
+ console.log('PASS: unattended batch publication, local-only mode, option validation and failure exit codes.');
+}
