@@ -1,7 +1,7 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0290",
+  "version": "v0291",
   "sourceVersion": "v0180",
   "engineBase": "engine/d5986af3304fd1cb5ea6c33890ca33d0577a60195e6841314c67371f80ba2696/",
   "engineHistory": [
@@ -72,15 +72,15 @@
     },
     "app.html": {
       "bytes": 83739,
-      "sha256": "fdf2d14bfd5b9a24012ce94c076343f94a356592b63f665c4071d799683437b2"
+      "sha256": "04f00e81292cc48fbb4423991fea6cdc926fc31c39849d988d58bbe3843ab68e"
     },
     "app.html.br": {
-      "bytes": 22640,
-      "sha256": "672680db84df45287cf78f2e4ddc80c63f4f86048a9e4ff6bda767f3af5cd044"
+      "bytes": 22617,
+      "sha256": "637a1295ba4a3074485e1c447bf7e96c6aa7a9a4cb48d34d5385b77e4b93f8f4"
     },
     "app.html.gz": {
       "bytes": 26551,
-      "sha256": "d0a8395590f678d06c5cf5c50009ed2226ad7faba7d14f0245c3d81cf4a5e1ff"
+      "sha256": "c0b45947f0341cef9123a001f70e9deb66626d1ecbdc6a1399272a3e5806a0c0"
     },
     "app.js": {
       "bytes": 334482,
@@ -471,16 +471,16 @@
       "sha256": "397f03caf561115ace49d79da8a55fd5729fae524dbc5ff37972cc5f06850505"
     },
     "atelier/manifest.json": {
-      "bytes": 16186,
-      "sha256": "5b220b7807e4015cccea4b27f2dea1412381a270458abfb0dd43a2413a5d4d7f"
+      "bytes": 16500,
+      "sha256": "a0305f083059b4c40afec655b9ec6416101430fe0329f76ec1716e0109655102"
     },
     "atelier/manifest.json.br": {
-      "bytes": 3226,
-      "sha256": "1042f1db3dd62c20d53bca3c8a7949250b5cd2625bbc477d3afe81b806faa38d"
+      "bytes": 3320,
+      "sha256": "8e17ec70cb00428fa552e1532626b23bbef1886b4439c9943ba9f29b517991a6"
     },
     "atelier/manifest.json.gz": {
-      "bytes": 3664,
-      "sha256": "019a60a0162d5c2834a77e10961cb5dc328b172894778a00c87e6a9182d0dc15"
+      "bytes": 3763,
+      "sha256": "dc186b2d8f6c0697572d26eccae0deb39ce2303a3cbf6a91377592917ceed1ed"
     },
     "atelier/media/keeper-20261014-132427-atmosphere.jpg": {
       "bytes": 37923,
@@ -559,8 +559,8 @@
       "sha256": "035992d2e35dfa0261efff749bfc2523bf1c910cdf820012a5bb55011f1ec60c"
     },
     "atelier/media/loop-house-20261014-114748-window-recess.scene": {
-      "bytes": 488213,
-      "sha256": "853afcc825bd5d69d43e472db477c34e3e3b36fc493e7f507c877f121f17348d"
+      "bytes": 485360,
+      "sha256": "7965cb7444ef6c2d560c381ef93fcacfd8c3834d6929966823cd6e7f401cf874"
     },
     "atelier/media/loop-house-camera-timing-controls.png": {
       "bytes": 559189,
@@ -597,6 +597,10 @@
     "atelier/media/loop-house-window-clear-sides-lit-opposite.png": {
       "bytes": 2171765,
       "sha256": "0d71518bda17879a5e1e6797b10571a4568290086bba51af9c3165ca8a1e3f70"
+    },
+    "atelier/media/loop-house-without-planters.png": {
+      "bytes": 1269480,
+      "sha256": "3092495fdb583376e2205f783a8d0367fa476f42eb7c0db10a1027d4811fa63b"
     },
     "atelier/media/mill-20261014-132437-atmosphere.jpg": {
       "bytes": 38526,
@@ -2180,15 +2184,15 @@
     },
     "index.html": {
       "bytes": 83739,
-      "sha256": "fdf2d14bfd5b9a24012ce94c076343f94a356592b63f665c4071d799683437b2"
+      "sha256": "04f00e81292cc48fbb4423991fea6cdc926fc31c39849d988d58bbe3843ab68e"
     },
     "index.html.br": {
-      "bytes": 22640,
-      "sha256": "672680db84df45287cf78f2e4ddc80c63f4f86048a9e4ff6bda767f3af5cd044"
+      "bytes": 22617,
+      "sha256": "637a1295ba4a3074485e1c447bf7e96c6aa7a9a4cb48d34d5385b77e4b93f8f4"
     },
     "index.html.gz": {
       "bytes": 26551,
-      "sha256": "d0a8395590f678d06c5cf5c50009ed2226ad7faba7d14f0245c3d81cf4a5e1ff"
+      "sha256": "c0b45947f0341cef9123a001f70e9deb66626d1ecbdc6a1399272a3e5806a0c0"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -2932,7 +2936,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "f118b976b603a233450bbee7ab89b158a7ea4d045c3e97628f648062e05d0a83"
+      "sha256": "bdd5855097243e89104ce202cf6adc0ee8528eb1693ab7f10aa04290a8ede054"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
@@ -2971,12 +2975,5 @@
       "sha256": "7f982aa22731deeb67715044f4d64830f1ff8b7fbbdd860d796e0f76f65bb250"
     }
   },
-  "removedFiles": [
-    "engine/283f9750d0908abde387dff4dbdf105f1516840f4a8cedc478b29e8197981cf6/app.js",
-    "engine/283f9750d0908abde387dff4dbdf105f1516840f4a8cedc478b29e8197981cf6/app.js.br",
-    "engine/283f9750d0908abde387dff4dbdf105f1516840f4a8cedc478b29e8197981cf6/app.js.gz",
-    "engine/283f9750d0908abde387dff4dbdf105f1516840f4a8cedc478b29e8197981cf6/app.wasm",
-    "engine/283f9750d0908abde387dff4dbdf105f1516840f4a8cedc478b29e8197981cf6/app.wasm.br",
-    "engine/283f9750d0908abde387dff4dbdf105f1516840f4a8cedc478b29e8197981cf6/app.wasm.gz"
-  ]
+  "removedFiles": []
 }
