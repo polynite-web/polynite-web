@@ -79,11 +79,11 @@
       "id": "loop-house-20261014-114748-window-recess",
       "title": "Fenêtres — profondeur physique et fonds élargis",
       "summary": [
-        "Fonds opaques reculés à 16 cm et élargis de 10 cm en largeur et hauteur.",
-        "Encadrements prolongés vers le fond ; faces extérieures et croisillons conservés.",
-        "Matériaux, caméra, horaires lumineux et autres réglages conservés."
+        "Fonds lumineux continus derrière les façades ; porte et fenêtres reculées de 16 cm.",
+        "Fenêtres du pignon élargies ; faux murs et traits d’intérieur supprimés du matériau opaque.",
+        "Silhouette size : Scene settings > Generator > Indoor scene. Molette réservée au défilement."
       ],
-      "note": "Scène 3D corrigée : fond élargi reculé de 16 cm, encadrement mince et simulation des murs intérieurs désactivée. La vidéo historique ci-dessus précède cette correction. Les nouvelles captures montrent la fenêtre éclairée de deux côtés ; caméra et horaire lumineux restaurés après vérification. Le ciel 3D dispose maintenant de nuages mobiles devant la lune, avec opacité réglable et mouvement périodique de 15 secondes.",
+      "note": "Viewer et .scene mis à jour : fonds de façade continus, porte au même recul que les fenêtres, taille des silhouettes sauvegardée (0.25 à 3). Les sliders de scène appliquent au relâchement ; les réglages Lights/Sky restent immédiats avec sauvegardes regroupées. Les captures ci-dessous proviennent du vrai moteur WebGPU. La vidéo historique précède ces corrections.",
       "captured_at": "2026-10-14T11:47:48-04:00",
       "published_at": "2026-10-14T15:51:53.522126+00:00",
       "revision": "91f5184c3",
@@ -123,6 +123,14 @@
         {
           "image": "media/loop-house-clouds-moon-veiled.png",
           "caption": "Voile nuageux devant la lune — caméra restaurée après inspection."
+        },
+        {
+          "image": "media/loop-house-continuous-backs.png",
+          "caption": "Fonds continus — porte et fenêtres en vue oblique (WebGPU)."
+        },
+        {
+          "image": "media/loop-house-silhouette-size.png",
+          "caption": "Fenêtre et porte en gros plan — taille des silhouettes 1.5 (WebGPU)."
         }
       ]
     },
