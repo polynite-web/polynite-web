@@ -84,7 +84,8 @@
         "Silhouette size : Scene settings > Generator > Indoor scene. Molette réservée au défilement.",
         "Camera timing (seconds) : avancer ou retarder la caméra sans changer les ouvertures ni les lumières.",
         "Arbres : branches raccordées et balancement du bois et du feuillage synchronisé avec le vent.",
-        "Pots simplistes retirés, ainsi que leur recette : les citrouilles et les autres plantations sont conservées."
+        "Pots simplistes retirés, ainsi que leur recette : les citrouilles et les autres plantations sont conservées.",
+        "Chemin plus continu, départ aligné sur le seuil et courbe douce ; lampadaire déplacé sur le côté, plus loin de la maison."
       ],
       "note": "Viewer et .scene mis à jour : fonds de façade continus, porte au même recul que les fenêtres, taille des silhouettes sauvegardée (0.25 à 3). Les sliders de scène appliquent au relâchement ; les réglages Lights/Sky restent immédiats avec sauvegardes regroupées. Les captures ci-dessous proviennent du vrai moteur WebGPU. La vidéo historique précède ces corrections.",
       "captured_at": "2026-10-14T11:47:48-04:00",
@@ -150,6 +151,10 @@
         {
           "image": "media/loop-house-without-planters.png",
           "caption": "Pots aux formes simplistes retirés ; citrouilles et jardin conservés. Aperçu WebGPU."
+        },
+        {
+          "image": "media/loop-house-natural-path-lantern.png",
+          "caption": "Chemin repavé en courbe douce, avec joints dégagés ; lampadaire, halo et source lumineuse déplacés ensemble hors du passage. Vue WebGPU de contrôle."
         }
       ]
     },

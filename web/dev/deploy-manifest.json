@@ -1,7 +1,7 @@
 {
   "format": 1,
   "tier": "dev",
-  "version": "v0291",
+  "version": "v0292",
   "sourceVersion": "v0180",
   "engineBase": "engine/d5986af3304fd1cb5ea6c33890ca33d0577a60195e6841314c67371f80ba2696/",
   "engineHistory": [
@@ -72,15 +72,15 @@
     },
     "app.html": {
       "bytes": 83737,
-      "sha256": "1a8b6d97398b311294bea9603dccea67b413bd3a31c117ddbc6ae661d6dfeea3"
+      "sha256": "12f86a3846faf08e35e40f74b1e82d2c20f19637ffaf7355752cb1dbe19b5bb5"
     },
     "app.html.br": {
-      "bytes": 22629,
-      "sha256": "857e115dea2c010b70ed6b406db9714563c511ab32eee7ae5613128d557a1289"
+      "bytes": 22612,
+      "sha256": "d16090557002ca9ceebbe7700602eceff1aef370a38dd77ef41ace0faa69104c"
     },
     "app.html.gz": {
       "bytes": 26550,
-      "sha256": "32c6d40e927c1a2270dc3c25dcfdea4018267b8881d19f3d30f3b5e6595f5095"
+      "sha256": "c56a78e958a1c847b3b737bff43e050af4f06b7a91c04db09fb08412625fff51"
     },
     "app.js": {
       "bytes": 334482,
@@ -471,16 +471,16 @@
       "sha256": "397f03caf561115ace49d79da8a55fd5729fae524dbc5ff37972cc5f06850505"
     },
     "atelier/manifest.json": {
-      "bytes": 16500,
-      "sha256": "a0305f083059b4c40afec655b9ec6416101430fe0329f76ec1716e0109655102"
+      "bytes": 16902,
+      "sha256": "d3cda0c32275fbe4fe830d5cc9aa37ea0274aa95094a9a359f3bd43fea625f3b"
     },
     "atelier/manifest.json.br": {
-      "bytes": 3320,
-      "sha256": "8e17ec70cb00428fa552e1532626b23bbef1886b4439c9943ba9f29b517991a6"
+      "bytes": 3458,
+      "sha256": "bce69d4f8b8126f93fcf600b840ead37e0a2c61da339e7cae030c80dfc804dda"
     },
     "atelier/manifest.json.gz": {
-      "bytes": 3763,
-      "sha256": "dc186b2d8f6c0697572d26eccae0deb39ce2303a3cbf6a91377592917ceed1ed"
+      "bytes": 3912,
+      "sha256": "bb1048511d859e7164cbb2daa0dc037b395030058ec32dbf1a5369d166482cf6"
     },
     "atelier/media/keeper-20261014-132427-atmosphere.jpg": {
       "bytes": 37923,
@@ -559,8 +559,8 @@
       "sha256": "035992d2e35dfa0261efff749bfc2523bf1c910cdf820012a5bb55011f1ec60c"
     },
     "atelier/media/loop-house-20261014-114748-window-recess.scene": {
-      "bytes": 485360,
-      "sha256": "7965cb7444ef6c2d560c381ef93fcacfd8c3834d6929966823cd6e7f401cf874"
+      "bytes": 485359,
+      "sha256": "8cdec37d407c17e4031ab2597d871496914f8ef6da8fedee71747cda3002ca2a"
     },
     "atelier/media/loop-house-camera-timing-controls.png": {
       "bytes": 559189,
@@ -577,6 +577,10 @@
     "atelier/media/loop-house-continuous-backs.png": {
       "bytes": 1061682,
       "sha256": "0aad692bce3f54fc95ce49418da9e6cc30d2b8ec4c22d1dd3ce1c5c2af56d333"
+    },
+    "atelier/media/loop-house-natural-path-lantern.png": {
+      "bytes": 939983,
+      "sha256": "653e2c344a84e04baa47856def4b9daf25ebc88151c9711c326c2791c4aef217"
     },
     "atelier/media/loop-house-silhouette-size.png": {
       "bytes": 927106,
@@ -2184,15 +2188,15 @@
     },
     "index.html": {
       "bytes": 83737,
-      "sha256": "1a8b6d97398b311294bea9603dccea67b413bd3a31c117ddbc6ae661d6dfeea3"
+      "sha256": "12f86a3846faf08e35e40f74b1e82d2c20f19637ffaf7355752cb1dbe19b5bb5"
     },
     "index.html.br": {
-      "bytes": 22629,
-      "sha256": "857e115dea2c010b70ed6b406db9714563c511ab32eee7ae5613128d557a1289"
+      "bytes": 22612,
+      "sha256": "d16090557002ca9ceebbe7700602eceff1aef370a38dd77ef41ace0faa69104c"
     },
     "index.html.gz": {
       "bytes": 26550,
-      "sha256": "32c6d40e927c1a2270dc3c25dcfdea4018267b8881d19f3d30f3b5e6595f5095"
+      "sha256": "c56a78e958a1c847b3b737bff43e050af4f06b7a91c04db09fb08412625fff51"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -2936,7 +2940,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "bdd5855097243e89104ce202cf6adc0ee8528eb1693ab7f10aa04290a8ede054"
+      "sha256": "d8e1e18cee6fb894e6f2f4764a7d021a056e5cf7c7c60ec579cf6a64461d0478"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
