@@ -1,0 +1,3051 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "lotus",
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        -0.800000012,
+        0,
+        0
+      ],
+      "params": {
+        "animate": 1,
+        "base_radius": 0.0500000007,
+        "base_width": 0.100000001,
+        "belly_width": 1,
+        "bend": -0.550000012,
+        "closed_angle": 18,
+        "cup": 0.600000024,
+        "duration": 4,
+        "height": 0.800000012,
+        "layer_angle": 6,
+        "layer_step": 0.870000005,
+        "layers": 4,
+        "leaf_size": 0.5,
+        "leaf_spread": 0.449999988,
+        "leaves": 3,
+        "neck_width": 0.699999988,
+        "open_angle": 108,
+        "opening": 0.800000012,
+        "petal_blue": 0.839999974,
+        "petal_green": 0.879999995,
+        "petal_length": 0.349999994,
+        "petal_red": 1,
+        "petal_width": 0.170000002,
+        "petals": 7,
+        "ripple": 0.0199999996,
+        "shoulder_width": 0.75,
+        "size": 0.800000012,
+        "stagger": 0.5,
+        "tip_blue": 0.460000008,
+        "tip_green": 0.200000003,
+        "tip_red": 0.949999988,
+        "tip_width": 0.00499999989,
+        "twist": 0.0399999991,
+        "wind": 3
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 3,
+            "min": 0.25,
+            "name": "size",
+            "value": 1
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 2,
+            "min": 0.200000003,
+            "name": "height",
+            "value": 0.800000012
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 32,
+            "min": 3,
+            "name": "petals",
+            "value": 7
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 6,
+            "min": 1,
+            "name": "layers",
+            "value": 4
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.0500000007,
+            "name": "petal_length",
+            "value": 0.340000004
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.600000024,
+            "min": 0.00999999978,
+            "name": "petal_width",
+            "value": 0.170000002
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0,
+            "name": "base_radius",
+            "value": 0.0500000007
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.600000024,
+            "name": "layer_step",
+            "value": 0.870000005
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "stagger",
+            "value": 0.5
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 1.5,
+            "min": -1,
+            "name": "cup",
+            "value": 0.600000024
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": -2,
+            "name": "bend",
+            "value": -0.550000012
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": -2,
+            "name": "twist",
+            "value": 0.0399999991
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0,
+            "name": "ripple",
+            "value": 0.0199999996
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "base_width",
+            "value": 0.100000001
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "shoulder_width",
+            "value": 0.75
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "belly_width",
+            "value": 1
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "neck_width",
+            "value": 0.699999988
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "tip_width",
+            "value": 0.00499999989
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_red",
+            "value": 1
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_green",
+            "value": 0.879999995
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_blue",
+            "value": 0.839999974
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_red",
+            "value": 0.949999988
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_green",
+            "value": 0.200000003
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_blue",
+            "value": 0.460000008
+          },
+          {
+            "group": "foliage",
+            "integer": true,
+            "max": 6,
+            "min": 0,
+            "name": "leaves",
+            "value": 3
+          },
+          {
+            "group": "foliage",
+            "integer": false,
+            "max": 1,
+            "min": 0.0500000007,
+            "name": "leaf_size",
+            "value": 0.5
+          },
+          {
+            "group": "foliage",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "leaf_spread",
+            "value": 0.449999988
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "opening",
+            "value": 0.800000012
+          },
+          {
+            "group": "animation",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "animate",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 60,
+            "min": 0,
+            "name": "closed_angle",
+            "value": 18
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 130,
+            "min": 30,
+            "name": "open_angle",
+            "value": 108
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 15,
+            "min": 0,
+            "name": "layer_angle",
+            "value": 6
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 600,
+            "min": 0,
+            "name": "duration",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 15,
+            "min": 0,
+            "name": "wind",
+            "value": 3
+          }
+        ],
+        "nodes": [
+          {
+            "id": "stem",
+            "op": "surface",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "mul",
+                  "$height",
+                  0.5
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "role": "stem",
+            "s": [
+              [
+                "mul",
+                0.0160000008,
+                "$size"
+              ],
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              [
+                "mul",
+                0.0160000008,
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                "$height",
+                0.0160000008
+              ],
+              "bend": 0,
+              "cup": 0,
+              "kind": 2,
+              "ripple": 0,
+              "segments": 16,
+              "sides": 8
+            }
+          },
+          {
+            "id": "pet",
+            "motion": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "cycles": 1,
+              "enabled": "$animate",
+              "from": [
+                "sub",
+                [
+                  "sub",
+                  "$closed_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "period": "$duration",
+              "smooth": 1,
+              "to": [
+                "sub",
+                [
+                  "sub",
+                  "$open_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            },
+            "op": "surface",
+            "orient": "radial",
+            "p": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "div",
+                      [
+                        "mul",
+                        [
+                          "add",
+                          "@i",
+                          [
+                            "mul",
+                            "@j",
+                            "$stagger"
+                          ]
+                        ],
+                        6.28318548
+                      ],
+                      "$petals"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$base_radius",
+                    [
+                      "pow",
+                      "$layer_step",
+                      "@j"
+                    ]
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  [
+                    "mul",
+                    "@j",
+                    0.00800000038
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "div",
+                      [
+                        "mul",
+                        [
+                          "add",
+                          "@i",
+                          [
+                            "mul",
+                            "@j",
+                            "$stagger"
+                          ]
+                        ],
+                        6.28318548
+                      ],
+                      "$petals"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$base_radius",
+                    [
+                      "pow",
+                      "$layer_step",
+                      "@j"
+                    ]
+                  ]
+                ],
+                "$size"
+              ]
+            ],
+            "r": [
+              [
+                "add",
+                [
+                  "sub",
+                  "$closed_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$opening",
+                  [
+                    "sub",
+                    [
+                      "sub",
+                      "$open_angle",
+                      [
+                        "mul",
+                        "@j",
+                        "$layer_angle"
+                      ]
+                    ],
+                    [
+                      "sub",
+                      "$closed_angle",
+                      [
+                        "mul",
+                        "@j",
+                        "$layer_angle"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "div",
+                  [
+                    "mul",
+                    [
+                      "add",
+                      "@i",
+                      [
+                        "mul",
+                        "@j",
+                        "$stagger"
+                      ]
+                    ],
+                    6.28318548
+                  ],
+                  "$petals"
+                ],
+                57.2957802
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$petals",
+              "rows": "$layers"
+            },
+            "role": "petal",
+            "s": [
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_length",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                [
+                  "mul",
+                  "$petal_length",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ]
+              ],
+              "base_width": "$base_width",
+              "belly_width": "$belly_width",
+              "bend": "$bend",
+              "blue": "$petal_blue",
+              "cup": "$cup",
+              "green": "$petal_green",
+              "kind": 0,
+              "neck_width": "$neck_width",
+              "red": "$petal_red",
+              "ripple": "$ripple",
+              "segments": 24,
+              "shoulder_width": "$shoulder_width",
+              "sides": 12,
+              "tip_blue": "$tip_blue",
+              "tip_green": "$tip_green",
+              "tip_red": "$tip_red",
+              "tip_width": "$tip_width",
+              "twist": "$twist",
+              "veins": 0.649999976
+            }
+          },
+          {
+            "id": "core",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  0.0149999997
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "role": "seed",
+            "s": [
+              [
+                "mul",
+                0.100000001,
+                "$size"
+              ],
+              [
+                "mul",
+                0.0350000001,
+                "$size"
+              ],
+              [
+                "mul",
+                0.100000001,
+                "$size"
+              ]
+            ]
+          },
+          {
+            "id": "seed",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  [
+                    "mul",
+                    0.0399999991,
+                    [
+                      "sqrt",
+                      [
+                        "div",
+                        [
+                          "add",
+                          "@i",
+                          0.5
+                        ],
+                        9
+                      ]
+                    ]
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  0.0340000018
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  [
+                    "mul",
+                    0.0399999991,
+                    [
+                      "sqrt",
+                      [
+                        "div",
+                        [
+                          "add",
+                          "@i",
+                          0.5
+                        ],
+                        9
+                      ]
+                    ]
+                  ]
+                ],
+                "$size"
+              ]
+            ],
+            "repeat": {
+              "count": 9
+            },
+            "role": "stem",
+            "s": [
+              [
+                "mul",
+                0.00800000038,
+                "$size"
+              ],
+              [
+                "mul",
+                0.00200000009,
+                "$size"
+              ],
+              [
+                "mul",
+                0.00800000038,
+                "$size"
+              ]
+            ]
+          },
+          {
+            "a": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  0.0599999987
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  0.0599999987
+                ],
+                "$size"
+              ]
+            ],
+            "b": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  0.075000003
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  0.0649999976
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  0.075000003
+                ],
+                "$size"
+              ]
+            ],
+            "id": "fil",
+            "op": "beam",
+            "repeat": {
+              "count": 32
+            },
+            "role": "pollen",
+            "width": [
+              "mul",
+              0.00300000003,
+              "$size"
+            ]
+          },
+          {
+            "id": "ant",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  0.075000003
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  0.0649999976
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  0.075000003
+                ],
+                "$size"
+              ]
+            ],
+            "repeat": {
+              "count": 32
+            },
+            "role": "pollen",
+            "s": [
+              [
+                "mul",
+                0.00899999961,
+                "$size"
+              ],
+              [
+                "mul",
+                0.0140000004,
+                "$size"
+              ],
+              [
+                "mul",
+                0.00700000022,
+                "$size"
+              ]
+            ]
+          },
+          {
+            "id": "leaf",
+            "motion": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "cycles": 1,
+              "enabled": "$animate",
+              "from": [
+                "neg",
+                "$wind"
+              ],
+              "period": "$duration",
+              "phase": [
+                "div",
+                "@i",
+                6
+              ],
+              "to": "$wind"
+            },
+            "op": "surface",
+            "p": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  "$leaf_spread"
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                0.180000007,
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  "$leaf_spread"
+                ],
+                "$size"
+              ]
+            ],
+            "r": [
+              0,
+              [
+                "mul",
+                "@i",
+                137.507767
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$leaves"
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                "$leaf_size",
+                "$size"
+              ],
+              [
+                "mul",
+                "$leaf_size",
+                "$size"
+              ],
+              [
+                "mul",
+                "$leaf_size",
+                "$size"
+              ]
+            ],
+            "surface": {
+              "blue": 0.0850000009,
+              "cup": 0.200000003,
+              "green": 0.379999995,
+              "kind": 3,
+              "red": 0.159999996,
+              "ripple": 0.0250000004,
+              "segments": 16,
+              "sides": 64,
+              "tip_blue": 0.0599999987,
+              "tip_green": 0.270000011,
+              "tip_red": 0.109999999
+            }
+          },
+          {
+            "a": [
+              0,
+              0,
+              0
+            ],
+            "b": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  "$leaf_spread"
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                0.180000007,
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      "@i",
+                      2.39996314
+                    ]
+                  ],
+                  "$leaf_spread"
+                ],
+                "$size"
+              ]
+            ],
+            "id": "stlk",
+            "op": "beam",
+            "repeat": {
+              "count": "$leaves"
+            },
+            "role": "stem",
+            "width": [
+              "mul",
+              0.00700000022,
+              "$size"
+            ]
+          },
+          {
+            "id": "base",
+            "op": "anchor",
+            "p": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "top",
+            "op": "anchor",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              0
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "daisy",
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "animate": 1,
+        "base_radius": 0.0500000007,
+        "base_width": 0.150000006,
+        "belly_width": 1,
+        "bend": -0.150000006,
+        "closed_angle": 22,
+        "cup": 0.150000006,
+        "duration": 4,
+        "height": 0.800000012,
+        "layer_angle": 0,
+        "layer_step": 0.870000005,
+        "layers": 1,
+        "leaf_size": 0.280000001,
+        "leaf_spread": 0.00999999978,
+        "leaves": 2,
+        "neck_width": 0.850000024,
+        "open_angle": 105,
+        "opening": 0.800000012,
+        "petal_blue": 0.879999995,
+        "petal_green": 0.980000019,
+        "petal_length": 0.25,
+        "petal_red": 1,
+        "petal_width": 0.0450000018,
+        "petals": 20,
+        "ripple": 0.0199999996,
+        "shoulder_width": 0.800000012,
+        "size": 0.800000012,
+        "stagger": 0.5,
+        "tip_blue": 0.970000029,
+        "tip_green": 1,
+        "tip_red": 1,
+        "tip_width": 0.150000006,
+        "twist": 0.0399999991,
+        "wind": 3
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 3,
+            "min": 0.25,
+            "name": "size",
+            "value": 1
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 2,
+            "min": 0.200000003,
+            "name": "height",
+            "value": 0.800000012
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 32,
+            "min": 3,
+            "name": "petals",
+            "value": 20
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 6,
+            "min": 1,
+            "name": "layers",
+            "value": 1
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.0500000007,
+            "name": "petal_length",
+            "value": 0.25
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.600000024,
+            "min": 0.00999999978,
+            "name": "petal_width",
+            "value": 0.0450000018
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0,
+            "name": "base_radius",
+            "value": 0.0500000007
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.600000024,
+            "name": "layer_step",
+            "value": 0.870000005
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "stagger",
+            "value": 0.5
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 1.5,
+            "min": -1,
+            "name": "cup",
+            "value": 0.150000006
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": -2,
+            "name": "bend",
+            "value": -0.150000006
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": -2,
+            "name": "twist",
+            "value": 0.0399999991
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0,
+            "name": "ripple",
+            "value": 0.0199999996
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "base_width",
+            "value": 0.150000006
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "shoulder_width",
+            "value": 0.800000012
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "belly_width",
+            "value": 1
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "neck_width",
+            "value": 0.850000024
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "tip_width",
+            "value": 0.150000006
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_red",
+            "value": 1
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_green",
+            "value": 0.980000019
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_blue",
+            "value": 0.879999995
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_red",
+            "value": 1
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_green",
+            "value": 1
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_blue",
+            "value": 0.970000029
+          },
+          {
+            "group": "foliage",
+            "integer": true,
+            "max": 6,
+            "min": 0,
+            "name": "leaves",
+            "value": 2
+          },
+          {
+            "group": "foliage",
+            "integer": false,
+            "max": 1,
+            "min": 0.0500000007,
+            "name": "leaf_size",
+            "value": 0.280000001
+          },
+          {
+            "group": "foliage",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "leaf_spread",
+            "value": 0.00999999978
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "opening",
+            "value": 0.800000012
+          },
+          {
+            "group": "animation",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "animate",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 60,
+            "min": 0,
+            "name": "closed_angle",
+            "value": 22
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 130,
+            "min": 30,
+            "name": "open_angle",
+            "value": 105
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 15,
+            "min": 0,
+            "name": "layer_angle",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 600,
+            "min": 0,
+            "name": "duration",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 15,
+            "min": 0,
+            "name": "wind",
+            "value": 3
+          }
+        ],
+        "nodes": [
+          {
+            "id": "stem",
+            "op": "surface",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "mul",
+                  "$height",
+                  0.5
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "role": "stem",
+            "s": [
+              [
+                "mul",
+                0.0160000008,
+                "$size"
+              ],
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              [
+                "mul",
+                0.0160000008,
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                "$height",
+                0.0160000008
+              ],
+              "bend": 0,
+              "cup": 0,
+              "kind": 2,
+              "ripple": 0,
+              "segments": 16,
+              "sides": 8
+            }
+          },
+          {
+            "id": "pet",
+            "motion": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "cycles": 1,
+              "enabled": "$animate",
+              "from": [
+                "sub",
+                [
+                  "sub",
+                  "$closed_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "period": "$duration",
+              "smooth": 1,
+              "to": [
+                "sub",
+                [
+                  "sub",
+                  "$open_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            },
+            "op": "surface",
+            "orient": "radial",
+            "p": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "div",
+                      [
+                        "mul",
+                        [
+                          "add",
+                          "@i",
+                          [
+                            "mul",
+                            "@j",
+                            "$stagger"
+                          ]
+                        ],
+                        6.28318548
+                      ],
+                      "$petals"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$base_radius",
+                    [
+                      "pow",
+                      "$layer_step",
+                      "@j"
+                    ]
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  [
+                    "mul",
+                    "@j",
+                    0.00800000038
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "cos",
+                    [
+                      "div",
+                      [
+                        "mul",
+                        [
+                          "add",
+                          "@i",
+                          [
+                            "mul",
+                            "@j",
+                            "$stagger"
+                          ]
+                        ],
+                        6.28318548
+                      ],
+                      "$petals"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$base_radius",
+                    [
+                      "pow",
+                      "$layer_step",
+                      "@j"
+                    ]
+                  ]
+                ],
+                "$size"
+              ]
+            ],
+            "r": [
+              [
+                "add",
+                [
+                  "sub",
+                  "$closed_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$opening",
+                  [
+                    "sub",
+                    [
+                      "sub",
+                      "$open_angle",
+                      [
+                        "mul",
+                        "@j",
+                        "$layer_angle"
+                      ]
+                    ],
+                    [
+                      "sub",
+                      "$closed_angle",
+                      [
+                        "mul",
+                        "@j",
+                        "$layer_angle"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "div",
+                  [
+                    "mul",
+                    [
+                      "add",
+                      "@i",
+                      [
+                        "mul",
+                        "@j",
+                        "$stagger"
+                      ]
+                    ],
+                    6.28318548
+                  ],
+                  "$petals"
+                ],
+                57.2957802
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$petals",
+              "rows": "$layers"
+            },
+            "role": "petal",
+            "s": [
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_length",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                [
+                  "mul",
+                  "$petal_length",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ]
+              ],
+              "base_width": "$base_width",
+              "belly_width": "$belly_width",
+              "bend": "$bend",
+              "blue": "$petal_blue",
+              "cup": "$cup",
+              "green": "$petal_green",
+              "kind": 0,
+              "neck_width": "$neck_width",
+              "red": "$petal_red",
+              "ripple": "$ripple",
+              "segments": 24,
+              "shoulder_width": "$shoulder_width",
+              "sides": 12,
+              "tip_blue": "$tip_blue",
+              "tip_green": "$tip_green",
+              "tip_red": "$tip_red",
+              "tip_width": "$tip_width",
+              "twist": "$twist",
+              "veins": 0.649999976
+            }
+          },
+          {
+            "id": "core",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  0.0149999997
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "role": "pollen",
+            "s": [
+              [
+                "mul",
+                0.150000006,
+                "$size"
+              ],
+              [
+                "mul",
+                0.0649999976,
+                "$size"
+              ],
+              [
+                "mul",
+                0.150000006,
+                "$size"
+              ]
+            ]
+          },
+          {
+            "id": "leaf",
+            "motion": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "cycles": 1,
+              "enabled": "$animate",
+              "from": [
+                "neg",
+                "$wind"
+              ],
+              "period": "$duration",
+              "phase": [
+                "div",
+                "@i",
+                6
+              ],
+              "to": "$wind"
+            },
+            "op": "surface",
+            "orient": "radial",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "add",
+                  0.280000001,
+                  [
+                    "mul",
+                    "@i",
+                    0.180000007
+                  ]
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "r": [
+              70,
+              [
+                "mul",
+                "@i",
+                137.507767
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$leaves"
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                0.0549999997,
+                "$size"
+              ],
+              [
+                "mul",
+                "$leaf_size",
+                "$size"
+              ],
+              [
+                "mul",
+                0.0549999997,
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                "$leaf_size",
+                0.0549999997
+              ],
+              "base_width": 0.100000001,
+              "belly_width": 1,
+              "bend": 0.300000012,
+              "blue": 0.0799999982,
+              "cup": 0.300000012,
+              "green": 0.349999994,
+              "kind": 0,
+              "neck_width": 0.5,
+              "red": 0.119999997,
+              "segments": 20,
+              "shoulder_width": 0.800000012,
+              "sides": 8,
+              "tip_blue": 0.109999999,
+              "tip_green": 0.449999988,
+              "tip_red": 0.180000007,
+              "tip_width": 0.00499999989
+            }
+          },
+          {
+            "id": "base",
+            "op": "anchor",
+            "p": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "top",
+            "op": "anchor",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              0
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "orchid",
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0.800000012,
+        0,
+        0
+      ],
+      "params": {
+        "animate": 1,
+        "base_radius": 0.0500000007,
+        "base_width": 0.119999997,
+        "belly_width": 1,
+        "bend": -0.349999994,
+        "closed_angle": 22,
+        "cup": 0.5,
+        "duration": 4,
+        "height": 0.800000012,
+        "layer_angle": 0,
+        "layer_step": 0.870000005,
+        "layers": 1,
+        "leaf_size": 0.5,
+        "leaf_spread": 0.00999999978,
+        "leaves": 2,
+        "neck_width": 0.850000024,
+        "open_angle": 110,
+        "opening": 0.800000012,
+        "petal_blue": 0.939999998,
+        "petal_green": 0.850000024,
+        "petal_length": 0.300000012,
+        "petal_red": 1,
+        "petal_width": 0.189999998,
+        "petals": 5,
+        "ripple": 0.0199999996,
+        "shoulder_width": 0.699999988,
+        "size": 0.800000012,
+        "stagger": 0.5,
+        "tip_blue": 0.699999988,
+        "tip_green": 0.280000001,
+        "tip_red": 0.850000024,
+        "tip_width": 0.0799999982,
+        "twist": 0.150000006,
+        "wind": 3
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 3,
+            "min": 0.25,
+            "name": "size",
+            "value": 1
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 2,
+            "min": 0.200000003,
+            "name": "height",
+            "value": 0.800000012
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 32,
+            "min": 3,
+            "name": "petals",
+            "value": 5
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 6,
+            "min": 1,
+            "name": "layers",
+            "value": 1
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.0500000007,
+            "name": "petal_length",
+            "value": 0.300000012
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.600000024,
+            "min": 0.00999999978,
+            "name": "petal_width",
+            "value": 0.189999998
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0,
+            "name": "base_radius",
+            "value": 0.0500000007
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.600000024,
+            "name": "layer_step",
+            "value": 0.870000005
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "stagger",
+            "value": 0.5
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 1.5,
+            "min": -1,
+            "name": "cup",
+            "value": 0.5
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": -2,
+            "name": "bend",
+            "value": -0.349999994
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": -2,
+            "name": "twist",
+            "value": 0.150000006
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0,
+            "name": "ripple",
+            "value": 0.0199999996
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "base_width",
+            "value": 0.119999997
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "shoulder_width",
+            "value": 0.699999988
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "belly_width",
+            "value": 1
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "neck_width",
+            "value": 0.850000024
+          },
+          {
+            "group": "profile",
+            "integer": false,
+            "max": 2,
+            "min": 0.00100000005,
+            "name": "tip_width",
+            "value": 0.0799999982
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_red",
+            "value": 1
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_green",
+            "value": 0.850000024
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "petal_blue",
+            "value": 0.939999998
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_red",
+            "value": 0.850000024
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_green",
+            "value": 0.280000001
+          },
+          {
+            "group": "materials",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "tip_blue",
+            "value": 0.699999988
+          },
+          {
+            "group": "foliage",
+            "integer": true,
+            "max": 6,
+            "min": 0,
+            "name": "leaves",
+            "value": 2
+          },
+          {
+            "group": "foliage",
+            "integer": false,
+            "max": 1,
+            "min": 0.0500000007,
+            "name": "leaf_size",
+            "value": 0.5
+          },
+          {
+            "group": "foliage",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "leaf_spread",
+            "value": 0.00999999978
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "opening",
+            "value": 0.800000012
+          },
+          {
+            "group": "animation",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "animate",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 60,
+            "min": 0,
+            "name": "closed_angle",
+            "value": 22
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 130,
+            "min": 30,
+            "name": "open_angle",
+            "value": 110
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 15,
+            "min": 0,
+            "name": "layer_angle",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 600,
+            "min": 0,
+            "name": "duration",
+            "value": 0
+          },
+          {
+            "group": "animation",
+            "integer": false,
+            "max": 15,
+            "min": 0,
+            "name": "wind",
+            "value": 3
+          }
+        ],
+        "nodes": [
+          {
+            "id": "stem",
+            "op": "surface",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "mul",
+                  "$height",
+                  0.5
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "role": "stem",
+            "s": [
+              [
+                "mul",
+                0.0160000008,
+                "$size"
+              ],
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              [
+                "mul",
+                0.0160000008,
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                "$height",
+                0.0160000008
+              ],
+              "bend": 0,
+              "cup": 0,
+              "kind": 2,
+              "ripple": 0,
+              "segments": 16,
+              "sides": 8
+            }
+          },
+          {
+            "id": "pet",
+            "motion": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "cycles": 1,
+              "enabled": "$animate",
+              "from": [
+                "sub",
+                [
+                  "sub",
+                  "$closed_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "period": "$duration",
+              "smooth": 1,
+              "to": [
+                "sub",
+                [
+                  "sub",
+                  "$open_angle",
+                  [
+                    "mul",
+                    "@j",
+                    "$layer_angle"
+                  ]
+                ],
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            },
+            "op": "surface",
+            "orient": "euler",
+            "p": [
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "div",
+                      [
+                        "mul",
+                        [
+                          "add",
+                          "@i",
+                          [
+                            "mul",
+                            "@j",
+                            "$stagger"
+                          ]
+                        ],
+                        6.28318548
+                      ],
+                      "$petals"
+                    ]
+                  ],
+                  "$base_radius"
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  [
+                    "mul",
+                    [
+                      "cos",
+                      [
+                        "div",
+                        [
+                          "mul",
+                          [
+                            "add",
+                            "@i",
+                            [
+                              "mul",
+                              "@j",
+                              "$stagger"
+                            ]
+                          ],
+                          6.28318548
+                        ],
+                        "$petals"
+                      ]
+                    ],
+                    "$base_radius"
+                  ]
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "r": [
+              [
+                "sub",
+                [
+                  "add",
+                  [
+                    "sub",
+                    "$closed_angle",
+                    [
+                      "mul",
+                      "@j",
+                      "$layer_angle"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$opening",
+                    [
+                      "sub",
+                      [
+                        "sub",
+                        "$open_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        "$closed_angle",
+                        [
+                          "mul",
+                          "@j",
+                          "$layer_angle"
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                105
+              ],
+              0,
+              [
+                "neg",
+                [
+                  "mul",
+                  [
+                    "div",
+                    [
+                      "mul",
+                      [
+                        "add",
+                        "@i",
+                        [
+                          "mul",
+                          "@j",
+                          "$stagger"
+                        ]
+                      ],
+                      6.28318548
+                    ],
+                    "$petals"
+                  ],
+                  57.2957802
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": "$petals",
+              "rows": "$layers"
+            },
+            "role": "petal",
+            "s": [
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_length",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                [
+                  "mul",
+                  "$petal_length",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$petal_width",
+                  [
+                    "pow",
+                    "$layer_step",
+                    "@j"
+                  ]
+                ]
+              ],
+              "base_width": "$base_width",
+              "belly_width": "$belly_width",
+              "bend": "$bend",
+              "blue": "$petal_blue",
+              "cup": "$cup",
+              "green": "$petal_green",
+              "kind": 0,
+              "neck_width": "$neck_width",
+              "red": "$petal_red",
+              "ripple": "$ripple",
+              "segments": 24,
+              "shoulder_width": "$shoulder_width",
+              "sides": 12,
+              "tip_blue": "$tip_blue",
+              "tip_green": "$tip_green",
+              "tip_red": "$tip_red",
+              "tip_width": "$tip_width",
+              "twist": "$twist",
+              "veins": 0.649999976
+            }
+          },
+          {
+            "color": [
+              1,
+              0.850000024,
+              0.949999988
+            ],
+            "id": "core",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "add",
+                  "$height",
+                  0.0149999997
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "role": "petal",
+            "s": [
+              [
+                "mul",
+                0.0549999997,
+                "$size"
+              ],
+              [
+                "mul",
+                0.0649999976,
+                "$size"
+              ],
+              [
+                "mul",
+                0.0399999991,
+                "$size"
+              ]
+            ]
+          },
+          {
+            "id": "leaf",
+            "motion": {
+              "axis": [
+                1,
+                0,
+                0
+              ],
+              "cycles": 1,
+              "enabled": "$animate",
+              "from": [
+                "neg",
+                "$wind"
+              ],
+              "period": "$duration",
+              "phase": [
+                "div",
+                "@i",
+                6
+              ],
+              "to": "$wind"
+            },
+            "op": "surface",
+            "orient": "radial",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "add",
+                  0.280000001,
+                  [
+                    "mul",
+                    "@i",
+                    0.180000007
+                  ]
+                ],
+                "$size"
+              ],
+              0
+            ],
+            "r": [
+              70,
+              [
+                "mul",
+                "@i",
+                137.507767
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$leaves"
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                0.0549999997,
+                "$size"
+              ],
+              [
+                "mul",
+                "$leaf_size",
+                "$size"
+              ],
+              [
+                "mul",
+                0.0549999997,
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                "$leaf_size",
+                0.0549999997
+              ],
+              "base_width": 0.100000001,
+              "belly_width": 1,
+              "bend": 0.300000012,
+              "blue": 0.0799999982,
+              "cup": 0.300000012,
+              "green": 0.349999994,
+              "kind": 0,
+              "neck_width": 0.5,
+              "red": 0.119999997,
+              "segments": 20,
+              "shoulder_width": 0.800000012,
+              "sides": 8,
+              "tip_blue": 0.109999999,
+              "tip_green": 0.449999988,
+              "tip_red": 0.180000007,
+              "tip_width": 0.00499999989
+            }
+          },
+          {
+            "id": "base",
+            "op": "anchor",
+            "p": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "top",
+            "op": "anchor",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              0
+            ]
+          },
+          {
+            "id": "lip",
+            "op": "surface",
+            "orient": "euler",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                "$size"
+              ],
+              [
+                "mul",
+                0.0250000004,
+                "$size"
+              ]
+            ],
+            "r": [
+              -25,
+              0,
+              180
+            ],
+            "role": "petal",
+            "s": [
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  0.800000012
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_length",
+                  0.75
+                ],
+                "$size"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "$petal_width",
+                  0.800000012
+                ],
+                "$size"
+              ]
+            ],
+            "surface": {
+              "aspect": [
+                "div",
+                [
+                  "mul",
+                  "$petal_length",
+                  0.75
+                ],
+                [
+                  "mul",
+                  "$petal_width",
+                  0.800000012
+                ]
+              ],
+              "base_width": 0.200000003,
+              "belly_width": 1.29999995,
+              "bend": -0.899999976,
+              "blue": 0.600000024,
+              "cup": 0.899999976,
+              "green": 0.879999995,
+              "kind": 0,
+              "neck_width": 1.10000002,
+              "red": 1,
+              "shoulder_width": 0.550000012,
+              "tip_blue": 0.400000006,
+              "tip_green": 0.0799999982,
+              "tip_red": 0.75,
+              "tip_width": 0.25,
+              "twist": 0.100000001,
+              "veins": 0.800000012
+            }
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}

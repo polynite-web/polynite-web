@@ -61,6 +61,7 @@
   "seed": 17,
   "duration": 4,
   "edit_parameter": "opening",
+  "open": "https://polynite.io/examples/view.html?id=flowers-in-motion",
   "url": "https://explore.polynite.io/docs/recipes/flowers-in-motion/",
   "detail": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.json",
   "markdown": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md",

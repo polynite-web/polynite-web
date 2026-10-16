@@ -64,6 +64,7 @@
   "seed": 17,
   "duration": 6,
   "edit_parameter": "floor_clearance",
+  "open": "https://polynite.io/examples/view.html?id=terrain-pavilion",
   "url": "https://explore.polynite.io/docs/recipes/terrain-pavilion/",
   "detail": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.json",
   "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.md",

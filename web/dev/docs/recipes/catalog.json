@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "description": "Read compact summaries first, then fetch one detail or Markdown file. Examples are editable compositions, not an exhaustive list of supported shapes.",
+  "items": [
+    {
+      "id": "flowers-in-motion",
+      "version": 1,
+      "title": "One toolkit. Three flowers.",
+      "summary": "Compose petals, leaves and a folded lip from shared surfaces, then animate their opening.",
+      "category": "Botanical",
+      "level": "Start here",
+      "operators": [
+        "surface",
+        "primitive",
+        "repeat",
+        "motion",
+        "expression"
+      ],
+      "capabilities": [
+        "recipe_program"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/flowers-in-motion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md"
+    },
+    {
+      "id": "terrain-pavilion",
+      "version": 1,
+      "title": "A level floor. Feet that fit.",
+      "summary": "Sample four support heights, keep the deck level and fit each foot to the slope.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "beam",
+        "surface",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/terrain-pavilion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.md"
+    },
+    {
+      "id": "path-clearance",
+      "version": 1,
+      "title": "A path makes room.",
+      "summary": "Move or widen a path and let an editable fence reserve a clear passage around it.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "spatial",
+        "context",
+        "when",
+        "let",
+        "primitive",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/path-clearance/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.md"
+    }
+  ]
+}

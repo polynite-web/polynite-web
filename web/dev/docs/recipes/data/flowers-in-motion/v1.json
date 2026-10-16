@@ -1,0 +1,70 @@
+{
+  "id": "flowers-in-motion",
+  "title": "One toolkit. Three flowers.",
+  "category": "Botanical",
+  "level": "Start here",
+  "summary": "Compose petals, leaves and a folded lip from shared surfaces, then animate their opening.",
+  "operators": [
+    "surface",
+    "primitive",
+    "repeat",
+    "motion",
+    "expression"
+  ],
+  "capabilities": [
+    "recipe_program"
+  ],
+  "instances": [
+    "lotus",
+    "daisy",
+    "orchid"
+  ],
+  "prompt": "In Polynite, compose a pink lotus, a daisy and an orchid from editable assembly recipes, using shared surface, repeat and motion operators. Give their petals a smooth four-second opening loop. Keep each flower independently editable. Expose petal count, shape, colour and opening controls. Use the linked example as a starting point, then invent your own variation.",
+  "try": [
+    "Set animate to 0 and vary opening from 0 to 1.",
+    "Change petal count and profile to invent a fourth flower.",
+    "Enable animate and compare the closed and open poses."
+  ],
+  "steps": [
+    "Shape one petal with a reusable curved surface.",
+    "Repeat it around a centre; arrange additional layers in the recipe.",
+    "Add leaves and a central piece, then articulate the petals with motion."
+  ],
+  "settings": "Scene settings > Living architecture > select lotus, daisy or orchid > Parameters: shape / profile / materials / animation. Set animate = 1, duration = 4, then Play.",
+  "checks": [
+    {
+      "type": "motion",
+      "instance": "lotus",
+      "object": "ar5_lotus_pet000000",
+      "times": [
+        0,
+        2,
+        4
+      ],
+      "min_degrees": 20
+    }
+  ],
+  "tested_at": "2026-10-16",
+  "revision": "94824df40",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/flowers-in-motion-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/flowers-in-motion-v1.jpg"
+  },
+  "limits": "Stylised flowers. This is a shared surface-and-articulation recipe, not botanical simulation. The film was recorded on 15 October; regression checks were repeated on 16 October.",
+  "scene_sha256": "489341136c8d94bd3582d44c2194c2a67237167cfead1bc298961d59998db8af",
+  "recipes_sha256": "ff921b49c8e14a0efe792fa5ce517e5dd97a2e4cd13d6ec8afeb4f100e68cf97",
+  "version": 1,
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "seed": 17,
+  "duration": 4,
+  "edit_parameter": "opening",
+  "open": "https://polynite.io/examples/view.html?id=flowers-in-motion",
+  "url": "https://explore.polynite.io/docs/recipes/flowers-in-motion/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.recipes.json"
+}

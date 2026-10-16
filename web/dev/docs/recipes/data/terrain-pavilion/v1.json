@@ -1,0 +1,73 @@
+{
+  "id": "terrain-pavilion",
+  "title": "A level floor. Feet that fit.",
+  "category": "Architecture",
+  "level": "Build on it",
+  "summary": "Sample four support heights, keep the deck level and fit each foot to the slope.",
+  "operators": [
+    "spatial",
+    "context",
+    "let",
+    "beam",
+    "surface",
+    "repeat"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_context",
+    "recipe_spatial"
+  ],
+  "instances": [
+    "temple"
+  ],
+  "prompt": "In Polynite, create an editable Japanese pavilion on a sloped cube support. Use the terrain_pavilion assembly recipe as a starting point. Sample the support height at each corner, keep the deck horizontal above the highest corner, and fit each foot to its local height. Expose floor clearance and roof proportions. Show a six-second sequence with two slope changes and a return to the initial state. Preserve the current scene and check capabilities before applying.",
+  "try": [
+    "Change floor_clearance to raise the platform above its highest corner.",
+    "Change the support top_slope to [1.8, -0.6], then [-1.2, 0.8].",
+    "Modify roof curl and overhang without changing the support rule."
+  ],
+  "steps": [
+    "Declare the support as a named context reference.",
+    "Sample its top height at four corners and choose their maximum.",
+    "Place the deck above that height; extend each foot to its own sample."
+  ],
+  "settings": "Scene settings > Living architecture > temple > Parameters: shape. Adjust floor_clearance and roof proportions. Change the terrain cube top_slope through MCP; arbitrary imported terrain is not supported.",
+  "checks": [
+    {
+      "type": "support",
+      "instance": "temple",
+      "times": [
+        0,
+        2,
+        3.7,
+        5.5
+      ],
+      "source": "terrain",
+      "part_prefix": "post",
+      "min_height_spread": 0.8
+    }
+  ],
+  "tested_at": "2026-10-16",
+  "revision": "94824df40",
+  "media": {
+    "video": "https://polynite.io/atelier/media/terrain-posts-20261016-111950.mp4",
+    "poster": "https://polynite.io/atelier/media/terrain-posts-20261016-111950.jpg"
+  },
+  "limits": "Analytic heights on a declared yaw-only cube support. Discrete edits at 1.5, 3 and 4.5 seconds; arbitrary meshes and continuously deforming terrain are not covered.",
+  "scene_sha256": "f0b768288e21a3918d0b9255db523a79c616382a80f29ed9128b14fcf21752f5",
+  "recipes_sha256": "afe94faae8fda406dc2653c063640a847dbe8fc471b038b419da45f43b2e4a0d",
+  "version": 1,
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "seed": 17,
+  "duration": 6,
+  "edit_parameter": "floor_clearance",
+  "open": "https://polynite.io/examples/view.html?id=terrain-pavilion",
+  "url": "https://explore.polynite.io/docs/recipes/terrain-pavilion/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.recipes.json"
+}

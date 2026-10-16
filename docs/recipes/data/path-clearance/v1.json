@@ -63,6 +63,7 @@
   "seed": 17,
   "duration": 6,
   "edit_parameter": "clearance",
+  "open": "https://polynite.io/examples/view.html?id=path-clearance",
   "url": "https://explore.polynite.io/docs/recipes/path-clearance/",
   "detail": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.json",
   "markdown": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.md",

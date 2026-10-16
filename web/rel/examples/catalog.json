@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "flowers-in-motion",
+      "title": "One toolkit. Three flowers.",
+      "category": "Botanical",
+      "level": "Start here",
+      "summary": "Compose petals, leaves and a folded lip from shared surfaces, then animate their opening.",
+      "operators": [
+        "surface",
+        "primitive",
+        "repeat",
+        "motion",
+        "expression"
+      ],
+      "capabilities": [
+        "recipe_program"
+      ],
+      "instances": [
+        "lotus",
+        "daisy",
+        "orchid"
+      ],
+      "prompt": "In Polynite, compose a pink lotus, a daisy and an orchid from editable assembly recipes, using shared surface, repeat and motion operators. Give their petals a smooth four-second opening loop. Keep each flower independently editable. Expose petal count, shape, colour and opening controls. Use the linked example as a starting point, then invent your own variation.\n\nReference: https://explore.polynite.io/docs/recipes/flowers-in-motion/",
+      "try": [
+        "Set animate to 0 and vary opening from 0 to 1.",
+        "Change petal count and profile to invent a fourth flower.",
+        "Enable animate and compare the closed and open poses."
+      ],
+      "steps": [
+        "Shape one petal with a reusable curved surface.",
+        "Repeat it around a centre; arrange additional layers in the recipe.",
+        "Add leaves and a central piece, then articulate the petals with motion."
+      ],
+      "settings": "Scene settings > Living architecture > select lotus, daisy or orchid > Parameters: shape / profile / materials / animation. Set animate = 1, duration = 4, then Play.",
+      "checks": [
+        {
+          "type": "motion",
+          "instance": "lotus",
+          "object": "ar5_lotus_pet000000",
+          "times": [
+            0,
+            2,
+            4
+          ],
+          "min_degrees": 20
+        }
+      ],
+      "tested_at": "2026-10-16",
+      "revision": "94824df40",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/flowers-in-motion-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/flowers-in-motion-v1.jpg"
+      },
+      "limits": "Stylised flowers. This is a shared surface-and-articulation recipe, not botanical simulation. The film was recorded on 15 October; regression checks were repeated on 16 October.",
+      "scene_sha256": "489341136c8d94bd3582d44c2194c2a67237167cfead1bc298961d59998db8af",
+      "recipes_sha256": "ff921b49c8e14a0efe792fa5ce517e5dd97a2e4cd13d6ec8afeb4f100e68cf97",
+      "version": 1,
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "seed": 17,
+      "duration": 4,
+      "edit_parameter": "opening",
+      "open": "https://polynite.io/examples/view.html?id=flowers-in-motion",
+      "url": "https://explore.polynite.io/docs/recipes/flowers-in-motion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md",
+      "scene": "https://polynite.io/examples/data/flowers-in-motion-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "terrain-pavilion",
+      "title": "A level floor. Feet that fit.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "Sample four support heights, keep the deck level and fit each foot to the slope.",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "beam",
+        "surface",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "temple"
+      ],
+      "prompt": "In Polynite, create an editable Japanese pavilion on a sloped cube support. Use the terrain_pavilion assembly recipe as a starting point. Sample the support height at each corner, keep the deck horizontal above the highest corner, and fit each foot to its local height. Expose floor clearance and roof proportions. Show a six-second sequence with two slope changes and a return to the initial state. Preserve the current scene and check capabilities before applying.\n\nReference: https://explore.polynite.io/docs/recipes/terrain-pavilion/",
+      "try": [
+        "Change floor_clearance to raise the platform above its highest corner.",
+        "Change the support top_slope to [1.8, -0.6], then [-1.2, 0.8].",
+        "Modify roof curl and overhang without changing the support rule."
+      ],
+      "steps": [
+        "Declare the support as a named context reference.",
+        "Sample its top height at four corners and choose their maximum.",
+        "Place the deck above that height; extend each foot to its own sample."
+      ],
+      "settings": "Scene settings > Living architecture > temple > Parameters: shape. Adjust floor_clearance and roof proportions. Change the terrain cube top_slope through MCP; arbitrary imported terrain is not supported.",
+      "checks": [
+        {
+          "type": "support",
+          "instance": "temple",
+          "times": [
+            0,
+            2,
+            3.7,
+            5.5
+          ],
+          "source": "terrain",
+          "part_prefix": "post",
+          "min_height_spread": 0.8
+        }
+      ],
+      "tested_at": "2026-10-16",
+      "revision": "94824df40",
+      "media": {
+        "video": "https://polynite.io/atelier/media/terrain-posts-20261016-111950.mp4",
+        "poster": "https://polynite.io/atelier/media/terrain-posts-20261016-111950.jpg"
+      },
+      "limits": "Analytic heights on a declared yaw-only cube support. Discrete edits at 1.5, 3 and 4.5 seconds; arbitrary meshes and continuously deforming terrain are not covered.",
+      "scene_sha256": "f0b768288e21a3918d0b9255db523a79c616382a80f29ed9128b14fcf21752f5",
+      "recipes_sha256": "afe94faae8fda406dc2653c063640a847dbe8fc471b038b419da45f43b2e4a0d",
+      "version": 1,
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "floor_clearance",
+      "open": "https://polynite.io/examples/view.html?id=terrain-pavilion",
+      "url": "https://explore.polynite.io/docs/recipes/terrain-pavilion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.md",
+      "scene": "https://polynite.io/examples/data/terrain-pavilion-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "path-clearance",
+      "title": "A path makes room.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "Move or widen a path and let an editable fence reserve a clear passage around it.",
+      "operators": [
+        "spatial",
+        "context",
+        "when",
+        "let",
+        "primitive",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "fence"
+      ],
+      "prompt": "In Polynite, create a flat path crossing an editable fence. Use the path_fence assembly recipe as a starting point. Declare the path as context, measure signed distance to its corridor, and omit posts, caps and rails whose full footprint would obstruct the passage. Expose fence length, bays and clearance. Show a six-second sequence that moves and widens the path, then returns to the initial state. Preserve manual overrides and report conflicts instead of discarding them.\n\nReference: https://explore.polynite.io/docs/recipes/path-clearance/",
+      "try": [
+        "Move or widen the path under Adaptive construction.",
+        "Increase clearance and compare the opening.",
+        "Lock a part near the passage, then move the path across it: the edit should report a conflict and preserve the previous scene."
+      ],
+      "steps": [
+        "Bind the recipe to an existing path by its stable ID.",
+        "Measure distance from each candidate piece to the path corridor.",
+        "Use when to keep only pieces that leave room for their full footprint."
+      ],
+      "settings": "Scene settings > Living architecture > fence > Parameters: shape: length, height, bays, post_width, clearance. Edit walkway in Scene settings > Adaptive construction.",
+      "checks": [
+        {
+          "type": "corridor",
+          "instance": "fence",
+          "times": [
+            0,
+            2,
+            3.7,
+            5.5
+          ],
+          "source": "walkway",
+          "object": "ab_07walkway_p000"
+        }
+      ],
+      "tested_at": "2026-10-16",
+      "revision": "94824df40",
+      "media": {
+        "video": "https://polynite.io/atelier/media/path-corridor-20261016-112010.mp4",
+        "poster": "https://polynite.io/atelier/media/path-corridor-20261016-112010.jpg"
+      },
+      "limits": "Flat paths only. Conditional pieces reserve a conservative radius; they do not cut arbitrary meshes. Overrides that would disappear reject the whole edit.",
+      "scene_sha256": "38421127c39203c907367ae2a1f949a53f4b41be1d573b3dcd299bb8ed79a701",
+      "recipes_sha256": "acfb0f87be91a71c066ea678e5a9044ef716a4b7961aca801ced45022a73cc0c",
+      "version": 1,
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "clearance",
+      "open": "https://polynite.io/examples/view.html?id=path-clearance",
+      "url": "https://explore.polynite.io/docs/recipes/path-clearance/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.md",
+      "scene": "https://polynite.io/examples/data/path-clearance-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "refuge",
+      "atelier": "refuge-20261014-142504-living",
+      "title": "The mist keeper's refuge",
+      "category": "Architecture",
+      "environment": "Moonlit",
+      "summary": "A small refuge, warm windows and drifting mist. Explore the scale, atmosphere and life around it.",
+      "prompt": "Create a small timber refuge in Polynite on a stone foundation, with a steep roof, warm recessed windows, soft moonlight, drifting mist and small signs of life. Use the linked scene as a starting point and expose its building and atmosphere controls.\n\nReference: https://explore.polynite.io/showcase/#refuge",
+      "tags": [
+        "Timber",
+        "Mist",
+        "Night"
+      ],
+      "kind": "showcase",
+      "version": 1,
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "d99edd60e4bee486f71f61690d683f9c61ba86a45436a1e584ca5ca4a8137416",
+      "media": {
+        "video": "https://polynite.io/atelier/media/refuge-20261014-142504-living.mp4",
+        "poster": "https://polynite.io/atelier/media/refuge-20261014-142504-living.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#refuge",
+      "open": "https://polynite.io/examples/view.html?id=refuge",
+      "scene": "https://polynite.io/examples/data/refuge-v1.scene"
+    },
+    {
+      "id": "keeper-house",
+      "atelier": "keeper-20261014-142514-living",
+      "title": "A house at the edge of dusk",
+      "category": "Architecture",
+      "environment": "Twilight",
+      "summary": "Timber, stone and a warm interior at dusk. Make your own version of the keeper's house.",
+      "prompt": "Create a compact keeper's house in Polynite with timber, stone, a warm interior and a twilight garden. Preserve depth around the windows. Use the linked scene as a starting point, change its proportions and try another atmosphere.\n\nReference: https://explore.polynite.io/showcase/#keeper-house",
+      "tags": [
+        "Timber",
+        "Garden",
+        "Twilight"
+      ],
+      "kind": "showcase",
+      "version": 1,
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "4e7f4e9a5e9f262b4af553f2fea89a156acffc7d9415e339a284dc402aced357",
+      "media": {
+        "video": "https://polynite.io/atelier/media/keeper-20261014-142514-living.mp4",
+        "poster": "https://polynite.io/atelier/media/keeper-20261014-142514-living.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#keeper-house",
+      "open": "https://polynite.io/examples/view.html?id=keeper-house",
+      "scene": "https://polynite.io/examples/data/keeper-house-v1.scene"
+    },
+    {
+      "id": "morning-mill",
+      "atelier": "mill-20261014-142451-living",
+      "title": "The mill wakes with the light",
+      "category": "Architecture",
+      "environment": "Dawn",
+      "summary": "A mill in the first light, with moving details and a garden to explore.",
+      "prompt": "Create a small stylised mill in Polynite with a timber building, a readable roof silhouette, moving mill details and a garden in soft dawn light. Start from the linked scene, keep it editable and expose the available building and atmosphere controls.\n\nReference: https://explore.polynite.io/showcase/#morning-mill",
+      "tags": [
+        "Mill",
+        "Motion",
+        "Dawn"
+      ],
+      "kind": "showcase",
+      "version": 1,
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "507eff5b1e7b05d81dd4b8d3cb90e79e5610307b4a83eba7501b13d03d8e08b4",
+      "media": {
+        "video": "https://polynite.io/atelier/media/mill-20261014-142451-living.mp4",
+        "poster": "https://polynite.io/atelier/media/mill-20261014-142451-living.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#morning-mill",
+      "open": "https://polynite.io/examples/view.html?id=morning-mill",
+      "scene": "https://polynite.io/examples/data/morning-mill-v1.scene"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ function refresh() {
     else count++;
   }
   document.querySelector('h1').innerHTML = collection.value === 'atmospheres' ? 'Choisir une ambiance.<br><em>Imaginer la suivante.</em>' : introTitle;
-  document.querySelector('.lead').textContent = collection.value === 'atmospheres' ? 'Refuge lunaire, maison du gardien ou moulin à l’aube : trois constructions et trois environnements. Des variations reproductibles, animées sur un cycle de 15 secondes. Regarde les boucles et garde tes préférées ; la scène originale reste dans sa collection.' : introLead;
+  document.querySelector('.lead').textContent = collection.value === 'atmospheres' ? 'Constructions, environnements et essais d’adaptation : regarde les boucles, compare leurs réglages et garde tes préférées. Chaque fiche indique sa durée et conserve sa scène originale.' : introLead;
   document.querySelector('#count').textContent = `${count} rendu${count > 1 ? 's' : ''}`;
   document.querySelector('.empty').hidden = count > 0;
 }

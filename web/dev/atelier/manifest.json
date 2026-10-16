@@ -355,6 +355,134 @@
         "environment": "amber",
         "period": 15
       }
+    },
+    {
+      "id": "terrain-posts-wip-20261016-104128",
+      "title": "Test terrain : poteaux ajustés et plancher horizontal",
+      "summary": [
+        "Recette JSON : quatre poteaux suivent les hauteurs du support incliné.",
+        "Séquence native de 6 secondes : appui plat, deux pentes, retour au départ."
+      ],
+      "note": "Test intermédiaire desktop, sans son. Défaut de restauration initiale repéré après analyse ; correction préparée, validation finale en attente de réouverture de meshopt. La scène exige commands.recipe_spatial, absent du moteur web publié. Vidéo native 720p, agrandie en 1080p pour le carnet ; aucun changement de fenêtre.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-16T10:41:28-04:00",
+      "published_at": "2026-10-16T14:52:13.470242+00:00",
+      "revision": "7d31412e0+spatial-wip",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "terrain-posts-test",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.0,
+      "bytes": 256105,
+      "sha256": "b1214419f0829409c3ad760b4257111e361bd345b0eaed50bc008355a042cf03",
+      "video": "media/terrain-posts-wip-20261016-104128.mp4",
+      "poster": "media/terrain-posts-wip-20261016-104128.jpg",
+      "scene": "media/terrain-posts-wip-20261016-104128.scene",
+      "generator": {
+        "seed": 17,
+        "architecture": "terrain_pavilion",
+        "environment": "studio",
+        "period": 6.0
+      },
+      "audio": "none"
+    },
+    {
+      "id": "path-corridor-wip-20261016-104143",
+      "title": "Test chemin : ouverture adaptative dans une clôture",
+      "summary": [
+        "Recette JSON : les pièces laissent un passage autour du chemin déclaré.",
+        "Séquence native de 6 secondes : déplacement du chemin puis changement de largeur et orientation."
+      ],
+      "note": "Test intermédiaire desktop, sans son. Défaut visible de restauration entre géométrie et relations au début du replay ; correction préparée, nouvel export en attente de réouverture de meshopt. La scène exige commands.recipe_spatial, absent du moteur web publié. Rendu natif 720p agrandi en 1080p pour le carnet.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-16T10:41:43-04:00",
+      "published_at": "2026-10-16T14:53:10.781683+00:00",
+      "revision": "7d31412e0+spatial-wip",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "path-corridor-test",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.0,
+      "bytes": 345190,
+      "sha256": "988b63970968430c734afef7997d2ae95c254b38febe9cfa2a506f0c51da4afc",
+      "video": "media/path-corridor-wip-20261016-104143.mp4",
+      "poster": "media/path-corridor-wip-20261016-104143.jpg",
+      "scene": "media/path-corridor-wip-20261016-104143.scene",
+      "generator": {
+        "seed": 17,
+        "architecture": "path_fence",
+        "environment": "studio",
+        "period": 6.0
+      },
+      "audio": "none"
+    },
+    {
+      "id": "terrain-posts-20261016-111950",
+      "title": "Pavillon — appuis adaptés à la pente",
+      "summary": [
+        "Quatre pieds suivent les hauteurs locales ; le plancher reste horizontal.",
+        "Modifications réelles du terrain à 1,5 / 3 / 4,5 secondes ; retour au même état initial."
+      ],
+      "note": "Test desktop JIT validé. Recette JSON sur opérateurs communs, appui cubique incliné ; terrain arbitraire et adaptation continue non couverts. Export natif 720p, adapté en 1080p sans recadrage. Comparaison volontairement sans son. Moteur WebGPU public non mis à jour.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-16T11:19:50-04:00",
+      "published_at": "2026-10-16T15:22:44.000648+00:00",
+      "revision": "94824df40",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "Terrain: plancher horizontal et pieds ajustés",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.0,
+      "bytes": 279516,
+      "sha256": "7c4c7e7aeff5df072042f27da6c1fb18e77ba6a386beb95ed855486c2f3c995d",
+      "video": "media/terrain-posts-20261016-111950.mp4",
+      "poster": "media/terrain-posts-20261016-111950.jpg",
+      "scene": "media/terrain-posts-20261016-111950.scene",
+      "generator": {
+        "seed": 17,
+        "architecture": "terrain_pavilion",
+        "environment": "studio",
+        "period": 6.0
+      },
+      "audio": "none"
+    },
+    {
+      "id": "path-corridor-20261016-112010",
+      "title": "Clôture — passage réservé autour du chemin",
+      "summary": [
+        "Déplacer ou élargir le chemin déplace le passage et préserve le dégagement des pièces.",
+        "Début, changements et retour final vérifiés sur les dalles réelles et les éléments de clôture."
+      ],
+      "note": "Test desktop JIT validé. Recette JSON utilisant distance et émission conditionnelle, sans générateur natif spécifique. Changements discrets à 1,5 / 3 / 4,5 secondes. Export natif 720p, adapté en 1080p sans recadrage. Comparaison volontairement sans son. Moteur WebGPU public non mis à jour.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-16T11:20:10-04:00",
+      "published_at": "2026-10-16T15:23:26.840904+00:00",
+      "revision": "94824df40",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "Chemin: ouverture adaptative et dégagement",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.0,
+      "bytes": 356686,
+      "sha256": "04c519bd1b8764bd8950722dd6af164f462244779696fa76551d3fabf92a8cf1",
+      "video": "media/path-corridor-20261016-112010.mp4",
+      "poster": "media/path-corridor-20261016-112010.jpg",
+      "scene": "media/path-corridor-20261016-112010.scene",
+      "generator": {
+        "seed": 17,
+        "architecture": "path_fence",
+        "environment": "studio",
+        "period": 6.0
+      },
+      "audio": "none"
     }
   ]
 }
