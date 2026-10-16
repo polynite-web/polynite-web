@@ -57,7 +57,20 @@ fs.renameSync=function(source,target){if(target===path.join(root,'web')&&source.
 try{assert.throws(()=>publish(root),/simulated promotion failure/);}finally{fs.renameSync=rename;}
 assert(rejectedSwap);assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),before);
 assert.equal(fs.readFileSync(path.join(root,'web/custom.txt'),'utf8'),'keep');
-publish(root);
+// A locked Explorer folder must not prevent publication. A failure partway
+// through that fallback must restore every changed file and retain custom data.
+let locked=false,partial=false;
+const publicDir=path.join(root,'web'),oldFiles=new Map();
+function snapshot(dir,prefix=''){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const name=prefix+e.name;if(e.isDirectory())snapshot(path.join(dir,e.name),name+'/');else oldFiles.set(name,hash(fs.readFileSync(path.join(dir,e.name))));}}
+snapshot(publicDir);
+function folderLock(source,target){if(source===publicDir){locked=true;const error=Error('simulated Explorer folder lock');error.code='EPERM';throw error;}return rename(source,target);}
+fs.renameSync=function(source,target){if(String(source).includes('public-files-')&&path.basename(source)==='next'&&target===path.join(publicDir,'app.js')&&!partial){partial=true;throw Error('simulated file installation failure');}return folderLock(source,target);};
+try{assert.throws(()=>publish(root),/simulated file installation failure/);}finally{fs.renameSync=rename;}
+assert(locked&&partial);for(const [name,digest]of oldFiles)assert.equal(hash(fs.readFileSync(path.join(publicDir,name))),digest,name);
+const afterFiles=new Map(oldFiles);oldFiles.clear();snapshot(publicDir);assert.deepEqual(oldFiles,afterFiles,'Rollback must remove newly installed files');
+fs.renameSync=folderLock;
+try{publish(root);}finally{fs.renameSync=rename;}
+console.log('PASS: Explorer folder lock fallback and complete rollback after a partial file installation.');
 assert.ok(fs.readFileSync(path.join(root,'web/examples/runtime/index.html'),'utf8').includes('<base href="/">'));
 assert.ok(fs.readFileSync(path.join(root,'web/examples/runtime/index.html'),'utf8').includes('window.__pnBuildVersion='+JSON.stringify(rel.version)));
 assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),rel.files['app.wasm'].sha256);

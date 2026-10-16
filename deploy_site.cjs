@@ -132,6 +132,33 @@ function replaceDirectories(root,entries){
  }
  for(const record of records)removeWork(root,record.backup);
 }
+// Explorer can lock a directory while its files remain replaceable. Commit
+// checked payload files atomically, with rollback; leave unrelated files alone.
+function publishFiles(root,source,target,release){
+ const backup=path.join(root,'.deploy-work','public-files-'+process.pid),records=[];
+ fs.mkdirSync(backup,{recursive:true});let keep=false;
+ const names=[...new Set([...Object.keys(release.files),...(release.removedFiles||[])])].filter(n=>n!==MANIFEST).concat(MANIFEST);
+ function install(name,from){
+  const dest=inside(target,name),temp=path.join(backup,'next');
+  fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(from,temp);fs.renameSync(temp,dest);
+ }
+ try{
+  for(const name of names){
+   const from=inside(source,name),dest=inside(target,name),exists=fs.existsSync(dest),next=fs.existsSync(from);
+   if(!exists&&!next || exists&&next&&hash(fs.readFileSync(dest))===hash(fs.readFileSync(from)))continue;
+   if(exists)copy(target,path.join(backup,'old'),name);
+   if(next)install(name,from);else fs.unlinkSync(dest);
+   records.push({name,exists});
+  }
+  for(const [name,entry]of Object.entries(release.files))if(hash(fs.readFileSync(inside(target,name)))!==entry.sha256)throw Error('Published file differs from validated release: '+name);
+  checkPair(target);
+ }catch(error){
+  const errors=[];
+  for(const r of records.reverse())try{if(r.exists)install(r.name,inside(path.join(backup,'old'),r.name));else fs.unlinkSync(inside(target,r.name));}catch(e){errors.push(e.message);}
+  if(errors.length){keep=true;throw Error(error.message+'; rollback incomplete. Backups retained at '+backup+': '+errors.join('; '));}
+  throw error;
+ }finally{if(!keep)removeWork(root,backup);}
+}
 function capture(root,source,target){
  const inputs=new Map();for(const name of payload(source))inputs.set(name,inside(source,name));
  for(const name of siteFiles)if(fs.existsSync(path.join(root,name)))inputs.set(name,path.join(root,name));
@@ -225,7 +252,12 @@ function publish(root){
   for(const name of Object.keys(release.files))copy(temp,full,name);
   copy(temp,full,MANIFEST);
   for(const name of ['app.js','app.wasm'])if(hash(fs.readFileSync(inside(full,name)))!==candidate.files[name].sha256)throw Error('Published engine differs from validated rel');
-  checkPair(full);replaceDirectories(root,[{name:'web',source:full}]);
+  checkPair(full);
+  try{replaceDirectories(root,[{name:'web',source:full}]);}catch(error){
+   if(!['EPERM','EACCES','EBUSY'].includes(error.code)||!fs.existsSync(target)||!fs.existsSync(full))throw error;
+   progress('Directory is locked; installing checked files with backup and rollback.');
+   publishFiles(root,full,target,release);
+  }
   console.log('[polynite] Published local web/ from validated rel '+candidate.version+'; engine/version preserved.');
  }finally{removeWork(root,temp);removeWork(root,full);}
 }
