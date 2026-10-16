@@ -18,7 +18,7 @@
    }check.finish();checks.push(c.type);}
    if(!call('scene.snapshot').objects)throw Error('Scene is empty');
    if(reference.initial.architecture?.length){const r=reference.initial.architecture[0],name=entry.edit_parameter||r.program.inputs[0].name,schema=call('scene.architecture',{request:{command:'inspect',id:r.id}}).parameter_schema.properties[name],value=schema.type==='integer'?Math.min(schema.maximum,schema.minimum+1):schema.minimum+(schema.maximum-schema.minimum)*.4;film('stop');call('scene.apply',{actions:[{op:'architecture',id:r.id,params:{[name]:value}}]});const changed=call('scene.architecture',{request:{command:'inspect',id:r.id}}).recipe.params[name];if(Math.abs(changed-value)>.001)throw Error('Parameter edit did not apply');checks.push('parameter edit');}
-   const instancing=film('status').instancing;if(entry.capabilities?.includes('recipe_instances')){if(!instancing?.gpu_copies)throw Error('Expected shared GPU geometry');checks.push('GPU sharing');}
+   await sleep(100);const instancing=film('status').instancing;if(entry.capabilities?.includes('recipe_instances')){if(!instancing?.gpu_copies)throw Error('Expected shared GPU geometry');checks.push('GPU sharing');}
    report.textContent=JSON.stringify({passed:true,id:entry.id,checks,objects:call('scene.snapshot').objects,instancing},null,2);
   }catch(error){report.textContent=JSON.stringify({passed:false,id:entry.id,error:error.message},null,2);}finally{film('stop');film('load_document',{document:saved,start_paused:true});makeParameters();}
  }

@@ -2,30 +2,340 @@
   "version": 1,
   "discovery": "Native MCP: scene.architecture request:{command:operators,operator:<id>}. Read current engine capabilities and operator contracts before composing. These examples explain concepts; connected-engine schemas are authoritative.",
   "items": [
-    {"id":"surface","title":"Shape a surface","summary":"Create a curved petal, leaf, panel or roof from a shared profile. Shape belongs to parameters, not a species name.","example":{"id":"pet","op":"surface","role":"petal","s":[0.2,0.4,0.05],"surface":{"cup":0.4}}},
-    {"id":"primitive","title":"Start with a solid","summary":"Compose cubes, spheres, cylinders, cones or planes; assign a reusable material role.","example":{"id":"post","op":"primitive","kind":"cube","s":[0.1,1,0.1]}},
-    {"id":"beam","title":"Connect two points","summary":"Build a support between explicit endpoints. A recipe can compute each endpoint from its surroundings.","example":{"id":"leg","op":"beam","a":[0,0,0],"b":[0,1,0],"width":0.05}},
-    {"id":"anchor","title":"Name a connection","summary":"Expose a stable point for another assembly to attach to or reference.","example":{"id":"tip","op":"anchor","p":[0,1,0]}},
-    {"id":"repeat","title":"Arrange many parts","summary":"Repeat a node with stable indices. Use @i and @j in expressions to choose each piece's placement.","example":{"count":8,"rows":1}},
-    {"id":"motion","title":"Articulate a part","summary":"Animate a part around an axis without rebuilding its topology every frame.","example":{"enabled":1,"axis":[1,0,0],"from":18,"to":108,"period":4}},
-    {"id":"expression","title":"Calculate a relationship","summary":"Combine bounded numeric expressions and parameters. For example, double a length or arrange pieces around a circle.","example":["mul","$width",0.5]},
-    {"id":"context","title":"Declare the surroundings","summary":"Reference a named support, path or assembly anchor. Relationships are explicit and local.","example":[{"name":"base","object":"terrain","point":"top"}]},
-    {"id":"let","title":"Reuse a calculation","summary":"Give a bounded expression a name, then reference it as %half. This keeps a recipe readable.","example":[{"name":"half","value":["mul","$width",0.5]}]},
-    {"id":"spatial","title":"Sample the surroundings","summary":"Sample height on a declared cube support, or signed distance from a support footprint or path corridor. Arbitrary mesh terrain is not covered.","example":["height","@base",0,0]},
-    {"id":"when","title":"Leave room","summary":"Conditionally emit a piece. Zero skips it; one keeps it. Include a piece's whole footprint when reserving clearance.","example":["gte",["distance","@walk",0,0],0.3]}
+    {
+      "id": "surface",
+      "title": "Shape a surface",
+      "summary": "Create a curved petal, leaf, panel or roof from a shared profile. Shape belongs to parameters, not a species name.",
+      "example": {
+        "id": "pet",
+        "op": "surface",
+        "role": "petal",
+        "s": [
+          0.2,
+          0.4,
+          0.05
+        ],
+        "surface": {
+          "cup": 0.4
+        }
+      }
+    },
+    {
+      "id": "primitive",
+      "title": "Start with a solid",
+      "summary": "Compose cubes, spheres, cylinders, cones or planes; assign a reusable material role.",
+      "example": {
+        "id": "post",
+        "op": "primitive",
+        "kind": "cube",
+        "s": [
+          0.1,
+          1,
+          0.1
+        ]
+      }
+    },
+    {
+      "id": "beam",
+      "title": "Connect two points",
+      "summary": "Build a support between explicit endpoints. A recipe can compute each endpoint from its surroundings.",
+      "example": {
+        "id": "leg",
+        "op": "beam",
+        "a": [
+          0,
+          0,
+          0
+        ],
+        "b": [
+          0,
+          1,
+          0
+        ],
+        "width": 0.05
+      }
+    },
+    {
+      "id": "anchor",
+      "title": "Name a connection",
+      "summary": "Expose a stable point for another assembly to attach to or reference.",
+      "example": {
+        "id": "tip",
+        "op": "anchor",
+        "p": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "repeat",
+      "title": "Arrange many parts",
+      "summary": "Repeat a node with stable indices. Use @i and @j in expressions to choose each piece's placement.",
+      "example": {
+        "count": 8,
+        "rows": 1
+      }
+    },
+    {
+      "id": "motion",
+      "title": "Articulate a part",
+      "summary": "Animate a part around an axis without rebuilding its topology every frame.",
+      "example": {
+        "enabled": 1,
+        "axis": [
+          1,
+          0,
+          0
+        ],
+        "from": 18,
+        "to": 108,
+        "period": 4
+      }
+    },
+    {
+      "id": "expression",
+      "title": "Calculate a relationship",
+      "summary": "Combine bounded numeric expressions and parameters. For example, double a length or arrange pieces around a circle.",
+      "example": [
+        "mul",
+        "$width",
+        0.5
+      ]
+    },
+    {
+      "id": "context",
+      "title": "Declare the surroundings",
+      "summary": "Reference a named support, path or assembly anchor. Relationships are explicit and local.",
+      "example": [
+        {
+          "name": "base",
+          "object": "terrain",
+          "point": "top"
+        }
+      ]
+    },
+    {
+      "id": "let",
+      "title": "Reuse a calculation",
+      "summary": "Give a bounded expression a name, then reference it as %half. This keeps a recipe readable.",
+      "example": [
+        {
+          "name": "half",
+          "value": [
+            "mul",
+            "$width",
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spatial",
+      "title": "Sample the surroundings",
+      "summary": "Sample height on a declared cube support, or signed distance from a support footprint or path corridor. Arbitrary mesh terrain is not covered.",
+      "example": [
+        "height",
+        "@base",
+        0,
+        0
+      ]
+    },
+    {
+      "id": "when",
+      "title": "Leave room",
+      "summary": "Conditionally emit a piece. Zero skips it; one keeps it. Include a piece's whole footprint when reserving clearance.",
+      "example": [
+        "gte",
+        [
+          "distance",
+          "@walk",
+          0,
+          0
+        ],
+        0.3
+      ]
+    },
+    {
+      "id": "prototype",
+      "title": "Define a shared shape",
+      "summary": "Name a primitive or parameterized surface once in program.prototypes. Reuse existing geometry operators; keep style in the recipe.",
+      "example": {
+        "id": "rib",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "profile": [
+            [
+              0,
+              0.06
+            ],
+            [
+              1,
+              0.04
+            ]
+          ],
+          "path": [
+            [
+              -0.5,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.5,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "instance",
+      "title": "Repeat without copying the mesh",
+      "summary": "Place a prototype with independent transforms, material role and rigid motion. Compatible copies share GPU geometry; the scene includes its definitions.",
+      "example": {
+        "id": "arch",
+        "op": "instance",
+        "source": "rib",
+        "repeat": {
+          "count": 8
+        },
+        "p": [
+          0,
+          0,
+          "@i"
+        ],
+        "s": [
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "profile",
+      "title": "Draw the silhouette",
+      "summary": "Supply 2–16 ordered width points for a ribbon, lathe or tube. Expose the widths as recipe inputs.",
+      "example": [
+        [
+          0,
+          1
+        ],
+        [
+          0.2,
+          0.6
+        ],
+        [
+          0.8,
+          0.6
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "sweep",
+      "title": "Follow your own path",
+      "summary": "Sweep a ribbon or tube along 2–16 XYZ points. Reuse it for arches, stems and structural ribs; shapes are cached at edit time.",
+      "example": {
+        "kind": 2,
+        "path": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0.2,
+            0.5,
+            0
+          ],
+          [
+            0.5,
+            1,
+            0
+          ]
+        ],
+        "profile": [
+          [
+            0,
+            0.1
+          ],
+          [
+            1,
+            0.04
+          ]
+        ]
+      }
+    }
   ],
   "starter": {
-    "id":"study",
-    "module":"assembly",
-    "seed":17,
-    "program":{
-      "version":1,
-      "inputs":[
-        {"name":"count","min":1,"max":12,"value":6,"integer":true,"group":"shape"},
-        {"name":"spacing","min":0.2,"max":1,"value":0.4,"group":"shape"},
-        {"name":"height","min":0.2,"max":3,"value":1,"group":"shape"}
+    "id": "study",
+    "module": "assembly",
+    "seed": 17,
+    "program": {
+      "version": 1,
+      "inputs": [
+        {
+          "name": "count",
+          "min": 1,
+          "max": 12,
+          "value": 6,
+          "integer": true,
+          "group": "shape"
+        },
+        {
+          "name": "spacing",
+          "min": 0.2,
+          "max": 1,
+          "value": 0.4,
+          "group": "shape"
+        },
+        {
+          "name": "height",
+          "min": 0.2,
+          "max": 3,
+          "value": 1,
+          "group": "shape"
+        }
       ],
-      "nodes":[{"id":"post","op":"primitive","kind":"cube","repeat":{"count":"$count"},"p":[["mul","@i","$spacing"],["mul","$height",0.5],0],"s":[0.1,"$height",0.1]}]
+      "nodes": [
+        {
+          "id": "post",
+          "op": "primitive",
+          "kind": "cube",
+          "repeat": {
+            "count": "$count"
+          },
+          "p": [
+            [
+              "mul",
+              "@i",
+              "$spacing"
+            ],
+            [
+              "mul",
+              "$height",
+              0.5
+            ],
+            0
+          ],
+          "s": [
+            0.1,
+            "$height",
+            0.1
+          ]
+        }
+      ]
     }
   }
 }

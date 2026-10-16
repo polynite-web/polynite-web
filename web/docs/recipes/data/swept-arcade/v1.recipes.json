@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "study",
+      "materials": {
+        "metal": "workshop_bronze",
+        "stone": "workshop_stone",
+        "wood": "workshop_cedar"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "bays": 7,
+        "height": 2.79999995,
+        "spacing": 0.949999988,
+        "thickness": 0.0450000018,
+        "width": 3.4000001
+      },
+      "program": {
+        "inputs": [
+          {
+            "description": "bays",
+            "group": "layout",
+            "integer": true,
+            "max": 9,
+            "min": 4,
+            "name": "bays",
+            "value": 7
+          },
+          {
+            "description": "width",
+            "group": "shape",
+            "integer": false,
+            "max": 5,
+            "min": 2.5,
+            "name": "width",
+            "value": 3.4000001
+          },
+          {
+            "description": "height",
+            "group": "shape",
+            "integer": false,
+            "max": 4,
+            "min": 2,
+            "name": "height",
+            "value": 2.79999995
+          },
+          {
+            "description": "spacing",
+            "group": "layout",
+            "integer": false,
+            "max": 1.29999995,
+            "min": 0.699999988,
+            "name": "spacing",
+            "value": 0.949999988
+          },
+          {
+            "description": "thickness",
+            "group": "shape",
+            "integer": false,
+            "max": 0.0900000036,
+            "min": 0.0250000004,
+            "name": "thickness",
+            "value": 0.0450000018
+          }
+        ],
+        "let": [
+          {
+            "name": "depth",
+            "value": [
+              "mul",
+              [
+                "sub",
+                "$bays",
+                1
+              ],
+              "$spacing"
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "id": "rib",
+            "op": "instance",
+            "p": [
+              0,
+              0.219999999,
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$spacing"
+              ]
+            ],
+            "repeat": {
+              "count": "$bays"
+            },
+            "role": "wood",
+            "s": [
+              "$width",
+              "$height",
+              "$width"
+            ],
+            "source": "arch_rib"
+          },
+          {
+            "id": "rail",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  0.5
+                ],
+                "$width"
+              ],
+              [
+                "add",
+                0.219999999,
+                [
+                  "mul",
+                  "$height",
+                  0.300000012
+                ]
+              ],
+              0
+            ],
+            "repeat": {
+              "count": 2
+            },
+            "role": "metal",
+            "s": [
+              0.0700000003,
+              0.0900000036,
+              [
+                "add",
+                "%depth",
+                0.200000003
+              ]
+            ],
+            "source": "rail"
+          },
+          {
+            "id": "pad",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@j",
+                  0.5
+                ],
+                "$width"
+              ],
+              0.109999999,
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$spacing"
+              ]
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": 2
+            },
+            "role": "stone",
+            "s": [
+              0.479999989,
+              0.219999999,
+              0.479999989
+            ],
+            "source": "pad"
+          },
+          {
+            "bevel": 0.0250000004,
+            "id": "walk",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              0.0399999991,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              [
+                "sub",
+                "$width",
+                0.600000024
+              ],
+              0.0799999982,
+              [
+                "add",
+                "%depth",
+                1
+              ]
+            ]
+          }
+        ],
+        "prototypes": [
+          {
+            "id": "arch_rib",
+            "op": "surface",
+            "surface": {
+              "kind": 2,
+              "path": [
+                [
+                  -0.5,
+                  0,
+                  0
+                ],
+                [
+                  -0.5,
+                  0.300000012,
+                  0
+                ],
+                [
+                  -0.460000008,
+                  0.550000012,
+                  0
+                ],
+                [
+                  -0.319999993,
+                  0.779999971,
+                  0
+                ],
+                [
+                  0,
+                  0.899999976,
+                  0
+                ],
+                [
+                  0.319999993,
+                  0.779999971,
+                  0
+                ],
+                [
+                  0.460000008,
+                  0.550000012,
+                  0
+                ],
+                [
+                  0.5,
+                  0.300000012,
+                  0
+                ],
+                [
+                  0.5,
+                  0,
+                  0
+                ]
+              ],
+              "profile": [
+                [
+                  0,
+                  "$thickness"
+                ],
+                [
+                  1,
+                  "$thickness"
+                ]
+              ],
+              "ripple": 0,
+              "segments": 48,
+              "sides": 12,
+              "thickness": 0.00300000003,
+              "veins": 0
+            }
+          },
+          {
+            "bevel": 0.00999999978,
+            "id": "rail",
+            "kind": "cube",
+            "op": "primitive"
+          },
+          {
+            "bevel": 0.0350000001,
+            "id": "pad",
+            "kind": "cube",
+            "op": "primitive"
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}

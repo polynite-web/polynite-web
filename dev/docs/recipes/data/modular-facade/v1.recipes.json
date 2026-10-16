@@ -1,0 +1,848 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "study",
+      "materials": {
+        "metal": "workshop_bronze",
+        "paper": "workshop_glass",
+        "roof": "workshop_slate",
+        "stone": "workshop_stone",
+        "wood": "workshop_plaster"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "bay_width": 1.54999995,
+        "bays": 5,
+        "floors": 3,
+        "roof_rise": 0.449999988,
+        "story_height": 2.6500001,
+        "window_width": 0.899999976
+      },
+      "program": {
+        "inputs": [
+          {
+            "description": "bays",
+            "group": "layout",
+            "integer": true,
+            "max": 7,
+            "min": 3,
+            "name": "bays",
+            "value": 5
+          },
+          {
+            "description": "floors",
+            "group": "layout",
+            "integer": true,
+            "max": 4,
+            "min": 1,
+            "name": "floors",
+            "value": 3
+          },
+          {
+            "description": "bay width",
+            "group": "layout",
+            "integer": false,
+            "max": 1.79999995,
+            "min": 1.35000002,
+            "name": "bay_width",
+            "value": 1.54999995
+          },
+          {
+            "description": "story height",
+            "group": "layout",
+            "integer": false,
+            "max": 3,
+            "min": 2.4000001,
+            "name": "story_height",
+            "value": 2.6500001
+          },
+          {
+            "description": "window width",
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.75,
+            "name": "window_width",
+            "value": 0.899999976
+          },
+          {
+            "description": "roof rise",
+            "group": "shape",
+            "integer": false,
+            "max": 0.800000012,
+            "min": 0.150000006,
+            "name": "roof_rise",
+            "value": 0.449999988
+          }
+        ],
+        "nodes": [
+          {
+            "bevel": 0.0350000001,
+            "color": [
+              0.370000005,
+              0.5,
+              0.430000007
+            ],
+            "id": "body",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                [
+                  "add",
+                  0.400000006,
+                  [
+                    "mul",
+                    "$floors",
+                    "$story_height"
+                  ]
+                ],
+                0.5
+              ],
+              0
+            ],
+            "role": "wood",
+            "s": [
+              [
+                "add",
+                [
+                  "mul",
+                  "$bays",
+                  "$bay_width"
+                ],
+                0.600000024
+              ],
+              [
+                "add",
+                0.400000006,
+                [
+                  "mul",
+                  "$floors",
+                  "$story_height"
+                ]
+              ],
+              2
+            ]
+          },
+          {
+            "color": [
+              0.319999993,
+              0.569999993,
+              0.639999986
+            ],
+            "id": "pane",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$bay_width"
+              ],
+              [
+                "add",
+                0.400000006,
+                [
+                  "mul",
+                  [
+                    "add",
+                    "@j",
+                    0.5
+                  ],
+                  "$story_height"
+                ]
+              ],
+              1.02499998
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "paper",
+            "s": [
+              "$window_width",
+              1.5,
+              0.0399999991
+            ],
+            "source": "block"
+          },
+          {
+            "id": "jm0",
+            "op": "instance",
+            "p": [
+              [
+                "add",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    "@i",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        "$bays",
+                        1
+                      ],
+                      0.5
+                    ]
+                  ],
+                  "$bay_width"
+                ],
+                [
+                  "mul",
+                  [
+                    "add",
+                    "$window_width",
+                    0.100000001
+                  ],
+                  -0.5
+                ]
+              ],
+              [
+                "add",
+                0.400000006,
+                [
+                  "mul",
+                  [
+                    "add",
+                    "@j",
+                    0.5
+                  ],
+                  "$story_height"
+                ]
+              ],
+              1.07000005
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              0.100000001,
+              1.72000003,
+              0.140000001
+            ],
+            "source": "trim"
+          },
+          {
+            "id": "jm1",
+            "op": "instance",
+            "p": [
+              [
+                "add",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    "@i",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        "$bays",
+                        1
+                      ],
+                      0.5
+                    ]
+                  ],
+                  "$bay_width"
+                ],
+                [
+                  "mul",
+                  [
+                    "add",
+                    "$window_width",
+                    0.100000001
+                  ],
+                  0.5
+                ]
+              ],
+              [
+                "add",
+                0.400000006,
+                [
+                  "mul",
+                  [
+                    "add",
+                    "@j",
+                    0.5
+                  ],
+                  "$story_height"
+                ]
+              ],
+              1.07000005
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              0.100000001,
+              1.72000003,
+              0.140000001
+            ],
+            "source": "trim"
+          },
+          {
+            "id": "ed0",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$bay_width"
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  0.400000006,
+                  [
+                    "mul",
+                    [
+                      "add",
+                      "@j",
+                      0.5
+                    ],
+                    "$story_height"
+                  ]
+                ],
+                -0.810000002
+              ],
+              1.07000005
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                "$window_width",
+                0.200000003
+              ],
+              0.100000001,
+              0.140000001
+            ],
+            "source": "trim"
+          },
+          {
+            "id": "ed1",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$bay_width"
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  0.400000006,
+                  [
+                    "mul",
+                    [
+                      "add",
+                      "@j",
+                      0.5
+                    ],
+                    "$story_height"
+                  ]
+                ],
+                0.810000002
+              ],
+              1.07000005
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                "$window_width",
+                0.200000003
+              ],
+              0.100000001,
+              0.140000001
+            ],
+            "source": "trim"
+          },
+          {
+            "id": "bar",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$bay_width"
+              ],
+              [
+                "add",
+                0.400000006,
+                [
+                  "mul",
+                  [
+                    "add",
+                    "@j",
+                    0.5
+                  ],
+                  "$story_height"
+                ]
+              ],
+              1.11000001
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              0.0549999997,
+              1.5,
+              0.0799999982
+            ],
+            "source": "trim"
+          },
+          {
+            "id": "sill",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$bays",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                "$bay_width"
+              ],
+              [
+                "sub",
+                [
+                  "add",
+                  0.400000006,
+                  [
+                    "mul",
+                    [
+                      "add",
+                      "@j",
+                      0.5
+                    ],
+                    "$story_height"
+                  ]
+                ],
+                0.939999998
+              ],
+              1.14999998
+            ],
+            "repeat": {
+              "count": "$bays",
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                "$window_width",
+                0.349999994
+              ],
+              0.140000001,
+              0.400000006
+            ],
+            "source": "block"
+          },
+          {
+            "id": "post",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    "$bays",
+                    0.5
+                  ]
+                ],
+                "$bay_width"
+              ],
+              [
+                "add",
+                0.400000006,
+                [
+                  "mul",
+                  [
+                    "add",
+                    "@j",
+                    0.5
+                  ],
+                  "$story_height"
+                ]
+              ],
+              1.12
+            ],
+            "repeat": {
+              "count": [
+                "add",
+                "$bays",
+                1
+              ],
+              "rows": "$floors"
+            },
+            "role": "stone",
+            "s": [
+              0.180000007,
+              [
+                "sub",
+                "$story_height",
+                0.100000001
+              ],
+              0.180000007
+            ],
+            "source": "pilaster"
+          },
+          {
+            "id": "band",
+            "op": "instance",
+            "p": [
+              0,
+              [
+                "add",
+                0.319999993,
+                [
+                  "mul",
+                  "@i",
+                  "$story_height"
+                ]
+              ],
+              1.09000003
+            ],
+            "repeat": {
+              "count": [
+                "add",
+                "$floors",
+                1
+              ]
+            },
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$bays",
+                    "$bay_width"
+                  ],
+                  0.600000024
+                ],
+                0.200000003
+              ],
+              0.159999996,
+              0.280000001
+            ],
+            "source": "block"
+          },
+          {
+            "bevel": 0.0120000001,
+            "id": "rf0",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "add",
+                [
+                  "add",
+                  0.400000006,
+                  [
+                    "mul",
+                    "$floors",
+                    "$story_height"
+                  ]
+                ],
+                "$roof_rise"
+              ],
+              -0.670000017
+            ],
+            "r": [
+              25,
+              0,
+              0
+            ],
+            "role": "roof",
+            "s": [
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$bays",
+                    "$bay_width"
+                  ],
+                  0.600000024
+                ],
+                0.449999988
+              ],
+              0.119999997,
+              1.75
+            ]
+          },
+          {
+            "bevel": 0.0120000001,
+            "id": "rf1",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "add",
+                [
+                  "add",
+                  0.400000006,
+                  [
+                    "mul",
+                    "$floors",
+                    "$story_height"
+                  ]
+                ],
+                "$roof_rise"
+              ],
+              0.670000017
+            ],
+            "r": [
+              -25,
+              0,
+              0
+            ],
+            "role": "roof",
+            "s": [
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$bays",
+                    "$bay_width"
+                  ],
+                  0.600000024
+                ],
+                0.449999988
+              ],
+              0.119999997,
+              1.75
+            ]
+          },
+          {
+            "bevel": 0.0199999996,
+            "id": "rdge",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "add",
+                    0.400000006,
+                    [
+                      "mul",
+                      "$floors",
+                      "$story_height"
+                    ]
+                  ],
+                  "$roof_rise"
+                ],
+                0.330000013
+              ],
+              0
+            ],
+            "role": "metal",
+            "s": [
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$bays",
+                    "$bay_width"
+                  ],
+                  0.600000024
+                ],
+                0.5
+              ],
+              0.100000001,
+              0.100000001
+            ]
+          },
+          {
+            "bevel": 0.0399999991,
+            "id": "base",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              0.0799999982,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$bays",
+                    "$bay_width"
+                  ],
+                  0.600000024
+                ],
+                0.699999988
+              ],
+              0.159999996,
+              3
+            ]
+          }
+        ],
+        "prototypes": [
+          {
+            "bevel": 0.0149999997,
+            "id": "block",
+            "kind": "cube",
+            "op": "primitive"
+          },
+          {
+            "bevel": 0.00800000038,
+            "id": "trim",
+            "kind": "cube",
+            "op": "primitive"
+          },
+          {
+            "id": "pilaster",
+            "op": "surface",
+            "surface": {
+              "kind": 1,
+              "profile": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0.0799999982,
+                  1
+                ],
+                [
+                  0.150000006,
+                  0.649999976
+                ],
+                [
+                  0.850000024,
+                  0.649999976
+                ],
+                [
+                  0.920000017,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "ripple": 0,
+              "segments": 32,
+              "sides": 16,
+              "thickness": 0.00400000019,
+              "veins": 0
+            }
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}

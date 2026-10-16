@@ -1,0 +1,300 @@
+{
+  "module": "assembly",
+  "materials": {
+    "wood": "workshop_cedar",
+    "metal": "workshop_bronze",
+    "stone": "workshop_stone"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "bays",
+        "min": 4,
+        "max": 9,
+        "value": 7,
+        "integer": true,
+        "group": "layout",
+        "description": "bays"
+      },
+      {
+        "name": "width",
+        "min": 2.5,
+        "max": 5,
+        "value": 3.4,
+        "integer": false,
+        "group": "shape",
+        "description": "width"
+      },
+      {
+        "name": "height",
+        "min": 2,
+        "max": 4,
+        "value": 2.8,
+        "integer": false,
+        "group": "shape",
+        "description": "height"
+      },
+      {
+        "name": "spacing",
+        "min": 0.7,
+        "max": 1.3,
+        "value": 0.95,
+        "integer": false,
+        "group": "layout",
+        "description": "spacing"
+      },
+      {
+        "name": "thickness",
+        "min": 0.025,
+        "max": 0.09,
+        "value": 0.045,
+        "integer": false,
+        "group": "shape",
+        "description": "thickness"
+      }
+    ],
+    "let": [
+      {
+        "name": "depth",
+        "value": [
+          "mul",
+          [
+            "sub",
+            "$bays",
+            1
+          ],
+          "$spacing"
+        ]
+      }
+    ],
+    "prototypes": [
+      {
+        "id": "arch_rib",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "segments": 48,
+          "sides": 12,
+          "thickness": 0.003,
+          "veins": 0,
+          "ripple": 0,
+          "profile": [
+            [
+              0,
+              "$thickness"
+            ],
+            [
+              1,
+              "$thickness"
+            ]
+          ],
+          "path": [
+            [
+              -0.5,
+              0,
+              0
+            ],
+            [
+              -0.5,
+              0.3,
+              0
+            ],
+            [
+              -0.46,
+              0.55,
+              0
+            ],
+            [
+              -0.32,
+              0.78,
+              0
+            ],
+            [
+              0,
+              0.9,
+              0
+            ],
+            [
+              0.32,
+              0.78,
+              0
+            ],
+            [
+              0.46,
+              0.55,
+              0
+            ],
+            [
+              0.5,
+              0.3,
+              0
+            ],
+            [
+              0.5,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rail",
+        "op": "primitive",
+        "kind": "cube",
+        "bevel": 0.01
+      },
+      {
+        "id": "pad",
+        "op": "primitive",
+        "kind": "cube",
+        "bevel": 0.035
+      }
+    ],
+    "nodes": [
+      {
+        "id": "rib",
+        "op": "instance",
+        "source": "arch_rib",
+        "role": "wood",
+        "repeat": {
+          "count": "$bays"
+        },
+        "p": [
+          0,
+          0.22,
+          [
+            "mul",
+            [
+              "sub",
+              "@i",
+              [
+                "mul",
+                [
+                  "sub",
+                  "$bays",
+                  1
+                ],
+                0.5
+              ]
+            ],
+            "$spacing"
+          ]
+        ],
+        "s": [
+          "$width",
+          "$height",
+          "$width"
+        ]
+      },
+      {
+        "id": "rail",
+        "op": "instance",
+        "source": "rail",
+        "role": "metal",
+        "repeat": {
+          "count": 2
+        },
+        "p": [
+          [
+            "mul",
+            [
+              "sub",
+              "@i",
+              0.5
+            ],
+            "$width"
+          ],
+          [
+            "add",
+            0.22,
+            [
+              "mul",
+              "$height",
+              0.3
+            ]
+          ],
+          0
+        ],
+        "s": [
+          0.07,
+          0.09,
+          [
+            "add",
+            "%depth",
+            0.2
+          ]
+        ]
+      },
+      {
+        "id": "pad",
+        "op": "instance",
+        "source": "pad",
+        "role": "stone",
+        "repeat": {
+          "count": "$bays",
+          "rows": 2
+        },
+        "p": [
+          [
+            "mul",
+            [
+              "sub",
+              "@j",
+              0.5
+            ],
+            "$width"
+          ],
+          0.11,
+          [
+            "mul",
+            [
+              "sub",
+              "@i",
+              [
+                "mul",
+                [
+                  "sub",
+                  "$bays",
+                  1
+                ],
+                0.5
+              ]
+            ],
+            "$spacing"
+          ]
+        ],
+        "s": [
+          0.48,
+          0.22,
+          0.48
+        ]
+      },
+      {
+        "id": "walk",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "stone",
+        "p": [
+          0,
+          0.04,
+          0
+        ],
+        "s": [
+          [
+            "sub",
+            "$width",
+            0.6
+          ],
+          0.08,
+          [
+            "add",
+            "%depth",
+            1
+          ]
+        ],
+        "bevel": 0.025
+      }
+    ]
+  }
+}

@@ -2,12 +2,12 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {catalog,source,hash}=require('./build_recipe_examples.cjs');
 const root=__dirname,items=catalog().items,ids=new Set();
-const operators=new Set(['surface','primitive','beam','anchor','repeat','motion','expression','context','let','spatial','when']);
-const kinds=new Set(['motion','support','corridor','span','layout']);
+const operators=new Set(['surface','primitive','beam','anchor','repeat','motion','expression','context','let','spatial','when','prototype','instance','profile','sweep']);
+const kinds=new Set(['motion','support','corridor','span','layout','geometry']);
 const toolbox=JSON.parse(fs.readFileSync(path.join(source,'operators.json')));assert.deepEqual(new Set(toolbox.items.map(op=>op.id)),operators);assert.equal(toolbox.starter.module,'assembly');
 for(const e of items){
  assert.match(e.id,/^[a-z][a-z0-9-]*$/);assert.ok(!ids.has(e.id));ids.add(e.id);assert.ok(Number.isInteger(e.version)&&e.version>0);
- assert.ok(e.prompt&&e.summary&&e.settings&&e.try.length&&e.steps.length);assert.equal(e.compatibility.desktop,'verified');assert.equal(e.compatibility.browser,'not_verified');
+ assert.ok(e.prompt&&e.summary&&e.settings&&e.try.length&&e.steps.length);assert.equal(e.compatibility.desktop,'verified');assert(['not_verified','verified'].includes(e.compatibility.browser));if(e.compatibility.browser==='verified'){assert(e.browser_validation.scope);assert.match(e.browser_validation.engine_sha256,/^[a-f0-9]{64}$/);}
  e.operators.forEach(op=>assert.ok(operators.has(op),'Unknown operator '+op));assert.ok(e.capabilities.includes('recipe_program'));
  const sceneBytes=fs.readFileSync(path.join(source,e.id,`v${e.version}.scene`)),recipeBytes=fs.readFileSync(path.join(source,e.id,`v${e.version}.recipes.json`));
  for(const v of e.variants||[]){assert.match(v.id,/^[a-z][a-z0-9-]*$/);assert.ok(v.title&&v.poster);assert.equal(hash(fs.readFileSync(path.join(source,e.id,`v${e.version}-${v.id}.scene`))),v.scene_sha256);}

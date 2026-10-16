@@ -1,0 +1,85 @@
+{
+  "id": "operator-workshop",
+  "version": 1,
+  "title": "Shared shapes workshop",
+  "required_capabilities": [
+    "commands.recipe_program",
+    "commands.recipe_instances",
+    "commands.surface_profiles",
+    "commands.surface_paths"
+  ],
+  "principle": "Recipes compose existing local operators. These examples are starting points, not a closed list of shapes.",
+  "source": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/source.json",
+  "materials": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/materials.json",
+  "recipes": [
+    {
+      "id": "profile",
+      "url": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/profile.json"
+    },
+    {
+      "id": "arcade",
+      "url": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/arcade.json"
+    },
+    {
+      "id": "facade",
+      "url": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/facade.json"
+    }
+  ],
+  "examples": [
+    {
+      "id": "profile-studio",
+      "title": "Draw a profile. Share the shape.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=profile-studio",
+      "variants": [
+        {
+          "id": "slender",
+          "title": "Slender necks",
+          "scene": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1-slender.scene"
+        },
+        {
+          "id": "wide",
+          "title": "Broad ceramic bowls",
+          "scene": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1-wide.scene"
+        }
+      ]
+    },
+    {
+      "id": "swept-arcade",
+      "title": "One curve. A whole arcade.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=swept-arcade",
+      "variants": [
+        {
+          "id": "wide",
+          "title": "Wide garden passage",
+          "scene": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1-wide.scene"
+        },
+        {
+          "id": "tall",
+          "title": "Tall narrow colonnade",
+          "scene": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1-tall.scene"
+        }
+      ]
+    },
+    {
+      "id": "modular-facade",
+      "title": "A facade from reusable parts.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=modular-facade",
+      "variants": [
+        {
+          "id": "townhouse",
+          "title": "Compact townhouse",
+          "scene": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1-townhouse.scene"
+        },
+        {
+          "id": "boulevard",
+          "title": "Broad boulevard frontage",
+          "scene": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1-boulevard.scene"
+        }
+      ]
+    }
+  ],
+  "workflow": "Read this compact index, then only the recipes or scene details needed. Bind supports and paths to the current scene, estimate, apply, inspect and observe. Composition source is authoring data: first load authored geometry without generated instances, build the declared assemblies, then estimate/apply the recipe instances and capture before exporting. Downloadable .scene files already include those paths. Preserve user edits; do not clear their scene."
+}

@@ -1,0 +1,234 @@
+{
+  "module": "assembly",
+  "materials": {
+    "stone": "workshop_clay",
+    "wood": "workshop_stone"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "copies",
+        "min": 2,
+        "max": 6,
+        "value": 4,
+        "integer": true,
+        "group": "layout",
+        "description": "copies"
+      },
+      {
+        "name": "height",
+        "min": 0.7,
+        "max": 2.8,
+        "value": 1.4,
+        "integer": false,
+        "group": "shape",
+        "description": "height"
+      },
+      {
+        "name": "width",
+        "min": 0.4,
+        "max": 1.2,
+        "value": 0.75,
+        "integer": false,
+        "group": "shape",
+        "description": "width"
+      },
+      {
+        "name": "belly",
+        "min": 0.5,
+        "max": 1.8,
+        "value": 1.2,
+        "integer": false,
+        "group": "shape",
+        "description": "belly"
+      },
+      {
+        "name": "neck",
+        "min": 0.15,
+        "max": 1,
+        "value": 0.42,
+        "integer": false,
+        "group": "shape",
+        "description": "neck"
+      },
+      {
+        "name": "rim",
+        "min": 0.4,
+        "max": 1.4,
+        "value": 0.8,
+        "integer": false,
+        "group": "shape",
+        "description": "rim"
+      }
+    ],
+    "prototypes": [
+      {
+        "id": "vessel",
+        "op": "surface",
+        "surface": {
+          "kind": 1,
+          "segments": 40,
+          "sides": 48,
+          "thickness": 0.018,
+          "veins": 0,
+          "ripple": 0,
+          "profile": [
+            [
+              0,
+              0.6
+            ],
+            [
+              0.06,
+              0.65
+            ],
+            [
+              0.18,
+              1
+            ],
+            [
+              0.45,
+              "$belly"
+            ],
+            [
+              0.67,
+              0.9
+            ],
+            [
+              0.8,
+              "$neck"
+            ],
+            [
+              0.94,
+              "$neck"
+            ],
+            [
+              1,
+              "$rim"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "plinth",
+        "op": "primitive",
+        "kind": "cube",
+        "bevel": 0.03
+      }
+    ],
+    "nodes": [
+      {
+        "id": "pot",
+        "op": "instance",
+        "source": "vessel",
+        "role": "stone",
+        "repeat": {
+          "count": "$copies",
+          "rows": 2
+        },
+        "p": [
+          [
+            "mul",
+            [
+              "sub",
+              "@i",
+              [
+                "mul",
+                [
+                  "sub",
+                  "$copies",
+                  1
+                ],
+                0.5
+              ]
+            ],
+            1.4
+          ],
+          [
+            "add",
+            0.2,
+            [
+              "mul",
+              "$height",
+              0.5
+            ]
+          ],
+          [
+            "mul",
+            [
+              "sub",
+              "@j",
+              [
+                "mul",
+                [
+                  "sub",
+                  2,
+                  1
+                ],
+                0.5
+              ]
+            ],
+            1.6
+          ]
+        ],
+        "s": [
+          "$width",
+          "$height",
+          "$width"
+        ]
+      },
+      {
+        "id": "base",
+        "op": "instance",
+        "source": "plinth",
+        "role": "wood",
+        "repeat": {
+          "count": "$copies",
+          "rows": 2
+        },
+        "p": [
+          [
+            "mul",
+            [
+              "sub",
+              "@i",
+              [
+                "mul",
+                [
+                  "sub",
+                  "$copies",
+                  1
+                ],
+                0.5
+              ]
+            ],
+            1.4
+          ],
+          0.1,
+          [
+            "mul",
+            [
+              "sub",
+              "@j",
+              [
+                "mul",
+                [
+                  "sub",
+                  2,
+                  1
+                ],
+                0.5
+              ]
+            ],
+            1.6
+          ]
+        ],
+        "s": [
+          1.1,
+          0.2,
+          1.1
+        ]
+      }
+    ]
+  }
+}

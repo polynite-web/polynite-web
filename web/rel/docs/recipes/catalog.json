@@ -260,7 +260,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/profile-studio/",
       "detail": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.json",
@@ -292,7 +292,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/swept-arcade/",
       "detail": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.json",
@@ -321,7 +321,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/modular-facade/",
       "detail": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.json",

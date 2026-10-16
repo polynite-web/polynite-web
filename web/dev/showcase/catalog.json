@@ -80,7 +80,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "tested_at": "2026-10-16",
       "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
@@ -89,6 +89,17 @@
       "media": {
         "video": "https://explore.polynite.io/docs/recipes/media/modular-facade-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/modular-facade-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Codex in-app Chromium / WebGPU",
+        "engine_sha256": "6d51a296c3436eb0336800205b5038f7b777704b4a901161590f455946fcb996",
+        "tested_at": "2026-10-16",
+        "checks": [
+          "geometry",
+          "parameter edit",
+          "GPU sharing"
+        ],
+        "limits": "Other browsers and devices require their own verification."
       },
       "open": "https://polynite.io/examples/view.html?id=modular-facade",
       "url": "https://explore.polynite.io/docs/recipes/modular-facade/",
@@ -188,7 +199,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "tested_at": "2026-10-16",
       "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
@@ -197,6 +208,17 @@
       "media": {
         "video": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Codex in-app Chromium / WebGPU",
+        "engine_sha256": "6d51a296c3436eb0336800205b5038f7b777704b4a901161590f455946fcb996",
+        "tested_at": "2026-10-16",
+        "checks": [
+          "geometry",
+          "parameter edit",
+          "GPU sharing"
+        ],
+        "limits": "Other browsers and devices require their own verification."
       },
       "open": "https://polynite.io/examples/view.html?id=swept-arcade",
       "url": "https://explore.polynite.io/docs/recipes/swept-arcade/",
@@ -294,7 +316,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "tested_at": "2026-10-16",
       "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
@@ -303,6 +325,17 @@
       "media": {
         "video": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Codex in-app Chromium / WebGPU",
+        "engine_sha256": "6d51a296c3436eb0336800205b5038f7b777704b4a901161590f455946fcb996",
+        "tested_at": "2026-10-16",
+        "checks": [
+          "geometry",
+          "parameter edit",
+          "GPU sharing"
+        ],
+        "limits": "Other browsers and devices require their own verification."
       },
       "open": "https://polynite.io/examples/view.html?id=profile-studio",
       "url": "https://explore.polynite.io/docs/recipes/profile-studio/",

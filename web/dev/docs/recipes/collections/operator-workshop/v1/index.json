@@ -2,6 +2,12 @@
   "id": "operator-workshop",
   "version": 1,
   "title": "Shared shapes workshop",
+  "required_capabilities": [
+    "commands.recipe_program",
+    "commands.recipe_instances",
+    "commands.surface_profiles",
+    "commands.surface_paths"
+  ],
   "principle": "Recipes compose existing local operators. These examples are starting points, not a closed list of shapes.",
   "source": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/source.json",
   "materials": "https://explore.polynite.io/docs/recipes/collections/operator-workshop/v1/materials.json",

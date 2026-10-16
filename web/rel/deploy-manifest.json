@@ -1,7 +1,7 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0300",
+  "version": "v0301",
   "sourceVersion": "v0186",
   "engineBase": "engine/809cd8b7f3240fac53ce5c503d22c7e581bf01a7188959476905f37e430c0977/",
   "engineHistory": [
@@ -23,16 +23,8 @@
       "sha256": "27395bb5fd960162a3d6d5a9a93ce1433cd7109d7fb74dc06e6350e7c4093f50"
     },
     "Rc/defaults/app.json": {
-      "bytes": 525,
-      "sha256": "18f652e7bb52c348c2c349a5937b51a5e0447ac465fce9b07081ca225fb11a30"
-    },
-    "Rc/defaults/app.json.br": {
-      "bytes": 220,
-      "sha256": "0652070b6635fa4ab578b2567a46f7e87e618639120ad43116fd75e53cd2c084"
-    },
-    "Rc/defaults/app.json.gz": {
-      "bytes": 264,
-      "sha256": "4fc2fef756fc7e2a1050cedb9e803a545d6bbe26f113431713c2c8c36c3b96a9"
+      "bytes": 312,
+      "sha256": "e2b71904b2c382c1041b63542afdf3ef0ce908d9b3d4a76264b8341ba1a03f9d"
     },
     "Rc/font/legacy_clean.sdffont.json": {
       "bytes": 48571,
@@ -80,15 +72,15 @@
     },
     "app.html": {
       "bytes": 83741,
-      "sha256": "ad09ff79f5cde920688426198cad3977b6f1f66ee252abe9ed90e23330f72606"
+      "sha256": "50b919bf5aeee7668981e61148344bd9fc5b57f06ee28d009b8b9b3005c6b7bd"
     },
     "app.html.br": {
       "bytes": 25244,
-      "sha256": "a49a54b60041c97fbdaf963c312840fd06aab19c8d3b667f4801542f52aa4679"
+      "sha256": "dea06b1c8baddcb9826655cbdb2b697b287ea3f1158921753e9019308fc08a1d"
     },
     "app.html.gz": {
       "bytes": 26553,
-      "sha256": "d213ad8920ed23131904fc64adc413605b1d0d0d73c18b85be39a92885802639"
+      "sha256": "6447a6759b2943dc7a34568eb85e5072ae6d71255e3b0ffabdb8de4665204bf9"
     },
     "app.js": {
       "bytes": 334529,
@@ -2179,16 +2171,16 @@
       "sha256": "fddf40d1f551dcdefa52ff08d6967dcd6005660c1c1f17e4d414c385635ef335"
     },
     "docs/recipes/catalog.json": {
-      "bytes": 10217,
-      "sha256": "ebdb7d8ceac7fbe5e315e9378e775588cc4579bfb8c1b9dc365246c5e744b038"
+      "bytes": 10205,
+      "sha256": "eefb6775980fdc5ab9ede7c7158dec594c3aaa540b3f0dc6133b5f0eea5ff6df"
     },
     "docs/recipes/catalog.json.br": {
-      "bytes": 1417,
-      "sha256": "1ad6b71d2a29d8bc1871f2ce044ec319bf318dc31450bce226875ed257386c40"
+      "bytes": 1420,
+      "sha256": "74f79bcbb69f4bba2658f08f0c46e058befde0c6dcad2054ad485d19b9b99335"
     },
     "docs/recipes/catalog.json.gz": {
-      "bytes": 1523,
-      "sha256": "1f108c1c71901c47a411d3bc8606840814f9bcd04a53403c46dcdde0c43fe56c"
+      "bytes": 1525,
+      "sha256": "c0dc9044dc7dd9f6520b1d1e82629b3cf54471f7fc449544f6cc1ee618c895e7"
     },
     "docs/recipes/collections/japanese-garden/v1/bridge.json": {
       "bytes": 18073,
@@ -2323,16 +2315,16 @@
       "sha256": "2a96653bd0389c1bb8c6dca831e07399b174bffe6fd5be21609a5b7964623266"
     },
     "docs/recipes/collections/japanese-garden/v2/index.json": {
-      "bytes": 5270,
-      "sha256": "3ff8335c9228ff0f3011cb1becb52ca13e3af6de1bc59be4e4651225cd896330"
+      "bytes": 5396,
+      "sha256": "c1e843105cc01e6bc371b7a628eb5be710bdd506dc4dee9ea0dc60ef44d4f9d8"
     },
     "docs/recipes/collections/japanese-garden/v2/index.json.br": {
-      "bytes": 1013,
-      "sha256": "bad6ea0fa6b39cd7f30d7dfcf641d881065c1a4187519213056e5b418cf9e0f4"
+      "bytes": 1059,
+      "sha256": "de53b6b512d57071fd42f86feee988259056a26e355896193ff6af6f665624e6"
     },
     "docs/recipes/collections/japanese-garden/v2/index.json.gz": {
-      "bytes": 1084,
-      "sha256": "b74a4da4ea3f66ea71b3d549c94a5419e96900541e5ec27ab7b398157295540a"
+      "bytes": 1131,
+      "sha256": "bba10e07482eb98e62846a7b3f9ecad6d627814c9ba390ca90b8907d016a3f18"
     },
     "docs/recipes/collections/japanese-garden/v2/island.json": {
       "bytes": 2657,
@@ -2455,16 +2447,16 @@
       "sha256": "fec0604e73f76ee08ee5921dc7eae28e9681734b8abe3b1baab24631e9079718"
     },
     "docs/recipes/collections/operator-workshop/v1/index.json": {
-      "bytes": 3292,
-      "sha256": "36fe2fe8acbea88898caedf512bab5ab55dd9e2c3dc170a5c430a9560cd67b36"
+      "bytes": 3452,
+      "sha256": "36f725e25a295cba45fbb96c7f7022e79e94fcff1f1a081cc9239e0b84a77877"
     },
     "docs/recipes/collections/operator-workshop/v1/index.json.br": {
-      "bytes": 800,
-      "sha256": "7e9655da442f861ad2173b6e58b1c88e0393b1178baaed27f1911ce97e5fbc5c"
+      "bytes": 842,
+      "sha256": "e179c920d7e7697e6ffb91796c9f5e0c2348dedd820fc4d6857350c95e032527"
     },
     "docs/recipes/collections/operator-workshop/v1/index.json.gz": {
-      "bytes": 862,
-      "sha256": "88e211d05331fd3ea79a41190533588959f70fff1049db353eb040ddc964b9b4"
+      "bytes": 916,
+      "sha256": "a43c00bfd26acb16708914e638f51a78df6713414c6a4c3962c532e2cc775cdf"
     },
     "docs/recipes/collections/operator-workshop/v1/materials.json": {
       "bytes": 1429,
@@ -2783,20 +2775,20 @@
       "sha256": "2133e2fdf7f3158070fdf83533b55351b34ee789d40a4db2dbaa4d8aafc66867"
     },
     "docs/recipes/data/modular-facade/v1.json": {
-      "bytes": 4102,
-      "sha256": "92fa5e16678f08e93b55218ffeeef5dd98072c19b76c6dac44e6eff4ef5248f3"
+      "bytes": 4456,
+      "sha256": "1f1b875ba725593e4a69462ad4201737299835a9f14a35b69e0a137582bf2d4c"
     },
     "docs/recipes/data/modular-facade/v1.json.br": {
-      "bytes": 1448,
-      "sha256": "615fe7d18dd6f5339d9a121688c70d265a2f4112143123d4b394ae855bffccdf"
+      "bytes": 1589,
+      "sha256": "e7264e9fe29be363d6867a6d234ce6fbc302e67904cbf60ce314d3b0fd0bb895"
     },
     "docs/recipes/data/modular-facade/v1.json.gz": {
-      "bytes": 1585,
-      "sha256": "b7b6dc7853829eccfdda8dcbb8613407275509a1e346acc413320a32d727df3c"
+      "bytes": 1737,
+      "sha256": "86e3f1c76bfd1d380637b5bd76f1f447bdf5481e2f0fb8d45e7b85e7fa8015a0"
     },
     "docs/recipes/data/modular-facade/v1.md": {
-      "bytes": 3707,
-      "sha256": "2d8068ad71ff76354463dd348af1acba73826d017ca3a37b08406196933430d3"
+      "bytes": 3767,
+      "sha256": "b953c4a74161d87a9f6112a8a7f158bf94e83703d24246463b748bac7ec2f8e3"
     },
     "docs/recipes/data/modular-facade/v1.recipes.json": {
       "bytes": 19494,
@@ -2855,20 +2847,20 @@
       "sha256": "e7f2fd85a324009a107c0e70edee67e26e4bea22c3f5d86fbd175fba0f7160c9"
     },
     "docs/recipes/data/profile-studio/v1.json": {
-      "bytes": 4077,
-      "sha256": "4b4446527bccc4b2cb2f83748946b30592c49ccd2782a915635fc22c7be88dec"
+      "bytes": 4431,
+      "sha256": "d39444508a68fa14eb8b573f770317bbdc46d018acc29acd5f996252a490950c"
     },
     "docs/recipes/data/profile-studio/v1.json.br": {
-      "bytes": 1470,
-      "sha256": "b9a9b69b4a0e7de5262a87a137e8756feabd9e7f597787c92e2629317bbcd9f9"
+      "bytes": 1607,
+      "sha256": "b804651822b0e0916f2bde489f80b5ef8530e00068c3a79474e89fd475ec20a9"
     },
     "docs/recipes/data/profile-studio/v1.json.gz": {
-      "bytes": 1601,
-      "sha256": "3ffccdfd5ae2b7fd1d8ae56d4d798097c97f754ba46eb6268bfe14a6093fd03d"
+      "bytes": 1751,
+      "sha256": "aecd4c534c443001e5fa33191c3eb250a081709128a97b81e175e54e6ab565de"
     },
     "docs/recipes/data/profile-studio/v1.md": {
-      "bytes": 3686,
-      "sha256": "e48674f7a45cba5cbe5cd663fd0a12cd6d88d6b924403da53d12ba4635256130"
+      "bytes": 3746,
+      "sha256": "5a23c31a490113c9f4df7a944afe75f6700fcc9ca041b1557924e053c3fd86fe"
     },
     "docs/recipes/data/profile-studio/v1.recipes.json": {
       "bytes": 5885,
@@ -2895,20 +2887,20 @@
       "sha256": "813720f1100ae1cb99e901064f2d5efe7a3ccc43b6e0e8f3730351699a209cc8"
     },
     "docs/recipes/data/swept-arcade/v1.json": {
-      "bytes": 4065,
-      "sha256": "efd49b3c323846d26e1ed995eb2108cb4249a1f5fa3145b536f41a672abcd221"
+      "bytes": 4419,
+      "sha256": "71f6e738d742fe173b6e8f423ce730df60da22532ecb7c6798b9cba518ee9184"
     },
     "docs/recipes/data/swept-arcade/v1.json.br": {
-      "bytes": 1465,
-      "sha256": "f3c01d78c54cf1d0c707d7e1493565ac0b7ec0759488be99a3f2d4d2050c1819"
+      "bytes": 1604,
+      "sha256": "6f6cb297dc86fb3614e0a1565c131ec1100f3cf903e307111452ede17fd2d812"
     },
     "docs/recipes/data/swept-arcade/v1.json.gz": {
-      "bytes": 1615,
-      "sha256": "2013943eb1d1dde354c3fcda3843fcd91dbeb09d53beb023e17defc1f5bb5736"
+      "bytes": 1764,
+      "sha256": "e3ba268e5c6db78e89123dce4b6a2b7886873fe4f834800d873503b8ebe61205"
     },
     "docs/recipes/data/swept-arcade/v1.md": {
-      "bytes": 3673,
-      "sha256": "5ce74f092f1f782e8ddc66771cd992f0ead88752f710d6856e6dced4262037af"
+      "bytes": 3733,
+      "sha256": "eaa0de0ff68374ff32369240f0bf96ae25c3b43e55a58e730fc0c6656becffac"
     },
     "docs/recipes/data/swept-arcade/v1.recipes.json": {
       "bytes": 7188,
@@ -3207,16 +3199,16 @@
       "sha256": "faebae0f2d9abb01bd6cf67f949c9551d8aa3dd219c635c44b022702e5815c6c"
     },
     "docs/recipes/modular-facade/index.html": {
-      "bytes": 11949,
-      "sha256": "9c2a6d3e7eb22c098f8ede1f9e7ba68779091eb6d7a83bdfe5ee5e8a01332e44"
+      "bytes": 11967,
+      "sha256": "4b565a9103e83c0d801890e0d0e2ea63a77068d67a2420f0e8d67fc964804458"
     },
     "docs/recipes/modular-facade/index.html.br": {
-      "bytes": 3504,
-      "sha256": "85c0adfac2dc11bc94698f4aba93873e9dae2b3f348f110a4bc02cf95f488b2d"
+      "bytes": 3519,
+      "sha256": "1ea525ebdf38b6bf46726332edda7b2485d85a33534828131cc5fec2a8fa95ce"
     },
     "docs/recipes/modular-facade/index.html.gz": {
-      "bytes": 3808,
-      "sha256": "0b3350c0d850a556db4c7c59bd9314d861839d88bc62f5066c40590e0970ce7b"
+      "bytes": 3821,
+      "sha256": "87d8e4eef6135b6ffbc734a5bd4aa9aa45adee0e618d7dfb6496c25bfdaeef98"
     },
     "docs/recipes/operators.json": {
       "bytes": 7474,
@@ -3243,28 +3235,28 @@
       "sha256": "50bc0ec0ee921739cbf4c1601482f18f65699f0784a11de0a7a645f95418775d"
     },
     "docs/recipes/profile-studio/index.html": {
-      "bytes": 11860,
-      "sha256": "7182132aff0b737a16cde0a97e696163562126a081672f5ad66f2bee67542d86"
+      "bytes": 11878,
+      "sha256": "9da80474f21590c9544376a027190ae9062b15fb2f91260a273de916f43b1be3"
     },
     "docs/recipes/profile-studio/index.html.br": {
-      "bytes": 3493,
-      "sha256": "bcfcd55b3f093baa83005635ab6b87a7a34b89fa6fc05cf5e483fbaf04da5d64"
+      "bytes": 3507,
+      "sha256": "23920dd1e0211a08c5f37128fc817740640d52605995a77571d3f0feecaf9424"
     },
     "docs/recipes/profile-studio/index.html.gz": {
-      "bytes": 3806,
-      "sha256": "7d65f9d03cd79d1158a11a3de2a74c5de3a340119071a0ae854f040e379f1113"
+      "bytes": 3820,
+      "sha256": "ccd879d0a727965221a6405136015c9a232109447a02ac0dc2a5011ad32dfc2d"
     },
     "docs/recipes/swept-arcade/index.html": {
-      "bytes": 12040,
-      "sha256": "0e941371f871fe4d060f4be4897702becc665370b7d88cd690565a523cfe490a"
+      "bytes": 12058,
+      "sha256": "7d2077b660f901e8df434ac72a921ed24f01dc44f32a9ed49ea26813249b1beb"
     },
     "docs/recipes/swept-arcade/index.html.br": {
-      "bytes": 3532,
-      "sha256": "ab73807f98c7961b6f0ad3383df56b730263613d2a3eb5a2b62e2900d61d3a53"
+      "bytes": 3546,
+      "sha256": "9b09a12a5df143d2361446f7d501db4a3ec391fc25a2235cc2d159384ea189fb"
     },
     "docs/recipes/swept-arcade/index.html.gz": {
-      "bytes": 3836,
-      "sha256": "6ee93a9cf8f9307654d92891ffc4f4b27ab6352b024c30b08799348aa4d16c11"
+      "bytes": 3848,
+      "sha256": "4a79e73a5b00bebb4959c41be19a61e271a7047afe3b2142fb13e5858f33878b"
     },
     "docs/recipes/terrain-pavilion/index.html": {
       "bytes": 11584,
@@ -3387,16 +3379,16 @@
       "sha256": "ef0551af048a6da1b2f12621aa45bd25779c84a19231696db32ae425d74827f5"
     },
     "examples/catalog.json": {
-      "bytes": 53154,
-      "sha256": "5d263e58509d5ea15e2646642bd89199bcc645f37a0f1232914ba0ef427ff2ce"
+      "bytes": 54348,
+      "sha256": "1cb42bbbfaf5a1648ab5200851978e2ae7fa5b34eb8f0194c55a5eddd04a4867"
     },
     "examples/catalog.json.br": {
-      "bytes": 8547,
-      "sha256": "a0a565b09930e3f824f57d1a6aaaa25c8bdc59129788a9272151c5f37a92a47e"
+      "bytes": 8714,
+      "sha256": "44e2d7abc93ad17e0d140ff0961668efba5c9e3ebe2f606cd6dd1fa82897be34"
     },
     "examples/catalog.json.gz": {
-      "bytes": 9085,
-      "sha256": "b1f08846dafd9e543dc974fe423e6889cfda7649c5e89db8cde020e5289612a2"
+      "bytes": 9250,
+      "sha256": "17ce5d348bd2dc2493c42b0a0137b99ce1126ecc331c7cb12ba46aaab9837ace"
     },
     "examples/checks.js": {
       "bytes": 5471,
@@ -3544,15 +3536,15 @@
     },
     "examples/runtime/index.html": {
       "bytes": 81135,
-      "sha256": "0bb2f9676a6d6bde615c74025020ba7eca53692d2e28c6cc03ac98d942b3f270"
+      "sha256": "8cbfae5291a27734c7329c5c0b14f36b225bde2e9367044be0a35287e32667bb"
     },
     "examples/runtime/index.html.br": {
       "bytes": 24641,
-      "sha256": "cef37c0f407d3897b2809105c4bbbefd3198c322e03f556c2936dd28e76ce055"
+      "sha256": "6fee17a6c529769233a15bc01f3ebbf9c5c53170b2cf8a87fd5109b5ce5a5941"
     },
     "examples/runtime/index.html.gz": {
       "bytes": 25920,
-      "sha256": "418a21dd870a4f1764066591d1e14d694bfe00e0d0968bd825e3f51b33095ec4"
+      "sha256": "fc5ee008918b252e833e73c3d6bcfd24546bd2923c4580466ca5b24123acea35"
     },
     "examples/view.css": {
       "bytes": 2547,
@@ -3568,27 +3560,27 @@
     },
     "examples/view.html": {
       "bytes": 1924,
-      "sha256": "e16fd41c0797dd08c0aff8687803a05cccef83888a5e52ead6672c031e518d2f"
+      "sha256": "65e5094d016ba70988b847d7bddd8e88f5ba736c2a2105639eb5a6b52a2a6caf"
     },
     "examples/view.html.br": {
-      "bytes": 804,
-      "sha256": "51ba9ea6dfdc92464cdf50f6202a32ed02c256e04034541ac4a43fc2b4ebd3aa"
+      "bytes": 802,
+      "sha256": "f290131519c87f6ded7f2659ba68e8c24294dffed94c82c30fae1c93896cfa94"
     },
     "examples/view.html.gz": {
-      "bytes": 935,
-      "sha256": "3c36bf6f98d0e132e26077d2f44518136f40c24d97d78823c4bb88b093ee4a1d"
+      "bytes": 932,
+      "sha256": "33444dc706a4b28b974d5ad330ef016f331a03cbb3bd62f85ac2f79a5258f804"
     },
     "examples/view.js": {
-      "bytes": 11311,
-      "sha256": "5b1d1af938c7f7b116a7fda47dfaf698236a07b067a801fc4ada1336433e4247"
+      "bytes": 11328,
+      "sha256": "717907217f6a786c7050db504535d48c4bf7cf43948795192d2edbb79fdec9cb"
     },
     "examples/view.js.br": {
-      "bytes": 3678,
-      "sha256": "82bc4245e64507125a02863710c1a314bf15fa42a3c446ddcdb91979e354a0e6"
+      "bytes": 3682,
+      "sha256": "a9f4d6e920a93a964ac0cb4a53c2ab4e02996f7db3bbbf242e0bbadcc314973c"
     },
     "examples/view.js.gz": {
-      "bytes": 3921,
-      "sha256": "32b59e0b79b7477384203e62b9f5e7edd7650459455afe334dca22785f042608"
+      "bytes": 3925,
+      "sha256": "3b9ff0e5e0134e87cea71ffb90dbead5c55c5f6f3dfedaeb3bb035f05a9691e2"
     },
     "favicon.ico": {
       "bytes": 4238,
@@ -3608,15 +3600,15 @@
     },
     "index.html": {
       "bytes": 83741,
-      "sha256": "ad09ff79f5cde920688426198cad3977b6f1f66ee252abe9ed90e23330f72606"
+      "sha256": "50b919bf5aeee7668981e61148344bd9fc5b57f06ee28d009b8b9b3005c6b7bd"
     },
     "index.html.br": {
       "bytes": 25244,
-      "sha256": "a49a54b60041c97fbdaf963c312840fd06aab19c8d3b667f4801542f52aa4679"
+      "sha256": "dea06b1c8baddcb9826655cbdb2b697b287ea3f1158921753e9019308fc08a1d"
     },
     "index.html.gz": {
       "bytes": 26553,
-      "sha256": "d213ad8920ed23131904fc64adc413605b1d0d0d73c18b85be39a92885802639"
+      "sha256": "6447a6759b2943dc7a34568eb85e5072ae6d71255e3b0ffabdb8de4665204bf9"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -4119,16 +4111,16 @@
       "sha256": "6e6d3f2be0846a7714978117bd0690f72db42fdfed276c1e0dbf5e1fb508325d"
     },
     "showcase/catalog.json": {
-      "bytes": 51303,
-      "sha256": "1467743b29f3de40588a6e74cd50bfae25ffd562d3e549a6e7397c5cbb6fafeb"
+      "bytes": 52497,
+      "sha256": "f0f370c7bb6b390d642f19c4ba31bc61e78bcc8fc90f746fd2367e102844887d"
     },
     "showcase/catalog.json.br": {
-      "bytes": 8142,
-      "sha256": "bc33f53a47f098d72f874787b6f57367b263a1c7056c180cc5a9f668d5190318"
+      "bytes": 8302,
+      "sha256": "4840ac568e3f6551012322634e79fbe062d2784baf1bd4cb06d0ae1ea6394d18"
     },
     "showcase/catalog.json.gz": {
-      "bytes": 8680,
-      "sha256": "fd0f17e8d0747e68e1abc6291b31834a39a5f9555387f2046538ecb93245090a"
+      "bytes": 8844,
+      "sha256": "cb039d750df84b8ce16942e4966e72f9547dd2dcdccbbb8d90f21e437fe5fcc6"
     },
     "showcase/index.html": {
       "bytes": 36170,
@@ -4228,15 +4220,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 81135,
-      "sha256": "0bb2f9676a6d6bde615c74025020ba7eca53692d2e28c6cc03ac98d942b3f270"
+      "sha256": "8cbfae5291a27734c7329c5c0b14f36b225bde2e9367044be0a35287e32667bb"
     },
     "tutorial-view/index.html.br": {
       "bytes": 24641,
-      "sha256": "cef37c0f407d3897b2809105c4bbbefd3198c322e03f556c2936dd28e76ce055"
+      "sha256": "6fee17a6c529769233a15bc01f3ebbf9c5c53170b2cf8a87fd5109b5ce5a5941"
     },
     "tutorial-view/index.html.gz": {
       "bytes": 25920,
-      "sha256": "418a21dd870a4f1764066591d1e14d694bfe00e0d0968bd825e3f51b33095ec4"
+      "sha256": "fc5ee008918b252e833e73c3d6bcfd24546bd2923c4580466ca5b24123acea35"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -4420,7 +4412,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "e4df8e989c79c055b7bcfe9cc16cb43fdb6769f752fd819694c42dbd047f5772"
+      "sha256": "94ebe8bb4e6552031dd56802c32106c6ad1cae423a896d35b7d2c7f7f01a2f44"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,

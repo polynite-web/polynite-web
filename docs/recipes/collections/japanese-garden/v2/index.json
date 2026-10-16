@@ -2,6 +2,11 @@
   "id": "japanese-garden",
   "version": 2,
   "title": "Japanese garden",
+  "required_capabilities": [
+    "commands.recipe_program",
+    "commands.recipe_context",
+    "commands.recipe_spatial"
+  ],
   "principle": "Recipes compose existing local operators. These examples are starting points, not a closed list of shapes.",
   "source": "https://explore.polynite.io/docs/recipes/collections/japanese-garden/v2/source.json",
   "materials": "https://explore.polynite.io/docs/recipes/collections/japanese-garden/v2/materials.json",

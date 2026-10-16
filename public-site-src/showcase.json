@@ -1,7 +1,40 @@
 {
   "version": 1,
-  "featured": "japanese-garden",
+  "featured": "swept-arcade",
   "items": [
+    {
+      "recipe": "modular-facade",
+      "category": "Operator workshop",
+      "environment": "Studio",
+      "tags": [
+        "Operator workshop",
+        "Architecture",
+        "geometry",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "swept-arcade",
+      "category": "Operator workshop",
+      "environment": "Studio",
+      "tags": [
+        "Operator workshop",
+        "Architecture",
+        "geometry",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "profile-studio",
+      "category": "Operator workshop",
+      "environment": "Studio",
+      "tags": [
+        "Operator workshop",
+        "Architecture",
+        "geometry",
+        "Editable"
+      ]
+    },
     {
       "recipe": "japanese-garden",
       "category": "Japanese garden",

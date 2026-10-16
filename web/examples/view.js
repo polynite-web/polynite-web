@@ -8,6 +8,7 @@
  const film=(command,extra={})=>call('scene.cinematic',{request:{command,...extra}});
  const idle=()=>{if(film('status').export?.active)throw Error('A recording is in progress. Wait for it to finish.');};
  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+ const scenePath=url=>new URL(location.href).pathname.split('/examples/')[0]+new URL(url,location.href).pathname;
  async function checkExample(){
   const report=$('qa-report');await frame.contentWindow.vmeshAudioGesture?.();report.hidden=false;report.textContent='Checking…';idle();const saved=film('document',{expanded:true});const checks=[];
   try{
@@ -17,7 +18,8 @@
    }check.finish();checks.push(c.type);}
    if(!call('scene.snapshot').objects)throw Error('Scene is empty');
    if(reference.initial.architecture?.length){const r=reference.initial.architecture[0],name=entry.edit_parameter||r.program.inputs[0].name,schema=call('scene.architecture',{request:{command:'inspect',id:r.id}}).parameter_schema.properties[name],value=schema.type==='integer'?Math.min(schema.maximum,schema.minimum+1):schema.minimum+(schema.maximum-schema.minimum)*.4;film('stop');call('scene.apply',{actions:[{op:'architecture',id:r.id,params:{[name]:value}}]});const changed=call('scene.architecture',{request:{command:'inspect',id:r.id}}).recipe.params[name];if(Math.abs(changed-value)>.001)throw Error('Parameter edit did not apply');checks.push('parameter edit');}
-   report.textContent=JSON.stringify({passed:true,id:entry.id,checks,objects:call('scene.snapshot').objects},null,2);
+   await sleep(100);const instancing=film('status').instancing;if(entry.capabilities?.includes('recipe_instances')){if(!instancing?.gpu_copies)throw Error('Expected shared GPU geometry');checks.push('GPU sharing');}
+   report.textContent=JSON.stringify({passed:true,id:entry.id,checks,objects:call('scene.snapshot').objects,instancing},null,2);
   }catch(error){report.textContent=JSON.stringify({passed:false,id:entry.id,error:error.message},null,2);}finally{film('stop');film('load_document',{document:saved,start_paused:true});makeParameters();}
  }
  const enable=()=>{for(const id of buttons)$(id).disabled=!ready;};
@@ -45,13 +47,13 @@
   const options=entry.variants||[];$('variant-label').hidden=!options.length;
   for(const v of [{id:'',title:'Original'},...options]){const option=document.createElement('option');option.value=v.id;option.textContent=v.title;$('variant').append(option);}
   selectedVariant=new URL(location.href).searchParams.get('variant')||'';const choice=selectedVariant?options.find(v=>v.id===selectedVariant):entry;if(!choice)throw Error('This variant was not found');$('variant').value=selectedVariant;
-  reference=await fetchJson(new URL(choice.scene).pathname);
+  reference=await fetchJson(scenePath(choice.scene));
   if(new URL(location.href).searchParams.get('qa')==='1'){const button=document.createElement('button');button.textContent='Check example';button.id='check-example';button.disabled=true;document.querySelector('header').append(button);const report=document.createElement('pre');report.id='qa-report';report.hidden=true;$('controls').append(report);button.addEventListener('click',()=>{$('controls').hidden=false;checkExample().catch(error=>notice(error.message));});}
   frame.src='runtime/?example_view=1';
   const deadline=Date.now()+120000;
   timer=setInterval(()=>{if(disposed)return;try{const w=frame.contentWindow;if(w.__pnEngineFailure)throw Error('The graphics engine stopped: '+(w.__pnEngineFailure.message||w.__pnEngineFailure));if(!w.polynite?.call){if(Date.now()>deadline)throw Error('The graphics engine took too long to start. Check WebGPU support and retry.');return;}engine=w.polynite;const capabilities=call('scene.capabilities').commands||{};const missing=(entry.capabilities||[]).filter(k=>!capabilities[k]);if(missing.length)throw Error('This engine needs an update for '+missing.join(', '));clearInterval(timer);loadReference();if($('check-example'))$('check-example').disabled=false;poll=setInterval(()=>{if(!ready)return;try{const s=film('status');$('pause').textContent=s.paused?'Continue':'Pause';$('save').disabled=!!s.export?.active;$('play').textContent=s.playing?'Restart':'Play';}catch(error){clearInterval(poll);fail(error);}},500);}catch(error){clearInterval(timer);fail(error);}},250);
  }
- $('variant').addEventListener('change',async()=>{const id=$('variant').value;try{idle();ready=false;enable();const choice=id?(entry.variants||[]).find(v=>v.id===id):entry;if(!choice)throw Error('Unknown variant');const doc=await fetchJson(new URL(choice.scene).pathname);loadReference(doc);selectedVariant=id;const url=new URL(location.href);if(id)url.searchParams.set('variant',id);else url.searchParams.delete('variant');history.replaceState(null,'',url);notice('Ready · '+(choice.title||'Original')+' · your independent copy.');}catch(error){$('variant').value=selectedVariant;ready=true;enable();notice(error.message);}});
+ $('variant').addEventListener('change',async()=>{const id=$('variant').value;try{idle();ready=false;enable();const choice=id?(entry.variants||[]).find(v=>v.id===id):entry;if(!choice)throw Error('Unknown variant');const doc=await fetchJson(scenePath(choice.scene));loadReference(doc);selectedVariant=id;const url=new URL(location.href);if(id)url.searchParams.set('variant',id);else url.searchParams.delete('variant');history.replaceState(null,'',url);notice('Ready · '+(choice.title||'Original')+' · your independent copy.');}catch(error){$('variant').value=selectedVariant;ready=true;enable();notice(error.message);}});
  $('play').addEventListener('click',async()=>{try{idle();await frame.contentWindow.vmeshAudioGesture?.();call('scene.ui',{request:{command:'click',target:'scene_replay'}});notice('Playing · you can orbit and explore the scene.');}catch(error){notice(error.message);}});
  $('pause').addEventListener('click',()=>{try{idle();call('scene.ui',{request:{command:'click',target:'scene_pause'}});}catch(error){notice(error.message);}});
  $('adjust').addEventListener('click',()=>{$('controls').hidden=!$('controls').hidden;});$('close-controls').addEventListener('click',()=>{$('controls').hidden=true;});

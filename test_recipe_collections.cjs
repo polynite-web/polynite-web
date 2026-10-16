@@ -10,3 +10,9 @@ const layout=c.data.examples.flatMap(e=>e.checks).find(c=>c.type==='layout');ass
 const old=JSON.parse(fs.readFileSync(path.join(__dirname,'public-site-src/recipe-examples/japanese-garden/v1.scene'))),objects=Object.entries(old.initial.geo).map(([id,o])=>({...o,id}));
 assert.throws(()=>require('./public-site-src/recipe-checks.js').create({...layout,stairs:null,connections:[],pairs:[layout.pairs[0]]}).observe(0,{}, {objects}),/Layout clearance failed/,'The old bridge/foundation overlap must fail');
 console.log('PASS the published overlapping garden is rejected by the new spatial contract.');
+
+const workshop=collection(path.join(__dirname,'public-site-src/collections/operator-workshop/collection.json'));
+for(const e of workshop.data.examples)for(const v of [null,...e.variants]){const doc=workshop.compose(e,v);for(const r of doc.initial.architecture){assert(r.program.prototypes.length<=32);const ids=new Set(r.program.prototypes.map(p=>p.id));assert.equal(ids.size,r.program.prototypes.length);for(const n of r.program.nodes){assert.match(n.id,/^[A-Za-z][A-Za-z0-9_]{0,3}$/);if(n.op==='instance')assert(ids.has(n.source),'Unbound mesh source');}}assert(e.checks.some(c=>c.type==='geometry'));}
+const geometry=require('./public-site-src/recipe-checks.js').create({type:'geometry',rules:[{prefix:'rib',count_parameters:['bays'],path_points:3}]});
+assert.throws(()=>geometry.observe(0,{recipe:{params:{bays:2}},components:[{part:'rib000000',p:[0,0,0],s:[1,1,1],surface:{path:[[0,0,0],[0,1,0],[1,1,0]]}}]},{}),/count differs/);
+console.log('PASS shared-shape definitions, nine composed workshop scenes and rejected missing repetitions.');
