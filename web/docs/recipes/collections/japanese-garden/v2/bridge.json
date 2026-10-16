@@ -1,0 +1,906 @@
+{
+  "module": "assembly",
+  "style": "japanese",
+  "context": [
+    {
+      "name": "left",
+      "object": "pad_a",
+      "point": "top"
+    },
+    {
+      "name": "right",
+      "object": "pad_b",
+      "point": "top"
+    }
+  ],
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "width",
+        "min": 0.3,
+        "max": 3,
+        "value": 1.2,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "arch",
+        "min": 0,
+        "max": 3,
+        "value": 0.55,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "segments",
+        "min": 4,
+        "max": 40,
+        "value": 24,
+        "group": "shape",
+        "integer": true
+      },
+      {
+        "name": "rail_height",
+        "min": 0.2,
+        "max": 2,
+        "value": 0.65,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "post_width",
+        "min": 0.02,
+        "max": 0.2,
+        "value": 0.07,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "deck_thickness",
+        "min": 0.04,
+        "max": 0.4,
+        "value": 0.1,
+        "group": "shape",
+        "integer": false
+      }
+    ],
+    "let": [
+      {
+        "name": "dx",
+        "value": [
+          "sub",
+          "@right.x",
+          "@left.x"
+        ]
+      },
+      {
+        "name": "dz",
+        "value": [
+          "sub",
+          "@right.z",
+          "@left.z"
+        ]
+      },
+      {
+        "name": "span",
+        "value": [
+          "sqrt",
+          [
+            "add",
+            [
+              "mul",
+              "%dx",
+              "%dx"
+            ],
+            [
+              "mul",
+              "%dz",
+              "%dz"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "heading",
+        "value": [
+          "atan2",
+          "%dx",
+          "%dz"
+        ]
+      },
+      {
+        "name": "sin",
+        "value": [
+          "sin",
+          "%heading"
+        ]
+      },
+      {
+        "name": "cos",
+        "value": [
+          "cos",
+          "%heading"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "value": "%span",
+        "min": 0.25,
+        "max": 20,
+        "message": "Bridge horizontal span must be 0.25..20m; move its supports apart"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "deck",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "wood",
+        "p": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              [
+                "div",
+                [
+                  "add",
+                  "@i",
+                  0.5
+                ],
+                "$segments"
+              ]
+            ],
+            [
+              "mul",
+              0,
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                [
+                  "div",
+                  [
+                    "add",
+                    "@i",
+                    0.5
+                  ],
+                  "$segments"
+                ]
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      "$segments"
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            0.05
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              [
+                "div",
+                [
+                  "add",
+                  "@i",
+                  0.5
+                ],
+                "$segments"
+              ]
+            ],
+            [
+              "mul",
+              0,
+              "%sin"
+            ]
+          ]
+        ],
+        "s": [
+          "$width",
+          "$deck_thickness",
+          [
+            "mul",
+            1.02,
+            [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  "%step",
+                  "%step"
+                ],
+                [
+                  "mul",
+                  "%dy",
+                  "%dy"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "repeat": {
+          "count": "$segments"
+        },
+        "orient": "radial",
+        "r": [
+          [
+            "mul",
+            -57.29578,
+            [
+              "atan2",
+              "%dy",
+              "%step"
+            ]
+          ],
+          [
+            "mul",
+            "%heading",
+            57.29578
+          ],
+          0
+        ],
+        "let": [
+          {
+            "name": "step",
+            "value": [
+              "div",
+              "%span",
+              "$segments"
+            ]
+          },
+          {
+            "name": "dy",
+            "value": [
+              "sub",
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        1
+                      ],
+                      "$segments"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159265,
+                        [
+                          "div",
+                          [
+                            "add",
+                            "@i",
+                            1
+                          ],
+                          "$segments"
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                0
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    [
+                      "div",
+                      "@i",
+                      "$segments"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159265,
+                        [
+                          "div",
+                          "@i",
+                          "$segments"
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rail",
+        "op": "beam",
+        "a": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              [
+                "div",
+                "@i",
+                "$segments"
+              ]
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                [
+                  "div",
+                  "@i",
+                  "$segments"
+                ]
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    [
+                      "div",
+                      "@i",
+                      "$segments"
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            "$rail_height"
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              [
+                "div",
+                "@i",
+                "$segments"
+              ]
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%sin"
+            ]
+          ]
+        ],
+        "b": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              [
+                "div",
+                [
+                  "add",
+                  "@i",
+                  1
+                ],
+                "$segments"
+              ]
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                [
+                  "div",
+                  [
+                    "add",
+                    "@i",
+                    1
+                  ],
+                  "$segments"
+                ]
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        1
+                      ],
+                      "$segments"
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            "$rail_height"
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              [
+                "div",
+                [
+                  "add",
+                  "@i",
+                  1
+                ],
+                "$segments"
+              ]
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%sin"
+            ]
+          ]
+        ],
+        "width": "$post_width",
+        "repeat": {
+          "count": "$segments",
+          "rows": 2
+        },
+        "role": "wood"
+      },
+      {
+        "id": "post",
+        "op": "beam",
+        "a": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              "@u"
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                "@u"
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    "@u"
+                  ]
+                ]
+              ]
+            ],
+            0
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              "@u"
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%sin"
+            ]
+          ]
+        ],
+        "b": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              "@u"
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                "@u"
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    "@u"
+                  ]
+                ]
+              ]
+            ],
+            "$rail_height"
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              "@u"
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%sin"
+            ]
+          ]
+        ],
+        "width": "$post_width",
+        "repeat": {
+          "count": 7,
+          "rows": 2
+        },
+        "role": "wood"
+      },
+      {
+        "id": "left",
+        "op": "anchor",
+        "p": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              0
+            ],
+            [
+              "mul",
+              0,
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                0
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    0
+                  ]
+                ]
+              ]
+            ],
+            0
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              0
+            ],
+            [
+              "mul",
+              0,
+              "%sin"
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "rght",
+        "op": "anchor",
+        "p": [
+          [
+            "add",
+            [
+              "mix",
+              "@left.x",
+              "@right.x",
+              1
+            ],
+            [
+              "mul",
+              0,
+              "%cos"
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              [
+                "mix",
+                "@left.y",
+                "@right.y",
+                1
+              ],
+              [
+                "mul",
+                "$arch",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    3.14159265,
+                    1
+                  ]
+                ]
+              ]
+            ],
+            0
+          ],
+          [
+            "sub",
+            [
+              "mix",
+              "@left.z",
+              "@right.z",
+              1
+            ],
+            [
+              "mul",
+              0,
+              "%sin"
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "materials": {
+    "wood": "lacquer",
+    "roof": "jade_tile",
+    "stone": "garden_stone",
+    "metal": "dark_metal"
+  }
+}

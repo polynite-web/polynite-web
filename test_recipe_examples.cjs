@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {catalog,source,hash}=require('./build_recipe_examples.cjs');
 const root=__dirname,items=catalog().items,ids=new Set();
 const operators=new Set(['surface','primitive','beam','anchor','repeat','motion','expression','context','let','spatial','when']);
-const kinds=new Set(['motion','support','corridor','span']);
+const kinds=new Set(['motion','support','corridor','span','layout']);
 const toolbox=JSON.parse(fs.readFileSync(path.join(source,'operators.json')));assert.deepEqual(new Set(toolbox.items.map(op=>op.id)),operators);assert.equal(toolbox.starter.module,'assembly');
 for(const e of items){
  assert.match(e.id,/^[a-z][a-z0-9-]*$/);assert.ok(!ids.has(e.id));ids.add(e.id);assert.ok(Number.isInteger(e.version)&&e.version>0);

@@ -1,0 +1,1991 @@
+{
+  "module": "assembly",
+  "style": "japanese",
+  "context": [
+    {
+      "name": "base",
+      "object": "terrain",
+      "point": "top"
+    }
+  ],
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "width",
+        "min": 1,
+        "max": 12,
+        "value": 4,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "depth",
+        "min": 1,
+        "max": 12,
+        "value": 3.6,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "height",
+        "min": 0.8,
+        "max": 8,
+        "value": 2.5,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "margin",
+        "min": 0,
+        "max": 1,
+        "value": 0.2,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "rise",
+        "min": 0.2,
+        "max": 3,
+        "value": 1.1,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "curl",
+        "min": 0,
+        "max": 1.5,
+        "value": 0.35,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "overhang",
+        "min": 0.1,
+        "max": 2,
+        "value": 0.55,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "post_width",
+        "min": 0.06,
+        "max": 0.6,
+        "value": 0.16,
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "roof_steps",
+        "min": 4,
+        "max": 32,
+        "value": 16,
+        "group": "shape",
+        "integer": true
+      },
+      {
+        "name": "floor_clearance",
+        "min": 0.05,
+        "max": 2,
+        "value": 0.32,
+        "description": "Level deck clearance above the highest sampled post base, metres",
+        "group": "shape",
+        "integer": false
+      },
+      {
+        "name": "access_steps",
+        "min": 0,
+        "max": 12,
+        "value": 0,
+        "group": "access",
+        "integer": true
+      },
+      {
+        "name": "stair_width",
+        "min": 0.6,
+        "max": 3,
+        "value": 1.1,
+        "group": "access",
+        "integer": false
+      },
+      {
+        "name": "stair_run",
+        "min": 0.6,
+        "max": 3,
+        "value": 1.5,
+        "group": "access",
+        "integer": false
+      },
+      {
+        "name": "access_ground",
+        "min": -10,
+        "max": 10,
+        "value": 0,
+        "group": "access",
+        "integer": false
+      }
+    ],
+    "let": [
+      {
+        "name": "width",
+        "value": [
+          "min",
+          "$width",
+          [
+            "sub",
+            "@base.width",
+            [
+              "mul",
+              2,
+              "$margin"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "depth",
+        "value": [
+          "min",
+          "$depth",
+          [
+            "sub",
+            "@base.depth",
+            [
+              "mul",
+              2,
+              "$margin"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "roof_w",
+        "value": [
+          "add",
+          "%width",
+          [
+            "mul",
+            2,
+            "$overhang"
+          ]
+        ]
+      },
+      {
+        "name": "angle",
+        "value": [
+          "mul",
+          "@base.yaw",
+          0.017453293
+        ]
+      },
+      {
+        "name": "cos",
+        "value": [
+          "cos",
+          "%angle"
+        ]
+      },
+      {
+        "name": "sin",
+        "value": [
+          "sin",
+          "%angle"
+        ]
+      },
+      {
+        "name": "h00",
+        "value": [
+          "height",
+          "@base",
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%width"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%depth"
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%depth"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%width"
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "h01",
+        "value": [
+          "height",
+          "@base",
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%width"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%depth"
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%depth"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%width"
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "h10",
+        "value": [
+          "height",
+          "@base",
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%width"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%depth"
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  -0.42,
+                  "%depth"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%width"
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "h11",
+        "value": [
+          "height",
+          "@base",
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%width"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%depth"
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%depth"
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  0.42,
+                  "%width"
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "lift",
+        "value": [
+          "sub",
+          [
+            "add",
+            [
+              "max",
+              [
+                "max",
+                "%h00",
+                "%h01"
+              ],
+              [
+                "max",
+                "%h10",
+                "%h11"
+              ]
+            ],
+            "$floor_clearance"
+          ],
+          "@base.y"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "value": "%width",
+        "min": 0.5,
+        "max": 12,
+        "message": "Pavilion support is too narrow after margin"
+      },
+      {
+        "value": "%depth",
+        "min": 0.5,
+        "max": 12,
+        "message": "Pavilion support is too shallow after margin"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "deck",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "wood",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              0.08
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "s": [
+          "%width",
+          0.16,
+          "%depth"
+        ],
+        "r": [
+          0,
+          "@base.yaw",
+          0
+        ]
+      },
+      {
+        "id": "post",
+        "op": "beam",
+        "a": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "height",
+            "@base",
+            [
+              "add",
+              "@base.x",
+              [
+                "add",
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@i",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "%width",
+                      0.42
+                    ]
+                  ],
+                  "%cos"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "%depth",
+                      0.42
+                    ]
+                  ],
+                  "%sin"
+                ]
+              ]
+            ],
+            [
+              "add",
+              "@base.z",
+              [
+                "sub",
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "%depth",
+                      0.42
+                    ]
+                  ],
+                  "%cos"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@i",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "%width",
+                      0.42
+                    ]
+                  ],
+                  "%sin"
+                ]
+              ]
+            ]
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "b": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              "$height"
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "width": "$post_width",
+        "repeat": {
+          "count": 2,
+          "rows": 2
+        },
+        "role": "wood"
+      },
+      {
+        "id": "foot",
+        "op": "primitive",
+        "kind": "cylinder",
+        "role": "stone",
+        "repeat": {
+          "count": 2,
+          "rows": 2
+        },
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "height",
+              "@base",
+              [
+                "add",
+                "@base.x",
+                [
+                  "add",
+                  [
+                    "mul",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        [
+                          "mul",
+                          "@i",
+                          2
+                        ],
+                        1
+                      ],
+                      [
+                        "mul",
+                        "%width",
+                        0.42
+                      ]
+                    ],
+                    "%cos"
+                  ],
+                  [
+                    "mul",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        [
+                          "mul",
+                          "@j",
+                          2
+                        ],
+                        1
+                      ],
+                      [
+                        "mul",
+                        "%depth",
+                        0.42
+                      ]
+                    ],
+                    "%sin"
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "@base.z",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        [
+                          "mul",
+                          "@j",
+                          2
+                        ],
+                        1
+                      ],
+                      [
+                        "mul",
+                        "%depth",
+                        0.42
+                      ]
+                    ],
+                    "%cos"
+                  ],
+                  [
+                    "mul",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        [
+                          "mul",
+                          "@i",
+                          2
+                        ],
+                        1
+                      ],
+                      [
+                        "mul",
+                        "%width",
+                        0.42
+                      ]
+                    ],
+                    "%sin"
+                  ]
+                ]
+              ]
+            ],
+            0.06
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "s": [
+          0.3,
+          0.12,
+          0.3
+        ]
+      },
+      {
+        "id": "lint",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "wood",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              [
+                "sub",
+                "$height",
+                0.1
+              ]
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%depth",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "s": [
+          "%width",
+          0.18,
+          "$post_width"
+        ],
+        "r": [
+          0,
+          "@base.yaw",
+          0
+        ],
+        "repeat": {
+          "count": 2
+        }
+      },
+      {
+        "id": "side",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "wood",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              [
+                "sub",
+                "$height",
+                0.1
+              ]
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "%width",
+                    0.42
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "s": [
+          "$post_width",
+          0.18,
+          "%depth"
+        ],
+        "r": [
+          0,
+          "@base.yaw",
+          0
+        ],
+        "repeat": {
+          "count": 2
+        }
+      },
+      {
+        "id": "roof",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "roof",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      "$roof_steps"
+                    ],
+                    [
+                      "mul",
+                      "%roof_w",
+                      0.5
+                    ]
+                  ]
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              "%roof_y"
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      "$roof_steps"
+                    ],
+                    [
+                      "mul",
+                      "%roof_w",
+                      0.5
+                    ]
+                  ]
+                ],
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "s": [
+          [
+            "add",
+            "%depth",
+            [
+              "mul",
+              2,
+              "$overhang"
+            ]
+          ],
+          0.09,
+          [
+            "mul",
+            1.03,
+            [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  "%step",
+                  "%step"
+                ],
+                [
+                  "mul",
+                  "%roof_dy",
+                  "%roof_dy"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "repeat": {
+          "count": "$roof_steps",
+          "rows": 2
+        },
+        "orient": "radial",
+        "r": [
+          [
+            "mul",
+            -57.29578,
+            [
+              "atan2",
+              "%roof_dy",
+              "%step"
+            ]
+          ],
+          [
+            "add",
+            "@base.yaw",
+            [
+              "mul",
+              [
+                "sub",
+                [
+                  "mul",
+                  "@j",
+                  2
+                ],
+                1
+              ],
+              90
+            ]
+          ],
+          0
+        ],
+        "let": [
+          {
+            "name": "step",
+            "value": [
+              "div",
+              [
+                "div",
+                "%roof_w",
+                2
+              ],
+              "$roof_steps"
+            ]
+          },
+          {
+            "name": "roof_y",
+            "value": [
+              "add",
+              "$height",
+              [
+                "add",
+                [
+                  "mul",
+                  "$rise",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      1,
+                      [
+                        "div",
+                        [
+                          "add",
+                          "@i",
+                          0.5
+                        ],
+                        "$roof_steps"
+                      ]
+                    ],
+                    [
+                      "sub",
+                      1,
+                      [
+                        "div",
+                        [
+                          "add",
+                          "@i",
+                          0.5
+                        ],
+                        "$roof_steps"
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "mul",
+                  "$curl",
+                  [
+                    "pow",
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      "$roof_steps"
+                    ],
+                    6
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "roof_dy",
+            "value": [
+              "sub",
+              [
+                "add",
+                "$height",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$rise",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        1,
+                        [
+                          "div",
+                          [
+                            "add",
+                            "@i",
+                            1
+                          ],
+                          "$roof_steps"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        1,
+                        [
+                          "div",
+                          [
+                            "add",
+                            "@i",
+                            1
+                          ],
+                          "$roof_steps"
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$curl",
+                    [
+                      "pow",
+                      [
+                        "div",
+                        [
+                          "add",
+                          "@i",
+                          1
+                        ],
+                        "$roof_steps"
+                      ],
+                      6
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "$height",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$rise",
+                    [
+                      "mul",
+                      [
+                        "sub",
+                        1,
+                        [
+                          "div",
+                          "@i",
+                          "$roof_steps"
+                        ]
+                      ],
+                      [
+                        "sub",
+                        1,
+                        [
+                          "div",
+                          "@i",
+                          "$roof_steps"
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$curl",
+                    [
+                      "pow",
+                      [
+                        "div",
+                        "@i",
+                        "$roof_steps"
+                      ],
+                      6
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cap",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "roof",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              [
+                "add",
+                "$height",
+                "$rise"
+              ]
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ]
+        ],
+        "s": [
+          0.16,
+          0.16,
+          [
+            "add",
+            "%depth",
+            [
+              "mul",
+              2,
+              "$overhang"
+            ]
+          ]
+        ],
+        "r": [
+          0,
+          "@base.yaw",
+          0
+        ]
+      },
+      {
+        "id": "door",
+        "op": "anchor",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "%depth",
+                  0.5
+                ],
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              0.16
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                [
+                  "mul",
+                  "%depth",
+                  0.5
+                ],
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridg",
+        "op": "anchor",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "add",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ],
+          [
+            "add",
+            [
+              "add",
+              "@base.y",
+              [
+                "add",
+                "$height",
+                "$rise"
+              ]
+            ],
+            "%lift"
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "sub",
+              [
+                "mul",
+                0,
+                "%cos"
+              ],
+              [
+                "mul",
+                0,
+                "%sin"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "step",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "wood",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "mul",
+              [
+                "add",
+                [
+                  "mul",
+                  "%depth",
+                  0.5
+                ],
+                [
+                  "mul",
+                  "$stair_run",
+                  [
+                    "sub",
+                    1,
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      [
+                        "max",
+                        1,
+                        "$access_steps"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "%sin"
+            ]
+          ],
+          [
+            "mul",
+            [
+              "add",
+              [
+                "mix",
+                "$access_ground",
+                [
+                  "add",
+                  [
+                    "add",
+                    "@base.y",
+                    "%lift"
+                  ],
+                  0.16
+                ],
+                [
+                  "div",
+                  [
+                    "add",
+                    "@i",
+                    1
+                  ],
+                  [
+                    "max",
+                    1,
+                    "$access_steps"
+                  ]
+                ]
+              ],
+              "$access_ground"
+            ],
+            0.5
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "mul",
+              [
+                "add",
+                [
+                  "mul",
+                  "%depth",
+                  0.5
+                ],
+                [
+                  "mul",
+                  "$stair_run",
+                  [
+                    "sub",
+                    1,
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      [
+                        "max",
+                        1,
+                        "$access_steps"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "%cos"
+            ]
+          ]
+        ],
+        "s": [
+          "$stair_width",
+          [
+            "sub",
+            [
+              "mix",
+              "$access_ground",
+              [
+                "add",
+                [
+                  "add",
+                  "@base.y",
+                  "%lift"
+                ],
+                0.16
+              ],
+              [
+                "div",
+                [
+                  "add",
+                  "@i",
+                  1
+                ],
+                [
+                  "max",
+                  1,
+                  "$access_steps"
+                ]
+              ]
+            ],
+            "$access_ground"
+          ],
+          [
+            "add",
+            [
+              "div",
+              "$stair_run",
+              [
+                "max",
+                1,
+                "$access_steps"
+              ]
+            ],
+            0.015
+          ]
+        ],
+        "r": [
+          0,
+          "@base.yaw",
+          0
+        ],
+        "when": [
+          "min",
+          1,
+          "$access_steps"
+        ],
+        "repeat": {
+          "count": [
+            "max",
+            1,
+            "$access_steps"
+          ]
+        }
+      }
+    ]
+  },
+  "materials": {
+    "wood": "cedar",
+    "roof": "jade_tile",
+    "stone": "garden_stone",
+    "metal": "dark_metal"
+  }
+}

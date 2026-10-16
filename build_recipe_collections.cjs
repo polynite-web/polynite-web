@@ -1,6 +1,7 @@
 /* Publish compact collection indexes before optional composition/recipe data. */
 const fs=require('node:fs'),path=require('node:path');
 const root=__dirname,origin='https://explore.polynite.io/docs/recipes/collections/';
+function indexes(){const source=path.join(root,'public-site-src/collections');return fs.existsSync(source)?fs.readdirSync(source).flatMap(name=>{const file=path.join(source,name,'collection.json');if(!fs.existsSync(file))return [];const c=JSON.parse(fs.readFileSync(file));return [{id:c.id,title:c.title,version:c.version,url:origin+c.id+'/v'+c.version+'/index.json'}];}):[];}
 function build(out,examples){
  const source=path.join(root,'public-site-src/collections');if(!fs.existsSync(source))return;
  for(const name of fs.readdirSync(source)){
@@ -12,4 +13,4 @@ function build(out,examples){
   fs.writeFileSync(path.join(dest,'index.json'),JSON.stringify(index,null,2));
  }
 }
-module.exports={build};
+module.exports={build,indexes};

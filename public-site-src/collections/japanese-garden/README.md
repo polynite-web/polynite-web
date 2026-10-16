@@ -42,3 +42,12 @@ missing reusable mechanism, with a separate contract and observable tests.
 Limits: explicit analytic cube supports, flat named paths, cached rigid petal
 articulation. Trees are composed stylised canopies, not botanical simulation.
 The base water material is a shaded surface; it is not a fluid simulation.
+
+Version 2 corrects the assembled garden: low foundation, parameterised entrance
+steps, separate pond crossing, connected paths and spaced planting. Its layout
+contract checks selected world-space envelopes (including parent transforms),
+path contact and stair rise; it is not a general mesh collision solver. Native
+review renders front, access and top views for all three garden variants.
+The original four isolated studies and immutable v1 scenes remain available.
+For a partial collection revision, pass `--ids japanese-garden` to both live
+verification and import; all selected variants must pass and restore the scene.

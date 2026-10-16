@@ -91,6 +91,38 @@
         "description": "Level deck clearance above the highest sampled post base, metres",
         "group": "shape",
         "integer": false
+      },
+      {
+        "name": "access_steps",
+        "min": 0,
+        "max": 12,
+        "value": 0,
+        "group": "access",
+        "integer": true
+      },
+      {
+        "name": "stair_width",
+        "min": 0.6,
+        "max": 3,
+        "value": 1.1,
+        "group": "access",
+        "integer": false
+      },
+      {
+        "name": "stair_run",
+        "min": 0.6,
+        "max": 3,
+        "value": 1.5,
+        "group": "access",
+        "integer": false
+      },
+      {
+        "name": "access_ground",
+        "min": -10,
+        "max": 10,
+        "value": 0,
+        "group": "access",
+        "integer": false
       }
     ],
     "let": [
@@ -1768,6 +1800,185 @@
             ]
           ]
         ]
+      },
+      {
+        "id": "step",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "wood",
+        "p": [
+          [
+            "add",
+            "@base.x",
+            [
+              "mul",
+              [
+                "add",
+                [
+                  "mul",
+                  "%depth",
+                  0.5
+                ],
+                [
+                  "mul",
+                  "$stair_run",
+                  [
+                    "sub",
+                    1,
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      [
+                        "max",
+                        1,
+                        "$access_steps"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "%sin"
+            ]
+          ],
+          [
+            "mul",
+            [
+              "add",
+              [
+                "mix",
+                "$access_ground",
+                [
+                  "add",
+                  [
+                    "add",
+                    "@base.y",
+                    "%lift"
+                  ],
+                  0.16
+                ],
+                [
+                  "div",
+                  [
+                    "add",
+                    "@i",
+                    1
+                  ],
+                  [
+                    "max",
+                    1,
+                    "$access_steps"
+                  ]
+                ]
+              ],
+              "$access_ground"
+            ],
+            0.5
+          ],
+          [
+            "add",
+            "@base.z",
+            [
+              "mul",
+              [
+                "add",
+                [
+                  "mul",
+                  "%depth",
+                  0.5
+                ],
+                [
+                  "mul",
+                  "$stair_run",
+                  [
+                    "sub",
+                    1,
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      [
+                        "max",
+                        1,
+                        "$access_steps"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              "%cos"
+            ]
+          ]
+        ],
+        "s": [
+          "$stair_width",
+          [
+            "sub",
+            [
+              "mix",
+              "$access_ground",
+              [
+                "add",
+                [
+                  "add",
+                  "@base.y",
+                  "%lift"
+                ],
+                0.16
+              ],
+              [
+                "div",
+                [
+                  "add",
+                  "@i",
+                  1
+                ],
+                [
+                  "max",
+                  1,
+                  "$access_steps"
+                ]
+              ]
+            ],
+            "$access_ground"
+          ],
+          [
+            "add",
+            [
+              "div",
+              "$stair_run",
+              [
+                "max",
+                1,
+                "$access_steps"
+              ]
+            ],
+            0.015
+          ]
+        ],
+        "r": [
+          0,
+          "@base.yaw",
+          0
+        ],
+        "when": [
+          "min",
+          1,
+          "$access_steps"
+        ],
+        "repeat": {
+          "count": [
+            "max",
+            1,
+            "$access_steps"
+          ]
+        }
       }
     ]
   },

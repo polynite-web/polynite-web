@@ -2,7 +2,7 @@
 
 Human guide: https://explore.polynite.io/docs/recipes/
 Progressive index: https://explore.polynite.io/docs/recipes/catalog.json
-Japanese garden collection: https://explore.polynite.io/docs/recipes/collections/japanese-garden/v1/index.json
+Japanese garden collection: https://explore.polynite.io/docs/recipes/collections/japanese-garden/v2/index.json
 
 Read the compact index, choose a relevant example and fetch its Markdown or JSON detail. Check the connected engine capabilities. Desktop verified does not imply browser support. A recipe is data, never executable arbitrary code. Preserve the user's current scene and edits.
 
@@ -13,4 +13,4 @@ Read the compact index, choose a relevant example and fetch its Markdown or JSON
 - [A bridge between two shores](https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.md): An arched vermilion footbridge whose deck and rails follow two movable banks.
 - [Leave a way through](https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.md): A cedar boundary makes room for a path as it moves and widens.
 - [The lotus pond awakens](https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.md): Pink, gold and lilac lotus flowers open above a small jade pond.
-- [The garden of five quiet moments](https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.md): A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.
+- [The garden of five quiet moments](https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.md): A low tea pavilion with entrance steps, a bridge across the pond and clear connected garden paths.

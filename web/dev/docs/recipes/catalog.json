@@ -206,9 +206,9 @@
     },
     {
       "id": "japanese-garden",
-      "version": 1,
+      "version": 2,
       "title": "The garden of five quiet moments",
-      "summary": "A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.",
+      "summary": "A low tea pavilion with entrance steps, a bridge across the pond and clear connected garden paths.",
       "category": "Architecture",
       "level": "Compose & explore",
       "operators": [
@@ -234,8 +234,8 @@
         "browser": "not_verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/japanese-garden/",
-      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.json",
-      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.md"
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.md"
     }
   ]
 }

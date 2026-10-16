@@ -1,12 +1,14 @@
 /* Explicit native authoring verification; collection files contain all recipes. */
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createRequire}from'node:module';
+import {createHash}from'node:crypto';
 const require=createRequire(import.meta.url),{collection}=require('./compose_recipe_collection.cjs'),checks=require('./public-site-src/recipe-checks.js');
 const args=process.argv.slice(2),arg=k=>args[args.indexOf(k)+1];assert(args.includes('--collection')&&args.includes('--output')&&args.includes('--pin'),'Pass --collection, --output and --pin');
 const c=collection(path.resolve(arg('--collection'))),dir=path.resolve(arg('--output')),pin=path.resolve(arg('--pin'));fs.mkdirSync(dir,{recursive:true});const pinBytes=fs.readFileSync(pin),sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const collection_sha256=createHash('sha256').update(JSON.stringify({data:c.data,recipes:c.recipes})).digest('hex');
 async function raw(method,params={}){return(await fetch('http://127.0.0.1:8790/mcp',{method:'POST',body:JSON.stringify({jsonrpc:'2.0',id:629,method,params}),signal:AbortSignal.timeout(45000)})).json();}
 async function rpc(method,params={}){const j=await raw(method,params);assert(!j.error&&j.result?.ok!==false,JSON.stringify(j.error||j.result));return j.result;}
 const film=(command,extra={})=>rpc('scene.cinematic',{request:{command,...extra}}),inspect=id=>rpc('scene.architecture',{request:{command:'inspect',id,include_parts:true}});
-async function seek(time){await film('seek',{time});for(let i=0;i<400;i++){await sleep(100);const s=await film('status');if(!s.seeking&&Math.abs(s.time-time)<.05)return;}throw Error('Seek did not settle');}
+async function seek(time){const current=await film('status');if(!current.seeking&&Math.abs(current.time-time)<.01)return;await film('seek',{time});for(let i=0;i<400;i++){await sleep(100);const s=await film('status');if(!s.seeking&&Math.abs(s.time-time)<.05)return;}throw Error('Seek did not settle');}
 async function capture(name){await sleep(350);let s=await rpc('scene.capture',{request:{command:'render',width:1600,height:1000}});for(let i=0;s.pending&&i<80;i++){await sleep(150);s=await rpc('scene.capture',{request:{command:'status',id:s.id}});}assert.equal(s.ready,true,JSON.stringify(s));const src=path.isAbsolute(s.path)?s.path:path.join(path.dirname(pin),'../../',s.path);fs.copyFileSync(src,path.join(dir,name+'.png'));}
 const s=await film('status');assert(!s.playing&&!s.export.active,'Idle viewer required');const before=await film('document',{expanded:true});fs.writeFileSync(path.join(dir,'before.scene'),JSON.stringify(before));const results=[];
 try{
@@ -14,8 +16,9 @@ try{
   const name=e.id+(variant?'-'+variant.id:''),input=c.compose(e,variant),recipes=input.initial.architecture,assemblies=input.initial.assemblies||[];input.initial.architecture=[];input.initial.assemblies=[];await film('load_document',{document:input,start_paused:true});if(assemblies.length)await rpc('scene.apply',{actions:assemblies.map(a=>({op:'build',...a}))});for(const recipe of recipes)assert.equal((await rpc('scene.architecture',{request:{command:'estimate',recipe}})).executed,false);await rpc('scene.apply',{actions:recipes.map(r=>({op:'architecture',...r}))});await film('capture');const doc=await film('document',{expanded:true});assert((await rpc('scene.snapshot')).objects>0);
   // Saved incoming context is validated using this document, not the prior scene.
   for(const r of doc.initial.architecture){const plan=await inspect(r.id);assert.equal(plan.recipe.module,'assembly');assert(plan.parts>0||plan.components.length>0);}
-  for(const contract of e.checks){const check=checks.create(contract);for(const [i,t]of contract.times.entries()){await seek(t);check.observe(i,await inspect(contract.instance),await rpc('scene.describe'));}check.finish();}
-  await film('stop');await film('load_document',{document:doc,start_paused:true});await seek(3);await capture(name);await film('stop');await film('load_document',{document:doc,start_paused:true});
+  fs.writeFileSync(path.join(dir,name+'.describe.json'),JSON.stringify(await rpc('scene.describe')));
+  const contracts=e.checks.map(contract=>({contract,check:checks.create(contract)}));for(const time of [...new Set(e.checks.flatMap(c=>c.times))].sort((a,b)=>a-b)){await seek(time);const live=await rpc('scene.describe'),plans=new Map();for(const {contract,check}of contracts)for(const [i,t]of contract.times.entries())if(t===time){if(!plans.has(contract.instance))plans.set(contract.instance,await inspect(contract.instance));check.observe(i,plans.get(contract.instance),live);}}for(const {check}of contracts)check.finish();
+  await film('stop');await film('load_document',{document:doc,start_paused:true});await seek(3);await capture(name);for(const view of e.review_views||[]){const shot=structuredClone(doc);shot.initial.cam_yaw=view.camera.yaw*Math.PI/180;shot.initial.cam_pitch=view.camera.pitch*Math.PI/180;shot.initial.cam_dist=view.camera.dist;await film('stop');await film('load_document',{document:shot,start_paused:true});await seek(3);await capture(name+'-'+view.id);}await film('stop');await film('load_document',{document:doc,start_paused:true});
   const saved=await film('document',{expanded:true});fs.writeFileSync(path.join(dir,name+'.scene'),JSON.stringify(saved));
   const first=saved.initial.architecture[0],schema=(await inspect(first.id)).parameter_schema.properties[e.edit_parameter],value=schema.minimum+(schema.maximum-schema.minimum)*.4;
   await rpc('scene.apply',{actions:[{op:'architecture',id:first.id,params:{[e.edit_parameter]:schema.type==='integer'?Math.round(value):value}}]});assert(Math.abs((await inspect(first.id)).recipe.params[e.edit_parameter]-(schema.type==='integer'?Math.round(value):value))<.001);
@@ -27,4 +30,4 @@ try{
 }finally{
  assert(!(await film('status')).export.active,'Do not interrupt an active export');await film('stop');await film('load_document',{document:before,start_paused:true});await rpc('scene.apply',{actions:[{op:'camera',yaw:before.initial.cam_yaw*180/Math.PI,pitch:before.initial.cam_pitch*180/Math.PI,dist:before.initial.cam_dist}]});await sleep(1200);fs.writeFileSync(pin,pinBytes);const after=await film('document',{expanded:true});assert.deepEqual(after.initial.geo,before.initial.geo);assert.deepEqual(after.initial.architecture,before.initial.architecture);console.log('RESTORED user scene, camera and pin; OS window untouched');
 }
-fs.writeFileSync(path.join(dir,'results.json'),JSON.stringify({passed:true,results,restored:true},null,2));
+fs.writeFileSync(path.join(dir,'results.json'),JSON.stringify({passed:true,results,restored:true,collection_sha256},null,2));

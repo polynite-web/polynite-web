@@ -609,7 +609,7 @@
     {
       "id": "japanese-garden",
       "title": "The garden of five quiet moments",
-      "summary": "A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.",
+      "summary": "A low tea pavilion with entrance steps, a bridge across the pond and clear connected garden paths.",
       "category": "Architecture",
       "level": "Compose & explore",
       "operators": [
@@ -645,11 +645,12 @@
         "pine2",
         "lamp1"
       ],
-      "prompt": "In Polynite, create an editable Japanese garden study: A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-garden/",
+      "prompt": "In Polynite, compose an editable Japanese garden with a low tea pavilion and entrance steps, a bridge across a pond, connected clear paths, lanterns and spaced planting. Keep pedestrian scale, verify clearances from above and preserve exposed recipe parameters. Compose shared operators as data recipes, invent a variation, and preserve the current user scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-garden/",
       "try": [
         "Compare the original garden with spring and autumn variants.",
         "Under Adjust, tune temple proportions, bridge arch and lotus petal controls independently.",
-        "Save a personal version. Every building and plant retains its editable recipe."
+        "Save a personal version. Every building and plant retains its editable recipe.",
+        "Follow the route through the rear gate, across the bridge, or take the side path and steps up to the pavilion."
       ],
       "steps": [
         "Compose shared geometry and material operators from the recipe JSON.",
@@ -693,28 +694,145 @@
             6
           ],
           "min_degrees": 20
+        },
+        {
+          "type": "layout",
+          "instance": "bridge",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "pairs": [
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "id": "terrain"
+              },
+              "gap": 0.15
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar5_lotus_"
+              },
+              "gap": 0.08
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar6_bloom2_"
+              },
+              "gap": 0.08
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar6_bloom3_"
+              },
+              "gap": 0.08
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar5_lamp2_"
+              },
+              "gap": 0.15
+            },
+            {
+              "a": {
+                "prefix": "ar6_cherry_"
+              },
+              "b": {
+                "id": "pond"
+              },
+              "gap": 0.25
+            }
+          ],
+          "stairs": {
+            "prefix": "ar6_temple_step",
+            "deck": "ar6_temple_deck000000",
+            "count": 4,
+            "max_rise": 0.2
+          },
+          "connections": [
+            {
+              "a": {
+                "prefix": "ar6_temple_step000000"
+              },
+              "b": {
+                "prefix": "ab_06access_"
+              },
+              "max_gap": 0.04
+            },
+            {
+              "a": {
+                "prefix": "ab_06access_"
+              },
+              "b": {
+                "id": "pad_a"
+              },
+              "max_gap": 0.04
+            }
+          ],
+          "boundary": {
+            "prefix": "ar5_fence_",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 6.8
+          }
         }
       ],
       "edit_parameter": "floor_clearance",
       "duration": 6,
       "seed": 17,
       "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
-      "version": 1,
+      "review_views": [
+        {
+          "id": "top",
+          "camera": {
+            "yaw": 35,
+            "pitch": 70,
+            "dist": 17
+          }
+        },
+        {
+          "id": "access",
+          "camera": {
+            "yaw": -25,
+            "pitch": 28,
+            "dist": 15.3
+          }
+        }
+      ],
+      "version": 2,
       "collection": "japanese-garden",
       "variants": [
         {
           "id": "spring",
           "title": "Spring blossom garden",
-          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1-spring.jpg",
-          "scene_sha256": "ecd082715c4520ca166a5eb254bc408bcd5b157419b6842d02cdb5481c53250a",
-          "scene": "https://polynite.io/examples/data/japanese-garden-v1-spring.scene"
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v2-spring.jpg",
+          "scene_sha256": "d71ded7a978aec1f680465df032c9c30cbac70ac0b487d90e3e6fce337da228d",
+          "scene": "https://polynite.io/examples/data/japanese-garden-v2-spring.scene"
         },
         {
           "id": "autumn",
           "title": "Autumn cedar garden",
-          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1-autumn.jpg",
-          "scene_sha256": "e04e3701f125051a024f3aa3fcc90e718bb70133069189a2bac9e6353784fcc9",
-          "scene": "https://polynite.io/examples/data/japanese-garden-v1-autumn.scene"
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v2-autumn.jpg",
+          "scene_sha256": "bad7fa883db169e502c0771b9deeb8a035623829b63e4e377829e27b30a6a44a",
+          "scene": "https://polynite.io/examples/data/japanese-garden-v2-autumn.scene"
         }
       ],
       "compatibility": {
@@ -723,18 +841,18 @@
       },
       "tested_at": "2026-10-16",
       "revision": "6dff8b3e5",
-      "scene_sha256": "9e4e658e1fd72bd1444f12ee2486ae8e8162002d2b7367b5944c160ef2b7ba27",
-      "recipes_sha256": "0aa7b58b9863efd617f77c7cc683e069bd9feeead5be2216a716f9363926a400",
+      "scene_sha256": "1aec2074fb5136b0aa38f7d7549735d141d4e8a603da73f8c3628ae134ea90c3",
+      "recipes_sha256": "5f115f572af02aceca5224b89ce75ed57b55dfc7e99fe90dd1cf80bf1388d58c",
       "media": {
-        "video": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1.mp4",
-        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1.jpg"
+        "video": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v2.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v2.jpg"
       },
       "open": "https://polynite.io/examples/view.html?id=japanese-garden",
       "url": "https://explore.polynite.io/docs/recipes/japanese-garden/",
-      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.json",
-      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/japanese-garden-v1.scene",
-      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.recipes.json",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.md",
+      "scene": "https://polynite.io/examples/data/japanese-garden-v2.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.recipes.json",
       "kind": "recipe"
     },
     {

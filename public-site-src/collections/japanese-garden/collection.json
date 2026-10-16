@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "japanese-garden",
   "title": "Japanese garden",
   "recipes": {
@@ -1268,7 +1268,7 @@
               "s": [
                 5.8,
                 0.055,
-                5.0
+                5
               ],
               "m": "pond",
               "appearance": "instant"
@@ -1790,7 +1790,7 @@
               "s": [
                 5.8,
                 0.055,
-                5.0
+                5
               ],
               "m": "pond",
               "appearance": "instant"
@@ -1819,7 +1819,7 @@
             "p": [
               1.1,
               0.07,
-              2.0
+              2
             ],
             "seed": 29,
             "params": {
@@ -1934,7 +1934,7 @@
     {
       "id": "japanese-garden",
       "title": "The garden of five quiet moments",
-      "summary": "A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.",
+      "summary": "A low tea pavilion with entrance steps, a bridge across the pond and clear connected garden paths.",
       "category": "Architecture",
       "level": "Compose & explore",
       "operators": [
@@ -1965,11 +1965,12 @@
         "lamp3",
         "cherry"
       ],
-      "prompt": "In Polynite, create an editable Japanese garden study: A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.",
+      "prompt": "In Polynite, compose an editable Japanese garden with a low tea pavilion and entrance steps, a bridge across a pond, connected clear paths, lanterns and spaced planting. Keep pedestrian scale, verify clearances from above and preserve exposed recipe parameters. Compose shared operators as data recipes, invent a variation, and preserve the current user scene.",
       "try": [
         "Compare the original garden with spring and autumn variants.",
         "Under Adjust, tune temple proportions, bridge arch and lotus petal controls independently.",
-        "Save a personal version. Every building and plant retains its editable recipe."
+        "Save a personal version. Every building and plant retains its editable recipe.",
+        "Follow the route through the rear gate, across the bridge, or take the side path and steps up to the pavilion."
       ],
       "steps": [
         "Compose shared geometry and material operators from the recipe JSON.",
@@ -2013,6 +2014,105 @@
             6
           ],
           "min_degrees": 20
+        },
+        {
+          "type": "layout",
+          "instance": "bridge",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "pairs": [
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "id": "terrain"
+              },
+              "gap": 0.15
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar5_lotus_"
+              },
+              "gap": 0.08
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar6_bloom2_"
+              },
+              "gap": 0.08
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar6_bloom3_"
+              },
+              "gap": 0.08
+            },
+            {
+              "a": {
+                "prefix": "ar6_bridge_"
+              },
+              "b": {
+                "prefix": "ar5_lamp2_"
+              },
+              "gap": 0.15
+            },
+            {
+              "a": {
+                "prefix": "ar6_cherry_"
+              },
+              "b": {
+                "id": "pond"
+              },
+              "gap": 0.25
+            }
+          ],
+          "stairs": {
+            "prefix": "ar6_temple_step",
+            "deck": "ar6_temple_deck000000",
+            "count": 4,
+            "max_rise": 0.2
+          },
+          "connections": [
+            {
+              "a": {
+                "prefix": "ar6_temple_step000000"
+              },
+              "b": {
+                "prefix": "ab_06access_"
+              },
+              "max_gap": 0.04
+            },
+            {
+              "a": {
+                "prefix": "ab_06access_"
+              },
+              "b": {
+                "id": "pad_a"
+              },
+              "max_gap": 0.04
+            }
+          ],
+          "boundary": {
+            "prefix": "ar5_fence_",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 6.8
+          }
         }
       ],
       "edit_parameter": "floor_clearance",
@@ -2025,34 +2125,34 @@
             "terrain": {
               "t": "cube",
               "p": [
-                -2.3,
-                0.72,
-                -1.7
+                -2.6,
+                0.16,
+                -2.4
               ],
               "s": [
-                4.8,
-                1.45,
-                4.2
+                4.2,
+                0.32,
+                3.7
               ],
               "m": "garden_stone",
               "appearance": "instant",
               "bevel": 0.07,
               "top_slope": [
-                0.5,
-                -0.24
+                0.12,
+                -0.06
               ]
             },
             "pad_a": {
               "t": "cube",
               "p": [
-                0.2,
-                0.18,
-                -1.8
+                1.5,
+                0.1,
+                -0.2
               ],
               "s": [
-                1.65,
-                0.36,
-                1.25
+                1.45,
+                0.2,
+                1
               ],
               "m": "garden_stone",
               "appearance": "instant",
@@ -2061,14 +2161,14 @@
             "pad_b": {
               "t": "cube",
               "p": [
-                0.2,
-                0.18,
-                3.3
+                1.5,
+                0.1,
+                3.9
               ],
               "s": [
-                1.65,
-                0.36,
-                1.25
+                1.45,
+                0.2,
+                1
               ],
               "m": "garden_stone",
               "appearance": "instant",
@@ -2077,14 +2177,14 @@
             "pond": {
               "t": "cylinder",
               "p": [
-                0.8,
-                0.04,
-                1
+                1.7,
+                0.025,
+                1.9
               ],
               "s": [
-                5.8,
-                0.055,
-                5.0
+                4.4,
+                0.04,
+                3
               ],
               "m": "pond",
               "appearance": "instant"
@@ -2098,31 +2198,84 @@
                 [
                   1.5,
                   0,
-                  -5
+                  -5.8
                 ],
                 [
                   1.5,
                   0,
-                  -2
+                  -0.2
                 ]
               ],
-              "width": 0.95,
+              "width": 0.8,
+              "seed": 17
+            },
+            {
+              "id": "access",
+              "kind": "path",
+              "points": [
+                [
+                  -2.6,
+                  0,
+                  0.05
+                ],
+                [
+                  1.5,
+                  0,
+                  0.05
+                ]
+              ],
+              "width": 0.58,
+              "seed": 17
+            },
+            {
+              "id": "arrival",
+              "kind": "path",
+              "points": [
+                [
+                  1.5,
+                  0,
+                  3.9
+                ],
+                [
+                  1.5,
+                  0,
+                  5.6
+                ]
+              ],
+              "width": 0.8,
               "seed": 17
             }
           ],
-          "cam_dist": 15.64,
+          "cam_dist": 14.7,
           "tgt_x": 0,
-          "tgt_y": 1.8,
+          "tgt_y": 1,
           "tgt_z": 0
         },
         "instances": [
           {
             "id": "temple",
-            "recipe": "terrain_pavilion"
+            "recipe": "terrain_pavilion",
+            "params": {
+              "width": 3.6,
+              "depth": 3.1,
+              "height": 2.1,
+              "rise": 0.7,
+              "curl": 0.25,
+              "overhang": 0.4,
+              "floor_clearance": 0.12,
+              "access_steps": 4,
+              "stair_width": 1.1,
+              "stair_run": 1.2
+            }
           },
           {
             "id": "bridge",
-            "recipe": "bridge"
+            "recipe": "bridge",
+            "params": {
+              "width": 1.05,
+              "arch": 0.35,
+              "rail_height": 0.55
+            }
           },
           {
             "id": "fence",
@@ -2130,86 +2283,104 @@
             "p": [
               0,
               0,
-              -3.6
+              -4.9
             ],
             "params": {
               "length": 9,
-              "height": 1
+              "height": 0.85
             }
           },
           {
             "id": "lotus",
             "recipe": "lotus",
             "p": [
-              1.8,
-              0.07,
-              1
+              3,
+              0.05,
+              1.25
             ],
-            "seed": 17
+            "seed": 17,
+            "params": {
+              "size": 0.5,
+              "height": 0.3,
+              "leaf_size": 0.45,
+              "leaf_spread": 0.25
+            }
           },
           {
             "id": "bloom2",
             "recipe": "lotus",
             "p": [
-              1.1,
-              0.07,
-              2.0
+              0.05,
+              0.05,
+              2.05
             ],
             "seed": 29,
             "params": {
-              "size": 0.65,
+              "size": 0.45,
               "petals": 7,
               "petal_green": 0.95,
               "petal_blue": 0.8,
               "tip_green": 0.64,
-              "tip_blue": 0.24
+              "tip_blue": 0.24,
+              "height": 0.3,
+              "leaf_size": 0.45,
+              "leaf_spread": 0.25
             }
           },
           {
             "id": "bloom3",
             "recipe": "lotus",
             "p": [
-              2.3,
-              0.07,
-              2.2
+              2.95,
+              0.05,
+              2.5
             ],
             "seed": 41,
             "params": {
-              "size": 0.55,
+              "size": 0.45,
               "petals": 11,
               "tip_green": 0.56,
-              "tip_blue": 0.83
+              "tip_blue": 0.83,
+              "height": 0.3,
+              "leaf_size": 0.45,
+              "leaf_spread": 0.25
             }
           },
           {
             "id": "lamp2",
             "recipe": "lantern",
             "p": [
-              1.3,
+              -0.2,
               0,
-              3.4
-            ]
+              4.4
+            ],
+            "params": {
+              "height": 0.85
+            }
           },
           {
             "id": "lamp3",
             "recipe": "lantern",
             "p": [
-              2.8,
+              2.9,
               0,
-              -2
-            ]
+              -2.7
+            ],
+            "params": {
+              "height": 0.85
+            }
           },
           {
             "id": "cherry",
             "recipe": "tree",
             "p": [
-              3.8,
+              4.75,
               0,
-              2.7
+              -2.2
             ],
             "params": {
-              "height": 2.6,
-              "spread": 1.35,
+              "height": 2.5,
+              "spread": 0.85,
               "round_canopy": 1
             },
             "materials": {
@@ -2218,42 +2389,48 @@
           },
           {
             "id": "island",
-            "recipe": "island"
+            "recipe": "island",
+            "params": {
+              "radius": 6.8
+            }
           },
           {
             "id": "pine1",
             "recipe": "tree",
             "p": [
-              -4.8,
+              -5,
               0,
-              1.8
+              2.1
             ],
             "params": {
-              "height": 2.7,
-              "spread": 0.8
+              "height": 2.6,
+              "spread": 0.7
             }
           },
           {
             "id": "pine2",
             "recipe": "tree",
             "p": [
-              4.6,
+              4.9,
               0,
-              -1.8
+              3.1
             ],
             "params": {
-              "height": 2.7,
-              "spread": 1
+              "height": 1.9,
+              "spread": 0.55
             }
           },
           {
             "id": "lamp1",
             "recipe": "lantern",
             "p": [
-              -3.2,
+              -3.7,
               0,
-              1.5
-            ]
+              1
+            ],
+            "params": {
+              "height": 0.85
+            }
           }
         ],
         "seq": [
@@ -2290,7 +2467,7 @@
             {
               "id": "cherry",
               "params": {
-                "spread": 1.65
+                "spread": 1
               }
             },
             {
@@ -2367,7 +2544,26 @@
             }
           ]
         }
+      ],
+      "review_views": [
+        {
+          "id": "top",
+          "camera": {
+            "yaw": 35,
+            "pitch": 70,
+            "dist": 17
+          }
+        },
+        {
+          "id": "access",
+          "camera": {
+            "yaw": -25,
+            "pitch": 28,
+            "dist": 15.3
+          }
+        }
       ]
     }
-  ]
+  ],
+  "format": 1
 }
