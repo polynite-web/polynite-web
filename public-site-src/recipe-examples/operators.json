@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "discovery": "Native MCP: scene.architecture request:{command:operators,operator:<id>}. Read current engine capabilities and operator contracts before composing. These examples explain concepts; connected-engine schemas are authoritative.",
+  "items": [
+    {"id":"surface","title":"Shape a surface","summary":"Create a curved petal, leaf, panel or roof from a shared profile. Shape belongs to parameters, not a species name.","example":{"id":"pet","op":"surface","role":"petal","s":[0.2,0.4,0.05],"surface":{"cup":0.4}}},
+    {"id":"primitive","title":"Start with a solid","summary":"Compose cubes, spheres, cylinders, cones or planes; assign a reusable material role.","example":{"id":"post","op":"primitive","kind":"cube","s":[0.1,1,0.1]}},
+    {"id":"beam","title":"Connect two points","summary":"Build a support between explicit endpoints. A recipe can compute each endpoint from its surroundings.","example":{"id":"leg","op":"beam","a":[0,0,0],"b":[0,1,0],"width":0.05}},
+    {"id":"anchor","title":"Name a connection","summary":"Expose a stable point for another assembly to attach to or reference.","example":{"id":"tip","op":"anchor","p":[0,1,0]}},
+    {"id":"repeat","title":"Arrange many parts","summary":"Repeat a node with stable indices. Use @i and @j in expressions to choose each piece's placement.","example":{"count":8,"rows":1}},
+    {"id":"motion","title":"Articulate a part","summary":"Animate a part around an axis without rebuilding its topology every frame.","example":{"enabled":1,"axis":[1,0,0],"from":18,"to":108,"period":4}},
+    {"id":"expression","title":"Calculate a relationship","summary":"Combine bounded numeric expressions and parameters. For example, double a length or arrange pieces around a circle.","example":["mul","$width",0.5]},
+    {"id":"context","title":"Declare the surroundings","summary":"Reference a named support, path or assembly anchor. Relationships are explicit and local.","example":[{"name":"base","object":"terrain","point":"top"}]},
+    {"id":"let","title":"Reuse a calculation","summary":"Give a bounded expression a name, then reference it as %half. This keeps a recipe readable.","example":[{"name":"half","value":["mul","$width",0.5]}]},
+    {"id":"spatial","title":"Sample the surroundings","summary":"Sample height on a declared cube support, or signed distance from a support footprint or path corridor. Arbitrary mesh terrain is not covered.","example":["height","@base",0,0]},
+    {"id":"when","title":"Leave room","summary":"Conditionally emit a piece. Zero skips it; one keeps it. Include a piece's whole footprint when reserving clearance.","example":["gte",["distance","@walk",0,0],0.3]}
+  ],
+  "starter": {
+    "id":"study",
+    "module":"assembly",
+    "seed":17,
+    "program":{
+      "version":1,
+      "inputs":[
+        {"name":"count","min":1,"max":12,"value":6,"integer":true,"group":"shape"},
+        {"name":"spacing","min":0.2,"max":1,"value":0.4,"group":"shape"},
+        {"name":"height","min":0.2,"max":3,"value":1,"group":"shape"}
+      ],
+      "nodes":[{"id":"post","op":"primitive","kind":"cube","repeat":{"count":"$count"},"p":[["mul","@i","$spacing"],["mul","$height",0.5],0],"s":[0.1,"$height",0.1]}]
+    }
+  }
+}

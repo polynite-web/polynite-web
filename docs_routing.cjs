@@ -1,5 +1,6 @@
 const DOCS_ORIGIN='https://explore.polynite.io',APP_ORIGIN='https://polynite.io';
-const DOC_ROUTES=['docs','docs/mcp','docs/sharing'];
+const recipeItems=require('./public-site-src/recipe-examples/catalog.json').items;
+const DOC_ROUTES=['docs','docs/mcp','docs/sharing','docs/recipes',...recipeItems.map(e=>'docs/recipes/'+e.id)];
 function rewriteDocsBody(html){
  return html.replace(/(href|src|poster)="(\/[^"]*)"/g,(full,attribute,url)=>{
   if(url.startsWith('/docs/media/'))return `${attribute}="${APP_ORIGIN}${url}"`;

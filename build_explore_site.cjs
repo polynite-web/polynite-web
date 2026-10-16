@@ -10,3 +10,5 @@ console.log('Built seven Explore pages, shared assets and canonical sitemap.');
 copyStyles(out);fs.writeFileSync(path.join(out,'../src/site_assets.js'),'export const CHROME_STYLESHEET='+JSON.stringify(stylesheetPaths.chrome)+';');
 
 fs.mkdirSync(path.join(out,'tutorials'),{recursive:true});fs.copyFileSync(path.join(root,'tutorials/catalog.json'),path.join(out,'tutorials/catalog.json'));
+const recipeExamples=require('./build_recipe_examples.cjs').build(out);
+const sitemap=path.join(out,'sitemap-pages.xml');fs.writeFileSync(sitemap,fs.readFileSync(sitemap,'utf8').replace('</urlset>',['https://explore.polynite.io/docs/recipes/',...recipeExamples.map(e=>e.url)].map(url=>`<url><loc>${url}</loc></url>`).join('')+'</urlset>'));

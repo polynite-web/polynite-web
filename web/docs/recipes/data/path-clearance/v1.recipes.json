@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "context": [
+        {
+          "name": "walk",
+          "path": "walkway"
+        }
+      ],
+      "id": "fence",
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "bays": 24,
+        "clearance": 0.180000007,
+        "height": 1.14999998,
+        "length": 8,
+        "post_width": 0.075000003
+      },
+      "program": {
+        "inputs": [
+          {
+            "description": "Fence length, metres",
+            "group": "shape",
+            "integer": false,
+            "max": 16,
+            "min": 2,
+            "name": "length",
+            "value": 8
+          },
+          {
+            "description": "Post height, metres",
+            "group": "shape",
+            "integer": false,
+            "max": 3,
+            "min": 0.400000006,
+            "name": "height",
+            "value": 1.14999998
+          },
+          {
+            "description": "Number of fence bays",
+            "group": "shape",
+            "integer": true,
+            "max": 48,
+            "min": 4,
+            "name": "bays",
+            "value": 24
+          },
+          {
+            "description": "Square post width, metres",
+            "group": "shape",
+            "integer": false,
+            "max": 0.300000012,
+            "min": 0.0299999993,
+            "name": "post_width",
+            "value": 0.075000003
+          },
+          {
+            "description": "Extra free space beyond the path capsule, metres",
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0,
+            "name": "clearance",
+            "value": 0.180000007
+          }
+        ],
+        "let": [
+          {
+            "name": "step",
+            "value": [
+              "div",
+              "$length",
+              "$bays"
+            ]
+          },
+          {
+            "name": "post_radius",
+            "value": [
+              "mul",
+              "$post_width",
+              0.707107008
+            ]
+          },
+          {
+            "name": "panel_radius",
+            "value": [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  0.25,
+                  [
+                    "mul",
+                    "%step",
+                    "%step"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$post_width",
+                  "$post_width"
+                ]
+              ]
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "id": "post",
+            "kind": "cube",
+            "let": [
+              {
+                "name": "x",
+                "value": [
+                  "add",
+                  [
+                    "mul",
+                    -0.5,
+                    "$length"
+                  ],
+                  [
+                    "mul",
+                    "@i",
+                    "%step"
+                  ]
+                ]
+              }
+            ],
+            "op": "primitive",
+            "p": [
+              "%x",
+              [
+                "mul",
+                "$height",
+                0.5
+              ],
+              0
+            ],
+            "repeat": {
+              "count": [
+                "add",
+                "$bays",
+                1
+              ]
+            },
+            "role": "wood",
+            "s": [
+              "$post_width",
+              "$height",
+              "$post_width"
+            ],
+            "when": [
+              "gte",
+              [
+                "distance",
+                "@walk",
+                "%x",
+                0
+              ],
+              [
+                "add",
+                "$clearance",
+                "%post_radius"
+              ]
+            ]
+          },
+          {
+            "a": [
+              [
+                "add",
+                [
+                  "mul",
+                  -0.5,
+                  "$length"
+                ],
+                [
+                  "mul",
+                  "@i",
+                  "%step"
+                ]
+              ],
+              "%y",
+              0
+            ],
+            "b": [
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    -0.5,
+                    "$length"
+                  ],
+                  [
+                    "mul",
+                    "@i",
+                    "%step"
+                  ]
+                ],
+                "%step"
+              ],
+              "%y",
+              0
+            ],
+            "id": "rail",
+            "let": [
+              {
+                "name": "mx",
+                "value": [
+                  "add",
+                  [
+                    "add",
+                    [
+                      "mul",
+                      -0.5,
+                      "$length"
+                    ],
+                    [
+                      "mul",
+                      "@i",
+                      "%step"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    0.5,
+                    "%step"
+                  ]
+                ]
+              },
+              {
+                "name": "y",
+                "value": [
+                  "mul",
+                  "$height",
+                  [
+                    "add",
+                    0.349999994,
+                    [
+                      "mul",
+                      "@j",
+                      0.5
+                    ]
+                  ]
+                ]
+              }
+            ],
+            "op": "beam",
+            "repeat": {
+              "count": "$bays",
+              "rows": 2
+            },
+            "role": "wood",
+            "when": [
+              "gte",
+              [
+                "distance",
+                "@walk",
+                "%mx",
+                0
+              ],
+              [
+                "add",
+                "$clearance",
+                "%panel_radius"
+              ]
+            ],
+            "width": "$post_width"
+          },
+          {
+            "id": "cap",
+            "kind": "sphere",
+            "let": [
+              {
+                "name": "x",
+                "value": [
+                  "add",
+                  [
+                    "mul",
+                    -0.5,
+                    "$length"
+                  ],
+                  [
+                    "mul",
+                    "@i",
+                    "%step"
+                  ]
+                ]
+              }
+            ],
+            "op": "primitive",
+            "p": [
+              "%x",
+              [
+                "add",
+                "$height",
+                0.0250000004
+              ],
+              0
+            ],
+            "repeat": {
+              "count": [
+                "add",
+                "$bays",
+                1
+              ]
+            },
+            "role": "metal",
+            "s": [
+              [
+                "mul",
+                "$post_width",
+                1.29999995
+              ],
+              0.0500000007,
+              [
+                "mul",
+                "$post_width",
+                1.29999995
+              ]
+            ],
+            "when": [
+              "gte",
+              [
+                "distance",
+                "@walk",
+                "%x",
+                0
+              ],
+              [
+                "add",
+                "$clearance",
+                "%post_radius"
+              ]
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "rustic",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}
