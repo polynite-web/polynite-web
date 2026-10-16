@@ -8,6 +8,9 @@ Three data-only studies exercise the same local tools: profile-studio, swept-arc
 
 Definitions belong to program.prototypes; instance nodes choose placement and material roles. Style and proportions remain in JSON. Reuse the existing context/spatial/anchor operators when composing these shapes with terrain or paths. No native generator branches on an example name.
 
+For multi-object composition, see the separate nested-architecture collection.
+It adds local assembly definitions while reusing these same mesh operators.
+
 Open the public example, choose Variant, then Adjust. The same inputs are available in Scene settings > Living architecture > study. Discovery flags recipe_instances, surface_profiles and surface_paths distinguish engines with the required capabilities. GPU batch counters describe actual mesh sharing; a lower vertex count is not an FPS benchmark.
 
 The native collection runner verifies all nine scenes with the shared geometry contract and restores the user scene. The shared mesh regression additionally checks persistence, GPU/CPU sharing, overrides, motion vectors, invalid inputs and gallery-free captures. The browser QA button verifies the same geometry rules, a live parameter edit and actual GPU sharing.

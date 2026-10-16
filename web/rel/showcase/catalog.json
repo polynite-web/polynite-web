@@ -2,6 +2,108 @@
   "version": 1,
   "items": [
     {
+      "id": "nested-temple",
+      "title": "A temple, built from shared parts.",
+      "summary": "Compose brackets into frontages, frontages into storeys, and storeys into a tapered pagoda. Curved hipped roofs, visible ribs, lattice panels and gilt fittings remain editable recipe data.",
+      "category": "Architecture workshop",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "repeat",
+        "assembly",
+        "when",
+        "let",
+        "prototype",
+        "primitive",
+        "surface",
+        "sweep",
+        "profile"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths"
+      ],
+      "instances": [
+        "temple"
+      ],
+      "prompt": "In Polynite, compose a detailed Japanese pagoda from nested assemblies. Define a bracket group, repeat it in a frontage, repeat the frontage around a storey, then repeat uniformly scaled storeys with taper. Use shared swept roof panels and ribs, procedural vermilion wood, dark tiles, warm paper and gold fittings. Keep storey count, width, taper, eave lift and detail switches editable. Treat this recipe as a starting point: invent other structures using the same operators. Estimate before applying, inspect bounds and observe the rendered result. Preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/nested-temple/",
+      "try": [
+        "Choose Three-storey gateway or Compact five-storey tower.",
+        "Adjust storeys, width, taper and eave lift; roof joints and repeated detail follow the same recipe.",
+        "Disable roof ribs to compare detail; save your independent scene."
+      ],
+      "steps": [
+        "Define reusable mesh prototypes and local bracket/frontage/storey assembly definitions.",
+        "Compose bounded assembly calls with local translation, yaw, uniform scale and repeat.",
+        "Apply procedural material roles, inspect the flattened plan and actual GPU sharing, then observe and save."
+      ],
+      "settings": "Open & test > Variant or Adjust. In Polynite: Scene settings > Living architecture > temple > layout/shape. All assembly definitions and material choices are in the downloadable recipe JSON.",
+      "checks": [
+        {
+          "type": "nested",
+          "instance": "temple",
+          "times": [
+            0,
+            3,
+            6
+          ]
+        }
+      ],
+      "edit_parameter": "eave_lift",
+      "duration": 6,
+      "seed": 624,
+      "limits": "Realtime parametric study inspired by the proportions and layered detail of Golden Temple. It does not reproduce the reference offline renderer, complete landscape or every architectural ornament. Assembly transforms use uniform scale and yaw; individual leaves retain full rigid rotation. Nested leaf animation is rejected. GPU sharing depends on compatible materials and scales.",
+      "version": 1,
+      "collection": "nested-architecture",
+      "variants": [
+        {
+          "id": "three-storey",
+          "title": "Three-storey gateway",
+          "poster": "https://explore.polynite.io/docs/recipes/media/nested-temple-v1-three-storey.jpg",
+          "scene_sha256": "b544c9555695fcb67b23360465b35c5d0da526f0633572f29a3a5e510dd5f43b",
+          "scene": "https://polynite.io/examples/data/nested-temple-v1-three-storey.scene"
+        },
+        {
+          "id": "compact",
+          "title": "Compact five-storey tower",
+          "poster": "https://explore.polynite.io/docs/recipes/media/nested-temple-v1-compact.jpg",
+          "scene_sha256": "56f9f2e33501eb858be9d0b800461368c1f4b3b49dd0d97082b21f9697454823",
+          "scene": "https://polynite.io/examples/data/nested-temple-v1-compact.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "58037f7e283bc9e347f2482f11c4af093b02fe9e",
+      "scene_sha256": "3717549f1ab5130c1f71c7ccd18537efd48082f99618f250ee645180ff883065",
+      "recipes_sha256": "0642e6ebcb3e61596777622c6ccc3755b038f2824cc9dcfb99eb62d2d4d65b1d",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/nested-temple-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/nested-temple-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=nested-temple",
+      "url": "https://explore.polynite.io/docs/recipes/nested-temple/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.md",
+      "scene": "https://polynite.io/examples/data/nested-temple-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.recipes.json",
+      "kind": "recipe",
+      "recipe": "nested-temple",
+      "environment": "Studio",
+      "tags": [
+        "Architecture workshop",
+        "Architecture",
+        "nested",
+        "Editable"
+      ]
+    },
+    {
       "id": "modular-facade",
       "title": "A facade from reusable parts.",
       "summary": "Compose pilasters, window frames, sills and floor bands from shared profiles and primitive prototypes.",
@@ -59,7 +161,7 @@
       "edit_parameter": "bays",
       "duration": 6,
       "seed": 17,
-      "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+      "limits": "Editable operator study. Mesh prototypes are shared; these studies use mesh instances; nested composition is demonstrated separately in the architecture workshop. Boolean openings remain separate. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
       "version": 1,
       "collection": "operator-workshop",
       "variants": [
@@ -178,7 +280,7 @@
       "edit_parameter": "width",
       "duration": 6,
       "seed": 17,
-      "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+      "limits": "Editable operator study. Mesh prototypes are shared; these studies use mesh instances; nested composition is demonstrated separately in the architecture workshop. Boolean openings remain separate. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
       "version": 1,
       "collection": "operator-workshop",
       "variants": [
@@ -295,7 +397,7 @@
       "edit_parameter": "belly",
       "duration": 6,
       "seed": 17,
-      "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+      "limits": "Editable operator study. Mesh prototypes are shared; these studies use mesh instances; nested composition is demonstrated separately in the architecture workshop. Boolean openings remain separate. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
       "version": 1,
       "collection": "operator-workshop",
       "variants": [

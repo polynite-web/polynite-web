@@ -276,6 +276,52 @@
           ]
         ]
       }
+    },
+    {
+      "id": "assembly",
+      "title": "Compose reusable groups",
+      "summary": "Define a bracket, frontage or storey once, then compose and repeat it. The recipe chooses the structure; the local engine validates the graph and shares compatible geometry. Uniform scale and yaw keep transforms free of shear.",
+      "example": {
+        "assemblies": [
+          {
+            "id": "pair",
+            "nodes": [
+              {
+                "id": "col",
+                "op": "instance",
+                "source": "column",
+                "repeat": {
+                  "count": 2
+                },
+                "p": [
+                  "@i",
+                  0,
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "id": "row",
+            "op": "assembly",
+            "source": "pair",
+            "repeat": {
+              "count": 4
+            },
+            "p": [
+              0,
+              0,
+              [
+                "mul",
+                2,
+                "@i"
+              ]
+            ]
+          }
+        ]
+      }
     }
   ],
   "starter": {

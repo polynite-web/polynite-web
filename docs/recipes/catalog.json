@@ -326,6 +326,41 @@
       "url": "https://explore.polynite.io/docs/recipes/modular-facade/",
       "detail": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.md"
+    },
+    {
+      "id": "nested-temple",
+      "version": 1,
+      "title": "A temple, built from shared parts.",
+      "summary": "Compose brackets into frontages, frontages into storeys, and storeys into a tapered pagoda. Curved hipped roofs, visible ribs, lattice panels and gilt fittings remain editable recipe data.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "repeat",
+        "assembly",
+        "when",
+        "let",
+        "prototype",
+        "primitive",
+        "surface",
+        "sweep",
+        "profile"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/nested-temple/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.md"
     }
   ]
 }

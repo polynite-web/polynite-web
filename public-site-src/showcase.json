@@ -1,7 +1,18 @@
 {
   "version": 1,
-  "featured": "swept-arcade",
+  "featured": "nested-temple",
   "items": [
+    {
+      "recipe": "nested-temple",
+      "category": "Architecture workshop",
+      "environment": "Studio",
+      "tags": [
+        "Architecture workshop",
+        "Architecture",
+        "nested",
+        "Editable"
+      ]
+    },
     {
       "recipe": "modular-facade",
       "category": "Operator workshop",

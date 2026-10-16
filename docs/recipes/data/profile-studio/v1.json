@@ -57,7 +57,7 @@
   "edit_parameter": "belly",
   "duration": 6,
   "seed": 17,
-  "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+  "limits": "Editable operator study. Mesh prototypes are shared; these studies use mesh instances; nested composition is demonstrated separately in the architecture workshop. Boolean openings remain separate. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
   "version": 1,
   "collection": "operator-workshop",
   "variants": [

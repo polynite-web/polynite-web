@@ -22,6 +22,13 @@
      for(const p of parts){assert(p.p.concat(p.s).every(Number.isFinite)&&p.s.every(v=>v>0),'Invalid component pose');if(rule.profile_points)assert(p.surface?.profile?.length===rule.profile_points,'Custom profile missing');if(rule.path_points)assert(p.surface?.path?.length===rule.path_points,'Custom sweep path missing');}
     }
    }
+   else if(c.type==='nested'){
+    const p=plan.recipe.params,perStorey=62+16*p.balcony+20*p.roof_ribs;assert(plan.components.length===16+p.storeys*perStorey,'Nested expansion count differs');
+    assert(new Set(plan.components.map(p=>p.part)).size===plan.components.length,'Nested component IDs collide');
+    const surfaces=plan.components.filter(p=>p.surface);assert(surfaces.length===p.storeys*(4+20*p.roof_ribs),'Nested roof detail differs');
+    for(const part of plan.components){assert(part.p.concat(part.s).every(Number.isFinite)&&part.s.every(v=>v>0),'Invalid nested transform');assert(part.p[1]>=0&&part.p[1]<40,'Nested vertical placement is invalid');}
+    assert(plan.recipe.program.assemblies.length===3,'Assembly definitions missing');
+   }
    else if(c.type==='layout'){
     for(const p of c.pairs){const d=gap(footprint(live.objects,p.a),footprint(live.objects,p.b));assert(d>=p.gap,'Layout clearance failed: '+JSON.stringify(p)+' actual '+d.toFixed(3));}
     for(const p of c.connections||[])assert(gap(footprint(live.objects,p.a),footprint(live.objects,p.b))<=p.max_gap,'Access path is disconnected');

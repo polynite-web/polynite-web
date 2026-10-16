@@ -1,0 +1,75 @@
+{
+  "temple_vermilion": {
+    "base": "wood",
+    "color_a": [
+      0.48,
+      0.065,
+      0.025
+    ],
+    "color_b": [
+      0.2,
+      0.022,
+      0.012
+    ],
+    "roughness": 0.6,
+    "size": 0.22,
+    "relief": 0.1
+  },
+  "temple_tile": {
+    "base": "tile",
+    "color_a": [
+      0.07,
+      0.09,
+      0.105
+    ],
+    "color_b": [
+      0.025,
+      0.035,
+      0.045
+    ],
+    "roughness": 0.43,
+    "size": 0.16,
+    "relief": 0.26
+  },
+  "temple_stone": {
+    "base": "stone",
+    "color_a": [
+      0.55,
+      0.53,
+      0.46
+    ],
+    "color_b": [
+      0.34,
+      0.33,
+      0.29
+    ],
+    "roughness": 0.9,
+    "size": 0.5,
+    "relief": 0.12
+  },
+  "temple_paper": {
+    "base": "plain",
+    "color_a": [
+      0.83,
+      0.74,
+      0.54
+    ],
+    "roughness": 0.88,
+    "macro": 0.12
+  },
+  "temple_gold": {
+    "base": "metal",
+    "color_a": [
+      0.85,
+      0.56,
+      0.16
+    ],
+    "color_b": [
+      0.4,
+      0.22,
+      0.05
+    ],
+    "metallic": 0.8,
+    "roughness": 0.32
+  }
+}
