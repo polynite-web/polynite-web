@@ -82,6 +82,160 @@
       "url": "https://explore.polynite.io/docs/recipes/path-clearance/",
       "detail": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/path-clearance/v1.md"
+    },
+    {
+      "id": "japanese-pavilion",
+      "version": 1,
+      "title": "A tea house on the hillside",
+      "summary": "A cedar pavilion and jade roof, with four feet that follow a sloped stone island.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "spatial",
+        "primitive",
+        "beam",
+        "repeat",
+        "anchor",
+        "when"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/japanese-pavilion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.md"
+    },
+    {
+      "id": "japanese-bridge",
+      "version": 1,
+      "title": "A bridge between two shores",
+      "summary": "An arched vermilion footbridge whose deck and rails follow two movable banks.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "primitive",
+        "repeat",
+        "beam",
+        "anchor",
+        "when"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/japanese-bridge/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.md"
+    },
+    {
+      "id": "japanese-passage",
+      "version": 1,
+      "title": "Leave a way through",
+      "summary": "A cedar boundary makes room for a path as it moves and widens.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "primitive",
+        "repeat",
+        "when",
+        "spatial",
+        "beam"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/japanese-passage/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.md"
+    },
+    {
+      "id": "japanese-lotus",
+      "version": 1,
+      "title": "The lotus pond awakens",
+      "summary": "Pink, gold and lilac lotus flowers open above a small jade pond.",
+      "category": "Botanical",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "surface",
+        "motion",
+        "repeat",
+        "primitive",
+        "beam",
+        "anchor",
+        "when"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/japanese-lotus/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.md"
+    },
+    {
+      "id": "japanese-garden",
+      "version": 1,
+      "title": "The garden of five quiet moments",
+      "summary": "A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "spatial",
+        "primitive",
+        "beam",
+        "repeat",
+        "anchor",
+        "when",
+        "surface",
+        "motion"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/japanese-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.md"
     }
   ]
 }

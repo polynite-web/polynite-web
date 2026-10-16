@@ -1,0 +1,96 @@
+{
+  "id": "japanese-lotus",
+  "title": "The lotus pond awakens",
+  "summary": "Pink, gold and lilac lotus flowers open above a small jade pond.",
+  "category": "Botanical",
+  "level": "Compose & explore",
+  "operators": [
+    "expression",
+    "surface",
+    "motion",
+    "repeat",
+    "primitive",
+    "beam",
+    "anchor",
+    "when"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_context",
+    "recipe_spatial"
+  ],
+  "instances": [
+    "lotus",
+    "bloom2",
+    "bloom3",
+    "island",
+    "pine1",
+    "pine2",
+    "lamp1"
+  ],
+  "prompt": "In Polynite, create an editable Japanese garden study: Pink, gold and lilac lotus flowers open above a small jade pond. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.",
+  "try": [
+    "Compare ivory slender petals and a rose lotus with generous layers.",
+    "Set animate to 0, then drag opening. Set animate to 1 and Play for the six-second loop.",
+    "Change petals, layers, petal_width and colours to compose a new flower."
+  ],
+  "steps": [
+    "Compose shared geometry and material operators from the recipe JSON.",
+    "Bind explicit supports or paths where needed, retaining stable IDs.",
+    "Expose parameters; verify changes, relationships and playback before saving."
+  ],
+  "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+  "checks": [
+    {
+      "type": "motion",
+      "instance": "lotus",
+      "object": "ar5_lotus_pet000000",
+      "times": [
+        0,
+        3,
+        6
+      ],
+      "min_degrees": 20
+    }
+  ],
+  "edit_parameter": "opening",
+  "duration": 6,
+  "seed": 17,
+  "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+  "version": 1,
+  "collection": "japanese-garden",
+  "variants": [
+    {
+      "id": "ivory",
+      "title": "Ivory lotus, slender petals",
+      "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1-ivory.jpg",
+      "scene_sha256": "a824b172a0113be79330685b1197279ecc0271ef19c0a1c1965b293dfc120d7b",
+      "scene": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1-ivory.scene"
+    },
+    {
+      "id": "rose",
+      "title": "Rose lotus, generous layers",
+      "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1-rose.jpg",
+      "scene_sha256": "cc79679a83b3e58441d48bb615ce9ce6bcf3ab196837bf8f38ea427d863c46c6",
+      "scene": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1-rose.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "tested_at": "2026-10-16",
+  "revision": "6dff8b3e5",
+  "scene_sha256": "6812e56c62801ca70cbdc152b4066bc0e4b1ce4700767f3e96c86760ed47379e",
+  "recipes_sha256": "6798e3404ad1183f3ad82470ab7d92e254a2c529fd7d09ffc5b60267ddcc1fa9",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1.jpg"
+  },
+  "open": "https://polynite.io/examples/view.html?id=japanese-lotus",
+  "url": "https://explore.polynite.io/docs/recipes/japanese-lotus/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.recipes.json"
+}

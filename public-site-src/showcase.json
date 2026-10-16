@@ -1,11 +1,125 @@
 {
   "version": 1,
-  "featured": "refuge",
+  "featured": "japanese-garden",
   "items": [
-    {"id":"refuge","atelier":"refuge-20261014-142504-living","title":"The mist keeper's refuge","category":"Architecture","environment":"Moonlit","summary":"A small refuge, warm windows and drifting mist. Explore the scale, atmosphere and life around it.","prompt":"Create a small timber refuge in Polynite on a stone foundation, with a steep roof, warm recessed windows, soft moonlight, drifting mist and small signs of life. Use the linked scene as a starting point and expose its building and atmosphere controls.","tags":["Timber","Mist","Night"]},
-    {"id":"keeper-house","atelier":"keeper-20261014-142514-living","title":"A house at the edge of dusk","category":"Architecture","environment":"Twilight","summary":"Timber, stone and a warm interior at dusk. Make your own version of the keeper's house.","prompt":"Create a compact keeper's house in Polynite with timber, stone, a warm interior and a twilight garden. Preserve depth around the windows. Use the linked scene as a starting point, change its proportions and try another atmosphere.","tags":["Timber","Garden","Twilight"]},
-    {"id":"morning-mill","atelier":"mill-20261014-142451-living","title":"The mill wakes with the light","category":"Architecture","environment":"Dawn","summary":"A mill in the first light, with moving details and a garden to explore.","prompt":"Create a small stylised mill in Polynite with a timber building, a readable roof silhouette, moving mill details and a garden in soft dawn light. Start from the linked scene, keep it editable and expose the available building and atmosphere controls.","tags":["Mill","Motion","Dawn"]},
-    {"recipe":"terrain-pavilion","title":"A pavilion that finds its footing","category":"Architecture","environment":"Studio","tags":["Japanese","Adaptive","Terrain"]},
-    {"recipe":"flowers-in-motion","title":"A garden made from shared tools","category":"Nature","environment":"Studio","tags":["Flowers","Motion","Procedural"]}
+    {
+      "recipe": "japanese-garden",
+      "category": "Japanese garden",
+      "environment": "Spring",
+      "tags": [
+        "Japanese",
+        "Architecture",
+        "support · span · motion",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "japanese-lotus",
+      "category": "Japanese garden",
+      "environment": "Pond",
+      "tags": [
+        "Japanese",
+        "Botanical",
+        "motion",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "japanese-passage",
+      "category": "Japanese garden",
+      "environment": "Garden",
+      "tags": [
+        "Japanese",
+        "Architecture",
+        "corridor",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "japanese-bridge",
+      "category": "Japanese garden",
+      "environment": "Garden",
+      "tags": [
+        "Japanese",
+        "Architecture",
+        "span",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "japanese-pavilion",
+      "category": "Japanese garden",
+      "environment": "Garden",
+      "tags": [
+        "Japanese",
+        "Architecture",
+        "support",
+        "Editable"
+      ]
+    },
+    {
+      "id": "refuge",
+      "atelier": "refuge-20261014-142504-living",
+      "title": "The mist keeper's refuge",
+      "category": "Architecture",
+      "environment": "Moonlit",
+      "summary": "A small refuge, warm windows and drifting mist. Explore the scale, atmosphere and life around it.",
+      "prompt": "Create a small timber refuge in Polynite on a stone foundation, with a steep roof, warm recessed windows, soft moonlight, drifting mist and small signs of life. Use the linked scene as a starting point and expose its building and atmosphere controls.",
+      "tags": [
+        "Timber",
+        "Mist",
+        "Night"
+      ]
+    },
+    {
+      "id": "keeper-house",
+      "atelier": "keeper-20261014-142514-living",
+      "title": "A house at the edge of dusk",
+      "category": "Architecture",
+      "environment": "Twilight",
+      "summary": "Timber, stone and a warm interior at dusk. Make your own version of the keeper's house.",
+      "prompt": "Create a compact keeper's house in Polynite with timber, stone, a warm interior and a twilight garden. Preserve depth around the windows. Use the linked scene as a starting point, change its proportions and try another atmosphere.",
+      "tags": [
+        "Timber",
+        "Garden",
+        "Twilight"
+      ]
+    },
+    {
+      "id": "morning-mill",
+      "atelier": "mill-20261014-142451-living",
+      "title": "The mill wakes with the light",
+      "category": "Architecture",
+      "environment": "Dawn",
+      "summary": "A mill in the first light, with moving details and a garden to explore.",
+      "prompt": "Create a small stylised mill in Polynite with a timber building, a readable roof silhouette, moving mill details and a garden in soft dawn light. Start from the linked scene, keep it editable and expose the available building and atmosphere controls.",
+      "tags": [
+        "Mill",
+        "Motion",
+        "Dawn"
+      ]
+    },
+    {
+      "recipe": "terrain-pavilion",
+      "title": "A pavilion that finds its footing",
+      "category": "Architecture",
+      "environment": "Studio",
+      "tags": [
+        "Japanese",
+        "Adaptive",
+        "Terrain"
+      ]
+    },
+    {
+      "recipe": "flowers-in-motion",
+      "title": "A garden made from shared tools",
+      "category": "Nature",
+      "environment": "Studio",
+      "tags": [
+        "Flowers",
+        "Motion",
+        "Procedural"
+      ]
+    }
   ]
 }

@@ -220,6 +220,524 @@
       "kind": "recipe"
     },
     {
+      "id": "japanese-pavilion",
+      "title": "A tea house on the hillside",
+      "summary": "A cedar pavilion and jade roof, with four feet that follow a sloped stone island.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "spatial",
+        "primitive",
+        "beam",
+        "repeat",
+        "anchor",
+        "when"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "temple",
+        "island",
+        "pine1",
+        "pine2",
+        "lamp1"
+      ],
+      "prompt": "In Polynite, create an editable Japanese garden study: A cedar pavilion and jade roof, with four feet that follow a sloped stone island. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-pavilion/",
+      "try": [
+        "Choose the tea-house or high-roof variant.",
+        "Adjust floor_clearance, rise, curl and overhang; Play shows the feet following the slope.",
+        "Save your version; Reset returns to the selected reference."
+      ],
+      "steps": [
+        "Compose shared geometry and material operators from the recipe JSON.",
+        "Bind explicit supports or paths where needed, retaining stable IDs.",
+        "Expose parameters; verify changes, relationships and playback before saving."
+      ],
+      "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+      "checks": [
+        {
+          "type": "support",
+          "instance": "temple",
+          "times": [
+            0,
+            2,
+            3.7,
+            5.5
+          ],
+          "source": "terrain",
+          "part_prefix": "post",
+          "min_height_spread": 0.8
+        }
+      ],
+      "edit_parameter": "floor_clearance",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+      "version": 1,
+      "collection": "japanese-garden",
+      "variants": [
+        {
+          "id": "tea-house",
+          "title": "Quiet cedar tea house",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1-tea-house.jpg",
+          "scene_sha256": "418dee1ee97125a28a03f8cb543c20db6808f346a7da08c0c4446120a8c307ce",
+          "scene": "https://polynite.io/examples/data/japanese-pavilion-v1-tea-house.scene"
+        },
+        {
+          "id": "mountain-roof",
+          "title": "High roof on a steeper hillside",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1-mountain-roof.jpg",
+          "scene_sha256": "b15dd8e39461cc46e33aa358b5b59eada66a1e9efb014d459806ece5600fe038",
+          "scene": "https://polynite.io/examples/data/japanese-pavilion-v1-mountain-roof.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "6dff8b3e5",
+      "scene_sha256": "5bdaf3df157e054941fcee8b3325f669d0d9dc5ec2d06cfc80b2b9e72c0663e0",
+      "recipes_sha256": "9deee17f0a2d11283358427a9e1216a88f9e8cbcfd66f53bdbfeee34526bd8ee",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=japanese-pavilion",
+      "url": "https://explore.polynite.io/docs/recipes/japanese-pavilion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.md",
+      "scene": "https://polynite.io/examples/data/japanese-pavilion-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "japanese-bridge",
+      "title": "A bridge between two shores",
+      "summary": "An arched vermilion footbridge whose deck and rails follow two movable banks.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "primitive",
+        "repeat",
+        "beam",
+        "anchor",
+        "when"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "bridge",
+        "island",
+        "pine1",
+        "pine2",
+        "lamp1"
+      ],
+      "prompt": "In Polynite, create an editable Japanese garden study: An arched vermilion footbridge whose deck and rails follow two movable banks. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-bridge/",
+      "try": [
+        "Compare the low cedar crossing and the high vermilion moon bridge.",
+        "Adjust arch, width and rail_height. Play shows the bridge following its two shores.",
+        "Through MCP, move pad_a or pad_b while stopped and inspect the endpoint anchors."
+      ],
+      "steps": [
+        "Compose shared geometry and material operators from the recipe JSON.",
+        "Bind explicit supports or paths where needed, retaining stable IDs.",
+        "Expose parameters; verify changes, relationships and playback before saving."
+      ],
+      "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+      "checks": [
+        {
+          "type": "span",
+          "instance": "bridge",
+          "times": [
+            0,
+            2,
+            3.7,
+            5.5
+          ],
+          "source": "pad_b",
+          "part_prefix": "deck"
+        }
+      ],
+      "edit_parameter": "arch",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+      "version": 1,
+      "collection": "japanese-garden",
+      "variants": [
+        {
+          "id": "low-crossing",
+          "title": "Low cedar crossing",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1-low-crossing.jpg",
+          "scene_sha256": "9c92d04e68308af1e2848e23636d0609519eb96361be755dde22e14113930ebf",
+          "scene": "https://polynite.io/examples/data/japanese-bridge-v1-low-crossing.scene"
+        },
+        {
+          "id": "moon-bridge",
+          "title": "Vermilion moon bridge",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1-moon-bridge.jpg",
+          "scene_sha256": "25e42bcb745a3fa437515cbe80d212710903cfb6f4e92d3420dd1a8c2e58bd6f",
+          "scene": "https://polynite.io/examples/data/japanese-bridge-v1-moon-bridge.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "6dff8b3e5",
+      "scene_sha256": "b18e0db907b4c990c5aeb760fa4fd942f8e7bde032132a8301f1533d040a24e6",
+      "recipes_sha256": "0ecbb7f46981067569134f3d39ce0de57a241e58e1cd2a2e191f26bc415e9d18",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=japanese-bridge",
+      "url": "https://explore.polynite.io/docs/recipes/japanese-bridge/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.md",
+      "scene": "https://polynite.io/examples/data/japanese-bridge-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "japanese-passage",
+      "title": "Leave a way through",
+      "summary": "A cedar boundary makes room for a path as it moves and widens.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "primitive",
+        "repeat",
+        "when",
+        "spatial",
+        "beam"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "fence",
+        "island",
+        "pine1",
+        "pine2",
+        "lamp1"
+      ],
+      "prompt": "In Polynite, create an editable Japanese garden study: A cedar boundary makes room for a path as it moves and widens. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-passage/",
+      "try": [
+        "Compare a low boundary and a wider passage through tall cedar.",
+        "Change clearance, bays and height. Play shows the path moving and widening.",
+        "Edit walkway in Scene settings > Adaptive construction to change its source path."
+      ],
+      "steps": [
+        "Compose shared geometry and material operators from the recipe JSON.",
+        "Bind explicit supports or paths where needed, retaining stable IDs.",
+        "Expose parameters; verify changes, relationships and playback before saving."
+      ],
+      "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+      "checks": [
+        {
+          "type": "corridor",
+          "instance": "fence",
+          "times": [
+            0,
+            2,
+            3.7,
+            5.5
+          ],
+          "source": "walkway",
+          "object": "ab_07walkway_p000"
+        }
+      ],
+      "edit_parameter": "clearance",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+      "version": 1,
+      "collection": "japanese-garden",
+      "variants": [
+        {
+          "id": "low-boundary",
+          "title": "Low garden boundary",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-passage-v1-low-boundary.jpg",
+          "scene_sha256": "0fd86b47f165063a93198bbc314d60b1adce571e29f07ebdb3f3212760afedd9",
+          "scene": "https://polynite.io/examples/data/japanese-passage-v1-low-boundary.scene"
+        },
+        {
+          "id": "wide-passage",
+          "title": "Wide passage through tall cedar",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-passage-v1-wide-passage.jpg",
+          "scene_sha256": "3c47da07606275a93b23cb40af717d3268db63fb3a1adce70a8628dc62273f78",
+          "scene": "https://polynite.io/examples/data/japanese-passage-v1-wide-passage.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "6dff8b3e5",
+      "scene_sha256": "e6e329d6b072c4974255c46e14cb7942422992d37a62ab1b9a9a77a2015c4b59",
+      "recipes_sha256": "f00736cdb000f68850fb65d578bcf07807ffbcce6cdadd9f8939b24b37e7b06a",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/japanese-passage-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-passage-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=japanese-passage",
+      "url": "https://explore.polynite.io/docs/recipes/japanese-passage/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.md",
+      "scene": "https://polynite.io/examples/data/japanese-passage-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "japanese-lotus",
+      "title": "The lotus pond awakens",
+      "summary": "Pink, gold and lilac lotus flowers open above a small jade pond.",
+      "category": "Botanical",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "surface",
+        "motion",
+        "repeat",
+        "primitive",
+        "beam",
+        "anchor",
+        "when"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "lotus",
+        "bloom2",
+        "bloom3",
+        "island",
+        "pine1",
+        "pine2",
+        "lamp1"
+      ],
+      "prompt": "In Polynite, create an editable Japanese garden study: Pink, gold and lilac lotus flowers open above a small jade pond. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-lotus/",
+      "try": [
+        "Compare ivory slender petals and a rose lotus with generous layers.",
+        "Set animate to 0, then drag opening. Set animate to 1 and Play for the six-second loop.",
+        "Change petals, layers, petal_width and colours to compose a new flower."
+      ],
+      "steps": [
+        "Compose shared geometry and material operators from the recipe JSON.",
+        "Bind explicit supports or paths where needed, retaining stable IDs.",
+        "Expose parameters; verify changes, relationships and playback before saving."
+      ],
+      "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+      "checks": [
+        {
+          "type": "motion",
+          "instance": "lotus",
+          "object": "ar5_lotus_pet000000",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "min_degrees": 20
+        }
+      ],
+      "edit_parameter": "opening",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+      "version": 1,
+      "collection": "japanese-garden",
+      "variants": [
+        {
+          "id": "ivory",
+          "title": "Ivory lotus, slender petals",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1-ivory.jpg",
+          "scene_sha256": "a824b172a0113be79330685b1197279ecc0271ef19c0a1c1965b293dfc120d7b",
+          "scene": "https://polynite.io/examples/data/japanese-lotus-v1-ivory.scene"
+        },
+        {
+          "id": "rose",
+          "title": "Rose lotus, generous layers",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1-rose.jpg",
+          "scene_sha256": "cc79679a83b3e58441d48bb615ce9ce6bcf3ab196837bf8f38ea427d863c46c6",
+          "scene": "https://polynite.io/examples/data/japanese-lotus-v1-rose.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "6dff8b3e5",
+      "scene_sha256": "6812e56c62801ca70cbdc152b4066bc0e4b1ce4700767f3e96c86760ed47379e",
+      "recipes_sha256": "6798e3404ad1183f3ad82470ab7d92e254a2c529fd7d09ffc5b60267ddcc1fa9",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=japanese-lotus",
+      "url": "https://explore.polynite.io/docs/recipes/japanese-lotus/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.md",
+      "scene": "https://polynite.io/examples/data/japanese-lotus-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "japanese-garden",
+      "title": "The garden of five quiet moments",
+      "summary": "A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "context",
+        "let",
+        "spatial",
+        "primitive",
+        "beam",
+        "repeat",
+        "anchor",
+        "when",
+        "surface",
+        "motion"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial"
+      ],
+      "instances": [
+        "temple",
+        "bridge",
+        "fence",
+        "lotus",
+        "bloom2",
+        "bloom3",
+        "lamp2",
+        "lamp3",
+        "cherry",
+        "island",
+        "pine1",
+        "pine2",
+        "lamp1"
+      ],
+      "prompt": "In Polynite, create an editable Japanese garden study: A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/japanese-garden/",
+      "try": [
+        "Compare the original garden with spring and autumn variants.",
+        "Under Adjust, tune temple proportions, bridge arch and lotus petal controls independently.",
+        "Save a personal version. Every building and plant retains its editable recipe."
+      ],
+      "steps": [
+        "Compose shared geometry and material operators from the recipe JSON.",
+        "Bind explicit supports or paths where needed, retaining stable IDs.",
+        "Expose parameters; verify changes, relationships and playback before saving."
+      ],
+      "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+      "checks": [
+        {
+          "type": "support",
+          "instance": "temple",
+          "times": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "source": "terrain",
+          "part_prefix": "post",
+          "min_height_spread": 0.1
+        },
+        {
+          "type": "span",
+          "instance": "bridge",
+          "times": [
+            0,
+            2,
+            3.7,
+            5.5
+          ],
+          "source": "pad_b",
+          "part_prefix": "deck"
+        },
+        {
+          "type": "motion",
+          "instance": "lotus",
+          "object": "ar5_lotus_pet000000",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "min_degrees": 20
+        }
+      ],
+      "edit_parameter": "floor_clearance",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+      "version": 1,
+      "collection": "japanese-garden",
+      "variants": [
+        {
+          "id": "spring",
+          "title": "Spring blossom garden",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1-spring.jpg",
+          "scene_sha256": "ecd082715c4520ca166a5eb254bc408bcd5b157419b6842d02cdb5481c53250a",
+          "scene": "https://polynite.io/examples/data/japanese-garden-v1-spring.scene"
+        },
+        {
+          "id": "autumn",
+          "title": "Autumn cedar garden",
+          "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1-autumn.jpg",
+          "scene_sha256": "e04e3701f125051a024f3aa3fcc90e718bb70133069189a2bac9e6353784fcc9",
+          "scene": "https://polynite.io/examples/data/japanese-garden-v1-autumn.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "6dff8b3e5",
+      "scene_sha256": "9e4e658e1fd72bd1444f12ee2486ae8e8162002d2b7367b5944c160ef2b7ba27",
+      "recipes_sha256": "0aa7b58b9863efd617f77c7cc683e069bd9feeead5be2216a716f9363926a400",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=japanese-garden",
+      "url": "https://explore.polynite.io/docs/recipes/japanese-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.md",
+      "scene": "https://polynite.io/examples/data/japanese-garden-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
       "id": "refuge",
       "atelier": "refuge-20261014-142504-living",
       "title": "The mist keeper's refuge",

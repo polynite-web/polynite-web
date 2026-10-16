@@ -2,9 +2,15 @@
 
 Human guide: https://explore.polynite.io/docs/recipes/
 Progressive index: https://explore.polynite.io/docs/recipes/catalog.json
+Japanese garden collection: https://explore.polynite.io/docs/recipes/collections/japanese-garden/v1/index.json
 
 Read the compact index, choose a relevant example and fetch its Markdown or JSON detail. Check the connected engine capabilities. Desktop verified does not imply browser support. A recipe is data, never executable arbitrary code. Preserve the user's current scene and edits.
 
 - [One toolkit. Three flowers.](https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md): Compose petals, leaves and a folded lip from shared surfaces, then animate their opening.
 - [A level floor. Feet that fit.](https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.md): Sample four support heights, keep the deck level and fit each foot to the slope.
 - [A path makes room.](https://explore.polynite.io/docs/recipes/data/path-clearance/v1.md): Move or widen a path and let an editable fence reserve a clear passage around it.
+- [A tea house on the hillside](https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.md): A cedar pavilion and jade roof, with four feet that follow a sloped stone island.
+- [A bridge between two shores](https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.md): An arched vermilion footbridge whose deck and rails follow two movable banks.
+- [Leave a way through](https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.md): A cedar boundary makes room for a path as it moves and widens.
+- [The lotus pond awakens](https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.md): Pink, gold and lilac lotus flowers open above a small jade pond.
+- [The garden of five quiet moments](https://explore.polynite.io/docs/recipes/data/japanese-garden/v1.md): A hillside pavilion, linked bridge, clear passage and living lotus pond composed from shared recipes.

@@ -53,3 +53,22 @@ Run `node test_experiences.cjs` after building. For a browser regression, open t
 player with `&qa=1` and click Check example; it uses the same shared invariants as
 the desktop fixtures and restores its temporary document afterward. Keep the
 browser tab visible during animation tests. Check actual pixels as well as data.
+
+## Data collections and variants
+
+The Japanese garden adds four focused studies and one composed scene, each with
+two named variants. See [its authoring guide](../collections/japanese-garden/README.md).
+The generic collection composer resolves shared recipe JSON and parameter patches.
+The native exporter produces the exact public references; an importer refuses
+unverified runs and changes to an already versioned reference.
+
+A variant is a versioned complete scene with a SHA256 hash and a real rendered
+poster. It is loaded into the same isolated player. Reset restores the selected
+variant; Save keeps current edits. Failed loading retains the current copy;
+variant changes refuse to interrupt a recording. Browser and native regression
+runners share `recipe-checks.js`; no test dispatch depends on a scene ID.
+
+For assistants, read the compact collection index first, then only the relevant
+recipe or scene detail. The MCP recipe book links collections without embedding
+every program into its tool definitions. Variants, palettes, canopy styles and
+building proportions are data; the existing WebGPU operators execute them.

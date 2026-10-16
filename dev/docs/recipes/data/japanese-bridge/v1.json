@@ -1,0 +1,95 @@
+{
+  "id": "japanese-bridge",
+  "title": "A bridge between two shores",
+  "summary": "An arched vermilion footbridge whose deck and rails follow two movable banks.",
+  "category": "Architecture",
+  "level": "Compose & explore",
+  "operators": [
+    "expression",
+    "context",
+    "let",
+    "primitive",
+    "repeat",
+    "beam",
+    "anchor",
+    "when"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_context",
+    "recipe_spatial"
+  ],
+  "instances": [
+    "bridge",
+    "island",
+    "pine1",
+    "pine2",
+    "lamp1"
+  ],
+  "prompt": "In Polynite, create an editable Japanese garden study: An arched vermilion footbridge whose deck and rails follow two movable banks. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.",
+  "try": [
+    "Compare the low cedar crossing and the high vermilion moon bridge.",
+    "Adjust arch, width and rail_height. Play shows the bridge following its two shores.",
+    "Through MCP, move pad_a or pad_b while stopped and inspect the endpoint anchors."
+  ],
+  "steps": [
+    "Compose shared geometry and material operators from the recipe JSON.",
+    "Bind explicit supports or paths where needed, retaining stable IDs.",
+    "Expose parameters; verify changes, relationships and playback before saving."
+  ],
+  "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+  "checks": [
+    {
+      "type": "span",
+      "instance": "bridge",
+      "times": [
+        0,
+        2,
+        3.7,
+        5.5
+      ],
+      "source": "pad_b",
+      "part_prefix": "deck"
+    }
+  ],
+  "edit_parameter": "arch",
+  "duration": 6,
+  "seed": 17,
+  "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+  "version": 1,
+  "collection": "japanese-garden",
+  "variants": [
+    {
+      "id": "low-crossing",
+      "title": "Low cedar crossing",
+      "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1-low-crossing.jpg",
+      "scene_sha256": "9c92d04e68308af1e2848e23636d0609519eb96361be755dde22e14113930ebf",
+      "scene": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1-low-crossing.scene"
+    },
+    {
+      "id": "moon-bridge",
+      "title": "Vermilion moon bridge",
+      "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1-moon-bridge.jpg",
+      "scene_sha256": "25e42bcb745a3fa437515cbe80d212710903cfb6f4e92d3420dd1a8c2e58bd6f",
+      "scene": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1-moon-bridge.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "tested_at": "2026-10-16",
+  "revision": "6dff8b3e5",
+  "scene_sha256": "b18e0db907b4c990c5aeb760fa4fd942f8e7bde032132a8301f1533d040a24e6",
+  "recipes_sha256": "0ecbb7f46981067569134f3d39ce0de57a241e58e1cd2a2e191f26bc415e9d18",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1.jpg"
+  },
+  "open": "https://polynite.io/examples/view.html?id=japanese-bridge",
+  "url": "https://explore.polynite.io/docs/recipes/japanese-bridge/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.recipes.json"
+}

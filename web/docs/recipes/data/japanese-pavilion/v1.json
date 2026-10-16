@@ -1,0 +1,97 @@
+{
+  "id": "japanese-pavilion",
+  "title": "A tea house on the hillside",
+  "summary": "A cedar pavilion and jade roof, with four feet that follow a sloped stone island.",
+  "category": "Architecture",
+  "level": "Compose & explore",
+  "operators": [
+    "expression",
+    "context",
+    "let",
+    "spatial",
+    "primitive",
+    "beam",
+    "repeat",
+    "anchor",
+    "when"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_context",
+    "recipe_spatial"
+  ],
+  "instances": [
+    "temple",
+    "island",
+    "pine1",
+    "pine2",
+    "lamp1"
+  ],
+  "prompt": "In Polynite, create an editable Japanese garden study: A cedar pavilion and jade roof, with four feet that follow a sloped stone island. Compose existing operators as data recipes; keep relationships, materials and exposed parameters editable. Use the linked scene as a reference, invent your own variation, and preserve the current scene.",
+  "try": [
+    "Choose the tea-house or high-roof variant.",
+    "Adjust floor_clearance, rise, curl and overhang; Play shows the feet following the slope.",
+    "Save your version; Reset returns to the selected reference."
+  ],
+  "steps": [
+    "Compose shared geometry and material operators from the recipe JSON.",
+    "Bind explicit supports or paths where needed, retaining stable IDs.",
+    "Expose parameters; verify changes, relationships and playback before saving."
+  ],
+  "settings": "Open & test > Variant for presets; Adjust for recipe parameters. Scene settings > Living architecture exposes the same inputs. Support and path relationships are stored in the downloadable scene/recipe JSON.",
+  "checks": [
+    {
+      "type": "support",
+      "instance": "temple",
+      "times": [
+        0,
+        2,
+        3.7,
+        5.5
+      ],
+      "source": "terrain",
+      "part_prefix": "post",
+      "min_height_spread": 0.8
+    }
+  ],
+  "edit_parameter": "floor_clearance",
+  "duration": 6,
+  "seed": 17,
+  "limits": "Stylised procedural study. Explicit analytic cube supports and flat named paths; no arbitrary terrain fitting or roof unions. Animation articulates cached petals; landscape changes occur at edit time.",
+  "version": 1,
+  "collection": "japanese-garden",
+  "variants": [
+    {
+      "id": "tea-house",
+      "title": "Quiet cedar tea house",
+      "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1-tea-house.jpg",
+      "scene_sha256": "418dee1ee97125a28a03f8cb543c20db6808f346a7da08c0c4446120a8c307ce",
+      "scene": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1-tea-house.scene"
+    },
+    {
+      "id": "mountain-roof",
+      "title": "High roof on a steeper hillside",
+      "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1-mountain-roof.jpg",
+      "scene_sha256": "b15dd8e39461cc46e33aa358b5b59eada66a1e9efb014d459806ece5600fe038",
+      "scene": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1-mountain-roof.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "tested_at": "2026-10-16",
+  "revision": "6dff8b3e5",
+  "scene_sha256": "5bdaf3df157e054941fcee8b3325f669d0d9dc5ec2d06cfc80b2b9e72c0663e0",
+  "recipes_sha256": "9deee17f0a2d11283358427a9e1216a88f9e8cbcfd66f53bdbfeee34526bd8ee",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1.jpg"
+  },
+  "open": "https://polynite.io/examples/view.html?id=japanese-pavilion",
+  "url": "https://explore.polynite.io/docs/recipes/japanese-pavilion/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.recipes.json"
+}

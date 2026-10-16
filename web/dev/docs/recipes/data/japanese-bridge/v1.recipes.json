@@ -1,0 +1,1722 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "context": [
+        {
+          "name": "left",
+          "object": "pad_a",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "point": "top"
+        },
+        {
+          "name": "right",
+          "object": "pad_b",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "point": "top"
+        }
+      ],
+      "id": "bridge",
+      "materials": {
+        "metal": "dark_metal",
+        "roof": "jade_tile",
+        "stone": "garden_stone",
+        "wood": "lacquer"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "arch": 0.550000012,
+        "deck_thickness": 0.100000001,
+        "post_width": 0.0700000003,
+        "rail_height": 0.649999976,
+        "segments": 24,
+        "width": 1.20000005
+      },
+      "program": {
+        "checks": [
+          {
+            "max": 20,
+            "message": "Bridge horizontal span must be 0.25..20m; move its supports apart",
+            "min": 0.25,
+            "value": "%span"
+          }
+        ],
+        "inputs": [
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 3,
+            "min": 0.300000012,
+            "name": "width",
+            "value": 1.20000005
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 3,
+            "min": 0,
+            "name": "arch",
+            "value": 0.550000012
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 40,
+            "min": 4,
+            "name": "segments",
+            "value": 24
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 2,
+            "min": 0.200000003,
+            "name": "rail_height",
+            "value": 0.649999976
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.200000003,
+            "min": 0.0199999996,
+            "name": "post_width",
+            "value": 0.0700000003
+          },
+          {
+            "group": "shape",
+            "integer": false,
+            "max": 0.400000006,
+            "min": 0.0399999991,
+            "name": "deck_thickness",
+            "value": 0.100000001
+          }
+        ],
+        "let": [
+          {
+            "name": "dx",
+            "value": [
+              "sub",
+              "@right.x",
+              "@left.x"
+            ]
+          },
+          {
+            "name": "dz",
+            "value": [
+              "sub",
+              "@right.z",
+              "@left.z"
+            ]
+          },
+          {
+            "name": "span",
+            "value": [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  "%dx",
+                  "%dx"
+                ],
+                [
+                  "mul",
+                  "%dz",
+                  "%dz"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "heading",
+            "value": [
+              "atan2",
+              "%dx",
+              "%dz"
+            ]
+          },
+          {
+            "name": "sin",
+            "value": [
+              "sin",
+              "%heading"
+            ]
+          },
+          {
+            "name": "cos",
+            "value": [
+              "cos",
+              "%heading"
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "id": "deck",
+            "kind": "cube",
+            "let": [
+              {
+                "name": "step",
+                "value": [
+                  "div",
+                  "%span",
+                  "$segments"
+                ]
+              },
+              {
+                "name": "dy",
+                "value": [
+                  "sub",
+                  [
+                    "add",
+                    [
+                      "add",
+                      [
+                        "mix",
+                        "@left.y",
+                        "@right.y",
+                        [
+                          "div",
+                          [
+                            "add",
+                            "@i",
+                            1
+                          ],
+                          "$segments"
+                        ]
+                      ],
+                      [
+                        "mul",
+                        "$arch",
+                        [
+                          "sin",
+                          [
+                            "mul",
+                            3.14159274,
+                            [
+                              "div",
+                              [
+                                "add",
+                                "@i",
+                                1
+                              ],
+                              "$segments"
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    0
+                  ],
+                  [
+                    "add",
+                    [
+                      "add",
+                      [
+                        "mix",
+                        "@left.y",
+                        "@right.y",
+                        [
+                          "div",
+                          "@i",
+                          "$segments"
+                        ]
+                      ],
+                      [
+                        "mul",
+                        "$arch",
+                        [
+                          "sin",
+                          [
+                            "mul",
+                            3.14159274,
+                            [
+                              "div",
+                              "@i",
+                              "$segments"
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    0
+                  ]
+                ]
+              }
+            ],
+            "op": "primitive",
+            "orient": "radial",
+            "p": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  [
+                    "div",
+                    [
+                      "add",
+                      "@i",
+                      0.5
+                    ],
+                    "$segments"
+                  ]
+                ],
+                [
+                  "mul",
+                  0,
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        0.5
+                      ],
+                      "$segments"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        [
+                          "div",
+                          [
+                            "add",
+                            "@i",
+                            0.5
+                          ],
+                          "$segments"
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                0.0500000007
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  [
+                    "div",
+                    [
+                      "add",
+                      "@i",
+                      0.5
+                    ],
+                    "$segments"
+                  ]
+                ],
+                [
+                  "mul",
+                  0,
+                  "%sin"
+                ]
+              ]
+            ],
+            "r": [
+              [
+                "mul",
+                -57.2957802,
+                [
+                  "atan2",
+                  "%dy",
+                  "%step"
+                ]
+              ],
+              [
+                "mul",
+                "%heading",
+                57.2957802
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$segments"
+            },
+            "role": "wood",
+            "s": [
+              "$width",
+              "$deck_thickness",
+              [
+                "mul",
+                1.01999998,
+                [
+                  "sqrt",
+                  [
+                    "add",
+                    [
+                      "mul",
+                      "%step",
+                      "%step"
+                    ],
+                    [
+                      "mul",
+                      "%dy",
+                      "%dy"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "a": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  [
+                    "div",
+                    "@i",
+                    "$segments"
+                  ]
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    [
+                      "div",
+                      "@i",
+                      "$segments"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        [
+                          "div",
+                          "@i",
+                          "$segments"
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                "$rail_height"
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  [
+                    "div",
+                    "@i",
+                    "$segments"
+                  ]
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%sin"
+                ]
+              ]
+            ],
+            "b": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  [
+                    "div",
+                    [
+                      "add",
+                      "@i",
+                      1
+                    ],
+                    "$segments"
+                  ]
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    [
+                      "div",
+                      [
+                        "add",
+                        "@i",
+                        1
+                      ],
+                      "$segments"
+                    ]
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        [
+                          "div",
+                          [
+                            "add",
+                            "@i",
+                            1
+                          ],
+                          "$segments"
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                "$rail_height"
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  [
+                    "div",
+                    [
+                      "add",
+                      "@i",
+                      1
+                    ],
+                    "$segments"
+                  ]
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%sin"
+                ]
+              ]
+            ],
+            "id": "rail",
+            "op": "beam",
+            "repeat": {
+              "count": "$segments",
+              "rows": 2
+            },
+            "role": "wood",
+            "width": "$post_width"
+          },
+          {
+            "a": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  "@u"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    "@u"
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        "@u"
+                      ]
+                    ]
+                  ]
+                ],
+                0
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  "@u"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%sin"
+                ]
+              ]
+            ],
+            "b": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  "@u"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    "@u"
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        "@u"
+                      ]
+                    ]
+                  ]
+                ],
+                "$rail_height"
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  "@u"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      [
+                        "mul",
+                        "@j",
+                        2
+                      ],
+                      1
+                    ],
+                    [
+                      "mul",
+                      "$width",
+                      0.5
+                    ]
+                  ],
+                  "%sin"
+                ]
+              ]
+            ],
+            "id": "post",
+            "op": "beam",
+            "repeat": {
+              "count": 7,
+              "rows": 2
+            },
+            "role": "wood",
+            "width": "$post_width"
+          },
+          {
+            "id": "left",
+            "op": "anchor",
+            "p": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  0
+                ],
+                [
+                  "mul",
+                  0,
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    0
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        0
+                      ]
+                    ]
+                  ]
+                ],
+                0
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  0
+                ],
+                [
+                  "mul",
+                  0,
+                  "%sin"
+                ]
+              ]
+            ]
+          },
+          {
+            "id": "rght",
+            "op": "anchor",
+            "p": [
+              [
+                "add",
+                [
+                  "mix",
+                  "@left.x",
+                  "@right.x",
+                  1
+                ],
+                [
+                  "mul",
+                  0,
+                  "%cos"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mix",
+                    "@left.y",
+                    "@right.y",
+                    1
+                  ],
+                  [
+                    "mul",
+                    "$arch",
+                    [
+                      "sin",
+                      [
+                        "mul",
+                        3.14159274,
+                        1
+                      ]
+                    ]
+                  ]
+                ],
+                0
+              ],
+              [
+                "sub",
+                [
+                  "mix",
+                  "@left.z",
+                  "@right.z",
+                  1
+                ],
+                [
+                  "mul",
+                  0,
+                  "%sin"
+                ]
+              ]
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "island",
+      "materials": {
+        "leaf": "moss",
+        "stone": "garden_stone"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "radius": 5.80000019,
+        "rock_size": 0.400000006,
+        "rocks": 24
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "landscape",
+            "max": 10,
+            "min": 2,
+            "name": "radius",
+            "value": 5.80000019
+          },
+          {
+            "group": "landscape",
+            "integer": true,
+            "max": 48,
+            "min": 4,
+            "name": "rocks",
+            "value": 24
+          },
+          {
+            "group": "landscape",
+            "max": 0.899999976,
+            "min": 0.150000006,
+            "name": "rock_size",
+            "value": 0.400000006
+          }
+        ],
+        "nodes": [
+          {
+            "id": "isle",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              -0.349999994,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              [
+                "mul",
+                "$radius",
+                2
+              ],
+              0.649999976,
+              [
+                "mul",
+                "$radius",
+                2
+              ]
+            ]
+          },
+          {
+            "id": "moss",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              -0.00999999978,
+              0
+            ],
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                "$radius",
+                1.96000004
+              ],
+              0.0299999993,
+              [
+                "mul",
+                "$radius",
+                1.96000004
+              ]
+            ]
+          },
+          {
+            "id": "rock",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              [
+                "mul",
+                [
+                  "cos",
+                  [
+                    "mul",
+                    "@u",
+                    6.28318501
+                  ]
+                ],
+                [
+                  "sub",
+                  "$radius",
+                  0.119999997
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "rand",
+                  31
+                ],
+                0.119999997
+              ],
+              [
+                "mul",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    "@u",
+                    6.28318501
+                  ]
+                ],
+                [
+                  "sub",
+                  "$radius",
+                  0.119999997
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": "$rocks"
+            },
+            "role": "stone",
+            "s": [
+              "$rock_size",
+              [
+                "mul",
+                "$rock_size",
+                [
+                  "mix",
+                  0.699999988,
+                  1.29999995,
+                  [
+                    "rand",
+                    13
+                  ]
+                ]
+              ],
+              [
+                "mul",
+                "$rock_size",
+                0.800000012
+              ]
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "pine1",
+      "materials": {
+        "leaf": "pine_leaf",
+        "wood": "cedar"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        -4.80000019,
+        0,
+        1.79999995
+      ],
+      "params": {
+        "height": 2.70000005,
+        "layers": 4,
+        "round_canopy": 0,
+        "spread": 0.800000012
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "shape",
+            "max": 5,
+            "min": 1,
+            "name": "height",
+            "value": 2.79999995
+          },
+          {
+            "group": "shape",
+            "max": 2,
+            "min": 0.300000012,
+            "name": "spread",
+            "value": 1.10000002
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 6,
+            "min": 2,
+            "name": "layers",
+            "value": 4
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "round_canopy",
+            "value": 0
+          }
+        ],
+        "nodes": [
+          {
+            "id": "stem",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                0.360000014
+              ],
+              0
+            ],
+            "role": "wood",
+            "s": [
+              0.159999996,
+              [
+                "mul",
+                "$height",
+                0.720000029
+              ],
+              0.159999996
+            ]
+          },
+          {
+            "id": "pine",
+            "kind": "cone",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                [
+                  "mix",
+                  0.300000012,
+                  0.899999976,
+                  "@u"
+                ]
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$layers"
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                "$spread",
+                [
+                  "mix",
+                  1.64999998,
+                  0.349999994,
+                  "@u"
+                ]
+              ],
+              [
+                "mul",
+                "$height",
+                0.340000004
+              ],
+              [
+                "mul",
+                "$spread",
+                [
+                  "mix",
+                  1.64999998,
+                  0.349999994,
+                  "@u"
+                ]
+              ]
+            ],
+            "when": [
+              "sub",
+              1,
+              "$round_canopy"
+            ]
+          },
+          {
+            "id": "buds",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              [
+                "mul",
+                [
+                  "cos",
+                  [
+                    "mul",
+                    "@i",
+                    2.39899993
+                  ]
+                ],
+                [
+                  "mul",
+                  "$spread",
+                  0.400000006
+                ]
+              ],
+              [
+                "add",
+                [
+                  "mul",
+                  "$height",
+                  0.74000001
+                ],
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      1.70000005
+                    ]
+                  ],
+                  0.230000004
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    "@i",
+                    2.39899993
+                  ]
+                ],
+                [
+                  "mul",
+                  "$spread",
+                  0.400000006
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": 7
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                "$spread",
+                0.850000024
+              ],
+              [
+                "mul",
+                "$height",
+                0.300000012
+              ],
+              [
+                "mul",
+                "$spread",
+                0.850000024
+              ]
+            ],
+            "when": "$round_canopy"
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "pine2",
+      "materials": {
+        "leaf": "pine_leaf",
+        "wood": "cedar"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        4.5999999,
+        0,
+        -1.79999995
+      ],
+      "params": {
+        "height": 2.70000005,
+        "layers": 4,
+        "round_canopy": 0,
+        "spread": 1
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "shape",
+            "max": 5,
+            "min": 1,
+            "name": "height",
+            "value": 2.79999995
+          },
+          {
+            "group": "shape",
+            "max": 2,
+            "min": 0.300000012,
+            "name": "spread",
+            "value": 1.10000002
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 6,
+            "min": 2,
+            "name": "layers",
+            "value": 4
+          },
+          {
+            "group": "shape",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "round_canopy",
+            "value": 0
+          }
+        ],
+        "nodes": [
+          {
+            "id": "stem",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                0.360000014
+              ],
+              0
+            ],
+            "role": "wood",
+            "s": [
+              0.159999996,
+              [
+                "mul",
+                "$height",
+                0.720000029
+              ],
+              0.159999996
+            ]
+          },
+          {
+            "id": "pine",
+            "kind": "cone",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                [
+                  "mix",
+                  0.300000012,
+                  0.899999976,
+                  "@u"
+                ]
+              ],
+              0
+            ],
+            "repeat": {
+              "count": "$layers"
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                "$spread",
+                [
+                  "mix",
+                  1.64999998,
+                  0.349999994,
+                  "@u"
+                ]
+              ],
+              [
+                "mul",
+                "$height",
+                0.340000004
+              ],
+              [
+                "mul",
+                "$spread",
+                [
+                  "mix",
+                  1.64999998,
+                  0.349999994,
+                  "@u"
+                ]
+              ]
+            ],
+            "when": [
+              "sub",
+              1,
+              "$round_canopy"
+            ]
+          },
+          {
+            "id": "buds",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              [
+                "mul",
+                [
+                  "cos",
+                  [
+                    "mul",
+                    "@i",
+                    2.39899993
+                  ]
+                ],
+                [
+                  "mul",
+                  "$spread",
+                  0.400000006
+                ]
+              ],
+              [
+                "add",
+                [
+                  "mul",
+                  "$height",
+                  0.74000001
+                ],
+                [
+                  "mul",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      "@i",
+                      1.70000005
+                    ]
+                  ],
+                  0.230000004
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "sin",
+                  [
+                    "mul",
+                    "@i",
+                    2.39899993
+                  ]
+                ],
+                [
+                  "mul",
+                  "$spread",
+                  0.400000006
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": 7
+            },
+            "role": "leaf",
+            "s": [
+              [
+                "mul",
+                "$spread",
+                0.850000024
+              ],
+              [
+                "mul",
+                "$height",
+                0.300000012
+              ],
+              [
+                "mul",
+                "$spread",
+                0.850000024
+              ]
+            ],
+            "when": "$round_canopy"
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "lamp1",
+      "materials": {
+        "paper": "lantern_paper",
+        "roof": "jade_tile",
+        "stone": "garden_stone"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        -3.20000005,
+        0,
+        1.5
+      ],
+      "params": {
+        "height": 1.25
+      },
+      "program": {
+        "inputs": [
+          {
+            "group": "shape",
+            "max": 2.5,
+            "min": 0.5,
+            "name": "height",
+            "value": 1.25
+          }
+        ],
+        "nodes": [
+          {
+            "id": "foot",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              0.0799999982,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              0.579999983,
+              0.159999996,
+              0.579999983
+            ]
+          },
+          {
+            "id": "stem",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                0.300000012
+              ],
+              0
+            ],
+            "role": "stone",
+            "s": [
+              0.180000007,
+              [
+                "mul",
+                "$height",
+                0.5
+              ],
+              0.180000007
+            ]
+          },
+          {
+            "id": "tray",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                0.550000012
+              ],
+              0
+            ],
+            "role": "stone",
+            "s": [
+              0.5,
+              0.100000001,
+              0.5
+            ]
+          },
+          {
+            "id": "lamp",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                0.730000019
+              ],
+              0
+            ],
+            "role": "paper",
+            "s": [
+              0.370000005,
+              [
+                "mul",
+                "$height",
+                0.25
+              ],
+              0.370000005
+            ]
+          },
+          {
+            "id": "cap",
+            "kind": "cone",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "mul",
+                "$height",
+                0.939999998
+              ],
+              0
+            ],
+            "role": "roof",
+            "s": [
+              0.699999988,
+              0.239999995,
+              0.699999988
+            ]
+          },
+          {
+            "id": "fin",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              0,
+              [
+                "add",
+                [
+                  "mul",
+                  "$height",
+                  0.939999998
+                ],
+                0.159999996
+              ],
+              0
+            ],
+            "role": "stone",
+            "s": [
+              0.119999997,
+              0.159999996,
+              0.119999997
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}

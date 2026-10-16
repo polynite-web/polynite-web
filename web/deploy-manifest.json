@@ -1,7 +1,7 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0295",
+  "version": "v0296",
   "sourceVersion": "v0184",
   "engineBase": "engine/a707be06c79589b2f90a09d2e90bbbbdff13ee881bbc68907fb0314b29414711/",
   "engineHistory": [
@@ -11,16 +11,16 @@
   ],
   "files": {
     "404.html": {
-      "bytes": 5653,
-      "sha256": "fefab912a060394e6642f84cf7700da7e3c41be217c7fbe21ba6a482eadc9381"
+      "bytes": 5716,
+      "sha256": "353bd7168499edeac9bca44759bfba8ced0cda5e089fb6dc0224854ae6dfc089"
     },
     "404.html.br": {
-      "bytes": 1407,
-      "sha256": "72713aaa708531fd5395bea1cbcae31ad01f8d40e347bc1b545fd576725eb980"
+      "bytes": 1435,
+      "sha256": "c4618728edc219545a46067bcda739dd4f68f7d6ec4dd6b0cbb89c64d517122e"
     },
     "404.html.gz": {
-      "bytes": 1613,
-      "sha256": "7e32e49f255b0f0eb3f4310554bfe624f46f6c4c599b1a32173c22be1d93bf6a"
+      "bytes": 1638,
+      "sha256": "0b586624af208f7b86101f3462ea57a93680d6497edd2ac11fb5d119f1791708"
     },
     "Rc/defaults/app.json": {
       "bytes": 312,
@@ -67,20 +67,20 @@
       "sha256": "25cb469630d04a4252e9928c5bf79be15ca0a53ebbad2659e5350ff2fc3ea7a0"
     },
     "_redirects": {
-      "bytes": 2529,
-      "sha256": "d1f54f5b2c3e5853f0dff73ee7f9ca3234dd1fed7ea218f1bb5a4b8f9c923c5a"
+      "bytes": 3981,
+      "sha256": "71d736085ed56ad04bfb98ee0f94881e989365e59306adca27827126e1db44d1"
     },
     "app.html": {
       "bytes": 83739,
-      "sha256": "dc1959c0f20fcd47eb67d3302994d746977f70d715b8bc687f8c6d2b13b55df1"
+      "sha256": "04a3d665a0429d48e0d0cebd2f1a9d8cc5556c0d07ad1b6adebd2684699c3687"
     },
     "app.html.br": {
       "bytes": 25239,
-      "sha256": "2322db6d171eec715eab923b1f2c09551801a5f878ce8fed85ce531a45326f6f"
+      "sha256": "9ab120faf5d338872964d051fc58f66b724b63e57275f7df2f6d02e20099b8a0"
     },
     "app.html.gz": {
       "bytes": 26551,
-      "sha256": "53945641ed139a9613bb3adbb74181a9ed2e514623a02c7fd0e1ea70f0a05d22"
+      "sha256": "d85f48046aa71a92320bd356d20a7ca658ee59095e4a9d5fb99cb0034d2fed81"
     },
     "app.js": {
       "bytes": 334530,
@@ -367,16 +367,16 @@
       "sha256": "696ba18465175bf19abe970636e01ae2d0e3e147b8e0e9ba1365004a61e8a8d4"
     },
     "assets/public-site/showcase.css": {
-      "bytes": 864,
-      "sha256": "c962df5bf4c57c748a42e035a7efce8c9b4ce7ed7d7a26a29c77f61fae97e164"
+      "bytes": 1183,
+      "sha256": "0c642f32be158b764c93225bcc17788a35a8a732fec8e0f36b2ebe0b3795162f"
     },
     "assets/public-site/showcase.css.br": {
-      "bytes": 339,
-      "sha256": "c079ea2104dc29462a2e320ea108076c12fadeca9dfed2ec7cdc45abb0a1d2fe"
+      "bytes": 441,
+      "sha256": "44dbae13a542c035f4757607f6fabdcb4e102f1da66e5c7e95ef2878b12f461a"
     },
     "assets/public-site/showcase.css.gz": {
-      "bytes": 425,
-      "sha256": "f571007102149ff64ffcb62919f67ebe011210484301133825ed6faebb2516c9"
+      "bytes": 525,
+      "sha256": "6dcd839b9828b0800261fbfee31a51f30d058332f160d9fe83fee23d6330483b"
     },
     "assets/public-site/style-0e30726a01b7.css": {
       "bytes": 6659,
@@ -2159,16 +2159,136 @@
       "sha256": "fddf40d1f551dcdefa52ff08d6967dcd6005660c1c1f17e4d414c385635ef335"
     },
     "docs/recipes/catalog.json": {
-      "bytes": 2765,
-      "sha256": "44fbe8ea4fae72761ea15d6ff7fb9c0553f8d00d3ba34f134f7f8d9a31d9ec1b"
+      "bytes": 7401,
+      "sha256": "78742a226a41c6f0f7297658c543827a9c2a31caa53da4436c5791454c3ecbf7"
     },
     "docs/recipes/catalog.json.br": {
-      "bytes": 666,
-      "sha256": "924da77fe31e14151da19c07616ca7fe723919929f97f06715b470b9c95d146d"
+      "bytes": 1085,
+      "sha256": "12e3bbcac32a8da157335d91b37fea952882796ec25d9ace59905388941e9693"
     },
     "docs/recipes/catalog.json.gz": {
-      "bytes": 725,
-      "sha256": "2a73d2586cc62d4545751a292b043718c044b4e43b16eafb338c48617bb408f8"
+      "bytes": 1181,
+      "sha256": "129723db27c7821dd53a8bc8e60014a582be8adfb92d9cd854cf8ea927533666"
+    },
+    "docs/recipes/collections/japanese-garden/v1/bridge.json": {
+      "bytes": 18073,
+      "sha256": "5039c5b030c08ac58519bf51a8c73d5af314f3731aabe3a76d173c6d7ee4ee48"
+    },
+    "docs/recipes/collections/japanese-garden/v1/bridge.json.br": {
+      "bytes": 1363,
+      "sha256": "1b15e0cff4e2b08f0c9527a05640db3b3c75a8466b007850f1bc4f28f3453b94"
+    },
+    "docs/recipes/collections/japanese-garden/v1/bridge.json.gz": {
+      "bytes": 1368,
+      "sha256": "2a96653bd0389c1bb8c6dca831e07399b174bffe6fd5be21609a5b7964623266"
+    },
+    "docs/recipes/collections/japanese-garden/v1/index.json": {
+      "bytes": 5270,
+      "sha256": "63027dbc10727604d45f5d4f6617255893736652781e818b563726eedf456aee"
+    },
+    "docs/recipes/collections/japanese-garden/v1/index.json.br": {
+      "bytes": 1012,
+      "sha256": "2c8f439875cc4ce58cf52cfaf6579f24f84e9eeb380ae50df56990852362e4c5"
+    },
+    "docs/recipes/collections/japanese-garden/v1/index.json.gz": {
+      "bytes": 1084,
+      "sha256": "9b283478f3551208e33cb327146910ba350f34095ad8e06e481a6a6d875af5b8"
+    },
+    "docs/recipes/collections/japanese-garden/v1/island.json": {
+      "bytes": 2657,
+      "sha256": "ff931e98462fdd734fbaf40feacbe4f73d2972cbb5bb43f3b492080a559f5605"
+    },
+    "docs/recipes/collections/japanese-garden/v1/island.json.br": {
+      "bytes": 492,
+      "sha256": "e42f83f8a4e018f2269f5bbd454393385c4fa1a6425b5de4b2d5ef33a1c27ad8"
+    },
+    "docs/recipes/collections/japanese-garden/v1/island.json.gz": {
+      "bytes": 519,
+      "sha256": "63bc04fdebb47efb884806c30f1e3844562e9ca4819e416210d71c82f1a2679f"
+    },
+    "docs/recipes/collections/japanese-garden/v1/lantern.json": {
+      "bytes": 2414,
+      "sha256": "ad0a658beaf130a202d4019deb33e48abd5a7a29c552b35134e6250972333656"
+    },
+    "docs/recipes/collections/japanese-garden/v1/lantern.json.br": {
+      "bytes": 412,
+      "sha256": "b7c8c5e3f97c4f94eae2f46159f433c880f41bb580150ae6396483a8569e02d8"
+    },
+    "docs/recipes/collections/japanese-garden/v1/lantern.json.gz": {
+      "bytes": 446,
+      "sha256": "13e0971a730d456f46e23e3add6c3f21bda3e686a751baf38efe02b43278b7b0"
+    },
+    "docs/recipes/collections/japanese-garden/v1/lotus.json": {
+      "bytes": 23148,
+      "sha256": "cccdea259f4c511718e6656d575d2f8c00490f2f8d7d540aca60adc1b2c6b872"
+    },
+    "docs/recipes/collections/japanese-garden/v1/lotus.json.br": {
+      "bytes": 2039,
+      "sha256": "79da46f3fb52e97aa78feef330f51e6a6abe3e9614d4508ed0fb7ee5b2b53917"
+    },
+    "docs/recipes/collections/japanese-garden/v1/lotus.json.gz": {
+      "bytes": 2037,
+      "sha256": "b99f7253616eb37dc735c61dcb72dee277747d07d871fe6e27cfec1270a9c811"
+    },
+    "docs/recipes/collections/japanese-garden/v1/materials.json": {
+      "bytes": 2468,
+      "sha256": "2e019c9477781ebd5aa0915df8ecf35ec2cd488cbd41aa8ea7471b46d056def3"
+    },
+    "docs/recipes/collections/japanese-garden/v1/materials.json.br": {
+      "bytes": 452,
+      "sha256": "2161df1ac45979ab3f33ae0790bf1ce569c1a1707fe8b170156bc4341e04059b"
+    },
+    "docs/recipes/collections/japanese-garden/v1/materials.json.gz": {
+      "bytes": 474,
+      "sha256": "2e40297f9211b9d8ca55100947a81541e1897adcdc80c1e4b691e68ae3446b5d"
+    },
+    "docs/recipes/collections/japanese-garden/v1/path_fence.json": {
+      "bytes": 6222,
+      "sha256": "c398b1dad20c38a219de53d14f649884a089b94d24c99ce359b330bfaf45b140"
+    },
+    "docs/recipes/collections/japanese-garden/v1/path_fence.json.br": {
+      "bytes": 905,
+      "sha256": "b42ef09b46591c9ea3c458baeba5c978cea8cf3875d5b80202ac1fd27fd1c25a"
+    },
+    "docs/recipes/collections/japanese-garden/v1/path_fence.json.gz": {
+      "bytes": 947,
+      "sha256": "cf8b44505f69d34be636c426277133a2be1a3a8beb8be3e740f78f283dafe475"
+    },
+    "docs/recipes/collections/japanese-garden/v1/source.json": {
+      "bytes": 57957,
+      "sha256": "63aee8ac1af743d1e703dbbf53d23f7290345aa5987ff3f82e333f6ad7316e02"
+    },
+    "docs/recipes/collections/japanese-garden/v1/source.json.br": {
+      "bytes": 7816,
+      "sha256": "f4948d9d58a9d345a27ad419b6d79a30b91f71a044300ca5b3b577f2c6665a19"
+    },
+    "docs/recipes/collections/japanese-garden/v1/source.json.gz": {
+      "bytes": 8026,
+      "sha256": "9477a81eea8ba9c5089ccd93f1b5cc4b6da9e80062f48950aa8b6faf2225832a"
+    },
+    "docs/recipes/collections/japanese-garden/v1/terrain_pavilion.json": {
+      "bytes": 36981,
+      "sha256": "b85499cd0a4fb7f1781eb1b6f9201cebcc4528cf4306d8bdec190b660996845e"
+    },
+    "docs/recipes/collections/japanese-garden/v1/terrain_pavilion.json.br": {
+      "bytes": 2024,
+      "sha256": "8b52ee9cc1da19b89125b85eadc6c0657acddffbfebaa354b800bb7b02fa5cd4"
+    },
+    "docs/recipes/collections/japanese-garden/v1/terrain_pavilion.json.gz": {
+      "bytes": 2070,
+      "sha256": "a552d9e9ce7f25cb49d8da33299dff91867b5fdacf2eb6413ce74091fd4d26b4"
+    },
+    "docs/recipes/collections/japanese-garden/v1/tree.json": {
+      "bytes": 3506,
+      "sha256": "f3aa81dde0cce3b01cd6f1a66dea131a375a6a37147af19b54eddb3df51198d7"
+    },
+    "docs/recipes/collections/japanese-garden/v1/tree.json.br": {
+      "bytes": 573,
+      "sha256": "2e0feb1ceeaf421f2040a06c55130a4fc45a1ee028a85f8afd896e0aabd05bea"
+    },
+    "docs/recipes/collections/japanese-garden/v1/tree.json.gz": {
+      "bytes": 594,
+      "sha256": "925aaac9e54380d866bd9b01e6a22bc6e10de8893e9efd082be08f9479a8c3bb"
     },
     "docs/recipes/data/flowers-in-motion/v1.json": {
       "bytes": 2906,
@@ -2183,8 +2303,8 @@
       "sha256": "f28ec0df425aff02b0810bcc3fc9aaf2b7f1782059889603024d923ebb6062c5"
     },
     "docs/recipes/data/flowers-in-motion/v1.md": {
-      "bytes": 2746,
-      "sha256": "3648375de586752d3d405ff7d87a4fa83b7486f6ff16584c991df146f0d41baa"
+      "bytes": 2807,
+      "sha256": "224ba9d0da6d6bbdef4d8bdb39c856b2b4f487bf85b0e1359408448e3e4afe1b"
     },
     "docs/recipes/data/flowers-in-motion/v1.recipes.json": {
       "bytes": 74574,
@@ -2202,6 +2322,206 @@
       "bytes": 101126,
       "sha256": "489341136c8d94bd3582d44c2194c2a67237167cfead1bc298961d59998db8af"
     },
+    "docs/recipes/data/japanese-bridge/v1-low-crossing.scene": {
+      "bytes": 59471,
+      "sha256": "9c92d04e68308af1e2848e23636d0609519eb96361be755dde22e14113930ebf"
+    },
+    "docs/recipes/data/japanese-bridge/v1-moon-bridge.scene": {
+      "bytes": 59797,
+      "sha256": "25e42bcb745a3fa437515cbe80d212710903cfb6f4e92d3420dd1a8c2e58bd6f"
+    },
+    "docs/recipes/data/japanese-bridge/v1.json": {
+      "bytes": 3924,
+      "sha256": "d083678569ba4f92b9f64e68ff97129b790cf01d4af8133e75a941d39bc8d430"
+    },
+    "docs/recipes/data/japanese-bridge/v1.json.br": {
+      "bytes": 1411,
+      "sha256": "e9a71dfa65768e35a6bc4f2e3fa7711e1db7808085aa036288aa1055763cf875"
+    },
+    "docs/recipes/data/japanese-bridge/v1.json.gz": {
+      "bytes": 1523,
+      "sha256": "e4519c4d27a46e9bc88a259a323ed1342f75e87bc40a5db1560ccf46c2c0aff4"
+    },
+    "docs/recipes/data/japanese-bridge/v1.md": {
+      "bytes": 3472,
+      "sha256": "57547d867a39ee8b4d43a4e5ec9c0bd9bffae5ec9dcad46a207e54cc990e6863"
+    },
+    "docs/recipes/data/japanese-bridge/v1.recipes.json": {
+      "bytes": 39256,
+      "sha256": "0ecbb7f46981067569134f3d39ce0de57a241e58e1cd2a2e191f26bc415e9d18"
+    },
+    "docs/recipes/data/japanese-bridge/v1.recipes.json.br": {
+      "bytes": 2684,
+      "sha256": "4fc08c4e2c7c50e7296659047945037dc7c6a30bfd13e0a25464c26599bdd342"
+    },
+    "docs/recipes/data/japanese-bridge/v1.recipes.json.gz": {
+      "bytes": 2679,
+      "sha256": "9d4b3a7e4fe264350a6a1ef25b73a0feb11dd6533d3b07db3784fbbf3a8d62a7"
+    },
+    "docs/recipes/data/japanese-bridge/v1.scene": {
+      "bytes": 59790,
+      "sha256": "b18e0db907b4c990c5aeb760fa4fd942f8e7bde032132a8301f1533d040a24e6"
+    },
+    "docs/recipes/data/japanese-garden/v1-autumn.scene": {
+      "bytes": 274121,
+      "sha256": "e04e3701f125051a024f3aa3fcc90e718bb70133069189a2bac9e6353784fcc9"
+    },
+    "docs/recipes/data/japanese-garden/v1-spring.scene": {
+      "bytes": 263346,
+      "sha256": "ecd082715c4520ca166a5eb254bc408bcd5b157419b6842d02cdb5481c53250a"
+    },
+    "docs/recipes/data/japanese-garden/v1.json": {
+      "bytes": 4514,
+      "sha256": "f851271593ec19e409b03f3f4aa44a51e798b9cc96c69041ea4a447bd085eb1b"
+    },
+    "docs/recipes/data/japanese-garden/v1.json.br": {
+      "bytes": 1552,
+      "sha256": "e26f7d3673e541e1a5e3ceaeebe1efac3ea7c27ab3d7867e0842c39526877e10"
+    },
+    "docs/recipes/data/japanese-garden/v1.json.gz": {
+      "bytes": 1673,
+      "sha256": "23eeb26e993c6aef201d0c0086a7cc451b4f85afcee0c51da59abb6649ec6916"
+    },
+    "docs/recipes/data/japanese-garden/v1.md": {
+      "bytes": 3888,
+      "sha256": "112fd5c89c6c40efc35e800e1529c9ef4858c18c1d4c98d8078bf365f5fed414"
+    },
+    "docs/recipes/data/japanese-garden/v1.recipes.json": {
+      "bytes": 192391,
+      "sha256": "0aa7b58b9863efd617f77c7cc683e069bd9feeead5be2216a716f9363926a400"
+    },
+    "docs/recipes/data/japanese-garden/v1.recipes.json.br": {
+      "bytes": 7182,
+      "sha256": "da6271bc4631fea033baa5a8c6374383e33ca6c631d0914f3d0ade709884fd67"
+    },
+    "docs/recipes/data/japanese-garden/v1.recipes.json.gz": {
+      "bytes": 8293,
+      "sha256": "05a2dfc59af9c885259d94c9c189eed8b860d66d4699d9b8f2dd791d9c5895c7"
+    },
+    "docs/recipes/data/japanese-garden/v1.scene": {
+      "bytes": 265372,
+      "sha256": "9e4e658e1fd72bd1444f12ee2486ae8e8162002d2b7367b5944c160ef2b7ba27"
+    },
+    "docs/recipes/data/japanese-lotus/v1-ivory.scene": {
+      "bytes": 181413,
+      "sha256": "a824b172a0113be79330685b1197279ecc0271ef19c0a1c1965b293dfc120d7b"
+    },
+    "docs/recipes/data/japanese-lotus/v1-rose.scene": {
+      "bytes": 192168,
+      "sha256": "cc79679a83b3e58441d48bb615ce9ce6bcf3ab196837bf8f38ea427d863c46c6"
+    },
+    "docs/recipes/data/japanese-lotus/v1.json": {
+      "bytes": 3875,
+      "sha256": "0889334ec903770f00e53dc8fd0ac736fbf589e8fd082062f4771c3d62b81fde"
+    },
+    "docs/recipes/data/japanese-lotus/v1.json.br": {
+      "bytes": 1417,
+      "sha256": "31db225e61428dfe6e72be7167d325108c013a6e9f688b08781cc393c1424f93"
+    },
+    "docs/recipes/data/japanese-lotus/v1.json.gz": {
+      "bytes": 1531,
+      "sha256": "8e7c1fd76ad2ec9b81bc43f078ef8a9e91a027ca8bfc151fd156a64a416b9cb5"
+    },
+    "docs/recipes/data/japanese-lotus/v1.md": {
+      "bytes": 3418,
+      "sha256": "07635ac9fbf9dc002469caca3a00800f8b4fb9ed6f250f9dfddb370aa2478ac8"
+    },
+    "docs/recipes/data/japanese-lotus/v1.recipes.json": {
+      "bytes": 105119,
+      "sha256": "6798e3404ad1183f3ad82470ab7d92e254a2c529fd7d09ffc5b60267ddcc1fa9"
+    },
+    "docs/recipes/data/japanese-lotus/v1.recipes.json.br": {
+      "bytes": 3655,
+      "sha256": "99433d554cbaceb9b1d09489f6816ce7bfcce290cbc4cd62b8d652eb586205fa"
+    },
+    "docs/recipes/data/japanese-lotus/v1.recipes.json.gz": {
+      "bytes": 4318,
+      "sha256": "24cc472a4d97f1a96905a3e5945fdf973db08f04400b541286dbc1055cafa8a9"
+    },
+    "docs/recipes/data/japanese-lotus/v1.scene": {
+      "bytes": 183418,
+      "sha256": "6812e56c62801ca70cbdc152b4066bc0e4b1ce4700767f3e96c86760ed47379e"
+    },
+    "docs/recipes/data/japanese-passage/v1-low-boundary.scene": {
+      "bytes": 50433,
+      "sha256": "0fd86b47f165063a93198bbc314d60b1adce571e29f07ebdb3f3212760afedd9"
+    },
+    "docs/recipes/data/japanese-passage/v1-wide-passage.scene": {
+      "bytes": 52110,
+      "sha256": "3c47da07606275a93b23cb40af717d3268db63fb3a1adce70a8628dc62273f78"
+    },
+    "docs/recipes/data/japanese-passage/v1.json": {
+      "bytes": 3920,
+      "sha256": "ff8159de15801ceac54c5f0b10626c8549d1ae8e76601187ffe6a5b5cfb8a955"
+    },
+    "docs/recipes/data/japanese-passage/v1.json.br": {
+      "bytes": 1401,
+      "sha256": "0d0e67553275e9b49e4c5d423bc7d522d21abfd050b3de40594a924a0cabc9ca"
+    },
+    "docs/recipes/data/japanese-passage/v1.json.gz": {
+      "bytes": 1517,
+      "sha256": "af13e4c7c8c7c90accda3900455f6640df91b50e680040eb6360f2d28398f3b2"
+    },
+    "docs/recipes/data/japanese-passage/v1.md": {
+      "bytes": 3457,
+      "sha256": "61c39e5293b591a7a50c9e817a72f745af1b7bd33a89f4d51f003a159d742757"
+    },
+    "docs/recipes/data/japanese-passage/v1.recipes.json": {
+      "bytes": 24913,
+      "sha256": "f00736cdb000f68850fb65d578bcf07807ffbcce6cdadd9f8939b24b37e7b06a"
+    },
+    "docs/recipes/data/japanese-passage/v1.recipes.json.br": {
+      "bytes": 2188,
+      "sha256": "cccf75618cdc210146a7bba115b18171e9c122e3b781ce79a2111ad9ed6e37d2"
+    },
+    "docs/recipes/data/japanese-passage/v1.recipes.json.gz": {
+      "bytes": 2167,
+      "sha256": "9260494117a09fdebe7c64a8f6ac7a16c2bffe33e0f97bf65ff71bff68a7dbc2"
+    },
+    "docs/recipes/data/japanese-passage/v1.scene": {
+      "bytes": 56025,
+      "sha256": "e6e329d6b072c4974255c46e14cb7942422992d37a62ab1b9a9a77a2015c4b59"
+    },
+    "docs/recipes/data/japanese-pavilion/v1-mountain-roof.scene": {
+      "bytes": 52743,
+      "sha256": "b15dd8e39461cc46e33aa358b5b59eada66a1e9efb014d459806ece5600fe038"
+    },
+    "docs/recipes/data/japanese-pavilion/v1-tea-house.scene": {
+      "bytes": 52727,
+      "sha256": "418dee1ee97125a28a03f8cb543c20db6808f346a7da08c0c4446120a8c307ce"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.json": {
+      "bytes": 3992,
+      "sha256": "309792bc78130f2a82567efb967f36d8ffa3f747dd6eaac94170c1dccb3829a8"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.json.br": {
+      "bytes": 1429,
+      "sha256": "db9047cb0dae931e531f82e4a83e86f7dae75a215f907af95c91a6ac7ec993c4"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.json.gz": {
+      "bytes": 1542,
+      "sha256": "3fd393e582583ba4f11754968a874d52d820ffb0d0d1c5d55fe45715455c5925"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.md": {
+      "bytes": 3510,
+      "sha256": "310b961073b1f6b50fd32f61d97b89e99257e357683bcf98a50f55f96e3694cb"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.recipes.json": {
+      "bytes": 62069,
+      "sha256": "9deee17f0a2d11283358427a9e1216a88f9e8cbcfd66f53bdbfeee34526bd8ee"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.recipes.json.br": {
+      "bytes": 3378,
+      "sha256": "9c39b712de2f556b194cefdfb6db6efd0469e1696f35ca805f76539226d4665c"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.recipes.json.gz": {
+      "bytes": 3570,
+      "sha256": "ae08548f7498219d8644e6b1ba61c6786b7f862cf4311759b7e86c471598c74e"
+    },
+    "docs/recipes/data/japanese-pavilion/v1.scene": {
+      "bytes": 52704,
+      "sha256": "5bdaf3df157e054941fcee8b3325f669d0d9dc5ec2d06cfc80b2b9e72c0663e0"
+    },
     "docs/recipes/data/path-clearance/v1.json": {
       "bytes": 3060,
       "sha256": "33e84f75c093f0e88b24bcf3807c627c4d0c7ad0fefa33a7d112d1f3d45f811b"
@@ -2215,8 +2535,8 @@
       "sha256": "655a28c4e61c5c495db7a034ff8f4b761d537992585b5fc9f58517af9c3b6749"
     },
     "docs/recipes/data/path-clearance/v1.md": {
-      "bytes": 2921,
-      "sha256": "72caf99d8c2b20df06563174a0af298cff5d62d02268074a6dc0235e93d5cb54"
+      "bytes": 2982,
+      "sha256": "50bf87603e24e82152fbc9aecd61827d8debb411a6eb7b2222f9323ccf916df7"
     },
     "docs/recipes/data/path-clearance/v1.recipes.json": {
       "bytes": 7900,
@@ -2247,8 +2567,8 @@
       "sha256": "37f331be97514cb203f0183a5737b54d62113c441b0d4781dcd15ee4078f73b4"
     },
     "docs/recipes/data/terrain-pavilion/v1.md": {
-      "bytes": 2965,
-      "sha256": "aa251b0a117628fd8f8138a89f5dc9f5b2d5fa96d3101ac2973619008dd3efce"
+      "bytes": 3026,
+      "sha256": "003b059e681b6efc77cc80664edca9c0ba8f59fa13cd48a38f11d925cfc22aa9"
     },
     "docs/recipes/data/terrain-pavilion/v1.recipes.json": {
       "bytes": 45037,
@@ -2279,28 +2599,88 @@
       "sha256": "d94c9b7621ea6fae08a20b65f28ad81e825bc1adcf66662d9b93f5ca8eac5f3a"
     },
     "docs/recipes/index.html": {
-      "bytes": 20088,
-      "sha256": "5fc04834973eba88f13aaed106665c6b2886eda532a7b141095135e37e48aa11"
+      "bytes": 30964,
+      "sha256": "400076085cac655672924f1c98da6c3f8d791a6b042bd091de430be19f8ddc98"
     },
     "docs/recipes/index.html.br": {
-      "bytes": 4891,
-      "sha256": "ae65f89a595965957354714249800ffd55ca4453f74c4094f60c6526e09a2212"
+      "bytes": 5617,
+      "sha256": "f8804c041e204f0d2f2cce5406f23774022c080f24da0110b598375369eb110e"
     },
     "docs/recipes/index.html.gz": {
-      "bytes": 5247,
-      "sha256": "4eb38d01dbc5ff3e33c3922103212adbf798d93b9008c191ae0b99f2bd4ddccc"
+      "bytes": 6063,
+      "sha256": "5f388729dd185a9c85727813943744a958983474a42de3f98f23e2bf74ffc251"
+    },
+    "docs/recipes/japanese-bridge/index.html": {
+      "bytes": 11641,
+      "sha256": "57a2dff2b7de970dc284d525ddec3f8e3b2538b8e40cbfc494ef608d16ee92e7"
+    },
+    "docs/recipes/japanese-bridge/index.html.br": {
+      "bytes": 3410,
+      "sha256": "7e617b3ee16c68b08b16589dd5479f83e899a8eab043de56fdd74844d4f0a143"
+    },
+    "docs/recipes/japanese-bridge/index.html.gz": {
+      "bytes": 3698,
+      "sha256": "56b38a55eca64d2e38cd2a0d6f06e5853099a9330dd970a91f416b70055a4b43"
+    },
+    "docs/recipes/japanese-garden/index.html": {
+      "bytes": 12254,
+      "sha256": "e1bd9c63a6d363704f21e19b3631e33eed2c89347f198f06690d8d0b53bb8a3a"
+    },
+    "docs/recipes/japanese-garden/index.html.br": {
+      "bytes": 3483,
+      "sha256": "929e4961d68c006ed98282579f33a7e87132fc1b90f85594f0a300a71fd8917b"
+    },
+    "docs/recipes/japanese-garden/index.html.gz": {
+      "bytes": 3786,
+      "sha256": "86277b206eb0c0f4a653503c5a950f8591aa7a53dec8fbfeceea125e2cc04ebd"
+    },
+    "docs/recipes/japanese-lotus/index.html": {
+      "bytes": 11530,
+      "sha256": "53166d2d602cbaace665ba4fc00ce633eb4fbbd4f9b4a17887a487816372fa88"
+    },
+    "docs/recipes/japanese-lotus/index.html.br": {
+      "bytes": 3395,
+      "sha256": "8a868aa0487e4da0d0ed9886e3b2a4c1d1ce070bf23e95efb45ff1cb6b2239c8"
+    },
+    "docs/recipes/japanese-lotus/index.html.gz": {
+      "bytes": 3693,
+      "sha256": "e0f075fc793b6d26e383604545a1a3ee1ce36312aa836034098d7d05a2bb42c0"
+    },
+    "docs/recipes/japanese-passage/index.html": {
+      "bytes": 11527,
+      "sha256": "624f3e170750fbe4bec170be422ce657654ef4227af269de8bd9277488225e43"
+    },
+    "docs/recipes/japanese-passage/index.html.br": {
+      "bytes": 3384,
+      "sha256": "2356a33422cb51bb6dfd702d44ce919388938248af28b752b0966c89275f1e5f"
+    },
+    "docs/recipes/japanese-passage/index.html.gz": {
+      "bytes": 3674,
+      "sha256": "045d8b0868700bcf15b43dc81e00f3ef194047f4bd667f45208e861b6cb6e3f0"
+    },
+    "docs/recipes/japanese-pavilion/index.html": {
+      "bytes": 11769,
+      "sha256": "65704618cbb3a3052b35324022a50a59e5bd0198ff76d4d6a3d205ded21c9941"
+    },
+    "docs/recipes/japanese-pavilion/index.html.br": {
+      "bytes": 3417,
+      "sha256": "73df94fafe1f5ddaffebd85e7e93f761dbc59eff3a6dd50377178a8fdd223bea"
+    },
+    "docs/recipes/japanese-pavilion/index.html.gz": {
+      "bytes": 3712,
+      "sha256": "b31a7ef482ffd6223b9189a2cbe4b509a08797caa86f5678c6c463b3a48209bd"
     },
     "docs/recipes/llms.txt": {
-      "bytes": 993,
-      "sha256": "05572a64d236a2fd547b845a372ba868ec49c01e15880046c4d911d82f783a42"
+      "bytes": 1998,
+      "sha256": "e9d5f7f776c20712328e0052f153e197349ca9409d911559745b088beeb3b343"
     },
     "docs/recipes/llms.txt.br": {
-      "bytes": 465,
-      "sha256": "e591eb5b37fdf2907b31e492b8e36215682fed6b7c9dd7123b2d83eaa6c89a3e"
+      "bytes": 748,
+      "sha256": "251f3a477579c1d319cba6772e3a6190d90b5a1d936d525743b74eda6091cfd5"
     },
     "docs/recipes/llms.txt.gz": {
-      "bytes": 516,
-      "sha256": "4d0ca5bd9742cb55fe38c998162a42a3356824a0e5128c0b6339c9144fc61c26"
+      "bytes": 822,
+      "sha256": "59725e33318b746c5301d67988541a8edc649595c4d8fbe14fd8f9beb09882dd"
     },
     "docs/recipes/media/flowers-in-motion-v1.jpg": {
       "bytes": 40116,
@@ -2309,6 +2689,86 @@
     "docs/recipes/media/flowers-in-motion-v1.mp4": {
       "bytes": 357196,
       "sha256": "55ab7ab09606d70c99ab10dfe2d4cd9b6fcbbe8311fbd1120993b5597899b686"
+    },
+    "docs/recipes/media/japanese-bridge-v1-low-crossing.jpg": {
+      "bytes": 59717,
+      "sha256": "473dd7103e82ed34dd29eadabc0c0003986ad1e08e828ef410384765ca6707dc"
+    },
+    "docs/recipes/media/japanese-bridge-v1-moon-bridge.jpg": {
+      "bytes": 60860,
+      "sha256": "4510ffbe0fc224ff7f679cd57ebffacc8d50c3d7c0bc46b8600d296cce0f9675"
+    },
+    "docs/recipes/media/japanese-bridge-v1.jpg": {
+      "bytes": 59887,
+      "sha256": "21a4c821236d47e476b12dab06b47c83ef676a4370bfdb2f0bc0510dc2d1ee2e"
+    },
+    "docs/recipes/media/japanese-bridge-v1.mp4": {
+      "bytes": 2316954,
+      "sha256": "02ed35bb3f27fea602c9143880656412f196c3ea1881528a83857a7ebcca069f"
+    },
+    "docs/recipes/media/japanese-garden-v1-autumn.jpg": {
+      "bytes": 38852,
+      "sha256": "a82f89680c9f61c3208b3fe020c2da655cc62a9ecb2a4013bb857206f5248a61"
+    },
+    "docs/recipes/media/japanese-garden-v1-spring.jpg": {
+      "bytes": 37113,
+      "sha256": "af87d459e4278a8bad15b57ec054421c23d6a03a233a6f876e1cd771684c0989"
+    },
+    "docs/recipes/media/japanese-garden-v1.jpg": {
+      "bytes": 38344,
+      "sha256": "7fdb66a5093fe54fbc71aa1ec216812dd8362010c97463d08c5ea548e4d0b09d"
+    },
+    "docs/recipes/media/japanese-garden-v1.mp4": {
+      "bytes": 1455104,
+      "sha256": "7044894108e49e6af4de39954c00a7ef836aefb00b857727661bdb54f98bdeab"
+    },
+    "docs/recipes/media/japanese-lotus-v1-ivory.jpg": {
+      "bytes": 68076,
+      "sha256": "7e25d89aa56c236e06648162b97e2da32723b459f326e26557199573f1354bc9"
+    },
+    "docs/recipes/media/japanese-lotus-v1-rose.jpg": {
+      "bytes": 68026,
+      "sha256": "320c6817bb21b97d75be35cfe7d7dae01079385cc3890206a20d646e4f53dc4a"
+    },
+    "docs/recipes/media/japanese-lotus-v1.jpg": {
+      "bytes": 68028,
+      "sha256": "43c8863eb3ca5033554025014bb03cbaf8e128130b7f5da09aafc5278549a7fc"
+    },
+    "docs/recipes/media/japanese-lotus-v1.mp4": {
+      "bytes": 2652813,
+      "sha256": "740d114a95c48e88306d7154d6931c228db1b0e437a5ede080cc8a85d0bcfed6"
+    },
+    "docs/recipes/media/japanese-passage-v1-low-boundary.jpg": {
+      "bytes": 64617,
+      "sha256": "d94fd6f7b7cebc85a79bf035b628e92089d13eef92befeaef2094138543669a9"
+    },
+    "docs/recipes/media/japanese-passage-v1-wide-passage.jpg": {
+      "bytes": 66695,
+      "sha256": "f91d59d39453da9e6be5071e182141ca51cae59813eebcc432f0595e3c229046"
+    },
+    "docs/recipes/media/japanese-passage-v1.jpg": {
+      "bytes": 65956,
+      "sha256": "5ba8cf54de89372a2f5481ed3ecf987d279c20cf6e0577d247cf5cc95d9475fd"
+    },
+    "docs/recipes/media/japanese-passage-v1.mp4": {
+      "bytes": 2540925,
+      "sha256": "94cdd7c3fe2eb1d49d47924badc44a977c176d661a011d0db59e945f05ed8949"
+    },
+    "docs/recipes/media/japanese-pavilion-v1-mountain-roof.jpg": {
+      "bytes": 59781,
+      "sha256": "cc2b1750f6db8a52fc3a6d1ce382c0e98c3d08e01dde94b7b985bf60587b8526"
+    },
+    "docs/recipes/media/japanese-pavilion-v1-tea-house.jpg": {
+      "bytes": 56177,
+      "sha256": "2fbc9eea81acc987d1e73a66d2479330d1a69645ccda99f20ce775fa5ca82d6d"
+    },
+    "docs/recipes/media/japanese-pavilion-v1.jpg": {
+      "bytes": 58595,
+      "sha256": "265468eb966605d7b26f75c1ff0409223e645a4e79e830557d521504109a7928"
+    },
+    "docs/recipes/media/japanese-pavilion-v1.mp4": {
+      "bytes": 2285676,
+      "sha256": "1ce6233e2787a317179bd09b80f30158d95748a76060355d5c7af635ccfeab1e"
     },
     "docs/recipes/operators.json": {
       "bytes": 3227,
@@ -2455,20 +2915,92 @@
       "sha256": "ef0551af048a6da1b2f12621aa45bd25779c84a19231696db32ae425d74827f5"
     },
     "examples/catalog.json": {
-      "bytes": 14273,
-      "sha256": "c533608351bba8455700247cc58c102648254e9089fe5540da9548c75ce6f43e"
+      "bytes": 36857,
+      "sha256": "3bb676bb6714ce176a43c5859cdeae903bec67137a7b865a03000c3f8ba070ba"
     },
     "examples/catalog.json.br": {
-      "bytes": 3555,
-      "sha256": "668e31efed325f305c1b1d81c7bd9be3a35806b07e54af56a8f3ea33415ef5c1"
+      "bytes": 6294,
+      "sha256": "68ab6cb3bd69721ab5f64099a8f7335ce3bfb683bc010a28e920b44ba556499d"
     },
     "examples/catalog.json.gz": {
-      "bytes": 3754,
-      "sha256": "b4a3055474cacb2aa29e2bc86cf76f77c60b7fa6ca5e8290853eee02913de4e8"
+      "bytes": 6706,
+      "sha256": "3f20fbcf1e980baca666710f16ff18959109689c47c8c08b8e0cba3af382ce69"
+    },
+    "examples/checks.js": {
+      "bytes": 2397,
+      "sha256": "3f3eb43afe252e47929d0a5ab428d57600cef6c5a750f2a7814ca7083c21e227"
+    },
+    "examples/checks.js.br": {
+      "bytes": 1051,
+      "sha256": "fa9908a2f5747c4fb3ba3109d459eaa1579815f27b81fc60fba2282de3bdd84c"
+    },
+    "examples/checks.js.gz": {
+      "bytes": 1126,
+      "sha256": "f0defbf17e4af5fbe9cc331244017dd7242383ed42c9c8386dac4bc9ab439a57"
     },
     "examples/data/flowers-in-motion-v1.scene": {
       "bytes": 101126,
       "sha256": "489341136c8d94bd3582d44c2194c2a67237167cfead1bc298961d59998db8af"
+    },
+    "examples/data/japanese-bridge-v1-low-crossing.scene": {
+      "bytes": 59471,
+      "sha256": "9c92d04e68308af1e2848e23636d0609519eb96361be755dde22e14113930ebf"
+    },
+    "examples/data/japanese-bridge-v1-moon-bridge.scene": {
+      "bytes": 59797,
+      "sha256": "25e42bcb745a3fa437515cbe80d212710903cfb6f4e92d3420dd1a8c2e58bd6f"
+    },
+    "examples/data/japanese-bridge-v1.scene": {
+      "bytes": 59790,
+      "sha256": "b18e0db907b4c990c5aeb760fa4fd942f8e7bde032132a8301f1533d040a24e6"
+    },
+    "examples/data/japanese-garden-v1-autumn.scene": {
+      "bytes": 274121,
+      "sha256": "e04e3701f125051a024f3aa3fcc90e718bb70133069189a2bac9e6353784fcc9"
+    },
+    "examples/data/japanese-garden-v1-spring.scene": {
+      "bytes": 263346,
+      "sha256": "ecd082715c4520ca166a5eb254bc408bcd5b157419b6842d02cdb5481c53250a"
+    },
+    "examples/data/japanese-garden-v1.scene": {
+      "bytes": 265372,
+      "sha256": "9e4e658e1fd72bd1444f12ee2486ae8e8162002d2b7367b5944c160ef2b7ba27"
+    },
+    "examples/data/japanese-lotus-v1-ivory.scene": {
+      "bytes": 181413,
+      "sha256": "a824b172a0113be79330685b1197279ecc0271ef19c0a1c1965b293dfc120d7b"
+    },
+    "examples/data/japanese-lotus-v1-rose.scene": {
+      "bytes": 192168,
+      "sha256": "cc79679a83b3e58441d48bb615ce9ce6bcf3ab196837bf8f38ea427d863c46c6"
+    },
+    "examples/data/japanese-lotus-v1.scene": {
+      "bytes": 183418,
+      "sha256": "6812e56c62801ca70cbdc152b4066bc0e4b1ce4700767f3e96c86760ed47379e"
+    },
+    "examples/data/japanese-passage-v1-low-boundary.scene": {
+      "bytes": 50433,
+      "sha256": "0fd86b47f165063a93198bbc314d60b1adce571e29f07ebdb3f3212760afedd9"
+    },
+    "examples/data/japanese-passage-v1-wide-passage.scene": {
+      "bytes": 52110,
+      "sha256": "3c47da07606275a93b23cb40af717d3268db63fb3a1adce70a8628dc62273f78"
+    },
+    "examples/data/japanese-passage-v1.scene": {
+      "bytes": 56025,
+      "sha256": "e6e329d6b072c4974255c46e14cb7942422992d37a62ab1b9a9a77a2015c4b59"
+    },
+    "examples/data/japanese-pavilion-v1-mountain-roof.scene": {
+      "bytes": 52743,
+      "sha256": "b15dd8e39461cc46e33aa358b5b59eada66a1e9efb014d459806ece5600fe038"
+    },
+    "examples/data/japanese-pavilion-v1-tea-house.scene": {
+      "bytes": 52727,
+      "sha256": "418dee1ee97125a28a03f8cb543c20db6808f346a7da08c0c4446120a8c307ce"
+    },
+    "examples/data/japanese-pavilion-v1.scene": {
+      "bytes": 52704,
+      "sha256": "5bdaf3df157e054941fcee8b3325f669d0d9dc5ec2d06cfc80b2b9e72c0663e0"
     },
     "examples/data/keeper-house-v1.scene": {
       "bytes": 115966,
@@ -2492,51 +3024,51 @@
     },
     "examples/runtime/index.html": {
       "bytes": 81129,
-      "sha256": "271e6152230963d07d8ed2ccef4b84a35b7fb544aa11a957d293f817fa486c0c"
+      "sha256": "d6d7ac72494465b9cbd7c0ec180ee546cf86d0280035d9bdcc910952fd2fca5d"
     },
     "examples/runtime/index.html.br": {
       "bytes": 24640,
-      "sha256": "654c78cdcd032b028ffc3d73893d0bcb9313311337351fce04448b1a6faf4fa2"
+      "sha256": "cb134c3287b19a0fb476d1a49dff3bc78f92dbfe86cee2fcb81623b7a51c4d17"
     },
     "examples/runtime/index.html.gz": {
       "bytes": 25920,
-      "sha256": "3859d84df68dba36700ca9cc83c63483f80d97787a6d88ea567cadfac2e0ebe4"
+      "sha256": "1921458bcdc4864fb5f7abff9a7c2eb9c40f502fe27a29287f9e4b6e20e937d8"
     },
     "examples/view.css": {
-      "bytes": 2386,
-      "sha256": "34aa5cded9adb423baefff291cfd5850c461edf32ea9aaac51506d5d1ef2a32f"
+      "bytes": 2547,
+      "sha256": "f1660de8e3abd104cbbe55f3fe9a1539113696208d36bd0166a757d0adbb7e24"
     },
     "examples/view.css.br": {
-      "bytes": 887,
-      "sha256": "a1f282d0d4b72e3610c301b00ecb7c70fcc848634d3c89079d6530c60934e027"
+      "bytes": 918,
+      "sha256": "1605de68502d19ea96bb315660dd5b04b40c5635967c4209abe6cfb45cdf547b"
     },
     "examples/view.css.gz": {
-      "bytes": 1010,
-      "sha256": "d5249a8316fffd6f3d9a6885bb0da0639461e3a1f94dd5de55d65bac9142740f"
+      "bytes": 1047,
+      "sha256": "e1e879eb56cbb55f88b3c671d2c87e2f5c56275ca099534401f7daa04be2d349"
     },
     "examples/view.html": {
-      "bytes": 1743,
-      "sha256": "7b882f641b387d6131afec516aba876d4e89d5afecbd6fc4218075a9087aaa4a"
+      "bytes": 1924,
+      "sha256": "f73399b3c3dcd5d0b6767a41321089902948380a5641b203fcdfb59dac6a9560"
     },
     "examples/view.html.br": {
-      "bytes": 740,
-      "sha256": "061e6579758d63cec5102f0154cda7a71056760bfb834ef36b2d8587a5cc9870"
+      "bytes": 804,
+      "sha256": "f4150c22e0387d0f4f04b6b119fc51ee36b9b8fd6a0984a1b23bc0e7424bec89"
     },
     "examples/view.html.gz": {
-      "bytes": 870,
-      "sha256": "63237fb3a044b8a4abf4396adb424ebc37290ae043fce6cf53407c9b8c49902f"
+      "bytes": 934,
+      "sha256": "d917b7774554a5c399bd32364d1833fba7d2fbb1be142f655960af069ae8db44"
     },
     "examples/view.js": {
-      "bytes": 10820,
-      "sha256": "20257e79718264a038e8f476b6c7b0345c3042272c7fa3d64084bbdf4f1c1128"
+      "bytes": 11001,
+      "sha256": "b72516543656dd94e746780910e93f29b12eaa2be3674a730d94cae3a7e15736"
     },
     "examples/view.js.br": {
-      "bytes": 3663,
-      "sha256": "b04b31088e928659656af03ec8ecbb6a5603869e06c2da42798f348652e0948d"
+      "bytes": 3575,
+      "sha256": "dd4cc927ea3e04d189c4c2e2229dccc3020465853309b23640d3f535ac91b6b9"
     },
     "examples/view.js.gz": {
-      "bytes": 3900,
-      "sha256": "16d2cf3308d414dc0aaf9b30a205500ed982bfe055178221a4ae7d0af6be6087"
+      "bytes": 3815,
+      "sha256": "331b18c4057b6f53e0a62a1c45025fe90f5040bdcde734ec70d2a1840b235204"
     },
     "favicon.ico": {
       "bytes": 4238,
@@ -2556,15 +3088,15 @@
     },
     "index.html": {
       "bytes": 83739,
-      "sha256": "dc1959c0f20fcd47eb67d3302994d746977f70d715b8bc687f8c6d2b13b55df1"
+      "sha256": "04a3d665a0429d48e0d0cebd2f1a9d8cc5556c0d07ad1b6adebd2684699c3687"
     },
     "index.html.br": {
       "bytes": 25239,
-      "sha256": "2322db6d171eec715eab923b1f2c09551801a5f878ce8fed85ce531a45326f6f"
+      "sha256": "9ab120faf5d338872964d051fc58f66b724b63e57275f7df2f6d02e20099b8a0"
     },
     "index.html.gz": {
       "bytes": 26551,
-      "sha256": "53945641ed139a9613bb3adbb74181a9ed2e514623a02c7fd0e1ea70f0a05d22"
+      "sha256": "d85f48046aa71a92320bd356d20a7ca658ee59095e4a9d5fb99cb0034d2fed81"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -3067,28 +3599,28 @@
       "sha256": "6e6d3f2be0846a7714978117bd0690f72db42fdfed276c1e0dbf5e1fb508325d"
     },
     "showcase/catalog.json": {
-      "bytes": 10958,
-      "sha256": "5b55d9a1ca454e22d7f62d6dc1b1f91d17a2ac1c1a068d965c6fdaecc4c30405"
+      "bytes": 34437,
+      "sha256": "7ec736c38cf517b4a7ec04872d86dc6a39e269b9815297fff659dc03ccc4de89"
     },
     "showcase/catalog.json.br": {
-      "bytes": 2887,
-      "sha256": "ff9b875f185bf1d4f4e2707adddbd656c80e8be842b207d8d8a3bb7aacf77134"
+      "bytes": 5852,
+      "sha256": "1195525e8bed2a1e5b640d6e33e0d3b30d07689804a7bee98ee9a366c6d89c5b"
     },
     "showcase/catalog.json.gz": {
-      "bytes": 3063,
-      "sha256": "09607c36871f50d81e4099b594237cc87e1a15063709efe9b663f57036847506"
+      "bytes": 6240,
+      "sha256": "fb8b44416305249725a2bd1711da9013e0f353df02eb64d4addc7311f39188a2"
     },
     "showcase/index.html": {
-      "bytes": 16412,
-      "sha256": "607fb02c03bce9caba8d160e9f131e1db8d2ce3045d2bebab1344ed00adb4581"
+      "bytes": 28502,
+      "sha256": "ef61bdee0993c52d6b6df327ce87ac8725dff93d26e37f48499e1cd931f316ea"
     },
     "showcase/index.html.br": {
-      "bytes": 3708,
-      "sha256": "9a39b112ad9aeaff0e626def9b2b09e788e8005104c7f0807a91886ce284e9db"
+      "bytes": 4896,
+      "sha256": "ee69c2560639dcc72e3365e111a963b012e7c1dd85c47dafe199e606c30ff034"
     },
     "showcase/index.html.gz": {
-      "bytes": 4065,
-      "sha256": "f19f9d3882b4e5fef0ea8c78703ad6319f19d48c50b04477badb367f5fcfaa54"
+      "bytes": 5314,
+      "sha256": "4a22f67fa5d428cfe3408e80c7c15afd13cdc3677fd1baca3bc63a1597d5783a"
     },
     "site.webmanifest": {
       "bytes": 1020,
@@ -3176,15 +3708,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 81129,
-      "sha256": "271e6152230963d07d8ed2ccef4b84a35b7fb544aa11a957d293f817fa486c0c"
+      "sha256": "d6d7ac72494465b9cbd7c0ec180ee546cf86d0280035d9bdcc910952fd2fca5d"
     },
     "tutorial-view/index.html.br": {
       "bytes": 24640,
-      "sha256": "654c78cdcd032b028ffc3d73893d0bcb9313311337351fce04448b1a6faf4fa2"
+      "sha256": "cb134c3287b19a0fb476d1a49dff3bc78f92dbfe86cee2fcb81623b7a51c4d17"
     },
     "tutorial-view/index.html.gz": {
       "bytes": 25920,
-      "sha256": "3859d84df68dba36700ca9cc83c63483f80d97787a6d88ea567cadfac2e0ebe4"
+      "sha256": "1921458bcdc4864fb5f7abff9a7c2eb9c40f502fe27a29287f9e4b6e20e937d8"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -3368,7 +3900,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "820f4693201ed8c21cb65c8f5ac961f7b6c1b4b29e643a54d6c7e635e9abce44"
+      "sha256": "a33b96de25cfd243eb846313e0d7877c5d298bb7ca5a3ff79b03e38cb20de4e4"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
@@ -3407,12 +3939,5 @@
       "sha256": "7f982aa22731deeb67715044f4d64830f1ff8b7fbbdd860d796e0f76f65bb250"
     }
   },
-  "removedFiles": [
-    "engine/70f068140ca08c2029c3a9368245ab43d7f7fc18096cb15cc8ccb8ed029e5fe2/app.js",
-    "engine/70f068140ca08c2029c3a9368245ab43d7f7fc18096cb15cc8ccb8ed029e5fe2/app.js.br",
-    "engine/70f068140ca08c2029c3a9368245ab43d7f7fc18096cb15cc8ccb8ed029e5fe2/app.js.gz",
-    "engine/70f068140ca08c2029c3a9368245ab43d7f7fc18096cb15cc8ccb8ed029e5fe2/app.wasm",
-    "engine/70f068140ca08c2029c3a9368245ab43d7f7fc18096cb15cc8ccb8ed029e5fe2/app.wasm.br",
-    "engine/70f068140ca08c2029c3a9368245ab43d7f7fc18096cb15cc8ccb8ed029e5fe2/app.wasm.gz"
-  ]
+  "removedFiles": []
 }
