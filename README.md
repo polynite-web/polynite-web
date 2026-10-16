@@ -46,6 +46,12 @@ A version-only HTML update reuses the same engine URL when its bytes are unchang
 Public promotion builds a complete temporary site copy, then swaps it with `web/`.
 A failed swap restores the complete previous site. This requires temporary disk
 space for a full site copy. The Git push remains a separate, explicit step.
+If Windows Explorer locks a directory, promotion falls back to atomic file
+replacements with backups, committing the manifest last. Only managed payload
+files are changed; other local files are preserved. An installation error rolls
+back completed changes. If rollback itself fails, backups remain under the
+reported `.deploy-work/public-files-*` path for recovery. Do not interrupt this
+local operation or push until validation completes successfully.
 
 The Wasm loader keeps native streaming compilation and reports download activity.
 It aborts after 25 seconds without decoded-byte progress, allows up to 120 seconds
