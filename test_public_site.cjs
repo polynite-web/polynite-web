@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');const root=__dirname;
 for(const route of ['mcp','docs','docs/mcp','docs/sharing','support','privacy','terms']){
  const html=fs.readFileSync(path.join(root,route,'index.html'),'utf8');assert.match(html,/<h1>/);assert.match(html,/<main(?:\s|>)/);assert.match(html,/<nav\b[^>]*aria-label=/);assert.ok(!html.includes('{{'));
- assert.ok(html.includes((route.startsWith('docs')?'https://explore.polynite.io/':'https://polynite.io/')+route+'/'));assert.ok(!html.includes('autoplay'));
+ assert.ok(html.includes((route==='docs'?'https://explore.polynite.io/learn/':(route.startsWith('docs')?'https://explore.polynite.io/':'https://polynite.io/')+route+'/')));assert.ok(!html.includes('autoplay'));
  for(const match of html.matchAll(/(?:href|src|poster)="(\/[^"#]*)"/g)){
   const url=match[1].split('#')[0];const file=path.join(root,url.endsWith('/')?url+'index.html':url);assert.ok(fs.existsSync(file),'Broken local reference '+route+': '+url);
  }
