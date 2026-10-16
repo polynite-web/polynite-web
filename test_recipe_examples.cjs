@@ -12,6 +12,7 @@ for(const e of items){
  const sceneBytes=fs.readFileSync(path.join(source,e.id,`v${e.version}.scene`)),recipeBytes=fs.readFileSync(path.join(source,e.id,`v${e.version}.recipes.json`));
  assert.equal(hash(sceneBytes),e.scene_sha256,'Scene changed without a new version');assert.equal(hash(recipeBytes),e.recipes_sha256,'Recipe changed without a new version');
  const scene=JSON.parse(sceneBytes),recipes=JSON.parse(recipeBytes).recipes;assert.ok(scene.initial&&Array.isArray(scene.seq));
+ assert.ok(Number.isFinite(e.duration)&&e.duration>0);assert.ok(recipes[0].program.inputs.some(i=>i.name===e.edit_parameter),'Example edit parameter is not exposed');
  assert.deepEqual(recipes,scene.initial.architecture.filter(r=>e.instances.includes(r.id)),'Recipe differs from its actual film');assert.equal(recipes.length,e.instances.length);
  for(const r of recipes){assert.equal(r.module,'assembly');assert.equal(r.program.version,1);for(const input of r.program.inputs){assert.ok(input.min<=input.max);if(r.params[input.name]!==undefined)assert.ok(r.params[input.name]>=input.min-1e-6&&r.params[input.name]<=input.max+1e-6);}}
  for(const c of e.checks){assert.ok(kinds.has(c.type));assert.ok(e.instances.includes(c.instance));assert.ok(c.times.length>=3&&c.times.every(Number.isFinite));if(c.source)assert.ok(c.type==='support'?scene.initial.geo[c.source]:scene.initial.assemblies.some(a=>a.id===c.source));}

@@ -61,7 +61,9 @@
         "desktop": "verified",
         "browser": "not_verified"
       },
-      "seed": 17
+      "seed": 17,
+      "duration": 4,
+      "edit_parameter": "opening"
     },
     {
       "id": "terrain-pavilion",
@@ -126,7 +128,9 @@
         "desktop": "verified",
         "browser": "not_verified"
       },
-      "seed": 17
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "floor_clearance"
     },
     {
       "id": "path-clearance",
@@ -190,7 +194,9 @@
         "desktop": "verified",
         "browser": "not_verified"
       },
-      "seed": 17
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "clearance"
     }
   ]
 }

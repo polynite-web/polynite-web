@@ -59,6 +59,8 @@
     "browser": "not_verified"
   },
   "seed": 17,
+  "duration": 4,
+  "edit_parameter": "opening",
   "url": "https://explore.polynite.io/docs/recipes/flowers-in-motion/",
   "detail": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.json",
   "markdown": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md",
