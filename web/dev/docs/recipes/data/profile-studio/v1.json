@@ -1,0 +1,97 @@
+{
+  "id": "profile-studio",
+  "title": "Draw a profile. Share the shape.",
+  "summary": "Turn an editable width profile into glazed vessels and repeat them on stone plinths.",
+  "category": "Architecture",
+  "level": "Compose & explore",
+  "operators": [
+    "expression",
+    "instance",
+    "repeat",
+    "prototype",
+    "surface",
+    "profile",
+    "primitive"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_instances",
+    "surface_profiles"
+  ],
+  "instances": [
+    "study"
+  ],
+  "prompt": "In Polynite, build an editable operator study: Turn an editable width profile into glazed vessels and repeat them on stone plinths. Use the supplied JSON as a starting point, then invent a different composition. Declare reusable geometry prototypes and reference them with instance nodes. Keep profiles, layout, material roles and dimensions editable. Inspect actual instancing counters and rendered results; preserve the current scene.",
+  "try": [
+    "Choose a variant, then change a parameter in Adjust.",
+    "Edit the prototype to update its copies; keep individual exceptions when needed.",
+    "Save the scene and reopen it; geometry definitions remain included."
+  ],
+  "steps": [
+    "Define a reusable shape from a primitive, profile or sweep.",
+    "Place instances with parameterized transforms and bounded repetition.",
+    "Assign shared materials; inspect geometry, save and compare the result."
+  ],
+  "settings": "Open & test > Variant and Adjust. In Polynite: Scene settings > Living architecture > study. Read scene.cinematic status.instancing to inspect actual CPU/GPU sharing.",
+  "checks": [
+    {
+      "type": "geometry",
+      "instance": "study",
+      "times": [
+        0,
+        2,
+        6
+      ],
+      "rules": [
+        {
+          "prefix": "pot",
+          "count_parameters": [
+            "copies"
+          ],
+          "multiplier": 2,
+          "profile_points": 8
+        }
+      ]
+    }
+  ],
+  "edit_parameter": "belly",
+  "duration": 6,
+  "seed": 17,
+  "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+  "version": 1,
+  "collection": "operator-workshop",
+  "variants": [
+    {
+      "id": "slender",
+      "title": "Slender necks",
+      "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1-slender.jpg",
+      "scene_sha256": "65e95a46b73e10305c610143e1bef63db5495a6dd36fd4e8620f312730e04550",
+      "scene": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1-slender.scene"
+    },
+    {
+      "id": "wide",
+      "title": "Broad ceramic bowls",
+      "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1-wide.jpg",
+      "scene_sha256": "e7f2fd85a324009a107c0e70edee67e26e4bea22c3f5d86fbd175fba0f7160c9",
+      "scene": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1-wide.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "tested_at": "2026-10-16",
+  "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
+  "scene_sha256": "8283dc156fece35a5ad1a041f419239633df33432c5a4f7ca629f817f22c12a2",
+  "recipes_sha256": "58bd72633729733e7b29db6f3c9b176a24a7ae48d8d3ef3dac68c7247d12f048",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1.jpg"
+  },
+  "open": "https://polynite.io/examples/view.html?id=profile-studio",
+  "url": "https://explore.polynite.io/docs/recipes/profile-studio/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.recipes.json"
+}

@@ -856,6 +856,301 @@
       "kind": "recipe"
     },
     {
+      "id": "profile-studio",
+      "title": "Draw a profile. Share the shape.",
+      "summary": "Turn an editable width profile into glazed vessels and repeat them on stone plinths.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "instance",
+        "repeat",
+        "prototype",
+        "surface",
+        "profile",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_instances",
+        "surface_profiles"
+      ],
+      "instances": [
+        "study"
+      ],
+      "prompt": "In Polynite, build an editable operator study: Turn an editable width profile into glazed vessels and repeat them on stone plinths. Use the supplied JSON as a starting point, then invent a different composition. Declare reusable geometry prototypes and reference them with instance nodes. Keep profiles, layout, material roles and dimensions editable. Inspect actual instancing counters and rendered results; preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/profile-studio/",
+      "try": [
+        "Choose a variant, then change a parameter in Adjust.",
+        "Edit the prototype to update its copies; keep individual exceptions when needed.",
+        "Save the scene and reopen it; geometry definitions remain included."
+      ],
+      "steps": [
+        "Define a reusable shape from a primitive, profile or sweep.",
+        "Place instances with parameterized transforms and bounded repetition.",
+        "Assign shared materials; inspect geometry, save and compare the result."
+      ],
+      "settings": "Open & test > Variant and Adjust. In Polynite: Scene settings > Living architecture > study. Read scene.cinematic status.instancing to inspect actual CPU/GPU sharing.",
+      "checks": [
+        {
+          "type": "geometry",
+          "instance": "study",
+          "times": [
+            0,
+            2,
+            6
+          ],
+          "rules": [
+            {
+              "prefix": "pot",
+              "count_parameters": [
+                "copies"
+              ],
+              "multiplier": 2,
+              "profile_points": 8
+            }
+          ]
+        }
+      ],
+      "edit_parameter": "belly",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+      "version": 1,
+      "collection": "operator-workshop",
+      "variants": [
+        {
+          "id": "slender",
+          "title": "Slender necks",
+          "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1-slender.jpg",
+          "scene_sha256": "65e95a46b73e10305c610143e1bef63db5495a6dd36fd4e8620f312730e04550",
+          "scene": "https://polynite.io/examples/data/profile-studio-v1-slender.scene"
+        },
+        {
+          "id": "wide",
+          "title": "Broad ceramic bowls",
+          "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1-wide.jpg",
+          "scene_sha256": "e7f2fd85a324009a107c0e70edee67e26e4bea22c3f5d86fbd175fba0f7160c9",
+          "scene": "https://polynite.io/examples/data/profile-studio-v1-wide.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
+      "scene_sha256": "8283dc156fece35a5ad1a041f419239633df33432c5a4f7ca629f817f22c12a2",
+      "recipes_sha256": "58bd72633729733e7b29db6f3c9b176a24a7ae48d8d3ef3dac68c7247d12f048",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/profile-studio-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=profile-studio",
+      "url": "https://explore.polynite.io/docs/recipes/profile-studio/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.md",
+      "scene": "https://polynite.io/examples/data/profile-studio-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "swept-arcade",
+      "title": "One curve. A whole arcade.",
+      "summary": "Sweep a tapered section along an authored arch and repeat the ribs into a cedar passage.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "let",
+        "instance",
+        "repeat",
+        "primitive",
+        "prototype",
+        "surface",
+        "sweep",
+        "profile"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths"
+      ],
+      "instances": [
+        "study"
+      ],
+      "prompt": "In Polynite, build an editable operator study: Sweep a tapered section along an authored arch and repeat the ribs into a cedar passage. Use the supplied JSON as a starting point, then invent a different composition. Declare reusable geometry prototypes and reference them with instance nodes. Keep profiles, layout, material roles and dimensions editable. Inspect actual instancing counters and rendered results; preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/swept-arcade/",
+      "try": [
+        "Choose a variant, then change a parameter in Adjust.",
+        "Edit the prototype to update its copies; keep individual exceptions when needed.",
+        "Save the scene and reopen it; geometry definitions remain included."
+      ],
+      "steps": [
+        "Define a reusable shape from a primitive, profile or sweep.",
+        "Place instances with parameterized transforms and bounded repetition.",
+        "Assign shared materials; inspect geometry, save and compare the result."
+      ],
+      "settings": "Open & test > Variant and Adjust. In Polynite: Scene settings > Living architecture > study. Read scene.cinematic status.instancing to inspect actual CPU/GPU sharing.",
+      "checks": [
+        {
+          "type": "geometry",
+          "instance": "study",
+          "times": [
+            0,
+            2,
+            6
+          ],
+          "rules": [
+            {
+              "prefix": "rib",
+              "count_parameters": [
+                "bays"
+              ],
+              "path_points": 9
+            }
+          ]
+        }
+      ],
+      "edit_parameter": "width",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+      "version": 1,
+      "collection": "operator-workshop",
+      "variants": [
+        {
+          "id": "wide",
+          "title": "Wide garden passage",
+          "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1-wide.jpg",
+          "scene_sha256": "813720f1100ae1cb99e901064f2d5efe7a3ccc43b6e0e8f3730351699a209cc8",
+          "scene": "https://polynite.io/examples/data/swept-arcade-v1-wide.scene"
+        },
+        {
+          "id": "tall",
+          "title": "Tall narrow colonnade",
+          "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1-tall.jpg",
+          "scene_sha256": "628edebfa37bfe8dff1635afdd272639f258e5977ebd47b48c1a2c9e4b5a59c7",
+          "scene": "https://polynite.io/examples/data/swept-arcade-v1-tall.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
+      "scene_sha256": "0b61e4c7cf81601be146310e47872e901f7c6ae42ad1165f26a12bcb57ff8f1f",
+      "recipes_sha256": "8a6ee2b9b7e3f0af46f43a1eab8263a44998b0b5e5fc1c2e6415984a3d25bb3a",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=swept-arcade",
+      "url": "https://explore.polynite.io/docs/recipes/swept-arcade/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.md",
+      "scene": "https://polynite.io/examples/data/swept-arcade-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
+      "id": "modular-facade",
+      "title": "A facade from reusable parts.",
+      "summary": "Compose pilasters, window frames, sills and floor bands from shared profiles and primitive prototypes.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "primitive",
+        "instance",
+        "repeat",
+        "prototype",
+        "surface",
+        "profile"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_instances",
+        "surface_profiles"
+      ],
+      "instances": [
+        "study"
+      ],
+      "prompt": "In Polynite, build an editable operator study: Compose pilasters, window frames, sills and floor bands from shared profiles and primitive prototypes. Use the supplied JSON as a starting point, then invent a different composition. Declare reusable geometry prototypes and reference them with instance nodes. Keep profiles, layout, material roles and dimensions editable. Inspect actual instancing counters and rendered results; preserve the current scene.\n\nReference: https://explore.polynite.io/docs/recipes/modular-facade/",
+      "try": [
+        "Choose a variant, then change a parameter in Adjust.",
+        "Edit the prototype to update its copies; keep individual exceptions when needed.",
+        "Save the scene and reopen it; geometry definitions remain included."
+      ],
+      "steps": [
+        "Define a reusable shape from a primitive, profile or sweep.",
+        "Place instances with parameterized transforms and bounded repetition.",
+        "Assign shared materials; inspect geometry, save and compare the result."
+      ],
+      "settings": "Open & test > Variant and Adjust. In Polynite: Scene settings > Living architecture > study. Read scene.cinematic status.instancing to inspect actual CPU/GPU sharing.",
+      "checks": [
+        {
+          "type": "geometry",
+          "instance": "study",
+          "times": [
+            0,
+            2,
+            6
+          ],
+          "rules": [
+            {
+              "prefix": "pane",
+              "count_parameters": [
+                "bays",
+                "floors"
+              ]
+            }
+          ]
+        }
+      ],
+      "edit_parameter": "bays",
+      "duration": 6,
+      "seed": 17,
+      "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+      "version": 1,
+      "collection": "operator-workshop",
+      "variants": [
+        {
+          "id": "townhouse",
+          "title": "Compact townhouse",
+          "poster": "https://explore.polynite.io/docs/recipes/media/modular-facade-v1-townhouse.jpg",
+          "scene_sha256": "2133e2fdf7f3158070fdf83533b55351b34ee789d40a4db2dbaa4d8aafc66867",
+          "scene": "https://polynite.io/examples/data/modular-facade-v1-townhouse.scene"
+        },
+        {
+          "id": "boulevard",
+          "title": "Broad boulevard frontage",
+          "poster": "https://explore.polynite.io/docs/recipes/media/modular-facade-v1-boulevard.jpg",
+          "scene_sha256": "e14925cce6394a098ec5215f03b5a81a59e6fd6984ecd5ba783b68fd305bbb16",
+          "scene": "https://polynite.io/examples/data/modular-facade-v1-boulevard.scene"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "tested_at": "2026-10-16",
+      "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
+      "scene_sha256": "d2420d05e3ec9d6e64e83a9a001d1f5fcb585d295ef9b3b7a95c20eed2a10480",
+      "recipes_sha256": "d344757c7ca1b4475c3e03832b9117fa5d3656af36344e763b9ffc08078fcc1d",
+      "media": {
+        "video": "https://explore.polynite.io/docs/recipes/media/modular-facade-v1.mp4",
+        "poster": "https://explore.polynite.io/docs/recipes/media/modular-facade-v1.jpg"
+      },
+      "open": "https://polynite.io/examples/view.html?id=modular-facade",
+      "url": "https://explore.polynite.io/docs/recipes/modular-facade/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.md",
+      "scene": "https://polynite.io/examples/data/modular-facade-v1.scene",
+      "recipes": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.recipes.json",
+      "kind": "recipe"
+    },
+    {
       "id": "refuge",
       "atelier": "refuge-20261014-142504-living",
       "title": "The mist keeper's refuge",

@@ -236,6 +236,96 @@
       "url": "https://explore.polynite.io/docs/recipes/japanese-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.md"
+    },
+    {
+      "id": "profile-studio",
+      "version": 1,
+      "title": "Draw a profile. Share the shape.",
+      "summary": "Turn an editable width profile into glazed vessels and repeat them on stone plinths.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "instance",
+        "repeat",
+        "prototype",
+        "surface",
+        "profile",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_instances",
+        "surface_profiles"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/profile-studio/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.md"
+    },
+    {
+      "id": "swept-arcade",
+      "version": 1,
+      "title": "One curve. A whole arcade.",
+      "summary": "Sweep a tapered section along an authored arch and repeat the ribs into a cedar passage.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "let",
+        "instance",
+        "repeat",
+        "primitive",
+        "prototype",
+        "surface",
+        "sweep",
+        "profile"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/swept-arcade/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.md"
+    },
+    {
+      "id": "modular-facade",
+      "version": 1,
+      "title": "A facade from reusable parts.",
+      "summary": "Compose pilasters, window frames, sills and floor bands from shared profiles and primitive prototypes.",
+      "category": "Architecture",
+      "level": "Compose & explore",
+      "operators": [
+        "expression",
+        "primitive",
+        "instance",
+        "repeat",
+        "prototype",
+        "surface",
+        "profile"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_instances",
+        "surface_profiles"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/modular-facade/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.md"
     }
   ]
 }

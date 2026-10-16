@@ -1,0 +1,99 @@
+{
+  "id": "swept-arcade",
+  "title": "One curve. A whole arcade.",
+  "summary": "Sweep a tapered section along an authored arch and repeat the ribs into a cedar passage.",
+  "category": "Architecture",
+  "level": "Compose & explore",
+  "operators": [
+    "expression",
+    "let",
+    "instance",
+    "repeat",
+    "primitive",
+    "prototype",
+    "surface",
+    "sweep",
+    "profile"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_instances",
+    "surface_profiles",
+    "surface_paths"
+  ],
+  "instances": [
+    "study"
+  ],
+  "prompt": "In Polynite, build an editable operator study: Sweep a tapered section along an authored arch and repeat the ribs into a cedar passage. Use the supplied JSON as a starting point, then invent a different composition. Declare reusable geometry prototypes and reference them with instance nodes. Keep profiles, layout, material roles and dimensions editable. Inspect actual instancing counters and rendered results; preserve the current scene.",
+  "try": [
+    "Choose a variant, then change a parameter in Adjust.",
+    "Edit the prototype to update its copies; keep individual exceptions when needed.",
+    "Save the scene and reopen it; geometry definitions remain included."
+  ],
+  "steps": [
+    "Define a reusable shape from a primitive, profile or sweep.",
+    "Place instances with parameterized transforms and bounded repetition.",
+    "Assign shared materials; inspect geometry, save and compare the result."
+  ],
+  "settings": "Open & test > Variant and Adjust. In Polynite: Scene settings > Living architecture > study. Read scene.cinematic status.instancing to inspect actual CPU/GPU sharing.",
+  "checks": [
+    {
+      "type": "geometry",
+      "instance": "study",
+      "times": [
+        0,
+        2,
+        6
+      ],
+      "rules": [
+        {
+          "prefix": "rib",
+          "count_parameters": [
+            "bays"
+          ],
+          "path_points": 9
+        }
+      ]
+    }
+  ],
+  "edit_parameter": "width",
+  "duration": 6,
+  "seed": 17,
+  "limits": "Editable operator study. Mesh prototypes are shared; nested prefab graphs and Boolean openings are not implemented. Compatible groups of four or more use GPU instancing at full detail; unsupported cases use regular rendering. Performance depends on scene and device.",
+  "version": 1,
+  "collection": "operator-workshop",
+  "variants": [
+    {
+      "id": "wide",
+      "title": "Wide garden passage",
+      "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1-wide.jpg",
+      "scene_sha256": "813720f1100ae1cb99e901064f2d5efe7a3ccc43b6e0e8f3730351699a209cc8",
+      "scene": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1-wide.scene"
+    },
+    {
+      "id": "tall",
+      "title": "Tall narrow colonnade",
+      "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1-tall.jpg",
+      "scene_sha256": "628edebfa37bfe8dff1635afdd272639f258e5977ebd47b48c1a2c9e4b5a59c7",
+      "scene": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1-tall.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "tested_at": "2026-10-16",
+  "revision": "b8024aba5ddc5c7845043313e036e0b64e2689e9",
+  "scene_sha256": "0b61e4c7cf81601be146310e47872e901f7c6ae42ad1165f26a12bcb57ff8f1f",
+  "recipes_sha256": "8a6ee2b9b7e3f0af46f43a1eab8263a44998b0b5e5fc1c2e6415984a3d25bb3a",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/swept-arcade-v1.jpg"
+  },
+  "open": "https://polynite.io/examples/view.html?id=swept-arcade",
+  "url": "https://explore.polynite.io/docs/recipes/swept-arcade/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.recipes.json"
+}

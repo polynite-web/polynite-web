@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "study",
+      "materials": {
+        "stone": "workshop_clay",
+        "wood": "workshop_stone"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "belly": 1.20000005,
+        "copies": 4,
+        "height": 1.39999998,
+        "neck": 0.419999987,
+        "rim": 0.800000012,
+        "width": 0.75
+      },
+      "program": {
+        "inputs": [
+          {
+            "description": "copies",
+            "group": "layout",
+            "integer": true,
+            "max": 6,
+            "min": 2,
+            "name": "copies",
+            "value": 4
+          },
+          {
+            "description": "height",
+            "group": "shape",
+            "integer": false,
+            "max": 2.79999995,
+            "min": 0.699999988,
+            "name": "height",
+            "value": 1.39999998
+          },
+          {
+            "description": "width",
+            "group": "shape",
+            "integer": false,
+            "max": 1.20000005,
+            "min": 0.400000006,
+            "name": "width",
+            "value": 0.75
+          },
+          {
+            "description": "belly",
+            "group": "shape",
+            "integer": false,
+            "max": 1.79999995,
+            "min": 0.5,
+            "name": "belly",
+            "value": 1.20000005
+          },
+          {
+            "description": "neck",
+            "group": "shape",
+            "integer": false,
+            "max": 1,
+            "min": 0.150000006,
+            "name": "neck",
+            "value": 0.419999987
+          },
+          {
+            "description": "rim",
+            "group": "shape",
+            "integer": false,
+            "max": 1.39999998,
+            "min": 0.400000006,
+            "name": "rim",
+            "value": 0.800000012
+          }
+        ],
+        "nodes": [
+          {
+            "id": "pot",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$copies",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                1.39999998
+              ],
+              [
+                "add",
+                0.200000003,
+                [
+                  "mul",
+                  "$height",
+                  0.5
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "sub",
+                  "@j",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      2,
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                1.60000002
+              ]
+            ],
+            "repeat": {
+              "count": "$copies",
+              "rows": 2
+            },
+            "role": "stone",
+            "s": [
+              "$width",
+              "$height",
+              "$width"
+            ],
+            "source": "vessel"
+          },
+          {
+            "id": "base",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "$copies",
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                1.39999998
+              ],
+              0.100000001,
+              [
+                "mul",
+                [
+                  "sub",
+                  "@j",
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      2,
+                      1
+                    ],
+                    0.5
+                  ]
+                ],
+                1.60000002
+              ]
+            ],
+            "repeat": {
+              "count": "$copies",
+              "rows": 2
+            },
+            "role": "wood",
+            "s": [
+              1.10000002,
+              0.200000003,
+              1.10000002
+            ],
+            "source": "plinth"
+          }
+        ],
+        "prototypes": [
+          {
+            "id": "vessel",
+            "op": "surface",
+            "surface": {
+              "kind": 1,
+              "profile": [
+                [
+                  0,
+                  0.600000024
+                ],
+                [
+                  0.0599999987,
+                  0.649999976
+                ],
+                [
+                  0.180000007,
+                  1
+                ],
+                [
+                  0.449999988,
+                  "$belly"
+                ],
+                [
+                  0.670000017,
+                  0.899999976
+                ],
+                [
+                  0.800000012,
+                  "$neck"
+                ],
+                [
+                  0.939999998,
+                  "$neck"
+                ],
+                [
+                  1,
+                  "$rim"
+                ]
+              ],
+              "ripple": 0,
+              "segments": 40,
+              "sides": 48,
+              "thickness": 0.0179999992,
+              "veins": 0
+            }
+          },
+          {
+            "bevel": 0.0299999993,
+            "id": "plinth",
+            "kind": "cube",
+            "op": "primitive"
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}
