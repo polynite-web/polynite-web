@@ -21,3 +21,5 @@ for(const base of [root,path.join(root,'dev'),path.join(root,'web')]){copyStyles
  const redirectsPath=path.join(base,'_redirects');let redirects=fs.existsSync(redirectsPath)?fs.readFileSync(redirectsPath,'utf8'):fs.readFileSync(path.join(root,'_redirects'),'utf8');redirects=redirects.split(/\r?\n/).filter(line=>!/^\/docs(?:[ /]|\/mcp|\/sharing)/.test(line)).join('\n');fs.writeFileSync(redirectsPath,redirects.trim()+'\n'+docRedirects()+'\n');
 }console.log('Built seven public pages with metadata and sitemap in root/dev/web. Engine entry pages preserved.');
 for(const base of [root,path.join(root,'dev'),path.join(root,'web')])require('./build_recipe_examples.cjs').build(base);
+
+for(const base of [root,path.join(root,'dev'),path.join(root,'web')])require('./build_experiences.cjs').build(base);

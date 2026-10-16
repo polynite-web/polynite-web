@@ -33,9 +33,23 @@ motion/loop closure, support heights and live path geometry/corridor clearance,
 then restores the scene/camera and pin even on failure. Do not run concurrently
 with other scene editing tests or the user's scene changes.
 
-Desktop verification is explicit. Browser support remains `not_verified` until
-the actual published engine loads, plays and edits these fixtures correctly.
-The Open Polynite link opens the app; downloading is a separate step. A one-click
-browser scene launch must be enabled only after that validation, in an isolated
-viewer. A prompt is a creative interpretation; versioned scene/recipes are the
-reproduction reference. No scene changes occur from browsing this section.
+Desktop verification is explicit. Browser support is scoped to the actual tested
+engine and browser; a successful import alone does not prove playback or editing.
+The Open & test action uses `/examples/view.html?id=...`, an isolated MEMFS viewer.
+No browsing or playback touches the visitor's saved scene. Save downloads a copy;
+Reset explicitly returns to the immutable reference. A prompt is a creative
+interpretation; versioned scene/recipes are the reproduction reference.
+
+## Showcase and the shared player
+
+`public-site-src/showcase.json` selects existing Atelier scenes or recipe IDs.
+`build_experiences.cjs` merges those references into a compact common registry,
+then copies exact scene bytes into versioned public data files. Add a selection
+here rather than creating another engine generator. Category, atmosphere, tags,
+prompt and media drive the editorial page and filters. The player discovers
+parameter controls from the recipe schema; no controls branch on an example ID.
+
+Run `node test_experiences.cjs` after building. For a browser regression, open the
+player with `&qa=1` and click Check example; it uses the same shared invariants as
+the desktop fixtures and restores its temporary document afterward. Keep the
+browser tab visible during animation tests. Check actual pixels as well as data.

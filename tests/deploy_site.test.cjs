@@ -13,6 +13,7 @@ const html='<html><head><meta name="robots" content="index, follow"></head><body
 write('dev/index.html',html);write('dev/app.html',html);write('dev/version.txt','v0010\n');write('dev/tier.txt','dev\n');write('dev/backend.js','window.backend="webgpu";');
 write('dev/models/a model.glb','model');write('dev/models/index.txt','stale.glb 5\n');write('dev/app_before_jolt.wasm','old');write('dev/demo/new.json','{"scene":1}\r\n');
 write('site.webmanifest',JSON.stringify({id:'/',start_url:'/',scope:'/',icons:[{src:'/assets/icon.png'}]}));write('assets/icon.png','icon');
+write('examples/runtime/index.html','<html><head><base href="/"><script id="pn-build-version">window.__pnBuildVersion="v0001";</script></head><body>isolated viewer</body></html>');
 write('web/version.txt','v0267\n');write('web/app.js','old public js');write('web/app.wasm','old public wasm');write('web/robots.txt','public robots');write('web/custom.txt','keep');
 const before=hash(fs.readFileSync(path.join(root,'web/app.wasm')));
 // Recompilation after the first directory swap must not affect the second stage.
@@ -21,6 +22,9 @@ fs.renameSync=function(source,target){const result=rename(source,target);if(targ
 try{prepare(root);}finally{fs.renameSync=rename;}
 assert(changedDuringPrepare);
 const dev=verify(path.join(root,'web/dev')),rel=verify(path.join(root,'web/rel'));
+assert.ok(fs.readFileSync(path.join(root,'web/dev/examples/runtime/index.html'),'utf8').includes('<base href="/dev/">'));
+assert.ok(fs.readFileSync(path.join(root,'web/rel/examples/runtime/index.html'),'utf8').includes('<base href="/rel/">'));
+assert.ok(fs.readFileSync(path.join(root,'web/rel/examples/runtime/index.html'),'utf8').includes('window.__pnEngineBase='+JSON.stringify(rel.engineBase)));
 function cachePolicy(url){
  const text=fs.readFileSync(path.join(root,'web/_headers'),'utf8');let match=false,values=[];
  for(const line of text.split(/\r?\n/)){
@@ -54,6 +58,8 @@ try{assert.throws(()=>publish(root),/simulated promotion failure/);}finally{fs.r
 assert(rejectedSwap);assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),before);
 assert.equal(fs.readFileSync(path.join(root,'web/custom.txt'),'utf8'),'keep');
 publish(root);
+assert.ok(fs.readFileSync(path.join(root,'web/examples/runtime/index.html'),'utf8').includes('<base href="/">'));
+assert.ok(fs.readFileSync(path.join(root,'web/examples/runtime/index.html'),'utf8').includes('window.__pnBuildVersion='+JSON.stringify(rel.version)));
 assert.equal(hash(fs.readFileSync(path.join(root,'web/app.wasm'))),rel.files['app.wasm'].sha256);
 assert.equal(hash(fs.readFileSync(path.join(root,'web/app.js'))),rel.files['app.js'].sha256);
 assert.equal(fs.readFileSync(path.join(root,'web/version.txt'),'utf8').trim(),rel.version);

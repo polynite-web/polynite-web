@@ -5,7 +5,7 @@ const MAX_FILE=25*1024*1024,MANIFEST='deploy-manifest.json';
 const started=Date.now();
 const progress=message=>console.log('[polynite +'+((Date.now()-started)/1000).toFixed(1)+'s] '+message);
 const siteFiles=['robots.txt','sitemap.xml','sitemap-app.xml','site.webmanifest','sw.js','404.html','_redirects','favicon.ico'];
-const siteDirs=['docs','mcp','support','privacy','terms','tutorials','tutorial-view','atelier'];
+const siteDirs=['docs','mcp','support','privacy','terms','tutorials','tutorial-view','atelier','examples','showcase'];
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 function inside(base,relative){
  if(path.isAbsolute(relative)||relative.split(/[\\/]/).some(p=>p==='..'||p===''))throw Error('Invalid payload path: '+relative);
@@ -46,11 +46,12 @@ function payload(source){
 }
 function configure(dir,tier,version,publicPage=false,engineBase=''){
  write(dir,'tier.txt',tier+'\n');write(dir,'version.txt',version+'\n');
- for(const name of ['index.html','app.html']){
+ for(const name of ['index.html','app.html','tutorial-view/index.html','examples/runtime/index.html']){
   const file=inside(dir,name);if(!fs.existsSync(file))continue;
   let html=fs.readFileSync(file,'utf8');
   html=html.replace(/<script id="pn-(?:build-version|deploy-config)">[^]*?<\/script>/g,'');
   html=html.replace('<head>','<head><script id="pn-deploy-config">window.__pnDeployTier='+JSON.stringify(tier)+';window.__pnBuildVersion='+JSON.stringify(version)+';window.__pnEngineBase='+JSON.stringify(engineBase)+';</script>');
+  if(name.endsWith('/index.html'))html=html.replace(/<base href="[^"]*">/,'<base href="'+(publicPage?'/':tier==='dev'?'/dev/':'/rel/')+'">');
   html=html.replace(/<meta name="robots"[^>]*>/,'<meta name="robots" content="'+(publicPage?'index':'noindex')+', follow">');
   html=html.replace(/href="\/(assets\/[^" ]+|site\.webmanifest)"/g,'href="$1"');
   html=html.replace('navigator.serviceWorker.register("/sw.js", { scope: "/" })','navigator.serviceWorker.register("sw.js", { scope: "./" })');
