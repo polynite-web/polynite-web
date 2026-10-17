@@ -89,5 +89,12 @@
     "media": "/docs/media/tutorials/r38/",
     "scene": "autumn-lantern-cottage-e52d68a4d27f.scene",
     "video": "autumn-lantern-cottage.mp4"
+  },
+  {
+    "id": "infinite-flight",
+    "revision": 39,
+    "media": "/docs/media/tutorials/r39/",
+    "scene": "infinite-flight-9c360f6fe47c.scene",
+    "video": "infinite-flight.mp4"
   }
 ]

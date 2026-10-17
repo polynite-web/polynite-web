@@ -1,7 +1,39 @@
 {
   "version": 1,
-  "featured": "nested-temple",
+  "featured": "infinite-flight",
   "items": [
+    {
+      "id": "infinite-flight",
+      "atelier": "infinite-flight-20261017-040455-portrait",
+      "title": "An Endless Flight",
+      "category": "Infinite worlds",
+      "environment": "Alpine",
+      "summary": "A ship skims an endless, deterministic mountain world: forests, lakes and a five-kilometre horizon, generated on your device from a seed and built entirely through MCP.",
+      "prompt": "Create an endless mountain world in Polynite with a ship flying through it. Check scene.capabilities for the infinite operation, turn it on with scene.apply {op:'infinite', on:true, seed:7}, hide the flat floor, add a warm afternoon sky, lakes at 48 m and a forest cover of 0.6, let the ship fly on its terrain-following autopilot and orbit the camera around it with follow 3 and a loop_orbit (yaw 0 behind the ship). Expose speed, flight height, seed, lake level and forest cover in Scene settings. Use the linked scene as a starting point.",
+      "tags": [
+        "Infinite world",
+        "MCP",
+        "Procedural",
+        "Ship",
+        "Editable"
+      ]
+    },
+    {
+      "id": "cozy-autumn-night",
+      "atelier": "cozy-autumn-night",
+      "title": "Cozy Autumn Night",
+      "category": "My creations",
+      "environment": "Moonlit",
+      "summary": "A stone cottage under a full moon, autumn maples and windows lighting up one by one to an original guitar score. A perfect loop.",
+      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon, ground mist, warm windows that switch on to a soft guitar score and a seamless loop. Use the linked scene as a starting point.",
+      "tags": [
+        "Cottage",
+        "Autumn",
+        "Moonlit",
+        "Music",
+        "Loop"
+      ]
+    },
     {
       "recipe": "nested-temple",
       "category": "Architecture workshop",
