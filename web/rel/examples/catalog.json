@@ -1278,6 +1278,36 @@
       "kind": "recipe"
     },
     {
+      "id": "infinite-flight",
+      "atelier": "infinite-flight-20261017-040455-portrait",
+      "title": "An Endless Flight",
+      "category": "Infinite worlds",
+      "environment": "Alpine",
+      "summary": "A ship skims an endless, deterministic mountain world: forests, lakes and a five-kilometre horizon, generated on your device from a seed and built entirely through MCP.",
+      "prompt": "Create an endless mountain world in Polynite with a ship flying through it. Check scene.capabilities for the infinite operation, turn it on with scene.apply {op:'infinite', on:true, seed:7}, hide the flat floor, add a warm afternoon sky, lakes at 48 m and a forest cover of 0.6, let the ship fly on its terrain-following autopilot and orbit the camera around it with follow 3 and a loop_orbit (yaw 0 behind the ship). Expose speed, flight height, seed, lake level and forest cover in Scene settings. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#infinite-flight",
+      "tags": [
+        "Infinite world",
+        "MCP",
+        "Procedural",
+        "Ship",
+        "Editable"
+      ],
+      "kind": "showcase",
+      "version": 1,
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "8e9c43496391c0f1a29f719f1e7cc9f59cfa7982d0d2a384df3295c7f8483d88",
+      "media": {
+        "video": "https://polynite.io/atelier/media/infinite-flight-20261017-040455-portrait.mp4",
+        "poster": "https://polynite.io/atelier/media/infinite-flight-20261017-040455-portrait.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#infinite-flight",
+      "open": "https://polynite.io/examples/view.html?id=infinite-flight",
+      "scene": "https://polynite.io/examples/data/infinite-flight-v1.scene"
+    },
+    {
       "id": "cozy-autumn-night",
       "atelier": "cozy-autumn-night",
       "title": "Cozy Autumn Night",
