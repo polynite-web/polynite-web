@@ -2,6 +2,31 @@
   "version": 1,
   "entries": [
     {
+      "id": "cozy-autumn-night",
+      "title": "Cozy Autumn Night",
+      "summary": [
+        "Un cottage de pierre sous la pleine lune, des érables d'automne et des fenêtres qui s'allument une à une.",
+        "Musique originale à la guitare, carillons d'allumage et boucle parfaite."
+      ],
+      "note": "Lien permanent : polynite.io/showroom/cozy-autumn-night. Cette entrée garde le même identifiant à chaque mise à jour.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-16T19:30:34-04:00",
+      "published_at": "2026-10-16T23:27:13.612852+00:00",
+      "revision": "loop-house 2026-10-16",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.509,
+      "bytes": 13041110,
+      "sha256": "8910f649a4994766207b160e53748cb6658ef4add52a12676ca80404ed2b5d3f",
+      "video": "media/cozy-autumn-night.mp4",
+      "poster": "media/cozy-autumn-night.jpg",
+      "scene": "media/cozy-autumn-night.scene"
+    },
+    {
       "id": "loop-house-20261014-075035-portrait-reference",
       "title": "Cottage au clair de lune — référence portrait",
       "summary": [

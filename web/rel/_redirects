@@ -1,3 +1,8 @@
+# Showroom: permanent short links (302, so the destination can change later without breaking them).
+/showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
+/showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
+/showroom https://explore.polynite.io/showcase/#collection 302
+/showroom/ https://explore.polynite.io/showcase/#collection 302
 # The public pages moved to Polynite Explore, for good.
 /about/* https://explore.polynite.io/about/:splat 301
 /about https://explore.polynite.io/about/ 301

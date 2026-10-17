@@ -1278,6 +1278,36 @@
       "kind": "recipe"
     },
     {
+      "id": "cozy-autumn-night",
+      "atelier": "cozy-autumn-night",
+      "title": "Cozy Autumn Night",
+      "category": "My creations",
+      "environment": "Moonlit",
+      "summary": "A stone cottage under a full moon, autumn maples and windows lighting up one by one to an original guitar score. A perfect loop.",
+      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon, ground mist, warm windows that switch on to a soft guitar score and a seamless loop. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#cozy-autumn-night",
+      "tags": [
+        "Cottage",
+        "Autumn",
+        "Moonlit",
+        "Music",
+        "Loop"
+      ],
+      "kind": "showcase",
+      "version": 1,
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "ad10d17c85126c9ed52f98ba6c5d93bed1b4e8b771cdd5f129c4a2e60cee606b",
+      "media": {
+        "video": "https://polynite.io/atelier/media/cozy-autumn-night.mp4",
+        "poster": "https://polynite.io/atelier/media/cozy-autumn-night.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#cozy-autumn-night",
+      "open": "https://polynite.io/examples/view.html?id=cozy-autumn-night",
+      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v1.scene"
+    },
+    {
       "id": "refuge",
       "atelier": "refuge-20261014-142504-living",
       "title": "The mist keeper's refuge",
