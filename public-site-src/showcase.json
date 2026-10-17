@@ -4,19 +4,21 @@
   "items": [
     {
       "id": "infinite-flight",
-      "atelier": "infinite-flight-20261017-040455-portrait",
+      "atelier": "infinite-flight-20261017-075557-portrait",
       "title": "An Endless Flight",
       "category": "Infinite worlds",
-      "environment": "Alpine",
-      "summary": "A ship skims an endless, deterministic mountain world: forests, lakes and a five-kilometre horizon, generated on your device from a seed and built entirely through MCP.",
-      "prompt": "Create an endless mountain world in Polynite with a ship flying through it. Check scene.capabilities for the infinite operation, turn it on with scene.apply {op:'infinite', on:true, seed:7}, hide the flat floor, add a warm afternoon sky, lakes at 48 m and a forest cover of 0.6, let the ship fly on its terrain-following autopilot and orbit the camera around it with follow 3 and a loop_orbit (yaw 0 behind the ship). Expose speed, flight height, seed, lake level and forest cover in Scene settings. Use the linked scene as a starting point.",
+      "environment": "Sea, rock and mountains",
+      "summary": "A ship skims an endless world that changes as it flies: open sea under red cliffs, plains, forests and mountains, mirrored in the water, all generated on your device from a seed and driven through MCP.",
+      "prompt": "Create an endless flight in Polynite through MCP. Turn the infinite world on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, hide the flat floor and keep a warm sky. Then shape it by name with the parameters listed in describe.infinite.params - oceans, rocky, water_reflect, boost, sparks - and add {op:'lens', on:true} for the sun. Use the linked scene as a starting point.",
       "tags": [
         "Infinite world",
         "MCP",
         "Procedural",
+        "Water",
         "Ship",
         "Editable"
-      ]
+      ],
+      "version": 2
     },
     {
       "id": "cozy-autumn-night",

@@ -261,11 +261,11 @@
   },
   {
     "id": "infinite-flight",
-    "title": "An endless flight over the mountains",
-    "level": "Advanced",
+    "title": "An endless flight",
+    "level": "Intermediate",
     "topic": "creation",
-    "description": "An infinite, deterministic mountain world built through MCP: a ship flies through forests and lakes, the world never ends and saves exactly.",
-    "prompt": "Create an endless mountain world in Polynite with a ship flying through it.\n\n- Discover the connected engine capabilities first: check scene.capabilities for the infinite operation and read its contract. Save the current editable film and restore it after any temporary tests.\n- Turn the infinite terrain on with scene.apply {op:'infinite', on:true, seed:7}. The relief is a pure function of the seed: 256 m chunks addressed by 64-bit integers, so it is identical at the origin and a billion metres away.\n- Hide the flat floor (floor_enable 0), turn the sky on, set a warm afternoon sun and a light aerial haze (fog_density about 0.0006).\n- Let the ship fly on its terrain-following autopilot (speed 140 m/s, clearance 45 m). Use follow 3: the camera target follows the ship and the usual Polynite camera (loop_orbit in the film, drag, wheel) orbits in the ship's frame, yaw 0 being right behind it. Add a 20-second loop_orbit with front_yaw 0 and front_speed 0.3 so the camera lingers behind the ship and sweeps around it.\n- Add lakes at 48 m and a forest cover of 0.6. Expose ship speed, flight height, chase distance, world seed, lake level and forest cover in Scene settings with scene.controls bindings on the target 'infinite'.\n- Dig a crater under the ship with {op:'infinite', edit:{kind:'crater', radius:80, depth:50}}, fly away and come back: edits are the only part of the world that is saved.\n- Record a 20-second film, inspect real frames, and save the expanded editable scene.",
+    "description": "Turn on Polynite's infinite world through MCP: a ship flies over mountains, plains, seas and red-rock mesas that never end, and the scene saves exactly.",
+    "prompt": "Create an endless flight in Polynite.\n\n- Check scene.capabilities for the infinite operation.\n- Turn it on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, hide the flat floor (floor_enable 0) and keep the sky on with a warm sun.\n- Add a 20-second loop_orbit camera behind the ship (front_yaw 0) and record a short film.",
     "control": {
       "operation": "local",
       "method": "scene.apply",
@@ -275,19 +275,14 @@
             "op": "infinite",
             "on": true,
             "seed": 7,
-            "speed": 140,
-            "clearance": 45,
-            "follow": 3,
-            "cam_dist": 34,
-            "water": 48,
-            "forest": 0.6
+            "follow": 3
           }
         ],
         "label": "Infinite world"
       },
       "action_id": "replace-with-a-fresh-uuid"
     },
-    "control_note": "These arguments turn the infinite world on in the current scene. The downloadable scene also carries the sky, sun, haze and Scene settings the prompt asks for.",
+    "control_note": "These arguments turn the infinite world on in the current scene. Every other dial (biomes, water, boost, effects, sound) is a named parameter listed in describe.infinite.params.",
     "settings_groups": [
       {
         "title": "Flight",
@@ -296,16 +291,6 @@
             "id": "ship_speed",
             "label": "Ship speed",
             "hint": "Metres per second. Zero parks the ship to inspect, save and compare."
-          },
-          {
-            "id": "ship_clearance",
-            "label": "Flight height above relief",
-            "hint": "How high the autopilot stays above the ground ahead."
-          },
-          {
-            "id": "chase_distance",
-            "label": "Chase camera distance",
-            "hint": "Distance of the camera from the ship; the film's orbit and your drag keep working around it."
           }
         ]
       },
@@ -315,39 +300,34 @@
           {
             "id": "world_seed",
             "label": "World seed",
-            "hint": "Another seed is another world; the same seed always gives the same mountains."
+            "hint": "Another seed is another world; the same seed always gives the same land."
           },
           {
             "id": "lake_level",
             "label": "Lake level",
-            "hint": "Water fills the valleys below this height."
-          },
-          {
-            "id": "forest_cover",
-            "label": "Forest cover",
-            "hint": "Share of the slopes and valleys covered by conifer forest."
+            "hint": "The level of the lakes and of the open sea."
           }
         ]
       }
     ],
     "experiments": [
       {
-        "title": "Another world",
-        "text": "Change World seed: new mountains, lakes and forests appear around the ship within a few frames."
+        "title": "More sea, more rock",
+        "text": "Ask for {op:'infinite', oceans:0.5, rocky:0.4}: the world changes around the ship without reloading."
       },
       {
-        "title": "Leave a mark",
-        "text": "Ask your assistant for {op:'infinite', edit:{kind:'crater', radius:80, depth:50}}, fly away and come back: the crater is still there, also after saving and reopening."
+        "title": "Boost",
+        "text": "Ask for {op:'infinite', boost_now:true}: the central reactor lights up, the ship accelerates and the camera widens."
       },
       {
-        "title": "A billion metres away",
-        "text": "Send the ship to {op:'infinite', ship:{sx:'3906250', sz:'3906250'}}: the relief and the ship stay as sharp as at the origin."
+        "title": "Look into the sun",
+        "text": "Ask for {op:'lens', on:true}: glare, star, ghosts and dazzle when the sun is in frame."
       },
       {
-        "title": "Flooded valleys",
-        "text": "Raise Lake level to 150 m and lower Forest cover to watch the world change without reloading."
+        "title": "Every dial",
+        "text": "Ask your assistant to read describe.infinite.params: terrain, biomes, water, flight, effects and sound, each with its range."
       }
     ],
-    "viewer_note": "Requires the Polynite engine with the infinite world (web version 0306 or later, desktop current). The relief is generated on your device; only the seed, the ship and your edits are saved."
+    "viewer_note": "Requires the Polynite engine with the infinite world (web version 0308 or later, desktop current). The land is generated on your device; only the seed, the parameters, the ship and your edits are saved."
   }
 ]
