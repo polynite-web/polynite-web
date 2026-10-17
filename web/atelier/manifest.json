@@ -534,6 +534,32 @@
       "video": "media/infinite-flight-20261017-040455-portrait.mp4",
       "poster": "media/infinite-flight-20261017-040455-portrait.jpg",
       "scene": "media/infinite-flight-20261017-040455-portrait.scene"
+    },
+    {
+      "id": "infinite-flight-20261017-075557-portrait",
+      "title": "Vol sans fin : mer, falaises et montagnes",
+      "summary": [
+        "Monde infini : mer, mesas rocheuses, plaines et montagnes générés sans rechargement, reflets réels sur l'eau.",
+        "Réacteur de boost, traînées, étincelles, son 3D du moteur et petite musique.",
+        "Lens flare, rayons de soleil ; chaque réglage est un paramètre MCP nommé."
+      ],
+      "note": "",
+      "collection": "cottage",
+      "captured_at": "2026-10-17T07:55:57-04:00",
+      "published_at": "2026-10-17T11:56:14.363264+00:00",
+      "revision": "moteur c7c36bf78 (biomes, eau, boost, objectif)",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "infinite-flight",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 21.12,
+      "bytes": 21354011,
+      "sha256": "3b08db866d88f7a0530e50ed1f0065fe6b597dd44de4a914fa6d718c8b1b7055",
+      "video": "media/infinite-flight-20261017-075557-portrait.mp4",
+      "poster": "media/infinite-flight-20261017-075557-portrait.jpg",
+      "scene": "media/infinite-flight-20261017-075557-portrait.scene"
     }
   ]
 }
