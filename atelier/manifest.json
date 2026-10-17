@@ -2,6 +2,31 @@
   "version": 1,
   "entries": [
     {
+      "id": "cozy-autumn-night",
+      "title": "Cozy Autumn Night",
+      "summary": [
+        "Un cottage de pierre sous la pleine lune, des érables d'automne et des fenêtres qui s'allument une à une.",
+        "Musique originale à la guitare, carillons d'allumage et boucle parfaite."
+      ],
+      "note": "Lien permanent : polynite.io/showroom/cozy-autumn-night. Cette entrée garde le même identifiant à chaque mise à jour.",
+      "collection": "atmospheres",
+      "captured_at": "2026-10-16T19:30:34-04:00",
+      "published_at": "2026-10-16T23:27:13.612852+00:00",
+      "revision": "loop-house 2026-10-16",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "loop-house",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 15.509,
+      "bytes": 13041110,
+      "sha256": "8910f649a4994766207b160e53748cb6658ef4add52a12676ca80404ed2b5d3f",
+      "video": "media/cozy-autumn-night.mp4",
+      "poster": "media/cozy-autumn-night.jpg",
+      "scene": "media/cozy-autumn-night.scene"
+    },
+    {
       "id": "loop-house-20261014-075035-portrait-reference",
       "title": "Cottage au clair de lune — référence portrait",
       "summary": [
@@ -483,6 +508,32 @@
         "period": 6.0
       },
       "audio": "none"
+    },
+    {
+      "id": "infinite-flight-20261017-040455-portrait",
+      "title": "Vol sans fin au-dessus des montagnes",
+      "summary": [
+        "Monde infini déterministe : morceaux de 256 m adressés en entiers 64 bits, relief fonction de la graine.",
+        "Caméra orbitale des scènes Polynite autour du vaisseau, vue arrière privilégiée ; forêts instanciées, lacs, horizon à 5 km.",
+        "Créé et piloté par MCP : op infinite, éditions persistantes, réglages dans Scene settings."
+      ],
+      "note": "",
+      "collection": "cottage",
+      "captured_at": "2026-10-17T04:04:55-04:00",
+      "published_at": "2026-10-17T08:06:43.079526+00:00",
+      "revision": "moteur 413b90b6c (monde infini)",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "infinite-flight",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 21.12,
+      "bytes": 21415325,
+      "sha256": "334e4a87a592697abe101ffd74a143ea672737cc2e7b87c8e691f0adfb816eb7",
+      "video": "media/infinite-flight-20261017-040455-portrait.mp4",
+      "poster": "media/infinite-flight-20261017-040455-portrait.jpg",
+      "scene": "media/infinite-flight-20261017-040455-portrait.scene"
     }
   ]
 }
