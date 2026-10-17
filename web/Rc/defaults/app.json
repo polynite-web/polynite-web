@@ -3,16 +3,25 @@
 "panlayout_last_session": "session/(default).session",
 "window": {
   "fullscreen_was_maximized": false,
-  "h": 1032,
-  "mode": 3,
-  "normal_h": 906,
-  "normal_w": 1567,
-  "normal_x": 131,
-  "normal_y": 91,
-  "placement_version": 2,
-  "w": 1920,
-  "x": 0,
-  "y": 40
+  "h": 846,
+  "mode": 1,
+  "monitor": "\\\\.\\DISPLAY2",
+  "normal_h": 846,
+  "normal_screen_h": 846,
+  "normal_screen_w": 1574,
+  "normal_screen_x": 52,
+  "normal_screen_y": 69,
+  "normal_w": 1574,
+  "normal_x": 52,
+  "normal_y": 69,
+  "placement_version": 3,
+  "w": 1574,
+  "work_h": 1032,
+  "work_w": 1920,
+  "work_x": 0,
+  "work_y": 0,
+  "x": 52,
+  "y": 69
 }
 
 }
