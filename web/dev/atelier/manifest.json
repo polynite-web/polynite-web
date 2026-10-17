@@ -508,6 +508,32 @@
         "period": 6.0
       },
       "audio": "none"
+    },
+    {
+      "id": "infinite-flight-20261017-040455-portrait",
+      "title": "Vol sans fin au-dessus des montagnes",
+      "summary": [
+        "Monde infini déterministe : morceaux de 256 m adressés en entiers 64 bits, relief fonction de la graine.",
+        "Caméra orbitale des scènes Polynite autour du vaisseau, vue arrière privilégiée ; forêts instanciées, lacs, horizon à 5 km.",
+        "Créé et piloté par MCP : op infinite, éditions persistantes, réglages dans Scene settings."
+      ],
+      "note": "",
+      "collection": "cottage",
+      "captured_at": "2026-10-17T04:04:55-04:00",
+      "published_at": "2026-10-17T08:06:43.079526+00:00",
+      "revision": "moteur 413b90b6c (monde infini)",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "infinite-flight",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 21.12,
+      "bytes": 21415325,
+      "sha256": "334e4a87a592697abe101ffd74a143ea672737cc2e7b87c8e691f0adfb816eb7",
+      "video": "media/infinite-flight-20261017-040455-portrait.mp4",
+      "poster": "media/infinite-flight-20261017-040455-portrait.jpg",
+      "scene": "media/infinite-flight-20261017-040455-portrait.scene"
     }
   ]
 }

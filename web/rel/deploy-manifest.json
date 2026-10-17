@@ -1,13 +1,13 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0305",
-  "sourceVersion": "v0194",
-  "engineBase": "engine/5a3931176d60da9fc16166556e834dc02bf72224c8197c533aac6e1c51a93056/",
+  "version": "v0306",
+  "sourceVersion": "v0197",
+  "engineBase": "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/",
   "engineHistory": [
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/",
     "engine/5a3931176d60da9fc16166556e834dc02bf72224c8197c533aac6e1c51a93056/",
-    "engine/011695fb694ce13be531585e892cc3be3b1a632e5e913f3025b9d060e932809f/",
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/"
+    "engine/011695fb694ce13be531585e892cc3be3b1a632e5e913f3025b9d060e932809f/"
   ],
   "files": {
     "404.html": {
@@ -23,16 +23,16 @@
       "sha256": "09a23f187641cef24a35ddf24c5a3d43e309fd5f3d9482cab7941b469ae321d7"
     },
     "Rc/defaults/app.json": {
-      "bytes": 512,
-      "sha256": "74479f788a48418f803fbe435bc6c763d3dd2d9145a68dbbdadc25ee90b1c11d"
+      "bytes": 515,
+      "sha256": "28a64d35e057ea4261482a1befa69f59b8e8b1f1dbcc262d37fa30a84d842870"
     },
     "Rc/defaults/app.json.br": {
-      "bytes": 217,
-      "sha256": "9927ceb47852a45961871370739f9deeaf9efca7ef57a8b8c1c8daf18dcf0bef"
+      "bytes": 214,
+      "sha256": "176d7509687c9936bf604f8117c86c286aed51e1fce21412cd5e5b989b155133"
     },
     "Rc/defaults/app.json.gz": {
-      "bytes": 261,
-      "sha256": "cee31acb7876390e0009351f3cb06c2ed64eb9482d2ab46c3d820ab24b0e7ff9"
+      "bytes": 259,
+      "sha256": "fd10042a31403d4294fddf3c11cc79e261bd25f295719ee351818429fbc73a7a"
     },
     "Rc/font/legacy_clean.sdffont.json": {
       "bytes": 48571,
@@ -80,39 +80,39 @@
     },
     "app.html": {
       "bytes": 83741,
-      "sha256": "67e663e256d997d9d44a2b31fd0b2a1cdfb4dd43d1b7db037e79d2f2b4f79052"
+      "sha256": "d02ebdd85a94b28a5bd0c0f2cefc6d30ba8096fde4f696ed799d83fdb7e36bb3"
     },
     "app.html.br": {
-      "bytes": 25243,
-      "sha256": "e6f6a95624c5415bc5b2c464207155604e0f3b3e9dfcd37b79d448ab1d5fbad4"
+      "bytes": 25244,
+      "sha256": "ea2ab3f24f908d2805e1661f79ed90a1e09d4271f7b6691d1b990b5f8b22d890"
     },
     "app.html.gz": {
       "bytes": 26552,
-      "sha256": "e5e3d2bdf5d6733c3282368bb4831f4ba37f0f6f7857e891bd910068a2db57a1"
+      "sha256": "67e734c2fb946e75d64c8dec7dba2ec4593d06c388c9501f13bfbb23bdba717f"
     },
     "app.js": {
       "bytes": 334530,
-      "sha256": "ee5362309fb102d473e1957f4ed3810a7e275bda189aa77989527b994949a039"
+      "sha256": "f9c246708a1f78ab0a41aa25e3b877c6b1eeb4b737942482f2725a052fc5e158"
     },
     "app.js.br": {
-      "bytes": 78205,
-      "sha256": "c8c7f9ea202c3af2828b540776bb85e10e4e883004b5f3854b441a4b41cd766d"
+      "bytes": 78200,
+      "sha256": "946f266d7b5a4bc0b69789f11531dd04217b1955b03bc645d5912c2c13b00b3f"
     },
     "app.js.gz": {
-      "bytes": 83689,
-      "sha256": "2049a3e75dc2b39899a932ddb785bb4fd5948df674719f33363f4dc897a0dcb9"
+      "bytes": 83688,
+      "sha256": "126cd4cd89cfdce483db840de795181b6a8d0f92d074a022b78963c58829d516"
     },
     "app.wasm": {
-      "bytes": 4684198,
-      "sha256": "aa3c1b407fef183bbc9828064fea05381a65c5034bebd26795de9fcffdfb71a9"
+      "bytes": 4737743,
+      "sha256": "b30dd1fb0cc0f7ad917c58053ea5327bb68b0a1a9dee241b168daa759eacd256"
     },
     "app.wasm.br": {
-      "bytes": 1733109,
-      "sha256": "2f70bcb14d4b320e51ea80d30b190f2a0f4b2f79c9c400686880c0dfb2d87ea3"
+      "bytes": 1755678,
+      "sha256": "7214b6c1f7c79eb591bb31791478eb96f7f635a99aed94ca4c002b0681f5a165"
     },
     "app.wasm.gz": {
-      "bytes": 1938956,
-      "sha256": "090c647cadfd925aa79cf47c766cbf2a34d4f9e499ffaf82f9177238cda1c6dc"
+      "bytes": 1962822,
+      "sha256": "43b03bcd3f98f4ff99bb65dcf8b3414f203e4311ca4144c4b9699feaf51c8a44"
     },
     "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
       "bytes": 1229851,
@@ -551,28 +551,28 @@
       "sha256": "fad6f10a7936eba19f383be786920f6bd82d9ff7c09d3169ac2c1117d838abc6"
     },
     "atelier/index.html": {
-      "bytes": 32736,
-      "sha256": "b1435297cd12200ee9a20ad85aa6337b45d57a67ab3fb0fee8fe0298aef44555"
+      "bytes": 35817,
+      "sha256": "751e8e2143127ce2afc37521fa31272aef93c0121d2bf6b944fb55f548bda6a6"
     },
     "atelier/index.html.br": {
-      "bytes": 5682,
-      "sha256": "17729c1d8d109cf3da5dda793c701231ef82306c2a617aedf547ac58bde74c78"
+      "bytes": 6230,
+      "sha256": "5f9a693125aa842f6ad3bdeb7fa5dd8a3ce942c9e1ff96d7ef99bcb4cd4d99d5"
     },
     "atelier/index.html.gz": {
-      "bytes": 5959,
-      "sha256": "9e54ef0d5a29536647990a6f614c17f3d8ac90a3f14f1fd5128e3c5dafc5df28"
+      "bytes": 6546,
+      "sha256": "4961033e0414f00a137c6fc534cd0214d3ff162c29962c21c5d77d5e1ba0c043"
     },
     "atelier/manifest.json": {
-      "bytes": 24023,
-      "sha256": "ad2d69db175439631acf948888e91806e17ae19aed384160174195083ebb5647"
+      "bytes": 25258,
+      "sha256": "9adf99b0fb93fc8f4acde4be1ea6f2ceae0e0a027f2fc8338d7c80229fc96f2d"
     },
     "atelier/manifest.json.br": {
-      "bytes": 5327,
-      "sha256": "5f392a7e5a59103b3ad1f7e7a4dced66d38e932d61699a5529069832cfa3fa2d"
+      "bytes": 5686,
+      "sha256": "2b4d86af2464f6a506a2a97a9d9ad551cf4159ab214d5380889e13212f3be24f"
     },
     "atelier/manifest.json.gz": {
-      "bytes": 5518,
-      "sha256": "9f8701d1b574be513a8b81ea350064f8b21fd502c0c884ad473991da711119c0"
+      "bytes": 5874,
+      "sha256": "c829bff0d17679fb2c44a40b92fffba287eb66d0f6d42fcc1136b8ed7d1134c8"
     },
     "atelier/media/cozy-autumn-night.jpg": {
       "bytes": 217192,
@@ -585,6 +585,18 @@
     "atelier/media/cozy-autumn-night.scene": {
       "bytes": 563600,
       "sha256": "fa26ae2fd002f7493b9e4c92f2d9492e75935974fbf27b1d13416c15e8be1f60"
+    },
+    "atelier/media/infinite-flight-20261017-040455-portrait.jpg": {
+      "bytes": 54144,
+      "sha256": "f064d999b9025c1b2e34be169957e082bd8db6ef4c5f50c84f571a8c90e4482c"
+    },
+    "atelier/media/infinite-flight-20261017-040455-portrait.mp4": {
+      "bytes": 21415325,
+      "sha256": "334e4a87a592697abe101ffd74a143ea672737cc2e7b87c8e691f0adfb816eb7"
+    },
+    "atelier/media/infinite-flight-20261017-040455-portrait.scene": {
+      "bytes": 17273,
+      "sha256": "8e9c43496391c0f1a29f719f1e7cc9f59cfa7982d0d2a384df3295c7f8483d88"
     },
     "atelier/media/keeper-20261014-132427-atmosphere.jpg": {
       "bytes": 37923,
@@ -853,6 +865,14 @@
     "demo/atmospheres/refuge-moonlit-137.scene": {
       "bytes": 198672,
       "sha256": "cd000cf9ba0dda92ab2ef190c837a79f04a52e79fa1480639712415d8fa3cdb0"
+    },
+    "demo/infinite/README.md": {
+      "bytes": 2756,
+      "sha256": "217b823ada95563c2edebf6abe816408198fa62dafaa04470282a528f30456af"
+    },
+    "demo/infinite/ship-mountains.scene": {
+      "bytes": 15842,
+      "sha256": "63244090bc434ad53d1e06e962fa17f87f58f3035c0602931e99657ffabf2998"
     },
     "demo/knot.glb": {
       "bytes": 10090356,
@@ -1937,6 +1957,22 @@
     "docs/media/tutorials/r38/autumn-lantern-cottage.mp4": {
       "bytes": 6471956,
       "sha256": "5b10a739806885a3b905dedec4e3b3707628dc60893c1f7bf0e86ec1457aace6"
+    },
+    "docs/media/tutorials/r39/infinite-flight-9c360f6fe47c.scene": {
+      "bytes": 17064,
+      "sha256": "9c360f6fe47caee63751d37f392d7e05192fe8f17db2ef3fd3193bb66ddeb220"
+    },
+    "docs/media/tutorials/r39/infinite-flight-preview.mp4": {
+      "bytes": 83275,
+      "sha256": "d017c64b6e549216a08b1d333758440c337e42de97092c8eed06260c4cbd1b1e"
+    },
+    "docs/media/tutorials/r39/infinite-flight.jpg": {
+      "bytes": 117954,
+      "sha256": "c7e514322329919b3fb724b849761aa01910016cb7d4484a8eb3e037eecdfe58"
+    },
+    "docs/media/tutorials/r39/infinite-flight.mp4": {
+      "bytes": 15702220,
+      "sha256": "69053c9ef45336c725eb9b845d660a5aabff4fffc2c2bbd4e549e066f52fbc4c"
     },
     "docs/media/tutorials/r4/block-explosion-2a14599566f3.scene": {
       "bytes": 27307,
@@ -3490,29 +3526,29 @@
       "bytes": 1938956,
       "sha256": "090c647cadfd925aa79cf47c766cbf2a34d4f9e499ffaf82f9177238cda1c6dc"
     },
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/app.js": {
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.js": {
       "bytes": 334530,
-      "sha256": "ee5362309fb102d473e1957f4ed3810a7e275bda189aa77989527b994949a039"
+      "sha256": "f9c246708a1f78ab0a41aa25e3b877c6b1eeb4b737942482f2725a052fc5e158"
     },
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/app.js.br": {
-      "bytes": 78205,
-      "sha256": "c8c7f9ea202c3af2828b540776bb85e10e4e883004b5f3854b441a4b41cd766d"
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.js.br": {
+      "bytes": 78200,
+      "sha256": "946f266d7b5a4bc0b69789f11531dd04217b1955b03bc645d5912c2c13b00b3f"
     },
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/app.js.gz": {
-      "bytes": 83689,
-      "sha256": "2049a3e75dc2b39899a932ddb785bb4fd5948df674719f33363f4dc897a0dcb9"
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.js.gz": {
+      "bytes": 83688,
+      "sha256": "126cd4cd89cfdce483db840de795181b6a8d0f92d074a022b78963c58829d516"
     },
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/app.wasm": {
-      "bytes": 4684043,
-      "sha256": "ada3dd81c85c2cc2f594332001587981c357d3ad680b5802d3c24dbff8d50010"
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.wasm": {
+      "bytes": 4737743,
+      "sha256": "b30dd1fb0cc0f7ad917c58053ea5327bb68b0a1a9dee241b168daa759eacd256"
     },
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/app.wasm.br": {
-      "bytes": 1733045,
-      "sha256": "8442496b011748a2770e3d6a5a7bd063333a6adc7b52a6c915f8f6a42a154bff"
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.wasm.br": {
+      "bytes": 1755678,
+      "sha256": "7214b6c1f7c79eb591bb31791478eb96f7f635a99aed94ca4c002b0681f5a165"
     },
-    "engine/6add96b9b0c6a22998f7e6ff2331ffe0c8e1e07acf21399a9282b42dbd6ad2b3/app.wasm.gz": {
-      "bytes": 1938849,
-      "sha256": "41496e76ba5bf3317f3b92dfec22cc15445d5b89e5d1e7b392bd4197d7f189ce"
+    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.wasm.gz": {
+      "bytes": 1962822,
+      "sha256": "43b03bcd3f98f4ff99bb65dcf8b3414f203e4311ca4144c4b9699feaf51c8a44"
     },
     "engine_cache.js": {
       "bytes": 2779,
@@ -3712,15 +3748,15 @@
     },
     "examples/runtime/index.html": {
       "bytes": 81135,
-      "sha256": "64d7190863e1b1d54e255e768ed68d0fe3e0c71135817b6e990d51c387d9a7ab"
+      "sha256": "80bb2d271c5fcd42a52cbdef039a97c1c2795d53dcf3202e9bd3acad0611628d"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 24641,
-      "sha256": "ed6eeb621a821d3e435ea74235adfe2fd592793a2a0befbba80489f1bd0efaa6"
+      "bytes": 24642,
+      "sha256": "00a05a9247f2f780a03280b8a4807733a140bcbbfc7826aa55a6be612bcf6717"
     },
     "examples/runtime/index.html.gz": {
-      "bytes": 25919,
-      "sha256": "0832e2375f47199f89a5421e2250a9956ea10531fc5c00d8f4f527760f3f165b"
+      "bytes": 25920,
+      "sha256": "72356b8970cd1d477c1816bda322885626f744cb8f15d65e6bcb8860ef862add"
     },
     "examples/view.css": {
       "bytes": 2547,
@@ -3776,15 +3812,15 @@
     },
     "index.html": {
       "bytes": 83741,
-      "sha256": "67e663e256d997d9d44a2b31fd0b2a1cdfb4dd43d1b7db037e79d2f2b4f79052"
+      "sha256": "d02ebdd85a94b28a5bd0c0f2cefc6d30ba8096fde4f696ed799d83fdb7e36bb3"
     },
     "index.html.br": {
-      "bytes": 25243,
-      "sha256": "e6f6a95624c5415bc5b2c464207155604e0f3b3e9dfcd37b79d448ab1d5fbad4"
+      "bytes": 25244,
+      "sha256": "ea2ab3f24f908d2805e1661f79ed90a1e09d4271f7b6691d1b990b5f8b22d890"
     },
     "index.html.gz": {
       "bytes": 26552,
-      "sha256": "e5e3d2bdf5d6733c3282368bb4831f4ba37f0f6f7857e891bd910068a2db57a1"
+      "sha256": "67e734c2fb946e75d64c8dec7dba2ec4593d06c388c9501f13bfbb23bdba717f"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -4360,15 +4396,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 81135,
-      "sha256": "64d7190863e1b1d54e255e768ed68d0fe3e0c71135817b6e990d51c387d9a7ab"
+      "sha256": "80bb2d271c5fcd42a52cbdef039a97c1c2795d53dcf3202e9bd3acad0611628d"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 24641,
-      "sha256": "ed6eeb621a821d3e435ea74235adfe2fd592793a2a0befbba80489f1bd0efaa6"
+      "bytes": 24642,
+      "sha256": "00a05a9247f2f780a03280b8a4807733a140bcbbfc7826aa55a6be612bcf6717"
     },
     "tutorial-view/index.html.gz": {
-      "bytes": 25919,
-      "sha256": "0832e2375f47199f89a5421e2250a9956ea10531fc5c00d8f4f527760f3f165b"
+      "bytes": 25920,
+      "sha256": "72356b8970cd1d477c1816bda322885626f744cb8f15d65e6bcb8860ef862add"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -4419,16 +4455,16 @@
       "sha256": "a52c3572c1596bac857f5409869af9dd8c89c32355da725093071de224e48102"
     },
     "tutorials/catalog.json": {
-      "bytes": 24244,
-      "sha256": "ed7348b919210e57c41710a40a560e229364f63f69591f6261a63b4268279a39"
+      "bytes": 30145,
+      "sha256": "ab6438776e3e1ff0e74538331ee010293092dfa46760ea6c6a68285d96eeec27"
     },
     "tutorials/catalog.json.br": {
-      "bytes": 6488,
-      "sha256": "e8d720f187fac81c482adc9c48c5164aed2c5e0a798c9e6f364d64eee985f8db"
+      "bytes": 8002,
+      "sha256": "647ff91d2e31a86d3caf7751bafe2d3b661373e86a81469b3205dcc80e419d32"
     },
     "tutorials/catalog.json.gz": {
-      "bytes": 6784,
-      "sha256": "236d30055ac7afbcd20f1b9f97b2b95702707fe6a38270dfe6882a1dbb956f93"
+      "bytes": 8315,
+      "sha256": "35f7883f00dbe9b04b024a23b0790a5d4c24e948363d7e12c8719d45bc8c5bfe"
     },
     "tutorials/colourful-tower/index.html": {
       "bytes": 16262,
@@ -4502,6 +4538,18 @@
       "bytes": 5256,
       "sha256": "4f50be08d0d9e93725321ef068767db0b79c8504e272e36a27af738fdbadc1bb"
     },
+    "tutorials/infinite-flight/index.html": {
+      "bytes": 19918,
+      "sha256": "5aff5931c8a8324e64205b313b1eb7c9e6a5808845cb8268dcaee908438e4611"
+    },
+    "tutorials/infinite-flight/index.html.br": {
+      "bytes": 6136,
+      "sha256": "7b89ad35170cdd57189649d12b77f78dac73de392b71c11e6b742d9a0ce07ce8"
+    },
+    "tutorials/infinite-flight/index.html.gz": {
+      "bytes": 6551,
+      "sha256": "e1d6f3f387a381a807135993c99c5079e3c7ffa169694e5d500f276b570b7ec5"
+    },
     "tutorials/orbiting-letters/index.html": {
       "bytes": 16299,
       "sha256": "9089357a5199b7897d1d06478c198463af3fdb2fc3d5ba6b649fbe444364fdaa"
@@ -4552,7 +4600,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "218817eb05e74447eab3c03aa9dad75dbaa74946f5eab6651edd33c331546f86"
+      "sha256": "f59642297de76abc0c1c3c0f1e611d616be372aebe1818e30e8e083c39c028c3"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
