@@ -36393,7 +36393,7 @@
    "start": 0.600000024,
    "wave": 1
   },
-  "film_loop_catchup": 0.5
+  "film_loop_catchup": 0.2
  },
  "model": "",
  "seq": [
