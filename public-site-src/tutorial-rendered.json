@@ -96,5 +96,40 @@
     "media": "/docs/media/tutorials/r40/",
     "scene": "infinite-flight-fd3d2f2b9306.scene",
     "video": "infinite-flight.mp4"
+  },
+  {
+    "id": "sdf-shapes-first",
+    "revision": 41,
+    "media": "/docs/media/tutorials/r41/",
+    "scene": "sdf-shapes-first-71f782d7b3e9.scene",
+    "video": "sdf-shapes-first.mp4"
+  },
+  {
+    "id": "sdf-shapes-fills",
+    "revision": 41,
+    "media": "/docs/media/tutorials/r41/",
+    "scene": "sdf-shapes-fills-f5cc6f6b9cf0.scene",
+    "video": "sdf-shapes-fills.mp4"
+  },
+  {
+    "id": "sdf-shapes-live",
+    "revision": 41,
+    "media": "/docs/media/tutorials/r41/",
+    "scene": "sdf-shapes-live-cb31310e1a36.scene",
+    "video": "sdf-shapes-live.mp4"
+  },
+  {
+    "id": "sdf-shapes-world",
+    "revision": 41,
+    "media": "/docs/media/tutorials/r41/",
+    "scene": "sdf-shapes-world-766f4c3433ca.scene",
+    "video": "sdf-shapes-world.mp4"
+  },
+  {
+    "id": "sdf-shapes-styles",
+    "revision": 41,
+    "media": "/docs/media/tutorials/r41/",
+    "scene": "sdf-shapes-styles-511fee7c0a26.scene",
+    "video": "sdf-shapes-styles.mp4"
   }
 ]
