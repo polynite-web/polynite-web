@@ -49,8 +49,8 @@
   "tested_at": "2026-10-19",
   "revision": "69e941e53",
   "media": {
-    "video": "https://polynite.io/docs/media/tutorials/r1/terrain-aware-pavilion.mp4",
-    "poster": "https://polynite.io/docs/media/tutorials/r1/terrain-aware-pavilion.jpg"
+    "video": "https://explore.polynite.io/docs/recipes/media/terrain-aware-pavilion.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/terrain-aware-pavilion.jpg"
   },
   "limits": "Requires commands.recipe_terrain. Press Play to compare flat and raised ground; use Adjust for the saved controls. Terrain queries use the finest near-field triangle grid, currently 4 m. Arbitrary imported meshes and continuous terrain deformation are outside this example.",
   "scene_sha256": "5e6688b299b389c4ee504274072473efafe4c759578e136438ab3f3449ae5f4a",
@@ -58,7 +58,7 @@
   "version": 1,
   "compatibility": {
     "desktop": "verified",
-    "browser": "not_verified"
+    "browser": "verified"
   },
   "seed": 17,
   "duration": 5,
@@ -72,6 +72,11 @@
       "scene": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1-gentle.scene"
     }
   ],
+  "browser_validation": {
+    "scope": "Chromium/WebGPU: original support sequence and live parameter edit",
+    "tested_at": "2026-10-19",
+    "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
+  },
   "open": "https://polynite.io/examples/view.html?id=terrain-aware-pavilion",
   "url": "https://explore.polynite.io/docs/recipes/terrain-aware-pavilion/",
   "detail": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1.json",

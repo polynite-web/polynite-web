@@ -131,5 +131,12 @@
     "media": "/docs/media/tutorials/r41/",
     "scene": "sdf-shapes-styles-511fee7c0a26.scene",
     "video": "sdf-shapes-styles.mp4"
+  },
+  {
+    "id": "terrain-aware-pavilion",
+    "revision": 1,
+    "media": "/docs/media/tutorials/r1/",
+    "scene": "terrain-aware-pavilion-5e6688b299b3.scene",
+    "video": "terrain-aware-pavilion.mp4"
   }
 ]

@@ -385,7 +385,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/terrain-aware-pavilion/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1.json",
