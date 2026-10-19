@@ -1610,7 +1610,7 @@
       "revision": "9d1ba003b",
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "media": {
         "video": "media/footprint-placement.mp4",
@@ -1635,7 +1635,12 @@
         }
       ],
       "scene_sha256": "cbba1e7e76c77421368067abe8d7a7f4bc40626ea5a8272a93ed5ff936fdf4e3",
-      "recipes_sha256": "019f8ba49bd8cf0642676ef04696ed50898d28178d21d81d78b4a998f8c49994"
+      "recipes_sha256": "019f8ba49bd8cf0642676ef04696ed50898d28178d21d81d78b4a998f8c49994",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU v0319 on polynite.io: original scene, placement, return after source edit and live margin edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
+      }
     },
     {
       "id": "clearance-japanese-garden",
@@ -1714,7 +1719,7 @@
       "revision": "9d1ba003b",
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "media": {
         "video": "media/clearance-japanese-garden.mp4",
@@ -1739,7 +1744,12 @@
         }
       ],
       "scene_sha256": "8abc75334141f3e6aaa6d5b2c9c3efacd45d29b5fc27db2fff98bcc6392b268f",
-      "recipes_sha256": "c4a5952c82c6fc9040f9c0f0c14cc7ae52bcd46cf5653a35488d9313a7c7c173"
+      "recipes_sha256": "c4a5952c82c6fc9040f9c0f0c14cc7ae52bcd46cf5653a35488d9313a7c7c173",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU v0319 on polynite.io: original scene, placement, return after source edit and live margin edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
+      }
     }
   ]
 }
