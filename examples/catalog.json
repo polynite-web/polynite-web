@@ -1278,6 +1278,67 @@
       "kind": "recipe"
     },
     {
+      "id": "infinite-flight",
+      "atelier": "infinite-flight-20261017-075557-portrait",
+      "title": "An Endless Flight",
+      "category": "Infinite worlds",
+      "environment": "Sea, rock and mountains",
+      "summary": "A ship skims an endless world that changes as it flies: open sea under red cliffs, plains, forests and mountains, mirrored in the water, all generated on your device from a seed and driven through MCP.",
+      "prompt": "Create an endless flight in Polynite through MCP. Turn the infinite world on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, hide the flat floor and keep a warm sky. Then shape it by name with the parameters listed in describe.infinite.params - oceans, rocky, water_reflect, boost, sparks - and add {op:'lens', on:true} for the sun. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#infinite-flight",
+      "tags": [
+        "Infinite world",
+        "MCP",
+        "Procedural",
+        "Water",
+        "Ship",
+        "Editable"
+      ],
+      "version": 2,
+      "kind": "showcase",
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "9f7326b196beed5da45bdc7000b0f16f47a57aa3826a1d3ef44fd2277de6a04c",
+      "media": {
+        "video": "https://polynite.io/atelier/media/infinite-flight-20261017-075557-portrait.mp4",
+        "poster": "https://polynite.io/atelier/media/infinite-flight-20261017-075557-portrait.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#infinite-flight",
+      "open": "https://polynite.io/examples/view.html?id=infinite-flight",
+      "scene": "https://polynite.io/examples/data/infinite-flight-v2.scene"
+    },
+    {
+      "id": "cozy-autumn-night",
+      "atelier": "cozy-autumn-night",
+      "title": "Cozy Autumn Night",
+      "category": "My creations",
+      "environment": "Moonlit",
+      "summary": "A stone cottage under a full moon, autumn maples and windows lighting up one by one to an original guitar score. A perfect loop.",
+      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon, ground mist, warm windows that switch on to a soft guitar score and a seamless loop. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#cozy-autumn-night",
+      "tags": [
+        "Cottage",
+        "Autumn",
+        "Moonlit",
+        "Music",
+        "Loop"
+      ],
+      "kind": "showcase",
+      "version": 1,
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "fa26ae2fd002f7493b9e4c92f2d9492e75935974fbf27b1d13416c15e8be1f60",
+      "media": {
+        "video": "https://polynite.io/atelier/media/cozy-autumn-night.mp4",
+        "poster": "https://polynite.io/atelier/media/cozy-autumn-night.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#cozy-autumn-night",
+      "open": "https://polynite.io/examples/view.html?id=cozy-autumn-night",
+      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v1.scene"
+    },
+    {
       "id": "refuge",
       "atelier": "refuge-20261014-142504-living",
       "title": "The mist keeper's refuge",

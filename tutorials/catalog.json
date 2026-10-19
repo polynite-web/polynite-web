@@ -29,7 +29,7 @@
       "preview": "https://polynite.io/docs/media/tutorials/r32/block-explosion-preview.mp4",
       "poster": "https://polynite.io/docs/media/tutorials/r32/block-explosion.jpg",
       "open": "https://polynite.io/tutorials/block-explosion/",
-      "sha256": "cb03e53e37c34cd18ff8d9fe1ce122a7001d8072b5325c2ad1c8ab5f87ea0d4c"
+      "sha256": "e637143ca8eb07f7d778fa6979a8e56848a57f9326320d8b41cb2851b5f31d5c"
     },
     {
       "id": "brick-wall",
@@ -385,6 +385,535 @@
       "poster": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.jpg",
       "open": "https://polynite.io/tutorials/autumn-lantern-cottage/",
       "sha256": "e52d68a4d27f201d21db539e63d74703d6fa2b2c9fa3b500bb90ed50943e22a9"
+    },
+    {
+      "id": "infinite-flight",
+      "control": {
+        "operation": "local",
+        "method": "scene.apply",
+        "params": {
+          "actions": [
+            {
+              "op": "infinite",
+              "on": true,
+              "seed": 7,
+              "follow": 3
+            }
+          ],
+          "label": "Infinite world"
+        },
+        "action_id": "replace-with-a-fresh-uuid"
+      },
+      "control_note": "These arguments turn the infinite world on in the current scene. Every other dial (biomes, water, boost, effects, sound) is a named parameter listed in describe.infinite.params.",
+      "settings_groups": [
+        {
+          "title": "Flight",
+          "items": [
+            {
+              "id": "ship_speed",
+              "label": "Ship speed",
+              "hint": "Metres per second. Zero parks the ship to inspect, save and compare.",
+              "range": "0–600 m/s",
+              "type": "slider"
+            }
+          ]
+        },
+        {
+          "title": "World",
+          "items": [
+            {
+              "id": "world_seed",
+              "label": "World seed",
+              "hint": "Another seed is another world; the same seed always gives the same land.",
+              "range": "0–9999",
+              "type": "slider"
+            },
+            {
+              "id": "lake_level",
+              "label": "Lake level",
+              "hint": "The level of the lakes and of the open sea.",
+              "range": "-100–300 m",
+              "type": "slider"
+            }
+          ]
+        }
+      ],
+      "experiments": [
+        {
+          "title": "More sea, more rock",
+          "text": "Ask for {op:'infinite', oceans:0.5, rocky:0.4}: the world changes around the ship without reloading."
+        },
+        {
+          "title": "Boost",
+          "text": "Ask for {op:'infinite', boost_now:true}: the central reactor lights up, the ship accelerates and the camera widens."
+        },
+        {
+          "title": "Look into the sun",
+          "text": "Ask for {op:'lens', on:true}: glare, star, ghosts and dazzle when the sun is in frame."
+        },
+        {
+          "title": "Every dial",
+          "text": "Ask your assistant to read describe.infinite.params: terrain, biomes, water, flight, effects and sound, each with its range."
+        }
+      ],
+      "viewer_note": "Requires the Polynite engine with the infinite world (web version 0308 or later, desktop current). The land is generated on your device; only the seed, the parameters, the ship and your edits are saved.",
+      "revision": 40,
+      "title": "An endless flight",
+      "level": "Intermediate",
+      "topic": "creation",
+      "description": "Turn on Polynite's infinite world through MCP: a ship flies over mountains, plains, seas and red-rock mesas that never end, and the scene saves exactly.",
+      "prompt": "Create an endless flight in Polynite.\n\n- Check scene.capabilities for the infinite operation.\n- Turn it on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, hide the flat floor (floor_enable 0) and keep the sky on with a warm sun.\n- Add a 20-second loop_orbit camera behind the ship (front_yaw 0) and record a short film.",
+      "scene": "https://polynite.io/docs/media/tutorials/r40/infinite-flight-fd3d2f2b9306.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r40/infinite-flight.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r40/infinite-flight-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r40/infinite-flight.jpg",
+      "open": "https://polynite.io/tutorials/infinite-flight/",
+      "sha256": "fd3d2f2b93063709983182536bb4c11f09ccae916d77a86b19d2dc32a6d7c4a9"
+    },
+    {
+      "id": "sdf-shapes-first",
+      "control": {
+        "operation": "local",
+        "method": "scene.shape",
+        "params": {
+          "request": {
+            "command": "upsert",
+            "shape": {
+              "id": "first",
+              "space": "screen",
+              "at": [
+                0.6,
+                0.38
+              ],
+              "size": 0.42,
+              "style": "hologram",
+              "show": "always",
+              "items": [
+                {
+                  "id": "ring",
+                  "circle": {
+                    "c": [
+                      0,
+                      0
+                    ],
+                    "r": 40
+                  },
+                  "w": 1.2
+                },
+                {
+                  "arc": {
+                    "c": [
+                      0,
+                      0
+                    ],
+                    "r": 32,
+                    "a0": 210,
+                    "a1": -30
+                  },
+                  "w": 3
+                },
+                {
+                  "line": {
+                    "a": "#ring.right",
+                    "b": [
+                      70,
+                      22
+                    ]
+                  },
+                  "w": 0.8
+                },
+                {
+                  "polyline": {
+                    "pts": [
+                      [
+                        70,
+                        22
+                      ],
+                      [
+                        132,
+                        22
+                      ]
+                    ]
+                  },
+                  "w": 0.8
+                },
+                {
+                  "text": {
+                    "s": "HELLO SDF",
+                    "at": [
+                      72,
+                      26
+                    ],
+                    "size": 10
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "action_id": "replace-with-a-fresh-uuid"
+      },
+      "control_note": "These arguments add one shape to the current scene with scene.shape upsert. Ask scene.shape help for the full grammar, then check the result with scene.capture.",
+      "experiments": [
+        {
+          "title": "Another look",
+          "text": "Ask for scene.shape patch {id:'first', set:[{path:'style', value:'neon'}]}: the same drawing in neon, darkpunk, vaporwave, blueprint or amber."
+        },
+        {
+          "title": "Reverse the pen",
+          "text": "Add dir:-1 to the arc: it is now traced from its other end."
+        },
+        {
+          "title": "Point at it",
+          "text": "Replace the line's start with '#ring.at(0.25)': references point to any earlier item by id."
+        }
+      ],
+      "viewer_note": "Requires the Polynite engine with SDF shapes (the scene.shape command). Shapes are saved inside the scene and replayed by its film; nothing is uploaded.",
+      "revision": 41,
+      "title": "Your first SDF drawing",
+      "level": "Beginner",
+      "topic": "shapes",
+      "description": "Draw a vector HUD over a small studio through MCP: a ring, a gauge arc, a leader line and a label, traced stroke by stroke.",
+      "prompt": "Create a small night studio in Polynite and draw a first SDF shape over it.\n\n- Build the studio on the standard floor: a dark cylinder pedestal, a glowing cyan sphere on it, an orange cube and a pink cone beside it; deep blue floor tiles, a light floor mirror and soft bloom.\n- Call scene.shape help once to read the grammar. Shapes live on a 100-unit canvas, y up; items are drawn and traced in list order.\n- Upsert a screen shape with id 'first', space 'screen', at [0.6, 0.38], size 0.42, style 'hologram': a circle (r 40) with id 'ring', an arc (r 32, a0 210, a1 -30, w 3), a line from '#ring.right' to [70, 22], a polyline to [132, 22] and the text 'HELLO SDF'.\n- Make it appear with in {fx:'trace', dur:2.6} and leave with out {fx:'trace', dur:1.2}; set show:'film' and add the film step {op:'shape', at:0.4, dur:10.2, id:'first'}.\n- Add a slow 11-second camera orbit, record a short film and check a frame with scene.capture.",
+      "scene": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-first-71f782d7b3e9.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-first.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-first-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-first.jpg",
+      "open": "https://polynite.io/tutorials/sdf-shapes-first/",
+      "sha256": "71f782d7b3e976bb2caaf076cac20d839f08e352b7baa3d5a2a5fd6c34adaa6d"
+    },
+    {
+      "id": "sdf-shapes-fills",
+      "control": {
+        "operation": "local",
+        "method": "scene.shape",
+        "params": {
+          "request": {
+            "command": "upsert",
+            "shape": {
+              "id": "fills",
+              "space": "screen",
+              "at": [
+                0.5,
+                0.5
+              ],
+              "size": 0.42,
+              "style": "neon",
+              "show": "always",
+              "items": [
+                {
+                  "box": {
+                    "c": [
+                      -40,
+                      0
+                    ],
+                    "size": [
+                      36,
+                      24
+                    ],
+                    "r": 5
+                  },
+                  "fill": true,
+                  "color": 2
+                },
+                {
+                  "ellipse": {
+                    "c": [
+                      -44,
+                      0
+                    ],
+                    "r": 8
+                  },
+                  "fill": true,
+                  "op": "subtract"
+                },
+                {
+                  "star": {
+                    "c": [
+                      10,
+                      0
+                    ],
+                    "r": [
+                      16,
+                      7
+                    ],
+                    "n": 5
+                  },
+                  "fill": true,
+                  "color": 3
+                },
+                {
+                  "path": "M 50 -12 C 30 6 38 20 50 10 C 62 20 70 6 50 -12 Z",
+                  "fill": true,
+                  "color": 4
+                }
+              ]
+            }
+          }
+        },
+        "action_id": "replace-with-a-fresh-uuid"
+      },
+      "control_note": "These arguments add one shape to the current scene with scene.shape upsert. Ask scene.shape help for the full grammar, then check the result with scene.capture.",
+      "experiments": [
+        {
+          "title": "Your own outline",
+          "text": "Any SVG path works: ask for {path:'M ... C ... Z', fill:true} - a logo, a leaf, a silhouette. Several sub-paths make holes."
+        },
+        {
+          "title": "Melt them",
+          "text": "Raise the smooth union's k from 6 to 15: the two discs flow into one blob."
+        },
+        {
+          "title": "Compare the cost",
+          "text": "Add tiles:'one' to the shape and read status.cost: one quad does the same picture with several times more work."
+        }
+      ],
+      "viewer_note": "Requires the Polynite engine with SDF shapes (the scene.shape command). Shapes are saved inside the scene and replayed by its film; nothing is uploaded.",
+      "revision": 41,
+      "title": "Filled shapes, curves and boolean ops",
+      "level": "Intermediate",
+      "topic": "shapes",
+      "description": "Rounded boxes, ellipses, stars, pies, SVG paths with holes, subtracted and smoothly merged shapes, dashes, repetition and a curved arrow.",
+      "prompt": "Create a gallery of filled SDF shapes in Polynite over a small night studio.\n\n- Reuse a studio on the standard floor (pedestal, glowing sphere, cube, cone) and read scene.shape help.\n- Upsert one screen shape, style 'neon', size 0.42: a rounded box (size [36,24], r 5, angle 12, fill and stroke, color 2), a green ellipse (color [0.4,1,0.55,1]), a filled star, a pie sector (r 16, a0 90, a1 -150) and a filled heart as an SVG path with two cubic curves.\n- Second row: a box with a circle cut out of it (op:'subtract'), two discs merged with op:'smooth' (k 6), a dashed circle (dash [4,3]), twelve ticks from one line with repeat {radial:12, c} and a curved arrow with a dot tail.\n- Trace it in over 3.2 s, fade it out, and show it with a film step {op:'shape', at:0.4, dur:11.4, id:'fills'} under a slow camera orbit.\n- Check status: cost.tiles and cost.vs_one_quad show how the shape was cut into quads that fit its ink.",
+      "scene": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-fills-f5cc6f6b9cf0.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-fills.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-fills-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-fills.jpg",
+      "open": "https://polynite.io/tutorials/sdf-shapes-fills/",
+      "sha256": "f5cc6f6b9cf0e7a64a4ad7ae4a50e6e822c86c1878a9ce05cb8abaac441529fd"
+    },
+    {
+      "id": "sdf-shapes-live",
+      "control": {
+        "operation": "local",
+        "method": "scene.shape",
+        "params": {
+          "request": {
+            "command": "values",
+            "id": "live",
+            "v": [
+              0.75,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "action_id": "replace-with-a-fresh-uuid"
+      },
+      "control_note": "These arguments change the live value v0 of the 'live' shape without resending the drawing.",
+      "experiments": [
+        {
+          "title": "Drive it yourself",
+          "text": "Remove the keys and send scene.shape values {id:'live', v:[0.2]}, then [0.9]: the gauge, readout and bars follow at once."
+        },
+        {
+          "title": "Count anything",
+          "text": "In any text, {expression:digits} prints a value: 'FUEL {v0*100:0}%', 'T+{t:1}s'."
+        },
+        {
+          "title": "Make it loop",
+          "text": "Add loop:10 to the shape: its keys repeat every ten seconds."
+        }
+      ],
+      "viewer_note": "Requires the Polynite engine with SDF shapes (the scene.shape command). Shapes are saved inside the scene and replayed by its film; nothing is uploaded.",
+      "revision": 41,
+      "title": "Animated gauges with live values",
+      "level": "Intermediate",
+      "topic": "shapes",
+      "description": "A gauge, a progress ring, a radar, a speed readout and bars driven by one animated value; an arc spun by time.",
+      "prompt": "Create a live HUD in Polynite whose numbers move.\n\n- Over a small night studio on the standard floor, upsert a screen shape 'live' (style 'hologram', size 0.42) with v:[0,0,0,0].\n- Animate v0 with keys: {t:1, v0:0}, {t:6.5, v0:0.92}, {t:9.5, v0:0.55}. Any number in the drawing can use it: '$v0', '$v0*0.8'.\n- Add widgets: gauge {value:'$v0', label:'POWER'}, progress {value:'$v0*0.8'}, radar {sweep:120, blips}, readout {label:'SPEED', value:'{v0*1200:0}', unit:'km/h'} and bars with values like '$v0' or '0.4+sin($t*3)*0.2'.\n- Spin an arc with time: a0 '90-$t*120', a1 '-30-$t*120', and print the clock with text 'T+{t:1}s'.\n- Show it with {op:'shape', at:0.4, dur:11.4, id:'live'} and record. Later, set values without redrawing with scene.shape values {id:'live', v:[0.3]}.",
+      "scene": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-live-cb31310e1a36.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-live.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-live-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-live.jpg",
+      "open": "https://polynite.io/tutorials/sdf-shapes-live/",
+      "sha256": "cb31310e1a360ee1aafa93c0ee1431480d77ef9cad8b31b86dafaf6250276a6e"
+    },
+    {
+      "id": "sdf-shapes-world",
+      "control": {
+        "operation": "local",
+        "method": "scene.shape",
+        "params": {
+          "request": {
+            "command": "upsert",
+            "shape": {
+              "id": "halo",
+              "space": "world",
+              "p": [
+                0,
+                0.34,
+                0
+              ],
+              "face": "up",
+              "size": 3.2,
+              "style": "hologram",
+              "show": "always",
+              "anim": {
+                "rotate": 0.04
+              },
+              "items": [
+                {
+                  "circle": {
+                    "c": [
+                      0,
+                      0
+                    ],
+                    "r": 48
+                  },
+                  "w": 0.6
+                },
+                {
+                  "line": {
+                    "a": [
+                      0,
+                      44
+                    ],
+                    "b": [
+                      0,
+                      48
+                    ]
+                  },
+                  "w": 0.5,
+                  "repeat": {
+                    "radial": 36,
+                    "c": [
+                      0,
+                      0
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "action_id": "replace-with-a-fresh-uuid"
+      },
+      "control_note": "These arguments add one shape to the current scene with scene.shape upsert. Ask scene.shape help for the full grammar, then check the result with scene.capture.",
+      "experiments": [
+        {
+          "title": "Stand it up",
+          "text": "Change the halo's face to 'camera_y': it turns to the camera but stays upright, like a sign."
+        },
+        {
+          "title": "Tilt it",
+          "text": "Use face:'fixed' with pitch and roll in degrees to set the ring at any angle."
+        },
+        {
+          "title": "Read the report",
+          "text": "scene.shape status gives each shape's screen_box and px_per_unit: an assistant can tell if a stroke is too thin or off the frame."
+        }
+      ],
+      "viewer_note": "Requires the Polynite engine with SDF shapes (the scene.shape command). Shapes are saved inside the scene and replayed by its film; nothing is uploaded.",
+      "revision": 41,
+      "title": "A HUD anchored in the world",
+      "level": "Advanced",
+      "topic": "shapes",
+      "description": "A ring of ticks lying flat around an object and a label that always faces the camera, with an arrow pointing down at it.",
+      "prompt": "Create a HUD that lives in the 3D scene in Polynite.\n\n- Build a small night studio on the standard floor with a glowing sphere at [0, 1.15, 0] on a pedestal.\n- Upsert a world shape 'halo' with space 'world', p [0, 0.34, 0], face 'up' (lying flat) and size 3.2 (metres for 100 units): a circle r 48, 36 ticks from one line with repeat {radial:36}, two arcs (one in color 2). Turn it slowly with anim {rotate:0.04, pulse:0.5}.\n- Upsert a world shape 'tag' at p [0, 2.45, 0], face 'camera', size 2.8: a bracket, the centred text 'CORE ORB' and an arrow down to the sphere with a dot head. Grow it in with keys {t:0, scale:0.8, opacity:0.5} to {t:1.2, scale:1, opacity:1} and a light flicker.\n- World shapes are depth-tested: the sphere hides the ring where it passes behind it. Show both with film steps and record under a camera orbit.\n- Anchors can follow scene objects too: to:'@model', or a point inside a drawing such as an arrow's 'to'.",
+      "scene": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-world-766f4c3433ca.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-world.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-world-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-world.jpg",
+      "open": "https://polynite.io/tutorials/sdf-shapes-world/",
+      "sha256": "766f4c3433ca41ac01aab131ae11574a4b943510a28bdfced564e6a82cd145fe"
+    },
+    {
+      "id": "sdf-shapes-styles",
+      "control": {
+        "operation": "local",
+        "method": "scene.shape",
+        "params": {
+          "request": {
+            "command": "upsert",
+            "shape": {
+              "id": "panel",
+              "space": "screen",
+              "at": [
+                0.5,
+                0.5
+              ],
+              "size": 0.35,
+              "style": "darkpunk",
+              "show": "always",
+              "v": [
+                0.7,
+                0,
+                0,
+                0
+              ],
+              "fx": {
+                "scanlines": 0.2,
+                "chroma": 2
+              },
+              "items": [
+                {
+                  "bracket": {
+                    "c": [
+                      0,
+                      0
+                    ],
+                    "size": [
+                      110,
+                      80
+                    ],
+                    "label": "STATUS"
+                  }
+                },
+                {
+                  "gauge": {
+                    "c": [
+                      -24,
+                      2
+                    ],
+                    "r": 17,
+                    "value": "$v0"
+                  }
+                },
+                {
+                  "radar": {
+                    "c": [
+                      26,
+                      2
+                    ],
+                    "r": 17
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "action_id": "replace-with-a-fresh-uuid"
+      },
+      "control_note": "These arguments add one shape to the current scene with scene.shape upsert. Ask scene.shape help for the full grammar, then check the result with scene.capture.",
+      "experiments": [
+        {
+          "title": "Your own colours",
+          "text": "Give a shape palette:[[r,g,b,a]...] to recolour its accents, or color:[r,g,b,a] on any item."
+        },
+        {
+          "title": "Mix the effects",
+          "text": "fx:{gradient:{axis:'radial', color:[1,0.8,0.3,1]}, band:1} adds a radial gradient and a strong scan band to any style."
+        },
+        {
+          "title": "Glitch on cue",
+          "text": "anim:{glitch:0.8, blink:2} makes the whole panel jump now and then and blink twice a second."
+        }
+      ],
+      "viewer_note": "Requires the Polynite engine with SDF shapes (the scene.shape command). Shapes are saved inside the scene and replayed by its film; nothing is uploaded.",
+      "revision": 41,
+      "title": "Widgets and six styles",
+      "level": "Advanced",
+      "topic": "shapes",
+      "description": "The same panel - bracket, gauge, radar and bars - in hologram, neon, darkpunk, vaporwave, blueprint and amber, with their scanlines, glitch, gradient and CRT looks.",
+      "prompt": "Compare Polynite's six SDF shape styles with one widget panel.\n\n- Over a small night studio, upsert six screen shapes 'panel-<style>' laid out in a 3 x 2 grid (at [0.2,0.3], [0.5,0.3], [0.8,0.3], [0.2,0.72], [0.5,0.72], [0.8,0.72], size 0.3).\n- Each panel: a bracket (size [110,80]) labelled with its style, a gauge driven by '$v0', a small radar and six bars. Animate v0 from 0.1 to 0.9 with keys.\n- Give each panel a style: hologram (raster and scan band), neon (glow and fringe), darkpunk (glitch, colour split, raster), vaporwave (pink to cyan gradient), blueprint (clean lines) and amber (CRT).\n- Stagger their film steps by a quarter second so they trace in one after another, then record.\n- Override any effect with fx: {scanlines, band, chroma, jitter, gradient:{axis, color}}.",
+      "scene": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-styles-511fee7c0a26.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-styles.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-styles-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r41/sdf-shapes-styles.jpg",
+      "open": "https://polynite.io/tutorials/sdf-shapes-styles/",
+      "sha256": "511fee7c0a26857f256166217802d4ac43c5dae55ecee28f433165c81bc5b9c3"
     }
   ]
 }

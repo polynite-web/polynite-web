@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0312";window.__pnEngineBase="engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
+<head><script id="pn-build-version">window.__pnBuildVersion="v0267";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0312";window.__pnEngineBase="engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/";</script>
 <script src="scene-file-drop.js?v=1"></script>
 <meta charset="utf-8">
 <script src="startup_profile.js"></script>
@@ -72,6 +72,8 @@
 </script>
 <script src="backend.js"></script>
 <script src="version.js"></script>
+<script src="engine_cache.js"></script>
+<script src="engine_loader.js"></script>
 <style>
 html, body {
   margin: 0;
@@ -720,6 +722,7 @@ body.scene-entry-ready #curtain {
   <div class="loader-wordmark" aria-hidden="true">Polynite</div>
   <div class="loader-state" id="loaderState">Scene ready</div>
   <div id="loaderText" role="status" aria-live="polite">Loading engine...</div>
+  <div id="loaderEngineInfo" style="font-size:11px;opacity:.65;margin-top:6px"></div>
   <div class="loader-meters" aria-hidden="true">
     <div class="loader-meter" id="loaderDownload">
       <div class="loader-meter-head"><span>Model download</span><span id="loaderDownloadValue">0%</span></div>
@@ -944,15 +947,14 @@ body.scene-entry-ready #curtain {
     if (window.__spinVerFrozen) return window.__spinVerFrozen;
     var v;
     try {
-      if (typeof window.getCurrentVersion === "function") v = window.__pnBuildVersion || window.getCurrentVersion();
+      if (typeof window.getCurrentVersion === "function") v = window.getCurrentVersion();
       /* No localStorage fallback: that key is per ORIGIN, so a sibling app on
          the same host would hand us ITS version. ?_v or "dev" - the label is
          corrected by spinviewSetDisplayVersion once version.txt lands. */
       if (!v) v = new URL(location.href).searchParams.get("_v") || "dev";
     } catch (e) { v = "dev"; }
     if (!v) v = "dev";
-    window.__spinVerFrozen = v;
-    try { console.log("[gpu-bootstrap] version frozen for this page: " + v); } catch (e2) {}
+    /* Freeze only when the engine starts, after version.txt has answered. */
     return v;
   }
 
@@ -964,7 +966,11 @@ body.scene-entry-ready #curtain {
   function cacheBust(path) {
     var version = getCurrentVersion();
     var sep = path.indexOf("?") >= 0 ? "&" : "?";
-    return path + sep + "_v=" + encodeURIComponent(version) + "&_t=" + bootToken();
+        var dev = window.__pnDeployTier === "dev" ||
+      (!window.__pnDeployTier && typeof window.spinviewIsLocalDevelopmentHost === "function" && window.spinviewIsLocalDevelopmentHost());
+    if(window.__pnEngineBase && /^(app\.(js|wasm))$/.test(path))
+      return window.__pnEngineBase + path + (dev ? "?_t=" + bootToken() : "");
+    return path + sep + "_v=" + encodeURIComponent(version) + (dev ? "&_t=" + bootToken() : "");
   }
 
   /* Label only: version.js pushes the real version.txt value here once it
@@ -1170,6 +1176,9 @@ body.scene-entry-ready #curtain {
 
   window.vmeshLoaderPhase = function (phase, progress, stage, sub) {
     if (!loader) return;
+    var engineInfo = document.getElementById("loaderEngineInfo");
+    if(engineInfo) engineInfo.hidden = true;
+    if(window.__pnStartup) window.__pnStartup.mark("scene_stage_" + stage);
     /* Older cached builds only send phase + progress. Keep their loader
        coherent until the matching WASM/JS pair replaces them. */
     if (typeof stage !== "number") stage = phase === 1 ? 1 : 2;
@@ -1216,8 +1225,23 @@ body.scene-entry-ready #curtain {
 
   /* Compatibility with cached engines: new builds report the first committed
      frame and content readiness separately. Never put a gesture over the canvas. */
+  function loaderFailed(reason) {
+    if(window.__spinNoticeShown) return;
+    engineAborted = true;
+    if(window.vmeshRuntimeInitialized && Module.pauseMainLoop) Module.pauseMainLoop();
+    gpuNotice(FR ? "Le chargement s'est interrompu. Rechargez la page pour reessayer." :
+      "Loading stopped. Reload the page to try again.", reason,
+      FR ? "Chargement interrompu" : "Loading interrupted");
+  }
+
   function hideLoader(fallback) {
-    if (engineAborted || fallback) return;
+    if (engineAborted) return;
+    // Silence is not an engine exception: MCP, assets and GPU initialization
+    // can still complete. Never pause the main loop or fabricate readiness.
+    if (fallback) {
+      loaderText.textContent = FR ? "Preparation en cours… Le chargement continue." : "Still preparing… Loading continues.";
+      return;
+    }
     loaderHidden = true;
     loaderHideRequested = true;
     if (!window.vmeshCommittedFrames) {
@@ -1408,15 +1432,15 @@ body.scene-entry-ready #curtain {
     });
   }
 
-  /* Progress, not repeated calls, feeds this watchdog. A phase stuck on the
-     same value is not activity; after 25 s the usable viewer is preferable to
-     a curtain which can never explain why it is still there. */
+  /* A quiet startup gets an informational message, never a fatal engine stop.
+     Real exceptions still use loaderFailed; subsequent progress can recover. */
   (function loaderWatchdog() {
     setTimeout(function () {
       if (engineAborted || loaderHidden || loaderHideRequested) return;
       var now = performance.now ? performance.now() : Date.now();
+      if(window.pnEngineLoading) { loaderWatchdog(); return; }
       if (now - loaderLastSignal > 25000) hideLoader(true);
-      else loaderWatchdog();
+      loaderWatchdog();
     }, 5000);
   })();
 
@@ -1500,6 +1524,10 @@ body.scene-entry-ready #curtain {
      instead - same file, no fork. blobcone_fast ships both that way. */
 
   function loadEngine(base) {
+    window.__spinVerFrozen = getCurrentVersion();
+    console.info("[gpu-bootstrap] version frozen for this page: " + window.__spinVerFrozen);
+    if (loaderText) loaderText.textContent = FR ? "Chargement du moteur" : "Loading engine";
+    if(window.pnPrefetchWasm) window.pnPrefetchWasm(cacheBust(base + ".wasm"));
     if(window.__pnStartup) window.__pnStartup.mark("engine_script_requested");
     var sc = document.createElement("script");
     sc.src = cacheBust(base + ".js");
@@ -1523,6 +1551,7 @@ body.scene-entry-ready #curtain {
   }
 
   function gpuNotice(reason, detail, title) {
+    if(window.pnCancelWasm) window.pnCancelWasm();
     try { if (loader) loader.style.display = "none"; } catch (eL) {}
     /* The intro STAYS. A visitor whose browser cannot run the engine should
        still be told what this page is, and the notice sits over it. */
@@ -1697,6 +1726,16 @@ body.scene-entry-ready #curtain {
       if (devMode && msg) console.info("[status]", msg);
     },
     monitorRunDependencies: function () {},
+    instantiateWasm: function (imports, receive) {
+      if(engineAborted) return {};
+      window.pnLoadWasm(cacheBust("app.wasm"), imports, receive, function (phase, detail) {
+        if (phase && !window.vmeshRuntimeInitialized && loaderText) loaderText.textContent = phase;
+        var info = document.getElementById("loaderEngineInfo");
+        if (info && detail != null && devMode) info.textContent = (FR ? "Moteur · " : "Engine · ") + detail;
+        loaderLastSignal = performance.now ? performance.now() : Date.now();
+      }).catch(function (error) { Module.onAbort(error.message || String(error)); loaderFailed(error.message || String(error)); });
+      return {};
+    },
     onAbort: function (reason) {
       engineAborted = true;
       console.error("[abort]", reason);
@@ -1704,7 +1743,13 @@ body.scene-entry-ready #curtain {
          graphics initialization. Show the same clean panel, keyed on the last
          panic message - the one the abort path throws away. */
       var why = window.__spinLastPanic || String(reason || "");
-      if(window.__pnStartup)window.__pnStartup.fail(why);
+      window.__pnEngineFailure = why;
+      window.vmeshRuntimeInitialized = false;
+      window.dispatchEvent(new CustomEvent("polynite:engine-failed", {detail: {message: why}}));
+      if(window.__pnStartup){
+        if(typeof window.__pnStartup.fail === "function")window.__pnStartup.fail(why);
+        else window.__pnStartup.mark("engine_failed");
+      }
       if (typeof gpuNotice === "function" &&
           !document.querySelector(".gpu-notice") &&
           /wgpu|WGPU|webgpu|gl_|GLES|WebGL|device|adapter|context|surface|swapchain/i.test(why)) {
@@ -1733,7 +1778,9 @@ body.scene-entry-ready #curtain {
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
        * (vmeshHideLoader, called by the engine). */
-      if (loaderText) loaderText.textContent = "Preparing... " + shownVersion();
+      if (loaderText) loaderText.textContent = FR ? "Preparation de l affichage" : "Preparing display";
+      var info = document.getElementById("loaderEngineInfo");
+      if(info) info.hidden = true;
       console.info("[runtime] Ready.");
     }
   };
@@ -1785,8 +1832,12 @@ body.scene-entry-ready #curtain {
 
   console.info("[gpu-bootstrap] build backend:", BUILD_BACKEND,
     window.__spinBuildBackend ? "(backend.js)" : "(backend.js absent -> default)");
-  if (IS_GL) glPreflight(function () { loadEngine("app"); });
-  else       gpuPreflight(function () { loadEngine("app"); });
+  function startEngine() {
+    if (window.pnVersionReloading) return;
+    if (IS_GL) glPreflight(function () { loadEngine("app"); });
+    else       gpuPreflight(function () { loadEngine("app"); });
+  }
+  Promise.resolve(window.pnVersionReady).then(startEngine, startEngine);
   setTimeout(function () {
     console.info("[gpu-bootstrap] 5s state",
       "runtimeInitialized=", window.vmeshRuntimeInitialized === true,

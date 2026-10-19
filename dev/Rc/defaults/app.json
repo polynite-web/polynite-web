@@ -5,14 +5,23 @@
   "fullscreen_was_maximized": false,
   "h": 1032,
   "mode": 3,
-  "normal_h": 906,
-  "normal_w": 1567,
-  "normal_x": 131,
-  "normal_y": 91,
-  "placement_version": 2,
+  "monitor": "\\\\.\\DISPLAY2",
+  "normal_h": 582,
+  "normal_screen_h": 582,
+  "normal_screen_w": 1303,
+  "normal_screen_x": 184,
+  "normal_screen_y": 39,
+  "normal_w": 1303,
+  "normal_x": 184,
+  "normal_y": 39,
+  "placement_version": 3,
   "w": 1920,
+  "work_h": 1032,
+  "work_w": 1920,
+  "work_x": 0,
+  "work_y": 0,
   "x": 0,
-  "y": 40
+  "y": 0
 }
 
 }
