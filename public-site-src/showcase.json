@@ -198,6 +198,39 @@
         "Motion",
         "Procedural"
       ]
+    },
+    {
+      "recipe": "terrain-linked-path",
+      "category": "Living landscapes",
+      "environment": "Garden",
+      "tags": [
+        "Terrain",
+        "Adaptive",
+        "Path",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "terrain-linked-bridge",
+      "category": "Living landscapes",
+      "environment": "Garden",
+      "tags": [
+        "Terrain",
+        "Adaptive",
+        "Bridge",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "terrain-linked-garden",
+      "category": "Japanese garden",
+      "environment": "Garden",
+      "tags": [
+        "Terrain",
+        "Adaptive",
+        "Bridge",
+        "Editable"
+      ]
     }
   ]
 }

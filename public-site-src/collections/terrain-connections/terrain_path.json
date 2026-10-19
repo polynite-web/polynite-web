@@ -1,0 +1,3574 @@
+{
+  "module": "assembly",
+  "style": "japanese",
+  "context": [
+    {
+      "name": "left",
+      "object": "pad_a",
+      "point": "top"
+    },
+    {
+      "name": "right",
+      "object": "pad_b",
+      "point": "top"
+    },
+    {
+      "name": "ground",
+      "terrain": "infinite"
+    }
+  ],
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "width",
+        "min": 0.4,
+        "max": 2.4,
+        "value": 0.8,
+        "description": "Usable deck width, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "segments",
+        "min": 8,
+        "max": 20,
+        "value": 16,
+        "description": "Stable segments; more samples on uneven ground",
+        "integer": true,
+        "group": "shape"
+      },
+      {
+        "name": "thickness",
+        "min": 0.04,
+        "max": 0.25,
+        "value": 0.09,
+        "description": "Deck thickness, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "clearance",
+        "min": 0.01,
+        "max": 0.3,
+        "value": 0.04,
+        "description": "Minimum sampled ground clearance below deck, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "bend",
+        "min": -2,
+        "max": 2,
+        "value": 0,
+        "description": "Horizontal bend at the midpoint, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "arch",
+        "min": 0,
+        "max": 2,
+        "value": 0,
+        "description": "Additional arch above the shore line, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "rail_height",
+        "min": 0,
+        "max": 1.5,
+        "value": 0,
+        "description": "Zero removes rails and posts",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "post_width",
+        "min": 0.03,
+        "max": 0.2,
+        "value": 0.065,
+        "description": "Rail and post width, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "max_grade",
+        "min": 0.1,
+        "max": 2,
+        "value": 1,
+        "description": "Maximum end-to-end rise divided by horizontal span",
+        "integer": false,
+        "group": "shape"
+      }
+    ],
+    "let": [
+      {
+        "name": "dx",
+        "value": [
+          "sub",
+          "@right.x",
+          "@left.x"
+        ]
+      },
+      {
+        "name": "dz",
+        "value": [
+          "sub",
+          "@right.z",
+          "@left.z"
+        ]
+      },
+      {
+        "name": "span",
+        "value": [
+          "sqrt",
+          [
+            "add",
+            [
+              "mul",
+              "%dx",
+              "%dx"
+            ],
+            [
+              "mul",
+              "%dz",
+              "%dz"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "safe_span",
+        "value": [
+          "max",
+          0.001,
+          "%span"
+        ]
+      },
+      {
+        "name": "nx",
+        "value": [
+          "div",
+          "%dz",
+          "%safe_span"
+        ]
+      },
+      {
+        "name": "nz",
+        "value": [
+          "div",
+          [
+            "neg",
+            "%dx"
+          ],
+          "%safe_span"
+        ]
+      },
+      {
+        "name": "at",
+        "value": 0
+      },
+      {
+        "name": "abow",
+        "value": [
+          "mul",
+          "$bend",
+          [
+            "sin",
+            [
+              "mul",
+              3.141592653589793,
+              "%at"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "ax",
+        "value": [
+          "add",
+          [
+            "mix",
+            "@left.x",
+            "@right.x",
+            "%at"
+          ],
+          [
+            "mul",
+            "%nx",
+            "%abow"
+          ]
+        ]
+      },
+      {
+        "name": "az",
+        "value": [
+          "add",
+          [
+            "mix",
+            "@left.z",
+            "@right.z",
+            "%at"
+          ],
+          [
+            "mul",
+            "%nz",
+            "%abow"
+          ]
+        ]
+      },
+      {
+        "name": "adir",
+        "value": [
+          "atan2",
+          [
+            "add",
+            "%dx",
+            [
+              "mul",
+              "%nx",
+              [
+                "mul",
+                "$bend",
+                [
+                  "mul",
+                  3.141592653589793,
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%at"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "add",
+            "%dz",
+            [
+              "mul",
+              "%nz",
+              [
+                "mul",
+                "$bend",
+                [
+                  "mul",
+                  3.141592653589793,
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%at"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "anx",
+        "value": [
+          "cos",
+          "%adir"
+        ]
+      },
+      {
+        "name": "anz",
+        "value": [
+          "neg",
+          [
+            "sin",
+            "%adir"
+          ]
+        ]
+      },
+      {
+        "name": "aedge",
+        "value": [
+          "mul",
+          "$width",
+          0.5
+        ]
+      },
+      {
+        "name": "ag",
+        "value": [
+          "max",
+          [
+            "height",
+            "@ground",
+            "%ax",
+            "%az"
+          ],
+          [
+            "max",
+            [
+              "height",
+              "@ground",
+              [
+                "add",
+                "%ax",
+                [
+                  "mul",
+                  "%anx",
+                  "%aedge"
+                ]
+              ],
+              [
+                "add",
+                "%az",
+                [
+                  "mul",
+                  "%anz",
+                  "%aedge"
+                ]
+              ]
+            ],
+            [
+              "height",
+              "@ground",
+              [
+                "sub",
+                "%ax",
+                [
+                  "mul",
+                  "%anx",
+                  "%aedge"
+                ]
+              ],
+              [
+                "sub",
+                "%az",
+                [
+                  "mul",
+                  "%anz",
+                  "%aedge"
+                ]
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "abase",
+        "value": [
+          "add",
+          "%ag",
+          [
+            "add",
+            "$thickness",
+            "$clearance"
+          ]
+        ]
+      },
+      {
+        "name": "bt",
+        "value": 1
+      },
+      {
+        "name": "bbow",
+        "value": [
+          "mul",
+          "$bend",
+          [
+            "sin",
+            [
+              "mul",
+              3.141592653589793,
+              "%bt"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "bx",
+        "value": [
+          "add",
+          [
+            "mix",
+            "@left.x",
+            "@right.x",
+            "%bt"
+          ],
+          [
+            "mul",
+            "%nx",
+            "%bbow"
+          ]
+        ]
+      },
+      {
+        "name": "bz",
+        "value": [
+          "add",
+          [
+            "mix",
+            "@left.z",
+            "@right.z",
+            "%bt"
+          ],
+          [
+            "mul",
+            "%nz",
+            "%bbow"
+          ]
+        ]
+      },
+      {
+        "name": "bdir",
+        "value": [
+          "atan2",
+          [
+            "add",
+            "%dx",
+            [
+              "mul",
+              "%nx",
+              [
+                "mul",
+                "$bend",
+                [
+                  "mul",
+                  3.141592653589793,
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%bt"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "add",
+            "%dz",
+            [
+              "mul",
+              "%nz",
+              [
+                "mul",
+                "$bend",
+                [
+                  "mul",
+                  3.141592653589793,
+                  [
+                    "cos",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%bt"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "bnx",
+        "value": [
+          "cos",
+          "%bdir"
+        ]
+      },
+      {
+        "name": "bnz",
+        "value": [
+          "neg",
+          [
+            "sin",
+            "%bdir"
+          ]
+        ]
+      },
+      {
+        "name": "bedge",
+        "value": [
+          "mul",
+          "$width",
+          0.5
+        ]
+      },
+      {
+        "name": "bg",
+        "value": [
+          "max",
+          [
+            "height",
+            "@ground",
+            "%bx",
+            "%bz"
+          ],
+          [
+            "max",
+            [
+              "height",
+              "@ground",
+              [
+                "add",
+                "%bx",
+                [
+                  "mul",
+                  "%bnx",
+                  "%bedge"
+                ]
+              ],
+              [
+                "add",
+                "%bz",
+                [
+                  "mul",
+                  "%bnz",
+                  "%bedge"
+                ]
+              ]
+            ],
+            [
+              "height",
+              "@ground",
+              [
+                "sub",
+                "%bx",
+                [
+                  "mul",
+                  "%bnx",
+                  "%bedge"
+                ]
+              ],
+              [
+                "sub",
+                "%bz",
+                [
+                  "mul",
+                  "%bnz",
+                  "%bedge"
+                ]
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "bbase",
+        "value": [
+          "add",
+          "%bg",
+          [
+            "add",
+            "$thickness",
+            "$clearance"
+          ]
+        ]
+      },
+      {
+        "name": "lift_a",
+        "value": [
+          "sub",
+          "@left.y",
+          "%abase"
+        ]
+      },
+      {
+        "name": "lift_b",
+        "value": [
+          "sub",
+          "@right.y",
+          "%bbase"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "value": "%span",
+        "min": 0.5,
+        "max": 20,
+        "message": "Connection span must be 0.5..20m; move its end supports apart"
+      },
+      {
+        "value": "%lift_a",
+        "min": -0.002,
+        "max": 20,
+        "message": "Connection end a is buried: raise its support or reduce width/thickness/clearance"
+      },
+      {
+        "value": "%lift_b",
+        "min": -0.002,
+        "max": 20,
+        "message": "Connection end b is buried: raise its support or reduce width/thickness/clearance"
+      },
+      {
+        "value": [
+          "div",
+          [
+            "abs",
+            [
+              "sub",
+              "@right.y",
+              "@left.y"
+            ]
+          ],
+          "%safe_span"
+        ],
+        "min": 0,
+        "max": 2,
+        "message": "Connection end slope exceeds the supported range"
+      },
+      {
+        "value": [
+          "sub",
+          "$max_grade",
+          [
+            "div",
+            [
+              "abs",
+              [
+                "sub",
+                "@right.y",
+                "@left.y"
+              ]
+            ],
+            "%safe_span"
+          ]
+        ],
+        "min": 0,
+        "max": 2,
+        "message": "Connection exceeds max_grade; lengthen the approach or lower its support"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "deck",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "stone",
+        "repeat": {
+          "count": "$segments"
+        },
+        "let": [
+          {
+            "name": "st",
+            "value": [
+              "div",
+              "@i",
+              "$segments"
+            ]
+          },
+          {
+            "name": "sbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%st"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sx",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%st"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%sbow"
+              ]
+            ]
+          },
+          {
+            "name": "sz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%st"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%sbow"
+              ]
+            ]
+          },
+          {
+            "name": "sdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%st"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%st"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "snx",
+            "value": [
+              "cos",
+              "%sdir"
+            ]
+          },
+          {
+            "name": "snz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%sdir"
+              ]
+            ]
+          },
+          {
+            "name": "sedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "sg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%sx",
+                "%sz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%sx",
+                    [
+                      "mul",
+                      "%snx",
+                      "%sedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%sz",
+                    [
+                      "mul",
+                      "%snz",
+                      "%sedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%sx",
+                    [
+                      "mul",
+                      "%snx",
+                      "%sedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%sz",
+                    [
+                      "mul",
+                      "%snz",
+                      "%sedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sbase",
+            "value": [
+              "add",
+              "%sg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "slift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%st"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%st",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sy",
+            "value": [
+              "add",
+              "%sbase",
+              [
+                "add",
+                "%slift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%st"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "et",
+            "value": [
+              "div",
+              [
+                "add",
+                "@i",
+                1
+              ],
+              "$segments"
+            ]
+          },
+          {
+            "name": "ebow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%et"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ex",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%et"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%ebow"
+              ]
+            ]
+          },
+          {
+            "name": "ez",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%et"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%ebow"
+              ]
+            ]
+          },
+          {
+            "name": "edir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%et"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%et"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "enx",
+            "value": [
+              "cos",
+              "%edir"
+            ]
+          },
+          {
+            "name": "enz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%edir"
+              ]
+            ]
+          },
+          {
+            "name": "eedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "eg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%ex",
+                "%ez"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%ex",
+                    [
+                      "mul",
+                      "%enx",
+                      "%eedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%ez",
+                    [
+                      "mul",
+                      "%enz",
+                      "%eedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%ex",
+                    [
+                      "mul",
+                      "%enx",
+                      "%eedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%ez",
+                    [
+                      "mul",
+                      "%enz",
+                      "%eedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ebase",
+            "value": [
+              "add",
+              "%eg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "elift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%et"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%et",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ey",
+            "value": [
+              "add",
+              "%ebase",
+              [
+                "add",
+                "%elift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%et"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "seg_dx",
+            "value": [
+              "sub",
+              "%ex",
+              "%sx"
+            ]
+          },
+          {
+            "name": "seg_dz",
+            "value": [
+              "sub",
+              "%ez",
+              "%sz"
+            ]
+          },
+          {
+            "name": "len",
+            "value": [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  "%seg_dx",
+                  "%seg_dx"
+                ],
+                [
+                  "mul",
+                  "%seg_dz",
+                  "%seg_dz"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "dy",
+            "value": [
+              "sub",
+              "%ey",
+              "%sy"
+            ]
+          },
+          {
+            "name": "heading",
+            "value": [
+              "atan2",
+              "%seg_dx",
+              "%seg_dz"
+            ]
+          }
+        ],
+        "p": [
+          [
+            "mul",
+            [
+              "add",
+              "%sx",
+              "%ex"
+            ],
+            0.5
+          ],
+          [
+            "sub",
+            [
+              "mul",
+              [
+                "add",
+                "%sy",
+                "%ey"
+              ],
+              0.5
+            ],
+            [
+              "mul",
+              "$thickness",
+              0.5
+            ]
+          ],
+          [
+            "mul",
+            [
+              "add",
+              "%sz",
+              "%ez"
+            ],
+            0.5
+          ]
+        ],
+        "s": [
+          "$width",
+          "$thickness",
+          [
+            "add",
+            [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  "%len",
+                  "%len"
+                ],
+                [
+                  "mul",
+                  "%dy",
+                  "%dy"
+                ]
+              ]
+            ],
+            0.008
+          ]
+        ],
+        "r": [
+          [
+            "mul",
+            -57.29577951308232,
+            [
+              "atan2",
+              "%dy",
+              "%len"
+            ]
+          ],
+          [
+            "mul",
+            57.29577951308232,
+            "%heading"
+          ],
+          0
+        ],
+        "orient": "radial",
+        "bevel": 0.008
+      },
+      {
+        "id": "rail",
+        "op": "beam",
+        "role": "wood",
+        "repeat": {
+          "count": "$segments",
+          "rows": 2
+        },
+        "when": [
+          "gte",
+          "$rail_height",
+          0.01
+        ],
+        "let": [
+          {
+            "name": "st",
+            "value": [
+              "div",
+              "@i",
+              "$segments"
+            ]
+          },
+          {
+            "name": "sbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%st"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sx",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%st"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%sbow"
+              ]
+            ]
+          },
+          {
+            "name": "sz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%st"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%sbow"
+              ]
+            ]
+          },
+          {
+            "name": "sdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%st"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%st"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "snx",
+            "value": [
+              "cos",
+              "%sdir"
+            ]
+          },
+          {
+            "name": "snz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%sdir"
+              ]
+            ]
+          },
+          {
+            "name": "sedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "sg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%sx",
+                "%sz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%sx",
+                    [
+                      "mul",
+                      "%snx",
+                      "%sedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%sz",
+                    [
+                      "mul",
+                      "%snz",
+                      "%sedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%sx",
+                    [
+                      "mul",
+                      "%snx",
+                      "%sedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%sz",
+                    [
+                      "mul",
+                      "%snz",
+                      "%sedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sbase",
+            "value": [
+              "add",
+              "%sg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "slift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%st"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%st",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "sy",
+            "value": [
+              "add",
+              "%sbase",
+              [
+                "add",
+                "%slift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%st"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "et",
+            "value": [
+              "div",
+              [
+                "add",
+                "@i",
+                1
+              ],
+              "$segments"
+            ]
+          },
+          {
+            "name": "ebow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%et"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ex",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%et"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%ebow"
+              ]
+            ]
+          },
+          {
+            "name": "ez",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%et"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%ebow"
+              ]
+            ]
+          },
+          {
+            "name": "edir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%et"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%et"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "enx",
+            "value": [
+              "cos",
+              "%edir"
+            ]
+          },
+          {
+            "name": "enz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%edir"
+              ]
+            ]
+          },
+          {
+            "name": "eedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "eg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%ex",
+                "%ez"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%ex",
+                    [
+                      "mul",
+                      "%enx",
+                      "%eedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%ez",
+                    [
+                      "mul",
+                      "%enz",
+                      "%eedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%ex",
+                    [
+                      "mul",
+                      "%enx",
+                      "%eedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%ez",
+                    [
+                      "mul",
+                      "%enz",
+                      "%eedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ebase",
+            "value": [
+              "add",
+              "%eg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "elift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%et"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%et",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ey",
+            "value": [
+              "add",
+              "%ebase",
+              [
+                "add",
+                "%elift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%et"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "seg_dx",
+            "value": [
+              "sub",
+              "%ex",
+              "%sx"
+            ]
+          },
+          {
+            "name": "seg_dz",
+            "value": [
+              "sub",
+              "%ez",
+              "%sz"
+            ]
+          },
+          {
+            "name": "len",
+            "value": [
+              "sqrt",
+              [
+                "add",
+                [
+                  "mul",
+                  "%seg_dx",
+                  "%seg_dx"
+                ],
+                [
+                  "mul",
+                  "%seg_dz",
+                  "%seg_dz"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "dy",
+            "value": [
+              "sub",
+              "%ey",
+              "%sy"
+            ]
+          },
+          {
+            "name": "heading",
+            "value": [
+              "atan2",
+              "%seg_dx",
+              "%seg_dz"
+            ]
+          }
+        ],
+        "a": [
+          [
+            "add",
+            "%sx",
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%snx"
+            ]
+          ],
+          [
+            "add",
+            "%sy",
+            "$rail_height"
+          ],
+          [
+            "add",
+            "%sz",
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%snz"
+            ]
+          ]
+        ],
+        "b": [
+          [
+            "add",
+            "%ex",
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%enx"
+            ]
+          ],
+          [
+            "add",
+            "%ey",
+            "$rail_height"
+          ],
+          [
+            "add",
+            "%ez",
+            [
+              "mul",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ],
+              "%enz"
+            ]
+          ]
+        ],
+        "width": "$post_width"
+      },
+      {
+        "id": "post",
+        "op": "beam",
+        "role": "wood",
+        "repeat": {
+          "count": [
+            "add",
+            "$segments",
+            1
+          ],
+          "rows": 2
+        },
+        "let": [
+          {
+            "name": "pt",
+            "value": "@u"
+          },
+          {
+            "name": "pbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%pt"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "px",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%pt"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%pbow"
+              ]
+            ]
+          },
+          {
+            "name": "pz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%pt"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%pbow"
+              ]
+            ]
+          },
+          {
+            "name": "pdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%pt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%pt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "pnx",
+            "value": [
+              "cos",
+              "%pdir"
+            ]
+          },
+          {
+            "name": "pnz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%pdir"
+              ]
+            ]
+          },
+          {
+            "name": "pedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "pg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%px",
+                "%pz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%px",
+                    [
+                      "mul",
+                      "%pnx",
+                      "%pedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%pz",
+                    [
+                      "mul",
+                      "%pnz",
+                      "%pedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%px",
+                    [
+                      "mul",
+                      "%pnx",
+                      "%pedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%pz",
+                    [
+                      "mul",
+                      "%pnz",
+                      "%pedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "pbase",
+            "value": [
+              "add",
+              "%pg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "plift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%pt"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%pt",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "py",
+            "value": [
+              "add",
+              "%pbase",
+              [
+                "add",
+                "%plift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%pt"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "when": [
+          "gte",
+          "$rail_height",
+          0.01
+        ],
+        "a": [
+          [
+            "add",
+            "%px",
+            [
+              "mul",
+              "%pnx",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ]
+            ]
+          ],
+          "%py",
+          [
+            "add",
+            "%pz",
+            [
+              "mul",
+              "%pnz",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ]
+            ]
+          ]
+        ],
+        "b": [
+          [
+            "add",
+            "%px",
+            [
+              "mul",
+              "%pnx",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ]
+            ]
+          ],
+          [
+            "add",
+            "%py",
+            "$rail_height"
+          ],
+          [
+            "add",
+            "%pz",
+            [
+              "mul",
+              "%pnz",
+              [
+                "mul",
+                [
+                  "sub",
+                  [
+                    "mul",
+                    "@j",
+                    2
+                  ],
+                  1
+                ],
+                [
+                  "mul",
+                  "$width",
+                  0.5
+                ]
+              ]
+            ]
+          ]
+        ],
+        "width": "$post_width"
+      },
+      {
+        "id": "foot",
+        "op": "beam",
+        "role": "stone",
+        "repeat": {
+          "count": "$segments",
+          "rows": 2
+        },
+        "let": [
+          {
+            "name": "ft",
+            "value": [
+              "div",
+              [
+                "add",
+                "@i",
+                0.5
+              ],
+              "$segments"
+            ]
+          },
+          {
+            "name": "fbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%ft"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "fx",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%ft"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%fbow"
+              ]
+            ]
+          },
+          {
+            "name": "fz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%ft"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%fbow"
+              ]
+            ]
+          },
+          {
+            "name": "fdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%ft"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%ft"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "fnx",
+            "value": [
+              "cos",
+              "%fdir"
+            ]
+          },
+          {
+            "name": "fnz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%fdir"
+              ]
+            ]
+          },
+          {
+            "name": "fedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "fg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%fx",
+                "%fz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%fx",
+                    [
+                      "mul",
+                      "%fnx",
+                      "%fedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%fz",
+                    [
+                      "mul",
+                      "%fnz",
+                      "%fedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%fx",
+                    [
+                      "mul",
+                      "%fnx",
+                      "%fedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%fz",
+                    [
+                      "mul",
+                      "%fnz",
+                      "%fedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "fbase",
+            "value": [
+              "add",
+              "%fg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "flift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%ft"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%ft",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "fy",
+            "value": [
+              "add",
+              "%fbase",
+              [
+                "add",
+                "%flift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%ft"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "foot_x",
+            "value": [
+              "add",
+              "%fx",
+              [
+                "mul",
+                "%fnx",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "$width",
+                    0.5
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "foot_z",
+            "value": [
+              "add",
+              "%fz",
+              [
+                "mul",
+                "%fnz",
+                [
+                  "mul",
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      2
+                    ],
+                    1
+                  ],
+                  [
+                    "mul",
+                    "$width",
+                    0.5
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "foot_y",
+            "value": [
+              "height",
+              "@ground",
+              "%foot_x",
+              "%foot_z"
+            ]
+          },
+          {
+            "name": "foot_top",
+            "value": [
+              "sub",
+              "%fy",
+              "$thickness"
+            ]
+          }
+        ],
+        "when": [
+          "gte",
+          [
+            "sub",
+            "%foot_top",
+            "%foot_y"
+          ],
+          0.02
+        ],
+        "a": [
+          "%foot_x",
+          "%foot_y",
+          "%foot_z"
+        ],
+        "b": [
+          "%foot_x",
+          "%foot_top",
+          "%foot_z"
+        ],
+        "width": 0.075
+      },
+      {
+        "id": "mark",
+        "op": "anchor",
+        "repeat": {
+          "count": [
+            "add",
+            "$segments",
+            1
+          ]
+        },
+        "let": [
+          {
+            "name": "vt",
+            "value": "@u"
+          },
+          {
+            "name": "vbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%vt"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "vx",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%vt"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%vbow"
+              ]
+            ]
+          },
+          {
+            "name": "vz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%vt"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%vbow"
+              ]
+            ]
+          },
+          {
+            "name": "vdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%vt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%vt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "vnx",
+            "value": [
+              "cos",
+              "%vdir"
+            ]
+          },
+          {
+            "name": "vnz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%vdir"
+              ]
+            ]
+          },
+          {
+            "name": "vedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "vg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%vx",
+                "%vz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%vx",
+                    [
+                      "mul",
+                      "%vnx",
+                      "%vedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%vz",
+                    [
+                      "mul",
+                      "%vnz",
+                      "%vedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%vx",
+                    [
+                      "mul",
+                      "%vnx",
+                      "%vedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%vz",
+                    [
+                      "mul",
+                      "%vnz",
+                      "%vedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "vbase",
+            "value": [
+              "add",
+              "%vg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "vlift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%vt"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%vt",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "vy",
+            "value": [
+              "add",
+              "%vbase",
+              [
+                "add",
+                "%vlift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%vt"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "p": [
+          "%vx",
+          "%vy",
+          "%vz"
+        ]
+      },
+      {
+        "id": "left",
+        "op": "anchor",
+        "let": [
+          {
+            "name": "kt",
+            "value": 0
+          },
+          {
+            "name": "kbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%kt"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "kx",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%kt"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%kbow"
+              ]
+            ]
+          },
+          {
+            "name": "kz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%kt"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%kbow"
+              ]
+            ]
+          },
+          {
+            "name": "kdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%kt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%kt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "knx",
+            "value": [
+              "cos",
+              "%kdir"
+            ]
+          },
+          {
+            "name": "knz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%kdir"
+              ]
+            ]
+          },
+          {
+            "name": "kedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "kg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%kx",
+                "%kz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%kx",
+                    [
+                      "mul",
+                      "%knx",
+                      "%kedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%kz",
+                    [
+                      "mul",
+                      "%knz",
+                      "%kedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%kx",
+                    [
+                      "mul",
+                      "%knx",
+                      "%kedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%kz",
+                    [
+                      "mul",
+                      "%knz",
+                      "%kedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "kbase",
+            "value": [
+              "add",
+              "%kg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "klift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%kt"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%kt",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ky",
+            "value": [
+              "add",
+              "%kbase",
+              [
+                "add",
+                "%klift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%kt"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "p": [
+          "%kx",
+          "%ky",
+          "%kz"
+        ]
+      },
+      {
+        "id": "rght",
+        "op": "anchor",
+        "let": [
+          {
+            "name": "kt",
+            "value": 1
+          },
+          {
+            "name": "kbow",
+            "value": [
+              "mul",
+              "$bend",
+              [
+                "sin",
+                [
+                  "mul",
+                  3.141592653589793,
+                  "%kt"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "kx",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.x",
+                "@right.x",
+                "%kt"
+              ],
+              [
+                "mul",
+                "%nx",
+                "%kbow"
+              ]
+            ]
+          },
+          {
+            "name": "kz",
+            "value": [
+              "add",
+              [
+                "mix",
+                "@left.z",
+                "@right.z",
+                "%kt"
+              ],
+              [
+                "mul",
+                "%nz",
+                "%kbow"
+              ]
+            ]
+          },
+          {
+            "name": "kdir",
+            "value": [
+              "atan2",
+              [
+                "add",
+                "%dx",
+                [
+                  "mul",
+                  "%nx",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%kt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "add",
+                "%dz",
+                [
+                  "mul",
+                  "%nz",
+                  [
+                    "mul",
+                    "$bend",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      [
+                        "cos",
+                        [
+                          "mul",
+                          3.141592653589793,
+                          "%kt"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "knx",
+            "value": [
+              "cos",
+              "%kdir"
+            ]
+          },
+          {
+            "name": "knz",
+            "value": [
+              "neg",
+              [
+                "sin",
+                "%kdir"
+              ]
+            ]
+          },
+          {
+            "name": "kedge",
+            "value": [
+              "mul",
+              "$width",
+              0.5
+            ]
+          },
+          {
+            "name": "kg",
+            "value": [
+              "max",
+              [
+                "height",
+                "@ground",
+                "%kx",
+                "%kz"
+              ],
+              [
+                "max",
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "add",
+                    "%kx",
+                    [
+                      "mul",
+                      "%knx",
+                      "%kedge"
+                    ]
+                  ],
+                  [
+                    "add",
+                    "%kz",
+                    [
+                      "mul",
+                      "%knz",
+                      "%kedge"
+                    ]
+                  ]
+                ],
+                [
+                  "height",
+                  "@ground",
+                  [
+                    "sub",
+                    "%kx",
+                    [
+                      "mul",
+                      "%knx",
+                      "%kedge"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    "%kz",
+                    [
+                      "mul",
+                      "%knz",
+                      "%kedge"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "kbase",
+            "value": [
+              "add",
+              "%kg",
+              [
+                "add",
+                "$thickness",
+                "$clearance"
+              ]
+            ]
+          },
+          {
+            "name": "klift",
+            "value": [
+              "add",
+              [
+                "mul",
+                "%lift_a",
+                [
+                  "pow",
+                  [
+                    "sub",
+                    1,
+                    "%kt"
+                  ],
+                  4
+                ]
+              ],
+              [
+                "mul",
+                "%lift_b",
+                [
+                  "pow",
+                  "%kt",
+                  4
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "ky",
+            "value": [
+              "add",
+              "%kbase",
+              [
+                "add",
+                "%klift",
+                [
+                  "mul",
+                  "$arch",
+                  [
+                    "sin",
+                    [
+                      "mul",
+                      3.141592653589793,
+                      "%kt"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "p": [
+          "%kx",
+          "%ky",
+          "%kz"
+        ]
+      }
+    ]
+  },
+  "materials": {
+    "wood": "lacquer",
+    "stone": "garden_stone",
+    "metal": "dark_metal"
+  }
+}

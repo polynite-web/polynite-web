@@ -1,0 +1,127 @@
+{
+  "id": "terrain-linked-garden",
+  "version": 1,
+  "title": "A Japanese garden, connected",
+  "category": "Architecture",
+  "level": "Build on it",
+  "summary": "A connected Japanese garden: pavilion, curved approach, terrain-fitted bridge, landings and planting share explicit construction anchors. Change the land or a landing and the connections adapt.",
+  "operators": [
+    "spatial",
+    "context",
+    "let",
+    "primitive",
+    "beam",
+    "anchor",
+    "repeat"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_context",
+    "recipe_spatial",
+    "recipe_terrain"
+  ],
+  "instances": [
+    "approach",
+    "bridge",
+    "entry",
+    "temple",
+    "shore_a",
+    "shore_b",
+    "gatepad",
+    "cherry",
+    "pine1",
+    "pine2",
+    "lamp1",
+    "lamp2",
+    "lamp3",
+    "site",
+    "lotus",
+    "bloom2",
+    "bloom3"
+  ],
+  "prompt": "In Polynite, create a Japanese garden with a pavilion, paths and a bridge. Discover commands.recipe_terrain and architecture operators context/spatial/let. Bind named left and right references to real construction anchors and ground to the enabled infinite terrain. Compose shared primitives, beams, expressions and stable anchors as editable JSON recipes. Sample the centre and both edges. Keep construction tops above ground plus thickness and clearance; preserve manual edits. Expose width, bend, arch and rail_height. Estimate, apply, inspect the connections, then verify the actual pixels. Keep the current user scene; invent a variation instead of adding a native generator for this style.",
+  "try": [
+    "Press Play to compare the initial ground, a raised patch and its restored state.",
+    "Under Adjust, change approach width or bend. Change shore_b lift to raise the arrival and watch dependent connections follow.",
+    "Use reusable landings to compose a longer route; keep sharp turns and obstacle avoidance explicit."
+  ],
+  "steps": [
+    "Bind existing terrain and construction anchors explicitly.",
+    "Evaluate one sampled profile at the centre and both edges; join segments and reuse its heights for rails and feet.",
+    "Keep the shape, materials and connection policy in editable recipe data; terrain/source edits revalidate declared dependants."
+  ],
+  "settings": "Adjust > approach · recipe controls: width, bend, arch, thickness, clearance, rail_height and segments. Adjust > shore_a/shore_b: lift, width and depth. The same controls live under Scene settings > Living architecture.",
+  "checks": [
+    {
+      "type": "connection",
+      "instance": "approach",
+      "times": [
+        0,
+        2.8,
+        5.6
+      ],
+      "must_adapt": true,
+      "returns": true
+    },
+    {
+      "type": "connection",
+      "instance": "bridge",
+      "times": [
+        0,
+        2.8,
+        5.6
+      ],
+      "must_adapt": true,
+      "returns": true
+    },
+    {
+      "type": "connection",
+      "instance": "entry",
+      "times": [
+        0,
+        2.8,
+        5.6
+      ],
+      "must_adapt": true,
+      "returns": true
+    }
+  ],
+  "tested_at": "2026-10-19",
+  "revision": "69e941e53",
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/terrain-linked-garden.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/terrain-linked-garden.jpg"
+  },
+  "limits": "Uses explicit local bindings and sampled near-field terrain, not arbitrary mesh raycasts, continuous collision or automatic pathfinding. Span 0.5..20m; 8..20 segments. max_grade limits end-to-end rise, not every local segment. Inspect steep relief and bends, increase samples or add intermediate landings. Invalid references, buried ends and invalid spans reject without changing the last valid scene.",
+  "seed": 17,
+  "duration": 6,
+  "edit_parameter": "width",
+  "variants": [
+    {
+      "id": "curved",
+      "title": "Curved route",
+      "poster": "https://explore.polynite.io/docs/recipes/media/terrain-linked-garden-curved.jpg",
+      "scene_sha256": "8b232ca25abbf7f58b41e814240790b2d2387642092ec8eb50576aa153178bac",
+      "scene": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1-curved.scene"
+    },
+    {
+      "id": "high-bank",
+      "title": "Raised arrival",
+      "poster": "https://explore.polynite.io/docs/recipes/media/terrain-linked-garden-high-bank.jpg",
+      "scene_sha256": "935f4f425bd0bd8d3138b7f758fd80bb009576516462027d6e4043587a771d78",
+      "scene": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1-high-bank.scene"
+    }
+  ],
+  "scene_sha256": "30d38ed88010da246bcf5eabd49ff7b7fb6af96e64c2e4473b573a24665041ab",
+  "recipes_sha256": "6a786b3252f02beb3e025c581a46ca5781dd02c73be448cae3e835fb6cbd38d8",
+  "open": "https://polynite.io/examples/view.html?id=terrain-linked-garden",
+  "url": "https://explore.polynite.io/docs/recipes/terrain-linked-garden/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.recipes.json"
+}

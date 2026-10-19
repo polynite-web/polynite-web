@@ -390,6 +390,96 @@
       "url": "https://explore.polynite.io/docs/recipes/terrain-aware-pavilion/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1.md"
+    },
+    {
+      "id": "terrain-linked-path",
+      "version": 1,
+      "title": "A path that meets the ground",
+      "summary": "An editable stone path follows sampled ground and smoothly joins raised construction anchors. Change its bend, width or landing height without replacing its recipe.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "primitive",
+        "beam",
+        "anchor",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/terrain-linked-path/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-path/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-path/v1.md"
+    },
+    {
+      "id": "terrain-linked-bridge",
+      "version": 1,
+      "title": "A bridge between living shores",
+      "summary": "An editable arched bridge follows two construction anchors and clears sampled terrain. Deck, rails and feet share one profile; the same operators can compose a different crossing.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "primitive",
+        "beam",
+        "anchor",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/terrain-linked-bridge/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-bridge/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-bridge/v1.md"
+    },
+    {
+      "id": "terrain-linked-garden",
+      "version": 1,
+      "title": "A Japanese garden, connected",
+      "summary": "A connected Japanese garden: pavilion, curved approach, terrain-fitted bridge, landings and planting share explicit construction anchors. Change the land or a landing and the connections adapt.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "primitive",
+        "beam",
+        "anchor",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/terrain-linked-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.md"
     }
   ]
 }

@@ -23,4 +23,26 @@ class Element{
  $('save').click();assert.equal(downloads,1);assert.equal(loads(),count,'Saving must not reset a scene');
  assert(requested.filter(url=>url!=='catalog.json').every(url=>url.startsWith('/dev/')),'Candidate scene and variant requests must retain the deployment prefix');
  console.log('PASS viewer boot, play without reload, variant switch, selected-reference reset, failed download recovery, export guard and scene save.');
+ // Two overlapping check gestures must not interleave scene seeks. Contracts
+ // sharing a timestamp observe the same scene instead of replaying it twice.
+ nodes.clear();calls.length=0;timers.length=0;current=undefined;
+ $('viewer').contentWindow={polynite:engine,vmeshAudioGesture:async()=>true};
+ const header=new Element(),observations=[];let time=0;
+ entry.checks=[{type:'test',instance:'a',times:[0,2.8,5.6]},{type:'test',instance:'b',times:[0,2.8,5.6]}];entry.edit_parameter='width';
+ context.location.href+='&qa=1';context.document.querySelector=()=>header;
+ context.PolyniteRecipeChecks={create:c=>({observe(i){observations.push([c.instance,i,time]);},finish(){}})};
+ const baseCall=engine.call;engine.call=function(method,p={}){
+  if(method==='scene.cinematic'&&p.request.command==='seek')time=p.request.time;
+  const r=baseCall(method,p);if(method==='scene.cinematic'&&p.request.command==='status')Object.assign(r,{time,seeking:false});
+  if(method==='scene.snapshot')return{objects:1};return r;
+ };
+ vm.runInNewContext(fs.readFileSync('public-site-src/example-view.js','utf8'),context);await new Promise(setImmediate);
+ const check=header.children.find(e=>e.id==='check-example'),report=$('controls').children.find(e=>e.id==='qa-report');assert(check&&report);
+ nodes.set('check-example',check);nodes.set('qa-report',report);timers[0]();
+ check.events.click();assert(check.disabled);check.events.click();
+ for(let i=0;i<200&&check.disabled;i++)await new Promise(r=>setTimeout(r,10));
+ assert(!check.disabled,'Check did not finish');assert.equal(JSON.parse(report.textContent).passed,true);
+ assert.deepEqual(calls.filter(([m,p])=>m==='scene.cinematic'&&p.request.command==='seek').map(([,p])=>p.request.time),[0,2.8,5.6]);
+ assert.equal(observations.length,6);assert.equal(current.initial.architecture[0].params.width,1,'Check must restore its independent scene');
+ console.log('PASS serial example checks, shared-time observations and restoration after parameter verification.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
