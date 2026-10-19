@@ -361,6 +361,35 @@
       "url": "https://explore.polynite.io/docs/recipes/nested-temple/",
       "detail": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.md"
+    },
+    {
+      "id": "terrain-aware-pavilion",
+      "version": 1,
+      "title": "A pavilion that follows the ground",
+      "summary": "Raise the land under a Japanese garden pavilion. Four independent feet adapt while its deck stays level, using one editable recipe and shared terrain operators.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "beam",
+        "surface",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/terrain-aware-pavilion/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-aware-pavilion/v1.md"
     }
   ]
 }
