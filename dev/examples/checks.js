@@ -25,6 +25,15 @@
     assert(plan.components.filter(p=>p.part.startsWith('rail')).length===(p.rail_height>=.01?2*p.segments:0),'Connection rails missing');assert(plan.components.filter(p=>p.part.startsWith('post')).length===(p.rail_height>=.01?2*(p.segments+1):0),'Connection rail posts missing');
     if(i===0)first=marks;if(c.must_adapt&&i===1)assert(marks.some((p,j)=>distance(p,first[j])>.03),'Connection did not adapt to the terrain');if(c.returns&&i===2)assert(marks.every((p,j)=>distance(p,first[j])<.004),'Connection did not return with its terrain');
    }
+   else if(c.type==='placement'){
+    const p=plan.recipe.params,seat=plan.anchors.find(a=>a.id==='seat000000'),sources=plan.resolved_context.filter(a=>a.name!=='ground');
+    assert(seat&&sources.length,'Placement sources missing');
+    const signed=(source,x,z)=>{const a=-source.yaw*Math.PI/180,dx=x-source.origin[0],dz=z-source.origin[2],qx=Math.abs(Math.cos(a)*dx+Math.sin(a)*dz)-source.size[0]/2,qz=Math.abs(-Math.sin(a)*dx+Math.cos(a)*dz)-source.size[2]/2;return Math.hypot(Math.max(qx,0),Math.max(qz,0))+Math.min(0,Math.max(qx,qz));};
+    const candidates=[[p.x,p.z],[p.x+p.search,p.z],[p.x-p.search,p.z],[p.x,p.z+p.search],[p.x,p.z-p.search]],selected=candidates.find(([x,z])=>sources.every(s=>signed(s,x,z)>=p.radius+p.margin-.0001));
+    assert(selected&&Math.hypot(selected[0]-seat.local[0],selected[1]-seat.local[2])<.004,'Placement did not select the first clear candidate');
+    for(const s of sources)assert(s.size[0]>0&&s.size[2]>0&&signed(s,seat.local[0],seat.local[2])>=p.radius+p.margin-.002,'Complete object or margin intersects a reservation');
+    if(i===0)first=seat.local;if(c.must_adapt&&i===1)assert(distance(first,seat.local)>.1,'Placement did not react to the reservation');if(c.returns&&i===2)assert(distance(first,seat.local)<.004,'Placement did not return');
+   }
    else if(c.type==='geometry'){
     for(const rule of c.rules){const parts=plan.components.filter(p=>p.part.startsWith(rule.prefix));const count=(rule.count_parameters||[]).reduce((n,key)=>n*plan.recipe.params[key],rule.multiplier||1);assert(parts.length===count,'Repeated component count differs: '+rule.prefix);
      for(const p of parts){assert(p.p.concat(p.s).every(Number.isFinite)&&p.s.every(v=>v>0),'Invalid component pose');if(rule.profile_points)assert(p.surface?.profile?.length===rule.profile_points,'Custom profile missing');if(rule.path_points)assert(p.surface?.path?.length===rule.path_points,'Custom sweep path missing');}

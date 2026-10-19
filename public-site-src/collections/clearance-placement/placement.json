@@ -1,0 +1,416 @@
+{
+  "module": "assembly",
+  "context": [
+    {
+      "name": "ground",
+      "terrain": "infinite"
+    },
+    {
+      "name": "block",
+      "instance": "source",
+      "anchor": "body000000"
+    }
+  ],
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "x",
+        "min": -30,
+        "max": 30,
+        "value": 0,
+        "description": "Preferred centre X, local metres",
+        "group": "placement"
+      },
+      {
+        "name": "z",
+        "min": -30,
+        "max": 30,
+        "value": 0,
+        "description": "Preferred centre Z, local metres",
+        "group": "placement"
+      },
+      {
+        "name": "search",
+        "min": 0.1,
+        "max": 8,
+        "value": 2,
+        "description": "Distance to four fallback candidates, metres",
+        "group": "placement"
+      },
+      {
+        "name": "radius",
+        "min": 0.05,
+        "max": 3,
+        "value": 0.35,
+        "description": "Conservative radius of the complete attached object",
+        "group": "placement"
+      },
+      {
+        "name": "margin",
+        "min": 0,
+        "max": 2,
+        "value": 0.2,
+        "description": "Free space beyond the complete object, metres",
+        "group": "placement"
+      }
+    ],
+    "let": [
+      {
+        "name": "d0",
+        "value": [
+          "distance",
+          "@block",
+          "$x",
+          "$z"
+        ]
+      },
+      {
+        "name": "ok0",
+        "value": [
+          "gte",
+          "%d0",
+          [
+            "add",
+            "$radius",
+            "$margin"
+          ]
+        ]
+      },
+      {
+        "name": "pick0",
+        "value": [
+          "mul",
+          "%ok0",
+          1
+        ]
+      },
+      {
+        "name": "used0",
+        "value": "%ok0"
+      },
+      {
+        "name": "d1",
+        "value": [
+          "distance",
+          "@block",
+          [
+            "add",
+            "$x",
+            "$search"
+          ],
+          "$z"
+        ]
+      },
+      {
+        "name": "ok1",
+        "value": [
+          "gte",
+          "%d1",
+          [
+            "add",
+            "$radius",
+            "$margin"
+          ]
+        ]
+      },
+      {
+        "name": "pick1",
+        "value": [
+          "mul",
+          "%ok1",
+          [
+            "sub",
+            1,
+            "%used0"
+          ]
+        ]
+      },
+      {
+        "name": "used1",
+        "value": [
+          "max",
+          "%used0",
+          "%ok1"
+        ]
+      },
+      {
+        "name": "d2",
+        "value": [
+          "distance",
+          "@block",
+          [
+            "sub",
+            "$x",
+            "$search"
+          ],
+          "$z"
+        ]
+      },
+      {
+        "name": "ok2",
+        "value": [
+          "gte",
+          "%d2",
+          [
+            "add",
+            "$radius",
+            "$margin"
+          ]
+        ]
+      },
+      {
+        "name": "pick2",
+        "value": [
+          "mul",
+          "%ok2",
+          [
+            "sub",
+            1,
+            "%used1"
+          ]
+        ]
+      },
+      {
+        "name": "used2",
+        "value": [
+          "max",
+          "%used1",
+          "%ok2"
+        ]
+      },
+      {
+        "name": "d3",
+        "value": [
+          "distance",
+          "@block",
+          "$x",
+          [
+            "add",
+            "$z",
+            "$search"
+          ]
+        ]
+      },
+      {
+        "name": "ok3",
+        "value": [
+          "gte",
+          "%d3",
+          [
+            "add",
+            "$radius",
+            "$margin"
+          ]
+        ]
+      },
+      {
+        "name": "pick3",
+        "value": [
+          "mul",
+          "%ok3",
+          [
+            "sub",
+            1,
+            "%used2"
+          ]
+        ]
+      },
+      {
+        "name": "used3",
+        "value": [
+          "max",
+          "%used2",
+          "%ok3"
+        ]
+      },
+      {
+        "name": "d4",
+        "value": [
+          "distance",
+          "@block",
+          "$x",
+          [
+            "sub",
+            "$z",
+            "$search"
+          ]
+        ]
+      },
+      {
+        "name": "ok4",
+        "value": [
+          "gte",
+          "%d4",
+          [
+            "add",
+            "$radius",
+            "$margin"
+          ]
+        ]
+      },
+      {
+        "name": "pick4",
+        "value": [
+          "mul",
+          "%ok4",
+          [
+            "sub",
+            1,
+            "%used3"
+          ]
+        ]
+      },
+      {
+        "name": "used4",
+        "value": [
+          "max",
+          "%used3",
+          "%ok4"
+        ]
+      },
+      {
+        "name": "px",
+        "value": [
+          "add",
+          [
+            "add",
+            [
+              "add",
+              [
+                "mul",
+                "$x",
+                "%pick0"
+              ],
+              [
+                "mul",
+                [
+                  "add",
+                  "$x",
+                  "$search"
+                ],
+                "%pick1"
+              ]
+            ],
+            [
+              "mul",
+              [
+                "sub",
+                "$x",
+                "$search"
+              ],
+              "%pick2"
+            ]
+          ],
+          [
+            "add",
+            [
+              "mul",
+              "$x",
+              "%pick3"
+            ],
+            [
+              "mul",
+              "$x",
+              "%pick4"
+            ]
+          ]
+        ]
+      },
+      {
+        "name": "pz",
+        "value": [
+          "add",
+          [
+            "add",
+            [
+              "add",
+              [
+                "mul",
+                "$z",
+                "%pick0"
+              ],
+              [
+                "mul",
+                "$z",
+                "%pick1"
+              ]
+            ],
+            [
+              "mul",
+              "$z",
+              "%pick2"
+            ]
+          ],
+          [
+            "add",
+            [
+              "mul",
+              [
+                "add",
+                "$z",
+                "$search"
+              ],
+              "%pick3"
+            ],
+            [
+              "mul",
+              [
+                "sub",
+                "$z",
+                "$search"
+              ],
+              "%pick4"
+            ]
+          ]
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "value": "%used4",
+        "min": 1,
+        "max": 1,
+        "message": "No free candidate: move the preferred point or widen search; keep radius large enough for the complete object"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "seat",
+        "op": "anchor",
+        "p": [
+          "%px",
+          [
+            "height",
+            "@ground",
+            "%px",
+            "%pz"
+          ],
+          "%pz"
+        ]
+      },
+      {
+        "id": "body",
+        "op": "footprint",
+        "p": [
+          "%px",
+          0,
+          "%pz"
+        ],
+        "s": [
+          [
+            "mul",
+            2,
+            "$radius"
+          ],
+          1,
+          [
+            "mul",
+            2,
+            "$radius"
+          ]
+        ]
+      }
+    ]
+  }
+}

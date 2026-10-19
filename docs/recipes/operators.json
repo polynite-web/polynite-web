@@ -322,6 +322,25 @@
           }
         ]
       }
+    },
+    {
+      "id": "footprint",
+      "title": "Give objects room",
+      "summary": "Publish a named horizontal rectangle for a roof, canopy or access area. Other recipes query its distance and choose positions that preserve a complete object radius and margin. The engine measures; the recipe chooses the rule.",
+      "example": {
+        "id": "body",
+        "op": "footprint",
+        "p": [
+          0,
+          0,
+          0
+        ],
+        "s": [
+          4,
+          1,
+          3
+        ]
+      }
     }
   ],
   "starter": {

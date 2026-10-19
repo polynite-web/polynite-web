@@ -1,0 +1,112 @@
+{
+  "id": "clearance-japanese-garden",
+  "version": 1,
+  "title": "A Japanese garden with room to grow",
+  "category": "Architecture",
+  "level": "Build on it",
+  "summary": "A pavilion, connected paths and planting share explicit roof, passage and pond reservations. Growing the pavilion repositions a lantern; pair constraints keep the placed objects apart.",
+  "operators": [
+    "footprint",
+    "spatial",
+    "context",
+    "let",
+    "anchor",
+    "primitive"
+  ],
+  "capabilities": [
+    "recipe_program",
+    "recipe_context",
+    "recipe_spatial",
+    "recipe_terrain",
+    "recipe_footprints"
+  ],
+  "instances": [
+    "slot5",
+    "approach",
+    "bridge",
+    "entry",
+    "temple",
+    "shore_a",
+    "shore_b",
+    "gatepad",
+    "cherry",
+    "pine1",
+    "pine2",
+    "lamp1",
+    "lamp2",
+    "lamp3",
+    "lotus",
+    "bloom2",
+    "bloom3",
+    "pondarea",
+    "slot0",
+    "slot1",
+    "slot2",
+    "slot3",
+    "slot4",
+    "spacing"
+  ],
+  "prompt": "In the current Polynite scene, compose editable placement recipes using named footprint reservations. Discover commands.recipe_footprints and operators footprint/context/spatial/let. Declare conservative roof, canopy and access rectangles, bind only explicit nearby sources, and preserve a whole-object radius plus clearance margin. Try a preferred position and four bounded alternatives; reject atomically if none fits. Add explicit pair constraints between placed objects. Keep geometry, aesthetic choices and candidate rules in JSON recipes; reuse existing geometry and terrain operators. Estimate, apply with stable IDs, inspect bounds and actual pixels. Preserve user edits and locks; do not clear the current scene.",
+  "try": [
+    "Press Play: the construction widens, the nearby object changes position, then both return.",
+    "Under Adjust, change slot5 x, z, search, radius or margin. Keep radius large enough for the complete object.",
+    "Grow temple width. If all five candidates are blocked, move the preferred point or widen search."
+  ],
+  "steps": [
+    "Publish named horizontal reservations as footprint nodes, without duplicate render geometry.",
+    "Measure each candidate against explicit sources; preserve the complete-object radius plus margin, then choose the first free candidate.",
+    "Attach reused objects to the chosen terrain-seated anchor; validate spacing pairs and keep all rules in editable recipe data."
+  ],
+  "settings": "Adjust > slot5 · recipe controls: x, z, search, radius, margin. temple > width changes its reservation. spacing > margin protects the six placed objects from one another.",
+  "checks": [
+    {
+      "type": "placement",
+      "instance": "slot5",
+      "times": [
+        0,
+        2.8,
+        5.6
+      ],
+      "must_adapt": true,
+      "returns": true
+    }
+  ],
+  "tested_at": "2026-10-19",
+  "revision": "9d1ba003b",
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "not_verified"
+  },
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/clearance-japanese-garden.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/clearance-japanese-garden.jpg"
+  },
+  "limits": "Horizontal declared reservations, not automatic arbitrary-mesh bounds, 3D collision, global packing or pathfinding. Each slot tries five recipe-defined candidates against at most seven explicit reservations; pairs are checked in groups of up to six. In this garden, path reservations conservatively enclose the complete sine bend and can exclude extra space. Radius must contain the complete attached object; update it if geometry grows or is manually changed. No position fits: reject and preserve the previous scene. Candidate changes happen at edit-time or explicit film cues, not continuously during physics.",
+  "seed": 17,
+  "duration": 6,
+  "edit_parameter": "margin",
+  "variants": [
+    {
+      "id": "wide",
+      "title": "Wider construction",
+      "poster": "https://explore.polynite.io/docs/recipes/media/clearance-japanese-garden-wide.jpg",
+      "scene_sha256": "c2b59a48a8416c0b37c24abba535848cb8af2280d11b2c59cbe5015568356660",
+      "scene": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1-wide.scene"
+    },
+    {
+      "id": "space",
+      "title": "More breathing room",
+      "poster": "https://explore.polynite.io/docs/recipes/media/clearance-japanese-garden-space.jpg",
+      "scene_sha256": "8b2c3f618ecb90669c7ff1f5ec863ac03a0dc58c25601246e105c6a1286b0345",
+      "scene": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1-space.scene"
+    }
+  ],
+  "scene_sha256": "8abc75334141f3e6aaa6d5b2c9c3efacd45d29b5fc27db2fff98bcc6392b268f",
+  "recipes_sha256": "c4a5952c82c6fc9040f9c0f0c14cc7ae52bcd46cf5653a35488d9313a7c7c173",
+  "open": "https://polynite.io/examples/view.html?id=clearance-japanese-garden",
+  "url": "https://explore.polynite.io/docs/recipes/clearance-japanese-garden/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.recipes.json"
+}

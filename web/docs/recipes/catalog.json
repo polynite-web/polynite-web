@@ -475,11 +475,71 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/terrain-linked-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.md"
+    },
+    {
+      "id": "footprint-placement",
+      "version": 1,
+      "title": "Give every object room",
+      "summary": "An object moves to the first free candidate when a neighbouring construction grows. Named reservations, complete-object radius and clearance remain editable recipe data.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "footprint",
+        "spatial",
+        "context",
+        "let",
+        "anchor",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain",
+        "recipe_footprints"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/footprint-placement/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/footprint-placement/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/footprint-placement/v1.md"
+    },
+    {
+      "id": "clearance-japanese-garden",
+      "version": 1,
+      "title": "A Japanese garden with room to grow",
+      "summary": "A pavilion, connected paths and planting share explicit roof, passage and pond reservations. Growing the pavilion repositions a lantern; pair constraints keep the placed objects apart.",
+      "category": "Architecture",
+      "level": "Build on it",
+      "operators": [
+        "footprint",
+        "spatial",
+        "context",
+        "let",
+        "anchor",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain",
+        "recipe_footprints"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "not_verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/clearance-japanese-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.md"
     }
   ]
 }

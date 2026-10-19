@@ -231,6 +231,28 @@
         "Bridge",
         "Editable"
       ]
+    },
+    {
+      "recipe": "footprint-placement",
+      "category": "Living landscapes",
+      "environment": "Garden",
+      "tags": [
+        "Placement",
+        "Clearance",
+        "Adaptive",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "clearance-japanese-garden",
+      "category": "Japanese garden",
+      "environment": "Garden",
+      "tags": [
+        "Placement",
+        "Clearance",
+        "Adaptive",
+        "Editable"
+      ]
     }
   ]
 }

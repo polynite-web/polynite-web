@@ -32,14 +32,16 @@
  function makeParameters(){
   const container=$('parameters');container.replaceChildren();
   for(const r of reference.initial.architecture||[]){
-   const inspect=call('scene.architecture',{request:{command:'inspect',id:r.id,include_parts:false}}),fields=inspect.parameter_schema?.properties||{};
-   if(!Object.keys(fields).length)continue;
+   if(r.program?.inputs&&!r.program.inputs.length)continue;
    const group=document.createElement('details');const summary=document.createElement('summary');summary.textContent=r.id+' · recipe controls';group.append(summary);container.append(group);
+   group.addEventListener('toggle',()=>{if(!group.open)return;try{
+   const inspect=call('scene.architecture',{request:{command:'inspect',id:r.id,include_parts:false}}),fields=inspect.parameter_schema?.properties||{};group.replaceChildren(summary);
    for(const [name,schema]of Object.entries(fields)){
     const label=document.createElement('label'),text=document.createElement('span'),input=document.createElement('input'),value=document.createElement('output');text.textContent=name.replaceAll('_',' ');input.type='range';input.min=schema.minimum;input.max=schema.maximum;input.step=schema.type==='integer'?1:.001;input.value=inspect.recipe.params?.[name]??schema.default;input.setAttribute('aria-label',r.id+' '+name);value.textContent=Number(input.value).toFixed(schema.type==='integer'?0:3);label.append(text,input,value);group.append(label);
     input.addEventListener('input',()=>value.textContent=Number(input.value).toFixed(schema.type==='integer'?0:3));
     input.addEventListener('change',()=>{const old=inspect.recipe.params?.[name]??schema.default;try{idle();film('stop');call('scene.apply',{actions:[{op:'architecture',id:r.id,params:{[name]:Number(input.value)}}]});film('capture');inspect.recipe.params[name]=Number(input.value);notice('Updated '+r.id+' · '+name.replaceAll('_',' '));}catch(error){input.value=old;value.textContent=old;notice(error.message);}});
    }
+   }catch(error){notice(error.message);}});
   }
   if(!container.childElementCount){const p=document.createElement('p');p.textContent='Use Scene settings to adjust this creation’s saved controls, camera, lighting and atmosphere.';container.append(p);}
  }
