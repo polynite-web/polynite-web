@@ -2117,6 +2117,343 @@
           "exact offscreen PNG"
         ]
       }
+    },
+    {
+      "category": "Architecture",
+      "level": "Advanced",
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms"
+      ],
+      "duration": 6,
+      "seed": 1021,
+      "edit_parameter": "rise",
+      "operators": [
+        "expression",
+        "roof",
+        "profile",
+        "wall",
+        "primitive",
+        "assembly",
+        "anchor",
+        "context",
+        "let",
+        "spatial",
+        "instance",
+        "repeat",
+        "when",
+        "prototype"
+      ],
+      "instances": [
+        "hall",
+        "gallery"
+      ],
+      "checks": [
+        {
+          "type": "roof_link",
+          "instance": "gallery",
+          "source": "hall",
+          "port": "main",
+          "times": [
+            0,
+            3,
+            6
+          ]
+        }
+      ],
+      "settings": "Open & test → Adjust → hall / gallery · recipe controls. Change the host Roof rise and Size, or gallery Length, Width and Rise. Reflections are active; save your independent .scene to retain recipes and values.",
+      "limits": "Directed, explicitly declared roof ports. The consumer yields to the provider and fits its walls to the shared envelope. The provider keeps its authored geometry and passage opening. No reciprocal dependency cycles, implicit host doorway, global wall welding or general solid Boolean. Geometry overrides on an exported roof must be removed or its port disabled first; material overrides remain supported.",
+      "prompt": "In Polynite discover roof, wall and context, then check commands.recipe_roof_ports. Let a provider roof export a named port, inspect roof_ports and attach an independent gallery at its authored doorway. Bind context:{name:hostroof,instance:hall,roof:main} and use roof join:@hostroof. Keep the host passage opening, gallery profiles, materials and repeated details in editable recipes. Estimate; change source proportions and pose; verify the dependent roof and walls. Preserve stable IDs and overrides, enable soft floor reflections, save and reopen the complete document.",
+      "try": [
+        "Change the host Roof rise or Size: the independent gallery adapts to its roof and doorway.",
+        "Change gallery Length or Width while retaining the same provider port.",
+        "Save and reopen the complete scene; both recipes, their link and floor reflections remain editable."
+      ],
+      "steps": [
+        "Export a unique roof port from the provider, including its nested transforms.",
+        "Attach the gallery to the doorway and bind the named roof context.",
+        "Join only the consumer, fit its walls, inspect the seam and test changes before saving."
+      ],
+      "id": "linked-roof-workshop",
+      "title": "Two assemblies. One meeting point.",
+      "summary": "A separate gallery meets a named roof port. Change the hall and its neighbour follows without merging their recipes.",
+      "version": 1,
+      "collection": "connected-assemblies",
+      "variants": [
+        {
+          "id": "compact",
+          "title": "Compact hall, short gallery",
+          "poster": "media/linked-roof-workshop-v1-compact.jpg",
+          "scene_sha256": "3b0ca1adeb384ab66c16331f82fae9eb8735a82af91cbbdbcc88e469811f7f42"
+        },
+        {
+          "id": "broad",
+          "title": "Broad gallery, raised roof",
+          "poster": "media/linked-roof-workshop-v1-broad.jpg",
+          "scene_sha256": "d14361850377c679e6909d70857c594eb7e004346bb61108d14ce1708be080b6"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "tested_at": "2026-10-20",
+      "revision": "caf7382418df1ee541b708e1fcb678e3492c52c6",
+      "scene_sha256": "dca402164d95b73e4425aaafcbae48649cdf990713eb9cb3a92d4f81bc09836a",
+      "recipes_sha256": "f93a74419f5c6020796d74490cbd2b160fc2a6239d3edabfe638fbba923c63e3",
+      "media": {
+        "video": "media/linked-roof-workshop-v1.mp4",
+        "poster": "media/linked-roof-workshop-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Integrated Chromium/WebGPU: three compositions, linked roof envelopes, source edits and rejection, full document and fresh-engine restoration",
+        "engine_sha256": "cf22de25a38f0d6d9c588877a77ea6b165f285cf6a637ca2505348025226053b",
+        "tested_at": "2026-10-20",
+        "checks": [
+          "roof links",
+          "three variants",
+          "solid access steps",
+          "parameter edit",
+          "invalid edit rejection",
+          "material round trip",
+          "fresh runtime restore",
+          "floor reflections"
+        ]
+      }
+    },
+    {
+      "category": "Architecture",
+      "level": "Advanced",
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms"
+      ],
+      "duration": 6,
+      "seed": 1021,
+      "edit_parameter": "rise",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial"
+      ],
+      "instances": [
+        "hall",
+        "gallery"
+      ],
+      "checks": [
+        {
+          "type": "roof_link",
+          "instance": "gallery",
+          "source": "hall",
+          "port": "main",
+          "times": [
+            0,
+            3,
+            6
+          ]
+        }
+      ],
+      "settings": "Open & test → Adjust → hall / gallery · recipe controls. Change the host Roof rise and Size, or gallery Length, Width and Rise. Reflections are active; save your independent .scene to retain recipes and values.",
+      "limits": "Directed, explicitly declared roof ports. The consumer yields to the provider and fits its walls to the shared envelope. The provider keeps its authored geometry and passage opening. No reciprocal dependency cycles, implicit host doorway, global wall welding or general solid Boolean. Geometry overrides on an exported roof must be removed or its port disabled first; material overrides remain supported.",
+      "prompt": "In Polynite discover roof, wall and context, then check commands.recipe_roof_ports. Let a provider roof export a named port, inspect roof_ports and attach an independent gallery at its authored doorway. Bind context:{name:hostroof,instance:hall,roof:main} and use roof join:@hostroof. Keep the host passage opening, gallery profiles, materials and repeated details in editable recipes. Estimate; change source proportions and pose; verify the dependent roof and walls. Preserve stable IDs and overrides, enable soft floor reflections, save and reopen the complete document.",
+      "try": [
+        "Change the host Roof rise or Size: the independent gallery adapts to its roof and doorway.",
+        "Change gallery Length or Width while retaining the same provider port.",
+        "Save and reopen the complete scene; both recipes, their link and floor reflections remain editable."
+      ],
+      "steps": [
+        "Export a unique roof port from the provider, including its nested transforms.",
+        "Attach the gallery to the doorway and bind the named roof context.",
+        "Join only the consumer, fit its walls, inspect the seam and test changes before saving."
+      ],
+      "id": "linked-temple-gallery",
+      "title": "A temple with room to grow.",
+      "summary": "A detailed hall and an independent covered gallery share an explicit roof junction, a real doorway and editable proportions.",
+      "version": 1,
+      "collection": "connected-assemblies",
+      "variants": [
+        {
+          "id": "compact",
+          "title": "Compact hall, short gallery",
+          "poster": "media/linked-temple-gallery-v1-compact.jpg",
+          "scene_sha256": "c1262861fd48aef6dae5f12b235e169b9aa012b15f8fb88fb13310ce2c877b84"
+        },
+        {
+          "id": "broad",
+          "title": "Broad gallery, raised roof",
+          "poster": "media/linked-temple-gallery-v1-broad.jpg",
+          "scene_sha256": "e1984c13d66b4b985291923db03838e61486fd349f992592597ab3faa5253a2e"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "tested_at": "2026-10-20",
+      "revision": "caf7382418df1ee541b708e1fcb678e3492c52c6",
+      "scene_sha256": "a4a4eb4b53153af5d72f8c4d33ebeeb31137fa459ad508eeac44790d8c86068a",
+      "recipes_sha256": "a92728590771dbe98b1542fcef8443681c0a8ebfce52c5cceff535efce1f6ab9",
+      "media": {
+        "video": "media/linked-temple-gallery-v1.mp4",
+        "poster": "media/linked-temple-gallery-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Integrated Chromium/WebGPU: three compositions, linked roof envelopes, source edits and rejection, full document and fresh-engine restoration",
+        "engine_sha256": "cf22de25a38f0d6d9c588877a77ea6b165f285cf6a637ca2505348025226053b",
+        "tested_at": "2026-10-20",
+        "checks": [
+          "roof links",
+          "three variants",
+          "solid access steps",
+          "parameter edit",
+          "invalid edit rejection",
+          "material round trip",
+          "fresh runtime restore",
+          "floor reflections"
+        ]
+      }
+    },
+    {
+      "category": "Architecture",
+      "level": "Advanced",
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms"
+      ],
+      "duration": 6,
+      "seed": 1021,
+      "edit_parameter": "rise",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial",
+        "motion",
+        "beam"
+      ],
+      "instances": [
+        "hall",
+        "gallery",
+        "tower",
+        "lamp",
+        "lantern",
+        "flower",
+        "tree",
+        "yard"
+      ],
+      "checks": [
+        {
+          "type": "roof_link",
+          "instance": "gallery",
+          "source": "hall",
+          "port": "main",
+          "times": [
+            0,
+            3,
+            6
+          ]
+        }
+      ],
+      "settings": "Open & test → Adjust → hall / gallery · recipe controls. Change the host Roof rise and Size, or gallery Length, Width and Rise. Reflections are active; save your independent .scene to retain recipes and values.",
+      "limits": "Directed, explicitly declared roof ports. The consumer yields to the provider and fits its walls to the shared envelope. The provider keeps its authored geometry and passage opening. No reciprocal dependency cycles, implicit host doorway, global wall welding or general solid Boolean. Geometry overrides on an exported roof must be removed or its port disabled first; material overrides remain supported.",
+      "prompt": "In Polynite discover roof, wall and context, then check commands.recipe_roof_ports. Let a provider roof export a named port, inspect roof_ports and attach an independent gallery at its authored doorway. Bind context:{name:hostroof,instance:hall,roof:main} and use roof join:@hostroof. Keep the host passage opening, gallery profiles, materials and repeated details in editable recipes. Estimate; change source proportions and pose; verify the dependent roof and walls. Preserve stable IDs and overrides, enable soft floor reflections, save and reopen the complete document.",
+      "try": [
+        "Change the host Roof rise or Size: the independent gallery adapts to its roof and doorway.",
+        "Change gallery Length or Width while retaining the same provider port.",
+        "Save and reopen the complete scene; both recipes, their link and floor reflections remain editable."
+      ],
+      "steps": [
+        "Export a unique roof port from the provider, including its nested transforms.",
+        "Attach the gallery to the doorway and bind the named roof context.",
+        "Join only the consumer, fit its walls, inspect the seam and test changes before saving."
+      ],
+      "id": "linked-temple-garden",
+      "title": "A garden where buildings meet.",
+      "summary": "The temple, its adapting gallery, pagoda and planting remain independent recipes. Source edits propagate through roof and doorway links.",
+      "version": 1,
+      "collection": "connected-assemblies",
+      "variants": [
+        {
+          "id": "compact",
+          "title": "Compact hall, short gallery",
+          "poster": "media/linked-temple-garden-v1-compact.jpg",
+          "scene_sha256": "30df5fd076f61cf161587581fb5dc05a80b642e2f0f4675ef7b5001ea86f9636"
+        },
+        {
+          "id": "broad",
+          "title": "Broad gallery, raised roof",
+          "poster": "media/linked-temple-garden-v1-broad.jpg",
+          "scene_sha256": "c04a9c454e0e794a174ec639c57fd6a79aa0b8475403644119e8697474987470"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "tested_at": "2026-10-20",
+      "revision": "caf7382418df1ee541b708e1fcb678e3492c52c6",
+      "scene_sha256": "2aa35fea7aa5d13eeef43beceb55262e792c2ee4a460a5f0831478b99dd6c254",
+      "recipes_sha256": "297cf5fb92788ce62c115c9ba4d8dab5c3159341ad14090b790653ddeffbf84a",
+      "media": {
+        "video": "media/linked-temple-garden-v1.mp4",
+        "poster": "media/linked-temple-garden-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Integrated Chromium/WebGPU: three compositions, linked roof envelopes, source edits and rejection, full document and fresh-engine restoration",
+        "engine_sha256": "cf22de25a38f0d6d9c588877a77ea6b165f285cf6a637ca2505348025226053b",
+        "tested_at": "2026-10-20",
+        "checks": [
+          "roof links",
+          "three variants",
+          "solid access steps",
+          "parameter edit",
+          "invalid edit rejection",
+          "material round trip",
+          "fresh runtime restore",
+          "floor reflections",
+          "exact offscreen PNG"
+        ]
+      }
     }
   ]
 }

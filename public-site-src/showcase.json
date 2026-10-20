@@ -1,7 +1,40 @@
 {
   "version": 1,
-  "featured": "joined-temple-garden",
+  "featured": "linked-temple-garden",
   "items": [
+    {
+      "recipe": "linked-temple-garden",
+      "category": "Connected architecture",
+      "environment": "Studio",
+      "tags": [
+        "Connected architecture",
+        "Architecture",
+        "roof_link",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "linked-temple-gallery",
+      "category": "Connected architecture",
+      "environment": "Studio",
+      "tags": [
+        "Connected architecture",
+        "Architecture",
+        "roof_link",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "linked-roof-workshop",
+      "category": "Connected architecture",
+      "environment": "Studio",
+      "tags": [
+        "Connected architecture",
+        "Architecture",
+        "roof_link",
+        "Editable"
+      ]
+    },
     {
       "recipe": "joined-temple-garden",
       "category": "Connected architecture",

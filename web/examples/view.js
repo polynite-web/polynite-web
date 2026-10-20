@@ -17,7 +17,7 @@
    for(const time of [...new Set(contracts.flatMap(({c})=>c.times))].sort((a,b)=>a-b)){
     film('seek',{time});let settled=false,state;for(let k=0;k<600;k++){await sleep(100);state=film('status');report.textContent='Checking at '+time+'s: '+state.time.toFixed(2)+'s';if(!state.seeking&&Math.abs(state.time-time)<.05){settled=true;break;}}if(!settled)throw Error('Seek did not settle');
     const live=call('scene.describe'),plans=new Map();
-    for(const {c,check}of contracts)for(const [i,t]of c.times.entries())if(t===time){if(!plans.has(c.instance))plans.set(c.instance,call('scene.architecture',{request:{command:'inspect',id:c.instance,include_parts:true}}));check.observe(i,plans.get(c.instance),live);}
+    for(const {c,check}of contracts)for(const [i,t]of c.times.entries())if(t===time){if(!plans.has(c.instance))plans.set(c.instance,call('scene.architecture',{request:{command:'inspect',id:c.instance,include_parts:true}}));if(c.source&&c.type==="roof_link"&&!plans.has(c.source))plans.set(c.source,call("scene.architecture",{request:{command:"inspect",id:c.source,include_parts:true}}));check.observe(i,plans.get(c.instance),live,plans.get(c.source));}
    }
    for(const {c,check}of contracts){check.finish();checks.push(c.type);}
    if(!call('scene.snapshot').objects)throw Error('Scene is empty');

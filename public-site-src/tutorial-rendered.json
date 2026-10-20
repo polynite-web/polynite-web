@@ -145,5 +145,12 @@
     "media": "/docs/media/tutorials/r42/",
     "scene": "joined-temple-hall-8c179bee05bb.scene",
     "video": "joined-temple-hall.mp4"
+  },
+  {
+    "id": "linked-temple-gallery",
+    "revision": 43,
+    "media": "/docs/media/tutorials/r43/",
+    "scene": "linked-temple-gallery-a4a4eb4b5315.scene",
+    "video": "linked-temple-gallery.mp4"
   }
 ]

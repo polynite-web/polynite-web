@@ -107,7 +107,7 @@
     {
       "id": "context",
       "title": "Declare the surroundings",
-      "summary": "Reference a named support, path or assembly anchor. Relationships are explicit and local.",
+      "summary": "Reference a named support, path or assembly anchor. Relationships are explicit and local. Roof ports use {name,instance,roof}; inspect the provider before binding.",
       "example": [
         {
           "name": "base",
@@ -345,7 +345,7 @@
     {
       "id": "roof",
       "title": "Join roof wings",
-      "summary": "Trim intersecting wing faces to one upper envelope. A small profile changes the silhouette; styles remain recipe data. Discover roof for budgets and underside seam limits.",
+      "summary": "Trim intersecting wing faces to one upper envelope. A small profile changes the silhouette; styles remain recipe data. Discover roof for budgets and underside seam limits. Export a named provider port, or join a declared roof context from an independent construction. Providers retain authored geometry; consumers adapt at edit time.",
       "example": {
         "id": "roof",
         "op": "roof",
@@ -428,7 +428,8 @@
               ]
             ]
           }
-        ]
+        ],
+        "export": "main"
       }
     },
     {

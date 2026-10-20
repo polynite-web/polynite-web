@@ -1,5 +1,51 @@
 [
   {
+    "id": "linked-temple-gallery",
+    "title": "Connect buildings. Keep their recipes.",
+    "level": "Advanced",
+    "topic": "creation",
+    "description": "Attach a covered gallery to a Japanese hall. Its roof, walls and access steps follow the host while both assemblies remain editable.",
+    "prompt": "In Polynite discover roof, wall and context, then check commands.recipe_roof_ports. Let a provider roof export a named port, inspect roof_ports and attach an independent gallery at its authored doorway. Bind context:{name:hostroof,instance:hall,roof:main} and use roof join:@hostroof. Keep the host passage opening, gallery profiles, materials and repeated details in editable recipes. Estimate; change source proportions and pose; verify the dependent roof and walls. Preserve stable IDs and overrides, enable soft floor reflections, save and reopen the complete document.",
+    "control": {
+      "operation": "feature",
+      "args": {
+        "feature": "architecture.edit",
+        "params": {
+          "id": "hall",
+          "params": {
+            "rise": 1.8,
+            "size": 1.1
+          }
+        }
+      },
+      "action_id": "replace-with-a-fresh-uuid"
+    },
+    "control_note": "Edit the existing hall in this example. In another scene, inspect construction IDs, anchors, roof_ports and parameter schemas before binding a consumer. Keep both recipes and their explicit dependency.",
+    "experiments": [
+      {
+        "title": "Lift the hall",
+        "text": "Open & test → Adjust → hall · recipe controls: try rise 1.8. The attached gallery follows the doorway; its walls meet the shared roof envelope and its solid stairs reach the ground."
+      },
+      {
+        "title": "Grow the main building",
+        "text": "Change hall size to 1.1. Its exported roof is sampled in the gallery frame, keeping their meeting point aligned."
+      },
+      {
+        "title": "Give the gallery more room",
+        "text": "Under Adjust → gallery · recipe controls, try length 7 and width 2.7. The gallery keeps its own recipe and joins the declared host roof."
+      },
+      {
+        "title": "Save your variation",
+        "text": "Save, reopen and continue editing the existing hall and gallery. Materials, parameters, attachment and roof context are retained."
+      },
+      {
+        "title": "Compare the reflected floor",
+        "text": "Floor reflections are enabled in this scene. Keep them while comparing proportions, or adjust the floor reflection strength to suit your own material."
+      }
+    ],
+    "viewer_note": "The engine supplies generic roof ports, envelope clipping, wall openings, assembly transforms and shared geometry. Roof profiles, timber details, layout and floor appearance belong to recipes. This is a directed provider-to-consumer join: the provider keeps its authored roof; separate wall chains are not globally welded. Consumers must overlap and contact the declared source roof. Use Open & test → Adjust to change the controls."
+  },
+  {
     "id": "joined-temple-hall",
     "title": "Join a roof. Open a doorway.",
     "level": "Advanced",

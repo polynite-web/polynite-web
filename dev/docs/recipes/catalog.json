@@ -655,6 +655,132 @@
       "url": "https://explore.polynite.io/docs/recipes/joined-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.md"
+    },
+    {
+      "id": "linked-roof-workshop",
+      "version": 1,
+      "title": "Two assemblies. One meeting point.",
+      "summary": "A separate gallery meets a named roof port. Change the hall and its neighbour follows without merging their recipes.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "roof",
+        "profile",
+        "wall",
+        "primitive",
+        "assembly",
+        "anchor",
+        "context",
+        "let",
+        "spatial",
+        "instance",
+        "repeat",
+        "when",
+        "prototype"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/linked-roof-workshop/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/linked-roof-workshop/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/linked-roof-workshop/v1.md"
+    },
+    {
+      "id": "linked-temple-gallery",
+      "version": 1,
+      "title": "A temple with room to grow.",
+      "summary": "A detailed hall and an independent covered gallery share an explicit roof junction, a real doorway and editable proportions.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/linked-temple-gallery/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/linked-temple-gallery/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/linked-temple-gallery/v1.md"
+    },
+    {
+      "id": "linked-temple-garden",
+      "version": 1,
+      "title": "A garden where buildings meet.",
+      "summary": "The temple, its adapting gallery, pagoda and planting remain independent recipes. Source edits propagate through roof and doorway links.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial",
+        "motion",
+        "beam"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/linked-temple-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.md"
     }
   ]
 }

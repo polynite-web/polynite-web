@@ -2,6 +2,7 @@
 
 Human guide: https://explore.polynite.io/docs/recipes/
 Progressive index: https://explore.polynite.io/docs/recipes/catalog.json
+Constructions that meet collection: https://explore.polynite.io/docs/recipes/collections/connected-assemblies/v1/index.json
 Japanese garden collection: https://explore.polynite.io/docs/recipes/collections/japanese-garden/v2/index.json
 Architecture that joins collection: https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/index.json
 Nested architecture workshop collection: https://explore.polynite.io/docs/recipes/collections/nested-architecture/v1/index.json
@@ -30,3 +31,6 @@ Read the compact index, choose a relevant example and fetch its Markdown or JSON
 - [One roof. Real openings.](https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.md): Two intersecting wings become one upper roof envelope. A mitered wall chain follows the underside; doors and windows remain real voids.
 - [A temple hall that holds together.](https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.md): Curved joined roofs, true openings, shared columns, repeated brackets and gold ridges. Adjust proportions without reconstructing the temple by hand.
 - [A temple courtyard, composed.](https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.md): Combine the joined hall with a nested pagoda, shared garden lanterns, a pond and a lotus. Building tools stay generic; the complete scene is a recipe composition.
+- [Two assemblies. One meeting point.](https://explore.polynite.io/docs/recipes/data/linked-roof-workshop/v1.md): A separate gallery meets a named roof port. Change the hall and its neighbour follows without merging their recipes.
+- [A temple with room to grow.](https://explore.polynite.io/docs/recipes/data/linked-temple-gallery/v1.md): A detailed hall and an independent covered gallery share an explicit roof junction, a real doorway and editable proportions.
+- [A garden where buildings meet.](https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.md): The temple, its adapting gallery, pagoda and planting remain independent recipes. Source edits propagate through roof and doorway links.
