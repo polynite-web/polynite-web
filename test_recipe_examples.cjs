@@ -2,8 +2,8 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {catalog,source,hash}=require('./build_recipe_examples.cjs');
 const root=__dirname,items=catalog().items,ids=new Set();
-const operators=new Set(['surface','primitive','beam','anchor','repeat','motion','expression','context','let','spatial','when','prototype','instance','profile','sweep','assembly','footprint']);
-const kinds=new Set(['motion','support','corridor','span','layout','geometry','nested','connection','placement']);
+const operators=new Set(['surface','primitive','beam','anchor','repeat','motion','expression','context','let','spatial','when','prototype','instance','profile','sweep','assembly','footprint','roof','wall']);
+const kinds=new Set(['motion','support','corridor','span','layout','geometry','nested','connection','placement','junction']);
 const toolbox=JSON.parse(fs.readFileSync(path.join(source,'operators.json')));assert.deepEqual(new Set(toolbox.items.map(op=>op.id)),operators);assert.equal(toolbox.starter.module,'assembly');
 for(const e of items){
  assert.match(e.id,/^[a-z][a-z0-9-]*$/);assert.ok(!ids.has(e.id));ids.add(e.id);assert.ok(Number.isInteger(e.version)&&e.version>0);
@@ -27,3 +27,5 @@ for(const base of [root,path.join(root,'web'),path.join(root,'dev'),...(process.
  for(const match of html.matchAll(/(?:href|src)="(\/assets\/[^"?]*)"/g))assert.ok(fs.existsSync(path.join(base,match[1])),'Missing style/script '+match[1]);
 }
 console.log(`PASS ${items.length} versioned examples: scene/recipe hashes, input bounds, executable check contracts, progressive index and generated page assets.`);
+
+{const checks=require('./public-site-src/recipe-checks.js'),document={initial:{geo:{column:{m:'vermilion_timber_shared'}}}};assert.doesNotThrow(()=>checks.materials(document,structuredClone(document)));assert.throws(()=>checks.materials(document,{initial:{geo:{column:{m:'vermilion_timbe'}}}}),/Reload changed material/);assert.throws(()=>checks.materials(document,{initial:{geo:{column:{}}}}),/Reload changed material/);}

@@ -1,5 +1,47 @@
 [
   {
+    "id": "joined-temple-hall",
+    "title": "Join a roof. Open a doorway.",
+    "level": "Advanced",
+    "topic": "creation",
+    "description": "Compose a Japanese hall with roofs that meet, real openings and shared timber details. Change its proportions, then save and reopen your variation.",
+    "prompt": "In Polynite, discover architecture.operators for roof and wall and check commands.recipe_junctions. Compose an editable Japanese temple from a local joined roof and mitered wall chain. Cut the door and windows as real openings. Keep curvature, door width, materials and ornament choices in a module:assembly recipe; use shared prototypes for columns and repeated brackets. Estimate before applying. Change the roof rise and door width, inspect contacts and voids, save, reopen and resume by patching the same instance ID. Preserve the current scene.",
+    "control": {
+      "operation": "feature",
+      "args": {
+        "feature": "architecture.edit",
+        "params": {
+          "id": "hall",
+          "params": {
+            "rise": 1.8,
+            "door_width": 1.65
+          }
+        }
+      },
+      "action_id": "replace-with-a-fresh-uuid"
+    },
+    "control_note": "This changes the hall in this example. In another scene, discover the existing construction ID and its parameter schema first. Keep the same instance when continuing; do not replace the scene.",
+    "experiments": [
+      {
+        "title": "Make room at the entrance",
+        "text": "In Scene settings → Living architecture → hall, set door_width to 1.65. The opening and its timber frame widen together."
+      },
+      {
+        "title": "Change the silhouette",
+        "text": "Try rise 1.8 and eave_lift 0.2. Wall tops continue to meet the roof underside."
+      },
+      {
+        "title": "A smaller courtyard building",
+        "text": "Set size to 0.85. The joined shell, columns, details and access steps scale as one assembly."
+      },
+      {
+        "title": "Keep your own version",
+        "text": "Save the scene, reopen it and continue editing hall. Its recipe, procedural materials and current values travel together."
+      }
+    ],
+    "viewer_note": "The engine supplies reusable roof, wall, surface and assembly operators. The Japanese profiles, materials and ornament choices belong to the editable recipe. Find all six controls under Scene settings → Living architecture → hall; the Showcase viewer also has Adjust. Rectangular openings and local roof joins are supported; separate wall chains are not globally welded."
+  },
+  {
     "id": "colourful-tower",
     "title": "A colourful tower",
     "level": "Beginner",

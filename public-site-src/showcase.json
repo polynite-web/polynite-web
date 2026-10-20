@@ -1,7 +1,40 @@
 {
   "version": 1,
-  "featured": "infinite-flight",
+  "featured": "joined-temple-garden",
   "items": [
+    {
+      "recipe": "joined-temple-garden",
+      "category": "Connected architecture",
+      "environment": "Studio",
+      "tags": [
+        "Connected architecture",
+        "Architecture",
+        "junction",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "joined-temple-hall",
+      "category": "Connected architecture",
+      "environment": "Studio",
+      "tags": [
+        "Connected architecture",
+        "Architecture",
+        "junction",
+        "Editable"
+      ]
+    },
+    {
+      "recipe": "joined-roof-workshop",
+      "category": "Connected architecture",
+      "environment": "Studio",
+      "tags": [
+        "Connected architecture",
+        "Architecture",
+        "junction",
+        "Editable"
+      ]
+    },
     {
       "id": "infinite-flight",
       "atelier": "infinite-flight-20261017-075557-portrait",

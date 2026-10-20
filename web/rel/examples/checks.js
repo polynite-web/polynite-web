@@ -39,6 +39,17 @@
      for(const p of parts){assert(p.p.concat(p.s).every(Number.isFinite)&&p.s.every(v=>v>0),'Invalid component pose');if(rule.profile_points)assert(p.surface?.profile?.length===rule.profile_points,'Custom profile missing');if(rule.path_points)assert(p.surface?.path?.length===rule.path_points,'Custom sweep path missing');}
     }
    }
+   else if(c.type==='junction'){
+    const scale=c.uniform_scale?plan.recipe.params[c.uniform_scale]:1;const prisms=plan.components.filter(p=>p.surface?.kind===4).map(p=>{const angle=(p.r?.[1]||0)*Math.PI/180,co=Math.cos(angle),si=Math.sin(angle),shape=p.surface;const top=shape.path.map(v=>[p.p[0]+co*v[0]*p.s[0]+si*v[2]*p.s[2],p.p[1]+v[1]*p.s[1],p.p[2]-si*v[0]*p.s[0]+co*v[2]*p.s[2]]);assert(top.length>=3&&top.length<=16,'Invalid junction polygon');const a=top[0],b=top[1],d=top[2],u=b.map((v,k)=>v-a[k]),v=d.map((v,k)=>v-a[k]),normal=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]];assert(Math.abs(normal[1])>1e-8,'Degenerate junction');const height=q=>a[1]-(normal[0]*(q[0]-a[0])+normal[2]*(q[2]-a[2]))/normal[1];const inside=(q,strict=false)=>{let sign=0;for(let j=0;j<top.length;j++){const a=top[j],b=top[(j+1)%top.length],cross=(b[0]-a[0])*(q[2]-a[2])-(b[2]-a[2])*(q[0]-a[0]);if(Math.abs(cross)<(strict?1e-5:1e-6)){if(strict)return false;continue;}if(sign&&sign*cross<0)return false;sign=cross;}return true;};for(const v of top)assert(Math.abs(v[1]-height(v))<.0001,'Junction cap not planar');return {...p,top,height,inside,base:q=>shape.base_mode?p.p[1]+shape.base*p.s[1]:height(q)-shape.thickness*p.s[1]};});
+    const roofs=prisms.filter(p=>p.role==='roof'),walls=prisms.filter(p=>p.role==='paper');assert(roofs.length>=2&&walls.length>=8,'Joined shell missing');assert(new Set(plan.components.map(p=>p.part)).size===plan.components.length,'Junction IDs collide');
+    for(const w of walls)if(!(c.sill_tops||[]).some(y=>w.top.every(v=>Math.abs(v[1]-y*scale)<.004)))for(const v of w.top){const over=roofs.filter(r=>r.inside(v));assert(over.length,'Wall escapes roof');const error=Math.min(...over.map(r=>Math.abs(v[1]-r.base(v)+.002*scale)));assert(error<.006,'Wall does not follow roof underside '+w.part+' at '+JSON.stringify(v));}
+    for(const point of c.voids||[]){const q=point.map(v=>v*scale);assert(!walls.some(w=>w.inside(q)&&q[1]>w.base(q)+.001&&q[1]<w.height(q)-.001),'Opening is filled');}
+    for(const point of c.solids||[]){const q=point.map(v=>v*scale);assert(walls.some(w=>w.inside(q)&&q[1]>w.base(q)&&q[1]<w.height(q)),'Jamb is missing');}
+    const xs=roofs.flatMap(r=>r.top.map(v=>v[0])),zs=roofs.flatMap(r=>r.top.map(v=>v[2])),x0=Math.min(...xs),z0=Math.min(...zs),dx=Math.max(...xs)-x0,dz=Math.max(...zs)-z0;
+    for(let x=0;x<19;x++)for(let z=0;z<19;z++){const q=[x0+dx*(x+.371)/19,0,z0+dz*(z+.613)/19];assert(roofs.filter(r=>r.inside(q,true)).length<=1,'Roof upper faces overlap');}
+    if(c.stairs){const steps=plan.components.filter(p=>p.role==='stone'&&Math.abs(p.s[0]-2.4*scale)<.003&&Math.abs(p.s[2]-.34*scale)<.003).sort((a,b)=>a.p[2]-b.p[2]);assert(steps.length===3,'Access stairs missing');let top=0;for(let j=0;j<steps.length;j++){const p=steps[j],next=p.p[1]+p.s[1]/2;assert(Math.abs(p.p[1]-p.s[1]/2)<.003&&next>top&&next-top<=.15*scale,'Stairs must rise from ground toward the door');if(j){const previous=steps[j-1],gap=p.p[2]-p.s[2]/2-previous.p[2]-previous.s[2]/2;assert(gap<=.02*scale&&gap>=-.03*scale,'Stair tread gap or overlap');}top=next;}const end=steps.at(-1);assert(Math.abs(top-.42*scale)<.003&&Math.abs(end.p[2]+end.s[2]/2+4.5*scale)<.03*scale,'Stairs do not meet the entry floor');}
+    if(i===0)first=plan.components.map(p=>p.part);else assert(JSON.stringify(first)===JSON.stringify(plan.components.map(p=>p.part)),'Static junction IDs drift');
+   }
    else if(c.type==='nested'){
     const p=plan.recipe.params,perStorey=62+16*p.balcony+20*p.roof_ribs;assert(plan.components.length===16+p.storeys*perStorey,'Nested expansion count differs');
     assert(new Set(plan.components.map(p=>p.part)).size===plan.components.length,'Nested component IDs collide');
@@ -55,5 +66,6 @@
    else throw Error('Unknown check type '+c.type);
   },finish(){if(c.type==='motion')assert(last.every((v,i)=>Math.abs(v-first[i])<.03),'Loop did not close');}};
  }
- return {create};
+ function materials(expected,actual){for(const [id,o]of Object.entries(expected.initial?.geo||{}))if(!id.startsWith('_')&&o.m)assert((actual.initial?.geo?.[id]?.m||'plain')===o.m,'Reload changed material '+id);}
+ return {create,materials};
 });

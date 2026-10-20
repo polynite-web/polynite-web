@@ -1,0 +1,83 @@
+{
+  "module": "assembly",
+  "materials": {
+    "wood": "temple_vermilion",
+    "roof": "temple_tile",
+    "stone": "temple_stone",
+    "paper": "temple_paper",
+    "metal": "temple_gold"
+  },
+  "context": [
+    {
+      "name": "entry",
+      "instance": "hall",
+      "anchor": "door000000"
+    }
+  ],
+  "program": {
+    "version": 1,
+    "inputs": [],
+    "prototypes": [
+      {
+        "id": "paver",
+        "op": "primitive",
+        "kind": "cube",
+        "bevel": 0.04
+      }
+    ],
+    "nodes": [
+      {
+        "id": "walk",
+        "op": "instance",
+        "source": "paver",
+        "role": "stone",
+        "repeat": {
+          "count": 14
+        },
+        "p": [
+          "@entry.x",
+          0.04,
+          [
+            "sub",
+            [
+              "sub",
+              "@entry.z",
+              0.8
+            ],
+            [
+              "mul",
+              "@i",
+              0.42
+            ]
+          ]
+        ],
+        "s": [
+          2.2,
+          0.08,
+          0.38
+        ]
+      },
+      {
+        "id": "pond",
+        "op": "primitive",
+        "kind": "cylinder",
+        "role": "roof",
+        "p": [
+          -2,
+          -0.03,
+          -6
+        ],
+        "s": [
+          4.8,
+          0.08,
+          3.4
+        ],
+        "color": [
+          0.13,
+          0.5,
+          0.55
+        ]
+      }
+    ]
+  }
+}

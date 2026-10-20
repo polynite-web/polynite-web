@@ -505,7 +505,7 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/footprint-placement/",
       "detail": "https://explore.polynite.io/docs/recipes/data/footprint-placement/v1.json",
@@ -535,11 +535,126 @@
       ],
       "compatibility": {
         "desktop": "verified",
-        "browser": "not_verified"
+        "browser": "verified"
       },
       "url": "https://explore.polynite.io/docs/recipes/clearance-japanese-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.md"
+    },
+    {
+      "id": "joined-roof-workshop",
+      "version": 1,
+      "title": "One roof. Real openings.",
+      "summary": "Two intersecting wings become one upper roof envelope. A mitered wall chain follows the underside; doors and windows remain real voids.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "roof",
+        "profile",
+        "wall",
+        "primitive",
+        "assembly"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths",
+        "recipe_junctions",
+        "surface_prisms"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/joined-roof-workshop/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.md"
+    },
+    {
+      "id": "joined-temple-hall",
+      "version": 1,
+      "title": "A temple hall that holds together.",
+      "summary": "Curved joined roofs, true openings, shared columns, repeated brackets and gold ridges. Adjust proportions without reconstructing the temple by hand.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths",
+        "recipe_junctions",
+        "surface_prisms"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/joined-temple-hall/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.md"
+    },
+    {
+      "id": "joined-temple-garden",
+      "version": 1,
+      "title": "A temple courtyard, composed.",
+      "summary": "Combine the joined hall with a nested pagoda, shared garden lanterns, a pond and a lotus. Building tools stay generic; the complete scene is a recipe composition.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "let",
+        "motion",
+        "beam",
+        "context"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths",
+        "recipe_junctions",
+        "surface_prisms",
+        "recipe_context"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/joined-temple-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.md"
     }
   ]
 }

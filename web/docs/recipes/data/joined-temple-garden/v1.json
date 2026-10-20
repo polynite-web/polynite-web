@@ -1,0 +1,141 @@
+{
+  "category": "Architecture",
+  "level": "Advanced",
+  "capabilities": [
+    "recipe_program",
+    "recipe_assemblies",
+    "recipe_instances",
+    "surface_profiles",
+    "surface_paths",
+    "recipe_junctions",
+    "surface_prisms",
+    "recipe_context"
+  ],
+  "operators": [
+    "expression",
+    "instance",
+    "roof",
+    "profile",
+    "wall",
+    "repeat",
+    "assembly",
+    "when",
+    "surface",
+    "sweep",
+    "anchor",
+    "prototype",
+    "primitive",
+    "let",
+    "motion",
+    "beam",
+    "context"
+  ],
+  "duration": 6,
+  "seed": 1020,
+  "edit_parameter": "rise",
+  "settings": "Open & test → Adjust → Shape / Openings / Detail. In Polynite: Scene settings → Living architecture → hall. Save downloads an independent .scene with recipes and materials.",
+  "limits": "Bounded local joins: up to four roof wings, level wall chains and rectangular openings. Roof upper faces are trimmed at intersections; underside seams are not a general solid Boolean. Separate wall chains are not globally welded. Style, profiles, ornaments and placement remain editable recipe data.",
+  "prompt": "In Polynite, discover architecture.operators for roof and wall and check commands.recipe_junctions. Compose an editable Japanese temple from a local joined roof and mitered wall chain. Cut the door and windows as real openings. Keep curvature, door width, materials and ornament choices in a module:assembly recipe; use shared prototypes for columns and repeated brackets. Estimate before applying. Change the roof rise and door width, inspect contacts and voids, save, reopen and resume by patching the same instance ID. Preserve the current scene.",
+  "try": [
+    "Change Roof rise and Eave lift: wall tops follow the roof underside.",
+    "Change Door width or switch Windows off: geometry is cut again at edit time.",
+    "Choose a variant, save the scene and reopen it; parameters remain editable."
+  ],
+  "steps": [
+    "Define named roof wings and their recipe-owned profiles.",
+    "Reference the roof from a wall chain; declare real door and window voids.",
+    "Compose shared columns, brackets and ornaments; estimate, inspect, capture, save and reopen."
+  ],
+  "id": "joined-temple-garden",
+  "title": "A temple courtyard, composed.",
+  "summary": "Combine the joined hall with a nested pagoda, shared garden lanterns, a pond and a lotus. Building tools stay generic; the complete scene is a recipe composition.",
+  "instances": [
+    "hall",
+    "tower",
+    "lantern",
+    "lamp",
+    "flower",
+    "tree",
+    "yard"
+  ],
+  "checks": [
+    {
+      "type": "junction",
+      "instance": "hall",
+      "times": [
+        0,
+        3,
+        6
+      ],
+      "sill_tops": [
+        1.32
+      ],
+      "uniform_scale": "size",
+      "voids": [
+        [
+          0,
+          1.5,
+          -4.5
+        ]
+      ],
+      "solids": [
+        [
+          1.1,
+          1.5,
+          -4.5
+        ]
+      ],
+      "stairs": true
+    }
+  ],
+  "version": 1,
+  "collection": "joined-architecture",
+  "variants": [
+    {
+      "id": "low-eaves",
+      "title": "Low, gently curved eaves",
+      "poster": "https://explore.polynite.io/docs/recipes/media/joined-temple-garden-v1-low-eaves.jpg",
+      "scene_sha256": "8d474373110aa0ef7ef9fdcb1add58f84249d50652aeb287eba1cd5096216fa2",
+      "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1-low-eaves.scene"
+    },
+    {
+      "id": "high-roof",
+      "title": "Tall roof, closed side panels",
+      "poster": "https://explore.polynite.io/docs/recipes/media/joined-temple-garden-v1-high-roof.jpg",
+      "scene_sha256": "313b92f35c6ba1e2ab936495d2f2d5c823c42770a6ddec21bb8413dbed9cd632",
+      "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1-high-roof.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "verified"
+  },
+  "tested_at": "2026-10-20",
+  "revision": "0f3312e60f0098005c9253aaa693962bb73902e9",
+  "scene_sha256": "e5871a48a90ef259a44234224e0ec6fa92503b9ff307efbad4a853afdb89a33b",
+  "recipes_sha256": "8248e8323f086816805d8c9f8609d52d154adde8fd544b24299b8d3d59215874",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/joined-temple-garden-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/joined-temple-garden-v1.jpg"
+  },
+  "browser_validation": {
+    "scope": "Integrated Chromium/WebGPU: original and two source recipe variants, parameter editing and rejection, complete document and fresh-engine restoration",
+    "engine_sha256": "75a56c6f5b76465e7d92e20603952b564ab2fa55b7582688770de6228060a831",
+    "tested_at": "2026-10-20",
+    "checks": [
+      "junctions",
+      "three variants",
+      "parameter edit",
+      "invalid edit rejection",
+      "material round trip",
+      "fresh runtime restore",
+      "exact offscreen PNG"
+    ]
+  },
+  "open": "https://polynite.io/examples/view.html?id=joined-temple-garden",
+  "url": "https://explore.polynite.io/docs/recipes/joined-temple-garden/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.recipes.json"
+}

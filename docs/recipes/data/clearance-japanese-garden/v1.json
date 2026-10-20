@@ -75,7 +75,7 @@
   "revision": "9d1ba003b",
   "compatibility": {
     "desktop": "verified",
-    "browser": "not_verified"
+    "browser": "verified"
   },
   "media": {
     "video": "https://explore.polynite.io/docs/recipes/media/clearance-japanese-garden.mp4",
@@ -103,6 +103,11 @@
   ],
   "scene_sha256": "8abc75334141f3e6aaa6d5b2c9c3efacd45d29b5fc27db2fff98bcc6392b268f",
   "recipes_sha256": "c4a5952c82c6fc9040f9c0f0c14cc7ae52bcd46cf5653a35488d9313a7c7c173",
+  "browser_validation": {
+    "scope": "Chromium/WebGPU v0319 on polynite.io: original scene, placement, return after source edit and live margin edit",
+    "tested_at": "2026-10-19",
+    "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
+  },
   "open": "https://polynite.io/examples/view.html?id=clearance-japanese-garden",
   "url": "https://explore.polynite.io/docs/recipes/clearance-japanese-garden/",
   "detail": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.json",

@@ -1750,6 +1750,373 @@
         "tested_at": "2026-10-19",
         "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
       }
+    },
+    {
+      "category": "Architecture",
+      "level": "Advanced",
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths",
+        "recipe_junctions",
+        "surface_prisms"
+      ],
+      "operators": [
+        "expression",
+        "roof",
+        "profile",
+        "wall",
+        "primitive",
+        "assembly"
+      ],
+      "duration": 6,
+      "seed": 1020,
+      "edit_parameter": "rise",
+      "settings": "Open & test → Adjust → Shape / Openings / Detail. In Polynite: Scene settings → Living architecture → hall. Save downloads an independent .scene with recipes and materials.",
+      "limits": "Bounded local joins: up to four roof wings, level wall chains and rectangular openings. Roof upper faces are trimmed at intersections; underside seams are not a general solid Boolean. Separate wall chains are not globally welded. Style, profiles, ornaments and placement remain editable recipe data.",
+      "prompt": "In Polynite, discover architecture.operators for roof and wall and check commands.recipe_junctions. Compose an editable Japanese temple from a local joined roof and mitered wall chain. Cut the door and windows as real openings. Keep curvature, door width, materials and ornament choices in a module:assembly recipe; use shared prototypes for columns and repeated brackets. Estimate before applying. Change the roof rise and door width, inspect contacts and voids, save, reopen and resume by patching the same instance ID. Preserve the current scene.",
+      "try": [
+        "Change Roof rise and Eave lift: wall tops follow the roof underside.",
+        "Change Door width or switch Windows off: geometry is cut again at edit time.",
+        "Choose a variant, save the scene and reopen it; parameters remain editable."
+      ],
+      "steps": [
+        "Define named roof wings and their recipe-owned profiles.",
+        "Reference the roof from a wall chain; declare real door and window voids.",
+        "Compose shared columns, brackets and ornaments; estimate, inspect, capture, save and reopen."
+      ],
+      "id": "joined-roof-workshop",
+      "title": "One roof. Real openings.",
+      "summary": "Two intersecting wings become one upper roof envelope. A mitered wall chain follows the underside; doors and windows remain real voids.",
+      "instances": [
+        "hall"
+      ],
+      "checks": [
+        {
+          "type": "junction",
+          "instance": "hall",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "sill_tops": [
+            1.32
+          ],
+          "uniform_scale": "size",
+          "voids": [
+            [
+              0,
+              1.5,
+              -4.5
+            ]
+          ],
+          "solids": [
+            [
+              1.1,
+              1.5,
+              -4.5
+            ]
+          ]
+        }
+      ],
+      "version": 1,
+      "collection": "joined-architecture",
+      "variants": [
+        {
+          "id": "low-eaves",
+          "title": "Low, gently curved eaves",
+          "poster": "media/joined-roof-workshop-v1-low-eaves.jpg",
+          "scene_sha256": "f5c474358db105f22da7d628e3e6cae3bd0e9bd55768b8be655f6f069b1d1d88"
+        },
+        {
+          "id": "high-roof",
+          "title": "Tall roof, closed side panels",
+          "poster": "media/joined-roof-workshop-v1-high-roof.jpg",
+          "scene_sha256": "7b43240542737a07e98ebb1500f864b6f13482d7cea2acc21bd13282aa7ae93a"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "tested_at": "2026-10-20",
+      "revision": "0f3312e60f0098005c9253aaa693962bb73902e9",
+      "scene_sha256": "5bd805e6bb2e79237a215b534555d0ef73102d5ada66fbae24571b83ce3d48be",
+      "recipes_sha256": "ead126a9b73feeab07d8201e4eadb6013e851be8cb98eecdde99ac5a59ce6812",
+      "media": {
+        "video": "media/joined-roof-workshop-v1.mp4",
+        "poster": "media/joined-roof-workshop-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Integrated Chromium/WebGPU: original and two source recipe variants, parameter editing and rejection, complete document and fresh-engine restoration",
+        "engine_sha256": "75a56c6f5b76465e7d92e20603952b564ab2fa55b7582688770de6228060a831",
+        "tested_at": "2026-10-20",
+        "checks": [
+          "junctions",
+          "three variants",
+          "parameter edit",
+          "invalid edit rejection",
+          "material round trip",
+          "fresh runtime restore"
+        ]
+      }
+    },
+    {
+      "category": "Architecture",
+      "level": "Advanced",
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths",
+        "recipe_junctions",
+        "surface_prisms"
+      ],
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive"
+      ],
+      "duration": 6,
+      "seed": 1020,
+      "edit_parameter": "rise",
+      "settings": "Open & test → Adjust → Shape / Openings / Detail. In Polynite: Scene settings → Living architecture → hall. Save downloads an independent .scene with recipes and materials.",
+      "limits": "Bounded local joins: up to four roof wings, level wall chains and rectangular openings. Roof upper faces are trimmed at intersections; underside seams are not a general solid Boolean. Separate wall chains are not globally welded. Style, profiles, ornaments and placement remain editable recipe data.",
+      "prompt": "In Polynite, discover architecture.operators for roof and wall and check commands.recipe_junctions. Compose an editable Japanese temple from a local joined roof and mitered wall chain. Cut the door and windows as real openings. Keep curvature, door width, materials and ornament choices in a module:assembly recipe; use shared prototypes for columns and repeated brackets. Estimate before applying. Change the roof rise and door width, inspect contacts and voids, save, reopen and resume by patching the same instance ID. Preserve the current scene.",
+      "try": [
+        "Change Roof rise and Eave lift: wall tops follow the roof underside.",
+        "Change Door width or switch Windows off: geometry is cut again at edit time.",
+        "Choose a variant, save the scene and reopen it; parameters remain editable."
+      ],
+      "steps": [
+        "Define named roof wings and their recipe-owned profiles.",
+        "Reference the roof from a wall chain; declare real door and window voids.",
+        "Compose shared columns, brackets and ornaments; estimate, inspect, capture, save and reopen."
+      ],
+      "id": "joined-temple-hall",
+      "title": "A temple hall that holds together.",
+      "summary": "Curved joined roofs, true openings, shared columns, repeated brackets and gold ridges. Adjust proportions without reconstructing the temple by hand.",
+      "instances": [
+        "hall"
+      ],
+      "checks": [
+        {
+          "type": "junction",
+          "instance": "hall",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "sill_tops": [
+            1.32
+          ],
+          "uniform_scale": "size",
+          "voids": [
+            [
+              0,
+              1.5,
+              -4.5
+            ]
+          ],
+          "solids": [
+            [
+              1.1,
+              1.5,
+              -4.5
+            ]
+          ],
+          "stairs": true
+        }
+      ],
+      "version": 1,
+      "collection": "joined-architecture",
+      "variants": [
+        {
+          "id": "low-eaves",
+          "title": "Low, gently curved eaves",
+          "poster": "media/joined-temple-hall-v1-low-eaves.jpg",
+          "scene_sha256": "91295c3811798fc3516960d57434120f779e8afe552714e27303e96c3e1c14c8"
+        },
+        {
+          "id": "high-roof",
+          "title": "Tall roof, closed side panels",
+          "poster": "media/joined-temple-hall-v1-high-roof.jpg",
+          "scene_sha256": "7974ed8371d00c88598642e1c88245f728563d891c4f57065438c1adc4836b31"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "tested_at": "2026-10-20",
+      "revision": "0f3312e60f0098005c9253aaa693962bb73902e9",
+      "scene_sha256": "8c179bee05bb907e88b7c91df6c24429fb68119fae0fa7e28dd959daed0aac95",
+      "recipes_sha256": "ef9f8ff20992b1b50f1462c336f638555542a1f45ee994a5a928d004bea53f9b",
+      "media": {
+        "video": "media/joined-temple-hall-v1.mp4",
+        "poster": "media/joined-temple-hall-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Integrated Chromium/WebGPU: original and two source recipe variants, parameter editing and rejection, complete document and fresh-engine restoration",
+        "engine_sha256": "75a56c6f5b76465e7d92e20603952b564ab2fa55b7582688770de6228060a831",
+        "tested_at": "2026-10-20",
+        "checks": [
+          "junctions",
+          "three variants",
+          "parameter edit",
+          "invalid edit rejection",
+          "material round trip",
+          "fresh runtime restore"
+        ]
+      }
+    },
+    {
+      "category": "Architecture",
+      "level": "Advanced",
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "surface_profiles",
+        "surface_paths",
+        "recipe_junctions",
+        "surface_prisms",
+        "recipe_context"
+      ],
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "let",
+        "motion",
+        "beam",
+        "context"
+      ],
+      "duration": 6,
+      "seed": 1020,
+      "edit_parameter": "rise",
+      "settings": "Open & test → Adjust → Shape / Openings / Detail. In Polynite: Scene settings → Living architecture → hall. Save downloads an independent .scene with recipes and materials.",
+      "limits": "Bounded local joins: up to four roof wings, level wall chains and rectangular openings. Roof upper faces are trimmed at intersections; underside seams are not a general solid Boolean. Separate wall chains are not globally welded. Style, profiles, ornaments and placement remain editable recipe data.",
+      "prompt": "In Polynite, discover architecture.operators for roof and wall and check commands.recipe_junctions. Compose an editable Japanese temple from a local joined roof and mitered wall chain. Cut the door and windows as real openings. Keep curvature, door width, materials and ornament choices in a module:assembly recipe; use shared prototypes for columns and repeated brackets. Estimate before applying. Change the roof rise and door width, inspect contacts and voids, save, reopen and resume by patching the same instance ID. Preserve the current scene.",
+      "try": [
+        "Change Roof rise and Eave lift: wall tops follow the roof underside.",
+        "Change Door width or switch Windows off: geometry is cut again at edit time.",
+        "Choose a variant, save the scene and reopen it; parameters remain editable."
+      ],
+      "steps": [
+        "Define named roof wings and their recipe-owned profiles.",
+        "Reference the roof from a wall chain; declare real door and window voids.",
+        "Compose shared columns, brackets and ornaments; estimate, inspect, capture, save and reopen."
+      ],
+      "id": "joined-temple-garden",
+      "title": "A temple courtyard, composed.",
+      "summary": "Combine the joined hall with a nested pagoda, shared garden lanterns, a pond and a lotus. Building tools stay generic; the complete scene is a recipe composition.",
+      "instances": [
+        "hall",
+        "tower",
+        "lantern",
+        "lamp",
+        "flower",
+        "tree",
+        "yard"
+      ],
+      "checks": [
+        {
+          "type": "junction",
+          "instance": "hall",
+          "times": [
+            0,
+            3,
+            6
+          ],
+          "sill_tops": [
+            1.32
+          ],
+          "uniform_scale": "size",
+          "voids": [
+            [
+              0,
+              1.5,
+              -4.5
+            ]
+          ],
+          "solids": [
+            [
+              1.1,
+              1.5,
+              -4.5
+            ]
+          ],
+          "stairs": true
+        }
+      ],
+      "version": 1,
+      "collection": "joined-architecture",
+      "variants": [
+        {
+          "id": "low-eaves",
+          "title": "Low, gently curved eaves",
+          "poster": "media/joined-temple-garden-v1-low-eaves.jpg",
+          "scene_sha256": "8d474373110aa0ef7ef9fdcb1add58f84249d50652aeb287eba1cd5096216fa2"
+        },
+        {
+          "id": "high-roof",
+          "title": "Tall roof, closed side panels",
+          "poster": "media/joined-temple-garden-v1-high-roof.jpg",
+          "scene_sha256": "313b92f35c6ba1e2ab936495d2f2d5c823c42770a6ddec21bb8413dbed9cd632"
+        }
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "tested_at": "2026-10-20",
+      "revision": "0f3312e60f0098005c9253aaa693962bb73902e9",
+      "scene_sha256": "e5871a48a90ef259a44234224e0ec6fa92503b9ff307efbad4a853afdb89a33b",
+      "recipes_sha256": "8248e8323f086816805d8c9f8609d52d154adde8fd544b24299b8d3d59215874",
+      "media": {
+        "video": "media/joined-temple-garden-v1.mp4",
+        "poster": "media/joined-temple-garden-v1.jpg"
+      },
+      "browser_validation": {
+        "scope": "Integrated Chromium/WebGPU: original and two source recipe variants, parameter editing and rejection, complete document and fresh-engine restoration",
+        "engine_sha256": "75a56c6f5b76465e7d92e20603952b564ab2fa55b7582688770de6228060a831",
+        "tested_at": "2026-10-20",
+        "checks": [
+          "junctions",
+          "three variants",
+          "parameter edit",
+          "invalid edit rejection",
+          "material round trip",
+          "fresh runtime restore",
+          "exact offscreen PNG"
+        ]
+      }
     }
   ]
 }

@@ -29,3 +29,14 @@ for(const kind of ['path','bridge','garden'])for(const variant of ['original','c
  for(const r of d.initial.architecture)assert(Buffer.byteLength(JSON.stringify(r.program))<32768);
 }
 console.log('PASS data-only terrain connections, bounded calculation scopes and nine reproducible compositions.');
+
+{
+ const c=require('./compose_recipe_collection.cjs').collection(require('node:path').join(__dirname,'public-site-src/collections/joined-architecture/collection.json'));
+ for(const e of c.data.examples)for(const variant of [null,...e.variants]){const doc=c.compose(e,variant);assert(doc.initial.architecture.every(r=>r.module==='assembly'&&JSON.stringify(r.program).length<32768));const main=doc.initial.architecture.find(r=>r.id==='hall');assert(main.program.inputs.some(p=>p.name==='size'));assert(main.program.assemblies.some(a=>a.nodes.some(n=>n.op==='roof')&&a.nodes.some(n=>n.op==='wall')));if(e.id==='joined-temple-garden')assert(doc.initial.architecture.find(r=>r.id==='yard').context.some(c=>c.instance==='hall'&&c.anchor==='door000000'));}
+ console.log('PASS joined architecture: nine portable compositions, bounded programs, complete size controls and explicit entry-path dependency.');
+}
+{
+ const {portable}=require('./import_recipe_collection.cjs'),document={version:1,initial:{scene_modules:{birds:{count:3}},unknown:{future:true}},seq:[],export:{directory:'C:/private/videos',folder:'job',fps:30,future:7}},bytes=Buffer.from(JSON.stringify(document)),saved=JSON.parse(portable(bytes));
+ assert.equal(saved.export.directory,undefined);assert.equal(saved.export.folder,undefined);assert.equal(saved.export.fps,30);assert.equal(saved.export.future,7);assert.deepEqual(saved.initial,document.initial);assert.equal(document.export.directory,'C:/private/videos');assert.deepEqual(portable(portable(bytes)),portable(bytes));
+ console.log('PASS public scenes preserve unknown content and portable export settings without native output locations.');
+}

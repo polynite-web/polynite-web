@@ -138,5 +138,12 @@
     "media": "/docs/media/tutorials/r1/",
     "scene": "terrain-aware-pavilion-5e6688b299b3.scene",
     "video": "terrain-aware-pavilion.mp4"
+  },
+  {
+    "id": "joined-temple-hall",
+    "revision": 42,
+    "media": "/docs/media/tutorials/r42/",
+    "scene": "joined-temple-hall-8c179bee05bb.scene",
+    "video": "joined-temple-hall.mp4"
   }
 ]

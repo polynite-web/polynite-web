@@ -22,7 +22,8 @@
    for(const {c,check}of contracts){check.finish();checks.push(c.type);}
    if(!call('scene.snapshot').objects)throw Error('Scene is empty');
    if(reference.initial.architecture?.length){const r=reference.initial.architecture[0],name=entry.edit_parameter||r.program.inputs[0].name,schema=call('scene.architecture',{request:{command:'inspect',id:r.id}}).parameter_schema.properties[name],value=schema.type==='integer'?Math.min(schema.maximum,schema.minimum+1):schema.minimum+(schema.maximum-schema.minimum)*.4;film('stop');call('scene.apply',{actions:[{op:'architecture',id:r.id,params:{[name]:value}}]});const changed=call('scene.architecture',{request:{command:'inspect',id:r.id}}).recipe.params[name];if(Math.abs(changed-value)>.001)throw Error('Parameter edit did not apply');checks.push('parameter edit');}
-   await sleep(100);const instancing=film('status').instancing;if(entry.capabilities?.includes('recipe_instances')){if(!instancing?.gpu_copies)throw Error('Expected shared GPU geometry');checks.push('GPU sharing');}
+   await sleep(100);const instancing=film('status').instancing;if(entry.capabilities?.includes('recipe_instances')&&reference.initial.architecture?.some(r=>r.program?.prototypes?.length)){if(!instancing?.gpu_copies)throw Error('Expected shared GPU geometry');checks.push('GPU sharing');}
+   film('stop');film('load_document',{document:saved,start_paused:true});PolyniteRecipeChecks.materials(saved,film('document',{expanded:true}));checks.push('scene reload','material names');
    report.textContent=JSON.stringify({passed:true,id:entry.id,checks,objects:call('scene.snapshot').objects,instancing},null,2);
   }catch(error){report.textContent=JSON.stringify({passed:false,id:entry.id,error:error.message},null,2);}finally{try{film('stop');film('load_document',{document:saved,start_paused:true});makeParameters();}finally{checking=false;button.disabled=false;}}
  }
@@ -45,7 +46,7 @@
   }
   if(!container.childElementCount){const p=document.createElement('p');p.textContent='Use Scene settings to adjust this creation’s saved controls, camera, lighting and atmosphere.';container.append(p);}
  }
- function loadReference(document=reference){idle();film('stop');film('load_document',{document:structuredClone(document),start_paused:true});reference=document;makeParameters();$('fallback').hidden=true;frame.hidden=false;ready=true;enable();notice('Ready · your independent copy. Play or adjust to explore.');}
+ function loadReference(document=reference){idle();film('stop');film('load_document',{document:structuredClone(document),start_paused:true});PolyniteRecipeChecks.materials(document,film('document',{expanded:true}));reference=document;makeParameters();$('fallback').hidden=true;frame.hidden=false;ready=true;enable();notice('Ready · your independent copy. Play or adjust to explore.');}
  async function boot(){
   const id=new URL(location.href).searchParams.get('id');if(!id||!/^[a-z][a-z0-9-]*$/.test(id))throw Error('Choose an example from Showcase or Learn');
   const catalog=await fetchJson('catalog.json');entry=catalog.items.find(e=>e.id===id);if(!entry)throw Error('This example was not found');

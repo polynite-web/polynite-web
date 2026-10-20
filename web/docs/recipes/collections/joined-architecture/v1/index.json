@@ -1,0 +1,105 @@
+{
+  "id": "joined-architecture",
+  "version": 1,
+  "title": "Architecture that joins",
+  "required_capabilities": [
+    "commands.recipe_program",
+    "commands.recipe_assemblies",
+    "commands.recipe_instances",
+    "commands.surface_profiles",
+    "commands.surface_paths",
+    "commands.recipe_junctions",
+    "commands.surface_prisms",
+    "commands.recipe_context"
+  ],
+  "principle": "Recipes compose existing local operators. These examples are starting points, not a closed list of shapes.",
+  "source": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/source.json",
+  "materials": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/materials.json",
+  "recipes": [
+    {
+      "id": "shell",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/joined-shell.json"
+    },
+    {
+      "id": "hall",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/temple-hall.json"
+    },
+    {
+      "id": "pagoda",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/pagoda.json"
+    },
+    {
+      "id": "lantern",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/lantern.json"
+    },
+    {
+      "id": "tree",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/tree.json"
+    },
+    {
+      "id": "lotus",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/lotus.json"
+    },
+    {
+      "id": "courtyard",
+      "url": "https://explore.polynite.io/docs/recipes/collections/joined-architecture/v1/courtyard.json"
+    }
+  ],
+  "examples": [
+    {
+      "id": "joined-roof-workshop",
+      "title": "One roof. Real openings.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=joined-roof-workshop",
+      "variants": [
+        {
+          "id": "low-eaves",
+          "title": "Low, gently curved eaves",
+          "scene": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1-low-eaves.scene"
+        },
+        {
+          "id": "high-roof",
+          "title": "Tall roof, closed side panels",
+          "scene": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1-high-roof.scene"
+        }
+      ]
+    },
+    {
+      "id": "joined-temple-hall",
+      "title": "A temple hall that holds together.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=joined-temple-hall",
+      "variants": [
+        {
+          "id": "low-eaves",
+          "title": "Low, gently curved eaves",
+          "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1-low-eaves.scene"
+        },
+        {
+          "id": "high-roof",
+          "title": "Tall roof, closed side panels",
+          "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1-high-roof.scene"
+        }
+      ]
+    },
+    {
+      "id": "joined-temple-garden",
+      "title": "A temple courtyard, composed.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=joined-temple-garden",
+      "variants": [
+        {
+          "id": "low-eaves",
+          "title": "Low, gently curved eaves",
+          "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1-low-eaves.scene"
+        },
+        {
+          "id": "high-roof",
+          "title": "Tall roof, closed side panels",
+          "scene": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1-high-roof.scene"
+        }
+      ]
+    }
+  ],
+  "workflow": "Read this compact index, then only the recipes or scene details needed. Bind supports and paths to the current scene, estimate, apply, inspect and observe. Composition source is authoring data: first load authored geometry without generated instances, build the declared assemblies, then estimate/apply the recipe instances and capture before exporting. Downloadable .scene files already include those paths. Preserve user edits; do not clear their scene."
+}
