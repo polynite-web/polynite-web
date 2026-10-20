@@ -739,5 +739,52 @@
     ],
     "control_note": "These arguments add one shape to the current scene with scene.shape upsert. Ask scene.shape help for the full grammar, then check the result with scene.capture.",
     "viewer_note": "Requires the Polynite engine with SDF shapes (the scene.shape command). Shapes are saved inside the scene and replayed by its film; nothing is uploaded."
+  },
+  {
+    "id": "terrain-aware-pavilion",
+    "title": "A pavilion that follows the ground",
+    "level": "Intermediate",
+    "topic": "creation",
+    "description": "Raise the land under a Japanese garden pavilion. Four independent feet adapt while its deck stays level, using one editable recipe and shared terrain operators.",
+    "prompt": "Create a Japanese garden pavilion that adapts to Polynite's infinite terrain.\n\n- Check commands.recipe_terrain, then discover architecture.operators for spatial queries.\n- Compose an assembly recipe with context:[{name:'ground',terrain:'infinite'}]. Sample four feet with height; keep the deck above their maximum plus floor_clearance.\n- Choose dimensions in the recipe: an unbounded terrain has no footprint width or depth.\n- Expose width, depth, roof curl and floor_clearance. Raise a broad patch of ground, then return it to the initial state in a five-second film.\n- Keep the existing user scene and use stable IDs. Verify the contacts visually.",
+    "control": {
+      "operation": "feature",
+      "feature": "architecture.edit",
+      "params": {
+        "id": "temple",
+        "params": {
+          "floor_clearance": 0.6
+        }
+      },
+      "action_id": "replace-with-a-fresh-uuid"
+    },
+    "control_note": "This edits the pavilion in the attached example. Discover its existing ID and parameter schema before editing a different scene. The operator samples terrain; the recipe chooses the deck and posts.",
+    "settings_groups": [
+      {
+        "title": "Ground",
+        "items": [
+          {
+            "id": "ground_height",
+            "label": "Ground height",
+            "hint": "Raise the whole terrain. The pavilion follows without moving its camera."
+          }
+        ]
+      }
+    ],
+    "experiments": [
+      {
+        "title": "Higher deck",
+        "text": "Set floor_clearance to 0.6 under Scene settings > Living architecture > temple."
+      },
+      {
+        "title": "Another silhouette",
+        "text": "Change width, depth, curl and overhang. The same support expressions still fit the feet."
+      },
+      {
+        "title": "A gentler slope",
+        "text": "Change the raise cue depth from 4 to 2.2. Keep the ground edit broad enough for the terrain grid."
+      }
+    ],
+    "viewer_note": "Requires commands.recipe_terrain. Press Play to compare flat and raised ground; use Adjust for the saved controls. Terrain queries use the finest near-field triangle grid, currently 4 m. Arbitrary imported meshes and continuous terrain deformation are outside this example."
   }
 ]

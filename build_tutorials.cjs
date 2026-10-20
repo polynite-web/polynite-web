@@ -13,7 +13,8 @@ for(const base of [root,path.join(root,'web'),path.join(root,'dev')]){
  fs.mkdirSync(path.join(base,'assets/public-site'),{recursive:true});fs.writeFileSync(path.join(base,'assets/public-site',scriptName),script);
  fs.mkdirSync(path.join(base,media),{recursive:true});for(const i of items)for(const url of [i.scene,i.video,i.preview,i.poster]){const rel=new URL(url).pathname;const source=path.join(root,rel);fs.mkdirSync(path.dirname(path.join(base,rel)),{recursive:true});if(base!==root)fs.copyFileSync(source,path.join(base,rel));}
  const viewerDir=path.join(base,'tutorial-view');fs.mkdirSync(viewerDir,{recursive:true});
- const runtime=fs.readFileSync(path.join(base,'app.html'),'utf8').replace(/<script id="pn-build-version">[^]*?<\/script>/g,'');
+ // All standalone readers must use the shell that matches the compiled engine.
+ const runtime=fs.readFileSync(path.join(root,'dev/app.html'),'utf8').replace(/<script id="pn-build-version">[^]*?<\/script>/g,'');
  const isolate=`function(){const persistentMount=FS.mount;FS.mount=function(type,options,mountpoint){return persistentMount.call(FS,type===IDBFS?MEMFS:type,options,mountpoint);};console.info('[tutorial] scene filesystem is temporary; saved scenes are untouched');}`;
  if(!runtime.includes('preRun: [],'))throw Error('Engine bootstrap changed: review tutorial filesystem isolation');
  const release=fs.readFileSync(path.join(root,'version.txt'),'utf8').trim();

@@ -1,13 +1,13 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0312",
-  "sourceVersion": "v0287",
-  "engineBase": "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/",
+  "version": "v0322",
+  "sourceVersion": "v0309",
+  "engineBase": "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/",
   "engineHistory": [
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/",
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/",
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/"
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/",
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/",
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/"
   ],
   "files": {
     "404.html": {
@@ -75,44 +75,44 @@
       "sha256": "11bcb86397f29f9a09c770ad5559e34d06ca33ac272ec3c124c68eb48af76783"
     },
     "_redirects": {
-      "bytes": 5618,
-      "sha256": "417db78c0489da654e24c6775944dce7c69d6022959d36c5b9d50177b642f20e"
+      "bytes": 7568,
+      "sha256": "bf1246ff7a91ae3bc21b4ba9b65bf78c8bb66bfea0b5cc8fc6f8412bc1349cec"
     },
     "app.html": {
       "bytes": 83741,
-      "sha256": "8f8c7db8308bd16c1383cc913536d58253d33c73b08773d9cd50318950a72ff7"
+      "sha256": "e98d40b5cf139bef07f0df0c3ac38f689fcac51dcaec46797f45d054fe95104f"
     },
     "app.html.br": {
-      "bytes": 25244,
-      "sha256": "f41ab76b2eee0004faa6a0131539da3748be579e1ece02ed645a3a87236773ce"
+      "bytes": 25245,
+      "sha256": "b22629df665fb7e9dd250db3d1726d3d7959ad6376680cb59bdb87551f484422"
     },
     "app.html.gz": {
-      "bytes": 26551,
-      "sha256": "70289f4fbc0ff386799418c7563f732355b98441be406d784708783b1baeab3d"
+      "bytes": 26550,
+      "sha256": "8a694e7b4c52ef9d659e9d9f76113d1cdb80cff5ca9fc186ffca69b3c2b3b5c8"
     },
     "app.js": {
       "bytes": 334888,
-      "sha256": "a3883bc02c5605f8799f7facad1c4b3f6eac2183f0a083c7d5d0aef65380101b"
+      "sha256": "96e523b94dcf83da549d2795f005961519696cd31e4f2d0e2dafa969701c63d9"
     },
     "app.js.br": {
       "bytes": 78275,
-      "sha256": "be6069b1b176b3037fd38c4e4c537a7f618b461f782193c6e5c02e445ea2a6c8"
+      "sha256": "67e4ff9257717c17f6d098c6dcccd2f344b7e738153f437c6bd5e60d4225581b"
     },
     "app.js.gz": {
-      "bytes": 83771,
-      "sha256": "62871728bb5002e9e47211036441a02a3a4b40463f1d550fc9778aa1864305b0"
+      "bytes": 83772,
+      "sha256": "c11f04c45d393b164bd4048f2097c467a362a4e5f5c7a62a14e0d5100bd90063"
     },
     "app.wasm": {
-      "bytes": 5213072,
-      "sha256": "79e3fa1e4313449c0c7bae422393789e689e048642d4052aeb00b85761656369"
+      "bytes": 5318260,
+      "sha256": "60ef26f68427633337e0a88e90f7ff8f8f61e9fb015dd05ac40b69c8494072b3"
     },
     "app.wasm.br": {
-      "bytes": 1898542,
-      "sha256": "d811b21e40d2e18064515464086b97ac8aad3f7de8c4927cdad648c217dcae52"
+      "bytes": 1926950,
+      "sha256": "0afd46247c34b083969072563eadf3f96c556986255215aa6a94cbb4504c2f44"
     },
     "app.wasm.gz": {
-      "bytes": 2129792,
-      "sha256": "90ad3ea79444c3ba3898eced32739c8f0c39c272191705ebc3a668ba28d88d7e"
+      "bytes": 2161700,
+      "sha256": "6f98504737c41b04ac7ecb0a3853fbe7298225ac2c135b8be7c82a4b41352745"
     },
     "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
       "bytes": 1229851,
@@ -687,8 +687,8 @@
       "sha256": "035992d2e35dfa0261efff749bfc2523bf1c910cdf820012a5bb55011f1ec60c"
     },
     "atelier/media/loop-house-20261014-114748-window-recess.scene": {
-      "bytes": 485359,
-      "sha256": "8cdec37d407c17e4031ab2597d871496914f8ef6da8fedee71747cda3002ca2a"
+      "bytes": 485358,
+      "sha256": "a8bd097b0163436d46d0617f83c598771e646b6f1011253b08f7117cdf24a2d6"
     },
     "atelier/media/loop-house-camera-timing-controls.png": {
       "bytes": 559189,
@@ -859,32 +859,36 @@
       "sha256": "16f76885c33077eabde0af24beb43bfd9d951fb1dfc8f9d21698e4cabb2b15eb"
     },
     "demo/adaptive-garden.scene": {
-      "bytes": 191573,
-      "sha256": "6733e3356b45a749766dda1a6af209e86f92742b5d04bb9250fe86309a49ca58"
+      "bytes": 183789,
+      "sha256": "7a6d6fe5ed4232310af43c7db050ea91115b3bd4c20a9ee3c0031376f36fddfe"
     },
     "demo/atmospheres/README.md": {
-      "bytes": 6754,
-      "sha256": "c7dad8dd18cf25b1559a37b0a069da6e048db4710eec629a5f20c93764880fde"
+      "bytes": 6646,
+      "sha256": "5fd0da729e7f8b8dcc03f18d415cd8df1d127f0291e8232eb2f5135e16579499"
     },
     "demo/atmospheres/keeper-amber-283.scene": {
-      "bytes": 229152,
-      "sha256": "a9ef98dc58299b365f2a991abcd9568a730ec6779a1791d2ed355bd2a0f58db0"
+      "bytes": 217742,
+      "sha256": "e367f407351c6cd4a197442ffcce5bafdfbee9fb4fc4d48bd3d7be0f4c1e2af3"
     },
     "demo/atmospheres/mill-dawn-619.scene": {
-      "bytes": 231707,
-      "sha256": "ad5cd67dcbb6110f11a3879b950eed4576a612e1ce2dac1dc3f5154b1b8c10fe"
+      "bytes": 220144,
+      "sha256": "95db193bfd9098a14e753f10c77e2c4e3a24cc0161adcfc9e1a464a32e939043"
     },
     "demo/atmospheres/refuge-moonlit-137.scene": {
-      "bytes": 198672,
-      "sha256": "cd000cf9ba0dda92ab2ef190c837a79f04a52e79fa1480639712415d8fa3cdb0"
+      "bytes": 188948,
+      "sha256": "ce932d76a0f1160eb1aa0a3be3828346dd43ddd6870c8f1110a071bcc5834207"
     },
     "demo/infinite/README.md": {
       "bytes": 2756,
       "sha256": "217b823ada95563c2edebf6abe816408198fa62dafaa04470282a528f30456af"
     },
+    "demo/infinite/pillar-hud.scene": {
+      "bytes": 35094,
+      "sha256": "e64e9e286fc676647ad789cfcb28168005b4a37c30664dc9ade6eb525eea5dcf"
+    },
     "demo/infinite/ship-mountains.scene": {
-      "bytes": 45279,
-      "sha256": "9ef7a67a5d0409eddcfdad443db2b12dbb117eea8a98c3ed5baee6bc810edd3e"
+      "bytes": 167894,
+      "sha256": "1ea78a8a5c6e5e1860c99c0688756bc2c53dc6b51b0cb55f9f351f00441c7cd9"
     },
     "demo/knot.glb": {
       "bytes": 10090356,
@@ -931,8 +935,8 @@
       "sha256": "a540f0dd0ab48a78e6ac53a2af86161ab73e13fa5eeed6f6b3589941c13b173c"
     },
     "demo/loop_house/loop-house.scene": {
-      "bytes": 807772,
-      "sha256": "cfaf731977debf0a5c4b535a4568896ad079a26918e9cd6d0c24da94261d0d61"
+      "bytes": 844442,
+      "sha256": "fa824771c9c4fee58b124b78bc38c971ade4288d8d37721de6facd649f58ec6c"
     },
     "demo/loop_house/rim-wood.patch.json": {
       "bytes": 922,
@@ -987,16 +991,16 @@
       "sha256": "e11c8d44219e8977a9bbbf0cd146295edcd2aabcfbbb17a0ebc6c32e0403b057"
     },
     "docs/index.html": {
-      "bytes": 44749,
-      "sha256": "a1cc5115ed6269d21806dffc9aa112dee5d453078d1ac2e9af3bd52e27e05ea3"
+      "bytes": 72618,
+      "sha256": "a57140b6d91d8ccec8dff7067735c72dd8a4de06cc0a8714227f8353e55bc2f0"
     },
     "docs/index.html.br": {
-      "bytes": 10504,
-      "sha256": "6ed3071e3b2d96a0425aabf138f56624c073a459fa28fcd5a94127b147dd6028"
+      "bytes": 15525,
+      "sha256": "6b0cc43ff9e6c98a781d602a8a4a82f329e3856c8c4a0ef5f11bd80dd7709c62"
     },
     "docs/index.html.gz": {
-      "bytes": 11255,
-      "sha256": "7a68e048df9bdb24a76e755d3cf9bebbc0ad08f11297bac111c6ee45ecf1a804"
+      "bytes": 16522,
+      "sha256": "d057969db07c473c78b9207ca3fc1dc23aedfa968d20f5c4541d540a0c79f927"
     },
     "docs/mcp/index.html": {
       "bytes": 23976,
@@ -1057,6 +1061,22 @@
     "docs/media/tutorials/r1/orbiting-letters.mp4": {
       "bytes": 8109509,
       "sha256": "656446563ad0dc2ff53219fb1ff532aa34ceaabbed8de2cb394f1e88b640876a"
+    },
+    "docs/media/tutorials/r1/terrain-aware-pavilion-5e6688b299b3.scene": {
+      "bytes": 107542,
+      "sha256": "5e6688b299b389c4ee504274072473efafe4c759578e136438ab3f3449ae5f4a"
+    },
+    "docs/media/tutorials/r1/terrain-aware-pavilion-preview.mp4": {
+      "bytes": 50509,
+      "sha256": "de87f619b6c5f4a489e93d0139c463dbae36570226c0bacec53be46f37d2af21"
+    },
+    "docs/media/tutorials/r1/terrain-aware-pavilion.jpg": {
+      "bytes": 48808,
+      "sha256": "04975f06fc89292b180d575be21ff6c09f07a3b507cb3af4fc98f506979fc381"
+    },
+    "docs/media/tutorials/r1/terrain-aware-pavilion.mp4": {
+      "bytes": 2675764,
+      "sha256": "e8ea9f1d5236c562d55a04c059f52f2b46f657f6463f5cc9be9a4e514d48c06d"
     },
     "docs/media/tutorials/r10/block-explosion-db57a0cd0cb6.scene": {
       "bytes": 27524,
@@ -1731,8 +1751,8 @@
       "sha256": "56cb5e500ceb99423b63502d248bd98f4905a450f96c897de4d2535fb593e11a"
     },
     "docs/media/tutorials/r32/block-explosion-e637143ca8eb.scene": {
-      "bytes": 77870,
-      "sha256": "e637143ca8eb07f7d778fa6979a8e56848a57f9326320d8b41cb2851b5f31d5c"
+      "bytes": 74210,
+      "sha256": "cb03e53e37c34cd18ff8d9fe1ce122a7001d8072b5325c2ad1c8ab5f87ea0d4c"
     },
     "docs/media/tutorials/r32/block-explosion-preview.mp4": {
       "bytes": 669898,
@@ -2359,16 +2379,28 @@
       "sha256": "fddf40d1f551dcdefa52ff08d6967dcd6005660c1c1f17e4d414c385635ef335"
     },
     "docs/recipes/catalog.json": {
-      "bytes": 11339,
-      "sha256": "21c7e37127e343bf7cc6a6c66e6f31220d03d98c1ffd2334b6185036ee034a2e"
+      "bytes": 17563,
+      "sha256": "3f33be6b876d4755359473c051f5768d232ffd75ba768761e9bc2c4a3c363819"
     },
     "docs/recipes/catalog.json.br": {
-      "bytes": 1579,
-      "sha256": "41ea476da38176c293b34ca7e588c55df5dcbe775444a6a60b9d68c50ba93548"
+      "bytes": 2240,
+      "sha256": "6b3c02543b19459188aa74a14dc06a4a8f988e7c102eb7dee04c11c9fc1f40cc"
     },
     "docs/recipes/catalog.json.gz": {
-      "bytes": 1689,
-      "sha256": "e5f4380f3c388a72e4faf1f62a38b6d9ca065fba622a2f8f71fb6550d58b866a"
+      "bytes": 2398,
+      "sha256": "873cb1b30a44b09c3209279e3a77a2beb54ad3119a7688b475a9212084ae3a4e"
+    },
+    "docs/recipes/clearance-japanese-garden/index.html": {
+      "bytes": 13329,
+      "sha256": "b1f45f5d55b3be1969bdf5a968803e6cc199d92fe0bb503ae75d13d6a530ce20"
+    },
+    "docs/recipes/clearance-japanese-garden/index.html.br": {
+      "bytes": 3933,
+      "sha256": "fb349bf8e384163d815d3cbd5d9b2e8f0037aa76d4427598a99fa0334afaf698"
+    },
+    "docs/recipes/clearance-japanese-garden/index.html.gz": {
+      "bytes": 4221,
+      "sha256": "a95265a2b12321368e87e71d703b03cfadd00d21ef2b0e7cf95f2d4b9c71b0f3"
     },
     "docs/recipes/collections/japanese-garden/v1/bridge.json": {
       "bytes": 18073,
@@ -2730,6 +2762,46 @@
       "bytes": 5968,
       "sha256": "6823964c0f29d78b3b292cb751d56f0f96b8eab39da47392e7ccf5bcf88c544c"
     },
+    "docs/recipes/data/clearance-japanese-garden/v1-space.scene": {
+      "bytes": 341901,
+      "sha256": "8b2c3f618ecb90669c7ff1f5ec863ac03a0dc58c25601246e105c6a1286b0345"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1-wide.scene": {
+      "bytes": 341913,
+      "sha256": "c2b59a48a8416c0b37c24abba535848cb8af2280d11b2c59cbe5015568356660"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.json": {
+      "bytes": 5317,
+      "sha256": "261fb6ca0e660a6c95c6a6cda12da189326cc138cb5cde9f256003b57dfae204"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.json.br": {
+      "bytes": 1954,
+      "sha256": "f7ec098b56ad508966620ad94cbac617cc9b367ddfe9ba95daba10abb38f0b4b"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.json.gz": {
+      "bytes": 2077,
+      "sha256": "06f909d30094aec5c19a49bd49f2192289bb949f40cccf23c13b314f056d93fa"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.md": {
+      "bytes": 4608,
+      "sha256": "a426c01289a1c798615fff835afaa63e5945a1e0189578e9ca028a3d36a044af"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.recipes.json": {
+      "bytes": 604033,
+      "sha256": "c4a5952c82c6fc9040f9c0f0c14cc7ae52bcd46cf5653a35488d9313a7c7c173"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.recipes.json.br": {
+      "bytes": 11454,
+      "sha256": "2cb9e8755ddcec70a1a08a53fa6a15f9a65dde25a19c866e044bb58694c3c0c5"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.recipes.json.gz": {
+      "bytes": 23411,
+      "sha256": "8018e7060707ebe801d698fd8294b8a15c7ed5b30c4fbcf93eddaf4c3a1e1028"
+    },
+    "docs/recipes/data/clearance-japanese-garden/v1.scene": {
+      "bytes": 341895,
+      "sha256": "8abc75334141f3e6aaa6d5b2c9c3efacd45d29b5fc27db2fff98bcc6392b268f"
+    },
     "docs/recipes/data/flowers-in-motion/v1.json": {
       "bytes": 2906,
       "sha256": "a3715b5073db3dea729ed1ad9227612b1bc0db01a6dd0547b6952a9058e9ae50"
@@ -2761,6 +2833,46 @@
     "docs/recipes/data/flowers-in-motion/v1.scene": {
       "bytes": 101126,
       "sha256": "489341136c8d94bd3582d44c2194c2a67237167cfead1bc298961d59998db8af"
+    },
+    "docs/recipes/data/footprint-placement/v1-space.scene": {
+      "bytes": 23786,
+      "sha256": "4429629214a29ea780c571830f23ea8dfde82f028e1b789cbf3a4176b0f9e670"
+    },
+    "docs/recipes/data/footprint-placement/v1-wide.scene": {
+      "bytes": 23818,
+      "sha256": "c51ab13dbff9411cc5ea889f142468ad0981bd51eb3a1e885ccd0d631391f249"
+    },
+    "docs/recipes/data/footprint-placement/v1.json": {
+      "bytes": 4854,
+      "sha256": "d05728df722833ddd10f51c91d5e5caab9ddb226b524145ef29139a87bbfcd0b"
+    },
+    "docs/recipes/data/footprint-placement/v1.json.br": {
+      "bytes": 1772,
+      "sha256": "9e3939275c0ac5f27a2ea03ea6bd4396db1ecd8055e02ded02582755efb0a993"
+    },
+    "docs/recipes/data/footprint-placement/v1.json.gz": {
+      "bytes": 1921,
+      "sha256": "3fc07f1524b47fab52e72c92a70f35b33202f681447d0ef55f5d7112d10353e8"
+    },
+    "docs/recipes/data/footprint-placement/v1.md": {
+      "bytes": 4471,
+      "sha256": "1b57c0735e94eac180f5c5828bf0fe69c0a6f0c3fc2f8347b98743fc19d20567"
+    },
+    "docs/recipes/data/footprint-placement/v1.recipes.json": {
+      "bytes": 12099,
+      "sha256": "019f8ba49bd8cf0642676ef04696ed50898d28178d21d81d78b4a998f8c49994"
+    },
+    "docs/recipes/data/footprint-placement/v1.recipes.json.br": {
+      "bytes": 1408,
+      "sha256": "5e6153ff844e518b2310ddcf067a05a311d536c546f3652d040f8a98158cbced"
+    },
+    "docs/recipes/data/footprint-placement/v1.recipes.json.gz": {
+      "bytes": 1459,
+      "sha256": "2b4f6589e35a827d5aa3b6954e4acfdba1687c286832e601807efb33b1fb3b50"
+    },
+    "docs/recipes/data/footprint-placement/v1.scene": {
+      "bytes": 23779,
+      "sha256": "cbba1e7e76c77421368067abe8d7a7f4bc40626ea5a8272a93ed5ff936fdf4e3"
     },
     "docs/recipes/data/japanese-bridge/v1-low-crossing.scene": {
       "bytes": 59471,
@@ -3194,6 +3306,162 @@
       "bytes": 22461,
       "sha256": "0b61e4c7cf81601be146310e47872e901f7c6ae42ad1165f26a12bcb57ff8f1f"
     },
+    "docs/recipes/data/terrain-aware-pavilion/v1-gentle.scene": {
+      "bytes": 107546,
+      "sha256": "95052da41ae321aa1ca9fe350e719a56a80196a823bf7ae22a3581874980bdfa"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.json": {
+      "bytes": 4159,
+      "sha256": "c22fab3a58aafac44b4fc7d3e6f83827f23773866efb2d143ccb6ef7e908a263"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.json.br": {
+      "bytes": 1595,
+      "sha256": "442ad78f9269f97f05c6b7b266f50671606f3886ea61a40c8f57df57fd8a208c"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.json.gz": {
+      "bytes": 1705,
+      "sha256": "41eae90a5b97d8fe63eadd1a3737e77ee2ee20ff11835d45d5839b4f75e31a3a"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.md": {
+      "bytes": 3737,
+      "sha256": "6d495b4065f178b8530fcea1ac57e35aaffd87f0c8dfdeb9b5e9bea16d7cff02"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.recipes.json": {
+      "bytes": 50035,
+      "sha256": "a140668808e1f6cdf52dc6faa27756e80f5dc8880965532ce901e2ba7fa8d207"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.recipes.json.br": {
+      "bytes": 2628,
+      "sha256": "55be5e101cfd784b4632068e0dd827a4c0682c67efd6e974bf4be85a5aa54bb4"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.recipes.json.gz": {
+      "bytes": 2714,
+      "sha256": "f4dbbfbd138eb801a9ca9f0bfe7fa018e71a340a207fbbd29c78970abb69b7da"
+    },
+    "docs/recipes/data/terrain-aware-pavilion/v1.scene": {
+      "bytes": 107542,
+      "sha256": "5e6688b299b389c4ee504274072473efafe4c759578e136438ab3f3449ae5f4a"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1-curved.scene": {
+      "bytes": 84457,
+      "sha256": "6d0fa409982a9c833873408b81d26af08ffbf6a36eb2ab81d35089fc4e3ffd52"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1-high-bank.scene": {
+      "bytes": 83404,
+      "sha256": "dc569c86737b66f6af3c017365d2af604ad6cfcc6a3471bc769d567e4f61cca6"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.json": {
+      "bytes": 4929,
+      "sha256": "d078411b0f63e34521845ccbce905b9e2f6a99089e767437a3d757cd9271ae0b"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.json.br": {
+      "bytes": 1860,
+      "sha256": "3f09e97634f6f039b75eafaf8f9a7c6e40661fbaf5d5b7548e61ce2c4ad5a381"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.json.gz": {
+      "bytes": 1977,
+      "sha256": "fcd436d594841342d9419af95a827ba22d813d8a74514393554efd15cf81fa0c"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.md": {
+      "bytes": 4393,
+      "sha256": "aa86b4eea8663757d47c790a1e6447bc1d8f389d2fb5067065941adb98fcf136"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.recipes.json": {
+      "bytes": 99756,
+      "sha256": "70db32f24368b930254d4e1a4fe8ae1970a58fcff9ada8db566cad2dfd501b34"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.recipes.json.br": {
+      "bytes": 3855,
+      "sha256": "826e8cdfdcf39167dda878627c713268421b07aaddada0100d28808cd319a024"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.recipes.json.gz": {
+      "bytes": 4766,
+      "sha256": "a4c469760039f60ad7d2232bc632af36173581e85305215f7498f87a6f33ed8f"
+    },
+    "docs/recipes/data/terrain-linked-bridge/v1.scene": {
+      "bytes": 83440,
+      "sha256": "a01de4ab21704ca46f50681b583210acacd535ce8303779e31f5fc7270d98942"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1-curved.scene": {
+      "bytes": 303011,
+      "sha256": "8b232ca25abbf7f58b41e814240790b2d2387642092ec8eb50576aa153178bac"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1-high-bank.scene": {
+      "bytes": 302960,
+      "sha256": "935f4f425bd0bd8d3138b7f758fd80bb009576516462027d6e4043587a771d78"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.json": {
+      "bytes": 5528,
+      "sha256": "ee7eab021a07aed4564e00b174de5a017cfb18226b844e31485f9428570067af"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.json.br": {
+      "bytes": 1963,
+      "sha256": "b073ba3d7701e72dae0399228b23363ac4f8dd4d186a2eb6554d8db0f9722e22"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.json.gz": {
+      "bytes": 2071,
+      "sha256": "bcda94d7784ac22f56e00576f9104d0f9b2decceca08cd9760ffe478b1022614"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.md": {
+      "bytes": 4758,
+      "sha256": "bf4b9e917ed8ccd27faa1003aed4c5355621333cae18a4e00dcc27b03fcafe24"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.recipes.json": {
+      "bytes": 453783,
+      "sha256": "6a786b3252f02beb3e025c581a46ca5781dd02c73be448cae3e835fb6cbd38d8"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.recipes.json.br": {
+      "bytes": 9606,
+      "sha256": "e2acfb50aca049b9d9a2592ec6a2c639dc0a88c9756287c41aca09df08ef69e8"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.recipes.json.gz": {
+      "bytes": 18952,
+      "sha256": "a1b328f9898ac80a1a4eab45b43701e63bd0b02cfc04872752873bacb9f6e62e"
+    },
+    "docs/recipes/data/terrain-linked-garden/v1.scene": {
+      "bytes": 303025,
+      "sha256": "30d38ed88010da246bcf5eabd49ff7b7fb6af96e64c2e4473b573a24665041ab"
+    },
+    "docs/recipes/data/terrain-linked-path/v1-curved.scene": {
+      "bytes": 62852,
+      "sha256": "f80a32a85546a39f798c514ba5f531c9a637e0b7f09d56fdf68413583aef4d57"
+    },
+    "docs/recipes/data/terrain-linked-path/v1-high-bank.scene": {
+      "bytes": 62848,
+      "sha256": "04bfc060d27f823b452923f6815385ee52b3026257ad9f5267b86dff01bf2213"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.json": {
+      "bytes": 4876,
+      "sha256": "044ac0db8ae2ea480509ec7270a5763e51ae059137d717b0a5dc0aea32d42609"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.json.br": {
+      "bytes": 1850,
+      "sha256": "4dbcde27c2f2380a0cbc0db59762b80ca8706ab15782e9f33e92e5025a516925"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.json.gz": {
+      "bytes": 1971,
+      "sha256": "40b7b23855f970fd4b87f807f0e7b81ab4f3d51d53507d5c393f29d44e6c5096"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.md": {
+      "bytes": 4354,
+      "sha256": "5f43e37f29dd610f0eb655361eb01ee953677cf7c2fa036cc846e624f7b8d981"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.recipes.json": {
+      "bytes": 104174,
+      "sha256": "5bd0fed9f22ec4a973f601be859ec40b1f18b60306f2f504475857937aa9f779"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.recipes.json.br": {
+      "bytes": 3900,
+      "sha256": "08025d13f1e4b1d9ecd3e72d8c98e33b1713014512b97b13a3e9dd25e7ff16ba"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.recipes.json.gz": {
+      "bytes": 4867,
+      "sha256": "de5592b94fb6e8064778d8966a7b4ecb34e992d1a7869079f59b5e45a4dda77d"
+    },
+    "docs/recipes/data/terrain-linked-path/v1.scene": {
+      "bytes": 62877,
+      "sha256": "04718775f5d44ce173aeea488f0d92b0b062ab4700e39c84eaacd8f4ab82b96d"
+    },
     "docs/recipes/data/terrain-pavilion/v1.json": {
       "bytes": 3121,
       "sha256": "4bab91d7c450f65000d0bed109336a176e1ee59754f92e7196a8144cc1cadd89"
@@ -3228,99 +3496,127 @@
     },
     "docs/recipes/flowers-in-motion/index.html": {
       "bytes": 11254,
-      "sha256": "eab64617d4215e5d1623da6dd4024c1414c33f843cee79ab99d75dca447f1e9c"
+      "sha256": "50cb87d34916d257f32c667ff1c295e87b73b8396d016dc038c3c4783acbafcd"
     },
     "docs/recipes/flowers-in-motion/index.html.br": {
-      "bytes": 3336,
-      "sha256": "fc4b44f225f8ec75f9243e9f0b6b9ef9c8141bee3f3b5c65cbbabfe2a471014d"
+      "bytes": 3334,
+      "sha256": "6b45241f0e45a2a0174dc7a0299c633d464899f1cc3b9eb05a4ecf8a519783ec"
     },
     "docs/recipes/flowers-in-motion/index.html.gz": {
-      "bytes": 3627,
-      "sha256": "70011e619270fdd7a980eafde7e27bae94ed6f82d6f3c960018dc5226b99bc27"
+      "bytes": 3625,
+      "sha256": "19d83160cbc460f96ff934fc11b953a2d2ad8746f066a2dbd41f0457c4bef197"
+    },
+    "docs/recipes/footprint-placement/index.html": {
+      "bytes": 13034,
+      "sha256": "134bc73abcf4269b80d2aafe825c097f9d46fa8354efa50032a71731c4ce2b9e"
+    },
+    "docs/recipes/footprint-placement/index.html.br": {
+      "bytes": 3850,
+      "sha256": "b9a91ec487fccb2ca00f32986e7dd86b4d0f04fa0e817af56b677bb94c1714b2"
+    },
+    "docs/recipes/footprint-placement/index.html.gz": {
+      "bytes": 4166,
+      "sha256": "614cefac0e0cb7a43c5ec41683e00c9b3c25da35b4031dfc89a8b9883f64aa1c"
     },
     "docs/recipes/index.html": {
-      "bytes": 43545,
-      "sha256": "c42c6319ae3d32dadbe2a7178a6809633804ef8892b80481b3b70306e5b859f7"
+      "bytes": 56933,
+      "sha256": "79b27ce50f6e08c1e4b4b2e2d84f29104670238c51108fb67ab6ef05c4cf68c3"
     },
     "docs/recipes/index.html.br": {
-      "bytes": 7168,
-      "sha256": "fbcfc682d801fa354f3c70a716471ca4b6c26f657b9c0bc4186c5c1a217ccea6"
+      "bytes": 8164,
+      "sha256": "1be9878415e57616f5d8b2cd53f96d768c58636f34a5a87ebf66c4f8732498a4"
     },
     "docs/recipes/index.html.gz": {
-      "bytes": 7799,
-      "sha256": "785091d0c0ea0d088b61be7949e3f94dda4e81724ad4496e298f0476920fd691"
+      "bytes": 8904,
+      "sha256": "69c8fddcf6ffac346ce79ac00a6b82aeae396f404f469e78283bf0f29e25db6c"
     },
     "docs/recipes/japanese-bridge/index.html": {
       "bytes": 11762,
-      "sha256": "7f54bf6ac70a01a931aefba37f577c09c3f5aa5a8a58a35b99ee78908d8918fe"
+      "sha256": "754b09bd62d93b0352f36d43073706ba6e972d64d10c2ead1c1120429dc364b3"
     },
     "docs/recipes/japanese-bridge/index.html.br": {
-      "bytes": 3445,
-      "sha256": "76e04faeab2c9f2220f886d1d69a14fc7def196998824af380598a2de7dce52b"
+      "bytes": 3442,
+      "sha256": "0280c8e46dce1ed3f180e29a769979e60fde3f806c4949218e8c682b6a620300"
     },
     "docs/recipes/japanese-bridge/index.html.gz": {
-      "bytes": 3744,
-      "sha256": "07b1e0b1d2f0786bb1b95962b2ceaa59cf8a8adbd52987ab273e81ab732f8872"
+      "bytes": 3742,
+      "sha256": "a55c1082f29f294f0bd35b703988666af78f1d9cd05cbe8b325ed084ec56d08f"
     },
     "docs/recipes/japanese-garden/index.html": {
       "bytes": 12555,
-      "sha256": "f9e0c9d81ae86e43b1be62e607d8ba0eb377ec7acea09b2ed5de0acde0b11b63"
+      "sha256": "e3ec008e85e3e431d8260bb65cc7a8b4c3f84ed2ce409705be946db678ecdf61"
     },
     "docs/recipes/japanese-garden/index.html.br": {
-      "bytes": 3589,
-      "sha256": "7ab296e2bb83980ebaa80f80b1bf05b469a6bb2c48d939430c66d9295b74649c"
+      "bytes": 3586,
+      "sha256": "e9ec7394ff122819c5db05ad85893964c2ab2c25603a2c6d842142950aa17a33"
     },
     "docs/recipes/japanese-garden/index.html.gz": {
-      "bytes": 3910,
-      "sha256": "973b34174f3b7db7a6562b08fc313b5ad06d4e662996a48d1b4a297077065d53"
+      "bytes": 3907,
+      "sha256": "34877e3d4ad346891fa00bf28c419672c4ff2541423f035601f28e0b8622d80f"
     },
     "docs/recipes/japanese-lotus/index.html": {
       "bytes": 11651,
-      "sha256": "931e821fa1c1aebd3d514f6197119a353c577081d0befbde9e6890fe354d2c35"
+      "sha256": "98ccdd91403d617a3ab0a4a46db181342b80751dea6d022dc3ac6188ab280e38"
     },
     "docs/recipes/japanese-lotus/index.html.br": {
-      "bytes": 3432,
-      "sha256": "7077ef0bdb59a1fa21fe179d9b130e21cf6fa814f3fe1bcf0e2774ee20e921e7"
+      "bytes": 3431,
+      "sha256": "e68cc5b02abec13426d109e41bdf2d5fc12cced0ab95ea53da7a9aa03aa62715"
     },
     "docs/recipes/japanese-lotus/index.html.gz": {
-      "bytes": 3739,
-      "sha256": "29e8fb40011f1a30b1f287d1a5df89fa62e2ccccfa422335c70db6f746f3dae1"
+      "bytes": 3736,
+      "sha256": "4c24cc39660f847a7bfdf0cb3203e29537f0e5131a26f775af1d116f47873d12"
     },
     "docs/recipes/japanese-passage/index.html": {
       "bytes": 11648,
-      "sha256": "9e8e00d7abaeab50fdaff502a330ff969c452fb19ec75c5545ce3ef918cc096a"
+      "sha256": "56b2ed0f747da9fca042bc6b8d042b0033bbef3053edd0a8abe24d1b8323769a"
     },
     "docs/recipes/japanese-passage/index.html.br": {
-      "bytes": 3425,
-      "sha256": "cc9ddcf91de030bb7d5340826232e6b9f1537abdfa43286f2aa005f923ce4c1a"
+      "bytes": 3420,
+      "sha256": "148c5a8176e2498de5af97af82de3f8a61a2e0445da5ce6aa633a8d02bf9ecf8"
     },
     "docs/recipes/japanese-passage/index.html.gz": {
-      "bytes": 3720,
-      "sha256": "61331590536765442be857a9be7e686c63f96d8ddc813c69baa5ac51b70b870a"
+      "bytes": 3718,
+      "sha256": "131b987c739a10994bacdd0aa41123229fd54af3dad0d01551bc844257d62d30"
     },
     "docs/recipes/japanese-pavilion/index.html": {
       "bytes": 11890,
-      "sha256": "dbe59b098a8665d83c49d1f4308fb889a5ee22b15e80309587a7b6076386bbb0"
+      "sha256": "55c65ca470788e25b5ae5a15f0da82182287da4fd807f79674be933bb0bc8821"
     },
     "docs/recipes/japanese-pavilion/index.html.br": {
-      "bytes": 3461,
-      "sha256": "9c52157df5a69980df924e9e83dbda55880e03599a5fad642126d9c521762459"
+      "bytes": 3457,
+      "sha256": "88912843d152591ea0da3304c4170a6f3c7f8d89b3df53d69d5520b0b5ae450f"
     },
     "docs/recipes/japanese-pavilion/index.html.gz": {
-      "bytes": 3754,
-      "sha256": "3953b4fbf1d65a83399c267bd5918650c50393e5c9b9121eabb0ebf77c601074"
+      "bytes": 3752,
+      "sha256": "4f63b0e0cd35d183205c5d64ef96de0ecc783e4706ad8d58dca757c124e9675b"
     },
     "docs/recipes/llms.txt": {
-      "bytes": 3123,
-      "sha256": "c29f13c512adea4d9673fc596815f75f231b628d4e61b753df7790fe4e17467a"
+      "bytes": 4842,
+      "sha256": "f88efe9fff5224a17a7ac647191552f089724cf000b6e8d51fa9c176ddbd1f92"
     },
     "docs/recipes/llms.txt.br": {
-      "bytes": 1092,
-      "sha256": "a6793c6b4fd288f735c73195c592462d5cba4239b48dc6877a29adae07643937"
+      "bytes": 1582,
+      "sha256": "996b3e9068d42223fc43407886131fa9918f532a3f85cc743752a97a2bbc9993"
     },
     "docs/recipes/llms.txt.gz": {
-      "bytes": 1177,
-      "sha256": "c4dd19c3bfa67c69a0d80c85f9db56ea3985109b86085dfd9c5843a7c8d39108"
+      "bytes": 1688,
+      "sha256": "c7a90dafd6befffe5d41b57118fcc99c9c7f1f12edd81c2a7d027987cd8feea2"
+    },
+    "docs/recipes/media/clearance-japanese-garden-space.jpg": {
+      "bytes": 114432,
+      "sha256": "34f8a797ec264b7eff93cace405f295fda85c4822dc5f730ac6881725f8a636d"
+    },
+    "docs/recipes/media/clearance-japanese-garden-wide.jpg": {
+      "bytes": 114458,
+      "sha256": "ac4d67f343416ff90a9844223720a78d86ebdbaa798b00806ac08f7ca597aa27"
+    },
+    "docs/recipes/media/clearance-japanese-garden.jpg": {
+      "bytes": 114432,
+      "sha256": "34f8a797ec264b7eff93cace405f295fda85c4822dc5f730ac6881725f8a636d"
+    },
+    "docs/recipes/media/clearance-japanese-garden.mp4": {
+      "bytes": 3582213,
+      "sha256": "46ca441d1bf3929182d02593f452454e7ba2bf5bdc07ca38d2c5c7912343bae0"
     },
     "docs/recipes/media/flowers-in-motion-v1.jpg": {
       "bytes": 40116,
@@ -3329,6 +3625,22 @@
     "docs/recipes/media/flowers-in-motion-v1.mp4": {
       "bytes": 357196,
       "sha256": "55ab7ab09606d70c99ab10dfe2d4cd9b6fcbbe8311fbd1120993b5597899b686"
+    },
+    "docs/recipes/media/footprint-placement-space.jpg": {
+      "bytes": 106507,
+      "sha256": "725b3b9f48063759bd35f69f50521bf663facbb2f83b78345f681e8915a94d53"
+    },
+    "docs/recipes/media/footprint-placement-wide.jpg": {
+      "bytes": 107355,
+      "sha256": "2df4a031a72c18fa40e7b27a8ec03705e227d477fb9690977e5ac4b4e1bdd3db"
+    },
+    "docs/recipes/media/footprint-placement.jpg": {
+      "bytes": 106047,
+      "sha256": "889dba8ec16aacefd75e11b3b080b45cb45394e92f3afd7dd98b56741a0db5e1"
+    },
+    "docs/recipes/media/footprint-placement.mp4": {
+      "bytes": 3141412,
+      "sha256": "e34aea3e5f42af8623df4aa4c23c4d2fd0db033650ae9384dc44c9a537d7127e"
     },
     "docs/recipes/media/japanese-bridge-v1-low-crossing.jpg": {
       "bytes": 59717,
@@ -3490,89 +3802,193 @@
       "bytes": 4348457,
       "sha256": "faebae0f2d9abb01bd6cf67f949c9551d8aa3dd219c635c44b022702e5815c6c"
     },
+    "docs/recipes/media/terrain-aware-pavilion.jpg": {
+      "bytes": 48808,
+      "sha256": "04975f06fc89292b180d575be21ff6c09f07a3b507cb3af4fc98f506979fc381"
+    },
+    "docs/recipes/media/terrain-aware-pavilion.mp4": {
+      "bytes": 2675764,
+      "sha256": "e8ea9f1d5236c562d55a04c059f52f2b46f657f6463f5cc9be9a4e514d48c06d"
+    },
+    "docs/recipes/media/terrain-linked-bridge-curved.jpg": {
+      "bytes": 110413,
+      "sha256": "810ac999e4260947b9fa4a4df23bf35a06f6564d70311a32718dea830ae7b73a"
+    },
+    "docs/recipes/media/terrain-linked-bridge-high-bank.jpg": {
+      "bytes": 111457,
+      "sha256": "4afd7397cc2b72af1ac4091376c5206f38ea450b536291f7085125b08bf774ee"
+    },
+    "docs/recipes/media/terrain-linked-bridge.jpg": {
+      "bytes": 111177,
+      "sha256": "57945397073d406a9bf8f9a3dd7e7916b680f8414bf63d7fd8e0b1a6cdd572fd"
+    },
+    "docs/recipes/media/terrain-linked-bridge.mp4": {
+      "bytes": 3375723,
+      "sha256": "3a6978c090c2396eaf3b4886d556a65787a44b4abb5072e96ab896ff8e3fd9f9"
+    },
+    "docs/recipes/media/terrain-linked-garden-curved.jpg": {
+      "bytes": 114500,
+      "sha256": "99528e8c8f08d723e0675ce30bc21c07fc799739b819886075a763bd821bdd42"
+    },
+    "docs/recipes/media/terrain-linked-garden-high-bank.jpg": {
+      "bytes": 114119,
+      "sha256": "fa47ece96a51790b1c21a75782de7f28611204c7309ed97b9155c960de9f6648"
+    },
+    "docs/recipes/media/terrain-linked-garden.jpg": {
+      "bytes": 115102,
+      "sha256": "c51b8b6bd1766a8e8d59330192fca05064cb5caaf09c665d86bd403f20feb8fc"
+    },
+    "docs/recipes/media/terrain-linked-garden.mp4": {
+      "bytes": 3661472,
+      "sha256": "4fe5874eac6d4d8b2f36655b1b63cba8645a73505e1e24af5de2c947ab934d43"
+    },
+    "docs/recipes/media/terrain-linked-path-curved.jpg": {
+      "bytes": 98696,
+      "sha256": "690e89df01013b0f62d6579e9d4b9d00c847eb0ce5823150102bc95d9759873b"
+    },
+    "docs/recipes/media/terrain-linked-path-high-bank.jpg": {
+      "bytes": 98604,
+      "sha256": "98c124432b1aeeac3e131291be83e09efd5277e22c297ccc40f29a9e5ca5b519"
+    },
+    "docs/recipes/media/terrain-linked-path.jpg": {
+      "bytes": 95860,
+      "sha256": "1c34bcfbcd1b59e22689e62372daa14691fc6bb95ce756e4069bcadacca0817e"
+    },
+    "docs/recipes/media/terrain-linked-path.mp4": {
+      "bytes": 3155622,
+      "sha256": "945ed3d427e66ffc08c6af4298247700ccd66fb4bc7c0bb9c0ba66693a5a8651"
+    },
     "docs/recipes/modular-facade/index.html": {
       "bytes": 12048,
-      "sha256": "6e2ea3956e58475a1dc203934c69c2a371f3c08223fa03b4265ed838d70e839b"
+      "sha256": "9fe740b919c04276f3c65ca3b72adb11f3a553f1faa6f95ca7dcc2a3ba2b3f80"
     },
     "docs/recipes/modular-facade/index.html.br": {
-      "bytes": 3543,
-      "sha256": "7f8ed9f4a99e0515f9cb847b941894c0feeea2d6426c4898b2fa2fe9200f1c7f"
+      "bytes": 3541,
+      "sha256": "1800e9b075cec828d5e4472d50f5d1f8dfee3c873e91538fcb923c7a4a99478e"
     },
     "docs/recipes/modular-facade/index.html.gz": {
-      "bytes": 3846,
-      "sha256": "4370253b28f849124adbe3c7e868e8b13cf194a5c16a689c750a3d32a5d2bbfc"
+      "bytes": 3845,
+      "sha256": "8b54a44f7a4677f6ccbe94b1d49e5790a6f8af67e676e024aba758d3a25abbd9"
     },
     "docs/recipes/nested-temple/index.html": {
       "bytes": 13212,
-      "sha256": "ce39de3a572eb3138e73d63bcc416a25da8088ed3aa18ad2c72f8a65d559948b"
+      "sha256": "66dbde04056f1407f4b956df5777a4be5ca208aea8030cb973246011201b2bec"
     },
     "docs/recipes/nested-temple/index.html.br": {
-      "bytes": 3755,
-      "sha256": "9fd13a881e75b61a14f8b2296469e1a6ebad3da8fdc80ca456d4bd1267b9b56e"
+      "bytes": 3754,
+      "sha256": "9057958643817db795cb9abfc72d619408bc0a932f1e6f7a4e4ca984e3e8d82c"
     },
     "docs/recipes/nested-temple/index.html.gz": {
-      "bytes": 4073,
-      "sha256": "68361f0bc2e030cc6a0239c3fa217f503605696bef7ee6e816f2b197bfd00f8c"
+      "bytes": 4071,
+      "sha256": "372f2001c3f4090c978dd446f522b9c22c679f6a97c04d3d3aef315a1ca9fef4"
     },
     "docs/recipes/operators.json": {
-      "bytes": 8626,
-      "sha256": "7f66aae85355d60c769dd4ef5a4e0dc6a913c645c7601bd7cab5fd06f99af538"
+      "bytes": 9150,
+      "sha256": "587deb2027b909d6b7ed81ca2b7e75bcdb745681694e8b77e9c67a2d357b6bbd"
     },
     "docs/recipes/operators.json.br": {
-      "bytes": 2205,
-      "sha256": "51620bacd75c004dd5ab2f2be7617fb232aa3e3f8f44e23336329972829622d5"
+      "bytes": 2351,
+      "sha256": "73173f7ffad7ab8e4f97f61a55361a587e8e3a52814adfadb26c73512230a16d"
     },
     "docs/recipes/operators.json.gz": {
-      "bytes": 2295,
-      "sha256": "a8a38798fd231ef93d2a2b323ce0868846461cc3d7a51b0aabb0b03ab3d03f4e"
+      "bytes": 2439,
+      "sha256": "0243000d8c033584571c5bc5ae25331c3277c1c4e904d49b055f442744fcd01c"
     },
     "docs/recipes/path-clearance/index.html": {
       "bytes": 11497,
-      "sha256": "993398beb64267d6f725b3d4e27dd3b2ece594b290ea6742fc2b3f940a8fbf72"
+      "sha256": "9b139bae94bf3a86bd0901c23b0378c7ca7a7512bde71bd34d9a5d253ea6a95c"
     },
     "docs/recipes/path-clearance/index.html.br": {
-      "bytes": 3459,
-      "sha256": "83d0c3c106a4f1cf0b64c47fcfef6e9bc0f62cfd9f6177c64a09721965358da4"
+      "bytes": 3457,
+      "sha256": "42465e11e2fb38d3b434a74de84b067e0a60bdf50b3fa6127d26beca2028e5f4"
     },
     "docs/recipes/path-clearance/index.html.gz": {
-      "bytes": 3742,
-      "sha256": "e06104c7b43139017c49b202dc07964c05158bc557a2f0d2a839103418f8772e"
+      "bytes": 3740,
+      "sha256": "122eada5f1a92f1d322ef8a06a2b1bd69984e0add1380d4c6b6aaa7c72b9db4d"
     },
     "docs/recipes/profile-studio/index.html": {
       "bytes": 11959,
-      "sha256": "8f0b8491e603a85fb4788e9e09927f744d0b69ebbfed31e4d5121ec7202623ec"
+      "sha256": "0cd2c3161c5293f22d042b224c03593dece640461c8290f2de7b2db473322935"
     },
     "docs/recipes/profile-studio/index.html.br": {
-      "bytes": 3533,
-      "sha256": "9e3dcd5129a1de84050a9daa8aaf3ac09dd419740050c2e52fd5a272dbc007bc"
+      "bytes": 3529,
+      "sha256": "773e58d71f7e204799894d2a27af926f9d1fd96f25d047448671df90f53c268f"
     },
     "docs/recipes/profile-studio/index.html.gz": {
-      "bytes": 3846,
-      "sha256": "2fb7e9620c8bb18a14711b15cd9ae5fd3ecc81b40dd60be10e60c6be79904812"
+      "bytes": 3844,
+      "sha256": "0c55a1d7d93065f3f3e4a8c0b24f62cb5b04ff43e6f902c959b8a0251b503dc8"
     },
     "docs/recipes/swept-arcade/index.html": {
       "bytes": 12139,
-      "sha256": "779b823c230aa2b71d840c3d5970911e301ee90253bc9cdcedf61f692ac393cf"
+      "sha256": "69242e2e5294e1edf3cff8dc2673d0f6d44deb6215cc6c9017db4fa3cdd9ef38"
     },
     "docs/recipes/swept-arcade/index.html.br": {
-      "bytes": 3570,
-      "sha256": "adf8f3b271980c575b80269ee81242417acfdfeaf623eb076da323a86d40caac"
+      "bytes": 3566,
+      "sha256": "77d20607a9fee6c5cef2e03dff439a2e1dc8f0475daae6f40ee09f37211b77d3"
     },
     "docs/recipes/swept-arcade/index.html.gz": {
-      "bytes": 3873,
-      "sha256": "52d7b1c776f3dda350fa65d05575e21cd0d9fe19e1de9425a25663e5aaa628ae"
+      "bytes": 3872,
+      "sha256": "2176a41d70157640641da82fee16acdbc2f4a1210dad43738cff74dfd065c8be"
+    },
+    "docs/recipes/terrain-aware-pavilion/index.html": {
+      "bytes": 12501,
+      "sha256": "64202fcc359d9b5454379aba6a3a175ff76e8159bc8fc8b6fc1dfdd6ed602933"
+    },
+    "docs/recipes/terrain-aware-pavilion/index.html.br": {
+      "bytes": 3628,
+      "sha256": "d614a200af8d6b3736248c94536b22d3b78f6379a8acf212cfd46a7de7bf95c7"
+    },
+    "docs/recipes/terrain-aware-pavilion/index.html.gz": {
+      "bytes": 3946,
+      "sha256": "1010690c3dd574a07f419c6a5c596d9d81bd1c6fd7b5fe00a051965380e8ee26"
+    },
+    "docs/recipes/terrain-linked-bridge/index.html": {
+      "bytes": 13017,
+      "sha256": "5cfb69db72a328e0b68fe5090fee4e3c103843da1833bc4a13ecfd995ccd7c3f"
+    },
+    "docs/recipes/terrain-linked-bridge/index.html.br": {
+      "bytes": 3826,
+      "sha256": "edd5689e7ce421a918019bbec9e2b519dfdba0e0d67c140e751cfb0d8c1b67af"
+    },
+    "docs/recipes/terrain-linked-bridge/index.html.gz": {
+      "bytes": 4121,
+      "sha256": "c19419324cd11b292a099a0441703c58ba2e9a7253c19a1f1c5250b5124704f6"
+    },
+    "docs/recipes/terrain-linked-garden/index.html": {
+      "bytes": 13267,
+      "sha256": "2a3bd99aae4155141454942699610febf1f1cb2c293942fca99c02e950c63fee"
+    },
+    "docs/recipes/terrain-linked-garden/index.html.br": {
+      "bytes": 3854,
+      "sha256": "d133ded24f4b2e07a1d9378be35b279f707363296084134f7af6e922dfdb7802"
+    },
+    "docs/recipes/terrain-linked-garden/index.html.gz": {
+      "bytes": 4146,
+      "sha256": "5febbd672023d6da3d1e58d3e678cf355609d3346e9a90e443ddb4558da72a5e"
+    },
+    "docs/recipes/terrain-linked-path/index.html": {
+      "bytes": 12897,
+      "sha256": "053d83bc487b30e83c138d364b8deca7f5d8e156591b970fccd42a76503c3d48"
+    },
+    "docs/recipes/terrain-linked-path/index.html.br": {
+      "bytes": 3818,
+      "sha256": "6057434d203e63baee3f57a56c927d1d996ea18ef2ff88ff9908e5ae515aee62"
+    },
+    "docs/recipes/terrain-linked-path/index.html.gz": {
+      "bytes": 4116,
+      "sha256": "b01799a31d666a7fb8cac9e4416ffac3775f5a6ec07ac6f14104a3fc1e0e8d39"
     },
     "docs/recipes/terrain-pavilion/index.html": {
       "bytes": 11584,
-      "sha256": "d00a6c298a41df4e1ef9d8e07cb93ea5c4223e9db3475e4c2e4341ff21dba9d8"
+      "sha256": "98201b7690d0ef99425eec6b5317bbe1f9642a8094d0df20fc07e71da2211217"
     },
     "docs/recipes/terrain-pavilion/index.html.br": {
-      "bytes": 3421,
-      "sha256": "6d88bdd6b61dc1c31c637ad121f953fb7f23edac5abea80aec88758901c82e87"
+      "bytes": 3418,
+      "sha256": "fa22c4c35bdc22acb5dc30c1a7d455c317d76ad7f1d539219db8c8ff90432a4a"
     },
     "docs/recipes/terrain-pavilion/index.html.gz": {
-      "bytes": 3727,
-      "sha256": "952577a28d4d3a38acda97d94464e49a5e9a8d59c64a6e200cd5ec7578056833"
+      "bytes": 3725,
+      "sha256": "9d281bf33962fbf8dd597dfcd2c40be240b6bc131538008cfbbe6ab44aa765ae"
     },
     "docs/sharing/index.html": {
       "bytes": 8806,
@@ -3586,77 +4002,77 @@
       "bytes": 2726,
       "sha256": "33cf2768880ed25d24273c18734983712102523da1c37603feec2dbcd5436d90"
     },
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.js": {
-      "bytes": 334530,
-      "sha256": "f9c246708a1f78ab0a41aa25e3b877c6b1eeb4b737942482f2725a052fc5e158"
-    },
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.js.br": {
-      "bytes": 78200,
-      "sha256": "946f266d7b5a4bc0b69789f11531dd04217b1955b03bc645d5912c2c13b00b3f"
-    },
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.js.gz": {
-      "bytes": 83688,
-      "sha256": "126cd4cd89cfdce483db840de795181b6a8d0f92d074a022b78963c58829d516"
-    },
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.wasm": {
-      "bytes": 4737743,
-      "sha256": "b30dd1fb0cc0f7ad917c58053ea5327bb68b0a1a9dee241b168daa759eacd256"
-    },
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.wasm.br": {
-      "bytes": 1755678,
-      "sha256": "7214b6c1f7c79eb591bb31791478eb96f7f635a99aed94ca4c002b0681f5a165"
-    },
-    "engine/5e4350050ea76d065e1fc1746809243446b08c32df4d664065dde35c049bb7e5/app.wasm.gz": {
-      "bytes": 1962822,
-      "sha256": "43b03bcd3f98f4ff99bb65dcf8b3414f203e4311ca4144c4b9699feaf51c8a44"
-    },
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/app.js": {
-      "bytes": 334530,
-      "sha256": "3938d8249992de7b72248eeea9dd5663507d7a86a1f2bfc970dbd11435c2751f"
-    },
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/app.js.br": {
-      "bytes": 78203,
-      "sha256": "b12b41c00fb22986c178e76123aa72aaa8b6d91ce6d4d8ad187814434dbab909"
-    },
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/app.js.gz": {
-      "bytes": 83689,
-      "sha256": "1cf7374ca6bc6ca1238a9623a1ffc50087754cf0c0f018c5e2f02a0748e4e4e0"
-    },
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/app.wasm": {
-      "bytes": 4840082,
-      "sha256": "5104fb6b7c408b38bb35f290f248c88b8a3062cfab5cfe2089b52c188b00b8bd"
-    },
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/app.wasm.br": {
-      "bytes": 1784411,
-      "sha256": "5b9fb1508b7b9d96f6d11e691aab498c306fbb1a2799fa91928d7b8f6a9c5134"
-    },
-    "engine/ad8f8242b6295bb9c452094d49b480c395503246e955f7b1a17a7a4054665da5/app.wasm.gz": {
-      "bytes": 1993670,
-      "sha256": "9aea30c3dbe1be576b3a4613d9893a21d03fdeb01c78a680323b47a24ef6c4e2"
-    },
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/app.js": {
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/app.js": {
       "bytes": 334888,
-      "sha256": "a3883bc02c5605f8799f7facad1c4b3f6eac2183f0a083c7d5d0aef65380101b"
+      "sha256": "96e523b94dcf83da549d2795f005961519696cd31e4f2d0e2dafa969701c63d9"
     },
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/app.js.br": {
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/app.js.br": {
       "bytes": 78275,
-      "sha256": "be6069b1b176b3037fd38c4e4c537a7f618b461f782193c6e5c02e445ea2a6c8"
+      "sha256": "67e4ff9257717c17f6d098c6dcccd2f344b7e738153f437c6bd5e60d4225581b"
     },
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/app.js.gz": {
-      "bytes": 83771,
-      "sha256": "62871728bb5002e9e47211036441a02a3a4b40463f1d550fc9778aa1864305b0"
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/app.js.gz": {
+      "bytes": 83772,
+      "sha256": "c11f04c45d393b164bd4048f2097c467a362a4e5f5c7a62a14e0d5100bd90063"
     },
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/app.wasm": {
-      "bytes": 5213072,
-      "sha256": "79e3fa1e4313449c0c7bae422393789e689e048642d4052aeb00b85761656369"
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/app.wasm": {
+      "bytes": 5318260,
+      "sha256": "60ef26f68427633337e0a88e90f7ff8f8f61e9fb015dd05ac40b69c8494072b3"
     },
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/app.wasm.br": {
-      "bytes": 1898542,
-      "sha256": "d811b21e40d2e18064515464086b97ac8aad3f7de8c4927cdad648c217dcae52"
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/app.wasm.br": {
+      "bytes": 1926950,
+      "sha256": "0afd46247c34b083969072563eadf3f96c556986255215aa6a94cbb4504c2f44"
     },
-    "engine/bed368c1316b39065046b4f0a5df0f2b7cdb7dc8b925fcb1db2dd586e7bfb44c/app.wasm.gz": {
-      "bytes": 2129792,
-      "sha256": "90ad3ea79444c3ba3898eced32739c8f0c39c272191705ebc3a668ba28d88d7e"
+    "engine/3d282b3ec1c7a09982c6ce183fb5e56fbcde13b69fca0c9d3125b571a926c9bf/app.wasm.gz": {
+      "bytes": 2161700,
+      "sha256": "6f98504737c41b04ac7ecb0a3853fbe7298225ac2c135b8be7c82a4b41352745"
+    },
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/app.js": {
+      "bytes": 334888,
+      "sha256": "c502e22a793d23e14ffb61a6770047d96bdab767644b4fd06398a315bd8ef8b7"
+    },
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/app.js.br": {
+      "bytes": 78270,
+      "sha256": "70762b957f818ec9463a7c25b015a40e611e1fb0ea990c225df8c6221a465ec9"
+    },
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/app.js.gz": {
+      "bytes": 83770,
+      "sha256": "abdc399282877b101d25f16acac4589e103e0661cc9d1c55428dfc72b75d2b09"
+    },
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/app.wasm": {
+      "bytes": 5316843,
+      "sha256": "71fde426e412a08c626f16186bdd65725679ba92e0e4cea7bd796f0036892c59"
+    },
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/app.wasm.br": {
+      "bytes": 1926404,
+      "sha256": "f32a4f1257d56ab0ea69d80ab866b8a2666ab03bd602784c0c864cef850c3ede"
+    },
+    "engine/523ddcbf1b9eec966aefeff6d4ec513f1219fb52763defb5dd2f147d8a6f47f1/app.wasm.gz": {
+      "bytes": 2161278,
+      "sha256": "0f82078be2771cd259fce8a6bd166fddbd13a9c43e5e5f1b76a3720755fd5ea0"
+    },
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/app.js": {
+      "bytes": 334888,
+      "sha256": "67546066852a64d19b3604bf9e36e57fa49b8190ce662e1b7d186265fb1f7559"
+    },
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/app.js.br": {
+      "bytes": 78271,
+      "sha256": "4aaa0bd616ae746e4a90a6445b21b9674854b7b6aac47211f957d0f98833c0af"
+    },
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/app.js.gz": {
+      "bytes": 83770,
+      "sha256": "304367c34ef3d76548bf3319472a74149b52cc64a594e0c5324701b2d1834316"
+    },
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/app.wasm": {
+      "bytes": 5317061,
+      "sha256": "edbe57143de28a4735446e0be991dc49a6eb768f4956f8581e0dee552422ea15"
+    },
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/app.wasm.br": {
+      "bytes": 1925844,
+      "sha256": "b00741edfee1590681a65da9ce5cdabcd19369589a28a85c7c1224dc574901f5"
+    },
+    "engine/5efa7cc3e41ff9ac80762d1b4af5871d538dfff33b60efb3a91d52521bdd333e/app.wasm.gz": {
+      "bytes": 2161376,
+      "sha256": "7a1e4949aa4f6b85d84546e61b15ccd6154b8f95a0e439c9f05ab20eb834a64e"
     },
     "engine_cache.js": {
       "bytes": 2779,
@@ -3683,28 +4099,40 @@
       "sha256": "ef0551af048a6da1b2f12621aa45bd25779c84a19231696db32ae425d74827f5"
     },
     "examples/catalog.json": {
-      "bytes": 62641,
-      "sha256": "2b4d07162808732cbbe60f876100133425f2251b5ebc1de28c45f4d3f97d169a"
+      "bytes": 95171,
+      "sha256": "bdf7c39731137b2779b8bbcc7257c053791972d5d646023586f6da91c4b4e627"
     },
     "examples/catalog.json.br": {
-      "bytes": 10517,
-      "sha256": "037f036b5a91c6abcf0b91e0893e6e0fd8c8908c7563c78c57b669e75bb48ff4"
+      "bytes": 14896,
+      "sha256": "a63027a9aaa147fe96b0f4cce4cc2f311b381063ac6f829088217838e4470b28"
     },
     "examples/catalog.json.gz": {
-      "bytes": 11126,
-      "sha256": "1d3ef246971ffda1f4fb7aa34de22f097edf0fefac054081473f4f4ada8ccd00"
+      "bytes": 16092,
+      "sha256": "907e711efb16cb06bd21aee6171e8391ff6be46a526ce3d522c000002c272d1a"
     },
     "examples/checks.js": {
-      "bytes": 6227,
-      "sha256": "853b8e995a0f6190ea4c6f12f1407451e6f4aecb5ce824f400fc85748566dfb9"
+      "bytes": 9107,
+      "sha256": "c03ae270aeb783dc3fb07c6adc4b8bf2925d9a912c69a5b3945c2fb006437688"
     },
     "examples/checks.js.br": {
-      "bytes": 2344,
-      "sha256": "f324a5634e6f7c87dcb810e9aa04417be9be6f60c7a5690154a7687de4a7d850"
+      "bytes": 3175,
+      "sha256": "74cab67e4e7e3d5299b9a647bedc566405fbac309d516331570178314e4db52b"
     },
     "examples/checks.js.gz": {
-      "bytes": 2475,
-      "sha256": "d1cfbb54a3763d47aaec67900ea1ac41f36fcf45de572e322dcf734dc491929c"
+      "bytes": 3321,
+      "sha256": "4deff08d9a0641e4ef6547e4b1d207531b2664e85f35304390bde528f3d80795"
+    },
+    "examples/data/clearance-japanese-garden-v1-space.scene": {
+      "bytes": 341901,
+      "sha256": "8b2c3f618ecb90669c7ff1f5ec863ac03a0dc58c25601246e105c6a1286b0345"
+    },
+    "examples/data/clearance-japanese-garden-v1-wide.scene": {
+      "bytes": 341913,
+      "sha256": "c2b59a48a8416c0b37c24abba535848cb8af2280d11b2c59cbe5015568356660"
+    },
+    "examples/data/clearance-japanese-garden-v1.scene": {
+      "bytes": 341895,
+      "sha256": "8abc75334141f3e6aaa6d5b2c9c3efacd45d29b5fc27db2fff98bcc6392b268f"
     },
     "examples/data/cozy-autumn-night-v1.scene": {
       "bytes": 563600,
@@ -3713,6 +4141,18 @@
     "examples/data/flowers-in-motion-v1.scene": {
       "bytes": 101126,
       "sha256": "489341136c8d94bd3582d44c2194c2a67237167cfead1bc298961d59998db8af"
+    },
+    "examples/data/footprint-placement-v1-space.scene": {
+      "bytes": 23786,
+      "sha256": "4429629214a29ea780c571830f23ea8dfde82f028e1b789cbf3a4176b0f9e670"
+    },
+    "examples/data/footprint-placement-v1-wide.scene": {
+      "bytes": 23818,
+      "sha256": "c51ab13dbff9411cc5ea889f142468ad0981bd51eb3a1e885ccd0d631391f249"
+    },
+    "examples/data/footprint-placement-v1.scene": {
+      "bytes": 23779,
+      "sha256": "cbba1e7e76c77421368067abe8d7a7f4bc40626ea5a8272a93ed5ff936fdf4e3"
     },
     "examples/data/infinite-flight-v1.scene": {
       "bytes": 17273,
@@ -3858,57 +4298,101 @@
       "bytes": 22461,
       "sha256": "0b61e4c7cf81601be146310e47872e901f7c6ae42ad1165f26a12bcb57ff8f1f"
     },
+    "examples/data/terrain-aware-pavilion-v1-gentle.scene": {
+      "bytes": 107546,
+      "sha256": "95052da41ae321aa1ca9fe350e719a56a80196a823bf7ae22a3581874980bdfa"
+    },
+    "examples/data/terrain-aware-pavilion-v1.scene": {
+      "bytes": 107542,
+      "sha256": "5e6688b299b389c4ee504274072473efafe4c759578e136438ab3f3449ae5f4a"
+    },
+    "examples/data/terrain-linked-bridge-v1-curved.scene": {
+      "bytes": 84457,
+      "sha256": "6d0fa409982a9c833873408b81d26af08ffbf6a36eb2ab81d35089fc4e3ffd52"
+    },
+    "examples/data/terrain-linked-bridge-v1-high-bank.scene": {
+      "bytes": 83404,
+      "sha256": "dc569c86737b66f6af3c017365d2af604ad6cfcc6a3471bc769d567e4f61cca6"
+    },
+    "examples/data/terrain-linked-bridge-v1.scene": {
+      "bytes": 83440,
+      "sha256": "a01de4ab21704ca46f50681b583210acacd535ce8303779e31f5fc7270d98942"
+    },
+    "examples/data/terrain-linked-garden-v1-curved.scene": {
+      "bytes": 303011,
+      "sha256": "8b232ca25abbf7f58b41e814240790b2d2387642092ec8eb50576aa153178bac"
+    },
+    "examples/data/terrain-linked-garden-v1-high-bank.scene": {
+      "bytes": 302960,
+      "sha256": "935f4f425bd0bd8d3138b7f758fd80bb009576516462027d6e4043587a771d78"
+    },
+    "examples/data/terrain-linked-garden-v1.scene": {
+      "bytes": 303025,
+      "sha256": "30d38ed88010da246bcf5eabd49ff7b7fb6af96e64c2e4473b573a24665041ab"
+    },
+    "examples/data/terrain-linked-path-v1-curved.scene": {
+      "bytes": 62852,
+      "sha256": "f80a32a85546a39f798c514ba5f531c9a637e0b7f09d56fdf68413583aef4d57"
+    },
+    "examples/data/terrain-linked-path-v1-high-bank.scene": {
+      "bytes": 62848,
+      "sha256": "04bfc060d27f823b452923f6815385ee52b3026257ad9f5267b86dff01bf2213"
+    },
+    "examples/data/terrain-linked-path-v1.scene": {
+      "bytes": 62877,
+      "sha256": "04718775f5d44ce173aeea488f0d92b0b062ab4700e39c84eaacd8f4ab82b96d"
+    },
     "examples/data/terrain-pavilion-v1.scene": {
       "bytes": 34338,
       "sha256": "f0b768288e21a3918d0b9255db523a79c616382a80f29ed9128b14fcf21752f5"
     },
     "examples/runtime/index.html": {
-      "bytes": 81135,
-      "sha256": "fd66417186ff36d6ddf8ebfbadeef3b55fdc1776294a79480f9d9446a6b79b45"
+      "bytes": 84106,
+      "sha256": "d82fa8340684ef30ec4056a761b11d267cb028d2e63b28b9d4c83d2d864d4962"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 24642,
-      "sha256": "58e2faacdef843de820e4714bc72fe959e2a6e0cb21507a88e3515783c6cbcdc"
+      "bytes": 25431,
+      "sha256": "0a43eaf575962ba70f1828535dfd3734db0dfc550a98a657513fc5a41cd4afb5"
     },
     "examples/runtime/index.html.gz": {
-      "bytes": 25919,
-      "sha256": "22ab8a466613f24d6b5d8bb328ff7f89fd7e6ce6e1d252025901691ea5dc1d97"
+      "bytes": 26735,
+      "sha256": "146276e5406e6559cbea66d0b2d6adddc35c3e39b23f361fa31a9acb646dd787"
     },
     "examples/view.css": {
-      "bytes": 2547,
-      "sha256": "f1660de8e3abd104cbbe55f3fe9a1539113696208d36bd0166a757d0adbb7e24"
+      "bytes": 2690,
+      "sha256": "8416ccf9d3d9685fbe4cdf91e7697340f479e2c7857ba99afa189504f6d3e9f8"
     },
     "examples/view.css.br": {
-      "bytes": 918,
-      "sha256": "1605de68502d19ea96bb315660dd5b04b40c5635967c4209abe6cfb45cdf547b"
+      "bytes": 978,
+      "sha256": "92aa0c84760ec82232514aee5c0ce3e5648bafb2ff7b528533eba4552a6d9b1d"
     },
     "examples/view.css.gz": {
-      "bytes": 1047,
-      "sha256": "e1e879eb56cbb55f88b3c671d2c87e2f5c56275ca099534401f7daa04be2d349"
+      "bytes": 1118,
+      "sha256": "543a30b3d66ea2b62d3d591f3e72290d1c7c69b8930b2667292758bcdce0f0b5"
     },
     "examples/view.html": {
       "bytes": 1924,
-      "sha256": "80694b988f23f8787bc75eaa73f0b1a2ec6eab4add61f9a0aa0df8d0bc9edf2d"
+      "sha256": "3f13811142a93f5782b777897800e55e664d81307a473b0c8e78cdf32b07bfb8"
     },
     "examples/view.html.br": {
       "bytes": 805,
-      "sha256": "7b36e123e46c03986e90d24840be09f06267141b186bd80a11d9280c073c613d"
+      "sha256": "950059c96feca7133b90600967cba56ae61b225f2de22557bc94202065745945"
     },
     "examples/view.html.gz": {
-      "bytes": 939,
-      "sha256": "d86d062976c348f95b924fee45c30efc58f5c1e8216d21c753bafeb0cc127175"
+      "bytes": 938,
+      "sha256": "07807a089115e47b0bed08ee1f842c1a93689818b86768358f5ef9ae44e1ae4e"
     },
     "examples/view.js": {
-      "bytes": 11328,
-      "sha256": "717907217f6a786c7050db504535d48c4bf7cf43948795192d2edbb79fdec9cb"
+      "bytes": 12024,
+      "sha256": "6f87cc171887b9933b3fef8d6a63c41dbae82afd2ebfc46e05979aef6c5fbb20"
     },
     "examples/view.js.br": {
-      "bytes": 3682,
-      "sha256": "a9f4d6e920a93a964ac0cb4a53c2ab4e02996f7db3bbbf242e0bbadcc314973c"
+      "bytes": 3904,
+      "sha256": "b18c0332d125ea5e182548ba84ca3b4ad08691dd74958cd2903f7645591f9e34"
     },
     "examples/view.js.gz": {
-      "bytes": 3925,
-      "sha256": "3b9ff0e5e0134e87cea71ffb90dbead5c55c5f6f3dfedaeb3bb035f05a9691e2"
+      "bytes": 4145,
+      "sha256": "0fb3a54b37740685a071d50438d7a3aa1eb652a20f135c594a71910ffcc8fc3b"
     },
     "favicon.ico": {
       "bytes": 4238,
@@ -3928,15 +4412,15 @@
     },
     "index.html": {
       "bytes": 83741,
-      "sha256": "8f8c7db8308bd16c1383cc913536d58253d33c73b08773d9cd50318950a72ff7"
+      "sha256": "e98d40b5cf139bef07f0df0c3ac38f689fcac51dcaec46797f45d054fe95104f"
     },
     "index.html.br": {
-      "bytes": 25244,
-      "sha256": "f41ab76b2eee0004faa6a0131539da3748be579e1ece02ed645a3a87236773ce"
+      "bytes": 25245,
+      "sha256": "b22629df665fb7e9dd250db3d1726d3d7959ad6376680cb59bdb87551f484422"
     },
     "index.html.gz": {
-      "bytes": 26551,
-      "sha256": "70289f4fbc0ff386799418c7563f732355b98441be406d784708783b1baeab3d"
+      "bytes": 26550,
+      "sha256": "8a694e7b4c52ef9d659e9d9f76113d1cdb80cff5ca9fc186ffca69b3c2b3b5c8"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -3986,6 +4470,10 @@
       "bytes": 364472,
       "sha256": "bacb1a140bd0949526e01045e3b5a5c2f04d0c1c59662d3f986482ab2f2e2e3f"
     },
+    "models/Dragon_Model.glb.wmesh": {
+      "bytes": 1257948,
+      "sha256": "c129ced855d849efa48dab663d85b243b0de17b08bad7df8937d148a98b8b786"
+    },
     "models/Dragon_Model.high.glb": {
       "bytes": 179140,
       "sha256": "7c95a9d36d0e2d0385014cb9c78257a6febd6f08ef64290fafdb9928de41a4b2"
@@ -4002,17 +4490,33 @@
       "bytes": 143004,
       "sha256": "3ea672ad80e46ee94e8656422b58e7f2aecb0cac7e8e954824643ac6e5c37753"
     },
+    "models/Game_Console_Pack.tiny.glb.wmesh": {
+      "bytes": 591080,
+      "sha256": "be7c589555fb4fd97f77506be2c4e2d1879202c1fc41229ece528a3e4a3fb04c"
+    },
     "models/Holofil-flying-icarus.glb": {
       "bytes": 5593444,
       "sha256": "80b63d3b1a1394ed762ff2b01f84de32b9ea0021aa79081f5d9c1d12744faaea"
+    },
+    "models/Holofil-flying-icarus.glb.wmesh": {
+      "bytes": 9814864,
+      "sha256": "4a6e673e06f964ca518ded5a8eb1d7715cc290af6fc90d66e2b16932421cb842"
     },
     "models/Holofil-flying-icarus.high.glb": {
       "bytes": 2680156,
       "sha256": "63cd6c6ed72a719a02f735fce2a5cfd0191e991a675b00d4967ef33555f7d0cd"
     },
+    "models/Human_Skull.glb.wmesh": {
+      "bytes": 4334928,
+      "sha256": "03a6929a36f379e73fdf318c1ad77266d98166c16098ddce0480c2e00e44d3dc"
+    },
     "models/arunangshubanerjee-g-clef-1600.glb": {
       "bytes": 969280,
       "sha256": "e84bf47daefc633ba824ff22e20c526dc2546459273ebc0e867b166f187fff10"
+    },
+    "models/arunangshubanerjee-g-clef-1600.glb.wmesh": {
+      "bytes": 5984120,
+      "sha256": "985354ea29f5c47c8c050053f957b8647b1be01572f1a30c52fff0b8efac805a"
     },
     "models/arunangshubanerjee-g-clef-1600.high.glb": {
       "bytes": 559836,
@@ -4026,6 +4530,10 @@
       "bytes": 906060,
       "sha256": "b1e155a432e5f6812d597d44c010bc5c84a90bbba9bf68cc10f7c982c05d83e8"
     },
+    "models/gal-b-die-4221.glb.wmesh": {
+      "bytes": 2916256,
+      "sha256": "9aad5693784af46848455b1f3c0e2a0d5ecbfd179cb03fc96bf7165db7590f59"
+    },
     "models/gal-b-die-4221.high.glb": {
       "bytes": 640308,
       "sha256": "5d5444b1e1e0483a116f289036717a143c872d7de6aaf0afac4aecf51c6686b3"
@@ -4033,6 +4541,10 @@
     "models/gal-b-lantern-4120.glb": {
       "bytes": 220508,
       "sha256": "5a58581738a7d5460e4b6e5a70b427805813722a89f2bad4493ed85de879bcea"
+    },
+    "models/gal-b-lantern-4120.glb.wmesh": {
+      "bytes": 532532,
+      "sha256": "5c5acbc76c94834f1ac1d89db1497c17e1b8ac1404c4d2ed87830cd50abeb91f"
     },
     "models/gal-b-lantern-4120.high.glb": {
       "bytes": 142072,
@@ -4070,6 +4582,10 @@
       "bytes": 1326828,
       "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
     },
+    "models/pixellabs-battle-axe-3881.tiny.glb.wmesh": {
+      "bytes": 11210656,
+      "sha256": "bc5a69a29b89e6e933c2dbcaa7b7793b262c770f34ebdcde6acf91487440637b"
+    },
     "models/pixellabs-battle-axe-3881_optimized.high.glb": {
       "bytes": 1326828,
       "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
@@ -4081,6 +4597,10 @@
     "models/pixellabs-battle-axe-3881_optimized.tiny.glb": {
       "bytes": 1326828,
       "sha256": "893c1627e831ca531b344f0bc84465697b8a3a0236192d0fe93a0df01d3c2910"
+    },
+    "models/pixellabs-battle-axe-3881_optimized.tiny.glb.wmesh": {
+      "bytes": 11210656,
+      "sha256": "bc5a69a29b89e6e933c2dbcaa7b7793b262c770f34ebdcde6acf91487440637b"
     },
     "models/pixellabs-bone-spear-3640.high.glb": {
       "bytes": 7181364,
@@ -4403,28 +4923,28 @@
       "sha256": "6e6d3f2be0846a7714978117bd0690f72db42fdfed276c1e0dbf5e1fb508325d"
     },
     "showcase/catalog.json": {
-      "bytes": 60844,
-      "sha256": "ed72318ce71a910cd6acf71ceab8da2a7bd740c914e86adb4f2f9d78102dfe45"
+      "bytes": 89685,
+      "sha256": "26d780fb50944730020602f4fd97da56ae58b755566f74028767939c819af7e3"
     },
     "showcase/catalog.json.br": {
-      "bytes": 10134,
-      "sha256": "6318c7fc11289d520757e13ed68cf1517391c6b584c008de8e5d78e3596f73b7"
+      "bytes": 13855,
+      "sha256": "53fac4ab4d182ed4e8187a7c0b28aa504e7f3cca385230c67d022a2f88dd7c5d"
     },
     "showcase/catalog.json.gz": {
-      "bytes": 10826,
-      "sha256": "4cc8121cacfb02257e1ae80616eef16f4b4705cfb44770400556ab1b6828e8f5"
+      "bytes": 14891,
+      "sha256": "7a97ee0fb9aa0799ded17869d9c7af5ec38dd68866dd1ceca2d2f34a46bc72c9"
     },
     "showcase/index.html": {
-      "bytes": 43050,
-      "sha256": "ae77b253d6a724aaa34c9ca50edffc7b784f97db7b3070a9b3cd34394980e52a"
+      "bytes": 58021,
+      "sha256": "dd32c62fb366cb66251e7cb4863e3d08f4b58e5f8b9bc14b00c9acf9911e7e8a"
     },
     "showcase/index.html.br": {
-      "bytes": 6897,
-      "sha256": "37ba9d29452b255f4db7463777e18d974cd58def13702b466c79852c2971ca43"
+      "bytes": 8360,
+      "sha256": "bb8849517240415044ee65cbadb4b7543dd013343ae3a61a0fd95b2abc9c8b7e"
     },
     "showcase/index.html.gz": {
-      "bytes": 7574,
-      "sha256": "2988b1f7fd654aacaa28b72f3bdad2d8fd9552d4176a7949736dcf19d4621221"
+      "bytes": 9149,
+      "sha256": "b0014c5778a97232ab161988f4b3765e4409b73f752038676adb3f7721abefc4"
     },
     "site.webmanifest": {
       "bytes": 1020,
@@ -4439,12 +4959,12 @@
       "sha256": "3511cc697019fc90c74c128acdf1c8e3f9a8d456981bf5046f009675b9a534bb"
     },
     "sitemap-app.xml": {
-      "bytes": 1279,
-      "sha256": "c01207f28cd56252c56f16b99f3f6a309d1274dfbf52c0ef5721162813ce654d"
+      "bytes": 1699,
+      "sha256": "c95ae462635757627ff54502a6d0be3a29d91d3364efb1be5922c7306fb84fab"
     },
     "sitemap.xml": {
-      "bytes": 353,
-      "sha256": "21be8533f427ed10c4bcb12ab05317428687bde7f8d2fa426385e738b6023272"
+      "bytes": 347,
+      "sha256": "77509a93659d4e6c4be408e8ed49200645e7904bd06decf41f544ebfb780f835"
     },
     "sound_bus.js": {
       "bytes": 213836,
@@ -4511,16 +5031,16 @@
       "sha256": "3933e3274b63dc01fd286d6d939a626867c83a4603fc4347e0f8b8856f1b98fd"
     },
     "tutorial-view/index.html": {
-      "bytes": 81135,
-      "sha256": "fd66417186ff36d6ddf8ebfbadeef3b55fdc1776294a79480f9d9446a6b79b45"
+      "bytes": 84106,
+      "sha256": "d82fa8340684ef30ec4056a761b11d267cb028d2e63b28b9d4c83d2d864d4962"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 24642,
-      "sha256": "58e2faacdef843de820e4714bc72fe959e2a6e0cb21507a88e3515783c6cbcdc"
+      "bytes": 25431,
+      "sha256": "0a43eaf575962ba70f1828535dfd3734db0dfc550a98a657513fc5a41cd4afb5"
     },
     "tutorial-view/index.html.gz": {
-      "bytes": 25919,
-      "sha256": "22ab8a466613f24d6b5d8bb328ff7f89fd7e6ce6e1d252025901691ea5dc1d97"
+      "bytes": 26735,
+      "sha256": "146276e5406e6559cbea66d0b2d6adddc35c3e39b23f361fa31a9acb646dd787"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -4571,16 +5091,16 @@
       "sha256": "a52c3572c1596bac857f5409869af9dd8c89c32355da725093071de224e48102"
     },
     "tutorials/catalog.json": {
-      "bytes": 48280,
-      "sha256": "fdd1cbef3cfc5c08334f490f3ed7cc425933d320a836170173decbb9336344ab"
+      "bytes": 51575,
+      "sha256": "c348192adf322215a00df44c967ce5755e39156fb36667d446ca0f7d10e64ad4"
     },
     "tutorials/catalog.json.br": {
-      "bytes": 11747,
-      "sha256": "c6e510eb1213cdd66310b9998539598d0c7ee9113206c934c70443cb7158989f"
+      "bytes": 12627,
+      "sha256": "c8b447a447f6a0fd645466a5f1f2fe2713bb3b45f30a8de6a52817811aece104"
     },
     "tutorials/catalog.json.gz": {
-      "bytes": 12126,
-      "sha256": "cc3e00cdfef5f098288a1c1e16da4539d67d96c4a68b6fd4c51263a6b33ef963"
+      "bytes": 13044,
+      "sha256": "e36e94403e060c592ce7b58019d9e85edc66fac479867109b288d77f02b9a79c"
     },
     "tutorials/colourful-tower/index.html": {
       "bytes": 16262,
@@ -4750,6 +5270,18 @@
       "bytes": 5952,
       "sha256": "bba814c934cfc6a8895f3bad8754bc366bd5ce2b81270db6f063d3a782112103"
     },
+    "tutorials/terrain-aware-pavilion/index.html": {
+      "bytes": 18199,
+      "sha256": "68e711cb8760d071d106f89be584c31d6de8df8dea271d9cb948c1cd44ee609c"
+    },
+    "tutorials/terrain-aware-pavilion/index.html.br": {
+      "bytes": 5536,
+      "sha256": "0143753c6f48e5447f6b5927f208f2f8aee1ac116c1636b0f738dc5da9dc21be"
+    },
+    "tutorials/terrain-aware-pavilion/index.html.gz": {
+      "bytes": 5941,
+      "sha256": "740615bb2a7fabd5eb11a13c8e0f1a428b7fb123d24c7392c11c53e73278f33e"
+    },
     "tutorials/three-shapes/index.html": {
       "bytes": 16318,
       "sha256": "53ca26ed672ce05aa880351d9bc8346625ad065454541874fffce6fc76fccb4d"
@@ -4776,7 +5308,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "4c80c9c15a4ad33a38e939e1185083d5d49155250ebbc4c098cb29dfb5b442b9"
+      "sha256": "548f8b8f351c4f26484c499082c18a15769ba0dfecbb324bf8fe988e6442fa0b"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,

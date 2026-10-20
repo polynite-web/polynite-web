@@ -1,0 +1,294 @@
+{
+  "module": "assembly",
+  "context": [
+    {
+      "name": "ground",
+      "terrain": "infinite"
+    }
+  ],
+  "materials": {
+    "wood": "lacquer",
+    "stone": "garden_stone",
+    "metal": "dark_metal"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "width",
+        "min": 0.5,
+        "max": 3,
+        "value": 1.6,
+        "description": "Landing width, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "depth",
+        "min": 0.4,
+        "max": 3,
+        "value": 1,
+        "description": "Landing depth, metres",
+        "integer": false,
+        "group": "shape"
+      },
+      {
+        "name": "lift",
+        "min": 0.15,
+        "max": 2,
+        "value": 0.25,
+        "description": "Level top above the highest sampled ground corner, metres",
+        "integer": false,
+        "group": "shape"
+      }
+    ],
+    "let": [
+      {
+        "name": "top",
+        "value": [
+          "add",
+          [
+            "max",
+            [
+              "max",
+              [
+                "height",
+                "@ground",
+                [
+                  "mul",
+                  -1,
+                  [
+                    "mul",
+                    "$width",
+                    0.5
+                  ]
+                ],
+                [
+                  "mul",
+                  -1,
+                  [
+                    "mul",
+                    "$depth",
+                    0.5
+                  ]
+                ]
+              ],
+              [
+                "height",
+                "@ground",
+                [
+                  "mul",
+                  -1,
+                  [
+                    "mul",
+                    "$width",
+                    0.5
+                  ]
+                ],
+                [
+                  "mul",
+                  1,
+                  [
+                    "mul",
+                    "$depth",
+                    0.5
+                  ]
+                ]
+              ]
+            ],
+            [
+              "max",
+              [
+                "height",
+                "@ground",
+                [
+                  "mul",
+                  1,
+                  [
+                    "mul",
+                    "$width",
+                    0.5
+                  ]
+                ],
+                [
+                  "mul",
+                  -1,
+                  [
+                    "mul",
+                    "$depth",
+                    0.5
+                  ]
+                ]
+              ],
+              [
+                "height",
+                "@ground",
+                [
+                  "mul",
+                  1,
+                  [
+                    "mul",
+                    "$width",
+                    0.5
+                  ]
+                ],
+                [
+                  "mul",
+                  1,
+                  [
+                    "mul",
+                    "$depth",
+                    0.5
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "$lift"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "pad",
+        "op": "primitive",
+        "kind": "cube",
+        "role": "stone",
+        "p": [
+          0,
+          [
+            "sub",
+            "%top",
+            0.07
+          ],
+          0
+        ],
+        "s": [
+          "$width",
+          0.14,
+          "$depth"
+        ],
+        "bevel": 0.03
+      },
+      {
+        "id": "foot",
+        "op": "beam",
+        "role": "stone",
+        "repeat": {
+          "count": 2,
+          "rows": 2
+        },
+        "let": [
+          {
+            "name": "x",
+            "value": [
+              "mul",
+              [
+                "sub",
+                [
+                  "mul",
+                  "@i",
+                  2
+                ],
+                1
+              ],
+              [
+                "mul",
+                "$width",
+                0.4
+              ]
+            ]
+          },
+          {
+            "name": "z",
+            "value": [
+              "mul",
+              [
+                "sub",
+                [
+                  "mul",
+                  "@j",
+                  2
+                ],
+                1
+              ],
+              [
+                "mul",
+                "$depth",
+                0.4
+              ]
+            ]
+          }
+        ],
+        "a": [
+          "%x",
+          [
+            "height",
+            "@ground",
+            "%x",
+            "%z"
+          ],
+          "%z"
+        ],
+        "b": [
+          "%x",
+          [
+            "sub",
+            "%top",
+            0.14
+          ],
+          "%z"
+        ],
+        "width": 0.12
+      },
+      {
+        "id": "top",
+        "op": "anchor",
+        "p": [
+          0,
+          "%top",
+          0
+        ]
+      },
+      {
+        "id": "in",
+        "op": "anchor",
+        "p": [
+          0,
+          "%top",
+          [
+            "mul",
+            "$depth",
+            -0.5
+          ]
+        ]
+      },
+      {
+        "id": "out",
+        "op": "anchor",
+        "p": [
+          0,
+          "%top",
+          [
+            "mul",
+            "$depth",
+            0.5
+          ]
+        ]
+      },
+      {
+        "id": "side",
+        "op": "anchor",
+        "p": [
+          [
+            "mul",
+            "$width",
+            -0.5
+          ],
+          "%top",
+          0
+        ]
+      }
+    ]
+  }
+}

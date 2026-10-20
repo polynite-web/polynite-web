@@ -16,3 +16,16 @@ for(const e of workshop.data.examples)for(const v of [null,...e.variants]){const
 const geometry=require('./public-site-src/recipe-checks.js').create({type:'geometry',rules:[{prefix:'rib',count_parameters:['bays'],path_points:3}]});
 assert.throws(()=>geometry.observe(0,{recipe:{params:{bays:2}},components:[{part:'rib000000',p:[0,0,0],s:[1,1,1],surface:{path:[[0,0,0],[0,1,0],[1,1,0]]}}]},{}),/count differs/);
 console.log('PASS shared-shape definitions, nine composed workshop scenes and rejected missing repetitions.');
+
+const connections=require('./author_terrain_connections.cjs');
+for(const [name,r]of Object.entries({terrain_path:connections.connection(false),terrain_bridge:connections.connection(true),terrain_landing:connections.landing()})){
+ assert.deepEqual(JSON.parse(fs.readFileSync(path.join(connections.dir,name+'.json'))),r,'Regenerate authored recipe JSON');
+ assert(Buffer.byteLength(JSON.stringify(r.program))<32768);assert(r.program.let.length<=32);
+ const globals=r.program.let.map(v=>v.name);assert.equal(new Set(globals).size,globals.length);
+ for(const n of r.program.nodes){const locals=(n.let||[]).map(v=>v.name);assert(locals.length<=32&&locals.length+globals.length<=64);assert.equal(new Set([...globals,...locals]).size,globals.length+locals.length,'Calculation names must not shadow');}
+}
+for(const kind of ['path','bridge','garden'])for(const variant of ['original','curved','high-bank']){
+ const d=connections.fixture(kind,variant);assert(d.initial.architecture.length<=32);assert.equal(d.initial.architecture[0].id,kind==='garden'?'approach':kind);assert(d.seq.some(s=>s.op==='infinite'&&Array.isArray(s.edits)),'Restore persistent baseline terrain edits, including the lake');
+ for(const r of d.initial.architecture)assert(Buffer.byteLength(JSON.stringify(r.program))<32768);
+}
+console.log('PASS data-only terrain connections, bounded calculation scopes and nine reproducible compositions.');

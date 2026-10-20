@@ -1,0 +1,586 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "context": [
+        {
+          "name": "ground",
+          "object": "ground",
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "point": "top"
+        },
+        {
+          "anchor": "body000000",
+          "instance": "source",
+          "name": "block",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "id": "place",
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "margin": 0.200000003,
+        "radius": 0.400000006,
+        "search": 2,
+        "x": 1.79999995,
+        "z": 0
+      },
+      "program": {
+        "checks": [
+          {
+            "max": 1,
+            "message": "No free candidate: move the preferred point or widen search; keep radius large enough for the complete object",
+            "min": 1,
+            "value": "%used4"
+          }
+        ],
+        "inputs": [
+          {
+            "description": "Preferred centre X, local metres",
+            "group": "placement",
+            "max": 30,
+            "min": -30,
+            "name": "x",
+            "value": 0
+          },
+          {
+            "description": "Preferred centre Z, local metres",
+            "group": "placement",
+            "max": 30,
+            "min": -30,
+            "name": "z",
+            "value": 0
+          },
+          {
+            "description": "Distance to four fallback candidates, metres",
+            "group": "placement",
+            "max": 8,
+            "min": 0.100000001,
+            "name": "search",
+            "value": 2
+          },
+          {
+            "description": "Conservative radius of the complete attached object",
+            "group": "placement",
+            "max": 3,
+            "min": 0.0500000007,
+            "name": "radius",
+            "value": 0.349999994
+          },
+          {
+            "description": "Free space beyond the complete object, metres",
+            "group": "placement",
+            "max": 2,
+            "min": 0,
+            "name": "margin",
+            "value": 0.200000003
+          }
+        ],
+        "let": [
+          {
+            "name": "d0",
+            "value": [
+              "distance",
+              "@block",
+              "$x",
+              "$z"
+            ]
+          },
+          {
+            "name": "ok0",
+            "value": [
+              "gte",
+              "%d0",
+              [
+                "add",
+                "$radius",
+                "$margin"
+              ]
+            ]
+          },
+          {
+            "name": "pick0",
+            "value": [
+              "mul",
+              "%ok0",
+              1
+            ]
+          },
+          {
+            "name": "used0",
+            "value": "%ok0"
+          },
+          {
+            "name": "d1",
+            "value": [
+              "distance",
+              "@block",
+              [
+                "add",
+                "$x",
+                "$search"
+              ],
+              "$z"
+            ]
+          },
+          {
+            "name": "ok1",
+            "value": [
+              "gte",
+              "%d1",
+              [
+                "add",
+                "$radius",
+                "$margin"
+              ]
+            ]
+          },
+          {
+            "name": "pick1",
+            "value": [
+              "mul",
+              "%ok1",
+              [
+                "sub",
+                1,
+                "%used0"
+              ]
+            ]
+          },
+          {
+            "name": "used1",
+            "value": [
+              "max",
+              "%used0",
+              "%ok1"
+            ]
+          },
+          {
+            "name": "d2",
+            "value": [
+              "distance",
+              "@block",
+              [
+                "sub",
+                "$x",
+                "$search"
+              ],
+              "$z"
+            ]
+          },
+          {
+            "name": "ok2",
+            "value": [
+              "gte",
+              "%d2",
+              [
+                "add",
+                "$radius",
+                "$margin"
+              ]
+            ]
+          },
+          {
+            "name": "pick2",
+            "value": [
+              "mul",
+              "%ok2",
+              [
+                "sub",
+                1,
+                "%used1"
+              ]
+            ]
+          },
+          {
+            "name": "used2",
+            "value": [
+              "max",
+              "%used1",
+              "%ok2"
+            ]
+          },
+          {
+            "name": "d3",
+            "value": [
+              "distance",
+              "@block",
+              "$x",
+              [
+                "add",
+                "$z",
+                "$search"
+              ]
+            ]
+          },
+          {
+            "name": "ok3",
+            "value": [
+              "gte",
+              "%d3",
+              [
+                "add",
+                "$radius",
+                "$margin"
+              ]
+            ]
+          },
+          {
+            "name": "pick3",
+            "value": [
+              "mul",
+              "%ok3",
+              [
+                "sub",
+                1,
+                "%used2"
+              ]
+            ]
+          },
+          {
+            "name": "used3",
+            "value": [
+              "max",
+              "%used2",
+              "%ok3"
+            ]
+          },
+          {
+            "name": "d4",
+            "value": [
+              "distance",
+              "@block",
+              "$x",
+              [
+                "sub",
+                "$z",
+                "$search"
+              ]
+            ]
+          },
+          {
+            "name": "ok4",
+            "value": [
+              "gte",
+              "%d4",
+              [
+                "add",
+                "$radius",
+                "$margin"
+              ]
+            ]
+          },
+          {
+            "name": "pick4",
+            "value": [
+              "mul",
+              "%ok4",
+              [
+                "sub",
+                1,
+                "%used3"
+              ]
+            ]
+          },
+          {
+            "name": "used4",
+            "value": [
+              "max",
+              "%used3",
+              "%ok4"
+            ]
+          },
+          {
+            "name": "px",
+            "value": [
+              "add",
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$x",
+                    "%pick0"
+                  ],
+                  [
+                    "mul",
+                    [
+                      "add",
+                      "$x",
+                      "$search"
+                    ],
+                    "%pick1"
+                  ]
+                ],
+                [
+                  "mul",
+                  [
+                    "sub",
+                    "$x",
+                    "$search"
+                  ],
+                  "%pick2"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "mul",
+                  "$x",
+                  "%pick3"
+                ],
+                [
+                  "mul",
+                  "$x",
+                  "%pick4"
+                ]
+              ]
+            ]
+          },
+          {
+            "name": "pz",
+            "value": [
+              "add",
+              [
+                "add",
+                [
+                  "add",
+                  [
+                    "mul",
+                    "$z",
+                    "%pick0"
+                  ],
+                  [
+                    "mul",
+                    "$z",
+                    "%pick1"
+                  ]
+                ],
+                [
+                  "mul",
+                  "$z",
+                  "%pick2"
+                ]
+              ],
+              [
+                "add",
+                [
+                  "mul",
+                  [
+                    "add",
+                    "$z",
+                    "$search"
+                  ],
+                  "%pick3"
+                ],
+                [
+                  "mul",
+                  [
+                    "sub",
+                    "$z",
+                    "$search"
+                  ],
+                  "%pick4"
+                ]
+              ]
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "id": "seat",
+            "op": "anchor",
+            "p": [
+              "%px",
+              [
+                "height",
+                "@ground",
+                "%px",
+                "%pz"
+              ],
+              "%pz"
+            ]
+          },
+          {
+            "id": "body",
+            "op": "footprint",
+            "p": [
+              "%px",
+              0,
+              "%pz"
+            ],
+            "s": [
+              [
+                "mul",
+                2,
+                "$radius"
+              ],
+              1,
+              [
+                "mul",
+                2,
+                "$radius"
+              ]
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "id": "source",
+      "materials": {
+        "stone": "garden_stone"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "width": 2
+      },
+      "program": {
+        "inputs": [
+          {
+            "description": "Object width, metres",
+            "group": "placement",
+            "max": 5,
+            "min": 1,
+            "name": "width",
+            "value": 2
+          }
+        ],
+        "nodes": [
+          {
+            "bevel": 0.0799999982,
+            "id": "box",
+            "kind": "cube",
+            "op": "primitive",
+            "p": [
+              0,
+              0.600000024,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              "$width",
+              1.20000005,
+              2
+            ]
+          },
+          {
+            "id": "body",
+            "op": "footprint",
+            "p": [
+              0,
+              0,
+              0
+            ],
+            "s": [
+              "$width",
+              1,
+              2
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    },
+    {
+      "attach": {
+        "anchor": "seat000000",
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "to": "place"
+      },
+      "id": "object",
+      "materials": {
+        "metal": "dark_metal",
+        "stone": "garden_stone",
+        "wood": "lacquer"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {},
+      "program": {
+        "inputs": [],
+        "nodes": [
+          {
+            "id": "stem",
+            "kind": "cylinder",
+            "op": "primitive",
+            "p": [
+              0,
+              0.400000006,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              0.119999997,
+              0.800000012,
+              0.119999997
+            ]
+          },
+          {
+            "id": "top",
+            "kind": "sphere",
+            "op": "primitive",
+            "p": [
+              0,
+              0.899999976,
+              0
+            ],
+            "role": "stone",
+            "s": [
+              0.550000012,
+              0.400000006,
+              0.550000012
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 17,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}

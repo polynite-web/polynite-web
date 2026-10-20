@@ -1174,6 +1174,582 @@
         "video": "media/nested-temple-v1.mp4",
         "poster": "media/nested-temple-v1.jpg"
       }
+    },
+    {
+      "id": "terrain-aware-pavilion",
+      "title": "A pavilion that follows the ground",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "Raise the land under a Japanese garden pavilion. Four independent feet adapt while its deck stays level, using one editable recipe and shared terrain operators.",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "beam",
+        "surface",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "instances": [
+        "temple"
+      ],
+      "prompt": "Create a Japanese garden pavilion that adapts to Polynite's infinite terrain.\n\n- Check commands.recipe_terrain, then discover architecture.operators for spatial queries.\n- Compose an assembly recipe with context:[{name:'ground',terrain:'infinite'}]. Sample four feet with height; keep the deck above their maximum plus floor_clearance.\n- Choose dimensions in the recipe: an unbounded terrain has no footprint width or depth.\n- Expose width, depth, roof curl and floor_clearance. Raise a broad patch of ground, then return it to the initial state in a five-second film.\n- Keep the existing user scene and use stable IDs. Verify the contacts visually.",
+      "try": [
+        "Set floor_clearance to 0.6 under Scene settings > Living architecture > temple.",
+        "Change width, depth, curl and overhang. The same support expressions still fit the feet.",
+        "Change the raise cue depth from 4 to 2.2. Keep the ground edit broad enough for the terrain grid."
+      ],
+      "steps": [
+        "Declare the support as a named context reference.",
+        "Sample its top height at four corners and choose their maximum.",
+        "Place the deck above that height; extend each foot to its own sample."
+      ],
+      "settings": "Scene settings > Living architecture > temple: floor_clearance, width, depth, curl, overhang. Adjust also exposes the scene-owned Ground height control.",
+      "checks": [
+        {
+          "type": "support",
+          "instance": "temple",
+          "times": [
+            0,
+            2.5,
+            4.6
+          ],
+          "part_prefix": "post",
+          "min_height_spread": 0.3
+        }
+      ],
+      "tested_at": "2026-10-19",
+      "revision": "69e941e53",
+      "media": {
+        "video": "media/terrain-aware-pavilion.mp4",
+        "poster": "media/terrain-aware-pavilion.jpg"
+      },
+      "limits": "Requires commands.recipe_terrain. Press Play to compare flat and raised ground; use Adjust for the saved controls. Terrain queries use the finest near-field triangle grid, currently 4 m. Arbitrary imported meshes and continuous terrain deformation are outside this example.",
+      "scene_sha256": "5e6688b299b389c4ee504274072473efafe4c759578e136438ab3f3449ae5f4a",
+      "recipes_sha256": "a140668808e1f6cdf52dc6faa27756e80f5dc8880965532ce901e2ba7fa8d207",
+      "version": 1,
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "seed": 17,
+      "duration": 5,
+      "edit_parameter": "floor_clearance",
+      "variants": [
+        {
+          "id": "gentle",
+          "title": "Gentle slope",
+          "scene_sha256": "95052da41ae321aa1ca9fe350e719a56a80196a823bf7ae22a3581874980bdfa",
+          "poster": "media/terrain-aware-pavilion.jpg"
+        }
+      ],
+      "browser_validation": {
+        "scope": "Chromium/WebGPU: original support sequence and live parameter edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
+      }
+    },
+    {
+      "id": "terrain-linked-path",
+      "version": 1,
+      "title": "A path that meets the ground",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "An editable stone path follows sampled ground and smoothly joins raised construction anchors. Change its bend, width or landing height without replacing its recipe.",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "primitive",
+        "beam",
+        "anchor",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "instances": [
+        "path",
+        "shore_a",
+        "shore_b"
+      ],
+      "prompt": "In Polynite, create an editable terrain-adaptive path. Discover commands.recipe_terrain and architecture operators context/spatial/let. Bind named left and right references to real construction anchors and ground to the enabled infinite terrain. Compose shared primitives, beams, expressions and stable anchors as editable JSON recipes. Sample the centre and both edges. Keep construction tops above ground plus thickness and clearance; preserve manual edits. Expose width, bend, arch and rail_height. Estimate, apply, inspect the connections, then verify the actual pixels. Keep the current user scene; invent a variation instead of adding a native generator for this style.",
+      "try": [
+        "Press Play to compare the initial ground, a raised patch and its restored state.",
+        "Under Adjust, change path width or bend. Change shore_b lift to raise the arrival and watch dependent connections follow.",
+        "Use reusable landings to compose a longer route; keep sharp turns and obstacle avoidance explicit."
+      ],
+      "steps": [
+        "Bind existing terrain and construction anchors explicitly.",
+        "Evaluate one sampled profile at the centre and both edges; join segments and reuse its heights for rails and feet.",
+        "Keep the shape, materials and connection policy in editable recipe data; terrain/source edits revalidate declared dependants."
+      ],
+      "settings": "Adjust > path · recipe controls: width, bend, arch, thickness, clearance, rail_height and segments. Adjust > shore_a/shore_b: lift, width and depth. The same controls live under Scene settings > Living architecture.",
+      "checks": [
+        {
+          "type": "connection",
+          "instance": "path",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        }
+      ],
+      "tested_at": "2026-10-19",
+      "revision": "69e941e53",
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "media": {
+        "video": "media/terrain-linked-path.mp4",
+        "poster": "media/terrain-linked-path.jpg"
+      },
+      "limits": "Uses explicit local bindings and sampled near-field terrain, not arbitrary mesh raycasts, continuous collision or automatic pathfinding. Span 0.5..20m; 8..20 segments. max_grade limits end-to-end rise, not every local segment. Inspect steep relief and bends, increase samples or add intermediate landings. Invalid references, buried ends and invalid spans reject without changing the last valid scene.",
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "width",
+      "variants": [
+        {
+          "id": "curved",
+          "title": "Curved route",
+          "poster": "media/terrain-linked-path-curved.jpg",
+          "scene_sha256": "f80a32a85546a39f798c514ba5f531c9a637e0b7f09d56fdf68413583aef4d57"
+        },
+        {
+          "id": "high-bank",
+          "title": "Raised arrival",
+          "poster": "media/terrain-linked-path-high-bank.jpg",
+          "scene_sha256": "04bfc060d27f823b452923f6815385ee52b3026257ad9f5267b86dff01bf2213"
+        }
+      ],
+      "scene_sha256": "04718775f5d44ce173aeea488f0d92b0b062ab4700e39c84eaacd8f4ab82b96d",
+      "recipes_sha256": "5bd0fed9f22ec4a973f601be859ec40b1f18b60306f2f504475857937aa9f779",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU: original terrain sequence and live width edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
+      }
+    },
+    {
+      "id": "terrain-linked-bridge",
+      "version": 1,
+      "title": "A bridge between living shores",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "An editable arched bridge follows two construction anchors and clears sampled terrain. Deck, rails and feet share one profile; the same operators can compose a different crossing.",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "primitive",
+        "beam",
+        "anchor",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "instances": [
+        "bridge",
+        "shore_a",
+        "shore_b"
+      ],
+      "prompt": "In Polynite, create an editable terrain-adaptive bridge. Discover commands.recipe_terrain and architecture operators context/spatial/let. Bind named left and right references to real construction anchors and ground to the enabled infinite terrain. Compose shared primitives, beams, expressions and stable anchors as editable JSON recipes. Sample the centre and both edges. Keep construction tops above ground plus thickness and clearance; preserve manual edits. Expose width, bend, arch and rail_height. Estimate, apply, inspect the connections, then verify the actual pixels. Keep the current user scene; invent a variation instead of adding a native generator for this style.",
+      "try": [
+        "Press Play to compare the initial ground, a raised patch and its restored state.",
+        "Under Adjust, change bridge width or bend. Change shore_b lift to raise the arrival and watch dependent connections follow.",
+        "Use reusable landings to compose a longer route; keep sharp turns and obstacle avoidance explicit."
+      ],
+      "steps": [
+        "Bind existing terrain and construction anchors explicitly.",
+        "Evaluate one sampled profile at the centre and both edges; join segments and reuse its heights for rails and feet.",
+        "Keep the shape, materials and connection policy in editable recipe data; terrain/source edits revalidate declared dependants."
+      ],
+      "settings": "Adjust > bridge · recipe controls: width, bend, arch, thickness, clearance, rail_height and segments. Adjust > shore_a/shore_b: lift, width and depth. The same controls live under Scene settings > Living architecture.",
+      "checks": [
+        {
+          "type": "connection",
+          "instance": "bridge",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        }
+      ],
+      "tested_at": "2026-10-19",
+      "revision": "69e941e53",
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "media": {
+        "video": "media/terrain-linked-bridge.mp4",
+        "poster": "media/terrain-linked-bridge.jpg"
+      },
+      "limits": "Uses explicit local bindings and sampled near-field terrain, not arbitrary mesh raycasts, continuous collision or automatic pathfinding. Span 0.5..20m; 8..20 segments. max_grade limits end-to-end rise, not every local segment. Inspect steep relief and bends, increase samples or add intermediate landings. Invalid references, buried ends and invalid spans reject without changing the last valid scene.",
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "width",
+      "variants": [
+        {
+          "id": "curved",
+          "title": "Curved route",
+          "poster": "media/terrain-linked-bridge-curved.jpg",
+          "scene_sha256": "6d0fa409982a9c833873408b81d26af08ffbf6a36eb2ab81d35089fc4e3ffd52"
+        },
+        {
+          "id": "high-bank",
+          "title": "Raised arrival",
+          "poster": "media/terrain-linked-bridge-high-bank.jpg",
+          "scene_sha256": "dc569c86737b66f6af3c017365d2af604ad6cfcc6a3471bc769d567e4f61cca6"
+        }
+      ],
+      "scene_sha256": "a01de4ab21704ca46f50681b583210acacd535ce8303779e31f5fc7270d98942",
+      "recipes_sha256": "70db32f24368b930254d4e1a4fe8ae1970a58fcff9ada8db566cad2dfd501b34",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU: original terrain sequence and live width edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
+      }
+    },
+    {
+      "id": "terrain-linked-garden",
+      "version": 1,
+      "title": "A Japanese garden, connected",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "A connected Japanese garden: pavilion, curved approach, terrain-fitted bridge, landings and planting share explicit construction anchors. Change the land or a landing and the connections adapt.",
+      "operators": [
+        "spatial",
+        "context",
+        "let",
+        "primitive",
+        "beam",
+        "anchor",
+        "repeat"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain"
+      ],
+      "instances": [
+        "approach",
+        "bridge",
+        "entry",
+        "temple",
+        "shore_a",
+        "shore_b",
+        "gatepad",
+        "cherry",
+        "pine1",
+        "pine2",
+        "lamp1",
+        "lamp2",
+        "lamp3",
+        "site",
+        "lotus",
+        "bloom2",
+        "bloom3"
+      ],
+      "prompt": "In Polynite, create a Japanese garden with a pavilion, paths and a bridge. Discover commands.recipe_terrain and architecture operators context/spatial/let. Bind named left and right references to real construction anchors and ground to the enabled infinite terrain. Compose shared primitives, beams, expressions and stable anchors as editable JSON recipes. Sample the centre and both edges. Keep construction tops above ground plus thickness and clearance; preserve manual edits. Expose width, bend, arch and rail_height. Estimate, apply, inspect the connections, then verify the actual pixels. Keep the current user scene; invent a variation instead of adding a native generator for this style.",
+      "try": [
+        "Press Play to compare the initial ground, a raised patch and its restored state.",
+        "Under Adjust, change approach width or bend. Change shore_b lift to raise the arrival and watch dependent connections follow.",
+        "Use reusable landings to compose a longer route; keep sharp turns and obstacle avoidance explicit."
+      ],
+      "steps": [
+        "Bind existing terrain and construction anchors explicitly.",
+        "Evaluate one sampled profile at the centre and both edges; join segments and reuse its heights for rails and feet.",
+        "Keep the shape, materials and connection policy in editable recipe data; terrain/source edits revalidate declared dependants."
+      ],
+      "settings": "Adjust > approach · recipe controls: width, bend, arch, thickness, clearance, rail_height and segments. Adjust > shore_a/shore_b: lift, width and depth. The same controls live under Scene settings > Living architecture.",
+      "checks": [
+        {
+          "type": "connection",
+          "instance": "approach",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        },
+        {
+          "type": "connection",
+          "instance": "bridge",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        },
+        {
+          "type": "connection",
+          "instance": "entry",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        }
+      ],
+      "tested_at": "2026-10-19",
+      "revision": "69e941e53",
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "media": {
+        "video": "media/terrain-linked-garden.mp4",
+        "poster": "media/terrain-linked-garden.jpg"
+      },
+      "limits": "Uses explicit local bindings and sampled near-field terrain, not arbitrary mesh raycasts, continuous collision or automatic pathfinding. Span 0.5..20m; 8..20 segments. max_grade limits end-to-end rise, not every local segment. Inspect steep relief and bends, increase samples or add intermediate landings. Invalid references, buried ends and invalid spans reject without changing the last valid scene.",
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "width",
+      "variants": [
+        {
+          "id": "curved",
+          "title": "Curved route",
+          "poster": "media/terrain-linked-garden-curved.jpg",
+          "scene_sha256": "8b232ca25abbf7f58b41e814240790b2d2387642092ec8eb50576aa153178bac"
+        },
+        {
+          "id": "high-bank",
+          "title": "Raised arrival",
+          "poster": "media/terrain-linked-garden-high-bank.jpg",
+          "scene_sha256": "935f4f425bd0bd8d3138b7f758fd80bb009576516462027d6e4043587a771d78"
+        }
+      ],
+      "scene_sha256": "30d38ed88010da246bcf5eabd49ff7b7fb6af96e64c2e4473b573a24665041ab",
+      "recipes_sha256": "6a786b3252f02beb3e025c581a46ca5781dd02c73be448cae3e835fb6cbd38d8",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU: three original terrain-linked connections and live width edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
+      }
+    },
+    {
+      "id": "footprint-placement",
+      "version": 1,
+      "title": "Give every object room",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "An object moves to the first free candidate when a neighbouring construction grows. Named reservations, complete-object radius and clearance remain editable recipe data.",
+      "operators": [
+        "footprint",
+        "spatial",
+        "context",
+        "let",
+        "anchor",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain",
+        "recipe_footprints"
+      ],
+      "instances": [
+        "place",
+        "source",
+        "object"
+      ],
+      "prompt": "In the current Polynite scene, compose editable placement recipes using named footprint reservations. Discover commands.recipe_footprints and operators footprint/context/spatial/let. Declare conservative roof, canopy and access rectangles, bind only explicit nearby sources, and preserve a whole-object radius plus clearance margin. Try a preferred position and four bounded alternatives; reject atomically if none fits. Add explicit pair constraints between placed objects. Keep geometry, aesthetic choices and candidate rules in JSON recipes; reuse existing geometry and terrain operators. Estimate, apply with stable IDs, inspect bounds and actual pixels. Preserve user edits and locks; do not clear the current scene.",
+      "try": [
+        "Press Play: the construction widens, the nearby object changes position, then both return.",
+        "Under Adjust, change place x, z, search, radius or margin. Keep radius large enough for the complete object.",
+        "Grow source width. If all five candidates are blocked, move the preferred point or widen search."
+      ],
+      "steps": [
+        "Publish named horizontal reservations as footprint nodes, without duplicate render geometry.",
+        "Measure each candidate against explicit sources; preserve the complete-object radius plus margin, then choose the first free candidate.",
+        "Attach reused objects to the chosen terrain-seated anchor; validate spacing pairs and keep all rules in editable recipe data."
+      ],
+      "settings": "Adjust > place · recipe controls: x, z, search, radius, margin. source > width changes its reservation.",
+      "checks": [
+        {
+          "type": "placement",
+          "instance": "place",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        }
+      ],
+      "tested_at": "2026-10-19",
+      "revision": "9d1ba003b",
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "media": {
+        "video": "media/footprint-placement.mp4",
+        "poster": "media/footprint-placement.jpg"
+      },
+      "limits": "Horizontal declared reservations, not automatic arbitrary-mesh bounds, 3D collision, global packing or pathfinding. Each slot tries five recipe-defined candidates against at most seven explicit reservations; pairs are checked in groups of up to six. In this garden, path reservations conservatively enclose the complete sine bend and can exclude extra space. Radius must contain the complete attached object; update it if geometry grows or is manually changed. No position fits: reject and preserve the previous scene. Candidate changes happen at edit-time or explicit film cues, not continuously during physics.",
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "margin",
+      "variants": [
+        {
+          "id": "wide",
+          "title": "Wider construction",
+          "poster": "media/footprint-placement-wide.jpg",
+          "scene_sha256": "c51ab13dbff9411cc5ea889f142468ad0981bd51eb3a1e885ccd0d631391f249"
+        },
+        {
+          "id": "space",
+          "title": "More breathing room",
+          "poster": "media/footprint-placement-space.jpg",
+          "scene_sha256": "4429629214a29ea780c571830f23ea8dfde82f028e1b789cbf3a4176b0f9e670"
+        }
+      ],
+      "scene_sha256": "cbba1e7e76c77421368067abe8d7a7f4bc40626ea5a8272a93ed5ff936fdf4e3",
+      "recipes_sha256": "019f8ba49bd8cf0642676ef04696ed50898d28178d21d81d78b4a998f8c49994",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU v0319 on polynite.io: original scene, placement, return after source edit and live margin edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
+      }
+    },
+    {
+      "id": "clearance-japanese-garden",
+      "version": 1,
+      "title": "A Japanese garden with room to grow",
+      "category": "Architecture",
+      "level": "Build on it",
+      "summary": "A pavilion, connected paths and planting share explicit roof, passage and pond reservations. Growing the pavilion repositions a lantern; pair constraints keep the placed objects apart.",
+      "operators": [
+        "footprint",
+        "spatial",
+        "context",
+        "let",
+        "anchor",
+        "primitive"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_context",
+        "recipe_spatial",
+        "recipe_terrain",
+        "recipe_footprints"
+      ],
+      "instances": [
+        "slot5",
+        "approach",
+        "bridge",
+        "entry",
+        "temple",
+        "shore_a",
+        "shore_b",
+        "gatepad",
+        "cherry",
+        "pine1",
+        "pine2",
+        "lamp1",
+        "lamp2",
+        "lamp3",
+        "lotus",
+        "bloom2",
+        "bloom3",
+        "pondarea",
+        "slot0",
+        "slot1",
+        "slot2",
+        "slot3",
+        "slot4",
+        "spacing"
+      ],
+      "prompt": "In the current Polynite scene, compose editable placement recipes using named footprint reservations. Discover commands.recipe_footprints and operators footprint/context/spatial/let. Declare conservative roof, canopy and access rectangles, bind only explicit nearby sources, and preserve a whole-object radius plus clearance margin. Try a preferred position and four bounded alternatives; reject atomically if none fits. Add explicit pair constraints between placed objects. Keep geometry, aesthetic choices and candidate rules in JSON recipes; reuse existing geometry and terrain operators. Estimate, apply with stable IDs, inspect bounds and actual pixels. Preserve user edits and locks; do not clear the current scene.",
+      "try": [
+        "Press Play: the construction widens, the nearby object changes position, then both return.",
+        "Under Adjust, change slot5 x, z, search, radius or margin. Keep radius large enough for the complete object.",
+        "Grow temple width. If all five candidates are blocked, move the preferred point or widen search."
+      ],
+      "steps": [
+        "Publish named horizontal reservations as footprint nodes, without duplicate render geometry.",
+        "Measure each candidate against explicit sources; preserve the complete-object radius plus margin, then choose the first free candidate.",
+        "Attach reused objects to the chosen terrain-seated anchor; validate spacing pairs and keep all rules in editable recipe data."
+      ],
+      "settings": "Adjust > slot5 · recipe controls: x, z, search, radius, margin. temple > width changes its reservation. spacing > margin protects the six placed objects from one another.",
+      "checks": [
+        {
+          "type": "placement",
+          "instance": "slot5",
+          "times": [
+            0,
+            2.8,
+            5.6
+          ],
+          "must_adapt": true,
+          "returns": true
+        }
+      ],
+      "tested_at": "2026-10-19",
+      "revision": "9d1ba003b",
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "media": {
+        "video": "media/clearance-japanese-garden.mp4",
+        "poster": "media/clearance-japanese-garden.jpg"
+      },
+      "limits": "Horizontal declared reservations, not automatic arbitrary-mesh bounds, 3D collision, global packing or pathfinding. Each slot tries five recipe-defined candidates against at most seven explicit reservations; pairs are checked in groups of up to six. In this garden, path reservations conservatively enclose the complete sine bend and can exclude extra space. Radius must contain the complete attached object; update it if geometry grows or is manually changed. No position fits: reject and preserve the previous scene. Candidate changes happen at edit-time or explicit film cues, not continuously during physics.",
+      "seed": 17,
+      "duration": 6,
+      "edit_parameter": "margin",
+      "variants": [
+        {
+          "id": "wide",
+          "title": "Wider construction",
+          "poster": "media/clearance-japanese-garden-wide.jpg",
+          "scene_sha256": "c2b59a48a8416c0b37c24abba535848cb8af2280d11b2c59cbe5015568356660"
+        },
+        {
+          "id": "space",
+          "title": "More breathing room",
+          "poster": "media/clearance-japanese-garden-space.jpg",
+          "scene_sha256": "8b2c3f618ecb90669c7ff1f5ec863ac03a0dc58c25601246e105c6a1286b0345"
+        }
+      ],
+      "scene_sha256": "8abc75334141f3e6aaa6d5b2c9c3efacd45d29b5fc27db2fff98bcc6392b268f",
+      "recipes_sha256": "c4a5952c82c6fc9040f9c0f0c14cc7ae52bcd46cf5653a35488d9313a7c7c173",
+      "browser_validation": {
+        "scope": "Chromium/WebGPU v0319 on polynite.io: original scene, placement, return after source edit and live margin edit",
+        "tested_at": "2026-10-19",
+        "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
+      }
     }
   ]
 }
