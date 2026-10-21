@@ -1,7 +1,7 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0365",
+  "version": "v0366",
   "sourceVersion": "v0363",
   "engineBase": "engine/0880f5b1e4e810a0110d1ca9bd7cbe94c9c76444a8b250ce74cbb1c824fd2beb/",
   "engineHistory": [
@@ -79,16 +79,16 @@
       "sha256": "1cdba46dbb7eea470272cedcdb35f76abf7474a23b56b383a478c10a4189e9eb"
     },
     "app.html": {
-      "bytes": 84636,
-      "sha256": "e9c4082af1f2ba0792414da5c548da1331112b59ad939e4763af9c9a94691338"
+      "bytes": 84644,
+      "sha256": "d950e41814e1e97855083da148895a652ddd09e9a7f9a98da708039f6271d4af"
     },
     "app.html.br": {
-      "bytes": 25435,
-      "sha256": "6c4659585b3b21af136a4a1cb1145c0c1ceb35b843617e89973177510b145750"
+      "bytes": 25439,
+      "sha256": "0420aa37cd6dabc4205286f9487211fc082a515af68f8c44f703ea0666d5853c"
     },
     "app.html.gz": {
-      "bytes": 26779,
-      "sha256": "6194dd247552b8e27def4628715d69ead8f32674477ba3afd23e8723607bef14"
+      "bytes": 26780,
+      "sha256": "99f49f833cfcfb7b67caafa83a501b84a6df8d072e426f8332ec86839785977f"
     },
     "app.js": {
       "bytes": 337447,
@@ -5111,16 +5111,16 @@
       "sha256": "f0b768288e21a3918d0b9255db523a79c616382a80f29ed9128b14fcf21752f5"
     },
     "examples/runtime/index.html": {
-      "bytes": 84100,
-      "sha256": "916b7231c0d02144fc9a55e23d9642ee4650f17b28f504aae735e5627dcc507e"
+      "bytes": 84093,
+      "sha256": "9571493f78f4073a44fdfd852adca9220e1f7eb40685ae1c38278133edfb3728"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 25432,
-      "sha256": "3dc785b90aed2c42e8466ef0370b57c6baff433a6805902b842b69ab3a0d7c47"
+      "bytes": 25417,
+      "sha256": "4832c70ccc43d89bce759f65c45a2e6f2ddbc08a3bf33f0b766a26a80896ae03"
     },
     "examples/runtime/index.html.gz": {
-      "bytes": 26735,
-      "sha256": "56df3d6b6d259507490178223a5df328927f49e1dc35cb5c926a45593bdf3a10"
+      "bytes": 26719,
+      "sha256": "aff67c6c74c5e88de5889cf03537520dae359c3edcad073e5faa0872944a575a"
     },
     "examples/view.css": {
       "bytes": 2690,
@@ -5175,16 +5175,16 @@
       "sha256": "d7589825c6566360feca0b5c3fa81e65193d631c9bcbce57be47d1e57561fa70"
     },
     "index.html": {
-      "bytes": 84636,
-      "sha256": "e9c4082af1f2ba0792414da5c548da1331112b59ad939e4763af9c9a94691338"
+      "bytes": 84644,
+      "sha256": "d950e41814e1e97855083da148895a652ddd09e9a7f9a98da708039f6271d4af"
     },
     "index.html.br": {
-      "bytes": 25435,
-      "sha256": "6c4659585b3b21af136a4a1cb1145c0c1ceb35b843617e89973177510b145750"
+      "bytes": 25439,
+      "sha256": "0420aa37cd6dabc4205286f9487211fc082a515af68f8c44f703ea0666d5853c"
     },
     "index.html.gz": {
-      "bytes": 26779,
-      "sha256": "6194dd247552b8e27def4628715d69ead8f32674477ba3afd23e8723607bef14"
+      "bytes": 26780,
+      "sha256": "99f49f833cfcfb7b67caafa83a501b84a6df8d072e426f8332ec86839785977f"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -5819,16 +5819,16 @@
       "sha256": "3933e3274b63dc01fd286d6d939a626867c83a4603fc4347e0f8b8856f1b98fd"
     },
     "tutorial-view/index.html": {
-      "bytes": 84100,
-      "sha256": "916b7231c0d02144fc9a55e23d9642ee4650f17b28f504aae735e5627dcc507e"
+      "bytes": 84093,
+      "sha256": "9571493f78f4073a44fdfd852adca9220e1f7eb40685ae1c38278133edfb3728"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 25432,
-      "sha256": "3dc785b90aed2c42e8466ef0370b57c6baff433a6805902b842b69ab3a0d7c47"
+      "bytes": 25417,
+      "sha256": "4832c70ccc43d89bce759f65c45a2e6f2ddbc08a3bf33f0b766a26a80896ae03"
     },
     "tutorial-view/index.html.gz": {
-      "bytes": 26735,
-      "sha256": "56df3d6b6d259507490178223a5df328927f49e1dc35cb5c926a45593bdf3a10"
+      "bytes": 26719,
+      "sha256": "aff67c6c74c5e88de5889cf03537520dae359c3edcad073e5faa0872944a575a"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -6120,7 +6120,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "eca0a8c154afd4dfa367565b248ac43475e040bc1e08687ad7b09643a71b06a9"
+      "sha256": "f5a6108c0e9227daf02013fa816b66a965a27b1a1a2bb720818867aad12e5118"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
