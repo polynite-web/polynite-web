@@ -115,7 +115,7 @@
   };
   discover.addEventListener('click', function () { window.vmeshDiscoverRequested = true; });
   window.vmeshWorldFrame = function () {
-    if (window.vmeshCommittedFrames !== 1) return;
+    if (!window.vmeshCommittedFrames || document.body.classList.contains('world-visible') || window.__pnPipelineCompile?.pending) return;
     document.body.classList.add('world-visible');
     performance.mark('polynite-world-visible');
     if(window.__pnStartup) window.__pnStartup.mark('first_visible_frame');
