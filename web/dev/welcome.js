@@ -128,6 +128,7 @@
     arrival.mode = mode;
     if (mode === 'discover' && !studioTouched) studioState(false);
     arrival.busy = !!busy;
+    window.pnLoading?.arrival(busy);
     arrival.failed = !!failed;
     arrival.journey = !!journey || !!(arrival.data && arrival.data.journey && busy);
     if (!busy && !failed && (arrival.requested || !arrival.journey)) window.vmeshSceneEntered = true;

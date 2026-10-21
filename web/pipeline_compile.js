@@ -7,7 +7,7 @@
   const options = new URLSearchParams(location.search), profiling = options.has('pipeline_profile');
   const native = { render: device.createRenderPipelineAsync, compute: device.createComputePipelineAsync };
   const shaders = new WeakMap(), layouts = new WeakMap(), seen = new WeakMap(), descriptors = [], rows = [], queue = [];
-  let active = 0, scheduled = false, serial = 0, lastTick = 0, burstStart = 0, deadline = 0, indicator;
+  let active = 0, scheduled = false, serial = 0, lastTick = 0, burstStart = 0, deadline = 0, activeLabel = '';
   const state = globalThis.__pnPipelineCompile = { enabled: options.get('pipeline_async') !== '0', pending: 0, completed: 0, failed: false, ticks: 0, max_frame_gap_ms: 0, waitingForLoader: false };
   const hash = text => { let h=2166136261; for(let i=0;i<text.length;i++)h=Math.imul(h^text.charCodeAt(i),16777619); return (h>>>0).toString(16); };
   const canonical = value => {
@@ -23,12 +23,7 @@
     const original=device[name]; device[name]=function(desc){const value=original.call(this,desc);layouts.set(value,hash(JSON.stringify(canonical(desc))));return value;};
   }
   function update() {
-    if(!document.body)return;
-    if(!indicator){indicator=document.createElement('div');indicator.id='pipeline-progress';indicator.setAttribute('role','status');indicator.setAttribute('aria-live','polite');indicator.style.cssText='position:fixed;z-index:99990;left:50%;bottom:28px;transform:translateX(-50%);padding:12px 18px;border:1px solid #536878;border-radius:12px;background:#101c2fed;color:#e3eef5;font:14px system-ui;pointer-events:none';document.body.appendChild(indicator);}
-    indicator.hidden=!state.pending&&!state.failed;
-    const fr=/^fr/i.test(navigator.language||'');
-    indicator.textContent=state.failed?(fr?'Preparation interrompue':'Preparation failed'):(fr?"Preparation de l'affichage":'Preparing display')+' - '+state.completed+'/'+(state.completed+state.pending)+' - '+((performance.now()-burstStart)/1000).toFixed(1)+' s';
-    if(state.pending){const text=document.getElementById('loaderText');if(text)text.textContent=indicator.textContent;}
+    globalThis.pnLoading?.pipeline(state,activeLabel||queue[0]?.desc.label||'');
   }
   function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(tick);}}
   function tick(now){
@@ -38,7 +33,7 @@
   }
   function startNext(){
     if(active||!queue.length||state.failed)return;
-    const job=queue.shift();active=1;job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
+    const job=queue.shift();active=1;activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
     let result;try{result=native[job.kind].call(job.device,job.desc);}catch(error){result=Promise.reject(error);}
     Promise.resolve(result).then(value=>finish(job,null,value),error=>finish(job,error));
   }
