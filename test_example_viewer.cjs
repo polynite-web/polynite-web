@@ -27,6 +27,7 @@ class Element{
  console.log('PASS viewer boot, play without reload, variant switch, selected-reference reset, failed download recovery, export guard and scene save.');
  handleCap=true;
  $('reset').events.click();$('controls').hidden=false;const handles=$('parameters').children[0];assert.equal(handles.textContent,'Open construction handles');handles.events.click();assert.equal($('controls').hidden,true,'Native HUD must be visible after switching from adjustments');assert(calls.some(([m,p])=>m==='scene.ui'&&p.request.target==='architecture_select'&&p.request.id==='part'));handleCap=false;
+ assert(calls.some(([m,p])=>m==='scene.ui'&&p.request.target==='architecture_tool'&&p.request.part==='move'),'Opening handles must explicitly choose Move, even after an earlier Shape edit');
  // Two overlapping check gestures must not interleave scene seeks. Contracts
  // sharing a timestamp observe the same scene instead of replaying it twice.
  nodes.clear();calls.length=0;timers.length=0;current=undefined;

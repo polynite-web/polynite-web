@@ -20,11 +20,11 @@
     "experiments": [
       {
         "title": "Give useful controls to the user",
-        "text": "Open & test → Adjust → Open construction handles. Choose hall and Shape. Drag a gold roof-rise or doorway-width guide; release to validate, Escape to cancel."
+        "text": "Open & test → Adjust → Open construction handles starts in Move. Drag the gold base ring to reposition the hall and its attached gallery. For dimensions, choose Shape in Constructions: guides are labelled Resize. Release to validate, Escape to cancel. A doorway resize stops at a compatible size when a gallery needs the passage."
       },
       {
         "title": "Free the view",
-        "text": "Use Hide panel, keep handles on a narrow screen. Click a labelled base dot to select another instance. Reopen Constructions to choose Move or Rotate; moving a source keeps its declared dependent gallery aligned."
+        "text": "Use Hide panel, keep handles on a narrow screen. Click a labelled base dot to select another instance. Reopen Constructions for the separate Shape, Move and Rotate buttons. Attached constructions follow their source; detach explicitly before moving one independently."
       },
       {
         "title": "Keep recipes editable",
