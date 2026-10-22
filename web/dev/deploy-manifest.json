@@ -1,13 +1,13 @@
 {
   "format": 1,
   "tier": "dev",
-  "version": "v0367",
-  "sourceVersion": "v0365",
-  "engineBase": "engine/e8a62646798a529ad3cfc86326dbaf74db48d2122967a2da3d0e07705d6e906f/",
+  "version": "v0371",
+  "sourceVersion": "v0369",
+  "engineBase": "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/",
   "engineHistory": [
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/",
     "engine/e8a62646798a529ad3cfc86326dbaf74db48d2122967a2da3d0e07705d6e906f/",
-    "engine/0880f5b1e4e810a0110d1ca9bd7cbe94c9c76444a8b250ce74cbb1c824fd2beb/",
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/"
+    "engine/0880f5b1e4e810a0110d1ca9bd7cbe94c9c76444a8b250ce74cbb1c824fd2beb/"
   ],
   "files": {
     "404.html": {
@@ -75,44 +75,44 @@
       "sha256": "11bcb86397f29f9a09c770ad5559e34d06ca33ac272ec3c124c68eb48af76783"
     },
     "_redirects": {
-      "bytes": 10412,
-      "sha256": "60b1c31cfd4f18e251f26b0ce4d4094a51b77f913ea9f6eec046110865f7a797"
+      "bytes": 10730,
+      "sha256": "04296c2bc9aaf81ea8762d41b397840b37b8c5747817fc9fab553a6cfeaed92a"
     },
     "app.html": {
       "bytes": 84642,
-      "sha256": "6b822dc026e39fea53526ef24f9b8e2ab67ecdcaf5a0186a6cbd0b44de25d688"
+      "sha256": "49a2e6a6bc3c5f3f7ee457116b7475ec4cd7cf8a821e39561b6df2cb5cba434c"
     },
     "app.html.br": {
-      "bytes": 25441,
-      "sha256": "5e1c5dd212bb19ea06f2f474bc3b9f87148abd1e5988241e9aa2736180471c97"
+      "bytes": 25440,
+      "sha256": "c8eb6f52ff3ad4ef02ad0004338a2d1189d27cb9ee23b4aef59b46318a0ec8c3"
     },
     "app.html.gz": {
       "bytes": 26780,
-      "sha256": "cc49656bc00cb6c4d7a67cd057ccb50a45b5f5adcde729b15d9841baa6e79cd3"
+      "sha256": "f52537eebbf41f0997eb1ca59874d62ba32a18c422a3893d91b551fda919c676"
     },
     "app.js": {
       "bytes": 337447,
-      "sha256": "9869c20762c7cea9aaa354a265a9e61074382407746eb1a92e7b6f6dcbe57860"
+      "sha256": "f9c03773be0a9a7871340a3c6378ccc69577218bb1370efeab38ab138abfad77"
     },
     "app.js.br": {
-      "bytes": 78653,
-      "sha256": "951c28d271c3f562ca8a8a8242b29901ec414ff37517d3a2a75f223be23e7217"
+      "bytes": 78650,
+      "sha256": "81332fa4fb9398c5da358992c62cf358c91fc157389ebaccc1dcaf8e1f1436de"
     },
     "app.js.gz": {
-      "bytes": 84190,
-      "sha256": "dcbc5d5d9a3bea0499f7f14754a62b8aed06bb0bb53407d77fd7cba6c77be8e8"
+      "bytes": 84189,
+      "sha256": "a906514e95a873db510824afd574b0a8ac796a9b07d5b6c66a8d735db533c425"
     },
     "app.wasm": {
-      "bytes": 5632469,
-      "sha256": "074101dec61bb23bdc8514d1c243e75f44efcb1506cb579b436d17979f30b77f"
+      "bytes": 5643732,
+      "sha256": "c27e7dcaa833b1fd5926c2d9ce07eb4170ae0be051c2761b9539b369e5abc4a5"
     },
     "app.wasm.br": {
-      "bytes": 2041349,
-      "sha256": "692b92d08b9db2d2792e2ef06a68a669cf2860e9393c0780d9c283cfaa92bd92"
+      "bytes": 2045652,
+      "sha256": "eae76397aaf1085348bbb3e5a8bc4b7c2067fe547f776df85461223edbb34eeb"
     },
     "app.wasm.gz": {
-      "bytes": 2297613,
-      "sha256": "1c282d2b42df1931417281bc347b8d048837bd1e1fb0022c6e3033b8f765e159"
+      "bytes": 2301193,
+      "sha256": "90061ea1bb9deb881d65258fd5f252ad646c9376af56dad76eb195f971803000"
     },
     "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
       "bytes": 1229851,
@@ -991,16 +991,16 @@
       "sha256": "e11c8d44219e8977a9bbbf0cd146295edcd2aabcfbbb17a0ebc6c32e0403b057"
     },
     "docs/index.html": {
-      "bytes": 84642,
-      "sha256": "141cd0d3126e3818516b1660d63d6c57a834429a60afa0e2a4fc8bef7f31819b"
+      "bytes": 88357,
+      "sha256": "56fb64e8eea43aecc1ead5b26dbcbfcea6000135c45d646b58f1e36fa02707f9"
     },
     "docs/index.html.br": {
-      "bytes": 17815,
-      "sha256": "3db3eca000878c243c5df33b0afccdf15daaa63c7ebbc283677d86ec5697ca1f"
+      "bytes": 18515,
+      "sha256": "b005658c5567744c2d9795a2d3d29578db5bddf5228aaa1b52490e069d4a8ccb"
     },
     "docs/index.html.gz": {
-      "bytes": 18958,
-      "sha256": "baeca55b2eaab9d837d6454edd0d1d208ab653a22645b3759694c3e26d9fc564"
+      "bytes": 19714,
+      "sha256": "f60fa15d17e50f61d891200ad822f07573a5122cdff8df20bda78bf066c01dc8"
     },
     "docs/mcp/index.html": {
       "bytes": 23976,
@@ -2198,6 +2198,22 @@
       "bytes": 2866790,
       "sha256": "9187517a072f6d6d20c3659177b8248c66666d8cefa473e965fee3f5685e5b7b"
     },
+    "docs/media/tutorials/r45/handle-temple-garden-e5c9452fff21.scene": {
+      "bytes": 313536,
+      "sha256": "e5c9452fff219f20cdcc31c30ea95003856fd8ca00472c58ce7c88a023419a26"
+    },
+    "docs/media/tutorials/r45/handle-temple-garden-preview.mp4": {
+      "bytes": 3018380,
+      "sha256": "df5ff5518c0f0d8b34c7a484d061d9f534a6cc485a6b51fdd22ae831ecd8557e"
+    },
+    "docs/media/tutorials/r45/handle-temple-garden.jpg": {
+      "bytes": 68288,
+      "sha256": "3a65d9f3000acae1b6a5ab98494c11383c2459ba820afc3866ccedd00689ea6a"
+    },
+    "docs/media/tutorials/r45/handle-temple-garden.mp4": {
+      "bytes": 3018380,
+      "sha256": "df5ff5518c0f0d8b34c7a484d061d9f534a6cc485a6b51fdd22ae831ecd8557e"
+    },
     "docs/media/tutorials/r5/block-explosion-5a9fbc64c144.scene": {
       "bytes": 27312,
       "sha256": "5a9fbc64c1443568ffa8b6af7469c5182fd7ea20e38ed88e7680a08c274d7658"
@@ -2427,16 +2443,16 @@
       "sha256": "fddf40d1f551dcdefa52ff08d6967dcd6005660c1c1f17e4d414c385635ef335"
     },
     "docs/recipes/catalog.json": {
-      "bytes": 28661,
-      "sha256": "3875598eff37973a7a02dd52651eb0e6b6f72f1d370d17f886b796655ae64dfa"
+      "bytes": 29999,
+      "sha256": "6d51c879ce0bae3a501b46f8b9f26a54f701b6eb42ce44bcea165208dbeaa6db"
     },
     "docs/recipes/catalog.json.br": {
-      "bytes": 3166,
-      "sha256": "c4441a9763745b8ad4a6c4e465fc5d870aedc390be0c74ee706ec3451b4c616a"
+      "bytes": 3268,
+      "sha256": "ba45be60f52595007ec4033fd1341cf0b606c817ab23c28b52f5e8ffb1b6a9c4"
     },
     "docs/recipes/catalog.json.gz": {
-      "bytes": 3349,
-      "sha256": "90c55413e01d3326893c5f535a22ac19a03f7d30a8fd8cb1e49938909544f5a5"
+      "bytes": 3462,
+      "sha256": "622c6667afdb9ea6883abd5bc0d58b605af41bac7a1c0c3f4d38a7e6ca8300ed"
     },
     "docs/recipes/clearance-japanese-garden/index.html": {
       "bytes": 13347,
@@ -2449,6 +2465,138 @@
     "docs/recipes/clearance-japanese-garden/index.html.gz": {
       "bytes": 4235,
       "sha256": "898f90763102ed750c9ae1e9825d594ef136669dc073fc1db71f97c2546ec52c"
+    },
+    "docs/recipes/collections/architecture-handles/v1/courtyard.json": {
+      "bytes": 1320,
+      "sha256": "da0287de3dcea3b8d5d3436940700df05bfe51b0df0ef40654f6200a3f11af0b"
+    },
+    "docs/recipes/collections/architecture-handles/v1/courtyard.json.br": {
+      "bytes": 415,
+      "sha256": "d1d9348eaf83813ef742469054fb7e528ad8828a442a21e488462cbf81596dc0"
+    },
+    "docs/recipes/collections/architecture-handles/v1/courtyard.json.gz": {
+      "bytes": 447,
+      "sha256": "3f38af48143660f0c055baa16e0f1e852ad191b10d202b1fbd4ddd5d892cf006"
+    },
+    "docs/recipes/collections/architecture-handles/v1/gallery.json": {
+      "bytes": 9343,
+      "sha256": "c303d8af1725c5b9ae9251664b8a56d349e9549f471327c07a4f8602dc198c76"
+    },
+    "docs/recipes/collections/architecture-handles/v1/gallery.json.br": {
+      "bytes": 1366,
+      "sha256": "226fd435c0be6a79a11ab29544c2abbb8248d47822d7bd2423f739c3111a4876"
+    },
+    "docs/recipes/collections/architecture-handles/v1/gallery.json.gz": {
+      "bytes": 1390,
+      "sha256": "4705d0b14f0553545b9dad807572f0c926195e6ced735edb60ee9815aa045131"
+    },
+    "docs/recipes/collections/architecture-handles/v1/host-shell.json": {
+      "bytes": 6847,
+      "sha256": "173f5084ee6134065bb0ae6f82ea0c5e8d356a3ccb9d03d956d83b6117725ecd"
+    },
+    "docs/recipes/collections/architecture-handles/v1/host-shell.json.br": {
+      "bytes": 1005,
+      "sha256": "bb61729997f47031538aeffb1dd61555af77b752c0845ba8e0beb78a00432188"
+    },
+    "docs/recipes/collections/architecture-handles/v1/host-shell.json.gz": {
+      "bytes": 1061,
+      "sha256": "1a4cc1177265c19f299dfdd50d17c4f359c47d707cb84549505172f5a20e4b4a"
+    },
+    "docs/recipes/collections/architecture-handles/v1/index.json": {
+      "bytes": 3081,
+      "sha256": "e65a0609cc7ea01fa5b1731ad7a96d9c8a365c8456e1d04568edd45b8aef8d4f"
+    },
+    "docs/recipes/collections/architecture-handles/v1/index.json.br": {
+      "bytes": 770,
+      "sha256": "34d2dbc3d002643430d88c45f49d0387503d3f2915a92660eeabb24abe78e5ef"
+    },
+    "docs/recipes/collections/architecture-handles/v1/index.json.gz": {
+      "bytes": 844,
+      "sha256": "9be3f97e9d80281e7e820c6fdf0ba9f207c4725c4076040aeb721263174dcec3"
+    },
+    "docs/recipes/collections/architecture-handles/v1/lantern.json": {
+      "bytes": 2546,
+      "sha256": "42eb2029558d2be17bab29abc2fc570e482b38a838426d2a0ed78b2c1278e9f4"
+    },
+    "docs/recipes/collections/architecture-handles/v1/lantern.json.br": {
+      "bytes": 446,
+      "sha256": "929898db8da9f8454d34a7d7e551d0059d68706bc7f4e8d4095457cdc70f3bed"
+    },
+    "docs/recipes/collections/architecture-handles/v1/lantern.json.gz": {
+      "bytes": 480,
+      "sha256": "301abc55221f0f7df4b334949afdbb28aa5c788d567e92f5acaf0111bb8cfde0"
+    },
+    "docs/recipes/collections/architecture-handles/v1/lotus.json": {
+      "bytes": 23148,
+      "sha256": "cccdea259f4c511718e6656d575d2f8c00490f2f8d7d540aca60adc1b2c6b872"
+    },
+    "docs/recipes/collections/architecture-handles/v1/lotus.json.br": {
+      "bytes": 2039,
+      "sha256": "79da46f3fb52e97aa78feef330f51e6a6abe3e9614d4508ed0fb7ee5b2b53917"
+    },
+    "docs/recipes/collections/architecture-handles/v1/lotus.json.gz": {
+      "bytes": 2037,
+      "sha256": "b99f7253616eb37dc735c61dcb72dee277747d07d871fe6e27cfec1270a9c811"
+    },
+    "docs/recipes/collections/architecture-handles/v1/materials.json": {
+      "bytes": 3495,
+      "sha256": "9f0771dd112ff575b1127d04ebd7211733818224f4b1042827358686f0e796cd"
+    },
+    "docs/recipes/collections/architecture-handles/v1/materials.json.br": {
+      "bytes": 597,
+      "sha256": "664bc251349d04d5ae9068965905ef9b39985295049bfb21df9ac533030c2766"
+    },
+    "docs/recipes/collections/architecture-handles/v1/materials.json.gz": {
+      "bytes": 615,
+      "sha256": "8dcfcbb72424f3d3afacbcc117aa090c7e33ead4f3c98b5988337df9df8503be"
+    },
+    "docs/recipes/collections/architecture-handles/v1/pagoda.json": {
+      "bytes": 23430,
+      "sha256": "831e50c929d0b38f73791c5776ce60f406eaa766ebd0e67ce8b4652f0a158c71"
+    },
+    "docs/recipes/collections/architecture-handles/v1/pagoda.json.br": {
+      "bytes": 1963,
+      "sha256": "c4b94ee9702c973212713e62680a868937c289fd733a3050d7316a1a651b67d1"
+    },
+    "docs/recipes/collections/architecture-handles/v1/pagoda.json.gz": {
+      "bytes": 1993,
+      "sha256": "9be084964f2d832121d060c69d0f744eb3e6a9935c411590d4484b664503ca82"
+    },
+    "docs/recipes/collections/architecture-handles/v1/source.json": {
+      "bytes": 30811,
+      "sha256": "d187a6e8e76a90d76624591d78f45e41d116d901a9001a405ff543f85f966075"
+    },
+    "docs/recipes/collections/architecture-handles/v1/source.json.br": {
+      "bytes": 6505,
+      "sha256": "4b4500639ac9c53b5f0d877226bc1809fcaeb14ad7609bea2bc3dfa5a1f25b58"
+    },
+    "docs/recipes/collections/architecture-handles/v1/source.json.gz": {
+      "bytes": 6735,
+      "sha256": "5c2abe789c7c4bd93e629d8d6cda47eb7535cd5a25b790a0d8d551cff1302129"
+    },
+    "docs/recipes/collections/architecture-handles/v1/temple-hall.json": {
+      "bytes": 24835,
+      "sha256": "1747ddcc3dc11dc05d5c88129d5265d02506fb15d1c8e6f3132cdf7bb254c4c4"
+    },
+    "docs/recipes/collections/architecture-handles/v1/temple-hall.json.br": {
+      "bytes": 2107,
+      "sha256": "217247a5e7d4108494294f0a7fb4f46cdc08f2152ee69ea964dff483dcb8ba53"
+    },
+    "docs/recipes/collections/architecture-handles/v1/temple-hall.json.gz": {
+      "bytes": 2171,
+      "sha256": "b30cca88abec1917ce9b4242659d1846479d03d2a679dae4307279f21e84193d"
+    },
+    "docs/recipes/collections/architecture-handles/v1/tree.json": {
+      "bytes": 3638,
+      "sha256": "877e8b4b5d94478855ff68dacecfa9ac7fa3e4c55e64bf8f455b8911d4b53e03"
+    },
+    "docs/recipes/collections/architecture-handles/v1/tree.json.br": {
+      "bytes": 606,
+      "sha256": "626a73e0d5de1794abca20a9a17b52a416bd57d3c495efeb13b90997c84d23ab"
+    },
+    "docs/recipes/collections/architecture-handles/v1/tree.json.gz": {
+      "bytes": 631,
+      "sha256": "c28e3474d34b67ebe2037c2ef3e88549e422528ef8ff60e8f1e907c7b266094a"
     },
     "docs/recipes/collections/connected-assemblies/v1/courtyard.json": {
       "bytes": 1320,
@@ -3426,6 +3574,46 @@
       "bytes": 23779,
       "sha256": "cbba1e7e76c77421368067abe8d7a7f4bc40626ea5a8272a93ed5ff936fdf4e3"
     },
+    "docs/recipes/data/handle-temple-garden/v1-broad.scene": {
+      "bytes": 324149,
+      "sha256": "71a765efd85118ce1cd8038867196935509ec2260c7b3d60eef45931a397afcd"
+    },
+    "docs/recipes/data/handle-temple-garden/v1-compact.scene": {
+      "bytes": 312793,
+      "sha256": "671230975a9f72b9b5c177226f1bcf7790a8372c8ab6597259ef5ae9a0540616"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.json": {
+      "bytes": 6618,
+      "sha256": "45df652b776021a6938a05335f707f2b68bf567de1fa88952bd22488f3f6e673"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.json.br": {
+      "bytes": 2406,
+      "sha256": "e5af2cd275f5df1dc4a4dde378afc69024171fa558e80410612bbb68c02bcd91"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.json.gz": {
+      "bytes": 2575,
+      "sha256": "77b9a1010356341d74ab5a3930f2f554c46244d1587723465288df9ad8ca6d7f"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.md": {
+      "bytes": 5654,
+      "sha256": "a82ac1f752d2e833d0a1ab78dfdb3117e664236753aecc71ba4f891869372492"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.recipes.json": {
+      "bytes": 117478,
+      "sha256": "6e63553f5c7f07aa10ac9bb661f84b586228e8c094f9b2db708998ff11cbae52"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.recipes.json.br": {
+      "bytes": 8331,
+      "sha256": "bb027d32fbdfb2c0bccb4a5147a2b34c337cdeb1f6ae99bf147069fca3752c95"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.recipes.json.gz": {
+      "bytes": 8456,
+      "sha256": "00d30425cda25d47ae29b65cc7ba83eb4bd96b2eafe86c053938f255c1235d04"
+    },
+    "docs/recipes/data/handle-temple-garden/v1.scene": {
+      "bytes": 313536,
+      "sha256": "e5c9452fff219f20cdcc31c30ea95003856fd8ca00472c58ce7c88a023419a26"
+    },
     "docs/recipes/data/japanese-bridge/v1-low-crossing.scene": {
       "bytes": 59471,
       "sha256": "9c92d04e68308af1e2848e23636d0609519eb96361be755dde22e14113930ebf"
@@ -4346,17 +4534,29 @@
       "bytes": 4181,
       "sha256": "9259798b75fada007bc52694509a500e85a49692c35f888db819e3a6eb8f3a17"
     },
+    "docs/recipes/handle-temple-garden/index.html": {
+      "bytes": 14861,
+      "sha256": "7e41e46c67ddd4e52d226d0d977808766df142553d51a7011edec2386f9430d8"
+    },
+    "docs/recipes/handle-temple-garden/index.html.br": {
+      "bytes": 4269,
+      "sha256": "d677b9450158fbf56fbb0e637b54b8b733a98a851a28f5dc5e2d8eb5ad286923"
+    },
+    "docs/recipes/handle-temple-garden/index.html.gz": {
+      "bytes": 4585,
+      "sha256": "5a7bee1524c22af66453928f78a1c4a448512c90fdddd5bc8eac59fc89ae47a0"
+    },
     "docs/recipes/index.html": {
-      "bytes": 87286,
-      "sha256": "763a09d97f75814a40de55d436103251a66b4fa8fface13b8c5ef6aa9f6416e1"
+      "bytes": 90662,
+      "sha256": "23aeefcfc34e316e2fc1e58d90eb24cbae1ddd1931a692ce01054133ef0d583d"
     },
     "docs/recipes/index.html.br": {
-      "bytes": 10213,
-      "sha256": "b250d97683cee63d19f1aa2aeebdf32c60707dea6ce863e06a1271e4e18afdd6"
+      "bytes": 10354,
+      "sha256": "8581e1b83db557710758917b000e1a53e55e437a652dadf9ca79f5e82900eeda"
     },
     "docs/recipes/index.html.gz": {
-      "bytes": 11143,
-      "sha256": "9747698657bff45c651ea9336b29423de344ab7fe00a5c2e90434b6379b785f4"
+      "bytes": 11328,
+      "sha256": "cf07a135534d6dc5c24b443001bef1e457aa0aac14fd1fd18a20befb0231eceb"
     },
     "docs/recipes/japanese-bridge/index.html": {
       "bytes": 11762,
@@ -4491,16 +4691,16 @@
       "sha256": "1ccb322d2fb49a85680a64e2dd3fca9363dfbe4e850b7d9238b9b8c45b358cbb"
     },
     "docs/recipes/llms.txt": {
-      "bytes": 7458,
-      "sha256": "81f888bd2a22d44917526671d9e3425cffa6a81c7f26df2b49cccf07d1486526"
+      "bytes": 7832,
+      "sha256": "e92f64845e9fe137cb8b7cf28d00f5bcf6ea5722e1486f2304a7eee836b1c243"
     },
     "docs/recipes/llms.txt.br": {
-      "bytes": 2213,
-      "sha256": "b4341af1576e14d9d71b4816f50acf1ab8598fb159b5c660e0f15daecb053a77"
+      "bytes": 2308,
+      "sha256": "dbb2f7b0e521637ec621b60d1297d90b8302459341a2077e2ec8cc326c5ba47a"
     },
     "docs/recipes/llms.txt.gz": {
-      "bytes": 2359,
-      "sha256": "92cd651833fe609357a078c4d8dd5653e746c0331962d6d89ce2dae6a4545a5a"
+      "bytes": 2449,
+      "sha256": "ced0dc0cc82335ef9a31de5a109bfe40d1d0da7a5fa7fd17eb50f5e72cb29540"
     },
     "docs/recipes/media/clearance-japanese-garden-space.jpg": {
       "bytes": 114432,
@@ -4589,6 +4789,22 @@
     "docs/recipes/media/footprint-placement.mp4": {
       "bytes": 3141412,
       "sha256": "e34aea3e5f42af8623df4aa4c23c4d2fd0db033650ae9384dc44c9a537d7127e"
+    },
+    "docs/recipes/media/handle-temple-garden-v1-broad.jpg": {
+      "bytes": 68655,
+      "sha256": "7d0ac07c8b8f80245fc0a52a45fe662692cabe46c196abf0de1fa8d03009c92c"
+    },
+    "docs/recipes/media/handle-temple-garden-v1-compact.jpg": {
+      "bytes": 69048,
+      "sha256": "6253f31742db4eab42eb196de8fbc1d7db06df84789dba5fb274be31c3cab363"
+    },
+    "docs/recipes/media/handle-temple-garden-v1.jpg": {
+      "bytes": 68288,
+      "sha256": "3a65d9f3000acae1b6a5ab98494c11383c2459ba820afc3866ccedd00689ea6a"
+    },
+    "docs/recipes/media/handle-temple-garden-v1.mp4": {
+      "bytes": 3018380,
+      "sha256": "df5ff5518c0f0d8b34c7a484d061d9f534a6cc485a6b51fdd22ae831ecd8557e"
     },
     "docs/recipes/media/japanese-bridge-v1-low-crossing.jpg": {
       "bytes": 59717,
@@ -5070,29 +5286,29 @@
       "bytes": 2290618,
       "sha256": "efe275f4abf211a1e6c58890dc3260b80c522194c34343b7a33d902fa9ed5567"
     },
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/app.js": {
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/app.js": {
       "bytes": 337447,
-      "sha256": "a582e0d8f1dc865eff3aa08f1dcb148480bf88c5704bca666d720137688c776e"
+      "sha256": "f9c03773be0a9a7871340a3c6378ccc69577218bb1370efeab38ab138abfad77"
     },
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/app.js.br": {
-      "bytes": 78651,
-      "sha256": "a31c4a7558d84f9624db840e5ac55e6899d33bf7c83526a516f330a7535a3712"
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/app.js.br": {
+      "bytes": 78650,
+      "sha256": "81332fa4fb9398c5da358992c62cf358c91fc157389ebaccc1dcaf8e1f1436de"
     },
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/app.js.gz": {
-      "bytes": 84190,
-      "sha256": "760271b54cac92a78842e5e4f4c6e79c74668f45ac5218e2ec1308aea81ab9f8"
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/app.js.gz": {
+      "bytes": 84189,
+      "sha256": "a906514e95a873db510824afd574b0a8ac796a9b07d5b6c66a8d735db533c425"
     },
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/app.wasm": {
-      "bytes": 5611015,
-      "sha256": "65cd8c97aeaf9798cada7ba38149d267f176e87dd47adae5e3ba4062648bb0a8"
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/app.wasm": {
+      "bytes": 5643732,
+      "sha256": "c27e7dcaa833b1fd5926c2d9ce07eb4170ae0be051c2761b9539b369e5abc4a5"
     },
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/app.wasm.br": {
-      "bytes": 2032273,
-      "sha256": "abdeee66b4e92f68b4365bbddac9d75d843058e0890641dcb09c9743da449e99"
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/app.wasm.br": {
+      "bytes": 2045652,
+      "sha256": "eae76397aaf1085348bbb3e5a8bc4b7c2067fe547f776df85461223edbb34eeb"
     },
-    "engine/959c8c7f47ba050ba55e816fa92f06b1df8a01f762dcf22491a2af8734b86a93/app.wasm.gz": {
-      "bytes": 2290604,
-      "sha256": "e8945a03b3a04f1cc35ee2f780d7f78b16242345e4875b4a9999f42d70557704"
+    "engine/4d887c45c64e64be12e72fbb493eba515b9f1fc9ee0947a8c6bde6709bce1e46/app.wasm.gz": {
+      "bytes": 2301193,
+      "sha256": "90061ea1bb9deb881d65258fd5f252ad646c9376af56dad76eb195f971803000"
     },
     "engine/e8a62646798a529ad3cfc86326dbaf74db48d2122967a2da3d0e07705d6e906f/app.js": {
       "bytes": 337447,
@@ -5143,16 +5359,16 @@
       "sha256": "ef0551af048a6da1b2f12621aa45bd25779c84a19231696db32ae425d74827f5"
     },
     "examples/catalog.json": {
-      "bytes": 150538,
-      "sha256": "ecb78f4d3f333cecd0ab4088a6e0f59ee280fc93b81a4b139e3ad5b8dae296b7"
+      "bytes": 157782,
+      "sha256": "cbdcfd03cf17b3f6afc47d1db6509d1d20212a7778bc4c82866d1c713b279c48"
     },
     "examples/catalog.json.br": {
-      "bytes": 20409,
-      "sha256": "0e991c3936552a4672909e89e615035ec298f0c4901d74e084ac04e02dce1023"
+      "bytes": 21550,
+      "sha256": "aa981b8cbfad56ef3714c97d55de6dc09750f4843714bc4dc7b32ac1fe09bda3"
     },
     "examples/catalog.json.gz": {
-      "bytes": 22359,
-      "sha256": "5fd017182f505f2fcfcdb5ae9e6395b55c3cec7c1ae3e9068ae2eb0f2e409ddd"
+      "bytes": 23590,
+      "sha256": "fa12300059088a07e468c0dd5ed905772a699f5b42ec4f484ded634a2537ee8a"
     },
     "examples/checks.js": {
       "bytes": 15656,
@@ -5233,6 +5449,18 @@
     "examples/data/footprint-placement-v1.scene": {
       "bytes": 23779,
       "sha256": "cbba1e7e76c77421368067abe8d7a7f4bc40626ea5a8272a93ed5ff936fdf4e3"
+    },
+    "examples/data/handle-temple-garden-v1-broad.scene": {
+      "bytes": 324149,
+      "sha256": "71a765efd85118ce1cd8038867196935509ec2260c7b3d60eef45931a397afcd"
+    },
+    "examples/data/handle-temple-garden-v1-compact.scene": {
+      "bytes": 312793,
+      "sha256": "671230975a9f72b9b5c177226f1bcf7790a8372c8ab6597259ef5ae9a0540616"
+    },
+    "examples/data/handle-temple-garden-v1.scene": {
+      "bytes": 313536,
+      "sha256": "e5c9452fff219f20cdcc31c30ea95003856fd8ca00472c58ce7c88a023419a26"
     },
     "examples/data/infinite-flight-v1.scene": {
       "bytes": 17273,
@@ -5500,15 +5728,15 @@
     },
     "examples/runtime/index.html": {
       "bytes": 84992,
-      "sha256": "42da9a4ebd46bb9b0613e37e2f22a3daa4c2148885c5301e03458e641cee2155"
+      "sha256": "538e1fe5461acc682c5965f8e8cb288e43e3036d1ccbeda3c6105c3fb9179e51"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 25611,
-      "sha256": "07a12fe909753ea05632bfd26cd9e41504f15af474e87b34c4336ebeba5676b1"
+      "bytes": 25614,
+      "sha256": "9176a20d2f4f90509cd9f91024064070574558d52573ec3baeeff6c4c6d399c2"
     },
     "examples/runtime/index.html.gz": {
-      "bytes": 26946,
-      "sha256": "e622f265768adbdadec79f80adf4c977ef64be50b15702bbb0744b7c6053c2ce"
+      "bytes": 26945,
+      "sha256": "5878b3e9d83efd828a67150c3f3ffab4e5d99d0ff99571768b419ac532bf8ca2"
     },
     "examples/view.css": {
       "bytes": 2690,
@@ -5524,27 +5752,27 @@
     },
     "examples/view.html": {
       "bytes": 1924,
-      "sha256": "f990580adbb708ff9c4b77e317e60b3dec06d582cffbc71c0bd23130c2661e6c"
+      "sha256": "97d0bdedde2a7dd903f6e34a75df9769497a15a221b83a6643c55f40c20023af"
     },
     "examples/view.html.br": {
-      "bytes": 806,
-      "sha256": "869a34eda970207220135f6a48c536c3d7a5d63037a83846b49d6020afe39a7a"
+      "bytes": 807,
+      "sha256": "5024fc6135e2b174bee913b602a0339a972469314122a769bedf66fdbb154f5a"
     },
     "examples/view.html.gz": {
-      "bytes": 939,
-      "sha256": "6237ce0c7de80f6572dfafa915174b3d8ff92de908a60d0213144aeb2807453e"
+      "bytes": 938,
+      "sha256": "a1fdb0842e8c4b64d5bc0db4324c0e36f5dcddb8b8c811479d005cfcc07789f8"
     },
     "examples/view.js": {
-      "bytes": 16342,
-      "sha256": "c150b635b1ff93d0e0e707e1d792dcc6bbf8c19de64f9ed437655a3797a386fb"
+      "bytes": 17073,
+      "sha256": "4a17e763d7b2eff7c819d48f3de4cf723b6ebc2739e524cc017e33e6e3d067a8"
     },
     "examples/view.js.br": {
-      "bytes": 4914,
-      "sha256": "300e1e2d9bf06e4265b5d671647a701ff37ed761ef45287c2ecfaf7a991b5256"
+      "bytes": 5088,
+      "sha256": "08a448da8ca45961591f13928a004a55bc096da4e498851a124e6328d1e29e3c"
     },
     "examples/view.js.gz": {
-      "bytes": 5184,
-      "sha256": "13178da02568b46d227e2471bc428c21da770a7e81686c6e1f3be1f7a2e979f1"
+      "bytes": 5363,
+      "sha256": "46ede6c35406127df7ae1a6c3024ee830630010fb950491b2b9ffa71840a2c82"
     },
     "favicon.ico": {
       "bytes": 4238,
@@ -5564,15 +5792,15 @@
     },
     "index.html": {
       "bytes": 84642,
-      "sha256": "6b822dc026e39fea53526ef24f9b8e2ab67ecdcaf5a0186a6cbd0b44de25d688"
+      "sha256": "49a2e6a6bc3c5f3f7ee457116b7475ec4cd7cf8a821e39561b6df2cb5cba434c"
     },
     "index.html.br": {
-      "bytes": 25441,
-      "sha256": "5e1c5dd212bb19ea06f2f474bc3b9f87148abd1e5988241e9aa2736180471c97"
+      "bytes": 25440,
+      "sha256": "c8eb6f52ff3ad4ef02ad0004338a2d1189d27cb9ee23b4aef59b46318a0ec8c3"
     },
     "index.html.gz": {
       "bytes": 26780,
-      "sha256": "cc49656bc00cb6c4d7a67cd057ccb50a45b5f5adcde729b15d9841baa6e79cd3"
+      "sha256": "f52537eebbf41f0997eb1ca59874d62ba32a18c422a3893d91b551fda919c676"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -6099,28 +6327,28 @@
       "sha256": "6e6d3f2be0846a7714978117bd0690f72db42fdfed276c1e0dbf5e1fb508325d"
     },
     "showcase/catalog.json": {
-      "bytes": 146921,
-      "sha256": "ae96d10e8c757bb1e8f8e98b93a95187317d923ccb4bf25b46dbd4146ac163bd"
+      "bytes": 154386,
+      "sha256": "a8a4634361b751d8b11891424b4ea67fb02c9bfe00617ae1b2c7e325993cdac5"
     },
     "showcase/catalog.json.br": {
-      "bytes": 19660,
-      "sha256": "cdec7612959550b7b9249896be41055493f6f68ca140904ccc9482dd04da236a"
+      "bytes": 20742,
+      "sha256": "da58b8536523dcf303ef8fe40d540d91a3d644d65659f1e94d929e706030b2f5"
     },
     "showcase/catalog.json.gz": {
-      "bytes": 21106,
-      "sha256": "f1570ec3f13b303d3a9d1cd310fd1ee56510bee5c32f560a3e08baa084681d11"
+      "bytes": 22435,
+      "sha256": "5aa3f025e842493752b572a3595ceca0acb2ec3a0c5ee3a44ee259c166a638df"
     },
     "showcase/index.html": {
-      "bytes": 84184,
-      "sha256": "4013e0a8fb443ee741bf43be3032903f8c1902f0566900283cadd522cbb4dd1a"
+      "bytes": 86995,
+      "sha256": "4924af288d76fe1bb33864e98dc0ff226d08c7069f2894b2b46fbc1419c0e454"
     },
     "showcase/index.html.br": {
-      "bytes": 10411,
-      "sha256": "e88bea46f9d5b650563e4330d96c7218bcb0faf28720969d86ab8a43c940d7e7"
+      "bytes": 10713,
+      "sha256": "47d1690c7f7155029a5774ead243205e18e0bc8552687a05cadd2d929408f66a"
     },
     "showcase/index.html.gz": {
-      "bytes": 11349,
-      "sha256": "04d7a3a74241927bc3864cf29fa13fb7d01f73f801abd7e624e81486e490ac06"
+      "bytes": 11688,
+      "sha256": "efacc10c034cd025f431a0da2374b2aff4a911ac52970bf08d50a862fa66cd4e"
     },
     "site.webmanifest": {
       "bytes": 1020,
@@ -6135,8 +6363,8 @@
       "sha256": "3511cc697019fc90c74c128acdf1c8e3f9a8d456981bf5046f009675b9a534bb"
     },
     "sitemap-app.xml": {
-      "bytes": 1917,
-      "sha256": "8786cdd11f9f57d46cb9b6d332013e92edfcbd390f72fcde27f36e9edba28ea2"
+      "bytes": 1990,
+      "sha256": "d6e28d13b0b185e36e91b1b8044952f9424754845a5dcb8746401c653be69a68"
     },
     "sitemap.xml": {
       "bytes": 347,
@@ -6208,15 +6436,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 84992,
-      "sha256": "42da9a4ebd46bb9b0613e37e2f22a3daa4c2148885c5301e03458e641cee2155"
+      "sha256": "538e1fe5461acc682c5965f8e8cb288e43e3036d1ccbeda3c6105c3fb9179e51"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 25611,
-      "sha256": "07a12fe909753ea05632bfd26cd9e41504f15af474e87b34c4336ebeba5676b1"
+      "bytes": 25614,
+      "sha256": "9176a20d2f4f90509cd9f91024064070574558d52573ec3baeeff6c4c6d399c2"
     },
     "tutorial-view/index.html.gz": {
-      "bytes": 26946,
-      "sha256": "e622f265768adbdadec79f80adf4c977ef64be50b15702bbb0744b7c6053c2ce"
+      "bytes": 26945,
+      "sha256": "5878b3e9d83efd828a67150c3f3ffab4e5d99d0ff99571768b419ac532bf8ca2"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -6267,16 +6495,16 @@
       "sha256": "a52c3572c1596bac857f5409869af9dd8c89c32355da725093071de224e48102"
     },
     "tutorials/catalog.json": {
-      "bytes": 61695,
-      "sha256": "0dbe6e072ccae6292464f1a497653c80f06ae65b36c5699b67898544b73007a0"
+      "bytes": 64739,
+      "sha256": "ecbdbfa348d0d7b05a6fbecb7ef0bbb8b781a7c80d6a375e24549fa0d9e8e2fc"
     },
     "tutorials/catalog.json.br": {
-      "bytes": 15105,
-      "sha256": "4223a40e31dd0b86bd8fe27cdadfe45b1e47ed0e2fa2dd136b552c266b88153c"
+      "bytes": 15846,
+      "sha256": "e4c6e1894572a69f22c3d242fe6af453b3d6088c71a759ebcadb8ce16161f169"
     },
     "tutorials/catalog.json.gz": {
-      "bytes": 15667,
-      "sha256": "276c245718e61584fd5f02891c5e33a85cc39ef64dbb51ecc51825c2a626ab92"
+      "bytes": 16472,
+      "sha256": "979a63bc035ec5f30ad32b494c0e7216b808d4d6547d6cd80a11bb9e1d0b1374"
     },
     "tutorials/colourful-tower/index.html": {
       "bytes": 16262,
@@ -6361,6 +6589,18 @@
     "tutorials/forest-rain/index.html.gz": {
       "bytes": 5256,
       "sha256": "4f50be08d0d9e93725321ef068767db0b79c8504e272e36a27af738fdbadc1bb"
+    },
+    "tutorials/handle-temple-garden/index.html": {
+      "bytes": 18022,
+      "sha256": "e2aa7cc276ab8698fb15a97c75d3ba8ef99b99c99711f2d3a99056ae7654b880"
+    },
+    "tutorials/handle-temple-garden/index.html.br": {
+      "bytes": 5496,
+      "sha256": "71a46066ee2ad64c85e9445b60462ef455a5e9e95c574a1ca16f52419edf8e66"
+    },
+    "tutorials/handle-temple-garden/index.html.gz": {
+      "bytes": 5919,
+      "sha256": "4c109593b44ba45b41105dc692ed7b2ef266baa0196d30825e110e7ff0788632"
     },
     "tutorials/infinite-flight/index.html": {
       "bytes": 18177,
@@ -6520,7 +6760,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "72190c1a4c2743f8a017878ce91d27135643e4e83df446f049edd5647c3e4615"
+      "sha256": "9625e5b70785c9aa1fcd1be1a968fa14f9bfef3ef617b5942fc58eaeadca9940"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,

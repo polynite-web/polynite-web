@@ -2,6 +2,47 @@
   "version": 1,
   "items": [
     {
+      "id": "handle-temple-garden",
+      "control": {
+        "operation": "feature",
+        "args": {
+          "feature": "architecture.handles",
+          "params": {
+            "target": "architecture_select",
+            "id": "hall"
+          }
+        }
+      },
+      "control_note": "Requires an existing hall and commands.recipe_handles. Selects the Constructions HUD; it does not create a building. Inspect parameter_schema for bindings before editing.",
+      "experiments": [
+        {
+          "title": "Give useful controls to the user",
+          "text": "Open & test → Adjust → Open construction handles. Choose hall and Shape. Drag a gold roof-rise or doorway-width guide; release to validate, Escape to cancel."
+        },
+        {
+          "title": "Free the view",
+          "text": "Use Hide panel, keep handles on a narrow screen. Click a labelled base dot to select another instance. Reopen Constructions to choose Move or Rotate; moving a source keeps its declared dependent gallery aligned."
+        },
+        {
+          "title": "Keep recipes editable",
+          "text": "Add input.handle metadata to bounded numeric recipe inputs, preserving existing params. Other inputs keep their sliders. Save my scene stores values, declarations, materials and relationships."
+        }
+      ],
+      "viewer_note": "Handles are generic local-axis value guides with numeric origins, not building-specific generators. Geometry validates and rebuilds once on release. Fixed origins do not automatically follow other dimensions. Attached roots stay constrained; detach explicitly before free movement. Pause playback before editing. Reflections remain recipe settings.",
+      "revision": 45,
+      "title": "Shape buildings with recipe handles.",
+      "level": "Intermediate",
+      "topic": "creation",
+      "description": "Recipe-authored gold handles reshape a connected temple and gallery. Move a source, retain its doorway and roof links, and save your own edition.",
+      "prompt": "Create a detailed Japanese temple garden with procedural materials, repeated shared geometry and reflected stone floors. Keep building composition in declarative recipes. Add useful bounded input.handle controls for the hall roof rise and doorway width, and the gallery width, length and passage height. Expose the Constructions HUD. Inspect bindings, preview connections and estimate changes. Preserve stable IDs, overrides and existing content. Save and reopen the full scene.",
+      "scene": "https://polynite.io/docs/media/tutorials/r45/handle-temple-garden-e5c9452fff21.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r45/handle-temple-garden.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r45/handle-temple-garden-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r45/handle-temple-garden.jpg",
+      "open": "https://polynite.io/tutorials/handle-temple-garden/",
+      "sha256": "e5c9452fff219f20cdcc31c30ea95003856fd8ca00472c58ce7c88a023419a26"
+    },
+    {
       "id": "entry-temple-gallery",
       "control": {
         "operation": "feature",

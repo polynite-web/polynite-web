@@ -1,5 +1,12 @@
 [
   {
+    "id": "handle-temple-garden",
+    "revision": 45,
+    "media": "/docs/media/tutorials/r45/",
+    "scene": "handle-temple-garden-e5c9452fff21.scene",
+    "video": "handle-temple-garden.mp4"
+  },
+  {
     "id": "colourful-tower",
     "revision": 33,
     "media": "/docs/media/tutorials/r33/",

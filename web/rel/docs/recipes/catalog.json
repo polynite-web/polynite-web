@@ -910,6 +910,52 @@
       "url": "https://explore.polynite.io/docs/recipes/entry-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.md"
+    },
+    {
+      "id": "handle-temple-garden",
+      "version": 1,
+      "title": "A garden you can shape.",
+      "summary": "Recipe-authored gold handles reshape a connected temple and gallery. Move a source, retain its doorway and roof links, and save your own edition.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial",
+        "motion",
+        "beam"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms",
+        "recipe_connections",
+        "recipe_handles"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/handle-temple-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/handle-temple-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/handle-temple-garden/v1.md"
     }
   ]
 }

@@ -1,0 +1,212 @@
+{
+  "module": "assembly",
+  "materials": {
+    "wood": "cedar",
+    "leaf": "pine_leaf"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "height",
+        "min": 1,
+        "max": 5,
+        "value": 2.8,
+        "group": "shape",
+        "handle": {
+          "axis": "y",
+          "origin": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "name": "spread",
+        "min": 0.3,
+        "max": 2,
+        "value": 1.1,
+        "group": "shape"
+      },
+      {
+        "name": "layers",
+        "min": 2,
+        "max": 6,
+        "value": 4,
+        "integer": true,
+        "group": "shape"
+      },
+      {
+        "name": "round_canopy",
+        "min": 0,
+        "max": 1,
+        "value": 0,
+        "integer": true,
+        "group": "shape"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "stem",
+        "op": "primitive",
+        "kind": "cylinder",
+        "p": [
+          0,
+          [
+            "mul",
+            "$height",
+            0.36
+          ],
+          0
+        ],
+        "s": [
+          0.16,
+          [
+            "mul",
+            "$height",
+            0.72
+          ],
+          0.16
+        ],
+        "role": "wood"
+      },
+      {
+        "id": "pine",
+        "op": "primitive",
+        "kind": "cone",
+        "p": [
+          0,
+          [
+            "mul",
+            "$height",
+            [
+              "mix",
+              0.3,
+              0.9,
+              "@u"
+            ]
+          ],
+          0
+        ],
+        "s": [
+          [
+            "mul",
+            "$spread",
+            [
+              "mix",
+              1.65,
+              0.35,
+              "@u"
+            ]
+          ],
+          [
+            "mul",
+            "$height",
+            0.34
+          ],
+          [
+            "mul",
+            "$spread",
+            [
+              "mix",
+              1.65,
+              0.35,
+              "@u"
+            ]
+          ]
+        ],
+        "role": "leaf",
+        "repeat": {
+          "count": "$layers"
+        },
+        "when": [
+          "sub",
+          1,
+          "$round_canopy"
+        ]
+      },
+      {
+        "id": "buds",
+        "op": "primitive",
+        "kind": "sphere",
+        "p": [
+          [
+            "mul",
+            [
+              "cos",
+              [
+                "mul",
+                "@i",
+                2.399
+              ]
+            ],
+            [
+              "mul",
+              "$spread",
+              0.4
+            ]
+          ],
+          [
+            "add",
+            [
+              "mul",
+              "$height",
+              0.74
+            ],
+            [
+              "mul",
+              [
+                "sin",
+                [
+                  "mul",
+                  "@i",
+                  1.7
+                ]
+              ],
+              0.23
+            ]
+          ],
+          [
+            "mul",
+            [
+              "sin",
+              [
+                "mul",
+                "@i",
+                2.399
+              ]
+            ],
+            [
+              "mul",
+              "$spread",
+              0.4
+            ]
+          ]
+        ],
+        "s": [
+          [
+            "mul",
+            "$spread",
+            0.85
+          ],
+          [
+            "mul",
+            "$height",
+            0.3
+          ],
+          [
+            "mul",
+            "$spread",
+            0.85
+          ]
+        ],
+        "role": "leaf",
+        "repeat": {
+          "count": 7
+        },
+        "when": "$round_canopy"
+      }
+    ]
+  }
+}

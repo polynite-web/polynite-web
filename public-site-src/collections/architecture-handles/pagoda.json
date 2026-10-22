@@ -1,0 +1,1239 @@
+{
+  "module": "assembly",
+  "seed": 624,
+  "weather": 0.03,
+  "materials": {
+    "wood": "temple_vermilion",
+    "roof": "temple_tile",
+    "stone": "temple_stone",
+    "paper": "temple_paper",
+    "metal": "temple_gold"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "storeys",
+        "min": 1,
+        "max": 5,
+        "value": 5,
+        "integer": true,
+        "group": "layout",
+        "description": "storeys"
+      },
+      {
+        "name": "width",
+        "min": 1.6,
+        "max": 2.8,
+        "value": 2.4,
+        "integer": false,
+        "group": "layout",
+        "description": "width"
+      },
+      {
+        "name": "taper",
+        "min": 0.8,
+        "max": 0.94,
+        "value": 0.87,
+        "integer": false,
+        "group": "layout",
+        "description": "taper"
+      },
+      {
+        "name": "eave_lift",
+        "min": 0.12,
+        "max": 0.28,
+        "value": 0.21,
+        "integer": false,
+        "group": "shape",
+        "description": "eave lift"
+      },
+      {
+        "name": "balcony",
+        "min": 0,
+        "max": 1,
+        "value": 1,
+        "integer": true,
+        "group": "shape",
+        "description": "balcony"
+      },
+      {
+        "name": "roof_ribs",
+        "min": 0,
+        "max": 1,
+        "value": 1,
+        "integer": true,
+        "group": "shape",
+        "description": "roof ribs"
+      }
+    ],
+    "prototypes": [
+      {
+        "id": "block",
+        "op": "primitive",
+        "kind": "cube",
+        "bevel": 0.01
+      },
+      {
+        "id": "column",
+        "op": "primitive",
+        "kind": "cylinder"
+      },
+      {
+        "id": "ball",
+        "op": "primitive",
+        "kind": "sphere"
+      },
+      {
+        "id": "hip_panel",
+        "op": "surface",
+        "surface": {
+          "kind": 0,
+          "segments": 32,
+          "sides": 12,
+          "cup": 0,
+          "veins": 0,
+          "ripple": 0,
+          "thickness": 0.012,
+          "profile": [
+            [
+              0,
+              0.24
+            ],
+            [
+              0.25,
+              0.48
+            ],
+            [
+              0.5,
+              0.72
+            ],
+            [
+              0.75,
+              0.96
+            ],
+            [
+              1,
+              1.16
+            ]
+          ],
+          "path": [
+            [
+              0,
+              0.55,
+              0.12
+            ],
+            [
+              0,
+              0.34,
+              0.24
+            ],
+            [
+              0,
+              0.19,
+              0.36
+            ],
+            [
+              0,
+              0.1,
+              0.48
+            ],
+            [
+              0,
+              "$eave_lift",
+              0.58
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rib0",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "segments": 24,
+          "sides": 6,
+          "cup": 0,
+          "veins": 0,
+          "ripple": 0,
+          "thickness": 0.001,
+          "profile": [
+            [
+              0,
+              0.007
+            ],
+            [
+              1,
+              0.007
+            ]
+          ],
+          "path": [
+            [
+              -0.096,
+              0.562,
+              0.12
+            ],
+            [
+              -0.192,
+              0.35200000000000004,
+              0.24
+            ],
+            [
+              -0.288,
+              0.202,
+              0.36
+            ],
+            [
+              -0.384,
+              0.112,
+              0.48
+            ],
+            [
+              -0.46399999999999997,
+              [
+                "add",
+                "$eave_lift",
+                0.012
+              ],
+              0.58
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rib1",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "segments": 24,
+          "sides": 6,
+          "cup": 0,
+          "veins": 0,
+          "ripple": 0,
+          "thickness": 0.001,
+          "profile": [
+            [
+              0,
+              0.007
+            ],
+            [
+              1,
+              0.007
+            ]
+          ],
+          "path": [
+            [
+              -0.048,
+              0.562,
+              0.12
+            ],
+            [
+              -0.096,
+              0.35200000000000004,
+              0.24
+            ],
+            [
+              -0.144,
+              0.202,
+              0.36
+            ],
+            [
+              -0.192,
+              0.112,
+              0.48
+            ],
+            [
+              -0.23199999999999998,
+              [
+                "add",
+                "$eave_lift",
+                0.012
+              ],
+              0.58
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rib2",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "segments": 24,
+          "sides": 6,
+          "cup": 0,
+          "veins": 0,
+          "ripple": 0,
+          "thickness": 0.001,
+          "profile": [
+            [
+              0,
+              0.007
+            ],
+            [
+              1,
+              0.007
+            ]
+          ],
+          "path": [
+            [
+              0,
+              0.562,
+              0.12
+            ],
+            [
+              0,
+              0.35200000000000004,
+              0.24
+            ],
+            [
+              0,
+              0.202,
+              0.36
+            ],
+            [
+              0,
+              0.112,
+              0.48
+            ],
+            [
+              0,
+              [
+                "add",
+                "$eave_lift",
+                0.012
+              ],
+              0.58
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rib3",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "segments": 24,
+          "sides": 6,
+          "cup": 0,
+          "veins": 0,
+          "ripple": 0,
+          "thickness": 0.001,
+          "profile": [
+            [
+              0,
+              0.007
+            ],
+            [
+              1,
+              0.007
+            ]
+          ],
+          "path": [
+            [
+              0.048,
+              0.562,
+              0.12
+            ],
+            [
+              0.096,
+              0.35200000000000004,
+              0.24
+            ],
+            [
+              0.144,
+              0.202,
+              0.36
+            ],
+            [
+              0.192,
+              0.112,
+              0.48
+            ],
+            [
+              0.23199999999999998,
+              [
+                "add",
+                "$eave_lift",
+                0.012
+              ],
+              0.58
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rib4",
+        "op": "surface",
+        "surface": {
+          "kind": 2,
+          "segments": 24,
+          "sides": 6,
+          "cup": 0,
+          "veins": 0,
+          "ripple": 0,
+          "thickness": 0.001,
+          "profile": [
+            [
+              0,
+              0.007
+            ],
+            [
+              1,
+              0.007
+            ]
+          ],
+          "path": [
+            [
+              0.096,
+              0.562,
+              0.12
+            ],
+            [
+              0.192,
+              0.35200000000000004,
+              0.24
+            ],
+            [
+              0.288,
+              0.202,
+              0.36
+            ],
+            [
+              0.384,
+              0.112,
+              0.48
+            ],
+            [
+              0.46399999999999997,
+              [
+                "add",
+                "$eave_lift",
+                0.012
+              ],
+              0.58
+            ]
+          ]
+        }
+      }
+    ],
+    "assemblies": [
+      {
+        "id": "bracket",
+        "nodes": [
+          {
+            "id": "pad",
+            "op": "instance",
+            "source": "block",
+            "role": "wood",
+            "p": [
+              0,
+              0,
+              0
+            ],
+            "s": [
+              0.18,
+              0.14,
+              0.22
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ]
+          },
+          {
+            "id": "arm",
+            "op": "instance",
+            "source": "block",
+            "role": "wood",
+            "p": [
+              0,
+              0.1,
+              0.06
+            ],
+            "s": [
+              0.4,
+              0.09,
+              0.2
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ]
+          },
+          {
+            "id": "cap",
+            "op": "instance",
+            "source": "block",
+            "role": "metal",
+            "p": [
+              0,
+              0.16,
+              0.08
+            ],
+            "s": [
+              0.46,
+              0.035,
+              0.23
+            ],
+            "color": [
+              0.85,
+              0.55,
+              0.13
+            ]
+          }
+        ]
+      },
+      {
+        "id": "frontage",
+        "nodes": [
+          {
+            "id": "post",
+            "op": "instance",
+            "source": "column",
+            "role": "wood",
+            "p": [
+              [
+                "sub",
+                "@i",
+                1
+              ],
+              0.61,
+              1
+            ],
+            "s": [
+              0.105,
+              1.22,
+              0.105
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ],
+            "repeat": {
+              "count": 2
+            }
+          },
+          {
+            "id": "beam",
+            "op": "instance",
+            "source": "block",
+            "role": "wood",
+            "p": [
+              0,
+              [
+                "add",
+                0.15,
+                [
+                  "mul",
+                  "@i",
+                  1.04
+                ]
+              ],
+              1
+            ],
+            "s": [
+              2.08,
+              0.09,
+              0.12
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ],
+            "repeat": {
+              "count": 2
+            }
+          },
+          {
+            "id": "pane",
+            "op": "instance",
+            "source": "block",
+            "role": "paper",
+            "p": [
+              0,
+              0.65,
+              0.935
+            ],
+            "s": [
+              1.85,
+              0.94,
+              0.045
+            ],
+            "color": [
+              0.8,
+              0.72,
+              0.53
+            ]
+          },
+          {
+            "id": "grid",
+            "op": "instance",
+            "source": "block",
+            "role": "wood",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  1
+                ],
+                0.6
+              ],
+              0.65,
+              0.976
+            ],
+            "s": [
+              0.027,
+              0.94,
+              0.025
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ],
+            "repeat": {
+              "count": 3
+            }
+          },
+          {
+            "id": "brkt",
+            "op": "assembly",
+            "source": "bracket",
+            "p": [
+              [
+                "sub",
+                "@i",
+                1
+              ],
+              1.26,
+              1
+            ],
+            "repeat": {
+              "count": 2
+            }
+          },
+          {
+            "id": "rail",
+            "op": "instance",
+            "source": "block",
+            "role": "wood",
+            "p": [
+              0,
+              0.42,
+              1.17
+            ],
+            "s": [
+              2.1,
+              0.055,
+              0.055
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ],
+            "when": "$balcony"
+          },
+          {
+            "id": "bal",
+            "op": "instance",
+            "source": "column",
+            "role": "wood",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  1
+                ],
+                0.82
+              ],
+              0.24,
+              1.17
+            ],
+            "s": [
+              0.038,
+              0.36,
+              0.038
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ],
+            "repeat": {
+              "count": 3
+            },
+            "when": "$balcony"
+          },
+          {
+            "id": "roof",
+            "op": "instance",
+            "source": "hip_panel",
+            "role": "roof",
+            "p": [
+              0,
+              1.35,
+              0
+            ],
+            "s": [
+              3,
+              1,
+              3
+            ],
+            "color": [
+              0.19,
+              0.22,
+              0.24
+            ]
+          },
+          {
+            "id": "rib0",
+            "op": "instance",
+            "source": "rib0",
+            "role": "roof",
+            "p": [
+              0,
+              1.35,
+              0
+            ],
+            "s": [
+              3,
+              1,
+              3
+            ],
+            "color": [
+              0.23,
+              0.25,
+              0.26
+            ],
+            "when": "$roof_ribs"
+          },
+          {
+            "id": "rib1",
+            "op": "instance",
+            "source": "rib1",
+            "role": "roof",
+            "p": [
+              0,
+              1.35,
+              0
+            ],
+            "s": [
+              3,
+              1,
+              3
+            ],
+            "color": [
+              0.23,
+              0.25,
+              0.26
+            ],
+            "when": "$roof_ribs"
+          },
+          {
+            "id": "rib2",
+            "op": "instance",
+            "source": "rib2",
+            "role": "roof",
+            "p": [
+              0,
+              1.35,
+              0
+            ],
+            "s": [
+              3,
+              1,
+              3
+            ],
+            "color": [
+              0.23,
+              0.25,
+              0.26
+            ],
+            "when": "$roof_ribs"
+          },
+          {
+            "id": "rib3",
+            "op": "instance",
+            "source": "rib3",
+            "role": "roof",
+            "p": [
+              0,
+              1.35,
+              0
+            ],
+            "s": [
+              3,
+              1,
+              3
+            ],
+            "color": [
+              0.23,
+              0.25,
+              0.26
+            ],
+            "when": "$roof_ribs"
+          },
+          {
+            "id": "rib4",
+            "op": "instance",
+            "source": "rib4",
+            "role": "roof",
+            "p": [
+              0,
+              1.35,
+              0
+            ],
+            "s": [
+              3,
+              1,
+              3
+            ],
+            "color": [
+              0.23,
+              0.25,
+              0.26
+            ],
+            "when": "$roof_ribs"
+          }
+        ]
+      },
+      {
+        "id": "storey",
+        "nodes": [
+          {
+            "id": "deck",
+            "op": "instance",
+            "source": "block",
+            "role": "wood",
+            "p": [
+              0,
+              0.03,
+              0
+            ],
+            "s": [
+              2.32,
+              0.1,
+              2.32
+            ],
+            "color": [
+              0.62,
+              0.085,
+              0.03
+            ]
+          },
+          {
+            "id": "core",
+            "op": "instance",
+            "source": "block",
+            "role": "paper",
+            "p": [
+              0,
+              0.64,
+              0
+            ],
+            "s": [
+              1.86,
+              1.1,
+              1.86
+            ],
+            "color": [
+              0.5,
+              0.47,
+              0.4
+            ]
+          },
+          {
+            "id": "side",
+            "op": "assembly",
+            "source": "frontage",
+            "p": [
+              0,
+              0,
+              0
+            ],
+            "repeat": {
+              "count": 4
+            },
+            "r": [
+              0,
+              [
+                "mul",
+                "@i",
+                90
+              ],
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "base",
+        "op": "instance",
+        "source": "block",
+        "role": "stone",
+        "p": [
+          0,
+          0.2,
+          0
+        ],
+        "s": [
+          [
+            "mul",
+            "$width",
+            2.7
+          ],
+          0.4,
+          [
+            "mul",
+            "$width",
+            2.7
+          ]
+        ],
+        "color": [
+          0.58,
+          0.55,
+          0.47
+        ]
+      },
+      {
+        "id": "lip",
+        "op": "instance",
+        "source": "block",
+        "role": "stone",
+        "p": [
+          0,
+          0.44,
+          0
+        ],
+        "s": [
+          [
+            "mul",
+            "$width",
+            2.5
+          ],
+          0.09,
+          [
+            "mul",
+            "$width",
+            2.5
+          ]
+        ],
+        "color": [
+          0.58,
+          0.55,
+          0.47
+        ]
+      },
+      {
+        "id": "step",
+        "op": "instance",
+        "source": "block",
+        "role": "stone",
+        "p": [
+          0,
+          [
+            "add",
+            0.05,
+            [
+              "mul",
+              "@i",
+              0.1
+            ]
+          ],
+          [
+            "add",
+            [
+              "mul",
+              "$width",
+              1.25
+            ],
+            [
+              "mul",
+              [
+                "sub",
+                3,
+                "@i"
+              ],
+              0.22
+            ]
+          ]
+        ],
+        "s": [
+          [
+            "mul",
+            "$width",
+            0.8
+          ],
+          0.1,
+          0.44
+        ],
+        "color": [
+          0.58,
+          0.55,
+          0.47
+        ],
+        "repeat": {
+          "count": 4
+        }
+      },
+      {
+        "id": "tier",
+        "op": "assembly",
+        "source": "storey",
+        "p": [
+          0,
+          [
+            "add",
+            0.5,
+            [
+              "mul",
+              [
+                "mul",
+                "$width",
+                1.95
+              ],
+              [
+                "div",
+                [
+                  "sub",
+                  1,
+                  [
+                    "pow",
+                    "$taper",
+                    "@i"
+                  ]
+                ],
+                [
+                  "sub",
+                  1,
+                  "$taper"
+                ]
+              ]
+            ]
+          ],
+          0
+        ],
+        "repeat": {
+          "count": "$storeys"
+        },
+        "let": [
+          {
+            "name": "k",
+            "value": [
+              "mul",
+              "$width",
+              [
+                "pow",
+                "$taper",
+                "@i"
+              ]
+            ]
+          }
+        ],
+        "s": [
+          "%k",
+          "%k",
+          "%k"
+        ]
+      },
+      {
+        "id": "mast",
+        "op": "instance",
+        "source": "column",
+        "role": "metal",
+        "p": [
+          0,
+          [
+            "add",
+            0.5,
+            [
+              "mul",
+              [
+                "mul",
+                "$width",
+                1.95
+              ],
+              [
+                "div",
+                [
+                  "sub",
+                  1,
+                  [
+                    "pow",
+                    "$taper",
+                    "$storeys"
+                  ]
+                ],
+                [
+                  "sub",
+                  1,
+                  "$taper"
+                ]
+              ]
+            ]
+          ],
+          0
+        ],
+        "s": [
+          0.1,
+          2,
+          0.1
+        ],
+        "color": [
+          0.85,
+          0.55,
+          0.13
+        ]
+      },
+      {
+        "id": "ring",
+        "op": "instance",
+        "source": "column",
+        "role": "metal",
+        "p": [
+          0,
+          [
+            "add",
+            [
+              "add",
+              0.5,
+              [
+                "mul",
+                [
+                  "mul",
+                  "$width",
+                  1.95
+                ],
+                [
+                  "div",
+                  [
+                    "sub",
+                    1,
+                    [
+                      "pow",
+                      "$taper",
+                      "$storeys"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    1,
+                    "$taper"
+                  ]
+                ]
+              ]
+            ],
+            [
+              "mul",
+              [
+                "sub",
+                "@i",
+                3.5
+              ],
+              0.2
+            ]
+          ],
+          0
+        ],
+        "s": [
+          [
+            "mul",
+            0.6,
+            [
+              "sub",
+              1,
+              [
+                "mul",
+                "@i",
+                0.065
+              ]
+            ]
+          ],
+          0.045,
+          [
+            "mul",
+            0.6,
+            [
+              "sub",
+              1,
+              [
+                "mul",
+                "@i",
+                0.065
+              ]
+            ]
+          ]
+        ],
+        "color": [
+          0.85,
+          0.55,
+          0.13
+        ],
+        "repeat": {
+          "count": 8
+        }
+      },
+      {
+        "id": "tip",
+        "op": "instance",
+        "source": "ball",
+        "role": "metal",
+        "p": [
+          0,
+          [
+            "add",
+            1.6,
+            [
+              "mul",
+              [
+                "mul",
+                "$width",
+                1.95
+              ],
+              [
+                "div",
+                [
+                  "sub",
+                  1,
+                  [
+                    "pow",
+                    "$taper",
+                    "$storeys"
+                  ]
+                ],
+                [
+                  "sub",
+                  1,
+                  "$taper"
+                ]
+              ]
+            ]
+          ],
+          0
+        ],
+        "s": [
+          0.17,
+          0.28,
+          0.17
+        ],
+        "color": [
+          0.85,
+          0.55,
+          0.13
+        ]
+      }
+    ]
+  }
+}

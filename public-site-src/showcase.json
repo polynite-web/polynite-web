@@ -1,7 +1,18 @@
 {
   "version": 1,
-  "featured": "entry-temple-garden",
+  "featured": "handle-temple-garden",
   "items": [
+    {
+      "recipe": "handle-temple-garden",
+      "category": "Interactive architecture",
+      "environment": "Studio",
+      "tags": [
+        "Interactive architecture",
+        "Architecture",
+        "roof_link · port_link",
+        "Editable"
+      ]
+    },
     {
       "recipe": "entry-temple-garden",
       "category": "Connected architecture",

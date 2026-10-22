@@ -2,6 +2,7 @@
 
 Human guide: https://explore.polynite.io/docs/recipes/
 Progressive index: https://explore.polynite.io/docs/recipes/catalog.json
+Shape a connected garden collection: https://explore.polynite.io/docs/recipes/collections/architecture-handles/v1/index.json
 Constructions that meet collection: https://explore.polynite.io/docs/recipes/collections/connected-assemblies/v1/index.json
 Buildings with a real way through collection: https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/index.json
 Japanese garden collection: https://explore.polynite.io/docs/recipes/collections/japanese-garden/v2/index.json
@@ -38,3 +39,4 @@ Read the compact index, choose a relevant example and fetch its Markdown or JSON
 - [An entrance that really connects.](https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.md): Connect an independent gallery to a real exported doorway. Preview a compatible port, align its threshold and keep both recipes editable.
 - [A temple with a way through.](https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.md): Connect an independent gallery to a real exported doorway. Preview a compatible port, align its threshold and keep both recipes editable.
 - [A Japanese garden, joined at the door.](https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.md): The hall, its gallery and the garden stay editable. A real doorway controls their connection, while the linked roofs and access steps adapt.
+- [A garden you can shape.](https://explore.polynite.io/docs/recipes/data/handle-temple-garden/v1.md): Recipe-authored gold handles reshape a connected temple and gallery. Move a source, retain its doorway and roof links, and save your own edition.
