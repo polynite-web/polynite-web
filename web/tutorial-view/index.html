@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0372";window.__pnEngineBase="engine/9efceefeff8e2351071ca322c84ca85dbf6331bdba67bffd5563f293726289d7/";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
+<head><script id="pn-build-version">window.__pnBuildVersion="v0267";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
 <script src="scene-file-drop.js?v=1"></script>
 <script src="loading_status.js?v=1"></script>
 <script src="pipeline_compile.js?v=2"></script>
@@ -10,18 +10,18 @@
 <meta name="google" content="notranslate">
 <title>Polynite — Create, View &amp; Share Procedural 3D</title>
 <meta name="description" content="Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0b0d12">
 
 <link rel="canonical" href="https://polynite.io/">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
-<link rel="icon" type="image/png" sizes="96x96" href="assets/icon-96.png">
-<link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icon-96.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
@@ -1434,7 +1434,7 @@ body.scene-entry-ready #curtain {
       (location.protocol === "https:" || location.hostname === "localhost" ||
        location.hostname === "127.0.0.1")) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("sw.js", { scope: "./" })
+      navigator.serviceWorker.register("/sw.js", { scope: "/" })
         .catch(function () { /* no worker, no install offer - nothing else breaks */ });
     });
   }

@@ -1,0 +1,1715 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "hall",
+      "materials": {
+        "metal": "temple_gold",
+        "paper": "temple_paper",
+        "roof": "temple_tile",
+        "stone": "temple_stone",
+        "wood": "temple_vermilion"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "detail": 1,
+        "door_width": 1.39999998,
+        "eave_lift": 0.119999997,
+        "rise": 1.5,
+        "size": 1,
+        "windows": 1
+      },
+      "program": {
+        "assemblies": [
+          {
+            "id": "bracket",
+            "nodes": [
+              {
+                "id": "a",
+                "op": "instance",
+                "p": [
+                  0,
+                  0,
+                  0
+                ],
+                "role": "wood",
+                "s": [
+                  0.699999988,
+                  0.119999997,
+                  0.200000003
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "b",
+                "op": "instance",
+                "p": [
+                  0,
+                  0.140000001,
+                  0
+                ],
+                "role": "wood",
+                "s": [
+                  0.5,
+                  0.119999997,
+                  0.270000011
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "c",
+                "op": "instance",
+                "p": [
+                  0,
+                  0.239999995,
+                  0
+                ],
+                "role": "metal",
+                "s": [
+                  0.180000007,
+                  0.0799999982,
+                  0.319999993
+                ],
+                "source": "timber"
+              }
+            ]
+          },
+          {
+            "id": "joined",
+            "nodes": [
+              {
+                "export": "main",
+                "id": "roof",
+                "op": "roof",
+                "role": "roof",
+                "thickness": 0.100000001,
+                "wings": [
+                  {
+                    "form": "hip",
+                    "id": "hall",
+                    "p": [
+                      0,
+                      3.5,
+                      0
+                    ],
+                    "profile": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        0.649999976,
+                        0.159999996
+                      ],
+                      [
+                        0.879999995,
+                        [
+                          "neg",
+                          "$eave_lift"
+                        ]
+                      ],
+                      [
+                        1,
+                        0
+                      ]
+                    ],
+                    "ridge": 0.449999988,
+                    "size": [
+                      8,
+                      "$rise",
+                      6
+                    ]
+                  },
+                  {
+                    "form": "gable",
+                    "id": "porch",
+                    "p": [
+                      0,
+                      3.25,
+                      -3
+                    ],
+                    "profile": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        0.649999976,
+                        0.119999997
+                      ],
+                      [
+                        0.879999995,
+                        [
+                          "neg",
+                          "$eave_lift"
+                        ]
+                      ],
+                      [
+                        1,
+                        0
+                      ]
+                    ],
+                    "size": [
+                      5,
+                      [
+                        "mul",
+                        "$rise",
+                        0.800000012
+                      ],
+                      4
+                    ],
+                    "yaw": 90
+                  }
+                ]
+              },
+              {
+                "closed": 1,
+                "id": "wall",
+                "op": "wall",
+                "openings": [
+                  {
+                    "at": 0.5,
+                    "export": "entrance",
+                    "height": 2.20000005,
+                    "id": "entry",
+                    "segment": 2,
+                    "width": "$door_width"
+                  },
+                  {
+                    "at": 0.5,
+                    "enabled": "$windows",
+                    "height": 1.29999995,
+                    "id": "east",
+                    "segment": 5,
+                    "sill": 0.899999976,
+                    "width": 1.60000002
+                  },
+                  {
+                    "at": 0.5,
+                    "enabled": "$windows",
+                    "height": 1.29999995,
+                    "id": "rear",
+                    "segment": 6,
+                    "sill": 0.899999976,
+                    "width": 2.5999999
+                  },
+                  {
+                    "at": 0.5,
+                    "enabled": "$windows",
+                    "height": 1.29999995,
+                    "id": "west",
+                    "segment": 7,
+                    "sill": 0.899999976,
+                    "width": 1.60000002
+                  }
+                ],
+                "points": [
+                  [
+                    -3,
+                    0.419999987,
+                    -2
+                  ],
+                  [
+                    -1.20000005,
+                    0.419999987,
+                    -2
+                  ],
+                  [
+                    -1.20000005,
+                    0.419999987,
+                    -4.5
+                  ],
+                  [
+                    1.20000005,
+                    0.419999987,
+                    -4.5
+                  ],
+                  [
+                    1.20000005,
+                    0.419999987,
+                    -2
+                  ],
+                  [
+                    3,
+                    0.419999987,
+                    -2
+                  ],
+                  [
+                    3,
+                    0.419999987,
+                    2
+                  ],
+                  [
+                    -3,
+                    0.419999987,
+                    2
+                  ]
+                ],
+                "role": "paper",
+                "roof": "roof",
+                "width": 0.159999996
+              },
+              {
+                "id": "base",
+                "op": "instance",
+                "p": [
+                  0,
+                  0.209999993,
+                  0
+                ],
+                "role": "stone",
+                "s": [
+                  7.19999981,
+                  0.419999987,
+                  5.0999999
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "entr",
+                "op": "instance",
+                "p": [
+                  0,
+                  0.209999993,
+                  -3.4000001
+                ],
+                "role": "stone",
+                "s": [
+                  3.20000005,
+                  0.419999987,
+                  2.20000005
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "step",
+                "op": "instance",
+                "p": [
+                  0,
+                  [
+                    "mul",
+                    0.0700000003,
+                    [
+                      "sub",
+                      3,
+                      "@i"
+                    ]
+                  ],
+                  [
+                    "sub",
+                    -4.6500001,
+                    [
+                      "mul",
+                      0.330000013,
+                      "@i"
+                    ]
+                  ]
+                ],
+                "repeat": {
+                  "count": 3
+                },
+                "role": "stone",
+                "s": [
+                  2.4000001,
+                  [
+                    "mul",
+                    0.140000001,
+                    [
+                      "sub",
+                      3,
+                      "@i"
+                    ]
+                  ],
+                  0.340000004
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "col",
+                "op": "instance",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      3
+                    ],
+                    3
+                  ],
+                  1.92999995,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      4
+                    ],
+                    2
+                  ]
+                ],
+                "repeat": {
+                  "count": 3,
+                  "rows": 2
+                },
+                "role": "wood",
+                "s": [
+                  0.219999999,
+                  3.01999998,
+                  0.219999999
+                ],
+                "source": "column"
+              },
+              {
+                "id": "beam",
+                "op": "instance",
+                "p": [
+                  0,
+                  3.31999993,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      4
+                    ],
+                    2
+                  ]
+                ],
+                "repeat": {
+                  "count": 2
+                },
+                "role": "wood",
+                "s": [
+                  6.4000001,
+                  0.200000003,
+                  0.239999995
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "side",
+                "op": "instance",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      6
+                    ],
+                    3
+                  ],
+                  3.31999993,
+                  0
+                ],
+                "repeat": {
+                  "count": 2
+                },
+                "role": "wood",
+                "s": [
+                  0.239999995,
+                  0.200000003,
+                  4.30000019
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "trim",
+                "op": "instance",
+                "p": [
+                  0,
+                  0.649999976,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      4
+                    ],
+                    2
+                  ]
+                ],
+                "repeat": {
+                  "count": 2
+                },
+                "role": "wood",
+                "s": [
+                  6.1500001,
+                  0.180000007,
+                  0.200000003
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "djmb",
+                "op": "instance",
+                "p": [
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "@i",
+                      0.5
+                    ],
+                    [
+                      "add",
+                      "$door_width",
+                      0.119999997
+                    ]
+                  ],
+                  1.52999997,
+                  -4.51000023
+                ],
+                "repeat": {
+                  "count": 2
+                },
+                "role": "wood",
+                "s": [
+                  0.119999997,
+                  2.22000003,
+                  0.219999999
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "head",
+                "op": "instance",
+                "p": [
+                  0,
+                  2.68000007,
+                  -4.51000023
+                ],
+                "role": "wood",
+                "s": [
+                  [
+                    "add",
+                    "$door_width",
+                    0.239999995
+                  ],
+                  0.119999997,
+                  0.219999999
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "post",
+                "op": "instance",
+                "p": [
+                  [
+                    "mul",
+                    [
+                      "sub",
+                      "@i",
+                      0.5
+                    ],
+                    2.4000001
+                  ],
+                  1.92999995,
+                  -4.5
+                ],
+                "repeat": {
+                  "count": 2
+                },
+                "role": "wood",
+                "s": [
+                  0.180000007,
+                  3.01999998,
+                  0.180000007
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "mark",
+                "op": "instance",
+                "p": [
+                  0,
+                  2.91000009,
+                  -4.63000011
+                ],
+                "role": "metal",
+                "s": [
+                  0.519999981,
+                  0.180000007,
+                  0.0399999991
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "brkt",
+                "op": "assembly",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      1.39999998
+                    ],
+                    2.79999995
+                  ],
+                  3.18000007,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      4.0999999
+                    ],
+                    2.04999995
+                  ]
+                ],
+                "repeat": {
+                  "count": 5,
+                  "rows": 2
+                },
+                "source": "bracket",
+                "when": "$detail"
+              },
+              {
+                "id": "rail",
+                "op": "instance",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      6.80000019
+                    ],
+                    3.4000001
+                  ],
+                  0.949999988,
+                  0
+                ],
+                "repeat": {
+                  "count": 2
+                },
+                "role": "wood",
+                "s": [
+                  0.0900000036,
+                  0.0900000036,
+                  4.69999981
+                ],
+                "source": "timber"
+              },
+              {
+                "id": "bal",
+                "op": "instance",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@j",
+                      6.80000019
+                    ],
+                    3.4000001
+                  ],
+                  0.699999988,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      0.439999998
+                    ],
+                    2.20000005
+                  ]
+                ],
+                "repeat": {
+                  "count": 11,
+                  "rows": 2
+                },
+                "role": "wood",
+                "s": [
+                  0.0700000003,
+                  0.479999989,
+                  0.0700000003
+                ],
+                "source": "timber",
+                "when": "$detail"
+              },
+              {
+                "id": "latt",
+                "op": "instance",
+                "p": [
+                  3.07999992,
+                  1.97000003,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      0.280000001
+                    ],
+                    0.699999988
+                  ]
+                ],
+                "repeat": {
+                  "count": 6
+                },
+                "role": "wood",
+                "s": [
+                  0.0500000007,
+                  1.29999995,
+                  0.0350000001
+                ],
+                "source": "timber",
+                "when": [
+                  "mul",
+                  "$windows",
+                  "$detail"
+                ]
+              },
+              {
+                "id": "lati",
+                "op": "instance",
+                "p": [
+                  -3.07999992,
+                  1.97000003,
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      0.280000001
+                    ],
+                    0.699999988
+                  ]
+                ],
+                "repeat": {
+                  "count": 6
+                },
+                "role": "wood",
+                "s": [
+                  0.0500000007,
+                  1.29999995,
+                  0.0350000001
+                ],
+                "source": "timber",
+                "when": [
+                  "mul",
+                  "$windows",
+                  "$detail"
+                ]
+              },
+              {
+                "id": "latr",
+                "op": "instance",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      0.280000001
+                    ],
+                    1.12
+                  ],
+                  1.97000003,
+                  2.07999992
+                ],
+                "repeat": {
+                  "count": 9
+                },
+                "role": "wood",
+                "s": [
+                  0.0350000001,
+                  1.29999995,
+                  0.0500000007
+                ],
+                "source": "timber",
+                "when": [
+                  "mul",
+                  "$windows",
+                  "$detail"
+                ]
+              },
+              {
+                "id": "rdge",
+                "op": "instance",
+                "p": [
+                  0,
+                  [
+                    "add",
+                    3.51999998,
+                    "$rise"
+                  ],
+                  0
+                ],
+                "role": "metal",
+                "s": [
+                  3.5999999,
+                  1,
+                  1
+                ],
+                "source": "ridge"
+              },
+              {
+                "id": "ribn",
+                "op": "surface",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      0.209999993
+                    ],
+                    1.67999995
+                  ],
+                  3.51999998,
+                  0
+                ],
+                "repeat": {
+                  "count": 17
+                },
+                "role": "roof",
+                "s": [
+                  2,
+                  2,
+                  2
+                ],
+                "surface": {
+                  "kind": 2,
+                  "path": [
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          1
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          -3,
+                          0
+                        ],
+                        0.5
+                      ]
+                    ],
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          0.159999996
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          -3,
+                          0.649999976
+                        ],
+                        0.5
+                      ]
+                    ],
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          [
+                            "neg",
+                            "$eave_lift"
+                          ]
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          -3,
+                          0.879999995
+                        ],
+                        0.5
+                      ]
+                    ],
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          0
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          -3,
+                          1
+                        ],
+                        0.5
+                      ]
+                    ]
+                  ],
+                  "profile": [
+                    [
+                      0,
+                      0.0179999992
+                    ],
+                    [
+                      1,
+                      0.0179999992
+                    ]
+                  ],
+                  "segments": 20,
+                  "sides": 8,
+                  "thickness": 0.00100000005
+                },
+                "when": "$detail"
+              },
+              {
+                "id": "ribs",
+                "op": "surface",
+                "p": [
+                  [
+                    "sub",
+                    [
+                      "mul",
+                      "@i",
+                      0.209999993
+                    ],
+                    1.67999995
+                  ],
+                  3.51999998,
+                  0
+                ],
+                "repeat": {
+                  "count": 17
+                },
+                "role": "roof",
+                "s": [
+                  2,
+                  2,
+                  2
+                ],
+                "surface": {
+                  "kind": 2,
+                  "path": [
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          1
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          3,
+                          0
+                        ],
+                        0.5
+                      ]
+                    ],
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          0.159999996
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          3,
+                          0.649999976
+                        ],
+                        0.5
+                      ]
+                    ],
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          [
+                            "neg",
+                            "$eave_lift"
+                          ]
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          3,
+                          0.879999995
+                        ],
+                        0.5
+                      ]
+                    ],
+                    [
+                      0,
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          "$rise",
+                          0
+                        ],
+                        0.5
+                      ],
+                      [
+                        "mul",
+                        [
+                          "mul",
+                          3,
+                          1
+                        ],
+                        0.5
+                      ]
+                    ]
+                  ],
+                  "profile": [
+                    [
+                      0,
+                      0.0179999992
+                    ],
+                    [
+                      1,
+                      0.0179999992
+                    ]
+                  ],
+                  "segments": 20,
+                  "sides": 8,
+                  "thickness": 0.00100000005
+                },
+                "when": "$detail"
+              }
+            ]
+          }
+        ],
+        "inputs": [
+          {
+            "description": "rise",
+            "group": "shape",
+            "integer": false,
+            "max": 2.4000001,
+            "min": 0.800000012,
+            "name": "rise",
+            "value": 1.5
+          },
+          {
+            "description": "eave lift",
+            "group": "shape",
+            "integer": false,
+            "max": 0.25,
+            "min": 0,
+            "name": "eave_lift",
+            "value": 0.119999997
+          },
+          {
+            "description": "door width",
+            "group": "shape",
+            "integer": false,
+            "max": 1.70000005,
+            "min": 0.800000012,
+            "name": "door_width",
+            "value": 1.39999998
+          },
+          {
+            "description": "windows",
+            "group": "openings",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "windows",
+            "value": 1
+          },
+          {
+            "description": "detail",
+            "group": "detail",
+            "integer": true,
+            "max": 1,
+            "min": 0,
+            "name": "detail",
+            "value": 1
+          },
+          {
+            "description": "size",
+            "group": "layout",
+            "integer": false,
+            "max": 1.25,
+            "min": 0.800000012,
+            "name": "size",
+            "value": 1
+          }
+        ],
+        "nodes": [
+          {
+            "id": "body",
+            "op": "assembly",
+            "s": [
+              "$size",
+              "$size",
+              "$size"
+            ],
+            "source": "joined"
+          },
+          {
+            "id": "door",
+            "op": "anchor",
+            "p": [
+              0,
+              [
+                "mul",
+                0.419999987,
+                "$size"
+              ],
+              [
+                "mul",
+                -4.5,
+                "$size"
+              ]
+            ]
+          }
+        ],
+        "prototypes": [
+          {
+            "bevel": 0.0179999992,
+            "id": "timber",
+            "kind": "cube",
+            "op": "primitive"
+          },
+          {
+            "id": "column",
+            "op": "surface",
+            "surface": {
+              "cup": 0,
+              "kind": 1,
+              "profile": [
+                [
+                  0,
+                  0.949999988
+                ],
+                [
+                  0.0599999987,
+                  1
+                ],
+                [
+                  0.140000001,
+                  0.800000012
+                ],
+                [
+                  0.839999974,
+                  0.699999988
+                ],
+                [
+                  0.939999998,
+                  0.800000012
+                ],
+                [
+                  1,
+                  0.899999976
+                ]
+              ],
+              "ripple": 0,
+              "segments": 8,
+              "sides": 12,
+              "thickness": 0.00200000009
+            }
+          },
+          {
+            "id": "ridge",
+            "op": "surface",
+            "surface": {
+              "kind": 2,
+              "path": [
+                [
+                  -0.5,
+                  0,
+                  0
+                ],
+                [
+                  0.5,
+                  0,
+                  0
+                ]
+              ],
+              "profile": [
+                [
+                  0,
+                  0.0399999991
+                ],
+                [
+                  1,
+                  0.0399999991
+                ]
+              ],
+              "segments": 12,
+              "sides": 8,
+              "thickness": 0.00200000009
+            }
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 1020,
+      "style": "japanese",
+      "weather": 0.0250000004,
+      "yaw": 0
+    },
+    {
+      "attach": {
+        "anchor": "entrance",
+        "from": "back000000",
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "to": "hall"
+      },
+      "context": [
+        {
+          "instance": "hall",
+          "name": "hostroof",
+          "roof": "main"
+        }
+      ],
+      "id": "gallery",
+      "materials": {
+        "metal": "temple_gold",
+        "paper": "temple_paper",
+        "roof": "temple_tile",
+        "stone": "temple_stone",
+        "wood": "temple_vermilion"
+      },
+      "module": "assembly",
+      "overrides": [],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "params": {
+        "length": 6,
+        "passage_height": 1.79999995,
+        "passage_width": 1.10000002,
+        "rise": 0.699999988,
+        "width": 2.4000001
+      },
+      "program": {
+        "inputs": [
+          {
+            "description": "length",
+            "group": "layout",
+            "max": 8,
+            "min": 4,
+            "name": "length",
+            "value": 6
+          },
+          {
+            "description": "width",
+            "group": "layout",
+            "max": 3,
+            "min": 1.79999995,
+            "name": "width",
+            "value": 2.4000001
+          },
+          {
+            "description": "rise",
+            "group": "shape",
+            "max": 1,
+            "min": 0.400000006,
+            "name": "rise",
+            "value": 0.699999988
+          },
+          {
+            "description": "Clear connector width; must fit the selected doorway",
+            "group": "connection",
+            "max": 1.20000005,
+            "min": 0.600000024,
+            "name": "passage_width",
+            "value": 1.10000002
+          },
+          {
+            "description": "Clear connector height; must fit the selected doorway",
+            "group": "connection",
+            "max": 2.20000005,
+            "min": 1,
+            "name": "passage_height",
+            "value": 1.79999995
+          }
+        ],
+        "let": [
+          {
+            "name": "drop",
+            "value": [
+              "neg",
+              "@hostroof.y"
+            ]
+          },
+          {
+            "name": "peak",
+            "value": [
+              "sub",
+              [
+                "height",
+                "@hostroof",
+                0,
+                0
+              ],
+              0.119999997
+            ]
+          },
+          {
+            "name": "eave",
+            "value": [
+              "sub",
+              "%peak",
+              "$rise"
+            ]
+          },
+          {
+            "name": "top",
+            "value": [
+              "sub",
+              [
+                "add",
+                "%eave",
+                [
+                  "mul",
+                  "$rise",
+                  [
+                    "div",
+                    0.5,
+                    [
+                      "add",
+                      "$width",
+                      0.5
+                    ]
+                  ]
+                ]
+              ],
+              0.100000001
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "id": "back",
+            "kind": "entry",
+            "op": "anchor",
+            "p": [
+              0,
+              0,
+              0
+            ],
+            "r": [
+              0,
+              0,
+              0
+            ],
+            "s": [
+              "$passage_width",
+              "$passage_height",
+              0.119999997
+            ]
+          },
+          {
+            "id": "roof",
+            "join": "@hostroof",
+            "op": "roof",
+            "role": "roof",
+            "thickness": 0.0799999982,
+            "wings": [
+              {
+                "form": "gable",
+                "id": "gallery",
+                "p": [
+                  0,
+                  "%eave",
+                  [
+                    "sub",
+                    0.400000006,
+                    [
+                      "mul",
+                      0.5,
+                      "$length"
+                    ]
+                  ]
+                ],
+                "size": [
+                  [
+                    "add",
+                    "$length",
+                    1
+                  ],
+                  "$rise",
+                  [
+                    "add",
+                    "$width",
+                    0.5
+                  ]
+                ],
+                "yaw": 90
+              }
+            ]
+          },
+          {
+            "id": "west",
+            "op": "wall",
+            "openings": [
+              {
+                "at": 0.5,
+                "height": 1.79999995,
+                "id": "view",
+                "segment": 0,
+                "sill": 0.649999976,
+                "width": [
+                  "sub",
+                  "$length",
+                  2
+                ]
+              }
+            ],
+            "points": [
+              [
+                [
+                  "mul",
+                  -0.5,
+                  "$width"
+                ],
+                0,
+                [
+                  "sub",
+                  1.29999995,
+                  "$length"
+                ]
+              ],
+              [
+                [
+                  "mul",
+                  -0.5,
+                  "$width"
+                ],
+                0,
+                -0.100000001
+              ]
+            ],
+            "role": "paper",
+            "roof": "roof",
+            "width": 0.119999997
+          },
+          {
+            "id": "east",
+            "op": "wall",
+            "openings": [
+              {
+                "at": 0.5,
+                "height": 1.79999995,
+                "id": "view",
+                "segment": 0,
+                "sill": 0.649999976,
+                "width": [
+                  "sub",
+                  "$length",
+                  2
+                ]
+              }
+            ],
+            "points": [
+              [
+                [
+                  "mul",
+                  0.5,
+                  "$width"
+                ],
+                0,
+                [
+                  "sub",
+                  1.29999995,
+                  "$length"
+                ]
+              ],
+              [
+                [
+                  "mul",
+                  0.5,
+                  "$width"
+                ],
+                0,
+                -0.100000001
+              ]
+            ],
+            "role": "paper",
+            "roof": "roof",
+            "width": 0.119999997
+          },
+          {
+            "id": "deck",
+            "op": "instance",
+            "p": [
+              0,
+              -0.0399999991,
+              [
+                "sub",
+                -0.0900000036,
+                [
+                  "mul",
+                  0.5,
+                  [
+                    "sub",
+                    "$length",
+                    0.200000003
+                  ]
+                ]
+              ]
+            ],
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                "$width",
+                0.349999994
+              ],
+              0.0799999982,
+              [
+                "sub",
+                "$length",
+                0.200000003
+              ]
+            ],
+            "source": "timber"
+          },
+          {
+            "id": "post",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@j",
+                  0.5
+                ],
+                "$width"
+              ],
+              [
+                "mul",
+                0.5,
+                "%top"
+              ],
+              [
+                "sub",
+                -0.150000006,
+                [
+                  "mul",
+                  [
+                    "div",
+                    "@i",
+                    4
+                  ],
+                  [
+                    "sub",
+                    "$length",
+                    1
+                  ]
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": 5,
+              "rows": 2
+            },
+            "role": "wood",
+            "s": [
+              0.140000001,
+              "%top",
+              0.140000001
+            ],
+            "source": "timber"
+          },
+          {
+            "id": "beam",
+            "op": "instance",
+            "p": [
+              [
+                "mul",
+                [
+                  "sub",
+                  "@i",
+                  0.5
+                ],
+                "$width"
+              ],
+              [
+                "sub",
+                "%top",
+                0.0299999993
+              ],
+              [
+                "sub",
+                -0.0900000036,
+                [
+                  "mul",
+                  0.5,
+                  [
+                    "sub",
+                    "$length",
+                    0.200000003
+                  ]
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": 2
+            },
+            "role": "wood",
+            "s": [
+              0.159999996,
+              0.119999997,
+              [
+                "sub",
+                "$length",
+                0.200000003
+              ]
+            ],
+            "source": "timber"
+          },
+          {
+            "id": "step",
+            "op": "instance",
+            "p": [
+              0,
+              [
+                "add",
+                "@hostroof.y",
+                [
+                  "mul",
+                  0.5,
+                  [
+                    "mul",
+                    "%drop",
+                    [
+                      "div",
+                      [
+                        "sub",
+                        3,
+                        "@i"
+                      ],
+                      3
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "sub",
+                [
+                  "sub",
+                  -0.0599999987,
+                  "$length"
+                ],
+                [
+                  "mul",
+                  0.319999993,
+                  "@i"
+                ]
+              ]
+            ],
+            "repeat": {
+              "count": 3
+            },
+            "role": "stone",
+            "s": [
+              [
+                "add",
+                "$width",
+                0.100000001
+              ],
+              [
+                "mul",
+                "%drop",
+                [
+                  "div",
+                  [
+                    "sub",
+                    3,
+                    "@i"
+                  ],
+                  3
+                ]
+              ],
+              0.340000004
+            ],
+            "source": "timber",
+            "when": [
+              "gte",
+              "%drop",
+              0.0299999993
+            ]
+          },
+          {
+            "id": "exit",
+            "op": "anchor",
+            "p": [
+              0,
+              -0.419999987,
+              [
+                "sub",
+                -1.13999999,
+                "$length"
+              ]
+            ]
+          }
+        ],
+        "prototypes": [
+          {
+            "bevel": 0.0120000001,
+            "id": "timber",
+            "kind": "cube",
+            "op": "primitive"
+          }
+        ],
+        "version": 1
+      },
+      "recipe_version": 1,
+      "seed": 1021,
+      "style": "japanese",
+      "weather": 0.25,
+      "yaw": 0
+    }
+  ]
+}

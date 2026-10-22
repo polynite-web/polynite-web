@@ -1,0 +1,328 @@
+{
+  "module": "assembly",
+  "seed": 1020,
+  "weather": 0.025,
+  "materials": {
+    "wood": "temple_vermilion",
+    "roof": "temple_tile",
+    "stone": "temple_stone",
+    "paper": "temple_paper",
+    "metal": "temple_gold"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "rise",
+        "min": 0.8,
+        "max": 2.4,
+        "value": 1.5,
+        "group": "shape",
+        "integer": false,
+        "description": "rise",
+        "handle": {
+          "axis": "y",
+          "origin": [
+            0,
+            3.2,
+            0
+          ]
+        }
+      },
+      {
+        "name": "eave_lift",
+        "min": 0,
+        "max": 0.25,
+        "value": 0.12,
+        "group": "shape",
+        "integer": false,
+        "description": "eave lift"
+      },
+      {
+        "name": "door_width",
+        "min": 0.8,
+        "max": 1.7,
+        "value": 1.4,
+        "group": "shape",
+        "integer": false,
+        "description": "door width",
+        "handle": {
+          "axis": "x",
+          "origin": [
+            0,
+            1,
+            -2
+          ],
+          "scale": 0.5
+        }
+      },
+      {
+        "name": "windows",
+        "min": 0,
+        "max": 1,
+        "value": 1,
+        "group": "openings",
+        "integer": true,
+        "description": "windows"
+      },
+      {
+        "name": "detail",
+        "min": 0,
+        "max": 1,
+        "value": 1,
+        "group": "detail",
+        "integer": true,
+        "description": "detail"
+      },
+      {
+        "name": "size",
+        "min": 0.8,
+        "max": 1.25,
+        "value": 1,
+        "group": "layout",
+        "integer": false,
+        "description": "size"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "body",
+        "op": "assembly",
+        "source": "joined",
+        "s": [
+          "$size",
+          "$size",
+          "$size"
+        ]
+      },
+      {
+        "id": "door",
+        "op": "anchor",
+        "p": [
+          0,
+          [
+            "mul",
+            0.42,
+            "$size"
+          ],
+          [
+            "mul",
+            -4.5,
+            "$size"
+          ]
+        ]
+      }
+    ],
+    "assemblies": [
+      {
+        "id": "joined",
+        "nodes": [
+          {
+            "id": "roof",
+            "op": "roof",
+            "role": "roof",
+            "thickness": 0.1,
+            "wings": [
+              {
+                "id": "hall",
+                "form": "hip",
+                "p": [
+                  0,
+                  3.5,
+                  0
+                ],
+                "size": [
+                  8,
+                  "$rise",
+                  6
+                ],
+                "ridge": 0.45,
+                "profile": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    0.65,
+                    0.16
+                  ],
+                  [
+                    0.88,
+                    [
+                      "neg",
+                      "$eave_lift"
+                    ]
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ]
+              },
+              {
+                "id": "porch",
+                "form": "gable",
+                "p": [
+                  0,
+                  3.25,
+                  -3
+                ],
+                "size": [
+                  5,
+                  [
+                    "mul",
+                    "$rise",
+                    0.8
+                  ],
+                  4
+                ],
+                "yaw": 90,
+                "profile": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    0.65,
+                    0.12
+                  ],
+                  [
+                    0.88,
+                    [
+                      "neg",
+                      "$eave_lift"
+                    ]
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "export": "main"
+          },
+          {
+            "id": "wall",
+            "op": "wall",
+            "role": "paper",
+            "width": 0.16,
+            "closed": 1,
+            "roof": "roof",
+            "points": [
+              [
+                -3,
+                0.42,
+                -2
+              ],
+              [
+                -1.2,
+                0.42,
+                -2
+              ],
+              [
+                -1.2,
+                0.42,
+                -4.5
+              ],
+              [
+                1.2,
+                0.42,
+                -4.5
+              ],
+              [
+                1.2,
+                0.42,
+                -2
+              ],
+              [
+                3,
+                0.42,
+                -2
+              ],
+              [
+                3,
+                0.42,
+                2
+              ],
+              [
+                -3,
+                0.42,
+                2
+              ]
+            ],
+            "openings": [
+              {
+                "id": "entry",
+                "segment": 2,
+                "at": 0.5,
+                "width": "$door_width",
+                "height": 2.2,
+                "export": "entrance"
+              },
+              {
+                "id": "east",
+                "segment": 5,
+                "at": 0.5,
+                "width": 1.6,
+                "height": 1.3,
+                "sill": 0.9,
+                "enabled": "$windows"
+              },
+              {
+                "id": "rear",
+                "segment": 6,
+                "at": 0.5,
+                "width": 2.6,
+                "height": 1.3,
+                "sill": 0.9,
+                "enabled": "$windows"
+              },
+              {
+                "id": "west",
+                "segment": 7,
+                "at": 0.5,
+                "width": 1.6,
+                "height": 1.3,
+                "sill": 0.9,
+                "enabled": "$windows"
+              }
+            ]
+          },
+          {
+            "id": "base",
+            "op": "primitive",
+            "kind": "cube",
+            "role": "stone",
+            "p": [
+              0,
+              0.21,
+              0
+            ],
+            "s": [
+              6.5,
+              0.42,
+              4.5
+            ]
+          },
+          {
+            "id": "pad",
+            "op": "primitive",
+            "kind": "cube",
+            "role": "stone",
+            "p": [
+              0,
+              0.21,
+              -3.5
+            ],
+            "s": [
+              2.8,
+              0.42,
+              2.5
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

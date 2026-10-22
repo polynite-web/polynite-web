@@ -1,0 +1,138 @@
+{
+  "category": "Architecture",
+  "level": "Advanced",
+  "capabilities": [
+    "recipe_program",
+    "recipe_assemblies",
+    "recipe_instances",
+    "recipe_junctions",
+    "recipe_roof_ports",
+    "recipe_context",
+    "surface_prisms",
+    "recipe_connections"
+  ],
+  "duration": 6,
+  "seed": 1021,
+  "edit_parameter": "rise",
+  "operators": [
+    "expression",
+    "instance",
+    "roof",
+    "profile",
+    "wall",
+    "repeat",
+    "assembly",
+    "when",
+    "surface",
+    "sweep",
+    "anchor",
+    "prototype",
+    "primitive",
+    "context",
+    "let",
+    "spatial",
+    "motion",
+    "beam"
+  ],
+  "instances": [
+    "hall",
+    "gallery",
+    "tower",
+    "lamp",
+    "lantern",
+    "flower",
+    "tree",
+    "yard"
+  ],
+  "checks": [
+    {
+      "type": "roof_link",
+      "instance": "gallery",
+      "source": "hall",
+      "port": "main",
+      "times": [
+        0,
+        3,
+        6
+      ]
+    },
+    {
+      "type": "port_link",
+      "instance": "gallery",
+      "source": "hall",
+      "target": "entrance",
+      "from": "back000000",
+      "times": [
+        0,
+        3,
+        6
+      ]
+    }
+  ],
+  "settings": "Open & test → Adjust → hall / gallery · recipe controls. Connection controls set passage width and height. In the engine HUD, Living architecture → Find connection ports previews targets, then Connect and align. Detach keeps the current position. Floor reflections are enabled.",
+  "limits": "Explicit directed ports, not global welding. Entry targets must come from real wall opening exports. The consumer connector is a root typed anchor with input-only pose and dimensions; no nested, context-dependent or repeated from port. Entry/wall fit compares width and height; floor/support fit compares width and depth. The target is not enlarged automatically. Preview checks interfaces and cycles; estimate also checks geometry, roof contact and overrides. Detach before moving a constrained consumer. No automatic obstacle routing or arbitrary mesh Boolean.",
+  "prompt": "In Polynite, discover architecture connections and the anchor/wall operators. Use an editable assembly recipe: export entrance from the hall wall opening and declare a root entry anchor on the gallery. Inspect both IDs, preview architecture.connections for gallery/from with target hall, then estimate and apply attach:{to:hall,anchor:entrance,from:back000000}. Keep the roof context link and recipes independent. Use compatible doorway dimensions, shared procedural materials and instances. Move/rotate/resize the provider and verify that the thresholds stay aligned and the walls leave a real passage. Preserve overrides; save and reopen the complete scene. Enable soft floor reflections in scene settings.",
+  "try": [
+    "Change the hall Size and Roof rise; the doorway and linked gallery follow.",
+    "Under gallery connection controls, adjust Passage width/height within the host doorway. A larger connector is refused without changing the scene.",
+    "Save and reopen to retain both independent recipes, the typed connection and materials."
+  ],
+  "steps": [
+    "Export a real opening as a typed entry port. Its position, direction and dimensions follow the wall.",
+    "Preview compatible ports, then estimate the complete connection before applying it.",
+    "Align the thresholds with opposing directions; keep roofs, materials, framing and stairs in recipes."
+  ],
+  "id": "entry-temple-garden",
+  "title": "A Japanese garden, joined at the door.",
+  "summary": "The hall, its gallery and the garden stay editable. A real doorway controls their connection, while the linked roofs and access steps adapt.",
+  "version": 1,
+  "collection": "entry-connections",
+  "variants": [
+    {
+      "id": "compact",
+      "title": "Compact hall, short gallery",
+      "poster": "https://explore.polynite.io/docs/recipes/media/entry-temple-garden-v1-compact.jpg",
+      "scene_sha256": "7ab168dfda2fb6be8f6eb9f6c86a12d3b8059be394290ebaa4e1f174572806b4",
+      "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1-compact.scene"
+    },
+    {
+      "id": "broad",
+      "title": "Broad gallery, raised roof",
+      "poster": "https://explore.polynite.io/docs/recipes/media/entry-temple-garden-v1-broad.jpg",
+      "scene_sha256": "389c1de0a17f7f350dfd588cfbfffd9b6a2407c03f959030d087989458e945d6",
+      "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1-broad.scene"
+    }
+  ],
+  "compatibility": {
+    "desktop": "verified",
+    "browser": "verified"
+  },
+  "tested_at": "2026-10-22",
+  "revision": "1bfeb712c6fcdd15b529fd1dbb3b807a944a54ea",
+  "scene_sha256": "2be04f3821b60ec824d074952ada3eef0075f636ba27fe2bd5316a83e5c2d96c",
+  "recipes_sha256": "cc6547e7411f958eefd225495a3faa4e04304e5e7bc8849ae515f1d017353619",
+  "media": {
+    "video": "https://explore.polynite.io/docs/recipes/media/entry-temple-garden-v1.mp4",
+    "poster": "https://explore.polynite.io/docs/recipes/media/entry-temple-garden-v1.jpg"
+  },
+  "browser_validation": {
+    "scope": "Integrated Chromium/WebGPU: three compositions with two variants each; direct source edits, typed entry alignment, rejection and full-document restoration in a fresh engine. Native films verify animation separately.",
+    "engine_sha256": "074101dec61bb23bdc8514d1c243e75f44efcb1506cb579b436d17979f30b77f",
+    "tested_at": "2026-10-22",
+    "checks": [
+      "typed entry and roof links",
+      "three variants",
+      "parameter edit",
+      "invalid edit rejection",
+      "material round trip",
+      "fresh runtime restore",
+      "floor reflections"
+    ]
+  },
+  "open": "https://polynite.io/examples/view.html?id=entry-temple-garden",
+  "url": "https://explore.polynite.io/docs/recipes/entry-temple-garden/",
+  "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.json",
+  "markdown": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.md",
+  "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.scene",
+  "recipes": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.recipes.json"
+}

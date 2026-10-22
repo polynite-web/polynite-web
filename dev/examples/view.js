@@ -17,7 +17,7 @@
    for(const time of [...new Set(contracts.flatMap(({c})=>c.times))].sort((a,b)=>a-b)){
     film('seek',{time});let settled=false,state;for(let k=0;k<600;k++){await sleep(100);state=film('status');report.textContent='Checking at '+time+'s: '+state.time.toFixed(2)+'s';if(!state.seeking&&Math.abs(state.time-time)<.05){settled=true;break;}}if(!settled)throw Error('Seek did not settle');
     const live=call('scene.describe'),plans=new Map();
-    for(const {c,check}of contracts)for(const [i,t]of c.times.entries())if(t===time){if(!plans.has(c.instance))plans.set(c.instance,call('scene.architecture',{request:{command:'inspect',id:c.instance,include_parts:true}}));if(c.source&&c.type==="roof_link"&&!plans.has(c.source))plans.set(c.source,call("scene.architecture",{request:{command:"inspect",id:c.source,include_parts:true}}));check.observe(i,plans.get(c.instance),live,plans.get(c.source));}
+    for(const {c,check}of contracts)for(const [i,t]of c.times.entries())if(t===time){if(!plans.has(c.instance))plans.set(c.instance,call('scene.architecture',{request:{command:'inspect',id:c.instance,include_parts:true}}));if(c.source&&['roof_link','port_link'].includes(c.type)&&!plans.has(c.source))plans.set(c.source,call("scene.architecture",{request:{command:"inspect",id:c.source,include_parts:true}}));check.observe(i,plans.get(c.instance),live,plans.get(c.source));}
    }
    for(const {c,check}of contracts){check.finish();checks.push(c.type);}
    if(!call('scene.snapshot').objects)throw Error('Scene is empty');
@@ -30,8 +30,30 @@
  const enable=()=>{for(const id of buttons)$(id).disabled=!ready;};
  async function fetchJson(url){const r=await fetch(url);if(!r.ok)throw Error('Could not download '+new URL(url,location.href).pathname+' (HTTP '+r.status+')');return r.json();}
  function fail(error){ready=false;enable();notice('Could not open this example: '+error.message);if(entry?.media?.video){$('fallback').hidden=false;$('fallback').querySelector('video').src=entry.media.video;$('fallback-reason').textContent=error.message+'. The original film and scene download remain available.';}frame.remove();}
+ function makeConnections(container){
+  if(!call('scene.capabilities').commands?.recipe_connections)return;
+  for(const r of reference.initial.architecture||[]){
+   const ports=(r.program?.nodes||[]).filter(n=>n.op==='anchor'&&n.kind).map(n=>({id:n.id+'000000',title:n.id+' · '+n.kind}));if(!ports.length)continue;
+   const group=document.createElement('details'),summary=document.createElement('summary');summary.textContent=r.id+' · connections';group.append(summary);container.append(group);
+   group.addEventListener('toggle',()=>{if(!group.open)return;group.replaceChildren(summary);
+    const from=document.createElement('select'),label=document.createElement('label'),preview=document.createElement('button'),targets=document.createElement('select'),reason=document.createElement('p'),connect=document.createElement('button'),detach=document.createElement('button');
+    label.textContent='Connection point';for(const p of ports)from.add(new Option(p.title,p.id));label.append(from);preview.textContent='Find compatible connections';targets.setAttribute('aria-label',r.id+' connection target');targets.hidden=true;connect.textContent='Connect and align';connect.disabled=true;detach.textContent='Detach, keep position';reason.setAttribute('role','status');group.append(label,preview,targets,reason,connect,detach);let candidates=[];
+    const update=()=>{const choice=candidates[Number(targets.value)];connect.disabled=!choice?.compatible;reason.textContent=choice?(choice.compatible?'The port fits. Connecting also checks roof contact and protected edits.':choice.reason):'No typed target ports are available in this scene.';};
+    const invalidate=()=>{candidates=[];targets.replaceChildren();targets.hidden=true;connect.disabled=true;reason.textContent='Find connections to preview this point.';};from.addEventListener('change',invalidate);
+    try{const recipe=call('scene.architecture',{request:{command:'inspect',id:r.id}}).recipe;detach.disabled=!recipe.attach;from.value=recipe.attach?.from||ports[0].id;}catch(error){reason.textContent=error.message;detach.disabled=true;}
+    preview.addEventListener('click',()=>{try{idle();film('stop');const result=call('scene.architecture',{request:{command:'connections',id:r.id,from:from.value}});candidates=result.candidates;targets.replaceChildren();candidates.forEach((c,i)=>targets.add(new Option(c.to+' · '+c.anchor+(c.compatible?'':' · unavailable'),i)));targets.hidden=!candidates.length;const first=candidates.findIndex(c=>c.compatible);if(first>=0)targets.value=String(first);update();}catch(error){invalidate();reason.textContent=error.message;}});targets.addEventListener('change',update);
+    connect.addEventListener('click',()=>{try{idle();film('stop');const c=candidates[Number(targets.value)];if(!c?.compatible)throw Error('Choose a compatible port first');const recipe={id:r.id,attach:{to:c.to,anchor:c.anchor,from:from.value}};call('scene.architecture',{request:{command:'estimate',recipe}});call('scene.apply',{actions:[{op:'architecture',...recipe}]});film('capture');detach.disabled=false;notice('Connected '+r.id+' to '+c.to+' · '+c.anchor);invalidate();reason.textContent='Connected. The source building now controls this connection’s position.';}catch(error){reason.textContent=error.message;notice(error.message);}});
+    detach.addEventListener('click',()=>{try{idle();film('stop');call('scene.apply',{actions:[{op:'architecture',id:r.id,attach:{detach:true}}]});film('capture');detach.disabled=true;invalidate();reason.textContent='Detached at the same position. Explicit roof links remain; remove them in the recipe before moving freely.';notice('Detached '+r.id+' · position preserved');}catch(error){reason.textContent=error.message;}});
+   });
+  }
+ }
  function makeParameters(){
   const container=$('parameters');container.replaceChildren();
+  if(reference.initial.architecture?.length&&call('scene.capabilities').commands?.recipe_handles){
+   const open=document.createElement('button'),hint=document.createElement('p');open.textContent='Open construction handles';hint.textContent='Pause, select a construction, then choose Shape, Move or Rotate in the viewer. Gold guides apply on release; Escape cancels.';container.append(open,hint);
+   open.addEventListener('click',()=>{try{idle();film('stop');const id=reference.initial.architecture[0].id;call('scene.ui',{request:{command:'click',target:'architecture_select',id}});call('scene.ui',{request:{command:'click',target:'architecture_tool',id,part:'move'}});$('controls').hidden=true;notice('Move: drag the gold base ring. Choose Shape in Constructions to resize.');}catch(error){notice(error.message);}});
+  }
+  makeConnections(container);
   for(const r of reference.initial.architecture||[]){
    if(r.program?.inputs&&!r.program.inputs.length)continue;
    const group=document.createElement('details');const summary=document.createElement('summary');summary.textContent=r.id+' · recipe controls';group.append(summary);container.append(group);

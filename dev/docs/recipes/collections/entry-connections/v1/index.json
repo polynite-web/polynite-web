@@ -1,0 +1,109 @@
+{
+  "id": "entry-connections",
+  "version": 1,
+  "title": "Buildings with a real way through",
+  "required_capabilities": [
+    "commands.recipe_program",
+    "commands.recipe_assemblies",
+    "commands.recipe_instances",
+    "commands.recipe_junctions",
+    "commands.recipe_roof_ports",
+    "commands.recipe_context",
+    "commands.surface_prisms",
+    "commands.recipe_connections"
+  ],
+  "principle": "Recipes compose existing local operators. These examples are starting points, not a closed list of shapes.",
+  "source": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/source.json",
+  "materials": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/materials.json",
+  "recipes": [
+    {
+      "id": "shell",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/host-shell.json"
+    },
+    {
+      "id": "hall",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/temple-hall.json"
+    },
+    {
+      "id": "gallery",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/gallery.json"
+    },
+    {
+      "id": "pagoda",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/pagoda.json"
+    },
+    {
+      "id": "lantern",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/lantern.json"
+    },
+    {
+      "id": "tree",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/tree.json"
+    },
+    {
+      "id": "lotus",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/lotus.json"
+    },
+    {
+      "id": "courtyard",
+      "url": "https://explore.polynite.io/docs/recipes/collections/entry-connections/v1/courtyard.json"
+    }
+  ],
+  "examples": [
+    {
+      "id": "entry-roof-workshop",
+      "title": "An entrance that really connects.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=entry-roof-workshop",
+      "variants": [
+        {
+          "id": "compact",
+          "title": "Compact hall, short gallery",
+          "scene": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1-compact.scene"
+        },
+        {
+          "id": "broad",
+          "title": "Broad gallery, raised roof",
+          "scene": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1-broad.scene"
+        }
+      ]
+    },
+    {
+      "id": "entry-temple-gallery",
+      "title": "A temple with a way through.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=entry-temple-gallery",
+      "variants": [
+        {
+          "id": "compact",
+          "title": "Compact hall, short gallery",
+          "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1-compact.scene"
+        },
+        {
+          "id": "broad",
+          "title": "Broad gallery, raised roof",
+          "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1-broad.scene"
+        }
+      ]
+    },
+    {
+      "id": "entry-temple-garden",
+      "title": "A Japanese garden, joined at the door.",
+      "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.json",
+      "open": "https://polynite.io/examples/view.html?id=entry-temple-garden",
+      "variants": [
+        {
+          "id": "compact",
+          "title": "Compact hall, short gallery",
+          "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1-compact.scene"
+        },
+        {
+          "id": "broad",
+          "title": "Broad gallery, raised roof",
+          "scene": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1-broad.scene"
+        }
+      ]
+    }
+  ],
+  "workflow": "Read this compact index, then only the recipes or scene details needed. Bind supports and paths to the current scene, estimate, apply, inspect and observe. Composition source is authoring data: first load authored geometry without generated instances, build the declared assemblies, then estimate/apply the recipe instances and capture before exporting. Downloadable .scene files already include those paths. Preserve user edits; do not clear their scene."
+}
