@@ -58,7 +58,7 @@
     {
       "id": "anchor",
       "title": "Name a connection",
-      "summary": "Expose a stable point for another assembly to attach to or reference.",
+      "summary": "Expose a stable point or typed interface. Export real doorway thresholds from wall openings; preview compatible ports before connecting independent recipes.",
       "example": {
         "id": "tip",
         "op": "anchor",

@@ -40,6 +40,11 @@
      for(const p of parts){assert(p.p.concat(p.s).every(Number.isFinite)&&p.s.every(v=>v>0),'Invalid component pose');if(rule.profile_points)assert(p.surface?.profile?.length===rule.profile_points,'Custom profile missing');if(rule.path_points)assert(p.surface?.path?.length===rule.path_points,'Custom sweep path missing');}
     }
    }
+   else if(c.type==='port_link'){
+    const a=source.anchors.find(a=>a.id===c.target),b=plan.anchors.find(a=>a.id===c.from);assert(a?.opening&&a.kind==='entry'&&b?.kind==='entry','Real doorway or typed connector missing');
+    assert(distance(a.world,b.world)<.004,'Connection thresholds are detached');assert(Math.abs(Math.cos((a.yaw-b.yaw)*Math.PI/180)+1)<.00001,'Connection normals do not oppose');
+    assert(b.size[0]<=a.size[0]+.001&&b.size[1]<=a.size[1]+.001,'Connector does not fit the doorway');assert(plan.recipe.attach?.from===c.from&&plan.recipe.attach.anchor===c.target,'Persistent port declaration missing');
+   }
    else if(c.type==='roof_link'){
     assert(source?.roof_ports?.some(p=>p.id===c.port),'Provider roof port missing');assert(plan.recipe.attach?.to===c.source,'Attachment provider differs');assert(plan.resolved_context?.some(p=>p.roof===c.port&&p.source_faces>0),'Resolved roof snapshot missing');
     const world=p=>{const yaw=(p.world_yaw||0)*Math.PI/180,co=Math.cos(yaw),si=Math.sin(yaw),origin=p.world_position;return {...p,components:p.components.map(o=>({...o,p:[origin[0]+co*o.p[0]+si*o.p[2],origin[1]+o.p[1],origin[2]-si*o.p[0]+co*o.p[2]],r:[0,(o.r?.[1]||0)+(p.world_yaw||0),0]}))};};

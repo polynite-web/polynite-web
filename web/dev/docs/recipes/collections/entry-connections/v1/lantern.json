@@ -1,0 +1,150 @@
+{
+  "module": "assembly",
+  "materials": {
+    "stone": "garden_stone",
+    "paper": "lantern_paper",
+    "roof": "jade_tile"
+  },
+  "program": {
+    "version": 1,
+    "inputs": [
+      {
+        "name": "height",
+        "min": 0.5,
+        "max": 2.5,
+        "value": 1.25,
+        "group": "shape"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "foot",
+        "op": "primitive",
+        "kind": "cylinder",
+        "p": [
+          0,
+          0.08,
+          0
+        ],
+        "s": [
+          0.58,
+          0.16,
+          0.58
+        ],
+        "role": "stone"
+      },
+      {
+        "id": "stem",
+        "op": "primitive",
+        "kind": "cylinder",
+        "p": [
+          0,
+          [
+            "mul",
+            "$height",
+            0.3
+          ],
+          0
+        ],
+        "s": [
+          0.18,
+          [
+            "mul",
+            "$height",
+            0.5
+          ],
+          0.18
+        ],
+        "role": "stone"
+      },
+      {
+        "id": "tray",
+        "op": "primitive",
+        "kind": "cube",
+        "p": [
+          0,
+          [
+            "mul",
+            "$height",
+            0.55
+          ],
+          0
+        ],
+        "s": [
+          0.5,
+          0.1,
+          0.5
+        ],
+        "role": "stone"
+      },
+      {
+        "id": "lamp",
+        "op": "primitive",
+        "kind": "cube",
+        "p": [
+          0,
+          [
+            "mul",
+            "$height",
+            0.73
+          ],
+          0
+        ],
+        "s": [
+          0.37,
+          [
+            "mul",
+            "$height",
+            0.25
+          ],
+          0.37
+        ],
+        "role": "paper"
+      },
+      {
+        "id": "cap",
+        "op": "primitive",
+        "kind": "cone",
+        "p": [
+          0,
+          [
+            "mul",
+            "$height",
+            0.94
+          ],
+          0
+        ],
+        "s": [
+          0.7,
+          0.24,
+          0.7
+        ],
+        "role": "roof"
+      },
+      {
+        "id": "fin",
+        "op": "primitive",
+        "kind": "sphere",
+        "p": [
+          0,
+          [
+            "add",
+            [
+              "mul",
+              "$height",
+              0.94
+            ],
+            0.16
+          ],
+          0
+        ],
+        "s": [
+          0.12,
+          0.16,
+          0.12
+        ],
+        "role": "stone"
+      }
+    ]
+  }
+}

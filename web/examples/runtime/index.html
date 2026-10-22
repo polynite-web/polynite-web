@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0366";window.__pnEngineBase="engine/0880f5b1e4e810a0110d1ca9bd7cbe94c9c76444a8b250ce74cbb1c824fd2beb/";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
+<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0367";window.__pnEngineBase="engine/e8a62646798a529ad3cfc86326dbaf74db48d2122967a2da3d0e07705d6e906f/";</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
 <script src="scene-file-drop.js?v=1"></script>
+<script src="loading_status.js?v=1"></script>
+<script src="pipeline_compile.js?v=2"></script>
 <meta charset="utf-8">
 <script src="startup_profile.js"></script>
 <script src="webgpu_bindgroup_guard.js"></script>
@@ -1176,6 +1178,7 @@ body.scene-entry-ready #curtain {
 
   window.vmeshLoaderPhase = function (phase, progress, stage, sub) {
     if (!loader) return;
+    window.pnLoading?.scene(phase,progress,stage);
     var engineInfo = document.getElementById("loaderEngineInfo");
     if(engineInfo) engineInfo.hidden = true;
     if(window.__pnStartup) window.__pnStartup.mark("scene_stage_" + stage);
@@ -1233,9 +1236,13 @@ body.scene-entry-ready #curtain {
       "Loading stopped. Reload the page to try again.", reason,
       FR ? "Chargement interrompu" : "Loading interrupted");
   }
+  window.addEventListener("polynite:engine-failed", function (event) {
+    if(!engineAborted)loaderFailed(event.detail && event.detail.message || "Pipeline preparation failed");
+  });
 
   function hideLoader(fallback) {
     if (engineAborted) return;
+    if(window.__pnPipelineCompile && window.__pnPipelineCompile.pending){window.__pnPipelineCompile.waitingForLoader=true;return;}
     // Silence is not an engine exception: MCP, assets and GPU initialization
     // can still complete. Never pause the main loop or fabricate readiness.
     if (fallback) {
@@ -1436,7 +1443,8 @@ body.scene-entry-ready #curtain {
      Real exceptions still use loaderFailed; subsequent progress can recover. */
   (function loaderWatchdog() {
     setTimeout(function () {
-      if (engineAborted || loaderHidden || loaderHideRequested) return;
+      if (engineAborted || loaderHidden || loaderHideRequested ||
+          (window.vmeshRuntimeInitialized && window.vmeshCommittedFrames && document.body.classList.contains("world-visible"))) return;
       var now = performance.now ? performance.now() : Date.now();
       if(window.pnEngineLoading) { loaderWatchdog(); return; }
       if (now - loaderLastSignal > 25000) hideLoader(true);
@@ -1524,7 +1532,7 @@ body.scene-entry-ready #curtain {
      instead - same file, no fork. blobcone_fast ships both that way. */
 
   function loadEngine(base) {
-    window.__spinVerFrozen = getCurrentVersion();
+    window.__spinVerFrozen = window.__spinVerFrozen || getCurrentVersion();
     console.info("[gpu-bootstrap] version frozen for this page: " + window.__spinVerFrozen);
     if (loaderText) loaderText.textContent = FR ? "Chargement du moteur" : "Loading engine";
     if(window.pnPrefetchWasm) window.pnPrefetchWasm(cacheBust(base + ".wasm"));
@@ -1643,6 +1651,9 @@ body.scene-entry-ready #curtain {
         " | " + navigator.userAgent);
       return;
     }
+    if(window.__pnStartup)window.__pnStartup.mark("gpu_preflight_started");
+    window.__spinVerFrozen=getCurrentVersion();
+    if(window.pnPrefetchWasm)window.pnPrefetchWasm(cacheBust("app.wasm"));
     var settled = false;
     /* A requestAdapter that never answers must not leave a black screen:
        after 8 s we show the panel. */
@@ -1677,6 +1688,7 @@ body.scene-entry-ready #curtain {
         console.info("[gpu-bootstrap] WebGPU adapter acquired",
           "features=", nb,
           "maxTexture2D=", adapter.limits ? adapter.limits.maxTextureDimension2D : "?");
+        if(window.__pnStartup)window.__pnStartup.mark("gpu_preflight_completed");
         /* DO NOT CREATE A DEVICE HERE.
            A GPUAdapter can create exactly ONE device: a trial requestDevice
            consumes it and the engine can no longer use it — the check itself

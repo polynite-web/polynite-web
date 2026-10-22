@@ -152,5 +152,12 @@
     "media": "/docs/media/tutorials/r43/",
     "scene": "linked-temple-gallery-a4a4eb4b5315.scene",
     "video": "linked-temple-gallery.mp4"
+  },
+  {
+    "id": "entry-temple-gallery",
+    "revision": 44,
+    "media": "/docs/media/tutorials/r44/",
+    "scene": "entry-temple-gallery-ade3c8959f2e.scene",
+    "video": "entry-temple-gallery.mp4"
   }
 ]

@@ -781,6 +781,135 @@
       "url": "https://explore.polynite.io/docs/recipes/linked-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.md"
+    },
+    {
+      "id": "entry-roof-workshop",
+      "version": 1,
+      "title": "An entrance that really connects.",
+      "summary": "Connect an independent gallery to a real exported doorway. Preview a compatible port, align its threshold and keep both recipes editable.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "roof",
+        "profile",
+        "wall",
+        "primitive",
+        "assembly",
+        "anchor",
+        "context",
+        "let",
+        "spatial",
+        "instance",
+        "repeat",
+        "when",
+        "prototype"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms",
+        "recipe_connections"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/entry-roof-workshop/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.md"
+    },
+    {
+      "id": "entry-temple-gallery",
+      "version": 1,
+      "title": "A temple with a way through.",
+      "summary": "Connect an independent gallery to a real exported doorway. Preview a compatible port, align its threshold and keep both recipes editable.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms",
+        "recipe_connections"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/entry-temple-gallery/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.md"
+    },
+    {
+      "id": "entry-temple-garden",
+      "version": 1,
+      "title": "A Japanese garden, joined at the door.",
+      "summary": "The hall, its gallery and the garden stay editable. A real doorway controls their connection, while the linked roofs and access steps adapt.",
+      "category": "Architecture",
+      "level": "Advanced",
+      "operators": [
+        "expression",
+        "instance",
+        "roof",
+        "profile",
+        "wall",
+        "repeat",
+        "assembly",
+        "when",
+        "surface",
+        "sweep",
+        "anchor",
+        "prototype",
+        "primitive",
+        "context",
+        "let",
+        "spatial",
+        "motion",
+        "beam"
+      ],
+      "capabilities": [
+        "recipe_program",
+        "recipe_assemblies",
+        "recipe_instances",
+        "recipe_junctions",
+        "recipe_roof_ports",
+        "recipe_context",
+        "surface_prisms",
+        "recipe_connections"
+      ],
+      "compatibility": {
+        "desktop": "verified",
+        "browser": "verified"
+      },
+      "url": "https://explore.polynite.io/docs/recipes/entry-temple-garden/",
+      "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.json",
+      "markdown": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.md"
     }
   ]
 }
