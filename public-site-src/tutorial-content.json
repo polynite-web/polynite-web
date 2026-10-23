@@ -31,7 +31,7 @@
         "text": "Add input.handle metadata to bounded numeric recipe inputs, preserving existing params. Other inputs keep their sliders. Save my scene stores values, declarations, materials and relationships."
       }
     ],
-    "viewer_note": "Handles are generic local-axis value guides with numeric origins, not building-specific generators. Geometry validates and rebuilds once on release. Fixed origins do not automatically follow other dimensions. Attached roots stay constrained; detach explicitly before free movement. Pause playback before editing. Reflections remain recipe settings."
+    "viewer_note": "Drag a gold handle to preview validated geometry; release to keep one undoable edit, or press Escape to restore the starting shape. Finish the gesture before saving. Handles are generic local-axis value guides with fixed numeric origins. Attached roots stay constrained; detach explicitly before free movement. Pause playback before editing. Reflections remain recipe settings."
   },
   {
     "id": "entry-temple-gallery",
