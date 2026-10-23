@@ -275,7 +275,7 @@ function sync(root,stage){
   checkPair(target);
  }
  const names=stage==='dev'?['web/dev','web/rel','web/_headers']:Object.keys(release.files).map(name=>'web/'+name).concat(['web/'+MANIFEST,'web/_headers']);
- names.push('deploy_site.cjs','deploy_dev_to_site.bat','deploy_rel_to_site.bat','README.md','.gitignore');
+ names.push('deploy_site.cjs','deploy_dev_to_site.bat','deploy_rel_to_site.bat','deploy_cloudflare.cjs','deploy_cloudflare.bat','README.md','.gitignore');
  if(stage==='rel'){
   const tracked=new Set(git(['ls-files','-z']).stdout.split('\0'));
   for(const name of release.removedFiles||[])if(tracked.has('web/'+name))names.push('web/'+name);

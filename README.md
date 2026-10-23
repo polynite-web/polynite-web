@@ -16,6 +16,13 @@ The Cwc WebGPU build writes `dev/`. The publication directory is `web/`.
 - `--local` only prepares/copies files and exits without a prompt, commit, push
   or pause. `--help` prints usage without changing files.
 - Wait for the Cloudflare Pages build after each push before checking public URLs.
+- Cloudflare Pages: `deploy_dev_to_site.bat` and `deploy_rel_to_site.bat` push to Git (the
+  history) and then send that same commit to Cloudflare by direct upload
+  (`deploy_cloudflare.cjs`): only `web/` exactly as committed in HEAD (text from the commit,
+  binaries hard-linked, Git-ignored local files never sent), only new content uploaded, about
+  2-3 minutes, no clone of the multi-gigabyte repository by the Cloudflare build (its 20-minute
+  limit failed once). `--git-only` skips the upload. After a manual commit + push (Showcase,
+  Atelier...), run `deploy_cloudflare.bat` (or `--branch <name>` for a preview URL only).
 - If Explore pages changed, run `../majify-api/worker/polynite-auth/deploy_explore.bat`
   afterwards (`--no-pause` for unattended use). It already deploys the production
   Worker, so a separate `deploy_polynite.bat` run is unnecessary. A change to only
