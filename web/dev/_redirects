@@ -1,7 +1,17 @@
+# Shared media: /dev/ and /rel/ read the public copies (deploy_site.cjs SHARED; internal rewrites).
+/dev/docs/media/* /docs/media/:splat 200
+/rel/docs/media/* /docs/media/:splat 200
+/dev/models/* /models/:splat 200
+/rel/models/* /models/:splat 200
+/dev/atelier/media/* /atelier/media/:splat 200
+/rel/atelier/media/* /atelier/media/:splat 200
 # Showroom: permanent short links (302, so the destination can change later without breaking them).
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
 /showroom https://explore.polynite.io/showcase/#collection 302
+# Showcase short links: the spotlight player, and its card in the Explore showcase.
+/showcase/star-veyland /examples/view.html?id=star-veyland 302
+/showcase/star-veyland/ /examples/view.html?id=star-veyland 302
 /showroom/ https://explore.polynite.io/showcase/#collection 302
 # The public pages moved to Polynite Explore, for good.
 /about/* https://explore.polynite.io/about/:splat 301

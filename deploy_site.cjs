@@ -7,6 +7,26 @@ const progress=message=>console.log('[polynite +'+((Date.now()-started)/1000).to
 const siteFiles=['robots.txt','sitemap.xml','sitemap-app.xml','site.webmanifest','sw.js','404.html','_redirects','favicon.ico'];
 const siteDirs=['docs','mcp','support','privacy','terms','tutorials','tutorial-view','atelier','examples','showcase'];
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+// SHARED MEDIA: tutorial videos, models and Atelier videos are identical in every tier. They
+// live once, at the public root of web/, and /dev/ and /rel/ read them there through rewrites
+// in _redirects (/rel/models/* -> /models/:splat 200). Snapshots and manifests leave them out;
+// publication copies new ones from their sources (immutable names: same name + same size = same file).
+const SHARED=[['docs/media/','docs/media'],['models/','dev/models'],['atelier/media/','atelier/media']];
+const shared=name=>SHARED.some(([prefix])=>name.startsWith(prefix));
+function syncShared(root,target){
+ let copied=0,bytes=0;
+ for(const [prefix,from]of SHARED){
+  const dir=path.join(root,from);if(!fs.existsSync(dir))continue;
+  for(const file of files(dir)){
+   const src=path.join(dir,file),size=fs.statSync(src).size;
+   if(size>MAX_FILE||file.split('/').some(p=>p.startsWith('.')))continue;
+   const dest=inside(target,prefix+file);
+   if(fs.existsSync(dest)&&fs.statSync(dest).size===size)continue;
+   write(target,prefix+file,fs.readFileSync(src));copied++;bytes+=size;
+  }
+ }
+ progress('Shared media: '+copied+' new or changed file(s), '+(bytes/1e6).toFixed(1)+' MB, at the public root.');
+}
 function inside(base,relative){
  if(path.isAbsolute(relative)||relative.split(/[\\/]/).some(p=>p==='..'||p===''))throw Error('Invalid payload path: '+relative);
  const file=path.resolve(base,relative),prefix=path.resolve(base)+path.sep;
@@ -38,7 +58,7 @@ function checkPair(dir){
 function payload(source){
  return files(source).filter(name=>{
   const parts=name.split('/'),base=path.basename(name);
-  if(parts.some(p=>p.startsWith('.'))||['dev','rel','engine'].includes(parts[0])||siteDirs.includes(parts[0]))return false;
+  if(parts.some(p=>p.startsWith('.'))||['dev','rel','engine'].includes(parts[0])||siteDirs.includes(parts[0])||shared(name))return false;
   if(base===MANIFEST||base==='tier.txt'||base==='version.txt'||base==='index.txt'&&parts[0]==='models')return false;
   if(/\.(?:bat|cmd|cwc|cwmake|cjs|log|map|symbols|gz|br)$/i.test(base)||/^app_before_|^appGL\./i.test(base))return false;
   return fs.statSync(inside(source,name)).size<=MAX_FILE;
@@ -162,7 +182,7 @@ function publishFiles(root,source,target,release){
 function capture(root,source,target){
  const inputs=new Map();for(const name of payload(source))inputs.set(name,inside(source,name));
  for(const name of siteFiles)if(fs.existsSync(path.join(root,name)))inputs.set(name,path.join(root,name));
- for(const dir of ['assets',...siteDirs])if(fs.existsSync(path.join(root,dir)))for(const file of files(path.join(root,dir))){const name=dir+'/'+file;if(fs.statSync(inside(root,name)).size<=MAX_FILE)inputs.set(name,inside(root,name));}
+ for(const dir of ['assets',...siteDirs])if(fs.existsSync(path.join(root,dir)))for(const file of files(path.join(root,dir))){const name=dir+'/'+file;if(!shared(name)&&fs.statSync(inside(root,name)).size<=MAX_FILE)inputs.set(name,inside(root,name));}
  const versionFile=path.join(source,'version.txt'),versionBytes=fs.readFileSync(versionFile);
  const signatures=new Map([...inputs].map(([name,file])=>[name,hash(fs.readFileSync(file))]));
  for(const [name,file]of inputs)write(target,name,fs.readFileSync(file));
@@ -215,8 +235,8 @@ function prepare(root){
   const name=tier==='dev'?'dev':'rel',temp=path.join(work,name+'-'+process.pid);fs.mkdirSync(temp,{recursive:true});
   pending.push({name,source:temp});
    for(const file of files(snapshot))copy(snapshot,temp,file);
-   const models=path.join(temp,'models');fs.mkdirSync(models,{recursive:true});
-   const index=fs.readdirSync(models,{withFileTypes:true}).filter(e=>e.isFile()&&/\.(?:glb|gltf)$/i.test(e.name)).map(e=>e.name+' '+fs.statSync(path.join(models,e.name)).size).sort().join('\n');
+   const models=path.join(source,'models');   /* the shared models, served from the public root */
+   const index=fs.existsSync(models)?fs.readdirSync(models,{withFileTypes:true}).filter(e=>e.isFile()&&/\.(?:glb|gltf)$/i.test(e.name)&&fs.statSync(path.join(models,e.name)).size<=MAX_FILE).map(e=>e.name+' '+fs.statSync(path.join(models,e.name)).size).sort().join('\n'):'';
    write(temp,'models/index.txt',index+(index?'\n':''));
    normalize(temp);const history=engines(temp,path.join(root,'web',name));
    configure(temp,tier,version,false,history[0]);compress(temp,cache);
@@ -246,7 +266,7 @@ function publish(root){
   progress('Copying the complete site before the public swap.');
   for(const name of files(target))copy(target,full,name);
   const old=path.join(target,MANIFEST);
-  release.removedFiles=fs.existsSync(old)?Object.keys(JSON.parse(fs.readFileSync(old,'utf8')).files).filter(name=>!release.files[name]):[];
+  release.removedFiles=fs.existsSync(old)?Object.keys(JSON.parse(fs.readFileSync(old,'utf8')).files).filter(name=>!release.files[name]&&!shared(name)):[];   /* shared media are kept */
   for(const name of release.removedFiles)if(fs.existsSync(inside(full,name)))fs.unlinkSync(inside(full,name));
   write(temp,MANIFEST,JSON.stringify(release,null,2)+'\n');
   for(const name of Object.keys(release.files))copy(temp,full,name);
@@ -258,6 +278,7 @@ function publish(root){
    progress('Directory is locked; installing checked files with backup and rollback.');
    publishFiles(root,full,target,release);
   }
+  syncShared(root,target);
   console.log('[polynite] Published local web/ from validated rel '+candidate.version+'; engine/version preserved.');
  }finally{removeWork(root,temp);removeWork(root,full);}
 }
@@ -276,6 +297,7 @@ function sync(root,stage){
  }
  const names=stage==='dev'?['web/dev','web/rel','web/_headers']:Object.keys(release.files).map(name=>'web/'+name).concat(['web/'+MANIFEST,'web/_headers']);
  names.push('deploy_site.cjs','deploy_dev_to_site.bat','deploy_rel_to_site.bat','deploy_cloudflare.cjs','deploy_cloudflare.bat','README.md','.gitignore');
+ if(stage==='rel')for(const [prefix]of SHARED)names.push('web/'+prefix.slice(0,-1));   /* new shared media (directories: Git-ignored caches inside are skipped) */
  if(stage==='rel'){
   const tracked=new Set(git(['ls-files','-z']).stdout.split('\0'));
   for(const name of release.removedFiles||[])if(tracked.has('web/'+name))names.push('web/'+name);

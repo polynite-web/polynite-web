@@ -1,3 +1,10 @@
+# Shared media: /dev/ and /rel/ read the public copies (deploy_site.cjs SHARED; internal rewrites).
+/dev/docs/media/* /docs/media/:splat 200
+/rel/docs/media/* /docs/media/:splat 200
+/dev/models/* /models/:splat 200
+/rel/models/* /models/:splat 200
+/dev/atelier/media/* /atelier/media/:splat 200
+/rel/atelier/media/* /atelier/media/:splat 200
 # Showroom: permanent short links (302, so the destination can change later without breaking them).
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
