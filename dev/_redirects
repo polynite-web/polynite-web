@@ -2,6 +2,9 @@
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
 /showroom https://explore.polynite.io/showcase/#collection 302
+# Showcase short links: the spotlight player, and its card in the Explore showcase.
+/showcase/star-veyland /examples/view.html?id=star-veyland 302
+/showcase/star-veyland/ /examples/view.html?id=star-veyland 302
 /showroom/ https://explore.polynite.io/showcase/#collection 302
 # The public pages moved to Polynite Explore, for good.
 /about/* https://explore.polynite.io/about/:splat 301

@@ -1,7 +1,25 @@
 {
   "version": 1,
-  "featured": "handle-temple-garden",
+  "featured": "star-veyland",
   "items": [
+    {
+      "id": "star-veyland",
+      "atelier": "star-veyland-20261023-141528-portrait",
+      "title": "Star Veyland — a ship you build, fly and break",
+      "category": "Game concepts",
+      "environment": "Sea, rock and mountains",
+      "summary": "A game concept: the hero's ship is not a model but a recipe of parts — hull, nacelles, hinged wings, flames — rebuilt live as you tune it. Mid-flight a wing and a nacelle tear off, fall burning and the ship lists; at the station it is whole again. The whole world and the ship are generated on your device and driven through MCP.",
+      "prompt": "Create a Star Veyland ship in Polynite through MCP. Turn on the infinite world with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe, change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}, move a part live with ship_part:{id:'nacelle_ll', offset:[0,-0.5,-1]} and break one off in flight with ship_part:{id:'wing_rl', detach:true}.",
+      "tags": [
+        "Game concept",
+        "Ship recipe",
+        "MCP",
+        "Procedural",
+        "Infinite world",
+        "Editable"
+      ],
+      "version": 1
+    },
     {
       "recipe": "handle-temple-garden",
       "category": "Interactive architecture",
