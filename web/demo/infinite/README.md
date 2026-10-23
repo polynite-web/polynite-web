@@ -59,3 +59,11 @@ TAA with and without the ship velocity.
 `E:\genarate\polynite\infinite-2026-10-16\` — MP4s, captures, scenes and
 `index.html`. Rebase continuity measured on the film with TAA and motion blur,
 save/restore pixel comparison, captures at 10^9 m and 10^15 m.
+
+## ship-modular.scene
+
+The same flight with the ship built from `recipes/ship_miro.json` (ship_model 4):
+generic operators, parts on bones, live sliders in **Scene settings > Ship recipe**
+(nacelle offsets, nose, girth, spread, span, sweep, chord, thrust, seed, variety)
+and the film **Recipe - wing lost** (a wing breaks off at 31 s). Regenerate the
+recipe with `python recipes/gen_ship_miro.py`. Guide: `prompt/guides/ship-recipes.md`.
