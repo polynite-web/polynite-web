@@ -50,7 +50,7 @@
  function makeParameters(){
   const container=$('parameters');container.replaceChildren();
   if(reference.initial.architecture?.length&&call('scene.capabilities').commands?.recipe_handles){
-   const open=document.createElement('button'),hint=document.createElement('p');open.textContent='Open construction handles';hint.textContent='Pause, select a construction, then choose Shape, Move or Rotate in the viewer. Gold guides apply on release; Escape cancels.';container.append(open,hint);
+   const open=document.createElement('button'),hint=document.createElement('p');open.textContent='Open construction handles';hint.textContent='Pause, select a construction, then choose Shape, Move or Rotate in the viewer. Gold handles preview while you drag. Release to keep; Escape restores.';container.append(open,hint);
    open.addEventListener('click',()=>{try{idle();film('stop');const id=reference.initial.architecture[0].id;call('scene.ui',{request:{command:'click',target:'architecture_select',id}});call('scene.ui',{request:{command:'click',target:'architecture_tool',id,part:'move'}});$('controls').hidden=true;notice('Move: drag the gold base ring. Choose Shape in Constructions to resize.');}catch(error){notice(error.message);}});
   }
   makeConnections(container);
