@@ -23,6 +23,12 @@ The Cwc WebGPU build writes `dev/`. The publication directory is `web/`.
   2-3 minutes, no clone of the multi-gigabyte repository by the Cloudflare build (its 20-minute
   limit failed once). `--git-only` skips the upload. After a manual commit + push (Showcase,
   Atelier...), run `deploy_cloudflare.bat` (or `--branch <name>` for a preview URL only).
+- Shared media: tutorial videos (`docs/media`), models (`models/`) and Atelier videos
+  (`atelier/media`) live once, at the public root of `web/`. `/dev/` and `/rel/` hold only the
+  engine, pages and small files (~260 MB each) and read those media through internal rewrites
+  in `_redirects` (`/rel/models/* /models/:splat 200`). Preparation leaves them out of the
+  snapshots and manifests; promotion keeps the public ones and copies new ones from their
+  sources (`deploy_site.cjs` SHARED: same name + same size = same file, names are immutable).
 - If Explore pages changed, run `../majify-api/worker/polynite-auth/deploy_explore.bat`
   afterwards (`--no-pause` for unattended use). It already deploys the production
   Worker, so a separate `deploy_polynite.bat` run is unnecessary. A change to only
