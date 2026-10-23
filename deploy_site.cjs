@@ -19,7 +19,7 @@ function syncShared(root,target){
   const dir=path.join(root,from);if(!fs.existsSync(dir))continue;
   for(const file of files(dir)){
    const src=path.join(dir,file),size=fs.statSync(src).size;
-   if(size>MAX_FILE||file.split('/').some(p=>p.startsWith('.')))continue;
+   if(size>MAX_FILE||file.split('/').some(p=>p.startsWith('.'))||path.basename(file)==='index.txt')continue;   /* (models/index.txt is the release's own, listed in its manifest) */
    const dest=inside(target,prefix+file);
    if(fs.existsSync(dest)&&fs.statSync(dest).size===size)continue;
    write(target,prefix+file,fs.readFileSync(src));copied++;bytes+=size;
