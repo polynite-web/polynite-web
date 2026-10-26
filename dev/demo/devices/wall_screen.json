@@ -1,0 +1,43 @@
+{
+ "op": "architecture",
+ "id": "screen",
+ "module": "assembly",
+ "program": {
+  "version": 1,
+  "inputs": [
+   {"name": "width", "min": 0.3, "max": 4, "value": 1.2, "group": "body", "description": "Panel width (m)"},
+   {"name": "aspect", "min": 0.4, "max": 1.4, "value": 0.5625, "group": "body", "description": "Height / width (0.5625 = 16:9)"},
+   {"name": "depth", "min": 0.015, "max": 0.15, "value": 0.04, "group": "body", "description": "Panel thickness (m)"},
+   {"name": "bezel", "min": 0.003, "max": 0.08, "value": 0.012, "group": "screen", "description": "Border around the picture (m)"},
+   {"name": "corner", "min": 0.001, "max": 0.06, "value": 0.008, "group": "body", "description": "Corner rounding (m)"},
+   {"name": "stand", "min": 0, "max": 1, "value": 1, "integer": true, "group": "stand", "description": "1 = on a foot, 0 = wall mounted"},
+   {"name": "neck", "min": 0.02, "max": 1.5, "value": 0.12, "group": "stand", "description": "Gap between the foot and the panel (m)"},
+   {"name": "lift", "min": 0, "max": 4, "value": 0, "group": "placement", "description": "Height of the foot (or of the panel's bottom when wall mounted)"},
+   {"name": "tone", "min": 0, "max": 1, "value": 0.08, "group": "colour", "description": "Body brightness"}
+  ],
+  "let": [
+   {"name": "h", "value": ["mul", "$width", "$aspect"]},
+   {"name": "y0", "value": ["add", "$lift", ["mul", "$stand", ["add", "$neck", 0.02]]]},
+   {"name": "cy", "value": ["add", "%y0", ["mul", "%h", 0.5]]},
+   {"name": "hd", "value": ["mul", "$depth", 0.5]}
+  ],
+  "nodes": [
+   {"id": "body", "op": "primitive", "kind": "cube", "role": "metal",
+    "p": [0, "%cy", 0], "s": ["$width", "%h", "$depth"], "bevel": "$corner",
+    "color": ["$tone", "$tone", ["mul", "$tone", 1.1]]},
+   {"id": "scr", "op": "primitive", "kind": "cube", "role": "metal",
+    "p": [0, "%cy", ["add", "%hd", 0.0003]], "s": [["sub", "$width", ["mul", "$bezel", 2]], ["sub", "%h", ["mul", "$bezel", 2]], 0.0006],
+    "bevel": ["max", 0.0005, ["sub", "$corner", "$bezel"]], "color": [0.008, 0.009, 0.011]},
+   {"id": "nk", "op": "primitive", "kind": "cube", "role": "metal", "when": ["gte", "$stand", 0.5],
+    "p": [0, ["add", "$lift", ["mul", ["add", "$neck", 0.02], 0.5]], ["neg", ["mul", "$depth", 0.2]]],
+    "s": [["mul", "$width", 0.06], ["add", "$neck", 0.04], ["mul", "$depth", 0.8]], "bevel": 0.004,
+    "color": [["mul", "$tone", 1.6], ["mul", "$tone", 1.6], ["mul", "$tone", 1.7]]},
+   {"id": "ft", "op": "primitive", "kind": "cube", "role": "metal", "when": ["gte", "$stand", 0.5],
+    "p": [0, ["add", "$lift", 0.008], ["neg", ["mul", "$depth", 0.2]]],
+    "s": [["mul", "$width", 0.32], 0.016, ["max", 0.12, ["mul", "$width", 0.16]]], "bevel": 0.006,
+    "color": [["mul", "$tone", 1.6], ["mul", "$tone", 1.6], ["mul", "$tone", 1.7]]},
+   {"id": "base", "op": "anchor", "p": [0, "$lift", 0]},
+   {"id": "face", "op": "anchor", "p": [0, "%cy", ["add", "%hd", 0.001]]}
+  ]
+ }
+}
