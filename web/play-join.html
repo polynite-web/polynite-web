@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Joining - Polynite</title>
+<style>body{margin:0;background:#101318;color:#cfd6e0;font:16px system-ui,sans-serif;display:grid;place-items:center;height:100vh}</style>
+</head><body><p id="m">Joining...</p>
+<script>
+/* An invite link: /play/<session>[/<invite>] or /dev/play/... (served here by _redirects, the address kept).
+   Pages cannot put path pieces into a query, so this page does: the app reads ?play= and ?i=. */
+(function () {
+  var m = location.pathname.match(/^(\/dev)?\/play\/([0-9a-f-]{36})(?:\/([A-Za-z0-9_-]{8,32}))?\/?$/);
+  if (!m) { document.getElementById('m').textContent = 'This invite link is not valid.'; return; }
+  var q = new URLSearchParams(location.search), out = new URLSearchParams();
+  out.set('play', m[2]);
+  if (m[3]) out.set('i', m[3]);
+  if (q.get('play_api')) out.set('play_api', q.get('play_api'));
+  location.replace((m[1] || '') + '/?' + out.toString());
+})();
+</script></body></html>
