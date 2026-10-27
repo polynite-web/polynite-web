@@ -128,3 +128,8 @@
 /learn https://explore.polynite.io/learn/ 301
 /learn/ https://explore.polynite.io/learn/ 301
 /learn/index.html https://explore.polynite.io/learn/ 301
+# Play together (Browser Host): an invite link opens the app, which joins by itself (pn_play.js reads ?play=).
+/play/:id/:inv /?play=:id&i=:inv 302
+/play/:id /?play=:id 302
+/dev/play/:id/:inv /dev/?play=:id&i=:inv 302
+/dev/play/:id /dev/?play=:id 302
