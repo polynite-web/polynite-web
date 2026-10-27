@@ -6,8 +6,8 @@
 /dev/atelier/media/* /atelier/media/:splat 200
 /rel/atelier/media/* /atelier/media/:splat 200
 # Play together (Browser Host): play-join.html turns the path into ?play=&i= (Pages cannot fill a query); the app joins by itself. Kept near the top: Pages applies only about the first 100 rules.
-/play/* /play-join.html 200
-/dev/play/* /play-join.html 200
+/play/* /play-join 200
+/dev/play/* /play-join 200
 # Showroom: permanent short links (302, so the destination can change later without breaking them).
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
