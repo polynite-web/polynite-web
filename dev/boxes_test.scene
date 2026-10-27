@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "name": "pnserver boxes",
+  "seq": [],
+  "initial": {
+    "multiplayer": {
+      "servers": [ { "name": "Local test server", "url": "ws://localhost:8791/ws" } ],
+      "avatar": { "enabled": true, "air": 0.4 },
+      "spawn": [ [0, 0, 4], [2, 0, 4], [-2, 0, 4], [0, 0, -4] ]
+    },
+    "geo": {
+      "crate_a": { "t": "cube", "p": [0, 2.5, 0], "s": [1, 1, 1] },
+      "crate_b": { "t": "cube", "p": [0.2, 4, 0.1], "r": [0, 25, 0], "s": [1, 1, 1] },
+      "crate_c": { "t": "cube", "p": [-0.3, 5.5, -0.2], "r": [10, 40, 0], "s": [0.8, 0.8, 0.8] },
+      "plank": { "t": "cube", "p": [1.5, 7, 0], "r": [0, 0, 15], "s": [2.4, 0.2, 0.6] },
+      "ball": { "t": "sphere", "p": [-1.5, 6, 0.5], "s": [0.7, 0.7, 0.7] },
+      "ramp": { "t": "cube", "p": [3.5, 0.6, 0], "r": [0, 0, 18], "s": [4, 0.3, 2.5] },
+      "wall": { "t": "cube", "p": [-3, 0.75, 0], "s": [0.3, 1.5, 4] }
+    },
+    "physics": {
+      "version": 1,
+      "enabled": true,
+      "gravity": [0, -9.81, 0],
+      "substeps": 4,
+      "bodies": {
+        "crate_a": { "motion": "dynamic", "mass": 1, "friction": 0.6, "restitution": 0.1 },
+        "crate_b": { "motion": "dynamic", "mass": 1, "friction": 0.6, "restitution": 0.1 },
+        "crate_c": { "motion": "dynamic", "mass": 0.6, "friction": 0.6, "restitution": 0.1 },
+        "plank": { "motion": "dynamic", "mass": 0.8, "friction": 0.5, "restitution": 0.05 },
+        "ball": { "motion": "dynamic", "mass": 0.5, "friction": 0.4, "restitution": 0.5 },
+        "ramp": { "motion": "static", "friction": 0.5, "restitution": 0 },
+        "wall": { "motion": "static", "friction": 0.6, "restitution": 0.1 }
+      }
+    }
+  }
+}
