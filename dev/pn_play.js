@@ -32,6 +32,11 @@
  *
  * CHECKPOINTS (7h): the host sends its scene to the session (sig.checkpoint, in parts); the
  * Worker keeps the last one while the session lives.
+ *
+ * HOST MIGRATION (7i): the host tells the Worker the hashes of its successors' tokens
+ * (setSuccessors); it can step down (stepDown) and the session goes on. A successor takes over
+ * (takeOver) with its token: hello as the host; while the old host is still there it tries again
+ * (TAKEOVER_TRIES), and if another successor got there first it becomes a guest of that one.
  */
 (function(){
   'use strict';
@@ -40,7 +45,8 @@
   const LOST_AFTER_MS = 4000;         /* "disconnected" this long: the link is lost (ICE says "failed" only after ~30 s) */
   const RECONNECT_MS = 30000;         /* a guest tries to come back this long (pns_core PNS_RESUME_MS) */
   const RESIGNAL_MS = 2000;
-  const CHECKPOINT_PART = 12000;      /* characters per sig.checkpoint part (the Worker reads 16 KB messages) */
+  const CHECKPOINT_PART = 12000;
+  const TAKEOVER_TRIES = 12, TAKEOVER_EVERY_MS = 1000;      /* characters per sig.checkpoint part (the Worker reads 16 KB messages) */
   const SEND_HIGH = 1 << 20;          /* a DataChannel with this much unsent is too slow: cut, like pnserver */
   const words = {
     play_disabled: 'Playing together is not available right now.',
@@ -57,7 +63,8 @@
     host_lost: 'Lost the host: the game has ended.',
   };
   const S = { api: '', role: '', session: '', secret: '', ws: null, peers: new Map(), q: [], state: 'idle', name: '', echo: false, invite: '', copied: 0, refused: 0, until: 0, retry: 0, comebacks: 0,
-    hiddenAt: 0, tick: 0, title: '', ckpt: null, unreliable: 0 };
+    hiddenAt: 0, tick: 0, title: '', ckpt: null, unreliable: 0, succession: '', tries: 0, epoch: 1 };
+  const sha256hex = async (t) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)))].map(b => b.toString(16).padStart(2, '0')).join('');
   /* ?play_api=<origin>: another signaling Worker for this tab (staging, a local wrangler dev) - only
      Polynite's own or this machine's, so a link cannot send the handshake elsewhere; kept for the tab */
   const playApi = (() => {
@@ -81,11 +88,21 @@
   function signal(onWelcome) {
     const ws = new WebSocket(wsUrl('/api/play/' + S.session + '/ws'));
     S.ws = ws;
-    ws.onopen = () => ws.send(JSON.stringify(S.role === 'host' ? { t: 'sig.hello', role: 'host', secret: S.secret, name: S.name } : { t: 'sig.hello', role: 'guest', name: S.name }));
+    ws.onopen = () => ws.send(JSON.stringify(S.role === 'host'
+      ? (S.succession ? { t: 'sig.hello', role: 'host', succession: S.succession, name: S.name } : { t: 'sig.hello', role: 'host', secret: S.secret, name: S.name })
+      : { t: 'sig.hello', role: 'guest', name: S.name }));
     ws.onmessage = (ev) => {
       let m; try { m = JSON.parse(ev.data); } catch { return; }
       switch (m.t) {
-        case 'sig.welcome': if (onWelcome) onWelcome(m); break;
+        case 'sig.welcome':
+          if (m.epoch) S.epoch = m.epoch;
+          if (S.succession && m.role === 'host' && m.host_secret) {   /* we are the host now (7i) */
+            S.secret = m.host_secret; S.succession = ''; S.tries = 0; S.invite = inviteFor(S.session);
+            push({ type: 'session', session: S.session, invite: S.invite, expires_at: m.expires_at });
+            push({ type: 'took_over', peer: String(m.epoch || 0), name: '' });
+            setState('waiting');
+          }
+          if (onWelcome) onWelcome(m); break;
         case 'sig.peer': if (S.role === 'host') hostOffer(m.peer, m.name); break;
         case 'sig.offer': if (S.role === 'guest') guestAnswer(m.sdp); break;
         case 'sig.answer': { const p = S.peers.get(m.from); if (p) p.pc.setRemoteDescription({ type: 'answer', sdp: m.sdp }).catch(() => {}); break; }
@@ -95,7 +112,13 @@
         case 'sig.host': break;
         case 'sig.checkpointed': S.ckpt = { rev: m.rev, at: m.saved_at, bytes: m.bytes }; push({ type: 'checkpointed', peer: String(m.rev), name: String(m.bytes || 0) }); break;
         case 'sig.closed': fail(m.reason, words[m.reason]); if (S.role === 'guest' && S.state !== 'connected') { clearTimeout(S.retry); S.until = 0; setState('ended'); } if (S.role === 'host' || m.reason === 'host_closed') setState('ended'); break;
-        case 'sig.error': fail(m.code, words[m.code] || m.message); break;
+        case 'sig.error':
+          if (S.succession && (m.code === 'host_present' || m.code === 'not_successor')) { takeOverAgain(m.code); break; }
+          fail(m.code, words[m.code] || m.message); break;
+        case 'sig.successors_ok': break;
+        case 'sig.stepped_down':   /* the session goes on without us as its host */
+          S.role = ''; for (const id of [...S.peers.keys()]) closePeer(id);
+          push({ type: 'stepped_down', peer: '', name: '' }); break;
       }
     };
     ws.onclose = () => {
@@ -181,6 +204,14 @@
     S.retry = setTimeout(() => { if (S.state === 'reconnecting') resignal(); }, P2P_TIMEOUT_MS);   /* no channel by then: once more */
   }
   function resignalLater() { clearTimeout(S.retry); S.retry = setTimeout(resignal, RESIGNAL_MS); }
+  /* a takeover refused: the old host is still there (try again), or someone else is the host now */
+  function takeOverAgain(code) {
+    if (S.ws) { S.ws.onopen = S.ws.onmessage = S.ws.onclose = null; try { S.ws.close(1000); } catch {} S.ws = null; }
+    if (code === 'host_present' && ++S.tries < TAKEOVER_TRIES) { clearTimeout(S.retry); S.retry = setTimeout(() => signal(null), TAKEOVER_EVERY_MS); return; }
+    S.succession = ''; S.tries = 0; S.role = 'guest';   /* another successor won: be its guest */
+    push({ type: 'takeover_failed', peer: '', name: code });
+    S.until = Date.now() + RECONNECT_MS; S.state = 'reconnecting'; resignal();
+  }
   function closePeer(id) {
     const p = S.peers.get(id); if (!p) return;
     clearTimeout(p.timer); clearTimeout(p.lost);
@@ -262,9 +293,42 @@
       }
       return n > 0;
     },
+    /* 7i: the successors' tokens, as hashes for the Worker (the tokens themselves go to the successors) */
+    async setSuccessors(tokens) {
+      if (S.role !== 'host') return false;
+      const hashes = await Promise.all((tokens || []).slice(0, 3).map(sha256hex));
+      sig({ t: 'sig.successors', hashes }); return true;
+    },
+    stepDown() { if (S.role !== 'host') return false; sig({ t: 'sig.step_down' }); return true; },
+    /* test: this browser vanishes as a host would (tab killed): no goodbye to anyone */
+    testVanish() {
+      for (const id of [...S.peers.keys()]) { const p = S.peers.get(id); try { p.pc.close(); } catch {} closePeer(id); }
+      if (S.ws) { S.ws.onopen = S.ws.onmessage = S.ws.onclose = null; try { S.ws.close(4000, 'vanished'); } catch {} S.ws = null; }
+      clearTimeout(S.retry); S.role = ''; S.session = ''; S.state = 'idle';
+    },
+    /* become the host of this session with a successor's token */
+    async takeOver(token) {
+      if (!S.session || !token) return false;
+      /* a host already? (another successor was quicker): stay its guest, our way back goes on */
+      try {
+        const r = await fetch(S.api + '/api/play/' + S.session, { credentials: 'include' });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok && j.host_present) { push({ type: 'takeover_skipped', peer: '', name: 'host_present' }); return false; }
+        if (r.status === 404 || j.exists === false) { push({ type: 'takeover_skipped', peer: '', name: 'ended' }); return false; }
+      } catch { push({ type: 'takeover_skipped', peer: '', name: 'unavailable' }); return false; }
+      clearTimeout(S.retry); S.retry = 0; S.until = 0;
+      for (const id of [...S.peers.keys()]) closePeer(id);
+      if (S.ws) { S.ws.onopen = S.ws.onmessage = S.ws.onclose = null; try { S.ws.close(1000); } catch {} S.ws = null; }
+      S.role = 'host'; S.succession = token; S.tries = 0; S.secret = '';
+      setState('creating');
+      signal(null);
+      return true;
+    },
     /* the host's scene to the session, kept by the Worker (7h) */
     checkpoint(text, rev) {
       if (S.role !== 'host' || !S.ws || S.ws.readyState !== 1) return false;
+      /* this machine's export settings (folders, file names) are not the world's: the Worker refuses them */
+      try { const d = JSON.parse(text); delete d.export; text = JSON.stringify(d); } catch { return false; }
       const of = Math.max(1, Math.ceil(text.length / CHECKPOINT_PART));
       for (let i = 0; i < of; i++) sig({ t: 'sig.checkpoint', rev, part: i, of, text: text.slice(i * CHECKPOINT_PART, (i + 1) * CHECKPOINT_PART) });
       return true;
@@ -273,7 +337,7 @@
       if (S.role === 'host') sig({ t: 'sig.close' });
       for (const id of [...S.peers.keys()]) closePeer(id);
       if (S.ws) { S.ws.onopen = S.ws.onmessage = S.ws.onclose = null; try { S.ws.close(1000); } catch {} }
-      clearTimeout(S.retry); clearInterval(S.tick); S.tick = 0; if (S.title) { document.title = S.title; S.title = ''; } S.hiddenAt = 0; S.ckpt = null;
+      clearTimeout(S.retry); clearInterval(S.tick); S.tick = 0; S.succession = ''; S.tries = 0; if (S.title) { document.title = S.title; S.title = ''; } S.hiddenAt = 0; S.ckpt = null;
       S.ws = null; S.session = ''; S.secret = ''; S.role = ''; S.q.length = 0; S.state = 'idle'; S.echo = false; S.invite = ''; S.copied = S.refused = 0; S.until = S.retry = 0;
     },
     /* the invite link: a SECOND tap after the session exists (the browser wants a fresh gesture) */
@@ -303,7 +367,7 @@
       } catch { return ''; }
     },
     setInvite(url) { S.invite = String(url || '') + (url ? inviteQuery() : ''); },
-    status() { return { state: S.state, role: S.role, session: S.session, comebacks: S.comebacks, checkpoint: S.ckpt, unreliable_msgs: S.unreliable,
+    status() { return { state: S.state, role: S.role, session: S.session, epoch: S.epoch, comebacks: S.comebacks, checkpoint: S.ckpt, unreliable_msgs: S.unreliable,
       channels: [...S.peers.values()].map(p => ({ peer: p.id, reliable: !!(p.dc && p.dc.readyState === 'open'), unordered: !!(p.udc && p.udc.readyState === 'open') })), peers: [...S.peers.values()].map(p => ({ peer: p.id, name: p.name, open: p.open })) }; },
     /* test: the network goes, without a word (the host sees the channel close; we try to come back) */
     testDrop() { if (S.role === 'guest' && S.peers.has('host')) lost('host'); },
