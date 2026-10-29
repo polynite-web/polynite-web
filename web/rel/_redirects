@@ -5,6 +5,9 @@
 /rel/models/* /models/:splat 200
 /dev/atelier/media/* /atelier/media/:splat 200
 /rel/atelier/media/* /atelier/media/:splat 200
+# Play together (Browser Host): play-join.html turns the path into ?play=&i= (Pages cannot fill a query); the app joins by itself. Kept near the top: Pages applies only about the first 100 rules.
+/play/* /play-join 200
+/dev/play/* /play-join 200
 # Showroom: permanent short links (302, so the destination can change later without breaking them).
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
@@ -128,8 +131,3 @@
 /learn https://explore.polynite.io/learn/ 301
 /learn/ https://explore.polynite.io/learn/ 301
 /learn/index.html https://explore.polynite.io/learn/ 301
-# Play together (Browser Host): an invite link opens the app, which joins by itself (pn_play.js reads ?play=).
-/play/:id/:inv /?play=:id&i=:inv 302
-/play/:id /?play=:id 302
-/dev/play/:id/:inv /dev/?play=:id&i=:inv 302
-/dev/play/:id /dev/?play=:id 302
