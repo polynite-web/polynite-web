@@ -67,8 +67,9 @@
   const sha256hex = async (t) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)))].map(b => b.toString(16).padStart(2, '0')).join('');
   /* ?play_api=<origin>: another signaling Worker for this tab (staging, a local wrangler dev) - only
      Polynite's own or this machine's, so a link cannot send the handshake elsewhere; kept for the tab */
-  const playApi = (() => {
-    const ok = (a) => /^https:\/\/api(-staging)?\.polynite\.io$|^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(a || '') ? a : '';
+  const apiOk = (a) => /^https:\/\/api(-staging)?\.polynite\.io$|^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(a || '') ? a : '';
+  let playApi = (() => {
+    const ok = apiOk;
     try {
       const a = ok(new URL(location.href).searchParams.get('play_api'));
       if (a) sessionStorage.setItem('pn_play_api', a);
@@ -76,6 +77,23 @@
     } catch { return ''; }
   })();
   const apiBase = (api) => api || playApi || (globalThis.__pnAcct && globalThis.__pnAcct.api) || globalThis.__pnApiBase || '';
+  /* what a friend's link says: an invite (/play/<id>/<token>, ?play=<id>&i=<token>), a session id, or a
+     Polynod server (ws://, wss://). "<session> <token>", "ws <url>", or '' when it is none of them */
+  const parseLink = (t) => {
+    t = String(t || '').trim();
+    let id = '', inv = '';
+    const m = t.match(/\/play\/([0-9a-f-]{36})(?:\/([A-Za-z0-9_-]{8,32}))?/);
+    if (m) { id = m[1]; inv = m[2] || ''; }
+    else if (/^[0-9a-f-]{36}$/.test(t)) id = t;
+    else if (/^wss?:\/\/[^\s"]{1,150}$/.test(t)) return 'ws ' + t;
+    try { const u = new URL(t), p = u.searchParams.get('play'), i = u.searchParams.get('i');
+      if (!id && p && /^[0-9a-f-]{36}$/.test(p)) { id = p; inv = i || ''; }
+      const a = apiOk(u.searchParams.get('play_api'));   /* a staging invite keeps its Worker */
+      if (id && a) { playApi = a; try { sessionStorage.setItem('pn_play_api', a); } catch {} }
+    } catch {}
+    if (!id) return '';
+    return /^[A-Za-z0-9_-]{8,32}$/.test(inv) ? id + ' ' + inv : id;
+  };
   /* the invite, where this app lives: /play/<id> at the site's root, /dev/play/<id> beside a dev build;
      the site turns either into ?play=<id> (_redirects); a tab on another Worker hands it on */
   const inviteFor = (session) => location.origin + location.pathname.replace(/[^/]*$/, '') + 'play/' + session;
@@ -341,6 +359,77 @@
       S.ws = null; S.session = ''; S.secret = ''; S.role = ''; S.q.length = 0; S.state = 'idle'; S.echo = false; S.invite = ''; S.copied = S.refused = 0; S.until = S.retry = 0;
     },
     /* the invite link: a SECOND tap after the session exists (the browser wants a fresh gesture) */
+    /* JOIN WITH A LINK: the invite in the clipboard, or typed / pasted in the browser's own box (a
+       phone's keyboard pastes there; the engine's text fields cannot reach its clipboard). An invite
+       link (/play/<id>/<token>, ?play=<id>&i=<token>), a session id, or a Polynod server (ws://, wss://).
+       The engine takes the answer (takeLink) on its next frame. */
+    async askLink() {
+      let got = '';
+      try { if (navigator.clipboard && navigator.clipboard.readText) got = parseLink(await navigator.clipboard.readText()); } catch {}
+      if (!got) {
+        const typed = window.prompt('Paste the invite link your friend sent you\n(or a Polynod server address: ws://...)', '');
+        if (typed === null) return;   /* cancelled: nothing to say */
+        got = parseLink(typed) || 'bad';
+      }
+      S.link = got;
+    },
+    /* a link typed or pasted somewhere else (the Multiplayer panel's address field) */
+    useLink(t) { S.link = parseLink(t) || 'bad'; },
+    /* SCAN THE HOST'S QR CODE: the camera, read by the browser (BarcodeDetector: Chrome on Android,
+       not Safari). Without it, the phone's own camera app reads the code and opens the link. */
+    async scanQr() {
+      if (S.scan) return;
+      let fmts = [];
+      try { fmts = 'BarcodeDetector' in globalThis ? await globalThis.BarcodeDetector.getSupportedFormats() : []; } catch {}
+      if (!fmts.includes('qr_code')) { S.link = 'noscan'; return; }
+      const box = document.createElement('div'), video = document.createElement('video'), say = document.createElement('div'), stop = document.createElement('button');
+      box.style.cssText = 'position:fixed;inset:0;z-index:2147483600;background:#05080d;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;touch-action:none';
+      video.setAttribute('playsinline', ''); video.muted = true;
+      video.style.cssText = 'max-width:92vw;max-height:62vh;border-radius:12px;border:2px solid rgb(255,196,120);background:#000';
+      say.textContent = 'Point the camera at the QR code on your friend\'s screen';
+      say.style.cssText = 'color:rgb(228,238,250);font:15px sans-serif;text-align:center;padding:0 16px';
+      stop.textContent = 'Cancel';
+      stop.style.cssText = 'font:15px sans-serif;padding:10px 28px;border-radius:10px;border:1px solid rgb(255,196,120);background:transparent;color:rgb(255,196,120)';
+      box.append(video, say, stop); document.body.appendChild(box);
+      const end = () => { S.scan = null; try { (video.srcObject && video.srcObject.getTracks() || []).forEach(t => t.stop()); } catch {} box.remove(); };
+      S.scan = { end };
+      stop.addEventListener('pointerdown', (e) => { e.preventDefault(); end(); });
+      try {
+        video.srcObject = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+        await video.play();
+      } catch { end(); S.link = 'nocam'; return; }
+      const det = new globalThis.BarcodeDetector({ formats: ['qr_code'] });
+      const look = async () => {
+        if (!S.scan) return;
+        try {
+          const codes = await det.detect(video);
+          for (const c of codes) {
+            const l = parseLink(c.rawValue);
+            if (l) { end(); S.link = l; return; }
+            say.textContent = 'That QR code is not a Polynite invite';
+          }
+        } catch {}
+        setTimeout(look, 200);
+      };
+      look();
+    },
+    /* the QR code as a picture, to send it (a phone's share sheet) or keep it (a download):
+       modules from the engine's encoder (qrcodegen), drawn here with a quiet zone of 4 */
+    shareQr(mods, n, url) {
+      const q = 10, b = 4, size = (n + 2 * b) * q, c = document.createElement('canvas'), g = c.getContext('2d');
+      c.width = c.height = size;
+      g.fillStyle = '#fff'; g.fillRect(0, 0, size, size); g.fillStyle = '#000';
+      for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (mods[y * n + x]) g.fillRect((x + b) * q, (y + b) * q, q, q);
+      const data = c.toDataURL('image/png');
+      S.qrPng = data;   /* for a test to read back */
+      const bin = atob(data.split(',')[1]), arr = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      const file = new File([arr], 'polynite-invite.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: 'Play with me on Polynite', text: url }).catch(() => {}); return 'shared'; }
+      const a = document.createElement('a'); a.href = data; a.download = 'polynite-invite.png'; document.body.appendChild(a); a.click(); a.remove();
+      return 'downloaded';
+    },
+    takeLink() { const l = S.link || ''; S.link = ''; return l; },
     copyInvite() {
       if (!S.invite) return;
       try {
