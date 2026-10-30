@@ -44,7 +44,7 @@
       // scene must not wait behind a reflection); a background job only runs alone.
       let next=queue.findIndex(job=>!job.background);
       if(next>=0){if(activeFg>=parallel)return;}else{if(active)return;next=0;}
-      const job=queue.splice(next,1)[0];active++;if(!job.background)activeFg++;activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
+      const job=queue.splice(next,1)[0];active++;if(!job.background)activeFg++;if(!job.background)activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
       let result;try{result=native[job.kind].call(job.device,job.desc);}catch(error){result=Promise.reject(error);}
       Promise.resolve(result).then(value=>finish(job,null,value),error=>finish(job,error));
     }
