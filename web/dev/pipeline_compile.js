@@ -11,7 +11,7 @@
      three at once each took 2-3x longer and the boot ended no sooner. ?pipeline_parallel=N
      (1..8) keeps the option for backends that do compile concurrently - measure first. */
   const parallel = Math.max(1, Math.min(8, parseInt(options.get('pipeline_parallel') || '1', 10) || 1));
-  let active = 0, scheduled = false, serial = 0, lastTick = 0, burstStart = 0, deadline = 0, activeLabel = '';
+  let active = 0, activeFg = 0, scheduled = false, serial = 0, lastTick = 0, burstStart = 0, deadline = 0, activeLabel = '';
   /* background: set by the engine around a prewarm (vmesh_load_perf.hh). Such a
      job waits behind every foreground one and is not counted in pending, which
      holds frames and the loader: only what the scene draws now does that. */
@@ -39,22 +39,26 @@
     if(state.pending||state.background_pending)schedule();if(!state.pending)lastTick=0;
   }
   function startNext(){
-    while(active<parallel&&queue.length&&!state.failed){
-      // Foreground first, up to `parallel` at once; a background job only runs alone.
+    while(queue.length&&!state.failed){
+      // Foreground first, up to `parallel` at once, even beside a background job (the
+      // scene must not wait behind a reflection); a background job only runs alone.
       let next=queue.findIndex(job=>!job.background);
-      if(next<0){if(active)return;next=0;}
-      const job=queue.splice(next,1)[0];active++;activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
+      if(next>=0){if(activeFg>=parallel)return;}else{if(active)return;next=0;}
+      const job=queue.splice(next,1)[0];active++;if(!job.background)activeFg++;activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
       let result;try{result=native[job.kind].call(job.device,job.desc);}catch(error){result=Promise.reject(error);}
       Promise.resolve(result).then(value=>finish(job,null,value),error=>finish(job,error));
     }
   }
   function finish(job,error,value){
-    active--;if(job.background)state.background_pending--;else state.pending--;state.completed++;
+    active--;if(!job.background)activeFg--;if(job.background)state.background_pending--;else state.pending--;state.completed++;
     Object.assign(job.row,{ready_ms:performance.now(),ok:!error});job.row.prepare_ms=job.row.ready_ms-job.row.start_ms;
     if(error){state.failed=true;job.row.error=String(error.message||error);globalThis.__pnEngineFailure=job.row.error;globalThis.vmeshRuntimeInitialized=false;globalThis.dispatchEvent(new CustomEvent('polynite:engine-failed',{detail:{message:job.row.error}}));}
     console.info('[pipeline-ready] '+JSON.stringify(job.row));update();schedule();error?job.reject(error):job.resolve(value);
     // Reuse this paint's remaining budget for short cached jobs; long work yields.
-    if(!error&&performance.now()<deadline)startNext();
+    // While the scene is held for foreground compiles there is no frame to protect:
+    // start the next one now instead of one animation frame later (16 ms at 60 Hz,
+    // a full second in a throttled tab).
+    if(!error&&(state.pending>0||performance.now()<deadline))startNext();
   }
   function enqueue(device,kind,desc,phase,round=0){
     const signature=hash(JSON.stringify(canonical(desc)));
