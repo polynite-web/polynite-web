@@ -1,0 +1,860 @@
+{
+ "film": "vb-04-kpi-cards",
+ "duration": 7,
+ "prompt": "Make a 7-second dashboard of three KPI cards: Active users 48,210 (+12%), Revenue $1.24M (+8%), Churn 2.1% (-0.4 pt). Each card slides up in turn, its number counts to the final value, a green arrow shows the change and a small sparkline draws itself below.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e4_title",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "THIS WEEK",
+      "at": [
+       -76,
+       38
+      ],
+      "size": 4.2,
+      "weight": 1.5
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Key numbers, compared with last week",
+      "at": [
+       -76,
+       32
+      ],
+      "size": 2.6
+     },
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e4_card0",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.4,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "none",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -56,
+       2
+      ],
+      "size": [
+       50,
+       40
+      ],
+      "r": 2.5
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       -56,
+       2
+      ],
+      "size": [
+       50,
+       40
+      ],
+      "r": 2.5
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "ACTIVE USERS",
+      "at": [
+       -77,
+       16
+      ],
+      "size": 2.4,
+      "weight": 1.4
+     },
+     "color": 1
+    },
+    {
+     "text": {
+      "s": "{$v0*48210:,0}",
+      "at": [
+       -77,
+       6
+      ],
+      "size": 6.4,
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "triangle": {
+      "pts": [
+       [
+        -77,
+        -2.6
+       ],
+       [
+        -74,
+        -2.6
+       ],
+       [
+        -75.5,
+        -0.1
+       ]
+      ]
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "+12% vs last week",
+      "at": [
+       -72.5,
+       -2.4
+      ],
+      "size": 2.3,
+      "weight": 1.2
+     },
+     "color": 3
+    },
+    {
+     "plot": {
+      "data": "s",
+      "at": [
+       -77,
+       -15
+      ],
+      "size": [
+       42,
+       9
+      ],
+      "kind": "area",
+      "reveal": "$v0"
+     },
+     "color": [
+      0.36,
+      0.86,
+      0.58,
+      0.16
+     ]
+    },
+    {
+     "plot": {
+      "data": "s",
+      "at": [
+       -77,
+       -15
+      ],
+      "size": [
+       42,
+       9
+      ],
+      "kind": "line",
+      "smooth": 0.4,
+      "reveal": "$v0"
+     },
+     "w": 0.5,
+     "color": 3
+    }
+   ],
+   "data": {
+    "s": [
+     21,
+     24,
+     23,
+     27,
+     30,
+     29,
+     34,
+     38
+    ]
+   },
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0,
+     "move": [
+      0,
+      -4,
+      0
+     ],
+     "opacity": 0
+    },
+    {
+     "t": 0.5,
+     "move": [
+      0,
+      0,
+      0
+     ],
+     "opacity": 1
+    },
+    {
+     "t": 2.4,
+     "v0": 1
+    }
+   ],
+   "sfx": {
+    "in": "appear",
+    "gain": 0.35
+   },
+   "paint": "order"
+  },
+  {
+   "id": "e4_card1",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.4,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "none",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       2
+      ],
+      "size": [
+       50,
+       40
+      ],
+      "r": 2.5
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       0,
+       2
+      ],
+      "size": [
+       50,
+       40
+      ],
+      "r": 2.5
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "REVENUE",
+      "at": [
+       -21,
+       16
+      ],
+      "size": 2.4,
+      "weight": 1.4
+     },
+     "color": 1
+    },
+    {
+     "text": {
+      "s": "${$v0*1.24:2}M",
+      "at": [
+       -21,
+       6
+      ],
+      "size": 6.4,
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "triangle": {
+      "pts": [
+       [
+        -21,
+        -2.6
+       ],
+       [
+        -18,
+        -2.6
+       ],
+       [
+        -19.5,
+        -0.1
+       ]
+      ]
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "+8% vs last week",
+      "at": [
+       -16.5,
+       -2.4
+      ],
+      "size": 2.3,
+      "weight": 1.2
+     },
+     "color": 3
+    },
+    {
+     "plot": {
+      "data": "s",
+      "at": [
+       -21,
+       -15
+      ],
+      "size": [
+       42,
+       9
+      ],
+      "kind": "area",
+      "reveal": "$v0"
+     },
+     "color": [
+      0.36,
+      0.86,
+      0.58,
+      0.16
+     ]
+    },
+    {
+     "plot": {
+      "data": "s",
+      "at": [
+       -21,
+       -15
+      ],
+      "size": [
+       42,
+       9
+      ],
+      "kind": "line",
+      "smooth": 0.4,
+      "reveal": "$v0"
+     },
+     "w": 0.5,
+     "color": 3
+    }
+   ],
+   "data": {
+    "s": [
+     30,
+     28,
+     33,
+     31,
+     36,
+     35,
+     39,
+     41
+    ]
+   },
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0,
+     "move": [
+      0,
+      -4,
+      0
+     ],
+     "opacity": 0
+    },
+    {
+     "t": 0.5,
+     "move": [
+      0,
+      0,
+      0
+     ],
+     "opacity": 1
+    },
+    {
+     "t": 2.4,
+     "v0": 1
+    }
+   ],
+   "sfx": {
+    "in": "appear",
+    "gain": 0.35
+   },
+   "paint": "order"
+  },
+  {
+   "id": "e4_card2",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.4,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "none",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       56,
+       2
+      ],
+      "size": [
+       50,
+       40
+      ],
+      "r": 2.5
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       56,
+       2
+      ],
+      "size": [
+       50,
+       40
+      ],
+      "r": 2.5
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "CHURN",
+      "at": [
+       35,
+       16
+      ],
+      "size": 2.4,
+      "weight": 1.4
+     },
+     "color": 1
+    },
+    {
+     "text": {
+      "s": "{2.5-$v0*0.4:1}%",
+      "at": [
+       35,
+       6
+      ],
+      "size": 6.4,
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "triangle": {
+      "pts": [
+       [
+        35,
+        -0.1
+       ],
+       [
+        38,
+        -0.1
+       ],
+       [
+        36.5,
+        -2.6
+       ]
+      ]
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "-0.4 PT vs last week",
+      "at": [
+       39.5,
+       -2.4
+      ],
+      "size": 2.3,
+      "weight": 1.2
+     },
+     "color": 3
+    },
+    {
+     "plot": {
+      "data": "s",
+      "at": [
+       35,
+       -15
+      ],
+      "size": [
+       42,
+       9
+      ],
+      "kind": "area",
+      "reveal": "$v0"
+     },
+     "color": [
+      0.36,
+      0.86,
+      0.58,
+      0.16
+     ]
+    },
+    {
+     "plot": {
+      "data": "s",
+      "at": [
+       35,
+       -15
+      ],
+      "size": [
+       42,
+       9
+      ],
+      "kind": "line",
+      "smooth": 0.4,
+      "reveal": "$v0"
+     },
+     "w": 0.5,
+     "color": 3
+    }
+   ],
+   "data": {
+    "s": [
+     40,
+     38,
+     39,
+     35,
+     34,
+     33,
+     31,
+     30
+    ]
+   },
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0,
+     "move": [
+      0,
+      -4,
+      0
+     ],
+     "opacity": 0
+    },
+    {
+     "t": 0.5,
+     "move": [
+      0,
+      0,
+      0
+     ],
+     "opacity": 1
+    },
+    {
+     "t": 2.4,
+     "v0": 1
+    }
+   ],
+   "sfx": {
+    "in": "appear",
+    "gain": 0.35
+   },
+   "paint": "order"
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.2,
+   "dur": 6.8,
+   "id": "e4_title"
+  },
+  {
+   "op": "shape",
+   "at": 0.6,
+   "dur": 6.4,
+   "id": "e4_card0"
+  },
+  {
+   "op": "shape",
+   "at": 0.95,
+   "dur": 6.050000000000001,
+   "id": "e4_card1"
+  },
+  {
+   "op": "shape",
+   "at": 1.2999999999999998,
+   "dur": 5.7,
+   "id": "e4_card2"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 7
+  }
+ ]
+}

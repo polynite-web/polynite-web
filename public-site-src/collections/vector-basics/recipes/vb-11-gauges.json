@@ -1,0 +1,282 @@
+{
+ "film": "vb-11-gauges",
+ "duration": 6.5,
+ "prompt": "Make a 6.5-second system monitor with two gauge widgets, CPU and GPU in percent, whose needles move through a few readings (42, 58 then 47% and 66, 91 then 78%) under the title SYSTEM LOAD.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e11_title",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "SYSTEM LOAD",
+      "at": [
+       -76,
+       38
+      ],
+      "size": 4.2,
+      "weight": 1.5
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Live readings, gauge widgets",
+      "at": [
+       -76,
+       32
+      ],
+      "size": 2.6
+     },
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e11_gauges",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.7,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "gauge": {
+      "c": [
+       -36,
+       2
+      ],
+      "r": 22,
+      "value": "$v0",
+      "ticks": 10,
+      "label": "CPU",
+      "unit": "%",
+      "scale": 100,
+      "digits": 0
+     },
+     "w": 0.7,
+     "color": 3
+    },
+    {
+     "gauge": {
+      "c": [
+       36,
+       2
+      ],
+      "r": 22,
+      "value": "$v1",
+      "ticks": 10,
+      "label": "GPU",
+      "unit": "%",
+      "scale": 100,
+      "digits": 0
+     },
+     "w": 0.7,
+     "color": 3
+    }
+   ],
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0,
+     "v1": 0
+    },
+    {
+     "t": 1.6,
+     "v0": 0.42,
+     "v1": 0.66
+    },
+    {
+     "t": 3.0,
+     "v0": 0.58,
+     "v1": 0.91
+    },
+    {
+     "t": 4.4,
+     "v0": 0.47,
+     "v1": 0.78
+    }
+   ],
+   "sfx": {
+    "in": "appear",
+    "gain": 0.4
+   }
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.2,
+   "dur": 6.3,
+   "id": "e11_title"
+  },
+  {
+   "op": "shape",
+   "at": 0.6,
+   "dur": 5.9,
+   "id": "e11_gauges"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 6.5
+  }
+ ]
+}

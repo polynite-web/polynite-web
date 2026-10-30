@@ -1,0 +1,511 @@
+{
+ "status": "draft - not merged into tutorial-content.json or showcase.json; needs a WebGPU build with commands.shape_charts",
+ "tutorials": [
+  {
+   "id": "vector-line-chart",
+   "title": "A line chart that draws itself",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Twelve monthly values become a smooth line that draws left to right, with a ring on its head and the current value above it.",
+   "prompt": "Make an 8-second film of a line chart on a dark background: monthly revenue for 2026 in thousands of dollars (12, 18, 15, 24, 29, 27, 35, 41, 38, 47, 52, 60). Draw the line left to right over 4.5 seconds with a ring on its head and the current value above it. Add month initials, dashed grid lines at 20K, 40K and 60K, and the title MONTHLY REVENUE.",
+   "recipe": "recipes/vb-01-line-chart.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e1_curve",
+     "set": [
+      {
+       "path": "data.rev.11",
+       "value": 72
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Changes December's value: the line, its head and the label follow. Raise the plot max to 75 so it stays inside the grid.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "Area under the line",
+     "text": "Add a second plot item with kind:'area' and a translucent colour before the line."
+    },
+    {
+     "title": "Straight segments",
+     "text": "Set smooth to 0."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-bar-chart",
+   "title": "Bars that grow one after another",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Five regions, five bars that rise in turn from the baseline while their values count up above them.",
+   "prompt": "Make a 7-second bar chart film: SALES BY REGION, units sold in Q3: North 42, South 68, East 55, West 90, Online 73. The bars grow one after the other from the baseline with their value counting up above each one, orange on a dark background, with a soft thump.",
+   "recipe": "recipes/vb-02-bar-chart.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e2_bars",
+     "set": [
+      {
+       "path": "data.val.2",
+       "value": 95
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "East becomes the tallest bar; its label counts to the new value.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "All at once",
+     "text": "Remove the -$i*0.15 offset from the growth expression."
+    },
+    {
+     "title": "One plot item",
+     "text": "Replace the boxes with plot kind:'bars' on the same data for a quicker sketch."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-donut",
+   "title": "A donut chart with a counter",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Four shares sweep clockwise around a ring while the centre counts the total, then a legend traces itself.",
+   "prompt": "Make a 7-second donut chart of traffic by device: Mobile 45%, Desktop 30%, Tablet 15%, Other 10%, each in its own colour. Sweep the ring clockwise from the top in 2.6 seconds while the centre counts up to 12,480 visits, then trace a legend with the percentages on the right.",
+   "recipe": "recipes/vb-03-donut.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.values",
+    "params": {
+     "id": "e3_ring",
+     "v": [
+      0.5,
+      0,
+      0,
+      0
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Shows the ring half drawn outside the film (a preview); inside the film the keys drive v0.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "A pie",
+     "text": "Set the inner radius to 0 in each sector."
+    },
+    {
+     "title": "A gauge",
+     "text": "Sweep from a0 -120 to 120 instead of a full turn."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-kpi-cards",
+   "title": "Dashboard cards with sparklines",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Three KPI cards slide up in turn; each number counts to its value, an arrow shows the change and a sparkline draws itself.",
+   "prompt": "Make a 7-second dashboard of three KPI cards: Active users 48,210 (+12%), Revenue $1.24M (+8%), Churn 2.1% (-0.4 pt). Each card slides up in turn, its number counts to the final value, a green arrow shows the change and a small sparkline draws itself below.",
+   "recipe": "recipes/vb-04-kpi-cards.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e4_card0",
+     "set": [
+      {
+       "path": "items.3.text.s",
+       "value": "{$v0*51900:,0}"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Changes the first card's final number; the sparkline and the arrow stay.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "A red card",
+     "text": "Give the churn card a red palette slot 3 and an upward arrow when it gets worse."
+    },
+    {
+     "title": "Four cards",
+     "text": "Narrow the cards to 40 units and add a fourth at x 66."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-progress",
+   "title": "Progress ring, bar and a done tick",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "An upload fills a ring and a bar with its percentage and size, pauses, finishes, then a check mark traces itself.",
+   "prompt": "Make a 7-second upload progress animation: a ring and a bar fill from 0 to 100% in 4 seconds with a short pause near 40%, showing the percentage and '31.0 / 48.6 MB'. Then replace it with a green check mark that traces itself, the word DONE and a confirm sound.",
+   "recipe": "recipes/vb-05-progress.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.values",
+    "params": {
+     "id": "e5_ring",
+     "v": [
+      0.75,
+      0,
+      0,
+      0
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Previews the ring at 75%. paint:'order' makes the fill paint over the track it overlaps.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "Indeterminate",
+     "text": "Rotate a short arc with a0 '$t*360' and a1 '$t*360+60' while waiting."
+    },
+    {
+     "title": "Steps",
+     "text": "Use keys with 'glide' to pass through 25, 50 and 75% without stopping."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-lower-third",
+   "title": "A lower third over your 3D scene",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "A broadcast name strip slides in over the live 3D view with typing clicks, holds, then slides out.",
+   "prompt": "Over my current 3D view, add a broadcast lower third for 5 seconds: a dark translucent box at the bottom left with an orange accent bar, the name MICHAEL MAEIKY and the role 'Founder, Polynite'. Slide it in from the left with typing clicks, then slide it out.",
+   "recipe": "recipes/vb-06-lower-third.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e6_lower",
+     "set": [
+      {
+       "path": "items.2.text.s",
+       "value": "SAM RIVERA"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Renames the speaker. The strip is a screen shape, so it keeps its place whatever the camera does.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "A label on an object",
+     "text": "Use space:'world' with to:'@model' and face:'camera' to pin the strip to a model."
+    },
+    {
+     "title": "Two lines of role",
+     "text": "Write 'Founder|Polynite' - a '|' breaks the line."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-flow-diagram",
+   "title": "A flow diagram with moving pulses",
+   "level": "Intermediate",
+   "topic": "motion-graphics",
+   "description": "Four boxes trace in turn, joined by arrows along which small pulses travel, to explain a process.",
+   "prompt": "Make an 8-second flow diagram: four rounded boxes PROMPT, AGENT, MCP and SCENE, each traced in turn with a tick, joined by arrows with small orange pulses travelling along them, and the caption 'Each request is a command the engine checks'.",
+   "recipe": "recipes/vb-07-flow-diagram.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e7_n3",
+     "set": [
+      {
+       "path": "items.2.text.s",
+       "value": "FILM"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Renames the last step.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "Curved links",
+     "text": "Give the arrows route:'curve' and move the pulses with '#l.along(fract($t*0.8))'."
+    },
+    {
+     "title": "Vertical",
+     "text": "Stack the boxes on y and use route:'elbow_v'."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-timeline",
+   "title": "A timeline with milestones",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "A playhead runs along a track and each milestone appears as it is reached, labels alternating above and below.",
+   "prompt": "Make an 8-second timeline: a horizontal track with an orange playhead moving across it in 5 seconds. Milestones 2022 Idea, 2023 Prototype, 2024 Beta, 2025 Launch, 2026 1M scenes appear as the playhead reaches them, labels alternating above and below, each with a tick sound.",
+   "recipe": "recipes/vb-08-timeline.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e8_m4",
+     "set": [
+      {
+       "path": "items.3.text.s",
+       "value": "2M scenes"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Changes the last milestone's caption.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "Vertical",
+     "text": "Rotate the whole layout: x becomes y, labels go left and right."
+    },
+    {
+     "title": "A date counter",
+     "text": "Add a text '{2022+$v0*4:0}' that follows the playhead."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-checklist",
+   "title": "A checklist that ticks itself",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Four tasks get ticked one by one: the box fills, a check traces itself and the task is struck through.",
+   "prompt": "Make a 7-second checklist titled LAUNCH CHECKLIST with four tasks: Terrain and water, Trees and rocks, Camera path, Music and titles. Tick them one by one every 0.9 seconds: the box fills green, a check mark traces itself, the task is struck through, with a click.",
+   "recipe": "recipes/vb-09-checklist.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e9_rows",
+     "set": [
+      {
+       "path": "items.7.text.s",
+       "value": "Music and credits"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Renames the last task (widen its strike line to match).",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "Without strike",
+     "text": "Remove the line item from each tick shape."
+    },
+    {
+     "title": "A score",
+     "text": "Add a counter '{$v0*4:0} / 4' keyed with the ticks."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-countdown",
+   "title": "A 3, 2, 1 countdown",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "A big number in a ring that empties each second, a tick each beat, then GO! pops with a flash.",
+   "prompt": "Make a 6-second countdown: a big 3, 2, 1 in an orange ring that empties each second with a tick, then GO! in green that pops with a white flash and a boom.",
+   "recipe": "recipes/vb-10-countdown.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e10_go",
+     "set": [
+      {
+       "path": "items.0.text.s",
+       "value": "ACTION!"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Changes the final word (lower its size so it fits the ring).",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "From 5",
+     "text": "Use '{5-floor($t):0}' and show the shape for 5 seconds."
+    },
+    {
+     "title": "A timer",
+     "text": "Show '{60-$t:1}' for a one-minute timer."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-gauges",
+   "title": "Gauge widgets for live readings",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Two ready-made gauge widgets follow a few readings, the kind of HUD a game or a monitor needs.",
+   "prompt": "Make a 6.5-second system monitor with two gauge widgets, CPU and GPU in percent, whose needles move through a few readings (42, 58 then 47% and 66, 91 then 78%) under the title SYSTEM LOAD.",
+   "recipe": "recipes/vb-11-gauges.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.values",
+    "params": {
+     "id": "e11_gauges",
+     "v": [
+      0.2,
+      0.95,
+      0,
+      0
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Sets both readings directly. An agent can feed live values the same way, several times a second.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "A progress widget",
+     "text": "Add {progress:{c,r,value:'$v0'}} beside the gauges."
+    },
+    {
+     "title": "Radar",
+     "text": "Try {radar:{c,r,sweep:90,blips:[[5,8],[-12,3]]}}."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  },
+  {
+   "id": "vector-logo-reveal",
+   "title": "A logo reveal",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "A geometric mark traces itself with a magic sound, then a name and a tagline appear behind an energy front.",
+   "prompt": "Make a 6-second logo reveal: a hexagon with a triangle and a dot traced in orange and white with a magic sound, then the name NORTHWIND and the tagline WORLDS MADE BY WORDS revealed behind an energy front with sparks.",
+   "recipe": "recipes/vb-12-logo-reveal.json",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {
+     "id": "e12_word",
+     "set": [
+      {
+       "path": "items.0.text.s",
+       "value": "YOUR NAME"
+      }
+     ]
+    },
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Puts your own name under the mark.",
+   "settings_groups": [],
+   "experiments": [
+    {
+     "title": "Your own mark",
+     "text": "Draw it with path:'M ... L ... Q ... Z' (SVG syntax) instead of the hexagon."
+    },
+    {
+     "title": "Chrome",
+     "text": "Fill the mark and set fx.chrome to 0.8 for bevelled metal."
+    }
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30)."
+  }
+ ],
+ "showcase": [
+  {
+   "id": "vector-line-chart",
+   "title": "A line chart that draws itself",
+   "film": "vb-01-line-chart",
+   "duration": 8
+  },
+  {
+   "id": "vector-bar-chart",
+   "title": "Bars that grow one after another",
+   "film": "vb-02-bar-chart",
+   "duration": 7
+  },
+  {
+   "id": "vector-donut",
+   "title": "A donut chart with a counter",
+   "film": "vb-03-donut",
+   "duration": 7
+  },
+  {
+   "id": "vector-kpi-cards",
+   "title": "Dashboard cards with sparklines",
+   "film": "vb-04-kpi-cards",
+   "duration": 7
+  },
+  {
+   "id": "vector-progress",
+   "title": "Progress ring, bar and a done tick",
+   "film": "vb-05-progress",
+   "duration": 7
+  },
+  {
+   "id": "vector-lower-third",
+   "title": "A lower third over your 3D scene",
+   "film": "vb-06-lower-third",
+   "duration": 6.5
+  },
+  {
+   "id": "vector-flow-diagram",
+   "title": "A flow diagram with moving pulses",
+   "film": "vb-07-flow-diagram",
+   "duration": 8
+  },
+  {
+   "id": "vector-timeline",
+   "title": "A timeline with milestones",
+   "film": "vb-08-timeline",
+   "duration": 8
+  },
+  {
+   "id": "vector-checklist",
+   "title": "A checklist that ticks itself",
+   "film": "vb-09-checklist",
+   "duration": 7
+  },
+  {
+   "id": "vector-countdown",
+   "title": "A 3, 2, 1 countdown",
+   "film": "vb-10-countdown",
+   "duration": 6
+  },
+  {
+   "id": "vector-gauges",
+   "title": "Gauge widgets for live readings",
+   "film": "vb-11-gauges",
+   "duration": 6.5
+  },
+  {
+   "id": "vector-logo-reveal",
+   "title": "A logo reveal",
+   "film": "vb-12-logo-reveal",
+   "duration": 6
+  }
+ ]
+}

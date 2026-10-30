@@ -1,0 +1,169 @@
+{
+ "film": "vb-06-lower-third",
+ "duration": 6.5,
+ "prompt": "Over my current 3D view, add a broadcast lower third for 5 seconds: a dark translucent box at the bottom left with an orange accent bar, the name MICHAEL MAEIKY and the role 'Founder, Polynite'. Slide it in from the left with typing clicks, then slide it out.",
+ "shapes": [
+  {
+   "id": "e6_lower",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.4,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "none",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -50,
+       -32
+      ],
+      "size": [
+       64,
+       13
+      ],
+      "r": 1
+     },
+     "fill": true,
+     "color": [
+      0.03,
+      0.04,
+      0.07,
+      0.78
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       -82.5,
+       -32
+      ],
+      "size": [
+       1.4,
+       13
+      ]
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "MICHAEL MAEIKY",
+      "at": [
+       -79,
+       -31
+      ],
+      "size": 4.4,
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Founder, Polynite",
+      "at": [
+       -79,
+       -36
+      ],
+      "size": 2.6
+     },
+     "color": 1
+    }
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "move": [
+      -0.12,
+      0,
+      0
+     ],
+     "opacity": 0
+    },
+    {
+     "t": 0.6,
+     "move": [
+      0,
+      0,
+      0
+     ],
+     "opacity": 1
+    },
+    {
+     "t": 4.4,
+     "move": [
+      0,
+      0,
+      0
+     ],
+     "opacity": 1
+    },
+    {
+     "t": 5.0,
+     "move": [
+      -0.12,
+      0,
+      0
+     ],
+     "opacity": 0
+    }
+   ],
+   "sfx": {
+    "type": 0.9,
+    "type_rate": 14,
+    "type_gain": 0.1
+   }
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.5,
+   "dur": 5.2,
+   "id": "e6_lower"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 6.5
+  }
+ ]
+}

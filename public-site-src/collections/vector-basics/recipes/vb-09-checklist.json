@@ -1,0 +1,701 @@
+{
+ "film": "vb-09-checklist",
+ "duration": 7,
+ "prompt": "Make a 7-second checklist titled LAUNCH CHECKLIST with four tasks: Terrain and water, Trees and rocks, Camera path, Music and titles. Tick them one by one every 0.9 seconds: the box fills green, a check mark traces itself, the task is struck through, with a click.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e9_title",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "LAUNCH CHECKLIST",
+      "at": [
+       -76,
+       38
+      ],
+      "size": 4.2,
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ]
+  },
+  {
+   "id": "e9_rows",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -40,
+       16
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "w": 0.45,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "Terrain and water",
+      "at": [
+       -33,
+       14.8
+      ],
+      "size": 3.2
+     },
+     "color": 1
+    },
+    {
+     "box": {
+      "c": [
+       -40,
+       5
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "w": 0.45,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "Trees and rocks",
+      "at": [
+       -33,
+       3.8000000000000007
+      ],
+      "size": 3.2
+     },
+     "color": 1
+    },
+    {
+     "box": {
+      "c": [
+       -40,
+       -6
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "w": 0.45,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "Camera path",
+      "at": [
+       -33,
+       -7.199999999999999
+      ],
+      "size": 3.2
+     },
+     "color": 1
+    },
+    {
+     "box": {
+      "c": [
+       -40,
+       -17
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "w": 0.45,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "Music and titles",
+      "at": [
+       -33,
+       -18.2
+      ],
+      "size": 3.2
+     },
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e9_ok0",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -40,
+       16
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "path": "M -42.2 16 L -40.5 14.2 L -37.4 17.9",
+     "w": 0.9,
+     "color": [
+      0.03,
+      0.05,
+      0.08,
+      1
+     ]
+    },
+    {
+     "line": {
+      "a": [
+       -33.5,
+       16
+      ],
+      "b": [
+       2.3359999999999985,
+       16
+      ]
+     },
+     "w": 0.35,
+     "color": 4
+    }
+   ],
+   "sfx": {
+    "in": "click",
+    "gain": 0.6
+   }
+  },
+  {
+   "id": "e9_ok1",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -40,
+       5
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "path": "M -42.2 5 L -40.5 3.2 L -37.4 6.9",
+     "w": 0.9,
+     "color": [
+      0.03,
+      0.05,
+      0.08,
+      1
+     ]
+    },
+    {
+     "line": {
+      "a": [
+       -33.5,
+       5
+      ],
+      "b": [
+       -1.879999999999999,
+       5
+      ]
+     },
+     "w": 0.35,
+     "color": 4
+    }
+   ],
+   "sfx": {
+    "in": "click",
+    "gain": 0.6
+   }
+  },
+  {
+   "id": "e9_ok2",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -40,
+       -6
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "path": "M -42.2 -6 L -40.5 -7.8 L -37.4 -4.1",
+     "w": 0.9,
+     "color": [
+      0.03,
+      0.05,
+      0.08,
+      1
+     ]
+    },
+    {
+     "line": {
+      "a": [
+       -33.5,
+       -6
+      ],
+      "b": [
+       -10.312000000000001,
+       -6
+      ]
+     },
+     "w": 0.35,
+     "color": 4
+    }
+   ],
+   "sfx": {
+    "in": "click",
+    "gain": 0.6
+   }
+  },
+  {
+   "id": "e9_ok3",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -40,
+       -17
+      ],
+      "size": [
+       6,
+       6
+      ],
+      "r": 1.2
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "path": "M -42.2 -17 L -40.5 -18.8 L -37.4 -15.1",
+     "w": 0.9,
+     "color": [
+      0.03,
+      0.05,
+      0.08,
+      1
+     ]
+    },
+    {
+     "line": {
+      "a": [
+       -33.5,
+       -17
+      ],
+      "b": [
+       0.22800000000000153,
+       -17
+      ]
+     },
+     "w": 0.35,
+     "color": 4
+    }
+   ],
+   "sfx": {
+    "in": "click",
+    "gain": 0.6
+   }
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.2,
+   "dur": 6.8,
+   "id": "e9_title"
+  },
+  {
+   "op": "shape",
+   "at": 0.4,
+   "dur": 6.6,
+   "id": "e9_rows"
+  },
+  {
+   "op": "shape",
+   "at": 1.6,
+   "dur": 5.4,
+   "id": "e9_ok0"
+  },
+  {
+   "op": "shape",
+   "at": 2.5,
+   "dur": 4.5,
+   "id": "e9_ok1"
+  },
+  {
+   "op": "shape",
+   "at": 3.4000000000000004,
+   "dur": 3.6000000000000005,
+   "id": "e9_ok2"
+  },
+  {
+   "op": "shape",
+   "at": 4.300000000000001,
+   "dur": 2.7,
+   "id": "e9_ok3"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 7
+  }
+ ]
+}

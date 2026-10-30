@@ -1,0 +1,691 @@
+{
+ "film": "vb-07-flow-diagram",
+ "duration": 8,
+ "prompt": "Make an 8-second flow diagram: four rounded boxes PROMPT, AGENT, MCP and SCENE, each traced in turn with a tick, joined by arrows with small orange pulses travelling along them, and the caption 'Each request is a command the engine checks'.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e7_title",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "HOW AN AGENT BUILDS A SCENE",
+      "at": [
+       -76,
+       38
+      ],
+      "size": 4.2,
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ]
+  },
+  {
+   "id": "e7_n0",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -60,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       -60,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "PROMPT",
+      "at": [
+       -60,
+       -1.2
+      ],
+      "size": 3.2,
+      "align": "center",
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.4
+   }
+  },
+  {
+   "id": "e7_n1",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       -20,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       -20,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "AGENT",
+      "at": [
+       -20,
+       -1.2
+      ],
+      "size": 3.2,
+      "align": "center",
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.4
+   }
+  },
+  {
+   "id": "e7_n2",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       20,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       20,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "MCP",
+      "at": [
+       20,
+       -1.2
+      ],
+      "size": 3.2,
+      "align": "center",
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.4
+   }
+  },
+  {
+   "id": "e7_n3",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       60,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "fill": true,
+     "color": [
+      0.06,
+      0.08,
+      0.12,
+      1
+     ]
+    },
+    {
+     "box": {
+      "c": [
+       60,
+       0
+      ],
+      "size": [
+       28,
+       14
+      ],
+      "r": 3
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "SCENE",
+      "at": [
+       60,
+       -1.2
+      ],
+      "size": 3.2,
+      "align": "center",
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.4
+   }
+  },
+  {
+   "id": "e7_links",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.7,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "id": "l",
+     "arrow": {
+      "from": [
+       -46,
+       0
+      ],
+      "to": [
+       -34,
+       0
+      ],
+      "head": "triangle",
+      "size": 2
+     },
+     "w": 0.5,
+     "color": 1,
+     "repeat": {
+      "line": 3,
+      "step": [
+       40,
+       0
+      ]
+     }
+    },
+    {
+     "circle": {
+      "c": [
+       "-46+fract($t*0.8+$i*0.33)*12",
+       0
+      ],
+      "r": 0.9
+     },
+     "fill": true,
+     "color": 3,
+     "repeat": {
+      "line": 3,
+      "step": [
+       40,
+       0
+      ]
+     }
+    },
+    {
+     "text": {
+      "s": "Each request is a command the engine checks",
+      "at": [
+       0,
+       -16
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "sfx": {
+    "in": "whoosh",
+    "gain": 0.35
+   }
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.2,
+   "dur": 7.8,
+   "id": "e7_title"
+  },
+  {
+   "op": "shape",
+   "at": 0.4,
+   "dur": 7.6,
+   "id": "e7_n0"
+  },
+  {
+   "op": "shape",
+   "at": 0.9,
+   "dur": 7.1,
+   "id": "e7_n1"
+  },
+  {
+   "op": "shape",
+   "at": 1.4,
+   "dur": 6.6,
+   "id": "e7_n2"
+  },
+  {
+   "op": "shape",
+   "at": 1.9,
+   "dur": 6.1,
+   "id": "e7_n3"
+  },
+  {
+   "op": "shape",
+   "at": 2.6,
+   "dur": 5.4,
+   "id": "e7_links"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 8
+  }
+ ]
+}

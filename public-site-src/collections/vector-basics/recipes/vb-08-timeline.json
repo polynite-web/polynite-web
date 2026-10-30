@@ -1,0 +1,806 @@
+{
+ "film": "vb-08-timeline",
+ "duration": 8,
+ "prompt": "Make an 8-second timeline: a horizontal track with an orange playhead moving across it in 5 seconds. Milestones 2022 Idea, 2023 Prototype, 2024 Beta, 2025 Launch, 2026 1M scenes appear as the playhead reaches them, labels alternating above and below, each with a tick sound.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e8_title",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "OUR ROAD SO FAR",
+      "at": [
+       -76,
+       38
+      ],
+      "size": 4.2,
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ]
+  },
+  {
+   "id": "e8_track",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.8,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "line": {
+      "a": [
+       -64,
+       0
+      ],
+      "b": [
+       64,
+       0
+      ]
+     },
+     "w": 0.4,
+     "color": 4
+    },
+    {
+     "line": {
+      "a": [
+       -64,
+       0
+      ],
+      "b": [
+       "-64+$v0*128",
+       0
+      ]
+     },
+     "w": 0.8,
+     "color": 3
+    },
+    {
+     "circle": {
+      "c": [
+       "-64+$v0*128",
+       0
+      ],
+      "r": 1.4
+     },
+     "fill": true,
+     "color": 2
+    }
+   ],
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0
+    },
+    {
+     "t": 5.2,
+     "v0": 1
+    }
+   ],
+   "key_ease": "linear"
+  },
+  {
+   "id": "e8_m0",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       -64,
+       0
+      ],
+      "r": 2.6
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "line": {
+      "a": [
+       -64,
+       3.2
+      ],
+      "b": [
+       -64,
+       6.5
+      ]
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "2022",
+      "at": [
+       -64,
+       13
+      ],
+      "size": 3.6,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Idea",
+      "at": [
+       -64,
+       8.6
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.45
+   }
+  },
+  {
+   "id": "e8_m1",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       -32,
+       0
+      ],
+      "r": 2.6
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "line": {
+      "a": [
+       -32,
+       -3.2
+      ],
+      "b": [
+       -32,
+       -6.5
+      ]
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "2023",
+      "at": [
+       -32,
+       -12
+      ],
+      "size": 3.6,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Prototype",
+      "at": [
+       -32,
+       -16.4
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.45
+   }
+  },
+  {
+   "id": "e8_m2",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       0,
+       0
+      ],
+      "r": 2.6
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "line": {
+      "a": [
+       0,
+       3.2
+      ],
+      "b": [
+       0,
+       6.5
+      ]
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "2024",
+      "at": [
+       0,
+       13
+      ],
+      "size": 3.6,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Beta",
+      "at": [
+       0,
+       8.6
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.45
+   }
+  },
+  {
+   "id": "e8_m3",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       32,
+       0
+      ],
+      "r": 2.6
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "line": {
+      "a": [
+       32,
+       -3.2
+      ],
+      "b": [
+       32,
+       -6.5
+      ]
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "2025",
+      "at": [
+       32,
+       -12
+      ],
+      "size": 3.6,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Launch",
+      "at": [
+       32,
+       -16.4
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.45
+   }
+  },
+  {
+   "id": "e8_m4",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       64,
+       0
+      ],
+      "r": 2.6
+     },
+     "w": 0.5,
+     "color": 3
+    },
+    {
+     "line": {
+      "a": [
+       64,
+       3.2
+      ],
+      "b": [
+       64,
+       6.5
+      ]
+     },
+     "w": 0.3,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "2026",
+      "at": [
+       64,
+       13
+      ],
+      "size": 3.6,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "1M scenes",
+      "at": [
+       64,
+       8.6
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "sfx": {
+    "in": "tick",
+    "gain": 0.45
+   }
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.2,
+   "dur": 7.8,
+   "id": "e8_title"
+  },
+  {
+   "op": "shape",
+   "at": 0.6,
+   "dur": 7.4,
+   "id": "e8_track"
+  },
+  {
+   "op": "shape",
+   "at": 0.6,
+   "dur": 7.4,
+   "id": "e8_m0"
+  },
+  {
+   "op": "shape",
+   "at": 1.9,
+   "dur": 6.1000000000000005,
+   "id": "e8_m1"
+  },
+  {
+   "op": "shape",
+   "at": 3.2,
+   "dur": 4.800000000000001,
+   "id": "e8_m2"
+  },
+  {
+   "op": "shape",
+   "at": 4.5,
+   "dur": 3.5,
+   "id": "e8_m3"
+  },
+  {
+   "op": "shape",
+   "at": 5.8,
+   "dur": 2.2,
+   "id": "e8_m4"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 8
+  }
+ ]
+}

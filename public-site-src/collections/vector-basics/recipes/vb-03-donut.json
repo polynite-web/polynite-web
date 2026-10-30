@@ -1,0 +1,542 @@
+{
+ "film": "vb-03-donut",
+ "duration": 7,
+ "prompt": "Make a 7-second donut chart of traffic by device: Mobile 45%, Desktop 30%, Tablet 15%, Other 10%, each in its own colour. Sweep the ring clockwise from the top in 2.6 seconds while the centre counts up to 12,480 visits, then trace a legend with the percentages on the right.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e3_title",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "TRAFFIC BY DEVICE",
+      "at": [
+       -76,
+       38
+      ],
+      "size": 4.2,
+      "weight": 1.5
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "Last 30 days",
+      "at": [
+       -76,
+       32
+      ],
+      "size": 2.6
+     },
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e3_ring",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.5,
+   "palette": [
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.96,
+     0.42,
+     0.62,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "sector": {
+      "c": [
+       -34,
+       -2
+      ],
+      "r": [
+       15,
+       24
+      ],
+      "a0": "90-360*max(min($v0,0.450),0.0005)",
+      "a1": "90-360*0.000"
+     },
+     "color": 1
+    },
+    {
+     "sector": {
+      "c": [
+       -34,
+       -2
+      ],
+      "r": [
+       15,
+       24
+      ],
+      "a0": "90-360*max(min($v0,0.750),0.4505)",
+      "a1": "90-360*0.450"
+     },
+     "color": 2
+    },
+    {
+     "sector": {
+      "c": [
+       -34,
+       -2
+      ],
+      "r": [
+       15,
+       24
+      ],
+      "a0": "90-360*max(min($v0,0.900),0.7505)",
+      "a1": "90-360*0.750"
+     },
+     "color": 3
+    },
+    {
+     "sector": {
+      "c": [
+       -34,
+       -2
+      ],
+      "r": [
+       15,
+       24
+      ],
+      "a0": "90-360*max(min($v0,1.000),0.9005)",
+      "a1": "90-360*0.900"
+     },
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "{$v0*12480:,0}",
+      "at": [
+       -34,
+       -1.5
+      ],
+      "size": 5,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": [
+      0.94,
+      0.95,
+      0.97,
+      1
+     ]
+    },
+    {
+     "text": {
+      "s": "VISITS",
+      "at": [
+       -34,
+       -7
+      ],
+      "size": 2.4,
+      "align": "center"
+     },
+     "color": [
+      0.62,
+      0.66,
+      0.74,
+      1
+     ]
+    }
+   ],
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0
+    },
+    {
+     "t": 2.6,
+     "v0": 1
+    }
+   ],
+   "sfx": {
+    "in": "whoosh",
+    "gain": 0.4
+   }
+  },
+  {
+   "id": "e3_legend",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.3,
+   "palette": [
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.96,
+     0.42,
+     0.62,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       10,
+       12
+      ],
+      "size": [
+       3.4,
+       3.4
+      ],
+      "r": 0.6
+     },
+     "fill": true,
+     "color": 1
+    },
+    {
+     "text": {
+      "s": "MOBILE",
+      "at": [
+       15,
+       11
+      ],
+      "size": 2.8,
+      "weight": 1.3
+     },
+     "color": 1
+    },
+    {
+     "text": {
+      "s": "45%",
+      "at": [
+       52,
+       11
+      ],
+      "size": 2.8,
+      "align": "right"
+     },
+     "color": 1
+    },
+    {
+     "box": {
+      "c": [
+       10,
+       3
+      ],
+      "size": [
+       3.4,
+       3.4
+      ],
+      "r": 0.6
+     },
+     "fill": true,
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "DESKTOP",
+      "at": [
+       15,
+       2
+      ],
+      "size": 2.8,
+      "weight": 1.3
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "30%",
+      "at": [
+       52,
+       2
+      ],
+      "size": 2.8,
+      "align": "right"
+     },
+     "color": 2
+    },
+    {
+     "box": {
+      "c": [
+       10,
+       -6
+      ],
+      "size": [
+       3.4,
+       3.4
+      ],
+      "r": 0.6
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "TABLET",
+      "at": [
+       15,
+       -7
+      ],
+      "size": 2.8,
+      "weight": 1.3
+     },
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "15%",
+      "at": [
+       52,
+       -7
+      ],
+      "size": 2.8,
+      "align": "right"
+     },
+     "color": 3
+    },
+    {
+     "box": {
+      "c": [
+       10,
+       -15
+      ],
+      "size": [
+       3.4,
+       3.4
+      ],
+      "r": 0.6
+     },
+     "fill": true,
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "OTHER",
+      "at": [
+       15,
+       -16
+      ],
+      "size": 2.8,
+      "weight": 1.3
+     },
+     "color": 4
+    },
+    {
+     "text": {
+      "s": "10%",
+      "at": [
+       52,
+       -16
+      ],
+      "size": 2.8,
+      "align": "right"
+     },
+     "color": 4
+    }
+   ]
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.2,
+   "dur": 6.8,
+   "id": "e3_title"
+  },
+  {
+   "op": "shape",
+   "at": 0.6,
+   "dur": 6.4,
+   "id": "e3_ring"
+  },
+  {
+   "op": "shape",
+   "at": 2.0,
+   "dur": 5.0,
+   "id": "e3_legend"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 7
+  }
+ ]
+}

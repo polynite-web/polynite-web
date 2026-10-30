@@ -1,0 +1,354 @@
+{
+ "film": "vb-05-progress",
+ "duration": 7,
+ "prompt": "Make a 7-second upload progress animation: a ring and a bar fill from 0 to 100% in 4 seconds with a short pause near 40%, showing the percentage and '31.0 / 48.6 MB'. Then replace it with a green check mark that traces itself, the word DONE and a confirm sound.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e5_ring",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.7,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.45,
+     0.66,
+     1.0,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       0,
+       6
+      ],
+      "r": 18
+     },
+     "w": 1.2,
+     "color": 4
+    },
+    {
+     "arc": {
+      "c": [
+       0,
+       6
+      ],
+      "r": 18,
+      "a0": "90-360*max($v0,0.002)",
+      "a1": 90
+     },
+     "w": 1.6,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "{$v0*100:0}%",
+      "at": [
+       0,
+       4
+      ],
+      "size": 7,
+      "align": "center",
+      "weight": 1.6
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "UPLOADING SCENE",
+      "at": [
+       0,
+       -20
+      ],
+      "size": 2.8,
+      "align": "center",
+      "weight": 1.4
+     },
+     "color": 1
+    },
+    {
+     "box": {
+      "c": [
+       0,
+       -27
+      ],
+      "size": [
+       70,
+       1.6
+      ],
+      "r": 0.8
+     },
+     "fill": true,
+     "color": 4
+    },
+    {
+     "box": {
+      "c": [
+       "-35+$v0*35",
+       -27
+      ],
+      "size": [
+       "max($v0*70,0.01)",
+       1.6
+      ],
+      "r": 0.8
+     },
+     "fill": true,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "{$v0*48.6:1} / 48.6 MB",
+      "at": [
+       35,
+       -32
+      ],
+      "size": 2.3,
+      "align": "right"
+     },
+     "color": 1
+    }
+   ],
+   "v": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "keys": [
+    {
+     "t": 0,
+     "v0": 0
+    },
+    {
+     "t": 1.2,
+     "v0": 0.35
+    },
+    {
+     "t": 2.0,
+     "v0": 0.42
+    },
+    {
+     "t": 4.0,
+     "v0": 1
+    }
+   ],
+   "key_ease": "linear",
+   "paint": "order"
+  },
+  {
+   "id": "e5_done",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.9,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     0.36,
+     0.86,
+     0.58,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "circle": {
+      "c": [
+       0,
+       6
+      ],
+      "r": 18
+     },
+     "w": 1.6,
+     "color": 3
+    },
+    {
+     "path": "M -8 6 L -2 0 L 9 12",
+     "w": 2.0,
+     "color": 3
+    },
+    {
+     "text": {
+      "s": "DONE",
+      "at": [
+       0,
+       -20
+      ],
+      "size": 3.2,
+      "align": "center",
+      "weight": 1.5
+     },
+     "color": 2
+    }
+   ],
+   "sfx": {
+    "in": "confirm",
+    "gain": 0.6
+   },
+   "keys": [
+    {
+     "t": 0,
+     "scale": 1.08
+    },
+    {
+     "t": 0.4,
+     "scale": 1
+    }
+   ]
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.4,
+   "dur": 4.6,
+   "id": "e5_ring"
+  },
+  {
+   "op": "shape",
+   "at": 5.0,
+   "dur": 2.0,
+   "id": "e5_done"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 7
+  }
+ ]
+}

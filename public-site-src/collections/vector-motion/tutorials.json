@@ -1,0 +1,96 @@
+{
+ "status": "draft - not merged into tutorial-content.json or showcase.json; needs a WebGPU build with commands.shape_charts",
+ "tutorials": [
+  {
+   "id": "vector-growth-curve",
+   "title": "A growth curve that draws itself",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "A data series becomes a smooth curve that grows month by month, with a counter that follows its head and a highlighted period. One shape recipe, no chart code.",
+   "prompt": "Draw an animated growth chart over a dark stage in my Polynite scene.\n\n- Check commands.shape_charts, then read shapes.help.\n- Put the monthly values in the shape's data and draw them with plot: an area under a line, revealed by $v0 from 0 to 1 over nine seconds.\n- Mark the head of the line with a ring at #curve.b and colour the line from blue to orange with an x gradient.\n- Show a counter above it with {$s[$v0*($s.n-1)]:,0} and a highlighted period box near the end.\n- Add month labels, dashed grid lines and soft sounds. Record a 15-second film and check the frames.",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {"id": "c1_curve", "set": [{"path": "data.s.17", "value": 4200}]},
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Changes the last value of the series in the attached example: the curve, its head and its end move. Patch c1_area and c1_count the same way so the band and the counter agree.",
+   "settings_groups": [],
+   "experiments": [
+    {"title": "Steps instead of curves", "text": "Set plot.smooth to 0: the same data draws straight segments."},
+    {"title": "Dots only", "text": "Change kind to dots and add points:true to the line: a scatter chart from the same series."},
+    {"title": "Your own numbers", "text": "Replace data.s with up to 64 values; the counter, the head and the area follow without other changes."}
+   ],
+   "viewer_note": "Requires commands.shape_charts (engine after 2026-10-30). Press Play: the counter and the curve share the same keys, so they stay in step in previews and recordings."
+  },
+  {
+   "id": "vector-bars-counter",
+   "title": "Two bars, one number that keeps counting",
+   "level": "Beginner",
+   "topic": "motion-graphics",
+   "description": "Compare two months with bars, a line between their tops and a large counter whose caption changes as the second bar keeps growing.",
+   "prompt": "Make a bar comparison film in my scene.\n\n- Draw a small blue bar for May and an orange bar whose height is $v0, on a dashed grid labelled 10,000 to 30,000.\n- Link the tops of the two bars with a line and a ring at each end (#link.a, #link.b).\n- Show RENDERS A DAY with a counter {$v0*30000:,0}: first up to 18,420 'in May', then to 25,000 'in September', ending on 25,000+.\n- Use typing clicks while it counts and a confirm sound at the end. Record and verify.",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.values",
+    "params": {"id": "c2_bars2", "v": [0.9, 0, 0, 0]},
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Sets the orange bar outside the film's keys (a preview). Inside a film the keys drive v0.",
+   "settings_groups": [],
+   "experiments": [
+    {"title": "Three months", "text": "Use plot kind:'bars' with data [1860, 9100, 18420]: the same frame with a series instead of hand-placed boxes."},
+    {"title": "Another unit", "text": "Write {$v0*30:1}k in the counter for 25.0k."}
+   ],
+   "viewer_note": "Requires commands.shape_charts. Counters format with thousands separators through {expr:,0}."
+  },
+  {
+   "id": "vector-agent-tools",
+   "title": "An agent, its tools and a file read dot by dot",
+   "level": "Intermediate",
+   "topic": "motion-graphics",
+   "description": "Curved links carry pulses from an agent to four tools, a file is scanned byte by byte, and its dots fly into four named clusters. Every dot is one copy of a repeated item with its own $i.",
+   "prompt": "Explain how an AI agent reverse-engineers a file, as a motion graphic.\n\n- Draw an AI box, four tool boxes with small icons drawn from dots and boxes, and cubic links between them.\n- Send two pulses along each link with #l0.along(fract($t*0.42+$i/2)).\n- Draw the file as a 14 x 9 grid of dots (one repeated circle, positions from $i with mod and floor). Light each dot as a cursor box passes it and grow a progress bar.\n- Then move dots from the file into four clusters with hash and smooth, label them with addresses, and rename them to functions.\n- Keep each shape under 512 strokes; split clusters into two shapes if tiles run out. Record and verify the end frame.",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {"id": "c3_agent", "set": [{"path": "items.5.circle.r", "value": 0.9}]},
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Makes the pulses on the first link larger. Discover item indexes with shapes.status before patching another scene.",
+   "settings_groups": [],
+   "experiments": [
+    {"title": "Faster scan", "text": "Divide the 5 in the scan's rate by two: the cursor and the lit dots stay in step."},
+    {"title": "More pulses", "text": "Set the pulse repeat to 4 and use $i/4 in along(): evenly spaced packets."}
+   ],
+   "viewer_note": "Requires commands.shape_charts. Scattered moving dots need many tiles: the engine refuses a shape over 192 tiles with a clear message; split it."
+  },
+  {
+   "id": "vector-waveform-words",
+   "title": "A waveform with words that light up",
+   "level": "Intermediate",
+   "topic": "motion-graphics",
+   "description": "A voice envelope drawn as mirrored bars, lit up to a moving playhead, a cut marker, and each word highlighted with its own note when the playhead reaches it.",
+   "prompt": "Show a short spoken line as an edited waveform.\n\n- Put 60 envelope values in data and draw them twice with plot kind:'bars' (one with a negative height for the mirror).\n- Draw the same bars in white with reveal:$v0 and a playhead line at x = X0 + $v0*W with its time {$v0*8:1} s.\n- Add a CUT marker. Write the words in grey and, for each word, a white copy shown by the film while the playhead crosses it, with a short synthesized note.\n- Record and check the sound.",
+   "control": {
+    "operation": "feature",
+    "feature": "shapes.patch",
+    "params": {"id": "c4_lit", "set": [{"path": "keys.1.t", "value": 6}]},
+    "action_id": "replace-with-a-fresh-uuid"
+   },
+   "control_note": "Makes the playhead faster in the attached example; move the word cues by the same factor to keep them in time.",
+   "settings_groups": [],
+   "experiments": [
+    {"title": "Another voice", "text": "Replace data.e with your own envelope (0..1, up to 64 values)."},
+    {"title": "A line instead of bars", "text": "Use kind:'area' with smooth:1 for a softer waveform."}
+   ],
+   "viewer_note": "Requires commands.shape_charts. Word notes use shape sfx.notes: no audio file is needed."
+  }
+ ],
+ "showcase": [
+  {"recipe": "vector-growth-curve", "category": "Motion graphics", "environment": "Vector stage", "tags": ["Chart", "Data", "Counter", "Editable"]},
+  {"recipe": "vector-bars-counter", "category": "Motion graphics", "environment": "Vector stage", "tags": ["Chart", "Counter", "Editable"]},
+  {"recipe": "vector-agent-tools", "category": "Motion graphics", "environment": "Vector stage", "tags": ["Diagram", "Dots", "Transitions"]},
+  {"recipe": "vector-waveform-words", "category": "Motion graphics", "environment": "Vector stage", "tags": ["Audio", "Waveform", "Karaoke"]}
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "film": "vb-12-logo-reveal",
+ "duration": 6,
+ "prompt": "Make a 6-second logo reveal: a hexagon with a triangle and a dot traced in orange and white with a magic sound, then the name NORTHWIND and the tagline WORLDS MADE BY WORDS revealed behind an energy front with sparks.",
+ "shapes": [
+  {
+   "id": "bg",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1.0,
+   "style": "blueprint",
+   "show": "always",
+   "sharp": true,
+   "glow": 0,
+   "palette": [
+    [
+     0.035,
+     0.045,
+     0.065,
+     1
+    ],
+    [
+     0.07,
+     0.09,
+     0.13,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ],
+    [
+     0.32,
+     0.36,
+     0.44,
+     1
+    ]
+   ],
+   "fx": {
+    "gradient": {
+     "axis": "radial",
+     "color": [
+      0.012,
+      0.016,
+      0.026,
+      1
+     ],
+     "from": 20,
+     "to": 110
+    }
+   },
+   "items": [
+    {
+     "box": {
+      "c": [
+       0,
+       0
+      ],
+      "size": [
+       240,
+       140
+      ]
+     },
+     "fill": true,
+     "rim": false,
+     "color": 1
+    }
+   ]
+  },
+  {
+   "id": "e12_mark",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 1.1,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "trace",
+    "dur": 1.0
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "regular": {
+      "c": [
+       0,
+       8
+      ],
+      "r": 16,
+      "n": 6,
+      "angle": 90
+     },
+     "w": 1.0,
+     "color": 3
+    },
+    {
+     "triangle": {
+      "pts": [
+       [
+        0,
+        18
+       ],
+       [
+        -8.7,
+        3
+       ],
+       [
+        8.7,
+        3
+       ]
+      ]
+     },
+     "w": 0.8,
+     "color": 2
+    },
+    {
+     "circle": {
+      "c": [
+       0,
+       8
+      ],
+      "r": 2.2
+     },
+     "fill": true,
+     "color": 3
+    }
+   ],
+   "sfx": {
+    "in": "magic",
+    "gain": 0.5
+   }
+  },
+  {
+   "id": "e12_word",
+   "space": "screen",
+   "at": [
+    0.5,
+    0.5
+   ],
+   "size": 1,
+   "style": "blueprint",
+   "show": "film",
+   "sharp": true,
+   "glow": 0.6,
+   "palette": [
+    [
+     0.62,
+     0.66,
+     0.74,
+     1
+    ],
+    [
+     0.94,
+     0.95,
+     0.97,
+     1
+    ],
+    [
+     1.0,
+     0.62,
+     0.3,
+     1
+    ],
+    [
+     0.3,
+     0.34,
+     0.42,
+     1
+    ]
+   ],
+   "in": {
+    "fx": "none",
+    "dur": 0.5
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.5
+   },
+   "items": [
+    {
+     "text": {
+      "s": "NORTHWIND",
+      "at": [
+       0,
+       -18
+      ],
+      "size": 7,
+      "align": "center",
+      "weight": 1.7
+     },
+     "color": 2
+    },
+    {
+     "text": {
+      "s": "WORLDS MADE BY WORDS",
+      "at": [
+       0,
+       -25
+      ],
+      "size": 2.6,
+      "align": "center"
+     },
+     "color": 1
+    }
+   ],
+   "fx": {
+    "reveal": {
+     "dur": 1.2,
+     "sparks": 0.6
+    }
+   },
+   "sfx": {
+    "in": "whoosh",
+    "gain": 0.4
+   }
+  }
+ ],
+ "seq": [
+  {
+   "op": "shape",
+   "at": 0.4,
+   "dur": 5.6,
+   "id": "e12_mark"
+  },
+  {
+   "op": "shape",
+   "at": 2.0,
+   "dur": 4.0,
+   "id": "e12_word"
+  },
+  {
+   "op": "hold",
+   "at": 0,
+   "dur": 6
+  }
+ ]
+}
