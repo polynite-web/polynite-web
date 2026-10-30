@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="dev";window.__pnBuildVersion="v0503";window.__pnEngineBase="engine/c1ba6c89c8947de8734a829fa19a9a84bf1ae35a9b0b2dd988f6db9c0d40bc8a/";</script>
+<head><script id="pn-deploy-config">window.__pnDeployTier="dev";window.__pnBuildVersion="v0512";window.__pnEngineBase="engine/6674602b9c2b7e42524cc86a165ba830097a735235c3552d796154d2fc2271e4/";</script>
+<!-- A Polynite app (?app=dice, dice.polynite.io): decided before anything reads it - pn_app_shell.js -->
+<script>(function(){var h={"dice.polynite.io":"dice"},a=new URLSearchParams(location.search).get("app")||h[location.hostname]||"";if(/^[a-z][a-z0-9_-]{0,31}$/.test(a)){window.__pnAppMode=a;window.__pnAppHost=h[location.hostname]===a;window.vmeshAutoDiscover=false;}})();</script>
 <script src="scene-file-drop.js?v=1"></script>
 <script src="loading_status.js?v=2"></script>
 <script src="pipeline_compile.js?v=4"></script>
@@ -22,6 +24,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<!-- On an app's own host (dice.polynite.io) it installs as that app: its manifest, icon and name.
+     Not on polynite.io/?app=: two installs with id "/" on one origin would be one. -->
+<script>(function(){var a=window.__pnAppMode;if(!a||!window.__pnAppHost)return;var b="/apps/"+a+"/",q=function(s){return document.querySelector(s);};q('link[rel="manifest"]').href=b+"manifest.webmanifest";q('link[rel="apple-touch-icon"]').href=b+"icon-192.png";q('link[rel="icon"][sizes="96x96"]').href=b+"icon-192.png";})();</script>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
@@ -63,6 +68,7 @@
   var PN_API_SITES = {
     "polynite.io":     "https://api.polynite.io",
     "www.polynite.io": "https://api.polynite.io",
+    "dice.polynite.io": "https://api.polynite.io",
     "spinview.app":    "https://api.spinview.app"
   };
   var local = location.hostname === "localhost" ||
@@ -747,7 +753,7 @@ body.scene-entry-ready #curtain {
 <button class="debug-button" id="debugButton" type="button">...</button>
 <link rel="stylesheet" href="welcome.css?v=2">
 <canvas class="game-canvas" id="canvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
-<script src="welcome.js?v=2"></script>
+<script src="welcome.js?v=3"></script>
 <script>
 /* Source of truth for the web shell — copied by build.cwc to {pOut}index.html
  * (and {pOut}App.html, replacing emscripten's own WebGL launcher). Same shell
@@ -1709,7 +1715,9 @@ body.scene-entry-ready #curtain {
   /* Module MUST exist before app.js — same contract as Numeris / blobcone_fast. */
   window.Module = {
     canvas: canvas,
-    preRun: [],
+    /* An app keeps its tables itself (pn_app.js, IndexedDB "polynite-apps"): the engine's
+       session stays in memory, so an app opened on polynite.io never writes over the editor's. */
+    preRun: window.__pnAppMode ? [function(){var mount=FS.mount;FS.mount=function(type,options,point){return mount.call(FS,type===IDBFS?MEMFS:type,options,point);};}] : [],
     postRun: [],
     locateFile: function (path) {
       return cacheBust(path);
@@ -1860,5 +1868,8 @@ body.scene-entry-ready #curtain {
 </script>
 <script type="module" src="remote_panel.js"></script>
 <script src="pn_play.js?v=2"></script>
+<!-- Polynite apps (?app=dice or dice.polynite.io): inert on the editor -->
+<script src="pn_app.js?v=1"></script>
+<script src="pn_app_shell.js?v=3"></script>
 </body>
 </html>

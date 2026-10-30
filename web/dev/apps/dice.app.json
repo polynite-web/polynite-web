@@ -1,0 +1,87 @@
+{
+ "app": 1,
+ "app_id": "dice",
+ "title": "Polynite Dice",
+ "short_name": "Dice",
+ "origin": "https://dice.polynite.io",
+ "version": 1,
+ "scene": "apps/dice/v{version}.scene",
+ "user_paths": [
+  "initial.dice",
+  "initial.cam_yaw",
+  "initial.cam_pitch",
+  "initial.cam_dist",
+  "initial.tgt_x",
+  "initial.tgt_y",
+  "initial.tgt_z"
+ ],
+ "user_objects": [
+  {
+   "match": "dice_*",
+   "in": [
+    "initial.geo",
+    "initial.physics.bodies"
+   ]
+  }
+ ],
+ "customize": {
+  "paths": [
+   "initial.sun_*",
+   "initial.sky_*",
+   "initial.cloud_*",
+   "initial.star_*",
+   "initial.aurora_*",
+   "initial.galaxy_*",
+   "initial.sb0",
+   "initial.sb1",
+   "initial.sb2",
+   "initial.bg",
+   "initial.floor_*",
+   "initial.mirror_enable",
+   "initial.amb_*",
+   "initial.exposure",
+   "initial.bloom_*",
+   "initial.fog_density"
+  ],
+  "sun": {
+   "label": "Sun",
+   "options": [
+    "clock",
+    "day",
+    "sunset",
+    "night",
+    "cycle"
+   ],
+   "default": "clock"
+  },
+  "looks": [
+   "casino_night",
+   "chess_hall",
+   "golden_marble",
+   "moonlit_marble",
+   "showroom",
+   "riviera",
+   "sunlit_marble",
+   "aurora_mirror",
+   "star_plaza",
+   "golden_terrace",
+   "noir_club",
+   "pastel_cream"
+  ],
+  "panel": "the engine draws Dice / Ambiance / Customize / Tables (meshopt/vmesh_app_ui.hh); these paths are what Customize and the ambiances write"
+ },
+ "share": {
+  "paths": [
+   "initial.dice"
+  ],
+  "customize": true,
+  "objects": true,
+  "materials": "initial.materials"
+ },
+ "ui": {
+  "editor": false,
+  "panels": [
+   "dice"
+  ]
+ }
+}
