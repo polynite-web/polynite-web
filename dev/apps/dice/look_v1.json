@@ -1,0 +1,14 @@
+{
+ "_about": "Dice v1's ambiance: the engine's look sunlit_marble (clear day, white marble), read back from scene.controls environment then the document, minus the sun's own pose (the real-time sun sets it). tools/gen_app_dice.py lays it over templates/empty.scene.",
+ "amb_gnd": {"a": 1, "b": 0.045, "g": 0.055, "r": 0.065}, "amb_intensity": 0.6, "amb_sky": {"a": 1, "b": 0.42, "g": 0.25, "r": 0.16},
+ "aurora_on": 0, "bloom_intensity": 0.12, "bloom_knee": 0.28, "bloom_threshold": 0.68,
+ "cloud_color": {"a": 1, "b": 1, "g": 1, "r": 1}, "cloud_cover": 0.25, "cloud_opacity": 0.8, "cloud_phase": 258.3, "cloud_scale": 3.3, "cloud_softness": 0.14, "cloud_style": 0,
+ "exposure": 1.15,
+ "floor_a": {"a": 1, "b": 0.80174726, "g": 0.84183455, "r": 0.8618783}, "floor_b": {"a": 1, "b": 0.4, "g": 0.43, "r": 0.45},
+ "floor_groove": 0.09, "floor_marble_scale": 0.71428573, "floor_marble_seed": 42367, "floor_marble_strength": 0.6, "floor_material": 1,
+ "floor_mirror": 0.35, "floor_mirror_blur": 0.22, "floor_spec": 0.65, "floor_tile": 0.34,
+ "sb0": {"on": 0}, "sb1": {"on": 0}, "sb2": {"on": 0},
+ "sky_haze": 0.12, "sky_horizon": {"a": 1, "b": 0.95, "g": 0.82, "r": 0.7}, "sky_horizon_glow": 0.3, "sky_night": {"a": 1, "b": 0.07, "g": 0.03, "r": 0.02},
+ "sky_rayleigh": 1, "sky_sun_glow": 1, "sky_sun_limb": 0.65, "sky_sun_size": 0.008, "sky_sun_style": 0, "sky_zenith": {"a": 1, "b": 0.75, "g": 0.36, "r": 0.18},
+ "star_on": 0, "sun_col": {"a": 1, "b": 0.75, "g": 0.91, "r": 1}, "sun_intensity": 1.1, "sun_palette": 0
+}

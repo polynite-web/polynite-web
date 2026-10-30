@@ -10,7 +10,7 @@
   var studioKey = 'polynite.studio';
   var studioSaved = false, studioTouched = false;
   try { studioSaved = localStorage.getItem(studioKey) === '1'; } catch (_) {}
-  window.vmeshStudio = id ? false : studioSaved;
+  window.vmeshStudio = id || window.__pnAppMode ? false : studioSaved;
   function studioState(enabled) {
     enabled = !!enabled;
     if (window.vmeshStudio === enabled) return;

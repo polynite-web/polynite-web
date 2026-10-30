@@ -7,8 +7,15 @@
   const options = new URLSearchParams(location.search), profiling = options.has('pipeline_profile');
   const native = { render: device.createRenderPipelineAsync, compute: device.createComputePipelineAsync };
   const shaders = new WeakMap(), layouts = new WeakMap(), seen = new WeakMap(), descriptors = [], rows = [], queue = [];
-  let active = 0, scheduled = false, serial = 0, lastTick = 0, burstStart = 0, deadline = 0, activeLabel = '';
-  const state = globalThis.__pnPipelineCompile = { enabled: options.get('pipeline_async') !== '0', pending: 0, completed: 0, failed: false, ticks: 0, max_frame_gap_ms: 0, waitingForLoader: false };
+  /* One compile at a time by default: measured 2026-10-30 (Chromium, Dawn on D3D11/FXC),
+     three at once each took 2-3x longer and the boot ended no sooner. ?pipeline_parallel=N
+     (1..8) keeps the option for backends that do compile concurrently - measure first. */
+  const parallel = Math.max(1, Math.min(8, parseInt(options.get('pipeline_parallel') || '1', 10) || 1));
+  let active = 0, activeFg = 0, scheduled = false, serial = 0, lastTick = 0, burstStart = 0, deadline = 0, activeLabel = '';
+  /* background: set by the engine around a prewarm (vmesh_load_perf.hh). Such a
+     job waits behind every foreground one and is not counted in pending, which
+     holds frames and the loader: only what the scene draws now does that. */
+  const state = globalThis.__pnPipelineCompile = { enabled: options.get('pipeline_async') !== '0', pending: 0, background: false, background_pending: 0, completed: 0, failed: false, ticks: 0, max_frame_gap_ms: 0, waitingForLoader: false };
   const hash = text => { let h=2166136261; for(let i=0;i<text.length;i++)h=Math.imul(h^text.charCodeAt(i),16777619); return (h>>>0).toString(16); };
   const canonical = value => {
     if (!value || typeof value !== 'object') return value;
@@ -29,34 +36,45 @@
   function tick(now){
     scheduled=false;state.ticks++;if(lastTick)state.max_frame_gap_ms=Math.max(state.max_frame_gap_ms,now-lastTick);lastTick=now;update();
     deadline=performance.now()+12;startNext();
-    if(state.pending)schedule();else lastTick=0;
+    if(state.pending||state.background_pending)schedule();if(!state.pending)lastTick=0;
   }
   function startNext(){
-    if(active||!queue.length||state.failed)return;
-    const job=queue.shift();active=1;activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
-    let result;try{result=native[job.kind].call(job.device,job.desc);}catch(error){result=Promise.reject(error);}
-    Promise.resolve(result).then(value=>finish(job,null,value),error=>finish(job,error));
+    while(queue.length&&!state.failed){
+      // Foreground first, up to `parallel` at once, even beside a background job (the
+      // scene must not wait behind a reflection); a background job only runs alone.
+      let next=queue.findIndex(job=>!job.background);
+      if(next>=0){if(activeFg>=parallel)return;}else{if(active)return;next=0;}
+      const job=queue.splice(next,1)[0];active++;if(!job.background)activeFg++;if(!job.background)activeLabel=job.desc.label||'';update();job.row.start_ms=performance.now();job.row.queue_ms=job.row.start_ms-job.row.queued_ms;
+      let result;try{result=native[job.kind].call(job.device,job.desc);}catch(error){result=Promise.reject(error);}
+      Promise.resolve(result).then(value=>finish(job,null,value),error=>finish(job,error));
+    }
   }
   function finish(job,error,value){
-    active=0;state.pending--;state.completed++;
+    active--;if(!job.background)activeFg--;if(job.background)state.background_pending--;else state.pending--;state.completed++;
     Object.assign(job.row,{ready_ms:performance.now(),ok:!error});job.row.prepare_ms=job.row.ready_ms-job.row.start_ms;
     if(error){state.failed=true;job.row.error=String(error.message||error);globalThis.__pnEngineFailure=job.row.error;globalThis.vmeshRuntimeInitialized=false;globalThis.dispatchEvent(new CustomEvent('polynite:engine-failed',{detail:{message:job.row.error}}));}
     console.info('[pipeline-ready] '+JSON.stringify(job.row));update();schedule();error?job.reject(error):job.resolve(value);
     // Reuse this paint's remaining budget for short cached jobs; long work yields.
-    if(!error&&performance.now()<deadline)startNext();
+    // While the scene is held for foreground compiles there is no frame to protect:
+    // start the next one now instead of one animation frame later (16 ms at 60 Hz,
+    // a full second in a throttled tab).
+    if(!error&&(state.pending>0||performance.now()<deadline))startNext();
   }
   function enqueue(device,kind,desc,phase,round=0){
     const signature=hash(JSON.stringify(canonical(desc)));
     let keys=seen.get(device);if(!keys){keys=new Set();seen.set(device,keys);}
     if(phase==='first'){const key=kind+signature;if(keys.has(key))phase='reuse';else keys.add(key);}
-    const row={id:++serial,label:desc.label||'(unlabelled)',kind,phase,round,signature,queued_ms:performance.now()};
+    const background=!!state.background;
+    const row={id:++serial,label:desc.label||'(unlabelled)',kind,phase,round,signature,background,queued_ms:performance.now()};
     if(profiling)rows.push(row);if(profiling&&phase==='first')descriptors.push({device,kind,desc});
-    if(!state.pending){burstStart=performance.now();lastTick=burstStart;}state.pending++;schedule();
-    return new Promise((resolve,reject)=>queue.push({device,kind,desc,row,resolve,reject}));
+    if(background)state.background_pending++;
+    else{if(!state.pending){burstStart=performance.now();lastTick=burstStart;}state.pending++;}
+    schedule();
+    return new Promise((resolve,reject)=>queue.push({device,kind,desc,row,background,resolve,reject}));
   }
   for(const [kind,name] of [['render','createRenderPipelineAsync'],['compute','createComputePipelineAsync']])
     device[name]=function(desc){return state.enabled?enqueue(this,kind,desc,'first'):native[kind].call(this,desc);};
-  state.read=()=>({enabled:state.enabled,pending:state.pending,completed:state.completed,failed:state.failed,ticks:state.ticks,max_frame_gap_ms:state.max_frame_gap_ms,rows:rows.map(r=>({...r}))});
+  state.read=()=>({enabled:state.enabled,parallel,pending:state.pending,background_pending:state.background_pending,completed:state.completed,failed:state.failed,ticks:state.ticks,max_frame_gap_ms:state.max_frame_gap_ms,rows:rows.map(r=>({...r}))});
   state.warm=async(rounds=3)=>{if(!profiling)throw Error('Enable pipeline_profile to retain descriptors');if(state.pending)throw Error('Wait for pipeline preparation');if(!Number.isInteger(rounds)||rounds<1||rounds>5)throw Error('rounds must be 1..5');const jobs=descriptors.slice();for(let r=0;r<rounds;r++)for(let i=0;i<jobs.length;i++){const d=jobs[(i+r)%jobs.length];await enqueue(d.device,d.kind,d.desc,'warm',r);}return state.read();};
   state.present=()=>{if(state.pending||state.failed)return;update();if(state.waitingForLoader){state.waitingForLoader=false;globalThis.vmeshHideLoader?.(false);}globalThis.vmeshWorldFrame?.();};
 })();
