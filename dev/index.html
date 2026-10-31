@@ -1717,7 +1717,7 @@ body.scene-entry-ready #curtain {
     canvas: canvas,
     /* An app keeps its tables itself (pn_app.js, IndexedDB "polynite-apps"): the engine's
        session stays in memory, so an app opened on polynite.io never writes over the editor's. */
-    preRun: window.__pnAppMode ? [function(){var mount=FS.mount;FS.mount=function(type,options,point){return mount.call(FS,type===IDBFS?MEMFS:type,options,point);};}] : [],
+    preRun: window.__pnAppMode && !window.__pnAppHost ? [function(){var mount=FS.mount;FS.mount=function(type,options,point){return mount.call(FS,type===IDBFS?MEMFS:type,options,point);};}] : [],
     postRun: [],
     locateFile: function (path) {
       return cacheBust(path);
@@ -1870,6 +1870,6 @@ body.scene-entry-ready #curtain {
 <script src="pn_play.js?v=2"></script>
 <!-- Polynite apps (?app=dice or dice.polynite.io): inert on the editor -->
 <script src="pn_app.js?v=1"></script>
-<script src="pn_app_shell.js?v=3"></script>
+<script src="pn_app_shell.js?v=4"></script>
 </body>
 </html>
