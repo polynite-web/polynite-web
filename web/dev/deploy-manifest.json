@@ -1,13 +1,13 @@
 {
   "format": 1,
   "tier": "dev",
-  "version": "v0512",
-  "sourceVersion": "v0511",
-  "engineBase": "engine/6674602b9c2b7e42524cc86a165ba830097a735235c3552d796154d2fc2271e4/",
+  "version": "v0513",
+  "sourceVersion": "v0512",
+  "engineBase": "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/",
   "engineHistory": [
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/",
     "engine/6674602b9c2b7e42524cc86a165ba830097a735235c3552d796154d2fc2271e4/",
-    "engine/c1ba6c89c8947de8734a829fa19a9a84bf1ae35a9b0b2dd988f6db9c0d40bc8a/",
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/"
+    "engine/c1ba6c89c8947de8734a829fa19a9a84bf1ae35a9b0b2dd988f6db9c0d40bc8a/"
   ],
   "files": {
     "404.html": {
@@ -23,16 +23,16 @@
       "sha256": "09a23f187641cef24a35ddf24c5a3d43e309fd5f3d9482cab7941b469ae321d7"
     },
     "Rc/defaults/app.json": {
-      "bytes": 525,
-      "sha256": "25febd3003912af58e497bc95dc7f22a7459c489e0053c729e7a31022c5892c6"
+      "bytes": 513,
+      "sha256": "3277809d4663d02231cd31525d3da6444ead05bbdba60e53f5f39e8f914b372f"
     },
     "Rc/defaults/app.json.br": {
-      "bytes": 216,
-      "sha256": "588480c5efc0aac7d19c010744511e17c41efcbf89710682fc376a9fab43d300"
+      "bytes": 213,
+      "sha256": "69b0565a01cbd77483bbb94c610e22c546f7a6ac1f93a043251a501c5afe82ba"
     },
     "Rc/defaults/app.json.gz": {
-      "bytes": 258,
-      "sha256": "9823754867f2a3cb5e9ba0a493099549f2f390dc28047c8d719fbc2efb59b543"
+      "bytes": 259,
+      "sha256": "3e50d59b4b0c890d6fcf14d3d480373eb596d346838495d4fd22f6f65e26bbc4"
     },
     "Rc/font/legacy_clean.sdffont.json": {
       "bytes": 48563,
@@ -79,52 +79,52 @@
       "sha256": "59e3986ad15968fba4ffe423e3d7da99ae7d2e6dfd7a36fb1fc8780f866acc6d"
     },
     "app.html": {
-      "bytes": 86149,
-      "sha256": "f9690de0fe15e3a2061000058b9982e7f658110a459732c0573597ce5873d793"
+      "bytes": 86172,
+      "sha256": "a86674d2bc07333608b2ea55284bf87dafc58ec0394115a23a5cd93532bd3c27"
     },
     "app.html.br": {
-      "bytes": 26054,
-      "sha256": "1d15d53ce5c031babc404226f3c4ac52edc805ba5437dc51c7446f0209138fb4"
+      "bytes": 26057,
+      "sha256": "b185a1e6e47634d6a1a1cb2cdfc3cfb7f75ad5f9c016d7e322e504a4cea27ef5"
     },
     "app.html.gz": {
-      "bytes": 27404,
-      "sha256": "12792c21fa1a5424673cb3a34587f0fdab8b5901bea39bd8fb0ab090b227d088"
+      "bytes": 27411,
+      "sha256": "f6480079910ce00908335e9b8c071a40056686458cc2ee78e7a7870504283779"
     },
     "app.js": {
       "bytes": 351690,
-      "sha256": "f543e95e451d153a2fd65a5fa0130997d5b4eecccb14d0f6c165872c12d66885"
+      "sha256": "664b51216b29b11d12d2c1ec6dc73e03bc5644d44d3198959ed3e1296d24d899"
     },
     "app.js.br": {
-      "bytes": 82376,
-      "sha256": "de994492c9d8b1567e67eb7d07fe61057c67b135fc29b4bb9278870e59f2e704"
+      "bytes": 82385,
+      "sha256": "8f5630cae63cf985ab12a480c3d7f157a35dfd67a0bd309dfeaf4fd2980fec67"
     },
     "app.js.gz": {
       "bytes": 88184,
-      "sha256": "279e252de567e32f174f12250b363c82d0e738653b62c517986ab1f06bac2483"
+      "sha256": "5e3c008c914236879306a7e89f79cb443979b6a4bc4a51e56772e556470c0029"
     },
     "app.wasm": {
-      "bytes": 7832503,
-      "sha256": "dff5b8bfd2afb933d9a92fd356d0be091fc314bb5a987443173bf4ccc863a740"
+      "bytes": 7868837,
+      "sha256": "e571337246be701318b14130c1ee19dd31ce158ee5ecd0f67569be584d39f381"
     },
     "app.wasm.br": {
-      "bytes": 2569445,
-      "sha256": "1084393e126eeb80fd92c502e51d5085f3c1b019751b4dd3fe920072cdd12e6b"
+      "bytes": 2582854,
+      "sha256": "5313a345b185d7d067378215b9661b98081f641de9ef57d1d5bc5260e17ec32e"
     },
     "app.wasm.gz": {
-      "bytes": 3035468,
-      "sha256": "63d6e8ce18dc9a3b0cc9494fb74a717fd32a1db332121d26fb50d19af592101a"
+      "bytes": 3051200,
+      "sha256": "63e8f8f95e8bfb6b0065e286c0fdbb543c5349e7705e7359b9bba5aeb06104ad"
     },
     "apps/dice.app.json": {
       "bytes": 1547,
-      "sha256": "4720bb101d7dd09d650d4dd1cd2bd45c41e77235d242cf0b82b915f1db37dd0c"
+      "sha256": "0aa3b6818c9c815b0c6eb19e469c1d72bd80d5f546d2bae41f462234cec1dd80"
     },
     "apps/dice.app.json.br": {
-      "bytes": 570,
-      "sha256": "f748bf368cb5430207f844ccdb24113879f267ac113c9750390fa03347aecc2c"
+      "bytes": 574,
+      "sha256": "c793db736b6a151592bd6755dbfb0c503e3f13d18d970b5d459992d5fb5c553c"
     },
     "apps/dice.app.json.gz": {
-      "bytes": 620,
-      "sha256": "3c717b51a349224b6cec1ceeab5b8703564160088c0da199749ed775245b0327"
+      "bytes": 622,
+      "sha256": "7622eefb2684115c66d662a8b966ea4a39a28c84643a6fba6a9b854635b64f39"
     },
     "apps/dice/icon-192.png": {
       "bytes": 9949,
@@ -150,6 +150,170 @@
       "bytes": 654,
       "sha256": "7a14a1f0e831109f8f6db233d51d18ef897e8ed781841b90294a27f25ef302cf"
     },
+    "apps/dice/look_v2.json": {
+      "bytes": 2126,
+      "sha256": "725f1ade4f3ec1f1889f4a26b063b7f41228adfc7a73e871026d891f5932f873"
+    },
+    "apps/dice/look_v2.json.br": {
+      "bytes": 816,
+      "sha256": "d15084bf3b790d131e2bdb954eab7af6fd2cd53538a058fd97fc19f729f51a2f"
+    },
+    "apps/dice/look_v2.json.gz": {
+      "bytes": 840,
+      "sha256": "97bda5aa00ccd879fe6e65a1033b17d530f334389326f629d056a513d88f0fbb"
+    },
+    "apps/dice/look_v3.json": {
+      "bytes": 2340,
+      "sha256": "d0111c4382c9caa8f74503901f35e41cd1c973bb80d4ce993d31229ba13bbba7"
+    },
+    "apps/dice/look_v3.json.br": {
+      "bytes": 903,
+      "sha256": "3639f8dc1aac777cbcc308fe902acbe91f8080e2cb98bcfbd44943ce36f50e74"
+    },
+    "apps/dice/look_v3.json.gz": {
+      "bytes": 931,
+      "sha256": "605c7df92252c6076ecf4f129bf678feceb2e375af7585cf3165e32d3f14042d"
+    },
+    "apps/dice/looks/alien_garden.jpg": {
+      "bytes": 26336,
+      "sha256": "4df8a1678023e1bfdb838d2e228d467d63b65189b1a657a1daa4face1930a732"
+    },
+    "apps/dice/looks/amber_lounge.jpg": {
+      "bytes": 23726,
+      "sha256": "e893f48c8c7f1cdfcacd6ca131e726e8efc1fbda612f97df7ce1da4dbbfe62bd"
+    },
+    "apps/dice/looks/aurora_green.jpg": {
+      "bytes": 27382,
+      "sha256": "a8d4059bd2e650e8aa849e57687c4f3b08d63a47c2e08a47d0992fe7f1edb103"
+    },
+    "apps/dice/looks/aurora_mirror.jpg": {
+      "bytes": 20248,
+      "sha256": "c22727af181be05be97a3379a164ad76e85f7ce4f56d7de15897587033a53ee9"
+    },
+    "apps/dice/looks/blue_mirror.jpg": {
+      "bytes": 19388,
+      "sha256": "93a526597e48741ea272532e989a8f9e0115902f9ea007a67ed19736eacb5f54"
+    },
+    "apps/dice/looks/breccia_noon.jpg": {
+      "bytes": 23173,
+      "sha256": "d7ae2a938c98818eaf66b718faad3f9844682e91cfd183b5b22a5a948415708d"
+    },
+    "apps/dice/looks/breccia_storm.jpg": {
+      "bytes": 22816,
+      "sha256": "34698c4c40bf16e17e13150f41635f6937cf64387f932dc2c8a928c48032d938"
+    },
+    "apps/dice/looks/casino_night.jpg": {
+      "bytes": 29042,
+      "sha256": "625839b36a2bf234da1227c10b31145744434ec0bef5eff0ae6140a44eed076c"
+    },
+    "apps/dice/looks/chess_hall.jpg": {
+      "bytes": 29583,
+      "sha256": "c3d57e490c498d0db7eb424b4ec2f0ecbf3d85c815bc991c2c4aafd8d2be7adb"
+    },
+    "apps/dice/looks/gallery.jpg": {
+      "bytes": 21706,
+      "sha256": "39f19a484ec2a29df9bd9639ec035408365d067c479a32eea9aef8800d31642e"
+    },
+    "apps/dice/looks/golden_marble.jpg": {
+      "bytes": 21516,
+      "sha256": "d042dbf624421bbac3332f9ac3c18eae0bb188d5b6ae645bf643b90f7818c04e"
+    },
+    "apps/dice/looks/golden_noir.jpg": {
+      "bytes": 29213,
+      "sha256": "8d5aae346c362582d857bbcb80390d362e31456a7e8fef654315f9ea02b7f08d"
+    },
+    "apps/dice/looks/golden_terrace.jpg": {
+      "bytes": 28903,
+      "sha256": "500394a170d0fddf3503dadf734cf99c49d26115c23789bd36b7105788926273"
+    },
+    "apps/dice/looks/green_court.jpg": {
+      "bytes": 25546,
+      "sha256": "52574431394ba2c4117ae1ab039b519a0363f5268f6432e41dcfa84b8ecc82ef"
+    },
+    "apps/dice/looks/honey_onyx.jpg": {
+      "bytes": 22660,
+      "sha256": "bd70f2dc6ea88728ff6b359e34408fdf6c7a03044eda6a2eaeb4754ab44cbfaf"
+    },
+    "apps/dice/looks/lapis_night.jpg": {
+      "bytes": 34285,
+      "sha256": "a015c97ea862681421357122e3f19ef88960d6b7e4fb5f6bfd906123267a4d57"
+    },
+    "apps/dice/looks/milky_noir.jpg": {
+      "bytes": 30281,
+      "sha256": "ee5f95f9ad9c91e7bb3a87464720557052eaf2467a7a124128ea621151b45df9"
+    },
+    "apps/dice/looks/moonlit_chess.jpg": {
+      "bytes": 30607,
+      "sha256": "9bc4e4e4e5f0961822a5cc84ab2538aa69ec0f10784db3d699974b02dae6dfa8"
+    },
+    "apps/dice/looks/moonlit_marble.jpg": {
+      "bytes": 22115,
+      "sha256": "5a146db87442321f96e44e561a4e2929ec97645ef41f0a3377ae44e836bfb570"
+    },
+    "apps/dice/looks/noir_club.jpg": {
+      "bytes": 28869,
+      "sha256": "c1c7c1be148ace8445e8b6bf3329f44f257b5927ba26b6b5be7d13c17dabb2f9"
+    },
+    "apps/dice/looks/pastel_cream.jpg": {
+      "bytes": 28637,
+      "sha256": "6ead550d36c28373c984588d17fdac82a7383a991f3eab5d50de2ca617181376"
+    },
+    "apps/dice/looks/pastel_riviera.jpg": {
+      "bytes": 30671,
+      "sha256": "491ccc3b60927fd4fbabe407226298e1e33c7082506311011b259c933b36a9c2"
+    },
+    "apps/dice/looks/riviera.jpg": {
+      "bytes": 30726,
+      "sha256": "03db405bbee562773493dc8f382955f30711f7284975b4710de6c3bd26cad430"
+    },
+    "apps/dice/looks/rose_dawn.jpg": {
+      "bytes": 21459,
+      "sha256": "219999cdcb9d93d909a0aab9172afd038ab03720ea633e5f6871ab1d974f5930"
+    },
+    "apps/dice/looks/sand_hall.jpg": {
+      "bytes": 20530,
+      "sha256": "2fd5e3679edd4f73ae2bddc194f27441f8f0f349dec473daeb7795d0ebce2238"
+    },
+    "apps/dice/looks/sand_sunset.jpg": {
+      "bytes": 20747,
+      "sha256": "3b2e7e1bbcd4bc9fe3fa21c20c6c75bb9353087727929f7c12379b55d6a7b7d9"
+    },
+    "apps/dice/looks/showroom.jpg": {
+      "bytes": 17940,
+      "sha256": "8ae59910340620d0b6c9b78e1a6d5f13696e178cf89e9407bd4752b0dd476133"
+    },
+    "apps/dice/looks/slate_day.jpg": {
+      "bytes": 24425,
+      "sha256": "1a9835afbbc0310fe62381c13c26014d32bad6220d663048189c9f401db7e476"
+    },
+    "apps/dice/looks/star_plaza.jpg": {
+      "bytes": 30361,
+      "sha256": "e94d610f973aa39a5c01149a1c5ec32d7df49ab83a9e11b618dfe5749da4fb79"
+    },
+    "apps/dice/looks/storm_court.jpg": {
+      "bytes": 24093,
+      "sha256": "443a9b3dd95d2e14042b3c604d5c908e0e115148b3d2e048753a8e199b9c9127"
+    },
+    "apps/dice/looks/storm_marble.jpg": {
+      "bytes": 19120,
+      "sha256": "b551a40d5ffa88352985a02ab380baebcb7f74e3c9126507d3db45d30cdb0a65"
+    },
+    "apps/dice/looks/sunlit_marble.jpg": {
+      "bytes": 21703,
+      "sha256": "cfa18c78b3b13ae92b5ef0ae9352057fdf2c361e188f0fe334290ded7bc002af"
+    },
+    "apps/dice/looks/sunny_meadow.jpg": {
+      "bytes": 25558,
+      "sha256": "c264c8ad3d79468d8f06509959c5ed37905fcc5416c49b1af830987838660cff"
+    },
+    "apps/dice/looks/travertine_noon.jpg": {
+      "bytes": 20478,
+      "sha256": "751fe03d216c8b59417278bfb8bef2d2b5bda917bffb493c2ccf0e4d95247313"
+    },
+    "apps/dice/looks/twin_chess.jpg": {
+      "bytes": 30653,
+      "sha256": "02c4eb1e876662370fdd6fcdec33e7dba8bd708e423aee7a62cf550bdff4d10f"
+    },
     "apps/dice/manifest.webmanifest": {
       "bytes": 704,
       "sha256": "2e578d33717120b9f7eddf13bda80debf0e3fa5a51025d59b5bc4b9746549b8e"
@@ -165,6 +329,14 @@
     "apps/dice/v1.scene": {
       "bytes": 78741,
       "sha256": "a3df6bbe47b15a04bcec9f039c1d14c9b12a862d59d49d2b75a1cc9c1f90d61b"
+    },
+    "apps/dice/v2.scene": {
+      "bytes": 78808,
+      "sha256": "de772f63e8c6fee5963e6725d895f77f4b28388c50c8db2bef0f79d678a98ad0"
+    },
+    "apps/dice/v3.scene": {
+      "bytes": 78826,
+      "sha256": "7637035ffdb6a5b673b1e977c8d0734dcacfa21345bda0b350b24e37577d8610"
     },
     "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
       "bytes": 1229851,
@@ -655,28 +827,28 @@
       "sha256": "16f76885c33077eabde0af24beb43bfd9d951fb1dfc8f9d21698e4cabb2b15eb"
     },
     "demo/adaptive-garden.scene": {
-      "bytes": 183789,
-      "sha256": "7a6d6fe5ed4232310af43c7db050ea91115b3bd4c20a9ee3c0031376f36fddfe"
+      "bytes": 191573,
+      "sha256": "6733e3356b45a749766dda1a6af209e86f92742b5d04bb9250fe86309a49ca58"
     },
     "demo/atmospheres/README.md": {
-      "bytes": 6646,
-      "sha256": "5fd0da729e7f8b8dcc03f18d415cd8df1d127f0291e8232eb2f5135e16579499"
+      "bytes": 6754,
+      "sha256": "c7dad8dd18cf25b1559a37b0a069da6e048db4710eec629a5f20c93764880fde"
     },
     "demo/atmospheres/keeper-amber-283.scene": {
-      "bytes": 217742,
-      "sha256": "e367f407351c6cd4a197442ffcce5bafdfbee9fb4fc4d48bd3d7be0f4c1e2af3"
+      "bytes": 229152,
+      "sha256": "a9ef98dc58299b365f2a991abcd9568a730ec6779a1791d2ed355bd2a0f58db0"
     },
     "demo/atmospheres/mill-dawn-619.scene": {
-      "bytes": 220144,
-      "sha256": "95db193bfd9098a14e753f10c77e2c4e3a24cc0161adcfc9e1a464a32e939043"
+      "bytes": 231707,
+      "sha256": "ad5cd67dcbb6110f11a3879b950eed4576a612e1ce2dac1dc3f5154b1b8c10fe"
     },
     "demo/atmospheres/refuge-moonlit-137.scene": {
-      "bytes": 188948,
-      "sha256": "ce932d76a0f1160eb1aa0a3be3828346dd43ddd6870c8f1110a071bcc5834207"
+      "bytes": 198672,
+      "sha256": "cd000cf9ba0dda92ab2ef190c837a79f04a52e79fa1480639712415d8fa3cdb0"
     },
     "demo/devices/README.md": {
-      "bytes": 1159,
-      "sha256": "c2d495f8f999141f4058286de093e3764192d7573098081758d38e7f35746001"
+      "bytes": 1136,
+      "sha256": "d8c0716d5adbf82f566b1f176b4787bda8e3fc5ee515e1a2f6a14e7906791df8"
     },
     "demo/devices/smartphone.json": {
       "bytes": 7545,
@@ -703,8 +875,8 @@
       "sha256": "57f8dd279a917c079e50b0f6765b82fc95b8fa8030d59e1f8ea9c6aba393b9d3"
     },
     "demo/infinite/README.md": {
-      "bytes": 3203,
-      "sha256": "6e342e0a7d8bdefa1e5eebe25ef3ce4a7ea5bbb4cfef184929c7610757e4f245"
+      "bytes": 3134,
+      "sha256": "4607df80ed2a3350db19ad01d2018c0e8f5aad218acc0c750dbd71ebfb21d8d7"
     },
     "demo/infinite/pillar-hud.scene": {
       "bytes": 35095,
@@ -783,8 +955,8 @@
       "sha256": "a540f0dd0ab48a78e6ac53a2af86161ab73e13fa5eeed6f6b3589941c13b173c"
     },
     "demo/loop_house/loop-house.scene": {
-      "bytes": 844442,
-      "sha256": "fa824771c9c4fee58b124b78bc38c971ade4288d8d37721de6facd649f58ec6c"
+      "bytes": 807772,
+      "sha256": "cfaf731977debf0a5c4b535a4568896ad079a26918e9cd6d0c24da94261d0d61"
     },
     "demo/loop_house/rim-wood.patch.json": {
       "bytes": 922,
@@ -3682,29 +3854,29 @@
       "bytes": 2726,
       "sha256": "33cf2768880ed25d24273c18734983712102523da1c37603feec2dbcd5436d90"
     },
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/app.js": {
-      "bytes": 351171,
-      "sha256": "540dd2f0e6dcee211d7ef8d9083ecf69e7acc45483f2114a5d9ae5246b455b36"
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/app.js": {
+      "bytes": 351690,
+      "sha256": "664b51216b29b11d12d2c1ec6dc73e03bc5644d44d3198959ed3e1296d24d899"
     },
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/app.js.br": {
-      "bytes": 82263,
-      "sha256": "475fd9d5587a326e2fb37b59000b6e681816107896e3b98ca356758c89f7dea5"
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/app.js.br": {
+      "bytes": 82385,
+      "sha256": "8f5630cae63cf985ab12a480c3d7f157a35dfd67a0bd309dfeaf4fd2980fec67"
     },
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/app.js.gz": {
-      "bytes": 88060,
-      "sha256": "f59595f0d526702da6decdb63d0b354985dcba45397f0cb0e3e223e6409b9e6c"
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/app.js.gz": {
+      "bytes": 88184,
+      "sha256": "5e3c008c914236879306a7e89f79cb443979b6a4bc4a51e56772e556470c0029"
     },
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/app.wasm": {
-      "bytes": 7809221,
-      "sha256": "51d66814db59970c7535642e81eb6f1e62e3b34780a2ec38af9a1e9302dc40d6"
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/app.wasm": {
+      "bytes": 7868837,
+      "sha256": "e571337246be701318b14130c1ee19dd31ce158ee5ecd0f67569be584d39f381"
     },
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/app.wasm.br": {
-      "bytes": 2559902,
-      "sha256": "23be125ef972bf50607af8f8c180e88783ba662563352ad8b5f36e13aa2d59aa"
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/app.wasm.br": {
+      "bytes": 2582854,
+      "sha256": "5313a345b185d7d067378215b9661b98081f641de9ef57d1d5bc5260e17ec32e"
     },
-    "engine/21a47807f7d8c78259ad75e414682eee0837cc93ce1db015d4cdf21e8f5e3598/app.wasm.gz": {
-      "bytes": 3025163,
-      "sha256": "33b9a15687dafcbb543b1601c4089aee83b426eb8a8a0a173c2db3e21112a18b"
+    "engine/37ad958721bfd289adbadff03692ffd365738a8ca098967392e57ce08708b5bc/app.wasm.gz": {
+      "bytes": 3051200,
+      "sha256": "63e8f8f95e8bfb6b0065e286c0fdbb543c5349e7705e7359b9bba5aeb06104ad"
     },
     "engine/6674602b9c2b7e42524cc86a165ba830097a735235c3552d796154d2fc2271e4/app.js": {
       "bytes": 351690,
@@ -4152,15 +4324,15 @@
     },
     "examples/runtime/index.html": {
       "bytes": 84992,
-      "sha256": "cc1c63c3a47592f2a6c90701a5fc2d34434ef4378ed02f070326e2d0e27083bd"
+      "sha256": "912cccfa280af67e09c1ce4109e532147c115991c21d4f4313b1481a494ec06c"
     },
     "examples/runtime/index.html.br": {
       "bytes": 25611,
-      "sha256": "3e083be411c4f20d41a1eebc57e184136e1216716f025db31ec439a594a1c56d"
+      "sha256": "feba294fcc678d062f1b53a36d0a86f463b34b48df95befe712219fdf1f95c78"
     },
     "examples/runtime/index.html.gz": {
       "bytes": 26947,
-      "sha256": "c383b6b3c8a5c7a72586e7c18ef6613475240bbf309b1d2c8848b77601829d74"
+      "sha256": "0e7a1e0e1c318179a3014fc2729c2b64c3701a86b408c2d1faa5cc07b63d159e"
     },
     "examples/view.css": {
       "bytes": 2690,
@@ -4215,16 +4387,16 @@
       "sha256": "d7589825c6566360feca0b5c3fa81e65193d631c9bcbce57be47d1e57561fa70"
     },
     "index.html": {
-      "bytes": 86149,
-      "sha256": "f9690de0fe15e3a2061000058b9982e7f658110a459732c0573597ce5873d793"
+      "bytes": 86172,
+      "sha256": "a86674d2bc07333608b2ea55284bf87dafc58ec0394115a23a5cd93532bd3c27"
     },
     "index.html.br": {
-      "bytes": 26054,
-      "sha256": "1d15d53ce5c031babc404226f3c4ac52edc805ba5437dc51c7446f0209138fb4"
+      "bytes": 26057,
+      "sha256": "b185a1e6e47634d6a1a1cb2cdfc3cfb7f75ad5f9c016d7e322e504a4cea27ef5"
     },
     "index.html.gz": {
-      "bytes": 27404,
-      "sha256": "12792c21fa1a5424673cb3a34587f0fdab8b5901bea39bd8fb0ab090b227d088"
+      "bytes": 27411,
+      "sha256": "f6480079910ce00908335e9b8c071a40056686458cc2ee78e7a7870504283779"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -4403,16 +4575,16 @@
       "sha256": "63499aaf9a10f30db7d01c24e6fbb70fcb93794790393587771c5d6a1db57209"
     },
     "pn_app_shell.js": {
-      "bytes": 8779,
-      "sha256": "52197d50bda11eed88586717fbcc0ef8722a1bb3e7df15e3971c460bb0b61470"
+      "bytes": 9449,
+      "sha256": "498866ef7011407deeb7f653990c7bba40e09eea2f80806a191dcbb7c3925c09"
     },
     "pn_app_shell.js.br": {
-      "bytes": 3023,
-      "sha256": "a1e539c084dc03f3800c8b1da01000b6d36f884e428ad868fd819c6246aa638b"
+      "bytes": 3257,
+      "sha256": "bc32f9a137dc30482c071bb2d614358f9aeda4b9a59dd9ea44888873d82efdb2"
     },
     "pn_app_shell.js.gz": {
-      "bytes": 3250,
-      "sha256": "8c18540b349fe54a030b2a08b24ce99f61ac47bc6a201a888770454b56254d64"
+      "bytes": 3501,
+      "sha256": "ba4134eb24019dcaf27d6a65aac0e4378b84d24929f8f5e622e8412ceb66bb1c"
     },
     "pn_play.js": {
       "bytes": 31124,
@@ -4519,8 +4691,8 @@
       "sha256": "d6e28d13b0b185e36e91b1b8044952f9424754845a5dcb8746401c653be69a68"
     },
     "sitemap.xml": {
-      "bytes": 347,
-      "sha256": "77509a93659d4e6c4be408e8ed49200645e7904bd06decf41f544ebfb780f835"
+      "bytes": 353,
+      "sha256": "21be8533f427ed10c4bcb12ab05317428687bde7f8d2fa426385e738b6023272"
     },
     "sound_bus.js": {
       "bytes": 213836,
@@ -4571,8 +4743,12 @@
       "sha256": "4db38feb767cc19429fc8718258b9d0c3508805898c3cfa3e12a128aefc48ea4"
     },
     "templates/README.md": {
-      "bytes": 2595,
-      "sha256": "d96b5adf19258e675762751e874ca5df8c3cb06c7bf25f34806df8afcf8365f7"
+      "bytes": 2917,
+      "sha256": "0e4af64e30f83fff04bdf33972511fb444dca9f16c44df26008cba8a32223b3c"
+    },
+    "templates/app-dice.scene": {
+      "bytes": 78826,
+      "sha256": "7637035ffdb6a5b673b1e977c8d0734dcacfa21345bda0b350b24e37577d8610"
     },
     "templates/demo-glade-arcade.scene": {
       "bytes": 223290,
@@ -4651,8 +4827,8 @@
       "sha256": "309d603428bef77d7eeca44f2860c58f99aec55a13abade33323197cd1270ba7"
     },
     "templates/garden.scene": {
-      "bytes": 191573,
-      "sha256": "6733e3356b45a749766dda1a6af209e86f92742b5d04bb9250fe86309a49ca58"
+      "bytes": 183789,
+      "sha256": "7a6d6fe5ed4232310af43c7db050ea91115b3bd4c20a9ee3c0031376f36fddfe"
     },
     "templates/glade-start.scene": {
       "bytes": 27361,
@@ -4684,15 +4860,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 84992,
-      "sha256": "cc1c63c3a47592f2a6c90701a5fc2d34434ef4378ed02f070326e2d0e27083bd"
+      "sha256": "912cccfa280af67e09c1ce4109e532147c115991c21d4f4313b1481a494ec06c"
     },
     "tutorial-view/index.html.br": {
       "bytes": 25611,
-      "sha256": "3e083be411c4f20d41a1eebc57e184136e1216716f025db31ec439a594a1c56d"
+      "sha256": "feba294fcc678d062f1b53a36d0a86f463b34b48df95befe712219fdf1f95c78"
     },
     "tutorial-view/index.html.gz": {
       "bytes": 26947,
-      "sha256": "c383b6b3c8a5c7a72586e7c18ef6613475240bbf309b1d2c8848b77601829d74"
+      "sha256": "0e7a1e0e1c318179a3014fc2729c2b64c3701a86b408c2d1faa5cc07b63d159e"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 18072,
@@ -5008,7 +5184,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "cd7fd0f8d12f1de62efe712ed95d849b24c6f8848727f9d160ab3f5273e88462"
+      "sha256": "8723a2b0ae80d757a8da8e1657134ffdc972b6c996fe81990bd693fae0092b79"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,

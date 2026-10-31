@@ -4,7 +4,7 @@
  "title": "Polynite Dice",
  "short_name": "Dice",
  "origin": "https://dice.polynite.io",
- "version": 1,
+ "version": 3,
  "scene": "apps/dice/v{version}.scene",
  "user_paths": [
   "initial.dice",

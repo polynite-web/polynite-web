@@ -140,6 +140,7 @@
   /* what the panel reads: a short plain text, never markup */
   shell.text = function (what) {
     if (!ready) return "";
+    if (what === "storage") return storageState;
     if (what === "looks") return ((manifest.customize && manifest.customize.looks) || []).join(",");
     if (what === "tables") return store.tables.map(function (t) {
       return t.table_id + "\t" + String(t.name).replace(/[\t\n]/g, " ") + "\t" + (t === current ? 1 : 0) + "\t" + (t.from_share ? 1 : 0);
@@ -147,6 +148,14 @@
     return "";
   };
 
+  /* KEPT ON THE DEVICE: ask the browser not to evict this origin's storage (games, gallery, history)
+     under pressure. Granted to installed apps (PWA / Play) and engaged sites; "Clear data" still clears. */
+  var storageState = "";
+  if (typeof navigator !== "undefined" && navigator.storage && navigator.storage.persist) {
+    navigator.storage.persisted().then(function (on) { return on || navigator.storage.persist(); })
+      .then(function (on) { storageState = on ? "persistent" : "best-effort"; console.info("[app] storage " + storageState); })
+      .catch(function () { storageState = "best-effort"; });
+  }
   document.title = "Polynite " + appId.charAt(0).toUpperCase() + appId.slice(1);
   Promise.all([open(), whenEngine()]).then(function () {
     load(current);
