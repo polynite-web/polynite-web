@@ -39,3 +39,9 @@ They were built over MCP from an empty scene (seed 4); rebuild them the same way
 builds it again: each scene step is the glade operator itself (`op: "glade"`), a caption shows the call, the camera
 turns round the work. The Showcase card's Watch (MCP `plugin_watch {plugin}`) keeps the scene on screen and plays it;
 `scene.cinematic record` turns it into an MP4.
+
+## App bases
+
+`app-*.scene` are the starting points of a plugin's "Try in a new scene" when its manifest names one
+(`"start": "app-dice"`): the scene a Polynite app opens with, so the editor shows the same table as the app.
+`app-dice.scene` is a copy of `apps/dice/v<version>.scene` (written by `tools/gen_app_dice.py`).
