@@ -59,6 +59,7 @@ function payload(source){
  return files(source).filter(name=>{
   const parts=name.split('/'),base=path.basename(name);
   if(parts.some(p=>p.startsWith('.'))||['dev','rel','engine'].includes(parts[0])||siteDirs.includes(parts[0])||shared(name))return false;
+  if(name.startsWith('demo/games/'))return false;   /* games in the making stay local until they are released on purpose */
   if(base===MANIFEST||base==='tier.txt'||base==='version.txt'||base==='index.txt'&&parts[0]==='models')return false;
   if(/\.(?:bat|cmd|cwc|cwmake|cjs|log|map|symbols|gz|br)$/i.test(base)||/^app_before_|^appGL\./i.test(base))return false;
   return fs.statSync(inside(source,name)).size<=MAX_FILE;
