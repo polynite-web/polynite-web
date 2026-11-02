@@ -1,0 +1,7539 @@
+{
+ "export": {
+  "directory": "E:/genarate/polynite/video",
+  "encoder": 0,
+  "format": "both",
+  "fps": 60,
+  "intro": 4,
+  "loop": 0,
+  "loudness": -20,
+  "max_mb": 0,
+  "name": "",
+  "quality": 1,
+  "resolution": 1080,
+  "thumbnails": -1,
+  "title_frame": -1,
+  "watermark": 1
+ },
+ "film_reset_camera": true,
+ "initial": {
+  "actors": [
+   {
+    "accel": 50,
+    "face": "none",
+    "friction": 12,
+    "hp": 300,
+    "id": "boss",
+    "object": "pv_boss",
+    "p": [
+     0,
+     0
+    ],
+    "radius": 1.5,
+    "speed": 0,
+    "tags": [
+     "boss"
+    ],
+    "turn": 720,
+    "y": 0
+   },
+   {
+    "accel": 60,
+    "camera": {
+     "follow": 0.15
+    },
+    "dash": {
+     "action": "Dash",
+     "cooldown": 0.45,
+     "speed": 26,
+     "time": 0.16
+    },
+    "face": "center",
+    "friction": 9,
+    "hp": 3,
+    "id": "player",
+    "invuln": 1.2,
+    "move": "Move",
+    "object": "pv_player",
+    "orbit": {
+     "around": "boss",
+     "mouse": true,
+     "mouse_speed": 30,
+     "radius": [
+      5,
+      9.5
+     ]
+    },
+    "p": [
+     0,
+     7
+    ],
+    "radius": 0.55,
+    "speed": 9,
+    "tags": [
+     "player"
+    ],
+    "turn": 720,
+    "y": 0
+   },
+   {
+    "accel": 50,
+    "face": "none",
+    "friction": 12,
+    "hp": 360,
+    "id": "hex",
+    "object": "hx_boss",
+    "p": [
+     0,
+     0
+    ],
+    "radius": 1.7,
+    "speed": 0,
+    "tags": [
+     "boss"
+    ],
+    "turn": 720,
+    "y": 0
+   }
+  ],
+  "amb_gnd": {
+   "a": 1,
+   "b": 0.045,
+   "g": 0.055,
+   "r": 0.065
+  },
+  "amb_intensity": 0.35,
+  "amb_sky": {
+   "a": 1,
+   "b": 0.42,
+   "g": 0.25,
+   "r": 0.16
+  },
+  "anim_auto": 0,
+  "anim_clip": 0,
+  "anim_on": 1,
+  "anim_speed": 1,
+  "anims": [
+   {
+    "ch": "r",
+    "id": "pv_crown",
+    "keys": [
+     {
+      "t": 0,
+      "v": [
+       0,
+       0,
+       0
+      ]
+     },
+     {
+      "t": 6,
+      "v": [
+       0,
+       360,
+       0
+      ]
+     }
+    ],
+    "repeat": 64
+   },
+   {
+    "ch": "r",
+    "id": "hx_ring",
+    "keys": [
+     {
+      "t": 0,
+      "v": [
+       0,
+       0,
+       0
+      ]
+     },
+     {
+      "t": 8,
+      "v": [
+       0,
+       -360,
+       0
+      ]
+     }
+    ],
+    "repeat": 64
+   }
+  ],
+  "ao_strength": 1.25,
+  "architecture": [],
+  "assemblies": [],
+  "aurora_color": {
+   "a": 1,
+   "b": 0.48,
+   "g": 0.55,
+   "r": 0.12
+  },
+  "aurora_height": 0.12,
+  "aurora_intensity": 0.12,
+  "aurora_on": 0,
+  "aurora_scale": 3.6,
+  "aurora_speed": 0,
+  "aurora_width": 0.1,
+  "aurora_yaw": 2.53073,
+  "bd_count": 6,
+  "bd_doppler": 3,
+  "bd_enable": 0,
+  "bd_lowpass": 1,
+  "bd_pan_flip": 0,
+  "bd_perch_model": 1,
+  "bd_seed": 4242,
+  "bd_sing": 1,
+  "bd_size": 1,
+  "bd_spatial": 1,
+  "bd_waves": 0.7,
+  "bg": {
+   "a": 1,
+   "b": 0.118,
+   "g": 0.059,
+   "r": 0.039
+  },
+  "bloom_fast": 0,
+  "bloom_intensity": 0.55,
+  "bloom_knee": 0.3,
+  "bloom_linear": 1,
+  "bloom_on": 1,
+  "bloom_radius": 1.4,
+  "bloom_threshold": 0.55,
+  "cam_dist": 30,
+  "cam_orbit": 0,
+  "cam_orbit_speed": 0.35,
+  "cam_pitch": 0.95,
+  "cam_yaw": 0.02412513,
+  "cel_levels": 0,
+  "cloud_color": {
+   "a": 1,
+   "b": 0.32,
+   "g": 0.34,
+   "r": 0.48
+  },
+  "cloud_cover": 0.3,
+  "cloud_on": 0,
+  "cloud_opacity": 0.35,
+  "cloud_phase": 0,
+  "cloud_scale": 3.3,
+  "cloud_softness": 0.14,
+  "cloud_speed": 0,
+  "cloud_style": 0,
+  "companion_offset_0": [
+   0,
+   0,
+   0
+  ],
+  "companion_offset_1": [
+   0,
+   0,
+   0
+  ],
+  "companion_offset_2": [
+   0,
+   0,
+   0
+  ],
+  "companion_offset_3": [
+   0,
+   0,
+   0
+  ],
+  "construction": {
+   "clip_ground": true,
+   "live_drag": true,
+   "preview": true,
+   "snap_step": 0
+  },
+  "cr_accent": {
+   "a": 1,
+   "b": 0.35,
+   "g": 0.85,
+   "r": 1
+  },
+  "cr_belly": {
+   "a": 1,
+   "b": 0.66,
+   "g": 0.78,
+   "r": 0.82
+  },
+  "cr_body": {
+   "a": 1,
+   "b": 0.36,
+   "g": 0.32,
+   "r": 0.18
+  },
+  "cr_body_len": 1,
+  "cr_bounce": 1,
+  "cr_chubby": 1,
+  "cr_coat": 0,
+  "cr_coat_clump": 0.4,
+  "cr_coat_dens": 0.5,
+  "cr_coat_gloss": 0.5,
+  "cr_coat_lean": 0.6,
+  "cr_coat_len": 1,
+  "cr_coat_lod": 0,
+  "cr_coat_roots": 0,
+  "cr_coat_shadow": 0,
+  "cr_coat_spread": 0,
+  "cr_coat_stiff": 0.5,
+  "cr_coat_wid": 1,
+  "cr_coat_wind": 0.3,
+  "cr_count": 3,
+  "cr_enable": 0,
+  "cr_fur": {
+   "a": 1,
+   "b": 0.25,
+   "g": 0.45,
+   "r": 0.95
+  },
+  "cr_fur_damp": 6.5,
+  "cr_fur_len": 1,
+  "cr_fur_stiff": 26,
+  "cr_gait_speed": 0.934122,
+  "cr_heel_scale": 0.2,
+  "cr_ik_bend": 0.62,
+  "cr_impact_influence_0": 1,
+  "cr_impact_influence_1": 1,
+  "cr_impact_influence_2": 1,
+  "cr_impact_influence_3": 1,
+  "cr_leg_len": 1,
+  "cr_motion_seed": 0,
+  "cr_neck_len": 1,
+  "cr_placement_seed_0": 0,
+  "cr_placement_seed_1": 0,
+  "cr_placement_seed_2": 0,
+  "cr_placement_seed_3": 0,
+  "cr_roam": 1,
+  "cr_roam_mode": 1,
+  "cr_roam_radius": 1.6,
+  "cr_seed": -515364992,
+  "cr_size": 0.572973,
+  "cr_step_height": 0.28,
+  "cr_tail_len": 1,
+  "cr_toe_scale": 0.3,
+  "cr_version": 1,
+  "debug_mode": 0,
+  "dice": {
+   "faces": 20,
+   "font": "square",
+   "marks": 1,
+   "max": 30,
+   "per": 4,
+   "physics": {
+    "bounce": 0.32,
+    "friction": 0.55,
+    "spin": 1,
+    "throw": 1
+   },
+   "relief": "flat",
+   "relief_depth": 0.5,
+   "round": 0.35,
+   "round_var": 0.3,
+   "show_results": true,
+   "size": 0.16,
+   "size_var": 0,
+   "style": "gold"
+  },
+  "dof_auto": 0,
+  "dof_blur": 0.75,
+  "dof_edge": 0,
+  "dof_far": 1,
+  "dof_focus": 4.55,
+  "dof_lens": 0,
+  "dof_on": 1,
+  "dof_range": 1.5,
+  "dust_amount": 0.65,
+  "dust_color": {
+   "a": 1,
+   "b": 0.22,
+   "g": 0.36,
+   "r": 0.55
+  },
+  "dust_gray": 0,
+  "dust_lifetime": 1.5,
+  "dust_on": 0,
+  "dust_opacity": 0.6,
+  "dust_size": 0.18,
+  "dust_threshold": 2,
+  "edge_col": {
+   "a": 1,
+   "b": 0.62,
+   "g": 0.38,
+   "r": 0.42
+  },
+  "edge_intensity": 0.564408,
+  "edge_on": 0,
+  "edge_width": 1.2,
+  "emissive_strength": 1,
+  "emitters": [
+   {
+    "bound": 14,
+    "from": "boss",
+    "hit": {
+     "damage": 1,
+     "graze": 0.65,
+     "radius": 0.12,
+     "spark": "sparks",
+     "tags": [
+      "player"
+     ]
+    },
+    "id": "boss_spiral",
+    "max": 600,
+    "on": true,
+    "pattern": {
+     "angle": 0,
+     "count": 3,
+     "every": 0.11,
+     "kind": "spiral",
+     "life": 5,
+     "size": 1,
+     "speed": 5,
+     "spread": 60,
+     "turn": 13
+    },
+    "seed": 1,
+    "shape": "pv_shot_m",
+    "trigger": "auto",
+    "y": 0.35
+   },
+   {
+    "bound": 14,
+    "from": "boss",
+    "hit": {
+     "damage": 1,
+     "graze": 0.65,
+     "radius": 0.12,
+     "spark": "sparks",
+     "tags": [
+      "player"
+     ]
+    },
+    "id": "boss_ring",
+    "max": 300,
+    "on": true,
+    "pattern": {
+     "accel": 0.8,
+     "angle": 0,
+     "count": 24,
+     "delay": 0.9,
+     "every": 1.8,
+     "kind": "ring",
+     "life": 6,
+     "size": 1.2,
+     "speed": 3.2,
+     "spread": 60,
+     "turn": 7.5
+    },
+    "seed": 2,
+    "shape": "pv_shot_m",
+    "trigger": "auto",
+    "y": 0.35
+   },
+   {
+    "bound": 14,
+    "from": "boss",
+    "hit": {
+     "damage": 1,
+     "graze": 0.65,
+     "radius": 0.12,
+     "spark": "sparks",
+     "tags": [
+      "player"
+     ]
+    },
+    "id": "boss_aim",
+    "max": 120,
+    "on": true,
+    "pattern": {
+     "aim": "player",
+     "angle": 0,
+     "count": 5,
+     "delay": 0.5,
+     "every": 1.3,
+     "kind": "aimed",
+     "life": 3,
+     "size": 1,
+     "speed": 8.5,
+     "spread": 36,
+     "turn": 0
+    },
+    "seed": 3,
+    "shape": "pv_shot_m",
+    "trigger": "auto",
+    "y": 0.35
+   },
+   {
+    "bound": 16,
+    "from": "player",
+    "hit": {
+     "damage": 1,
+     "graze": 0,
+     "radius": 0.2,
+     "spark": "sparks_c",
+     "tags": [
+      "boss"
+     ]
+    },
+    "id": "player_gun",
+    "max": 160,
+    "on": true,
+    "pattern": {
+     "aim": "boss",
+     "angle": 0,
+     "count": 2,
+     "every": 0.08,
+     "kind": "aimed",
+     "life": 0.9,
+     "size": 1,
+     "speed": 24,
+     "spread": 4,
+     "turn": 0
+    },
+    "seed": 0,
+    "shape": "pv_shot_c",
+    "trigger": "Fire",
+    "y": 0.3
+   },
+   {
+    "bound": 40,
+    "from": "player",
+    "id": "player_trail",
+    "max": 120,
+    "on": true,
+    "pattern": {
+     "angle": 0,
+     "count": 2,
+     "every": 0.012,
+     "jitter": 0.3,
+     "kind": "trail",
+     "life": 0.3,
+     "size": 1,
+     "speed": 0.6,
+     "spread": 50,
+     "turn": 0
+    },
+    "seed": 0,
+    "shape": "pv_trail",
+    "trigger": "dashing",
+    "y": 0.06
+   },
+   {
+    "at": [
+     0,
+     0
+    ],
+    "bound": 40,
+    "id": "sparks",
+    "max": 200,
+    "on": true,
+    "pattern": {
+     "angle": 0,
+     "count": 10,
+     "every": 0,
+     "jitter": 0.6,
+     "kind": "burst",
+     "life": 0.35,
+     "size": 1,
+     "speed": 5,
+     "spread": 360,
+     "turn": 0
+    },
+    "seed": 9,
+    "shape": "pv_spark",
+    "trigger": "manual",
+    "y": 0.4
+   },
+   {
+    "at": [
+     0,
+     0
+    ],
+    "bound": 40,
+    "id": "sparks_c",
+    "max": 200,
+    "on": true,
+    "pattern": {
+     "angle": 0,
+     "count": 4,
+     "every": 0,
+     "jitter": 0.6,
+     "kind": "burst",
+     "life": 0.22,
+     "size": 0.8,
+     "speed": 4,
+     "spread": 360,
+     "turn": 0
+    },
+    "seed": 10,
+    "shape": "pv_spark",
+    "trigger": "manual",
+    "y": 0.5
+   },
+   {
+    "bound": 14,
+    "from": "hex",
+    "hit": {
+     "damage": 1,
+     "graze": 0.65,
+     "radius": 0.13,
+     "spark": "sparks",
+     "tags": [
+      "player"
+     ]
+    },
+    "id": "hx_lattice",
+    "max": 500,
+    "on": false,
+    "pattern": {
+     "angle": 0,
+     "count": 6,
+     "every": 0.32,
+     "kind": "ring",
+     "life": 5,
+     "size": 1,
+     "speed": 4.2,
+     "spread": 60,
+     "turn": 10
+    },
+    "seed": 11,
+    "shape": "hx_shot",
+    "trigger": "auto",
+    "y": 0.35
+   },
+   {
+    "bound": 14,
+    "from": "hex",
+    "hit": {
+     "damage": 1,
+     "graze": 0.65,
+     "radius": 0.13,
+     "spark": "sparks",
+     "tags": [
+      "player"
+     ]
+    },
+    "id": "hx_curve",
+    "max": 500,
+    "on": false,
+    "pattern": {
+     "angle": 0,
+     "count": 3,
+     "curve": 35,
+     "every": 0.12,
+     "kind": "spiral",
+     "life": 5,
+     "size": 1,
+     "speed": 4.5,
+     "spread": 60,
+     "turn": 7
+    },
+    "seed": 11,
+    "shape": "hx_shot",
+    "trigger": "auto",
+    "y": 0.35
+   },
+   {
+    "bound": 14,
+    "from": "hex",
+    "hit": {
+     "damage": 1,
+     "graze": 0.65,
+     "radius": 0.13,
+     "spark": "sparks",
+     "tags": [
+      "player"
+     ]
+    },
+    "id": "hx_burst",
+    "max": 200,
+    "on": false,
+    "pattern": {
+     "aim": "player",
+     "angle": 0,
+     "count": 7,
+     "every": 1.3,
+     "kind": "aimed",
+     "life": 3,
+     "size": 1,
+     "speed": 9,
+     "spread": 70,
+     "turn": 0
+    },
+    "seed": 11,
+    "shape": "hx_shot",
+    "trigger": "auto",
+    "y": 0.35
+   }
+  ],
+  "exposure": 1.05,
+  "fade_col": {
+   "a": 1,
+   "b": 0.38,
+   "g": 0.2,
+   "r": 0.2
+  },
+  "fade_from_sky": 1,
+  "film_audio_air": 1,
+  "film_audio_appear": 0.15,
+  "film_audio_background": 1,
+  "film_audio_bass": 1,
+  "film_audio_birds": 1,
+  "film_audio_chimes": 1,
+  "film_audio_click": 1,
+  "film_audio_close": 1,
+  "film_audio_confirm": 1,
+  "film_audio_copied": 1,
+  "film_audio_explosion": 1,
+  "film_audio_fur_text": 1,
+  "film_audio_growth": 1,
+  "film_audio_magic": 1,
+  "film_audio_more_text": 1,
+  "film_audio_off": 1,
+  "film_audio_pluck": 1,
+  "film_audio_refuse": 1,
+  "film_audio_shake": 1,
+  "film_audio_shutter": 1,
+  "film_audio_signature": 1,
+  "film_audio_sniff": 1,
+  "film_audio_steps": 1,
+  "film_audio_text": 1,
+  "film_audio_tick": 1,
+  "film_audio_wings": 1,
+  "film_branding_mode": 2,
+  "film_export_loop": 0,
+  "film_fade": 0,
+  "film_focus_behind": 0.03,
+  "film_focus_offscreen": 0.12,
+  "film_focus_on": 1,
+  "film_focus_softness": 0.35,
+  "film_loop_catchup": 0.5,
+  "film_loop_pause": 0,
+  "film_music_fade_at": -1,
+  "film_music_fade_duration": 3.5,
+  "film_music_volume": 0,
+  "film_output_volume": 0.65,
+  "film_portrait_distance": 1,
+  "film_portrait_mode": 0,
+  "film_portrait_safe": 0,
+  "film_preview_portrait": 0,
+  "film_reset_camera": true,
+  "film_signature_preview": true,
+  "film_signature_style": 0,
+  "film_sound_volume": 0.55,
+  "film_sounds_fade_at": -1,
+  "film_sounds_fade_duration": 3.5,
+  "flare_on": 1,
+  "flare_radius": 0.055,
+  "flare_strength": 0.07,
+  "floor_a": {
+   "a": 1,
+   "b": 0.075,
+   "g": 0.035,
+   "r": 0.025
+  },
+  "floor_amb": 0.2,
+  "floor_auto_reach": 1,
+  "floor_b": {
+   "a": 1,
+   "b": 0.085,
+   "g": 0.04,
+   "r": 0.03
+  },
+  "floor_bump": 0,
+  "floor_contact": 1,
+  "floor_enable": 1,
+  "floor_fade": 19.0135,
+  "floor_groove": 0.01,
+  "floor_lamps": 0.975,
+  "floor_line": 0.15,
+  "floor_marble_scale": 0.714286,
+  "floor_marble_seed": 73,
+  "floor_marble_strength": 0.68,
+  "floor_material": 0,
+  "floor_mirror": 0.35,
+  "floor_mirror_blur": 0.35,
+  "floor_mirror_fade": 0.6,
+  "floor_mirror_glow": 1,
+  "floor_mirror_reach": 12,
+  "floor_mirror_shadow": 0.6,
+  "floor_mirror_tint": 0.6,
+  "floor_rotation": 0,
+  "floor_spec": 0.2,
+  "floor_sun": 0,
+  "floor_texture": "marble",
+  "floor_tile": 0.6,
+  "floor_variant": 0,
+  "floor_vein_width": 0.095,
+  "floor_warp": 1,
+  "fog_density": 0,
+  "fov": 38,
+  "fov_dolly": 0,
+  "galaxy_base": 0.12,
+  "galaxy_dust": 0.7,
+  "galaxy_pitch": 0.383972,
+  "galaxy_width": 0.32,
+  "galaxy_yaw": -2.53073,
+  "geo": {
+   "_vegetation": {
+    "gust": 0.5,
+    "mirror": 1,
+    "origin": [
+     -5,
+     -5
+    ],
+    "reach": 24,
+    "rows": {},
+    "seed": 11,
+    "span": 10,
+    "turbulence": 0.3,
+    "version": 1,
+    "wind_angle": 0,
+    "wind_force": 0.22,
+    "wind_speed": 1.2
+   },
+   "hx_boss": {
+    "appearance": "tech",
+    "p": [
+     0,
+     0.0013039199,
+     0
+    ],
+    "t": "group",
+    "vis": false
+   },
+   "hx_core": {
+    "appearance": "instant",
+    "c": [
+     0.02,
+     0.025,
+     0.05
+    ],
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "hx_boss",
+    "s": [
+     1.9,
+     1.9,
+     1.9
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.36,
+       0.57,
+       0.6235
+      ],
+      [
+       0.72,
+       0.57,
+       0
+      ],
+      [
+       0.36,
+       0.57,
+       -0.6235
+      ],
+      [
+       -0.36,
+       0.57,
+       -0.6235
+      ],
+      [
+       -0.72,
+       0.57,
+       -0.0
+      ],
+      [
+       -0.36,
+       0.57,
+       0.6235
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_eye": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.75,
+     0.95
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.75,
+      0.95
+     ],
+     "gain": 1.2
+    },
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "hx_boss",
+    "s": [
+     1.9,
+     1.9,
+     1.9
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.11,
+       0.6,
+       0.1905
+      ],
+      [
+       0.22,
+       0.6,
+       0
+      ],
+      [
+       0.11,
+       0.6,
+       -0.1905
+      ],
+      [
+       -0.11,
+       0.6,
+       -0.1905
+      ],
+      [
+       -0.22,
+       0.6,
+       -0.0
+      ],
+      [
+       -0.11,
+       0.6,
+       0.1905
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_node_0": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     3
+    ],
+    "parent": "hx_ring",
+    "s": [
+     0.6,
+     0.6,
+     0.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.25,
+       0.433
+      ],
+      [
+       0.5,
+       0.25,
+       0
+      ],
+      [
+       0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.25,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.25,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_node_1": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     2.598,
+     0,
+     1.5
+    ],
+    "parent": "hx_ring",
+    "s": [
+     0.6,
+     0.6,
+     0.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.25,
+       0.433
+      ],
+      [
+       0.5,
+       0.25,
+       0
+      ],
+      [
+       0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.25,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.25,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_node_2": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     2.598,
+     0,
+     -1.5
+    ],
+    "parent": "hx_ring",
+    "s": [
+     0.6,
+     0.6,
+     0.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.25,
+       0.433
+      ],
+      [
+       0.5,
+       0.25,
+       0
+      ],
+      [
+       0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.25,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.25,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_node_3": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     -3
+    ],
+    "parent": "hx_ring",
+    "s": [
+     0.6,
+     0.6,
+     0.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.25,
+       0.433
+      ],
+      [
+       0.5,
+       0.25,
+       0
+      ],
+      [
+       0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.25,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.25,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_node_4": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -2.598,
+     0,
+     -1.5
+    ],
+    "parent": "hx_ring",
+    "s": [
+     0.6,
+     0.6,
+     0.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.25,
+       0.433
+      ],
+      [
+       0.5,
+       0.25,
+       0
+      ],
+      [
+       0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.25,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.25,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_node_5": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -2.598,
+     0,
+     1.5
+    ],
+    "parent": "hx_ring",
+    "s": [
+     0.6,
+     0.6,
+     0.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.25,
+       0.433
+      ],
+      [
+       0.5,
+       0.25,
+       0
+      ],
+      [
+       0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.25,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.25,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.25,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_rim": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "hx_boss",
+    "s": [
+     1.9,
+     1.9,
+     1.9
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.5,
+       0.55,
+       0.866
+      ],
+      [
+       1,
+       0.55,
+       0
+      ],
+      [
+       0.5,
+       0.55,
+       -0.866
+      ],
+      [
+       -0.5,
+       0.55,
+       -0.866
+      ],
+      [
+       -1,
+       0.55,
+       -0.0
+      ],
+      [
+       -0.5,
+       0.55,
+       0.866
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "hx_ring": {
+    "appearance": "tech",
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "hx_boss",
+    "t": "group"
+   },
+   "hx_shot": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0.0009999275,
+     0
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.25,
+       0.06,
+       0.433
+      ],
+      [
+       0.5,
+       0.06,
+       0
+      ],
+      [
+       0.25,
+       0.06,
+       -0.433
+      ],
+      [
+       -0.25,
+       0.06,
+       -0.433
+      ],
+      [
+       -0.5,
+       0.06,
+       -0.0
+      ],
+      [
+       -0.25,
+       0.06,
+       0.433
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface",
+    "vis": false
+   },
+   "pv_boss": {
+    "appearance": "tech",
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "r": [
+     0,
+     45,
+     0
+    ],
+    "t": "group"
+   },
+   "pv_boss_core": {
+    "appearance": "instant",
+    "c": [
+     0.02,
+     0.025,
+     0.05
+    ],
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "pv_boss",
+    "s": [
+     1.6,
+     1.6,
+     1.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       -0.72,
+       0.52,
+       -0.72
+      ],
+      [
+       0.72,
+       0.52,
+       -0.72
+      ],
+      [
+       0.72,
+       0.52,
+       0.72
+      ],
+      [
+       -0.72,
+       0.52,
+       0.72
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_boss_eye_l": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 1.17
+    },
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "pv_boss",
+    "s": [
+     1.6,
+     1.6,
+     1.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       -0.62,
+       0.54,
+       0.12
+      ],
+      [
+       -0.28,
+       0.54,
+       0.12
+      ],
+      [
+       -0.28,
+       0.54,
+       0.46
+      ],
+      [
+       -0.62,
+       0.54,
+       0.46
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_boss_eye_r": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 1.17
+    },
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "pv_boss",
+    "s": [
+     1.6,
+     1.6,
+     1.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0.28,
+       0.54,
+       0.12
+      ],
+      [
+       0.62,
+       0.54,
+       0.12
+      ],
+      [
+       0.62,
+       0.54,
+       0.46
+      ],
+      [
+       0.28,
+       0.54,
+       0.46
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_boss_rim": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "pv_boss",
+    "s": [
+     1.6,
+     1.6,
+     1.6
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       -1,
+       0.5,
+       -1
+      ],
+      [
+       1,
+       0.5,
+       -1
+      ],
+      [
+       1,
+       0.5,
+       1
+      ],
+      [
+       -1,
+       0.5,
+       1
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown": {
+    "appearance": "tech",
+    "p": [
+     0,
+     0.0012799999,
+     0
+    ],
+    "t": "group",
+    "vis": false
+   },
+   "pv_crown_0": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     2.6
+    ],
+    "parent": "pv_crown",
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_1": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     1.8385,
+     0,
+     1.8385
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     45,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_2": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     2.6,
+     0,
+     0
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     90,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_3": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     1.8385,
+     0,
+     -1.8385
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     135,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_4": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     -2.6
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     180,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_5": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -1.8385,
+     0,
+     -1.8385
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     225,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_6": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -2.6,
+     0,
+     -0.0
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     270,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_crown_7": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -1.8385,
+     0,
+     1.8385
+    ],
+    "parent": "pv_crown",
+    "r": [
+     0,
+     315,
+     0
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.3,
+       0.6
+      ],
+      [
+       0.22,
+       0.3,
+       -0.3
+      ],
+      [
+       -0.22,
+       0.3,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_dot_00": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0.25,
+     12.4
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_01": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     4.7453,
+     0.25,
+     11.4561
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_02": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     8.7681,
+     0.25,
+     8.7681
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_03": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     11.4561,
+     0.25,
+     4.7453
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_04": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     12.4,
+     0.25,
+     0
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_05": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     11.4561,
+     0.25,
+     -4.7453
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_06": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     8.7681,
+     0.25,
+     -8.7681
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_07": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     4.7453,
+     0.25,
+     -11.4561
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_08": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0.25,
+     -12.4
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_09": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -4.7453,
+     0.25,
+     -11.4561
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_10": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -8.7681,
+     0.25,
+     -8.7681
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_11": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -11.4561,
+     0.25,
+     -4.7453
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_12": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -12.4,
+     0.25,
+     -0.0
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_13": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -11.4561,
+     0.25,
+     4.7453
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_14": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -8.7681,
+     0.25,
+     8.7681
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_dot_15": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     -4.7453,
+     0.25,
+     11.4561
+    ],
+    "s": [
+     0.42,
+     0.42,
+     0.42
+    ],
+    "sh": false,
+    "t": "sphere"
+   },
+   "pv_player": {
+    "appearance": "tech",
+    "p": [
+     0,
+     0,
+     7
+    ],
+    "r": [
+     0,
+     180,
+     0
+    ],
+    "t": "group"
+   },
+   "pv_player_core": {
+    "appearance": "instant",
+    "c": [
+     0.02,
+     0.025,
+     0.05
+    ],
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "pv_player",
+    "s": [
+     1.4,
+     1.4,
+     1.4
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.13,
+       0.3544
+      ],
+      [
+       0.31,
+       0.13,
+       -0.2656
+      ],
+      [
+       -0.31,
+       0.13,
+       -0.2656
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_player_rim": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "parent": "pv_player",
+    "s": [
+     1.4,
+     1.4,
+     1.4
+    ],
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.12,
+       0.62
+      ],
+      [
+       0.5,
+       0.12,
+       -0.38
+      ],
+      [
+       -0.5,
+       0.12,
+       -0.38
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface"
+   },
+   "pv_shot_c": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0.0009999275,
+     0
+    ],
+    "s": [
+     0.5,
+     0.5,
+     1
+    ],
+    "sh": false,
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.06,
+       0.5
+      ],
+      [
+       0.12,
+       0.06,
+       -0.3
+      ],
+      [
+       -0.12,
+       0.06,
+       -0.3
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface",
+    "vis": false
+   },
+   "pv_shot_m": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.353,
+     0.847
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.353,
+      0.847
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0.0009999275,
+     0
+    ],
+    "s": [
+     0.55,
+     0.55,
+     0.9
+    ],
+    "sh": false,
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.08,
+       0.5
+      ],
+      [
+       0.2,
+       0.08,
+       0
+      ],
+      [
+       0,
+       0.08,
+       -0.5
+      ],
+      [
+       -0.2,
+       0.08,
+       0
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface",
+    "vis": false
+   },
+   "pv_spark": {
+    "appearance": "instant",
+    "c": [
+     1,
+     0.75,
+     0.95
+    ],
+    "glow": {
+     "color": [
+      1,
+      0.75,
+      0.95
+     ],
+     "gain": 1.8
+    },
+    "p": [
+     0,
+     0.0009999275,
+     0
+    ],
+    "s": [
+     0.16,
+     0.16,
+     0.16
+    ],
+    "sh": false,
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.05,
+       0.5
+      ],
+      [
+       0.5,
+       0.05,
+       3.061617e-17
+      ],
+      [
+       6.123234e-17,
+       0.05,
+       -0.5
+      ],
+      [
+       -0.5,
+       0.05,
+       -9.184851e-17
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface",
+    "vis": false
+   },
+   "pv_trail": {
+    "appearance": "instant",
+    "c": [
+     0.31,
+     0.902,
+     1
+    ],
+    "glow": {
+     "color": [
+      0.31,
+      0.902,
+      1
+     ],
+     "gain": 0.9
+    },
+    "p": [
+     0,
+     0.0009999275,
+     0
+    ],
+    "s": [
+     0.5,
+     0.5,
+     0.5
+    ],
+    "sh": false,
+    "surface": {
+     "aspect": 1,
+     "base": 0,
+     "base_mode": 1,
+     "base_width": 0.08,
+     "belly_width": 1,
+     "bend": 0,
+     "blue": 1,
+     "cup": 0.3,
+     "green": 1,
+     "kind": 4,
+     "neck_width": 0.65,
+     "path": [
+      [
+       0,
+       0.03,
+       0.5
+      ],
+      [
+       0.43,
+       0.03,
+       -0.25
+      ],
+      [
+       -0.43,
+       0.03,
+       -0.25
+      ]
+     ],
+     "red": 1,
+     "ripple": 0.02,
+     "segments": 20,
+     "shoulder_width": 0.7,
+     "sides": 12,
+     "thickness": 0.004,
+     "tip_blue": 1,
+     "tip_green": 1,
+     "tip_red": 1,
+     "tip_width": 0.005,
+     "twist": 0,
+     "veins": 0.3
+    },
+    "t": "surface",
+    "vis": false
+   }
+  },
+  "geo_show": true,
+  "geometry_quality": 1,
+  "input": {
+   "actions": [
+    {
+     "id": "Move",
+     "keys": {
+      "down": [
+       "S",
+       "Down"
+      ],
+      "left": [
+       "A",
+       "Left"
+      ],
+      "right": [
+       "D",
+       "Right"
+      ],
+      "up": [
+       "W",
+       "Up"
+      ]
+     },
+     "kind": "axis2",
+     "touch": [
+      {
+       "kind": "split",
+       "pointer": "touch",
+       "zone": [
+        0,
+        0.3,
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    {
+     "id": "Dash",
+     "keys": [
+      "Space",
+      "K"
+     ],
+     "kind": "button",
+     "touch": [
+      {
+       "kind": "hold",
+       "label": "DASH",
+       "pointer": "touch",
+       "zone": [
+        0.78,
+        0.1,
+        1,
+        0.3
+       ]
+      },
+      {
+       "button": "right",
+       "kind": "hold",
+       "pointer": "mouse",
+       "zone": [
+        0,
+        0,
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    {
+     "id": "Fire",
+     "keys": [
+      "J",
+      "Enter"
+     ],
+     "kind": "button",
+     "touch": [
+      {
+       "kind": "hold",
+       "pointer": "any",
+       "zone": [
+        0,
+        0,
+        1,
+        1
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "junction_ao": 0.2,
+  "l0": {
+   "c": {
+    "a": 1,
+    "b": 0.3529,
+    "g": 0.4824,
+    "r": 0.8784
+   },
+   "cone": 0,
+   "int": 0.9,
+   "mode": 1,
+   "on": 0,
+   "px": -6,
+   "py": 3,
+   "pz": -5,
+   "rng": 30,
+   "sfade": 2.5,
+   "spec": 0.6
+  },
+  "l1": {
+   "c": {
+    "a": 1,
+    "b": 1,
+    "g": 0.69,
+    "r": 0.58
+   },
+   "cone": 0.55,
+   "int": 0.65,
+   "mode": 2,
+   "on": 0,
+   "px": 2.6,
+   "py": 3,
+   "pz": -1.5,
+   "rng": 7,
+   "sfade": 2.5,
+   "spec": 1
+  },
+  "l2": {
+   "c": {
+    "a": 1,
+    "b": 1,
+    "g": 0.86,
+    "r": 0.8
+   },
+   "cone": 0.55,
+   "int": 0.8,
+   "mode": 2,
+   "on": 0,
+   "px": 0,
+   "py": 3.2,
+   "pz": 3.2,
+   "rng": 6,
+   "sfade": 2.5,
+   "spec": 1
+  },
+  "lamp_aim_scene": 0,
+  "lamp_boost": 1,
+  "lamp_sat": 1.37072,
+  "lamp_shadow": 1,
+  "lamp_shadow_strength": 0.85,
+  "lamp_shadow_tint": 0.5,
+  "logo_fx": {
+   "beat": 1,
+   "dance": 1,
+   "glow": 1,
+   "on": true,
+   "press": 1,
+   "sparkles": 1,
+   "start": 0.6,
+   "wave": 1
+  },
+  "look": {
+   "contrast": 1.1,
+   "display_curve": 1,
+   "ev": 0,
+   "gain": 1,
+   "gamma": 1,
+   "lift": 0,
+   "on": true,
+   "saturation": 1.35,
+   "temperature": 0,
+   "tint": 0,
+   "vibrance": 0.3
+  },
+  "loop_camera_offset": 0,
+  "materials": {
+   "aged_oak": {
+    "base": "wood",
+    "cavity": 0.72,
+    "color_a": [
+     0.36,
+     0.25,
+     0.13
+    ],
+    "color_b": [
+     0.11,
+     0.075,
+     0.04
+    ],
+    "contrast": 1.15,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.85,
+    "metallic": 0,
+    "mottling": 0.7,
+    "parallax": 0.025,
+    "profile": 1,
+    "relief": 0.8,
+    "resolution": 512,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 19,
+    "tile": 4.16667,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "bark": {
+    "base": "wood",
+    "cavity": 0.72,
+    "color_a": [
+     0.48,
+     0.38,
+     0.28
+    ],
+    "color_b": [
+     0.13,
+     0.095,
+     0.065
+    ],
+    "contrast": 1.4,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 1,
+    "metallic": 0,
+    "mottling": 0.9,
+    "parallax": 0.06,
+    "profile": 2,
+    "relief": 1.1,
+    "resolution": 512,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 5,
+    "tile": 3,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 2.5
+   },
+   "bench_oak": {
+    "base": "wood",
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.5,
+    "metallic": 0,
+    "mottling": 0.4,
+    "profile": 1,
+    "relief": 0.8,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 4,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 0.5
+   },
+   "birch_bark": {
+    "base": "wood",
+    "color_a": [
+     0.78,
+     0.74,
+     0.64
+    ],
+    "color_b": [
+     0.14,
+     0.12,
+     0.1
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 1,
+    "metallic": 0,
+    "mottling": 0.5,
+    "profile": 2,
+    "relief": 1.1,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 37,
+    "tile": 6.25,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "build_ground": {
+    "base": "sand",
+    "color_a": [
+     0.34,
+     0.4,
+     0.19
+    ],
+    "color_b": [
+     0.2,
+     0.25,
+     0.1
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "macro": 0.3,
+    "metallic": 0,
+    "mottling": 0.4,
+    "relief": 0.12,
+    "rotation": 0,
+    "roughness": 0.95,
+    "seed": 0,
+    "tile": 0.6,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "build_path": {
+    "base": "stone",
+    "color_a": [
+     0.48,
+     0.42,
+     0.32
+    ],
+    "color_b": [
+     0.32,
+     0.29,
+     0.23
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "metallic": 0,
+    "mottling": 0.4,
+    "relief": 0.2,
+    "rotation": 0,
+    "roughness": 0.9,
+    "seed": 0,
+    "tile": 0.5,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "build_stone": {
+    "base": "stone",
+    "color_a": [
+     0.52,
+     0.48,
+     0.4
+    ],
+    "color_b": [
+     0.3,
+     0.29,
+     0.25
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "metallic": 0,
+    "mottling": 0.4,
+    "relief": 0.28,
+    "rotation": 0,
+    "roughness": 0.86,
+    "seed": 0,
+    "tile": 0.5,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "cottage_found": {
+    "age": 0.6,
+    "base": "stone",
+    "cavity": 0.6,
+    "color_a": [
+     0.56,
+     0.53,
+     0.48
+    ],
+    "color_b": [
+     0.3,
+     0.28,
+     0.25
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0.21,
+    "dirt": 0.48,
+    "grain": 0.65,
+    "macro": 0.5,
+    "metallic": 0,
+    "moss": 0.3,
+    "mottling": 0.4,
+    "parallax": 0.1,
+    "pattern": "ashlar",
+    "porosity": 0.65,
+    "relief": 2.4,
+    "rotation": 0,
+    "roughness": 1,
+    "roughness_variation": 0.3,
+    "seed": 0,
+    "streaks": 0.36,
+    "tile": 2.22222,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12
+   },
+   "cottage_plaster": {
+    "age": 0.35,
+    "base": "aggregate",
+    "cavity": 0.6,
+    "color_a": [
+     0.86,
+     0.82,
+     0.74
+    ],
+    "color_b": [
+     0.58,
+     0.54,
+     0.47
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0.1225,
+    "dirt": 0.28,
+    "grain": 0.65,
+    "macro": 0.6,
+    "metallic": 0,
+    "moss": 0.175,
+    "mottling": 0.4,
+    "pattern": "roughcast",
+    "porosity": 0.8,
+    "relief": 1.6,
+    "rotation": 0,
+    "roughness": 1,
+    "roughness_variation": 0.2,
+    "seed": 0,
+    "stochastic": 1,
+    "streaks": 0.21,
+    "tile": 5,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "world_mapping": 1
+   },
+   "cottage_quoin": {
+    "base": "stone",
+    "cavity": 0.72,
+    "color_a": [
+     0.7,
+     0.66,
+     0.58
+    ],
+    "color_b": [
+     0.4,
+     0.37,
+     0.32
+    ],
+    "contrast": 1.18,
+    "crack_width": 0.015,
+    "cracks": 0.08,
+    "dirt": 0.24,
+    "grain": 0.9,
+    "metallic": 0,
+    "moss": 0.1,
+    "mottling": 0.7,
+    "parallax": 0.08,
+    "profile": 2,
+    "relief": 2.4,
+    "rotation": 0,
+    "roughness": 0.57,
+    "roughness_variation": 0.35,
+    "seed": 0,
+    "tile": 5.55556,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12,
+    "world_mapping": 1
+   },
+   "cottage_stone": {
+    "age": 0.55,
+    "base": "cobble",
+    "cavity": 0.72,
+    "chip": 0.33,
+    "color_a": [
+     0.62,
+     0.56,
+     0.47
+    ],
+    "color_b": [
+     0.3,
+     0.27,
+     0.22
+    ],
+    "columns": 10,
+    "contrast": 1.1,
+    "crack_width": 0.015,
+    "cracks": 0.1925,
+    "dirt": 0.44,
+    "grain": 0.85,
+    "jitter": 0.95,
+    "macro": 0.5,
+    "metallic": 0,
+    "mortar": 0.09,
+    "moss": 0.275,
+    "mottling": 0.75,
+    "parallax": 0.12,
+    "porosity": 0.7,
+    "profile": 1,
+    "relief": 2.6,
+    "resolution": 512,
+    "rotation": 0,
+    "roughness": 0.95,
+    "roughness_variation": 0.35,
+    "rows": 8,
+    "seed": 0,
+    "streaks": 0.33,
+    "tile": 1.38889,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12
+   },
+   "country_glass": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "end_grain": {
+    "base": "wood",
+    "color_a": [
+     0.78,
+     0.62,
+     0.42
+    ],
+    "color_b": [
+     0.46,
+     0.33,
+     0.2
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.3,
+    "metallic": 0,
+    "mottling": 0.8,
+    "profile": 3,
+    "relief": 0.8,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 31,
+    "tile": 16.6667,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 3
+   },
+   "family_glass": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 1,
+    "story_height": 0.2,
+    "story_width": 0.17,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "flagstone": {
+    "base": "aggregate",
+    "color_a": [
+     0.56,
+     0.56,
+     0.54
+    ],
+    "color_b": [
+     0.32,
+     0.33,
+     0.31
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.8,
+    "metallic": 0,
+    "mottling": 0.75,
+    "parallax": 0.04,
+    "relief": 1.8,
+    "rotation": 0,
+    "roughness": 0.9,
+    "roughness_variation": 0.35,
+    "seed": 0,
+    "tile": 5.55556,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "garden_leaf": {
+    "base": "leaf",
+    "color_a": [
+     1,
+     1,
+     1
+    ],
+    "color_b": [
+     0.35,
+     0.35,
+     0.3
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.8,
+    "metallic": 0,
+    "mottling": 0.9,
+    "relief": 2.2,
+    "rotation": 0,
+    "roughness": 0.9,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 8.33333,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "glade_stone": {
+    "base": "aggregate",
+    "color_a": [
+     1,
+     1,
+     1
+    ],
+    "color_b": [
+     0.82,
+     0.8,
+     0.76
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0.15,
+    "grain": 0.6,
+    "metallic": 0,
+    "mottling": 0.55,
+    "relief": 0.9,
+    "rotation": 0,
+    "roughness": 0.9,
+    "seed": 0,
+    "tile": 2.2222223,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "interior_shadow": {
+    "base": "plain",
+    "color_a": [
+     0.055,
+     0.045,
+     0.035
+    ],
+    "color_b": [
+     0.055,
+     0.045,
+     0.035
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "metallic": 0,
+    "mottling": 0,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.95,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "ivy_leaf": {
+    "base": "leaf",
+    "color_a": [
+     0.55,
+     0.7,
+     0.27
+    ],
+    "color_b": [
+     0.16,
+     0.24,
+     0.045
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.15,
+    "metallic": 0,
+    "mottling": 0.5,
+    "profile": 1,
+    "relief": 1,
+    "rotation": 0,
+    "roughness": 0.55,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 16.6667,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "lacquer": {
+    "base": "wood",
+    "color_a": [
+     0.28,
+     0.15,
+     0.085
+    ],
+    "color_b": [
+     0.2,
+     0.095,
+     0.045
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.35,
+    "metallic": 0,
+    "mottling": 0.25,
+    "relief": 0.04,
+    "rotation": 90,
+    "roughness": 0.14,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 0.5,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "lantern_glass": {
+    "base": "plain",
+    "color_a": [
+     0.02,
+     0.015,
+     0.008
+    ],
+    "color_b": [
+     0.02,
+     0.015,
+     0.008
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "metallic": 0,
+    "mottling": 0.4,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.14,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "log_bark": {
+    "base": "wood",
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.8,
+    "metallic": 0,
+    "mottling": 0.4,
+    "profile": 2,
+    "relief": 1.1,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 5.55556,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1.5
+   },
+   "meadow": {
+    "base": "grass",
+    "color_a": [
+     0.31,
+     0.34,
+     0.14
+    ],
+    "color_b": [
+     0.11,
+     0.13,
+     0.065
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.85,
+    "metallic": 0,
+    "mottling": 0.75,
+    "relief": 0.45,
+    "rotation": 0,
+    "roughness": 0.94,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "terrain": 1,
+    "tile": 3.125,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "painted_door": {
+    "base": "wood",
+    "color_a": [
+     0.3,
+     0.43,
+     0.3
+    ],
+    "color_b": [
+     0.12,
+     0.2,
+     0.13
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "metallic": 0,
+    "mottling": 0.6,
+    "parallax": 0.025,
+    "relief": 0.8,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 23,
+    "tile": 3.7037,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "path_stone": {
+    "base": "cobble",
+    "cavity": 0.72,
+    "color_a": [
+     0.43,
+     0.48,
+     0.54
+    ],
+    "color_b": [
+     0.2,
+     0.23,
+     0.27
+    ],
+    "columns": 5,
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "dirt": 0.18,
+    "grain": 0.7,
+    "jitter": 0.85,
+    "macro": 0.5,
+    "metallic": 0,
+    "mortar": 0.055,
+    "moss": 0.15,
+    "mottling": 0.8,
+    "parallax": 0.04,
+    "profile": 1,
+    "relief": 1.4,
+    "rotation": 0,
+    "roughness": 0.5,
+    "roughness_variation": 0.35,
+    "rows": 5,
+    "seed": 29,
+    "tile": 2.22222,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12
+   },
+   "pumpkin_cream": {
+    "base": "plain",
+    "color_a": [
+     0.94,
+     0.86,
+     0.7
+    ],
+    "color_b": [
+     0.7,
+     0.63,
+     0.46
+    ],
+    "contrast": 0.7,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "dirt": 0.1,
+    "grain": 0.04,
+    "metallic": 0,
+    "mottling": 0.12,
+    "relief": 0.1,
+    "rotation": 0,
+    "roughness": 0.67,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "pumpkin_skin": {
+    "base": "plain",
+    "color_a": [
+     1,
+     0.5,
+     0.1
+    ],
+    "color_b": [
+     0.76,
+     0.31,
+     0.06
+    ],
+    "contrast": 0.8,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "dirt": 0.1,
+    "grain": 0.04,
+    "metallic": 0,
+    "mottling": 0.12,
+    "relief": 0.12,
+    "rotation": 0,
+    "roughness": 0.63,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "reader_glass": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 2,
+    "story_height": 0.15,
+    "story_width": 0.14,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "ridge_clay": {
+    "base": "clay",
+    "color_a": [
+     0.62,
+     0.28,
+     0.18
+    ],
+    "color_b": [
+     0.3,
+     0.12,
+     0.08
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.7,
+    "metallic": 0,
+    "mottling": 0.6,
+    "relief": 0.2,
+    "rotation": 0,
+    "roughness": 0.8,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 3.33333,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12
+   },
+   "rim_copper": {
+    "base": "metal",
+    "color_a": [
+     0.58,
+     0.42,
+     0.28
+    ],
+    "color_b": [
+     0.38,
+     0.24,
+     0.13
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.2,
+    "metallic": 0.73,
+    "mottling": 0.4,
+    "relief": 0.12,
+    "rotation": 0,
+    "roughness": 0.34,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "roof_flashing": {
+    "base": "metal",
+    "color_a": [
+     0.28,
+     0.27,
+     0.24
+    ],
+    "color_b": [
+     0.17,
+     0.16,
+     0.14
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.3,
+    "metallic": 0.15,
+    "mottling": 0.4,
+    "relief": 0.2,
+    "rotation": 0,
+    "roughness": 0.95,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "rustic_brick": {
+    "base": "brick",
+    "chip": 0.7,
+    "color_a": [
+     0.66,
+     0.54,
+     0.52
+    ],
+    "color_b": [
+     0.13,
+     0.1,
+     0.1
+    ],
+    "columns": 4,
+    "contrast": 1.25,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.9,
+    "jitter": 0.55,
+    "metallic": 0,
+    "mortar": 0.22,
+    "mottling": 1,
+    "parallax": 0.6,
+    "relief": 2.6,
+    "rotation": 0,
+    "roughness": 0.9,
+    "roughness_variation": 0.25,
+    "round": 0.8,
+    "rows": 9,
+    "seed": 0,
+    "tile": 3.125,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12
+   },
+   "shutter_oak": {
+    "base": "wood",
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.35,
+    "metallic": 0,
+    "mottling": 0.25,
+    "profile": 1,
+    "relief": 0.25,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 2.85714,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 0.35
+   },
+   "shutter_paint": {
+    "base": "wood",
+    "color_a": [
+     0.19,
+     0.28,
+     0.2
+    ],
+    "color_b": [
+     0.08,
+     0.13,
+     0.09
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.35,
+    "metallic": 0,
+    "mottling": 0.45,
+    "relief": 0.4,
+    "rotation": 0,
+    "roughness": 0.72,
+    "roughness_variation": 0.25,
+    "seed": 0,
+    "tile": 4.54545,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "slate": {
+    "base": "tile",
+    "cavity": 0.72,
+    "chip": 0.45,
+    "color_a": [
+     0.28,
+     0.3,
+     0.33
+    ],
+    "color_b": [
+     0.1,
+     0.11,
+     0.125
+    ],
+    "columns": 10,
+    "contrast": 1.03,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "dirt": 0.02,
+    "grain": 0.3,
+    "jitter": 0.65,
+    "lichen_scale": 5,
+    "macro": 0.5,
+    "metallic": 0,
+    "mortar": 0.06,
+    "mottling": 0.18,
+    "parallax": 0.22,
+    "profile": 1,
+    "relief": 2.2,
+    "rotation": 0,
+    "roughness": 0.62,
+    "roughness_variation": 0.35,
+    "rows": 12,
+    "seed": 0,
+    "tile": 1.53846,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12,
+    "world_mapping": 1
+   },
+   "ter_boulder": {
+    "base": "aggregate",
+    "color_a": [
+     0.66,
+     0.64,
+     0.58
+    ],
+    "color_b": [
+     0.44,
+     0.43,
+     0.4
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0.45,
+    "dirt": 0.6,
+    "grain": 0.75,
+    "lichen": 0.35,
+    "macro": 0.5,
+    "metallic": 0,
+    "moss": 0.55,
+    "mottling": 0.85,
+    "relief": 1.8,
+    "rotation": 0,
+    "roughness": 0.92,
+    "seed": 0,
+    "tile": 1.1111112,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "ter_island": {
+    "base": "sand",
+    "color_a": [
+     0.34,
+     0.4,
+     0.19
+    ],
+    "color_b": [
+     0.2,
+     0.25,
+     0.1
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "macro": 0.3,
+    "metallic": 0,
+    "mottling": 0.4,
+    "relief": 0.12,
+    "rotation": 0,
+    "roughness": 0.95,
+    "seed": 0,
+    "tile": 0.5988024,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "ter_rock": {
+    "base": "aggregate",
+    "color_a": [
+     0.76,
+     0.75,
+     0.71
+    ],
+    "color_b": [
+     0.53,
+     0.52,
+     0.49
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0.2,
+    "grain": 0.75,
+    "lichen": 0.3,
+    "macro": 0.5,
+    "metallic": 0,
+    "moss": 0.45,
+    "mottling": 0.85,
+    "relief": 1.7,
+    "rotation": 0,
+    "roughness": 0.92,
+    "seed": 0,
+    "tile": 1.1111112,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "ter_sandstone": {
+    "base": "aggregate",
+    "color_a": [
+     0.97,
+     0.94,
+     0.88
+    ],
+    "color_b": [
+     0.84,
+     0.8,
+     0.74
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0.12,
+    "grain": 0.35,
+    "metallic": 0,
+    "mottling": 0.45,
+    "relief": 0.45,
+    "rotation": 0,
+    "roughness": 0.9,
+    "seed": 0,
+    "tile": 0.625,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "w_b0_life": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 1,
+    "story_height": 0.2,
+    "story_width": 0.17,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "w_b1_life": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 2,
+    "story_height": 0.13,
+    "story_width": 0.13,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "w_l0_life": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 1,
+    "story_height": 0.2,
+    "story_width": 0.17,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "w_l1_life": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 2,
+    "story_height": 0.14,
+    "story_width": 0.12,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "w_r0_life": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 1,
+    "story_height": 0.2,
+    "story_width": 0.17,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "w_r1_life": {
+    "base": "plain",
+    "color_a": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "color_b": [
+     0.018,
+     0.026,
+     0.031
+    ],
+    "contrast": 1,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0,
+    "interior": 0.45,
+    "metallic": 0.08,
+    "mottling": 0,
+    "people": 0.45,
+    "people_scale": 1,
+    "relief": 0,
+    "rotation": 0,
+    "roughness": 0.16,
+    "seed": 0,
+    "story": 2,
+    "story_height": 0.14,
+    "story_width": 0.12,
+    "tile": 1,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1
+   },
+   "wallstone": {
+    "base": "cobble",
+    "color_a": [
+     0.66,
+     0.62,
+     0.56
+    ],
+    "color_b": [
+     0.36,
+     0.33,
+     0.3
+    ],
+    "contrast": 1.3,
+    "crack_width": 0.015,
+    "cracks": 0,
+    "grain": 0.65,
+    "metallic": 0,
+    "mottling": 0.4,
+    "parallax": 0.4,
+    "relief": 1.6,
+    "rotation": 0,
+    "roughness": 0.95,
+    "roughness_variation": 0.35,
+    "seed": 0,
+    "tile": 11.1111,
+    "variant": "organic",
+    "vein_strength": 1,
+    "vein_width": 0.095,
+    "warp": 1,
+    "wetness": 0.12
+   }
+  },
+  "message_styles": [],
+  "metallic": 0,
+  "mirror_enable": 1,
+  "mist_density": 0.1,
+  "mist_on": 0,
+  "mist_start": 8,
+  "model_hidden": 1,
+  "motion_blur": 0,
+  "music_bpm": 120,
+  "music_cycle_0_0": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 72,
+   "on": 0,
+   "period": 4,
+   "pulses": 4,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_0_1": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 79,
+   "on": 0,
+   "period": 3,
+   "pulses": 3,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_1_0": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 45,
+   "on": 0,
+   "period": 4,
+   "pulses": 4,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_1_1": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 45,
+   "on": 0,
+   "period": 3,
+   "pulses": 3,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_2_0": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 72,
+   "on": 0,
+   "period": 4,
+   "pulses": 4,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_2_1": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 79,
+   "on": 0,
+   "period": 3,
+   "pulses": 3,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_3_0": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 72,
+   "on": 0,
+   "period": 4,
+   "pulses": 4,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_cycle_3_1": {
+   "fade": 0.8,
+   "gain": 0.4,
+   "note": 79,
+   "on": 0,
+   "period": 3,
+   "pulses": 3,
+   "rotation": 0,
+   "steps": 8
+  },
+  "music_gain": 0.55,
+  "music_grid0": 0.5,
+  "music_layout_seed": 0,
+  "music_level_0": 0.55,
+  "music_level_1": 0.7,
+  "music_level_2": 0.5,
+  "music_level_3": 0.35,
+  "music_on": 0,
+  "music_pos_0": [
+   -2,
+   1,
+   -2
+  ],
+  "music_pos_1": [
+   0,
+   0.5,
+   -3
+  ],
+  "music_pos_2": [
+   2,
+   1.8,
+   -2
+  ],
+  "music_pos_3": [
+   0,
+   2,
+   -4
+  ],
+  "music_reveal": 6,
+  "music_ring_intensity": 1.35,
+  "music_role_arp": 1,
+  "music_role_bass": 1,
+  "music_role_bell": 1,
+  "music_role_drums": 1,
+  "music_role_lead": 1,
+  "music_role_pad": 1,
+  "music_role_riser": 1,
+  "music_theme_level": 1,
+  "music_tm_0_gain": 1,
+  "music_tm_0_mute": 0,
+  "music_tm_0_solo": 0,
+  "music_tm_0_timbre": 0,
+  "music_tm_0_transpose": 0,
+  "music_tm_1_gain": 1,
+  "music_tm_1_mute": 0,
+  "music_tm_1_solo": 0,
+  "music_tm_1_timbre": 1,
+  "music_tm_1_transpose": 0,
+  "music_tm_2_gain": 1,
+  "music_tm_2_mute": 0,
+  "music_tm_2_solo": 0,
+  "music_tm_2_timbre": 2,
+  "music_tm_2_transpose": 0,
+  "music_tm_3_gain": 1,
+  "music_tm_3_mute": 0,
+  "music_tm_3_solo": 0,
+  "music_tm_3_timbre": 3,
+  "music_tm_3_transpose": 0,
+  "music_tm_4_gain": 1,
+  "music_tm_4_mute": 0,
+  "music_tm_4_solo": 0,
+  "music_tm_4_timbre": 4,
+  "music_tm_4_transpose": 0,
+  "music_tm_5_gain": 1,
+  "music_tm_5_mute": 0,
+  "music_tm_5_solo": 0,
+  "music_tm_5_timbre": 5,
+  "music_tm_5_transpose": 0,
+  "music_tm_6_gain": 1,
+  "music_tm_6_mute": 0,
+  "music_tm_6_solo": 0,
+  "music_tm_6_timbre": 6,
+  "music_tm_6_transpose": 0,
+  "music_tm_7_gain": 1,
+  "music_tm_7_mute": 0,
+  "music_tm_7_solo": 0,
+  "music_tm_7_timbre": 7,
+  "music_tm_7_transpose": 0,
+  "music_tm_8_gain": 1,
+  "music_tm_8_mute": 0,
+  "music_tm_8_solo": 0,
+  "music_tm_8_timbre": 8,
+  "music_tm_8_transpose": 0,
+  "music_visible_0": 1,
+  "music_visible_1": 1,
+  "music_visible_2": 1,
+  "music_visible_3": 1,
+  "music_wave_gain": 0.22,
+  "music_wave_intensity": 1.45,
+  "music_waves": 1,
+  "nature": {},
+  "nod": {
+   "graphs": [
+    {
+     "id": "game",
+     "rules": [
+      {
+       "do": [
+        {
+         "on": true,
+         "op": "play.pause"
+        }
+       ],
+       "id": "title",
+       "on": "state.enter:title"
+      },
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "play"
+        }
+       ],
+       "id": "start",
+       "on": "input.pressed:Fire",
+       "when": "is(title)"
+      },
+      {
+       "do": [
+        {
+         "on": false,
+         "op": "play.pause"
+        },
+        {
+         "amount": 0.8,
+         "op": "fx.flash",
+         "time": 0.3
+        },
+        {
+         "gain": 0.9,
+         "name": "confirm",
+         "op": "sound.play"
+        }
+       ],
+       "id": "go",
+       "on": "state.enter:play"
+      },
+      {
+       "do": [
+        {
+         "op": "var.add",
+         "value": "10 * mult * n",
+         "var": "score"
+        },
+        {
+         "gain": 0.35,
+         "gap": 0.07,
+         "name": "tick",
+         "op": "sound.play",
+         "pitch": "0.9 + mult * 0.06"
+        }
+       ],
+       "id": "hit_boss",
+       "on": "actor.hit:boss",
+       "when": "is(play)"
+      },
+      {
+       "do": [
+        {
+         "gain": 0.35,
+         "gap": 0.2,
+         "name": "whoosh",
+         "op": "sound.play",
+         "pitch": 1.7
+        }
+       ],
+       "id": "dash",
+       "on": "input.pressed:Dash",
+       "when": "is(play)"
+      },
+      {
+       "do": [
+        {
+         "max": 8,
+         "op": "var.add",
+         "value": "0.1 * n",
+         "var": "mult"
+        },
+        {
+         "op": "var.add",
+         "value": "25 * mult * n",
+         "var": "score"
+        },
+        {
+         "gain": 0.45,
+         "gap": 0.05,
+         "name": "click",
+         "op": "sound.play",
+         "pitch": "1.1 + mult * 0.08"
+        }
+       ],
+       "id": "graze",
+       "on": "actor.graze:player",
+       "when": "is(play)"
+      },
+      {
+       "do": [
+        {
+         "op": "var.set",
+         "value": 1,
+         "var": "mult"
+        },
+        {
+         "amount": 0.7,
+         "op": "fx.shake",
+         "time": 0.35
+        },
+        {
+         "amount": 1.5,
+         "op": "fx.flash",
+         "time": 0.25
+        },
+        {
+         "object": "pv_player",
+         "op": "fx.pulse",
+         "scale": 1.6,
+         "time": 0.3
+        },
+        {
+         "gain": 1,
+         "name": "thump",
+         "op": "sound.play"
+        },
+        {
+         "gain": 0.6,
+         "name": "refuse",
+         "op": "sound.play"
+        }
+       ],
+       "id": "hurt",
+       "on": "actor.hit:player",
+       "when": "is(play)"
+      },
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "over"
+        }
+       ],
+       "id": "lost",
+       "on": "actor.dead:player",
+       "when": "is(play)"
+      },
+      {
+       "do": [
+        {
+         "ids": [
+          "boss_spiral",
+          "boss_ring",
+          "boss_aim"
+         ],
+         "op": "emitter.stop"
+        },
+        {
+         "op": "emitter.clear"
+        },
+        {
+         "id": "pv_boss",
+         "on": false,
+         "op": "object.show"
+        },
+        {
+         "id": "pv_crown",
+         "on": false,
+         "op": "object.show"
+        },
+        {
+         "op": "var.add",
+         "value": "2000 + 200 * hp(player)",
+         "var": "score"
+        },
+        {
+         "op": "fx.slowmo",
+         "scale": 0.3,
+         "time": 0.6
+        },
+        {
+         "gain": 0.8,
+         "name": "bell",
+         "op": "sound.play"
+        },
+        {
+         "msg": "hex_wake",
+         "op": "emit"
+        }
+       ],
+       "id": "won",
+       "on": "actor.dead:boss",
+       "when": "is(play)"
+      },
+      {
+       "do": [
+        {
+         "op": "var.set",
+         "value": "max(best, score)",
+         "var": "best"
+        },
+        {
+         "op": "fx.slowmo",
+         "scale": 0.2,
+         "time": 0.6
+        },
+        {
+         "amount": 1,
+         "op": "fx.shake",
+         "time": 0.6
+        },
+        {
+         "after": 0.5,
+         "id": "freeze",
+         "op": "timer.start"
+        },
+        {
+         "gain": 1,
+         "name": "boom",
+         "op": "sound.play",
+         "pitch": 0.6
+        },
+        {
+         "gain": 0.8,
+         "name": "off",
+         "op": "sound.play"
+        }
+       ],
+       "id": "over",
+       "on": "state.enter:over"
+      },
+      {
+       "do": [
+        {
+         "op": "var.add",
+         "value": "max(0, 5000 - floor(time) * 20) + hp(player) * 1000",
+         "var": "score"
+        },
+        {
+         "op": "var.set",
+         "value": "time",
+         "var": "clear_time"
+        },
+        {
+         "op": "var.set",
+         "value": "max(best, score)",
+         "var": "best"
+        },
+        {
+         "ids": [
+          "boss_spiral",
+          "boss_ring",
+          "boss_aim"
+         ],
+         "op": "emitter.stop"
+        },
+        {
+         "op": "emitter.clear"
+        },
+        {
+         "id": "pv_boss",
+         "on": false,
+         "op": "object.show"
+        },
+        {
+         "id": "pv_crown",
+         "on": false,
+         "op": "object.show"
+        }
+       ],
+       "id": "win",
+       "on": "state.enter:win"
+      },
+      {
+       "do": [
+        {
+         "op": "fx.slowmo",
+         "scale": 0.15,
+         "time": 1.2
+        },
+        {
+         "amount": 3,
+         "op": "fx.flash",
+         "time": 0.9
+        },
+        {
+         "amount": 1,
+         "op": "fx.shake",
+         "time": 0.8
+        },
+        {
+         "ids": [
+          "sparks",
+          "sparks_c"
+         ],
+         "op": "emitter.fire"
+        },
+        {
+         "after": 1,
+         "id": "freeze",
+         "op": "timer.start"
+        },
+        {
+         "gain": 1,
+         "name": "bell",
+         "op": "sound.play"
+        },
+        {
+         "gain": 0.8,
+         "name": "chirp",
+         "op": "sound.play"
+        }
+       ],
+       "id": "win_fx",
+       "on": "state.enter:win"
+      },
+      {
+       "do": [
+        {
+         "on": true,
+         "op": "play.pause"
+        }
+       ],
+       "id": "freeze",
+       "on": "timer:freeze"
+      },
+      {
+       "do": [
+        {
+         "op": "play.restart"
+        },
+        {
+         "gain": 0.8,
+         "name": "appear",
+         "op": "sound.play"
+        }
+       ],
+       "id": "again",
+       "on": "input.pressed:Fire",
+       "when": "(is(over) or is(win)) and state_time > 1.2"
+      },
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "win"
+        }
+       ],
+       "id": "won2",
+       "on": "actor.dead:hex",
+       "when": "is(play)"
+      }
+     ],
+     "state": "title",
+     "states": [
+      "title",
+      "play",
+      "over",
+      "win"
+     ],
+     "vars": {
+      "best": {
+       "keep": true,
+       "value": 0
+      },
+      "clear_time": 0,
+      "mult": 1,
+      "score": 0
+     }
+    },
+    {
+     "id": "boss",
+     "rules": [
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "phase2"
+        }
+       ],
+       "id": "to2",
+       "on": "actor.hp_below:boss:0.66",
+       "when": "is(phase1)"
+      },
+      {
+       "do": [
+        {
+         "ids": [
+          "boss_spiral",
+          "boss_ring",
+          "boss_aim"
+         ],
+         "op": "emitter.stop"
+        },
+        {
+         "op": "emitter.clear"
+        },
+        {
+         "op": "var.set",
+         "value": 2,
+         "var": "phase"
+        },
+        {
+         "object": "pv_boss",
+         "op": "fx.pulse",
+         "scale": 1.35,
+         "time": 0.9
+        },
+        {
+         "amount": 1.2,
+         "op": "fx.flash",
+         "time": 0.4
+        },
+        {
+         "id": "pv_crown",
+         "on": true,
+         "op": "object.show"
+        },
+        {
+         "after": 1.1,
+         "id": "open2",
+         "op": "timer.start"
+        }
+       ],
+       "id": "tele2",
+       "on": "state.enter:phase2"
+      },
+      {
+       "do": [
+        {
+         "gain": 0.9,
+         "name": "whoosh",
+         "op": "sound.play",
+         "pitch": 0.8
+        },
+        {
+         "gain": 0.8,
+         "name": "magic",
+         "op": "sound.play"
+        }
+       ],
+       "id": "tele2_snd",
+       "on": "state.enter:phase2"
+      },
+      {
+       "do": [
+        {
+         "op": "emitter.set",
+         "set": [
+          {
+           "bound": 14,
+           "from": "boss",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.12,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "boss_spiral",
+           "max": 700,
+           "pattern": {
+            "count": 4,
+            "curve": 14,
+            "every": 0.09,
+            "kind": "spiral",
+            "life": 5,
+            "speed": 5.5,
+            "turn": -17
+           },
+           "seed": 1,
+           "shape": "pv_shot_m",
+           "y": 0.35
+          },
+          {
+           "bound": 14,
+           "from": "boss",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.12,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "boss_ring",
+           "max": 400,
+           "pattern": {
+            "accel": 1.4,
+            "count": 30,
+            "every": 1.5,
+            "kind": "ring",
+            "life": 6,
+            "size": 1.2,
+            "speed": 2.8,
+            "turn": 6
+           },
+           "seed": 2,
+           "shape": "pv_shot_m",
+           "y": 0.35
+          },
+          {
+           "bound": 14,
+           "from": "boss",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.12,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "boss_aim",
+           "max": 200,
+           "pattern": {
+            "aim": "player",
+            "count": 3,
+            "every": 0.9,
+            "kind": "aimed",
+            "life": 3,
+            "speed": 9,
+            "spread": 20
+           },
+           "seed": 3,
+           "shape": "pv_shot_m",
+           "y": 0.35
+          }
+         ]
+        },
+        {
+         "amount": 0.5,
+         "op": "fx.shake",
+         "time": 0.3
+        },
+        {
+         "gain": 0.7,
+         "name": "boom",
+         "op": "sound.play",
+         "pitch": 1.2
+        }
+       ],
+       "id": "open2",
+       "on": "timer:open2",
+       "when": "is(phase2)"
+      },
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "phase3"
+        }
+       ],
+       "id": "to3",
+       "on": "actor.hp_below:boss:0.33",
+       "when": "is(phase2)"
+      },
+      {
+       "do": [
+        {
+         "ids": [
+          "boss_spiral",
+          "boss_ring",
+          "boss_aim"
+         ],
+         "op": "emitter.stop"
+        },
+        {
+         "op": "emitter.clear"
+        },
+        {
+         "op": "var.set",
+         "value": 3,
+         "var": "phase"
+        },
+        {
+         "object": "pv_boss",
+         "op": "fx.pulse",
+         "scale": 1.35,
+         "time": 0.9
+        },
+        {
+         "amount": 1.2,
+         "op": "fx.flash",
+         "time": 0.4
+        },
+        {
+         "id": "pv_crown",
+         "on": true,
+         "op": "object.show"
+        },
+        {
+         "after": 1.1,
+         "id": "open3",
+         "op": "timer.start"
+        }
+       ],
+       "id": "tele3",
+       "on": "state.enter:phase3"
+      },
+      {
+       "do": [
+        {
+         "gain": 0.9,
+         "name": "whoosh",
+         "op": "sound.play",
+         "pitch": 0.8
+        },
+        {
+         "gain": 0.8,
+         "name": "magic",
+         "op": "sound.play"
+        }
+       ],
+       "id": "tele3_snd",
+       "on": "state.enter:phase3"
+      },
+      {
+       "do": [
+        {
+         "op": "emitter.set",
+         "set": [
+          {
+           "bound": 14,
+           "from": "boss",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.12,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "boss_spiral",
+           "max": 700,
+           "pattern": {
+            "count": 5,
+            "curve": -22,
+            "every": 0.075,
+            "kind": "spiral",
+            "life": 5,
+            "speed": 6,
+            "turn": 23
+           },
+           "seed": 1,
+           "shape": "pv_shot_m",
+           "y": 0.35
+          },
+          {
+           "bound": 14,
+           "from": "boss",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.12,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "boss_ring",
+           "max": 400,
+           "pattern": {
+            "accel": 1.8,
+            "count": 36,
+            "every": 1.1,
+            "kind": "ring",
+            "life": 6,
+            "size": 1.2,
+            "speed": 3.2,
+            "speed_step": 0.02,
+            "turn": 5
+           },
+           "seed": 2,
+           "shape": "pv_shot_m",
+           "y": 0.35
+          },
+          {
+           "bound": 14,
+           "from": "boss",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.12,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "boss_aim",
+           "max": 200,
+           "pattern": {
+            "aim": "player",
+            "count": 7,
+            "every": 1.2,
+            "kind": "aimed",
+            "life": 3,
+            "speed": 7.5,
+            "spread": 54
+           },
+           "seed": 3,
+           "shape": "pv_shot_m",
+           "y": 0.35
+          }
+         ]
+        },
+        {
+         "amount": 0.5,
+         "op": "fx.shake",
+         "time": 0.3
+        },
+        {
+         "gain": 0.7,
+         "name": "boom",
+         "op": "sound.play",
+         "pitch": 1.2
+        }
+       ],
+       "id": "open3",
+       "on": "timer:open3",
+       "when": "is(phase3)"
+      }
+     ],
+     "state": "phase1",
+     "states": [
+      "phase1",
+      "phase2",
+      "phase3"
+     ],
+     "vars": {
+      "phase": 1
+     }
+    },
+    {
+     "id": "hex",
+     "rules": [
+      {
+       "do": [
+        {
+         "actor": "hex",
+         "op": "actor.hp",
+         "value": 0
+        }
+       ],
+       "id": "sleep",
+       "on": "play.start"
+      },
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "phase1"
+        }
+       ],
+       "id": "wake",
+       "on": "msg:hex_wake",
+       "when": "is(dormant)"
+      },
+      {
+       "do": [
+        {
+         "id": "hx_boss",
+         "on": true,
+         "op": "object.show"
+        },
+        {
+         "actor": "hex",
+         "op": "actor.hp",
+         "value": 360
+        },
+        {
+         "op": "var.set",
+         "value": 1,
+         "var": "hphase"
+        },
+        {
+         "object": "hx_boss",
+         "op": "fx.pulse",
+         "scale": 1.4,
+         "time": 0.9
+        },
+        {
+         "amount": 1.5,
+         "op": "fx.flash",
+         "time": 0.5
+        },
+        {
+         "gain": 0.9,
+         "name": "magic",
+         "op": "sound.play"
+        },
+        {
+         "after": 1.2,
+         "id": "open1",
+         "op": "timer.start"
+        }
+       ],
+       "id": "enter1",
+       "on": "state.enter:phase1"
+      },
+      {
+       "do": [
+        {
+         "ids": [
+          "hx_lattice",
+          "hx_curve"
+         ],
+         "op": "emitter.start"
+        },
+        {
+         "gain": 0.7,
+         "name": "boom",
+         "op": "sound.play"
+        }
+       ],
+       "id": "open1",
+       "on": "timer:open1",
+       "when": "is(phase1)"
+      },
+      {
+       "do": [
+        {
+         "op": "state.set",
+         "state": "phase2"
+        }
+       ],
+       "id": "to2",
+       "on": "actor.hp_below:hex:0.5",
+       "when": "is(phase1)"
+      },
+      {
+       "do": [
+        {
+         "ids": [
+          "hx_lattice",
+          "hx_curve"
+         ],
+         "op": "emitter.stop"
+        },
+        {
+         "op": "emitter.clear"
+        },
+        {
+         "op": "var.set",
+         "value": 2,
+         "var": "hphase"
+        },
+        {
+         "object": "hx_boss",
+         "op": "fx.pulse",
+         "scale": 1.35,
+         "time": 0.9
+        },
+        {
+         "gain": 0.9,
+         "name": "whoosh",
+         "op": "sound.play",
+         "pitch": 0.7
+        },
+        {
+         "after": 1.1,
+         "id": "open2",
+         "op": "timer.start"
+        }
+       ],
+       "id": "tele2",
+       "on": "state.enter:phase2"
+      },
+      {
+       "do": [
+        {
+         "op": "emitter.set",
+         "set": [
+          {
+           "bound": 14,
+           "from": "hex",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.13,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "hx_lattice",
+           "max": 500,
+           "on": false,
+           "pattern": {
+            "count": 12,
+            "every": 0.28,
+            "kind": "ring",
+            "life": 5,
+            "speed": 5,
+            "speed_step": 0.15,
+            "turn": -9
+           },
+           "seed": 11,
+           "shape": "hx_shot",
+           "y": 0.35
+          },
+          {
+           "bound": 14,
+           "from": "hex",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.13,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "hx_curve",
+           "max": 500,
+           "on": false,
+           "pattern": {
+            "count": 4,
+            "curve": -45,
+            "every": 0.09,
+            "kind": "spiral",
+            "life": 5,
+            "speed": 5.5,
+            "turn": 11
+           },
+           "seed": 11,
+           "shape": "hx_shot",
+           "y": 0.35
+          },
+          {
+           "bound": 14,
+           "from": "hex",
+           "hit": {
+            "damage": 1,
+            "graze": 0.65,
+            "radius": 0.13,
+            "spark": "sparks",
+            "tags": [
+             "player"
+            ]
+           },
+           "id": "hx_burst",
+           "max": 200,
+           "on": true,
+           "pattern": {
+            "aim": "player",
+            "count": 7,
+            "every": 1.3,
+            "kind": "aimed",
+            "life": 3,
+            "speed": 9,
+            "spread": 70
+           },
+           "seed": 11,
+           "shape": "hx_shot",
+           "y": 0.35
+          }
+         ]
+        },
+        {
+         "amount": 0.5,
+         "op": "fx.shake",
+         "time": 0.3
+        },
+        {
+         "gain": 0.8,
+         "name": "boom",
+         "op": "sound.play"
+        }
+       ],
+       "id": "open2",
+       "on": "timer:open2",
+       "when": "is(phase2)"
+      }
+     ],
+     "state": "dormant",
+     "states": [
+      "dormant",
+      "phase1",
+      "phase2"
+     ],
+     "vars": {
+      "hphase": 0
+     }
+    }
+   ],
+   "hud": [
+    {
+     "shape": "pv_hud_boss",
+     "v": [
+      "hp_ratio(boss)",
+      "phase"
+     ],
+     "when": "is(game, play) and hp(boss) > 0"
+    },
+    {
+     "shape": "pv_hud_score",
+     "v": [
+      "score",
+      "mult",
+      "grazes(player)"
+     ],
+     "when": "not is(game, title)"
+    },
+    {
+     "shape": "pv_hud_lives",
+     "v": [
+      "hp(player)",
+      "best"
+     ],
+     "when": "not is(game, title)"
+    },
+    {
+     "shape": "pv_title",
+     "when": "is(game, title) and not paused"
+    },
+    {
+     "shape": "pv_pause",
+     "when": "paused"
+    },
+    {
+     "shape": "pv_over",
+     "v": [
+      "score",
+      "best"
+     ],
+     "when": "is(game, over) and not paused"
+    },
+    {
+     "shape": "pv_win",
+     "v": [
+      "score",
+      "best",
+      "clear_time"
+     ],
+     "when": "is(game, win) and not paused"
+    },
+    {
+     "shape": "hx_hud",
+     "v": [
+      "hp_ratio(hex)",
+      "hphase"
+     ],
+     "when": "(is(game, play) or is(game, win)) and not is(hex, dormant)"
+    }
+   ]
+  },
+  "normal_strength": 0.35,
+  "physics": {
+   "bodies": {},
+   "enabled": false,
+   "gravity": [
+    0,
+    -9.81,
+    0
+   ],
+   "joints": {},
+   "substeps": 4,
+   "version": 1
+  },
+  "playback_end": "continue",
+  "playback_loop": false,
+  "rays_on": 1,
+  "rays_strength": 0.18,
+  "refl_on": 1,
+  "render_properties": [],
+  "rim_intensity": 0.12,
+  "roughness": 0.88,
+  "sb0": {
+   "c": {
+    "a": 1,
+    "b": 1,
+    "g": 0.77,
+    "r": 0.6
+   },
+   "detail": 0.72,
+   "dist": 1.8,
+   "halo": 0.16,
+   "halo_size": 1,
+   "int": 0.8,
+   "kind": 0,
+   "light": 0.72,
+   "on": 0,
+   "phase": 0.78,
+   "phase_fill": 0.28,
+   "phase_softness": 0.1,
+   "pitch": 0.139626,
+   "seed": 13,
+   "size": 0.0235619,
+   "yaw": -3.05433,
+   "zoom_ratio": 0.15,
+   "zoom_reference": 4
+  },
+  "sb1": {
+   "c": {
+    "a": 1,
+    "b": 0.28,
+    "g": 0.48,
+    "r": 0.72
+   },
+   "detail": 0.45,
+   "dist": 1.8,
+   "halo": 0.18,
+   "halo_size": 1,
+   "int": 0.8,
+   "kind": 1,
+   "light": 0,
+   "on": 0,
+   "phase": -1,
+   "phase_fill": 0.28,
+   "phase_softness": 0.1,
+   "pitch": 0.3,
+   "seed": 37,
+   "size": 0.018,
+   "yaw": 1.7,
+   "zoom_ratio": 0.15,
+   "zoom_reference": 4
+  },
+  "sb2": {
+   "c": {
+    "a": 1,
+    "b": 1,
+    "g": 0.72,
+    "r": 0.52
+   },
+   "detail": 0.6,
+   "dist": 1.8,
+   "halo": 0.35,
+   "halo_size": 1,
+   "int": 0.8,
+   "kind": 2,
+   "light": 0,
+   "on": 0,
+   "phase": 0.72,
+   "phase_fill": 0.28,
+   "phase_softness": 0.1,
+   "pitch": 0.65,
+   "seed": 71,
+   "size": 0.028,
+   "yaw": 0.2,
+   "zoom_ratio": 0.15,
+   "zoom_reference": 4
+  },
+  "scatter": [],
+  "scatter_cfg": {
+   "gust": 0.85,
+   "heading": 30,
+   "on": 1,
+   "quality": 1,
+   "spatial_scale": 1,
+   "translucency": 1,
+   "turbulence": 0.6
+  },
+  "scene_body_radius": 2,
+  "scene_companion_radius": 0,
+  "scene_cx": 0,
+  "scene_cy": 0.8,
+  "scene_cz": 0,
+  "scene_filename": "",
+  "scene_floor": 0,
+  "scene_name": "New scene",
+  "scene_only": 1,
+  "scene_radius": 6,
+  "scene_text": [],
+  "scene_text_enabled": false,
+  "screen": {
+   "ao": 1,
+   "ao_radius": 0.08,
+   "ssr": 1,
+   "tiers": "high"
+  },
+  "seq": [
+   {
+    "dur": 30,
+    "lane": "scene",
+    "op": "hold",
+    "with": 0
+   }
+  ],
+  "shadow_ao": 0.5,
+  "shadow_auto_fit": 1,
+  "shadow_contact": 0.538851,
+  "shadow_darkness": 0,
+  "shadow_enable": 0,
+  "shadow_fixed_radius": 12,
+  "shadow_soft": 1.9,
+  "shadow_strength": 0.84,
+  "shafts_camera": 0.35,
+  "shafts_offset": 0,
+  "shafts_on": 0,
+  "shafts_reach": 0.9,
+  "shafts_slope": -0.6,
+  "shafts_strength": 0.16,
+  "shafts_width": 0.035,
+  "shapes": [
+   {
+    "face": "up",
+    "glow": 0.55,
+    "glow_radius": 0.8,
+    "id": "pv_arena_rings",
+    "in": {
+     "fx": "none"
+    },
+    "items": [
+     {
+      "circle": {
+       "c": [
+        0,
+        0
+       ],
+       "r": 11.2
+      },
+      "color": 1,
+      "w": 0.22
+     },
+     {
+      "circle": {
+       "c": [
+        0,
+        0
+       ],
+       "r": 7
+      },
+      "color": 2,
+      "w": 0.12
+     },
+     {
+      "circle": {
+       "c": [
+        0,
+        0
+       ],
+       "r": 3.2
+      },
+      "color": 1,
+      "dash": [
+       0.5,
+       0.5
+      ],
+      "w": 0.06
+     }
+    ],
+    "p": [
+     0,
+     0.02,
+     0
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ]
+    ],
+    "show": "always",
+    "size": 100,
+    "space": "world",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.5,
+     0.93
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_hud_boss",
+    "in": {
+     "dur": 0.4,
+     "fx": "fade"
+    },
+    "items": [
+     {
+      "color": 3,
+      "text": {
+       "align": "left",
+       "at": [
+        -40,
+        5
+       ],
+       "s": "HOLLOW SQUARE",
+       "size": 4.2,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 3,
+      "text": {
+       "align": "right",
+       "at": [
+        40,
+        5
+       ],
+       "s": "PHASE {$v1:0}",
+       "size": 4.2,
+       "weight": 1.25
+      }
+     },
+     {
+      "box": {
+       "c": [
+        0,
+        0
+       ],
+       "r": 1.2,
+       "size": [
+        82,
+        3.6
+       ]
+      },
+      "color": 1,
+      "w": 0.5
+     },
+     {
+      "color": 3,
+      "line": {
+       "a": [
+        -40,
+        0
+       ],
+       "b": [
+        "$v0*80-39.9",
+        0
+       ]
+      },
+      "w": 2.2
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.42,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.04,
+     0.93
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_hud_score",
+    "in": {
+     "dur": 0.4,
+     "fx": "fade"
+    },
+    "items": [
+     {
+      "color": 2,
+      "text": {
+       "align": "left",
+       "at": [
+        0,
+        4
+       ],
+       "s": "SCORE {$v0:,0}",
+       "size": 6,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 2,
+      "text": {
+       "align": "left",
+       "at": [
+        0,
+        -4
+       ],
+       "s": "x{$v1:2}   GRAZE {$v2:0}",
+       "size": 4,
+       "weight": 1.25
+      }
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.42,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.96,
+     0.93
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_hud_lives",
+    "in": {
+     "dur": 0.4,
+     "fx": "fade"
+    },
+    "items": [
+     {
+      "color": 2,
+      "text": {
+       "align": "right",
+       "at": [
+        0,
+        4
+       ],
+       "s": "LIVES {$v0:0}",
+       "size": 6,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 2,
+      "text": {
+       "align": "right",
+       "at": [
+        0,
+        -4
+       ],
+       "s": "BEST {$v1:,0}",
+       "size": 4,
+       "weight": 1.25
+      }
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.42,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.5,
+     0.55
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_title",
+    "in": {
+     "dur": 1.4,
+     "fx": "trace"
+    },
+    "items": [
+     {
+      "box": {
+       "c": [
+        0,
+        -5
+       ],
+       "r": 3,
+       "size": [
+        109.2,
+        52
+       ]
+      },
+      "color": [
+       0.012,
+       0.016,
+       0.05,
+       0.8
+      ],
+      "fill": true,
+      "w": 0.3
+     },
+     {
+      "box": {
+       "c": [
+        0,
+        -5
+       ],
+       "r": 3,
+       "size": [
+        109.2,
+        52
+       ]
+      },
+      "color": [
+       0.31,
+       0.9,
+       1,
+       0.35
+      ],
+      "w": 0.25
+     },
+     {
+      "color": 3,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        9
+       ],
+       "s": "POLYVOID",
+       "size": 15,
+       "weight": 1.5
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -1
+       ],
+       "s": "A POLYNITE INTERACTIVE DEMO",
+       "size": 3.4,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 2,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -10
+       ],
+       "s": "TAP, CLICK OR PRESS J TO START",
+       "size": 3.6,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -16.5
+       ],
+       "s": "CIRCLE  A D, ARROWS, MOUSE, HOLD A SIDE",
+       "size": 2.4,
+       "weight": 1.15
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -20.3
+       ],
+       "s": "FIRE  J, CLICK, TAP     DASH  SPACE, RIGHT CLICK",
+       "size": 2.4,
+       "weight": 1.15
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -24.1
+       ],
+       "s": "PAUSE  ESC",
+       "size": 2.4,
+       "weight": 1.15
+      }
+     },
+     {
+      "color": 1,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -30
+       ],
+       "s": "BUILT WITH POLYNITE",
+       "size": 2.4,
+       "weight": 1.25
+      }
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.9,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.5,
+     0.56
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_pause",
+    "in": {
+     "dur": 0.25,
+     "fx": "fade"
+    },
+    "items": [
+     {
+      "box": {
+       "c": [
+        0,
+        -1
+       ],
+       "r": 3,
+       "size": [
+        65.5,
+        26
+       ]
+      },
+      "color": [
+       0.012,
+       0.016,
+       0.05,
+       0.8
+      ],
+      "fill": true,
+      "w": 0.3
+     },
+     {
+      "box": {
+       "c": [
+        0,
+        -1
+       ],
+       "r": 3,
+       "size": [
+        65.5,
+        26
+       ]
+      },
+      "color": [
+       0.31,
+       0.9,
+       1,
+       0.35
+      ],
+      "w": 0.25
+     },
+     {
+      "color": 2,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        4
+       ],
+       "s": "PAUSED",
+       "size": 11,
+       "weight": 1.4
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -8
+       ],
+       "s": "ESC RESUME   Q QUIT",
+       "size": 3.4,
+       "weight": 1.25
+      }
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.9,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.5,
+     0.56
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_over",
+    "in": {
+     "dur": 0.8,
+     "fx": "trace"
+    },
+    "items": [
+     {
+      "box": {
+       "c": [
+        0,
+        -2
+       ],
+       "r": 3,
+       "size": [
+        109.2,
+        32
+       ]
+      },
+      "color": [
+       0.012,
+       0.016,
+       0.05,
+       0.8
+      ],
+      "fill": true,
+      "w": 0.3
+     },
+     {
+      "box": {
+       "c": [
+        0,
+        -2
+       ],
+       "r": 3,
+       "size": [
+        109.2,
+        32
+       ]
+      },
+      "color": [
+       0.31,
+       0.9,
+       1,
+       0.35
+      ],
+      "w": 0.25
+     },
+     {
+      "color": 3,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        6
+       ],
+       "s": "GAME OVER",
+       "size": 11,
+       "weight": 1.4
+      }
+     },
+     {
+      "color": 2,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -5
+       ],
+       "s": "SCORE {$v0:,0}   BEST {$v1:,0}",
+       "size": 4,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -14
+       ],
+       "s": "TAP, CLICK OR J TO RETRY",
+       "size": 3.2,
+       "weight": 1.25
+      }
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.9,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.5,
+     0.56
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "pv_win",
+    "in": {
+     "dur": 0.8,
+     "fx": "trace"
+    },
+    "items": [
+     {
+      "box": {
+       "c": [
+        0,
+        -2
+       ],
+       "r": 3,
+       "size": [
+        148.1,
+        32
+       ]
+      },
+      "color": [
+       0.012,
+       0.016,
+       0.05,
+       0.8
+      ],
+      "fill": true,
+      "w": 0.3
+     },
+     {
+      "box": {
+       "c": [
+        0,
+        -2
+       ],
+       "r": 3,
+       "size": [
+        148.1,
+        32
+       ]
+      },
+      "color": [
+       0.31,
+       0.9,
+       1,
+       0.35
+      ],
+      "w": 0.25
+     },
+     {
+      "color": 2,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        6
+       ],
+       "s": "VOID CLEARED",
+       "size": 11,
+       "weight": 1.4
+      }
+     },
+     {
+      "color": 3,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -5
+       ],
+       "s": "SCORE {$v0:,0}   BEST {$v1:,0}   {$v2:1} S",
+       "size": 4,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 4,
+      "text": {
+       "align": "center",
+       "at": [
+        0,
+        -14
+       ],
+       "s": "TAP, CLICK OR J TO PLAY AGAIN",
+       "size": 3.2,
+       "weight": 1.25
+      }
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.9,
+    "space": "screen",
+    "style": "neon"
+   },
+   {
+    "at": [
+     0.5,
+     0.93
+    ],
+    "fx": {
+     "band": 0,
+     "chroma": 0,
+     "jitter": 0,
+     "scanlines": 0
+    },
+    "glow": 0.35,
+    "glow_radius": 0.5,
+    "id": "hx_hud",
+    "in": {
+     "dur": 0.6,
+     "fx": "trace"
+    },
+    "items": [
+     {
+      "color": 3,
+      "text": {
+       "align": "left",
+       "at": [
+        -40,
+        5
+       ],
+       "s": "HEX WARDEN",
+       "size": 4.2,
+       "weight": 1.25
+      }
+     },
+     {
+      "color": 3,
+      "text": {
+       "align": "right",
+       "at": [
+        40,
+        5
+       ],
+       "s": "PHASE {$v1:0}",
+       "size": 4.2,
+       "weight": 1.25
+      }
+     },
+     {
+      "box": {
+       "c": [
+        0,
+        0
+       ],
+       "r": 1.2,
+       "size": [
+        82,
+        3.6
+       ]
+      },
+      "color": 1,
+      "w": 0.5
+     },
+     {
+      "color": 3,
+      "line": {
+       "a": [
+        -40,
+        0
+       ],
+       "b": [
+        "$v0*80-39.9",
+        0
+       ]
+      },
+      "w": 2.2
+     }
+    ],
+    "palette": [
+     [
+      0.29,
+      0.227,
+      0.549,
+      1
+     ],
+     [
+      0.31,
+      0.902,
+      1,
+      1
+     ],
+     [
+      1,
+      0.353,
+      0.847,
+      1
+     ],
+     [
+      0.94,
+      0.96,
+      1,
+      1
+     ]
+    ],
+    "sharp": true,
+    "show": "hidden",
+    "size": 0.42,
+    "space": "screen",
+    "style": "neon"
+   }
+  ],
+  "sky_haze": 0.16,
+  "sky_horizon": {
+   "a": 1,
+   "b": 0.11,
+   "g": 0.05,
+   "r": 0.04
+  },
+  "sky_horizon_glow": 0.3,
+  "sky_intensity": 0.25,
+  "sky_night": {
+   "a": 1,
+   "b": 0.04,
+   "g": 0.015,
+   "r": 0.01
+  },
+  "sky_on": 1,
+  "sky_rayleigh": 0.8,
+  "sky_sun_glow": 0.45,
+  "sky_sun_limb": 0.65,
+  "sky_sun_size": 0.008,
+  "sky_sun_style": 0,
+  "sky_zenith": {
+   "a": 1,
+   "b": 0.04,
+   "g": 0.015,
+   "r": 0.01
+  },
+  "snd_birds": 0,
+  "snd_crows": 0,
+  "snd_echo_fb": 0.4,
+  "snd_echo_mix": 0.3,
+  "snd_echo_ms": 80,
+  "snd_level": 0.776858,
+  "snd_rain": 0,
+  "snd_wind": 0,
+  "spec_gain": 1,
+  "spec_intensity": 0.25,
+  "spec_power": 48,
+  "star_color": 0.42,
+  "star_density": 0.85,
+  "star_galaxy": 0.3,
+  "star_intensity": 1.2,
+  "star_on": 1,
+  "star_seed": 7,
+  "star_twinkle": 0.5,
+  "sun_col": {
+   "a": 1,
+   "b": 0.75,
+   "g": 0.91,
+   "r": 1
+  },
+  "sun_day_t": 0.5,
+  "sun_dist": 6.41394,
+  "sun_intensity": 0,
+  "sun_moon_link": 0,
+  "sun_move": 0,
+  "sun_on": 0,
+  "sun_orbit_speed": 0,
+  "sun_palette": 0,
+  "sun_pitch": 0.8,
+  "sun_yaw": 2.2,
+  "tgt_x": 0,
+  "tgt_y": 0,
+  "tgt_z": 1.5,
+  "two_sided": 0,
+  "unlit": 0,
+  "use_texture": 1,
+  "vignette": 0.28,
+  "volume_cfg": {
+   "cut": 1.5,
+   "export_steps": 64,
+   "grain": 0,
+   "length": 0.85,
+   "quality_ratio": 1,
+   "sharpness": 0.47,
+   "sky": 0.55,
+   "sky_ball": [
+    0,
+    0.7,
+    0,
+    2.3
+   ],
+   "sky_falloff": 1.05,
+   "sky_g": 0.55,
+   "sky_reach": 14,
+   "sky_steps": 32,
+   "steps": 48,
+   "strength": 0.65
+  },
+  "zoom_out": 1
+ },
+ "model": "",
+ "seq": [
+  {
+   "dur": 30,
+   "lane": "scene",
+   "op": "hold",
+   "with": 0
+  }
+ ],
+ "version": 1
+}

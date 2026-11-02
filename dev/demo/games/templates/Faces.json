@@ -1,0 +1,958 @@
+{
+ "id": "Faces",
+ "summary": "Characters with feelings: eyes that watch (actor eyes), brows and lids posed by name (actor poses + the action actor.pose: calm, smug, angry, pain, wow), pieces that look at each other and confer (actor.eyes self), and words over a boss for a moment (HA!, ..., !, ?!).",
+ "graphs": [
+  {
+   "id": "mood",
+   "vars": {
+    "emote": 0,
+    "emote_until": 0,
+    "emote_hex": 0,
+    "hero_mad": 0
+   },
+   "rules": [
+    {
+     "id": "sq_start1",
+     "on": "msg:sq_go",
+     "when": "phase == 1",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "smug",
+       "time": 0.3
+      }
+     ]
+    },
+    {
+     "id": "sq_start2",
+     "on": "msg:sq_go",
+     "when": "phase >= 2",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "angry",
+       "time": 0.3
+      }
+     ]
+    },
+    {
+     "id": "sq_ouch",
+     "on": "actor.hit:boss",
+     "when": "is(game, play) and floor(time) % 2 == 0",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "pain",
+       "time": 0.05,
+       "gap": 1.6
+      },
+      {
+       "op": "timer.start",
+       "id": "sq_calm",
+       "after": 0.35,
+       "gap": 1.6
+      }
+     ]
+    },
+    {
+     "id": "sq_ouch_b",
+     "on": "actor.hit:boss",
+     "when": "is(game, play) and floor(time) % 2 == 1",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "mixhurt",
+       "time": 0.05,
+       "gap": 1.6
+      },
+      {
+       "op": "timer.start",
+       "id": "sq_calm",
+       "after": 0.5,
+       "gap": 1.6
+      }
+     ]
+    },
+    {
+     "id": "sq_banter",
+     "on": "every:3.7",
+     "when": "is(game, play) and phase == 1 and is(atk_sq, fan)",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "chat2",
+       "time": 0.15
+      },
+      {
+       "op": "timer.start",
+       "id": "sq_calm",
+       "after": 0.9
+      },
+      {
+       "op": "sound.play",
+       "name": "message",
+       "gain": 0.18,
+       "pitch": 1.3
+      }
+     ]
+    },
+    {
+     "id": "sq_calm1",
+     "on": "timer:sq_calm",
+     "when": "phase == 1",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "smug",
+       "time": 0.25
+      }
+     ]
+    },
+    {
+     "id": "sq_calm2",
+     "on": "timer:sq_calm",
+     "when": "phase >= 2",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "angry",
+       "time": 0.25
+      }
+     ]
+    },
+    {
+     "id": "huddle",
+     "on": "msg:sq_huddle",
+     "do": [
+      {
+       "op": "actor.eyes",
+       "actor": "boss",
+       "at": "self"
+      },
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "chat1",
+       "time": 0.15
+      },
+      {
+       "op": "object.move",
+       "id": "pv_quad",
+       "to": [
+        0,
+        0.45,
+        0
+       ],
+       "time": 0.18
+      },
+      {
+       "op": "timer.start",
+       "id": "hop",
+       "after": 0.2
+      },
+      {
+       "op": "timer.start",
+       "id": "plan",
+       "after": 1.1
+      },
+      {
+       "op": "var.set",
+       "var": "emote",
+       "value": 2
+      },
+      {
+       "op": "var.set",
+       "var": "emote_until",
+       "value": "time + 0.9"
+      },
+      {
+       "op": "var.set",
+       "var": "emote_hex",
+       "value": 0
+      }
+     ]
+    },
+    {
+     "id": "hop",
+     "on": "timer:hop",
+     "do": [
+      {
+       "op": "object.move",
+       "id": "pv_quad",
+       "to": [
+        0,
+        0,
+        0
+       ],
+       "time": 0.2
+      },
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "chat2",
+       "time": 0.15
+      },
+      {
+       "op": "sound.play",
+       "name": "message",
+       "gain": 0.3,
+       "pitch": 0.8
+      },
+      {
+       "op": "sound.play",
+       "name": "message",
+       "gain": 0.25,
+       "pitch": 1.1
+      }
+     ]
+    },
+    {
+     "id": "plan",
+     "on": "timer:plan",
+     "do": [
+      {
+       "op": "actor.eyes",
+       "actor": "boss",
+       "at": "player"
+      },
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "angry",
+       "time": 0.12
+      },
+      {
+       "op": "sound.play",
+       "name": "click",
+       "gain": 2.0,
+       "pitch": 0.7
+      },
+      {
+       "op": "var.set",
+       "var": "emote",
+       "value": 3
+      },
+      {
+       "op": "var.set",
+       "var": "emote_until",
+       "value": "time + 0.8"
+      },
+      {
+       "op": "var.set",
+       "var": "emote_hex",
+       "value": 0
+      }
+     ]
+    },
+    {
+     "id": "hx_start1",
+     "on": "msg:hx_go",
+     "when": "hphase <= 1",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "smug",
+       "time": 0.3
+      }
+     ]
+    },
+    {
+     "id": "hx_start2",
+     "on": "msg:hx_go",
+     "when": "hphase >= 2",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "angry",
+       "time": 0.3
+      }
+     ]
+    },
+    {
+     "id": "hx_ouch",
+     "on": "actor.hit:hex",
+     "when": "is(game, play)",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "pain",
+       "time": 0.05,
+       "gap": 1.6
+      },
+      {
+       "op": "timer.start",
+       "id": "hx_calm",
+       "after": 0.35,
+       "gap": 1.6
+      }
+     ]
+    },
+    {
+     "id": "hx_calm1",
+     "on": "timer:hx_calm",
+     "when": "hphase <= 1",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "smug",
+       "time": 0.25
+      }
+     ]
+    },
+    {
+     "id": "hx_calm2",
+     "on": "timer:hx_calm",
+     "when": "hphase >= 2",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "angry",
+       "time": 0.25
+      }
+     ]
+    },
+    {
+     "id": "hero_hurt",
+     "on": "actor.hit:player",
+     "when": "is(game, play) and hp(player) < hp_seen",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "pain",
+       "time": 0.05
+      },
+      {
+       "op": "timer.start",
+       "id": "hero_ok",
+       "after": 0.7
+      },
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "smug",
+       "time": 0.15
+      },
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "smug",
+       "time": 0.15
+      },
+      {
+       "op": "var.set",
+       "var": "emote",
+       "value": 1
+      },
+      {
+       "op": "var.set",
+       "var": "emote_until",
+       "value": "time + 1.2"
+      },
+      {
+       "op": "var.set",
+       "var": "emote_hex",
+       "value": "hp(hex) > 0"
+      }
+     ]
+    },
+    {
+     "id": "hero_shielded",
+     "on": "actor.hit:player",
+     "when": "is(game, play) and hp(player) >= hp_seen",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "wow",
+       "time": 0.05,
+       "gap": 0.8
+      },
+      {
+       "op": "timer.start",
+       "id": "hero_ok",
+       "after": 0.45,
+       "gap": 0.8
+      }
+     ]
+    },
+    {
+     "id": "hero_ok1",
+     "on": "timer:hero_ok",
+     "when": "hp(player) > 1 and not hero_mad",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "focus",
+       "time": 0.25
+      }
+     ]
+    },
+    {
+     "id": "hero_mad1",
+     "on": "timer:hero_ok",
+     "when": "hp(player) > 1 and hero_mad",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "angry",
+       "time": 0.15
+      },
+      {
+       "op": "var.set",
+       "var": "hero_mad",
+       "value": 0
+      },
+      {
+       "op": "timer.start",
+       "id": "hero_ok",
+       "after": 1.4
+      }
+     ]
+    },
+    {
+     "id": "hero_mad",
+     "on": "actor.hit:player",
+     "when": "is(game, play) and hp(player) < hp_seen",
+     "do": [
+      {
+       "op": "var.set",
+       "var": "hero_mad",
+       "value": 1
+      }
+     ]
+    },
+    {
+     "id": "hero_proud",
+     "on": "msg:sq_go",
+     "when": "is(game, play) and phase >= 2",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "proud",
+       "time": 0.2
+      },
+      {
+       "op": "timer.start",
+       "id": "hero_ok",
+       "after": 1.6
+      }
+     ]
+    },
+    {
+     "id": "hero_ok2",
+     "on": "timer:hero_ok",
+     "when": "hp(player) <= 1",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "worried",
+       "time": 0.25
+      }
+     ]
+    },
+    {
+     "id": "hero_graze",
+     "on": "actor.graze:player",
+     "when": "is(game, play)",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "wow",
+       "time": 0.06,
+       "gap": 2.0
+      },
+      {
+       "op": "timer.start",
+       "id": "hero_ok",
+       "after": 0.5,
+       "gap": 2.0
+      }
+     ]
+    },
+    {
+     "id": "boss_wonder",
+     "on": "actor.graze:player",
+     "when": "is(game, play) and mult >= 3",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "wow",
+       "time": 0.1,
+       "gap": 6
+      },
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "wow",
+       "time": 0.1,
+       "gap": 6
+      },
+      {
+       "op": "timer.start",
+       "id": "sq_calm",
+       "after": 0.9,
+       "gap": 6
+      },
+      {
+       "op": "timer.start",
+       "id": "hx_calm",
+       "after": 0.9,
+       "gap": 6
+      },
+      {
+       "op": "var.set",
+       "var": "emote",
+       "value": 4,
+       "gap": 6
+      },
+      {
+       "op": "var.set",
+       "var": "emote_until",
+       "value": "time + 1",
+       "gap": 6
+      },
+      {
+       "op": "var.set",
+       "var": "emote_hex",
+       "value": "hp(hex) > 0",
+       "gap": 6
+      }
+     ]
+    },
+    {
+     "id": "hero_joy",
+     "on": "emitter.hit:shards",
+     "when": "is(game, play)",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "happy",
+       "time": 0.1,
+       "gap": 1.0
+      },
+      {
+       "op": "timer.start",
+       "id": "hero_ok",
+       "after": 0.8,
+       "gap": 1.0
+      }
+     ]
+    },
+    {
+     "id": "sq_down",
+     "on": "actor.dead:boss",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "boss",
+       "pose": "pain",
+       "time": 0.1
+      },
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "happy",
+       "time": 0.3
+      },
+      {
+       "op": "var.set",
+       "var": "emote",
+       "value": 5
+      },
+      {
+       "op": "var.set",
+       "var": "emote_until",
+       "value": "time + 1.5"
+      },
+      {
+       "op": "var.set",
+       "var": "emote_hex",
+       "value": 0
+      }
+     ]
+    },
+    {
+     "id": "hx_down",
+     "on": "actor.dead:hex",
+     "do": [
+      {
+       "op": "actor.pose",
+       "actor": "hex",
+       "pose": "pain",
+       "time": 0.1
+      },
+      {
+       "op": "actor.pose",
+       "actor": "player",
+       "pose": "happy",
+       "time": 0.3
+      },
+      {
+       "op": "var.set",
+       "var": "emote",
+       "value": 5
+      },
+      {
+       "op": "var.set",
+       "var": "emote_until",
+       "value": "time + 1.5"
+      },
+      {
+       "op": "var.set",
+       "var": "emote_hex",
+       "value": 1
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "shapes": [
+  {
+   "id": "pv_emote_ha",
+   "space": "world",
+   "face": "up",
+   "p": [
+    0,
+    2.6,
+    0
+   ],
+   "size": 100,
+   "style": "neon",
+   "glow": 0.6,
+   "glow_radius": 0.7,
+   "fx": {
+    "chroma": 0,
+    "jitter": 0,
+    "scanlines": 0,
+    "band": 0
+   },
+   "show": "hidden",
+   "in": {
+    "fx": "trace",
+    "dur": 0.15
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.3
+   },
+   "palette": [
+    [
+     0.95,
+     0.97,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.353,
+     0.847,
+     1.0
+    ]
+   ],
+   "items": [
+    {
+     "text": {
+      "s": "HA!",
+      "at": [
+       0,
+       0
+      ],
+      "size": 1.5,
+      "align": "center",
+      "weight": 2.0,
+      "tracking": -0.05,
+      "space": 0.6,
+      "slant": 0.2
+     },
+     "color": 1,
+     "move": [
+      "$v0 + 1.7",
+      "0 - $v1 + 1.5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pv_emote_dots",
+   "space": "world",
+   "face": "up",
+   "p": [
+    0,
+    2.6,
+    0
+   ],
+   "size": 100,
+   "style": "neon",
+   "glow": 0.6,
+   "glow_radius": 0.7,
+   "fx": {
+    "chroma": 0,
+    "jitter": 0,
+    "scanlines": 0,
+    "band": 0
+   },
+   "show": "hidden",
+   "in": {
+    "fx": "trace",
+    "dur": 0.15
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.3
+   },
+   "palette": [
+    [
+     0.95,
+     0.97,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.353,
+     0.847,
+     1.0
+    ]
+   ],
+   "items": [
+    {
+     "text": {
+      "s": "...",
+      "at": [
+       0,
+       0
+      ],
+      "size": 1.5,
+      "align": "center",
+      "weight": 2.0,
+      "tracking": -0.05,
+      "space": 0.6,
+      "slant": 0.2
+     },
+     "color": 1,
+     "move": [
+      "$v0 + 1.7",
+      "0 - $v1 + 1.5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pv_emote_bang",
+   "space": "world",
+   "face": "up",
+   "p": [
+    0,
+    2.6,
+    0
+   ],
+   "size": 100,
+   "style": "neon",
+   "glow": 0.6,
+   "glow_radius": 0.7,
+   "fx": {
+    "chroma": 0,
+    "jitter": 0,
+    "scanlines": 0,
+    "band": 0
+   },
+   "show": "hidden",
+   "in": {
+    "fx": "trace",
+    "dur": 0.15
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.3
+   },
+   "palette": [
+    [
+     0.95,
+     0.97,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.353,
+     0.847,
+     1.0
+    ]
+   ],
+   "items": [
+    {
+     "text": {
+      "s": "!",
+      "at": [
+       0,
+       0
+      ],
+      "size": 1.5,
+      "align": "center",
+      "weight": 2.0,
+      "tracking": -0.05,
+      "space": 0.6,
+      "slant": 0.2
+     },
+     "color": 1,
+     "move": [
+      "$v0 + 1.7",
+      "0 - $v1 + 1.5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pv_emote_what",
+   "space": "world",
+   "face": "up",
+   "p": [
+    0,
+    2.6,
+    0
+   ],
+   "size": 100,
+   "style": "neon",
+   "glow": 0.6,
+   "glow_radius": 0.7,
+   "fx": {
+    "chroma": 0,
+    "jitter": 0,
+    "scanlines": 0,
+    "band": 0
+   },
+   "show": "hidden",
+   "in": {
+    "fx": "trace",
+    "dur": 0.15
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.3
+   },
+   "palette": [
+    [
+     0.95,
+     0.97,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.353,
+     0.847,
+     1.0
+    ]
+   ],
+   "items": [
+    {
+     "text": {
+      "s": "?!",
+      "at": [
+       0,
+       0
+      ],
+      "size": 1.5,
+      "align": "center",
+      "weight": 2.0,
+      "tracking": -0.05,
+      "space": 0.6,
+      "slant": 0.2
+     },
+     "color": 1,
+     "move": [
+      "$v0 + 1.7",
+      "0 - $v1 + 1.5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pv_emote_ow",
+   "space": "world",
+   "face": "up",
+   "p": [
+    0,
+    2.6,
+    0
+   ],
+   "size": 100,
+   "style": "neon",
+   "glow": 0.6,
+   "glow_radius": 0.7,
+   "fx": {
+    "chroma": 0,
+    "jitter": 0,
+    "scanlines": 0,
+    "band": 0
+   },
+   "show": "hidden",
+   "in": {
+    "fx": "trace",
+    "dur": 0.15
+   },
+   "out": {
+    "fx": "fade",
+    "dur": 0.3
+   },
+   "palette": [
+    [
+     0.95,
+     0.97,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     0.353,
+     0.847,
+     1.0
+    ]
+   ],
+   "items": [
+    {
+     "text": {
+      "s": "OW!",
+      "at": [
+       0,
+       0
+      ],
+      "size": 1.5,
+      "align": "center",
+      "weight": 2.0,
+      "tracking": -0.05,
+      "space": 0.6,
+      "slant": 0.2
+     },
+     "color": 1,
+     "move": [
+      "$v0 + 1.7",
+      "0 - $v1 + 1.5"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "A face is three objects an eye: a centred white (a pose scales it: squint), a pupil (actor eyes moves it; a pose only sizes it), a brow (a pose places and turns it). Build the poses in code (tools/polyvoid_build.py sq_pose) - one entry per object, 40 a pose, 8 poses an actor. The mood graph reacts to events: a hit (gap so it does not flicker), the hero hurt, a graze streak, a phase. Emotes: the hud shows pv_emote_<k> while emote == k and time < emote_until, at x(boss), z(boss)."
+}

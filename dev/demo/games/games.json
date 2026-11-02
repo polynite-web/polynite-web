@@ -1,0 +1,61 @@
+{
+ "games": [
+  {
+   "id": "polyvoid",
+   "title": "Polyvoid",
+   "summary": "Circle neon bosses that change shape and fire wide lasers, and survive their bullets. Three levels on the ring: the Hollow Square (it splits in four, then grows two firing orbs), the Hex Warden, or the Gauntlet - both, back to back. Your laser fires by itself and follows you; graze the shots to raise the multiplier and power it up, dash through the gaps.",
+   "controls": "Circle: A D, arrows, the mouse, or hold the left or right half of the screen. Choose a level: circle to it on the ring, then J, click or tap (or keys 1 2 3). Dash: Space, right click or the DASH zone. Pause: Esc. Menu: M.",
+   "by": "A Polynite interactive demo - every shape, shot, rule and HUD is scene data, made through MCP.",
+   "scene": "demo/games/polyvoid/polyvoid.scene",
+   "thumb": "demo/games/polyvoid/thumb.jpg"
+  },
+  {
+   "id": "door_key",
+   "title": "Door & Key",
+   "summary": "Three keys, three locked doors, one exit. Each door is the same component with its own state; the hero is a physics body stopped by walls.",
+   "controls": "Move: WASD or arrows, or the left stick on touch.",
+   "by": "A feasibility test: built by an LLM from the MCP catalog alone.",
+   "scene": "demo/games/dev/door_key.scene",
+   "thumb": "demo/games/dev/door_key.png",
+   "dev": true
+  },
+  {
+   "id": "platformer",
+   "title": "Platformer",
+   "summary": "Run and jump on physics bodies, ride a moving platform, avoid the lava, reach the goal. Three lives.",
+   "controls": "A D to run, W or Space to jump, or the touch zones.",
+   "by": "A feasibility test: built by an LLM from the MCP catalog alone.",
+   "scene": "demo/games/dev/platformer.scene",
+   "thumb": "demo/games/dev/platformer.png",
+   "dev": true
+  },
+  {
+   "id": "lights_out",
+   "title": "Lights Out",
+   "summary": "A 5x5 grid: a press toggles a cell and its neighbours. Turn them all off. Twenty-five instances of one component; a seeded start that can be solved.",
+   "controls": "Arrows and Space, or tap a cell.",
+   "by": "A feasibility test: built by an LLM from the MCP catalog alone.",
+   "scene": "demo/games/dev/lights_out.scene",
+   "thumb": "demo/games/dev/lights_out.png",
+   "dev": true
+  },
+  {
+   "id": "waves",
+   "title": "Waves",
+   "summary": "Enemies come in growing waves from a prepared pool; survive five. Fourteen instances of one component, each with its own life.",
+   "controls": "Move: WASD or arrows. Fire: hold Space. Restart: R or Enter.",
+   "by": "A feasibility test: built by an LLM in the browser, from the MCP catalog alone.",
+   "scene": "demo/games/dev/waves.scene",
+   "dev": true
+  },
+  {
+   "id": "rpg",
+   "title": "Small RPG",
+   "summary": "Two rooms, a shop, a bag, a quest and turn-based fights. Items, enemies, loot and levels all come from data tables.",
+   "controls": "Move: WASD. Act: E. Items: 1-4. Sell or flee: X. Restart: R.",
+   "by": "A feasibility test: built by an LLM in the browser, from the MCP catalog alone.",
+   "scene": "demo/games/dev/rpg.scene",
+   "dev": true
+  }
+ ]
+}

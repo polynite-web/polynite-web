@@ -1,0 +1,52 @@
+{
+ "templates": [
+  {
+   "id": "PlayerOrbit",
+   "summary": "A hero that runs on a circle round a centre (keys, mouse, finger), faces it, dashes; its laser (an emitter beam) fires by itself at the centre; a dash trail. Needs an actor or object to orbit (orbit.around, here \"boss\").",
+   "has": [
+    "apply"
+   ]
+  },
+  {
+   "id": "BossPhases",
+   "summary": "A boss that watches the hero (actor eyes: dark pupils that lean toward it) and fires its own shape (spinning squares, square bars) and evolves: a hollow square, then four small squares (phase 2, sweeping lasers), then two orbs that fire on their own and a crown (phase 3, a wide laser); its actor, its emitters and a graph that switches at 66% and 33% hp with a telegraph (its shots wiped, pulse, flash, a second of silence).",
+   "has": [
+    "apply",
+    "graphs"
+   ]
+  },
+  {
+   "id": "ArenaShooter",
+   "summary": "The game cycle as a graph (title -> play -> over | win -> retry or menu), a level menu on the floor (the hero circles to a level, Fire goes; keys 1 2 3 too), score and best, an almost bare HUD (score and lives, two rings, boss life arcs on the floor), italic title / pause / result screens, music loops, and the PBR Neutral look for neon colours.",
+   "has": [
+    "apply",
+    "shapes",
+    "graphs"
+   ]
+  },
+  {
+   "id": "ShieldPickups",
+   "summary": "A shield the hits take first (actor shield, shield_max), drawn as rings on the floor round the hero; the hero laser sometimes breaks a blue shard off the boss (spark with chance) that falls and homes on the hero; four shards add a ring.",
+   "has": [
+    "apply",
+    "shapes",
+    "graphs"
+   ]
+  },
+  {
+   "id": "Faces",
+   "summary": "Characters with feelings: eyes that watch (actor eyes), brows and lids posed by name (actor poses + the action actor.pose: calm, smug, angry, pain, wow), pieces that look at each other and confer (actor.eyes self), and words over a boss for a moment (HA!, ..., !, ?!).",
+   "has": [
+    "shapes",
+    "graphs"
+   ]
+  },
+  {
+   "id": "ScoreMultiplier",
+   "summary": "Score and a graze multiplier as rules: a hit on the boss scores 10 x mult, a graze raises mult by .1 (max 8) and scores, being hit resets mult - with rising sound pitch.",
+   "has": [
+    "graphs"
+   ]
+  }
+ ]
+}

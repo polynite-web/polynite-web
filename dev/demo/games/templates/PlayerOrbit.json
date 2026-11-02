@@ -1,0 +1,1240 @@
+{
+ "id": "PlayerOrbit",
+ "summary": "A hero that runs on a circle round a centre (keys, mouse, finger), faces it, dashes; its laser (an emitter beam) fires by itself at the centre; a dash trail. Needs an actor or object to orbit (orbit.around, here \"boss\").",
+ "apply": [
+  {
+   "op": "create",
+   "id": "pv_player",
+   "t": "group",
+   "p": [
+    0,
+    0,
+    9.0
+   ],
+   "r": [
+    0,
+    180,
+    0
+   ]
+  },
+  {
+   "op": "create",
+   "id": "pv_player_rim",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "s": [
+    1.4,
+    1.4,
+    1.4
+   ],
+   "c": [
+    0.31,
+    0.902,
+    1.0
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0,
+      0.12,
+      0.62
+     ],
+     [
+      0.5,
+      0.12,
+      -0.38
+     ],
+     [
+      -0.5,
+      0.12,
+      -0.38
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "glow": {
+    "gain": 0.9,
+    "color": [
+     0.31,
+     0.902,
+     1.0
+    ]
+   },
+   "parent": "pv_player"
+  },
+  {
+   "op": "create",
+   "id": "pv_player_core",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "s": [
+    1.4,
+    1.4,
+    1.4
+   ],
+   "c": [
+    0.02,
+    0.025,
+    0.05
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0.0,
+      0.13,
+      0.35440000000000005
+     ],
+     [
+      0.31,
+      0.13,
+      -0.2656
+     ],
+     [
+      -0.31,
+      0.13,
+      -0.2656
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "parent": "pv_player"
+  },
+  {
+   "op": "create",
+   "id": "pv_player_eye",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    0,
+    0.03
+   ],
+   "s": [
+    1.4,
+    1.4,
+    1.4
+   ],
+   "c": [
+    1,
+    1,
+    1
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0.0,
+      0.15,
+      0.19
+     ],
+     [
+      0.08243791043233605,
+      0.15,
+      0.17118408490145964
+     ],
+     [
+      0.14854798166892566,
+      0.15,
+      0.11846306235315938
+     ],
+     [
+      0.1852363033145465,
+      0.15,
+      0.04227897745169974
+     ],
+     [
+      0.1852363033145465,
+      0.15,
+      -0.04227897745169972
+     ],
+     [
+      0.1485479816689257,
+      0.15,
+      -0.11846306235315936
+     ],
+     [
+      0.08243791043233606,
+      0.15,
+      -0.17118408490145962
+     ],
+     [
+      2.3268289183799712e-17,
+      0.15,
+      -0.19
+     ],
+     [
+      -0.08243791043233602,
+      0.15,
+      -0.17118408490145964
+     ],
+     [
+      -0.14854798166892563,
+      0.15,
+      -0.1184630623531594
+     ],
+     [
+      -0.1852363033145465,
+      0.15,
+      -0.04227897745169977
+     ],
+     [
+      -0.18523630331454652,
+      0.15,
+      0.042278977451699534
+     ],
+     [
+      -0.1485479816689257,
+      0.15,
+      0.11846306235315934
+     ],
+     [
+      -0.08243791043233593,
+      0.15,
+      0.17118408490145967
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "glow": {
+    "gain": 1.1,
+    "color": [
+     1,
+     1,
+     1
+    ]
+   },
+   "parent": "pv_player"
+  },
+  {
+   "op": "create",
+   "id": "pv_player_pup",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    0,
+    0.03
+   ],
+   "s": [
+    1.4,
+    1.4,
+    1.4
+   ],
+   "c": [
+    0.02,
+    0.025,
+    0.05
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0.0,
+      0.17,
+      0.08
+     ],
+     [
+      0.04702282018339785,
+      0.17,
+      0.06472135954999579
+     ],
+     [
+      0.07608452130361229,
+      0.17,
+      0.024721359549995797
+     ],
+     [
+      0.07608452130361229,
+      0.17,
+      -0.024721359549995787
+     ],
+     [
+      0.04702282018339786,
+      0.17,
+      -0.06472135954999579
+     ],
+     [
+      9.797174393178826e-18,
+      0.17,
+      -0.08
+     ],
+     [
+      -0.047022820183397845,
+      0.17,
+      -0.06472135954999579
+     ],
+     [
+      -0.07608452130361229,
+      0.17,
+      -0.024721359549995804
+     ],
+     [
+      -0.07608452130361229,
+      0.17,
+      0.02472135954999578
+     ],
+     [
+      -0.04702282018339787,
+      0.17,
+      0.06472135954999579
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "parent": "pv_player"
+  },
+  {
+   "op": "create",
+   "id": "pv_dart",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    -5,
+    0
+   ],
+   "s": [
+    0.42,
+    0.42,
+    0.9
+   ],
+   "c": [
+    0.31,
+    0.902,
+    1.0
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0,
+      0.06,
+      0.5
+     ],
+     [
+      0.16,
+      0.06,
+      -0.1
+     ],
+     [
+      0,
+      0.06,
+      -0.5
+     ],
+     [
+      -0.16,
+      0.06,
+      -0.1
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "glow": {
+    "gain": 1.4400000000000002,
+    "color": [
+     0.31,
+     0.902,
+     1.0
+    ]
+   },
+   "vis": false,
+   "sh": false
+  },
+  {
+   "op": "create",
+   "id": "pv_spark",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    -5,
+    0
+   ],
+   "s": [
+    0.17,
+    0.17,
+    0.17
+   ],
+   "c": [
+    1.0,
+    0.9,
+    0.97
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0,
+      0.04,
+      0.5
+     ],
+     [
+      0.3,
+      0.04,
+      -0.35
+     ],
+     [
+      -0.3,
+      0.04,
+      -0.35
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "glow": {
+    "gain": 1.9800000000000002,
+    "color": [
+     1.0,
+     0.9,
+     0.97
+    ]
+   },
+   "vis": false,
+   "sh": false
+  },
+  {
+   "op": "create",
+   "id": "pv_flash",
+   "t": "sphere",
+   "appearance": "instant",
+   "p": [
+    0,
+    -5,
+    0
+   ],
+   "s": [
+    0.55,
+    0.2,
+    0.55
+   ],
+   "c": [
+    1,
+    1,
+    1
+   ],
+   "glow": {
+    "gain": 2.8800000000000003,
+    "color": [
+     1,
+     0.92,
+     1
+    ]
+   },
+   "vis": false,
+   "sh": false
+  },
+  {
+   "op": "create",
+   "id": "pv_trail",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    -5,
+    0
+   ],
+   "s": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "c": [
+    0.31,
+    0.902,
+    1.0
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      0,
+      0.03,
+      0.5
+     ],
+     [
+      0.43,
+      0.03,
+      -0.25
+     ],
+     [
+      -0.43,
+      0.03,
+      -0.25
+     ]
+    ],
+    "base_mode": 1,
+    "base": 0.0
+   },
+   "glow": {
+    "gain": 0.9,
+    "color": [
+     0.31,
+     0.902,
+     1.0
+    ]
+   },
+   "vis": false,
+   "sh": false
+  },
+  {
+   "op": "create",
+   "id": "pv_beam_c",
+   "t": "surface",
+   "appearance": "instant",
+   "p": [
+    0,
+    -5,
+    0
+   ],
+   "s": [
+    0.2,
+    0.12,
+    1.0
+   ],
+   "c": [
+    0.31,
+    0.902,
+    1.0
+   ],
+   "surface": {
+    "kind": 4,
+    "path": [
+     [
+      -0.5,
+      0.5,
+      -0.5
+     ],
+     [
+      0.5,
+      0.5,
+      -0.5
+     ],
+     [
+      0.5,
+      0.5,
+      0.5
+     ],
+     [
+      -0.5,
+      0.5,
+      0.5
+     ]
+    ],
+    "base_mode": 1,
+    "base": -0.5
+   },
+   "glow": {
+    "gain": 1.4400000000000002,
+    "color": [
+     0.31,
+     0.902,
+     1.0
+    ]
+   },
+   "vis": false,
+   "sh": false
+  },
+  {
+   "op": "input",
+   "actions": [
+    {
+     "id": "Move",
+     "kind": "axis2",
+     "keys": {
+      "up": [
+       "W",
+       "Up"
+      ],
+      "down": [
+       "S",
+       "Down"
+      ],
+      "left": [
+       "A",
+       "Left"
+      ],
+      "right": [
+       "D",
+       "Right"
+      ]
+     },
+     "touch": [
+      {
+       "kind": "split",
+       "zone": [
+        0,
+        0.3,
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    {
+     "id": "Dash",
+     "kind": "button",
+     "keys": [
+      "Space",
+      "K"
+     ],
+     "touch": [
+      {
+       "kind": "hold",
+       "zone": [
+        0.78,
+        0.22,
+        1,
+        0.42
+       ],
+       "pointer": "touch",
+       "label": "DASH"
+      },
+      {
+       "kind": "hold",
+       "pointer": "mouse",
+       "button": "right"
+      }
+     ]
+    },
+    {
+     "id": "Fire",
+     "kind": "button",
+     "keys": [
+      "J",
+      "Enter"
+     ],
+     "touch": [
+      {
+       "kind": "hold",
+       "pointer": "any"
+      }
+     ]
+    },
+    {
+     "id": "Pick1",
+     "kind": "button",
+     "keys": [
+      "1"
+     ]
+    },
+    {
+     "id": "Pick2",
+     "kind": "button",
+     "keys": [
+      "2"
+     ]
+    },
+    {
+     "id": "Pick3",
+     "kind": "button",
+     "keys": [
+      "3"
+     ]
+    },
+    {
+     "id": "Menu",
+     "kind": "button",
+     "keys": [
+      "M"
+     ]
+    }
+   ]
+  },
+  {
+   "op": "actor",
+   "set": [
+    {
+     "id": "player",
+     "object": "pv_player",
+     "p": [
+      0,
+      9.0
+     ],
+     "y": 0.0,
+     "speed": 9,
+     "accel": 60,
+     "friction": 9,
+     "orbit": {
+      "around": [
+       0,
+       0
+      ],
+      "radius": [
+       7.6,
+       10.4
+      ],
+      "mouse": true,
+      "mouse_speed": 45,
+      "mouse_radius": true
+     },
+     "radius": 0.55,
+     "move": "Move",
+     "face": "center",
+     "look": "boss",
+     "dash": {
+      "action": "Dash",
+      "speed": 26,
+      "time": 0.16,
+      "cooldown": 0.45
+     },
+     "tags": [
+      "player"
+     ],
+     "hp": 3,
+     "shield": 2,
+     "shield_max": 4,
+     "eyes": {
+      "objects": [
+       "pv_player_pup"
+      ],
+      "at": "boss",
+      "reach": 0.07
+     },
+     "poses": {
+      "focus": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.35
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.4,
+         1.4,
+         1.4
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         1.26,
+         1.4,
+         0.49
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.4
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.03
+        ],
+        "s": [
+         1.4,
+         1.4,
+         1.4
+        ]
+       }
+      ],
+      "happy": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.45
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.512,
+         1.4,
+         1.12
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         1.61,
+         1.4,
+         1.4
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.4
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         -0.01
+        ],
+        "s": [
+         1.61,
+         1.61,
+         1.61
+        ]
+       }
+      ],
+      "pain": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.31
+        ],
+        "r": [
+         0,
+         -18,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.54,
+         1.4,
+         0.63
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         1.05,
+         1.4,
+         0.84
+        ],
+        "r": [
+         0,
+         180,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.35200000000000004
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.05
+        ],
+        "s": [
+         0.84,
+         0.84,
+         0.84
+        ]
+       }
+      ],
+      "worried": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.39
+        ],
+        "r": [
+         0,
+         -14,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.4,
+         1.4,
+         1.54
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         0.84,
+         1.4,
+         0.7
+        ],
+        "r": [
+         0,
+         180,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.36000000000000004
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.06
+        ],
+        "s": [
+         1.12,
+         1.12,
+         1.12
+        ]
+       }
+      ],
+      "wow": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.47
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.61,
+         1.4,
+         1.82
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         0.77,
+         1.4,
+         2.1
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.4
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.03
+        ],
+        "s": [
+         0.91,
+         0.91,
+         0.91
+        ]
+       }
+      ],
+      "angry": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.3
+        ],
+        "r": [
+         0,
+         20,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.47,
+         1.4,
+         1.12
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         1.4,
+         1.4,
+         0.63
+        ],
+        "r": [
+         0,
+         180,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.364
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.04
+        ],
+        "s": [
+         1.54,
+         1.54,
+         1.54
+        ]
+       }
+      ],
+      "proud": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.41
+        ],
+        "r": [
+         0,
+         -8,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.47,
+         1.4,
+         1.26
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         1.68,
+         1.4,
+         1.12
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.4
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.0
+        ],
+        "s": [
+         1.47,
+         1.47,
+         1.47
+        ]
+       }
+      ],
+      "blink": [
+       {
+        "id": "pv_player_brow",
+        "p": [
+         0,
+         0,
+         0.33999999999999997
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "pv_player_eye",
+        "s": [
+         1.47,
+         1.4,
+         0.168
+        ]
+       },
+       {
+        "id": "pv_player_mouth",
+        "s": [
+         1.26,
+         1.4,
+         0.49
+        ],
+        "r": [
+         0,
+         0,
+         0
+        ],
+        "p": [
+         0,
+         0,
+         -0.4
+        ]
+       },
+       {
+        "id": "pv_player_pup",
+        "p": [
+         0,
+         0,
+         0.03
+        ],
+        "s": [
+         0.28,
+         0.28,
+         0.28
+        ]
+       }
+      ]
+     },
+     "invuln": 1.6,
+     "camera": {
+      "follow": 0.15,
+      "fit": 13
+     }
+    }
+   ]
+  },
+  {
+   "op": "emitter",
+   "set": [
+    {
+     "id": "player_laser",
+     "shape": "pv_dart",
+     "from": "player",
+     "y": 0.4,
+     "trigger": "auto",
+     "max": 160,
+     "bound": 16,
+     "pattern": {
+      "kind": "aimed",
+      "aim": "boss",
+      "count": 3,
+      "spread": 6,
+      "every": 0.14,
+      "speed": 24,
+      "life": 0.8,
+      "offset": 0.9
+     },
+     "hit": {
+      "tags": [
+       "boss"
+      ],
+      "radius": 0.35,
+      "damage": 1,
+      "spark": [
+       "sparks_c",
+       "flash",
+       "shards"
+      ]
+     }
+    },
+    {
+     "id": "player_trail",
+     "shape": "pv_trail",
+     "from": "player",
+     "y": 0.06,
+     "trigger": "dashing",
+     "max": 120,
+     "pattern": {
+      "kind": "trail",
+      "count": 2,
+      "every": 0.012,
+      "speed": 0.6,
+      "spread": 50,
+      "life": 0.3
+     }
+    },
+    {
+     "id": "sparks_c",
+     "shape": "pv_spark",
+     "trigger": "manual",
+     "y": 0.5,
+     "seed": 10,
+     "max": 300,
+     "pattern": {
+      "kind": "burst",
+      "count": 4,
+      "speed": 4.5,
+      "life": 0.9,
+      "size": 0.8,
+      "pop": 4,
+      "gravity": 24,
+      "bounce": 0.4
+     }
+    },
+    {
+     "id": "flash",
+     "shape": "pv_flash",
+     "trigger": "manual",
+     "y": 0.45,
+     "seed": 12,
+     "max": 40,
+     "pattern": {
+      "kind": "burst",
+      "count": 1,
+      "speed": 0,
+      "life": 0.16,
+      "jitter": 0
+     }
+    }
+   ]
+  }
+ ],
+ "notes": "speed is m/s round the circle; orbit.radius [min,max] lets up/down move in and out; mouse_speed lets the pointer lead fast. player_laser is a beam (kind beam, relative: it follows the hero and stays on its target however fast the hero runs) that bites actors tagged \"boss\"; it lives 60 s and refires every 59.9, so clear only the enemy shots (emitter.clear {ids}) or it is gone for a minute; swap it with emitter.set to power it up."
+}

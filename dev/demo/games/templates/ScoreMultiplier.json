@@ -1,0 +1,128 @@
+{
+ "id": "ScoreMultiplier",
+ "summary": "Score and a graze multiplier as rules: a hit on the boss scores 10 x mult, a graze raises mult by .1 (max 8) and scores, being hit resets mult - with rising sound pitch.",
+ "graphs": [
+  {
+   "id": "score",
+   "vars": {
+    "score": 0,
+    "mult": 1,
+    "best": {
+     "value": 0,
+     "keep": true
+    }
+   },
+   "rules": [
+    {
+     "id": "hit_boss",
+     "on": "actor.hit:boss",
+     "do": [
+      {
+       "op": "var.add",
+       "var": "score",
+       "value": "10 * mult * n"
+      },
+      {
+       "op": "fx.glow",
+       "object": "pv_boss",
+       "amount": 1.5,
+       "time": 0.09,
+       "gap": 0.2
+      },
+      {
+       "op": "fx.pulse",
+       "object": "pv_boss",
+       "scale": 1.05,
+       "time": 0.12,
+       "gap": 0.2
+      },
+      {
+       "op": "sound.play",
+       "name": "tick",
+       "gain": 1.6,
+       "pitch": "0.9 + mult * 0.04",
+       "gap": 0.09
+      }
+     ]
+    },
+    {
+     "id": "graze",
+     "on": "actor.graze:player",
+     "do": [
+      {
+       "op": "var.add",
+       "var": "mult",
+       "value": "0.1 * n",
+       "max": 8
+      },
+      {
+       "op": "var.add",
+       "var": "score",
+       "value": "25 * mult * n"
+      },
+      {
+       "op": "fx.glow",
+       "object": "pv_player",
+       "amount": 0.8,
+       "time": 0.1,
+       "gap": 0.1
+      },
+      {
+       "op": "sound.play",
+       "name": "click",
+       "gain": 1.6,
+       "pitch": "1.0 + mult * 0.05",
+       "gap": 0.06
+      }
+     ]
+    },
+    {
+     "id": "hurt",
+     "on": "actor.hit:player",
+     "do": [
+      {
+       "op": "var.set",
+       "var": "mult",
+       "value": 1
+      },
+      {
+       "op": "fx.shake",
+       "amount": 0.7,
+       "time": 0.35
+      },
+      {
+       "op": "fx.flash",
+       "amount": 1.2,
+       "time": 0.25
+      },
+      {
+       "op": "fx.pulse",
+       "object": "pv_player",
+       "scale": 1.6,
+       "time": 0.3
+      },
+      {
+       "op": "fx.glow",
+       "object": "pv_player",
+       "amount": 4,
+       "time": 0.35
+      },
+      {
+       "op": "sound.play",
+       "name": "thump",
+       "gain": 1.3
+      },
+      {
+       "op": "camera.move",
+       "zoom": 0.78,
+       "at": "player",
+       "lean": 0.45,
+       "time": 1.0
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Rules use \"when is(play)\" in the game graph; here they run whenever play runs. Merge into your game graph or keep a graph of its own."
+}
