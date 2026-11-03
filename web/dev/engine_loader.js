@@ -32,13 +32,12 @@
   window.pnLoadWasm = function (url, imports, receive, report, limits) {
     limits = limits || {};
     var finished = false, observer, reader, idleTimer, hardTimer, rejectTimeout, encoding = "", decodedBytes;
-    var FR = false;   /* the interface is in English, whatever the browser says */
     var download = pending && pending.url === url ? pending : request(url), controller = download.controller;
     pending = null;
     window.pnEngineLoading = true;
     var deadline = new Promise(function (_, reject) { rejectTimeout = reject; });
     function expire() {
-      rejectTimeout(new Error(FR ? "Le chargement du moteur ne progresse plus. Rechargez la page." : "Engine loading timed out. Reload the page."));
+      rejectTimeout(new Error("Engine loading timed out. Reload the page."));
       if (controller) controller.abort();
     }
     function alive(compile) {
@@ -46,8 +45,8 @@
       // An idle network/compiler is not a failed engine. Keep the in-flight
       // request alive; only the overall request budget or a real error aborts.
       idleTimer = setTimeout(function () {
-        if (!finished) update(FR ? "Chargement en cours" : "Still loading engine",
-          FR ? "Le chargement continue…" : "Loading continues…");
+        if (!finished) update("Still loading engine",
+          "Loading continues…");
       }, compile ? (limits.compileMs || 120000) : (limits.idleMs || 25000));
       report(null, null);
     }
@@ -64,13 +63,13 @@
       if (download.decoded || entry.name !== absolute || !entry.decodedBodySize) return;
       var cached = entry.transferSize === 0;
       var validated = entry.transferSize > 0 && entry.transferSize < entry.encodedBodySize;
-      var summary = cached ? (FR ? "Cache du navigateur" : "Browser cache") :
-        validated ? (FR ? "Cache revalide" : "Revalidated cache") :
+      var summary = cached ? ("Browser cache") :
+        validated ? ("Revalidated cache") :
         size(entry.encodedBodySize) + (encoding ? " " + encoding : "");
       summary += " → " + size(entry.decodedBodySize);
       window.pnEngineTransfer = { encodedBytes: entry.encodedBodySize, decodedBytes: entry.decodedBodySize,
         transferredBytes: entry.transferSize, encoding: encoding, cached: cached, validated: validated, durationMs: entry.duration };
-      update(FR ? "Preparation du moteur" : "Preparing engine", summary);
+      update("Preparing engine", summary);
       report(null, summary);
     }
     try {
@@ -79,7 +78,7 @@
         observer.observe({ type: "resource", buffered: true });
       }
     } catch (error) { observer = null; }
-    update(FR ? "Chargement du moteur" : "Loading engine");
+    update("Loading engine");
     function instantiate(response) {
         if (!response.ok) throw new Error("Engine HTTP " + response.status);
         encoding = response.headers.get("Content-Encoding") || "";
@@ -87,12 +86,12 @@
         if(download.decoded) {
           window.pnEngineTransfer = { decodedBytes: Number(response.headers.get("Content-Length")) || 0,
             encoding: "", cached: true, decodedCache: true, transferredBytes: 0 };
-          update(FR ? "Preparation du moteur" : "Preparing engine", FR ? "Cache decompresse" : "Decoded cache");
+          update("Preparing engine", "Decoded cache");
           console.info("[engine-cache] decoded engine reused: " + size(window.pnEngineTransfer.decodedBytes));
         } else if(window.pnWasmCache && window.pnWasmCache.available)
           decodedBytes = response.clone().arrayBuffer().catch(function () { return null; });
-        if(!download.decoded) update(encoding ? (FR ? "Telechargement et decompression" : "Downloading and decompressing") :
-          (FR ? "Telechargement du moteur" : "Downloading engine"), encoding === "br" ? "Brotli" : encoding);
+        if(!download.decoded) update(encoding ? ("Downloading and decompressing") :
+          ("Downloading engine"), encoding === "br" ? "Brotli" : encoding);
         // A parallel reader observes progress without replacing the native Response/URL.
         if (response.body && typeof response.clone === "function") {
           reader = response.clone().body.getReader();
@@ -103,7 +102,7 @@
               if (!chunk.done) pump();
               else {
                 if(window.__pnStartup) window.__pnStartup.mark(download.decoded ? "engine_cache_read_completed" : "engine_download_completed");
-                update(FR ? "Preparation du moteur" : "Preparing engine");
+                update("Preparing engine");
               }
             }).catch(function () {});
           })();
@@ -113,7 +112,7 @@
             (response.headers.get("Content-Type") || "").split(";")[0].trim() === "application/wasm")
           return WebAssembly.instantiateStreaming(Promise.resolve(response), imports);
         return response.arrayBuffer().then(function (bytes) {
-          update(FR ? "Preparation du moteur" : "Preparing engine");
+          update("Preparing engine");
           return WebAssembly.instantiate(bytes, imports);
         });
     }
@@ -132,7 +131,7 @@
           return bytes ? window.pnWasmCache.save(url, bytes) : null;
         }).catch(function () {});
         if(window.__pnStartup) window.__pnStartup.mark("engine_instantiated");
-        report(FR ? "Initialisation du moteur" : "Initializing engine", null);
+        report("Initializing engine", null);
         receive(result.instance, result.module);
       }, function (error) {
         cleanup();

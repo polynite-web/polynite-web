@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0540";window.__pnEngineBase="engine/061b18c781b776e4b084023bc785b97268fff95a3c01fac34c8cfdad66d98dcc/";</script>
+<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0541";window.__pnEngineBase="engine/25759345af1d23d1c032e9b344310ef2476426fa00b6dbd34be95899c8b675f2/";</script>
 <!-- A Polynite app (?app=dice, dice.polynite.io): decided before anything reads it - pn_app_shell.js -->
 <script>(function(){var h={"dice.polynite.io":"dice"},a=new URLSearchParams(location.search).get("app")||h[location.hostname]||"";if(/^[a-z][a-z0-9_-]{0,31}$/.test(a)){window.__pnAppMode=a;window.__pnAppHost=h[location.hostname]===a;window.vmeshAutoDiscover=false;}})();</script>
 <script src="scene-file-drop.js?v=1"></script>
@@ -1236,9 +1236,8 @@ body.scene-entry-ready #curtain {
     if(window.__spinNoticeShown) return;
     engineAborted = true;
     if(window.vmeshRuntimeInitialized && Module.pauseMainLoop) Module.pauseMainLoop();
-    gpuNotice(FR ? "Le chargement s'est interrompu. Rechargez la page pour reessayer." :
-      "Loading stopped. Reload the page to try again.", reason,
-      FR ? "Chargement interrompu" : "Loading interrupted");
+    gpuNotice("Loading stopped. Reload the page to try again.", reason,
+      "Loading interrupted");
   }
   window.addEventListener("polynite:engine-failed", function (event) {
     if(!engineAborted)loaderFailed(event.detail && event.detail.message || "Pipeline preparation failed");
@@ -1250,7 +1249,7 @@ body.scene-entry-ready #curtain {
     // Silence is not an engine exception: MCP, assets and GPU initialization
     // can still complete. Never pause the main loop or fabricate readiness.
     if (fallback) {
-      loaderText.textContent = FR ? "Preparation en cours… Le chargement continue." : "Still preparing… Loading continues.";
+      loaderText.textContent = "Still preparing… Loading continues.";
       return;
     }
     loaderHidden = true;
@@ -1475,30 +1474,7 @@ body.scene-entry-ready #curtain {
      actions: no WebGPU at all, no adapter (driver or GPU refused), or an
      adapter too limited.
      The strings below are user-facing UI text, deliberately localized. */
-  var FR = false;   /* the interface is in English, whatever the browser says */
-  var T = FR ? {
-    title: "WebGPU est requis",
-    none: "Ce navigateur n'expose pas WebGPU. Cette application s'appuie dessus pour son rendu.",
-    noadapter: "WebGPU est present, mais aucun adaptateur graphique n'a pu etre obtenu. C'est souvent le pilote graphique ou l'acceleration materielle desactivee.",
-    missing: "L'adaptateur graphique de cet appareil refuse une fonction dont le moteur a besoin.",
-    nodevice: "L'adaptateur graphique a ete trouve, mais il refuse de creer un peripherique de rendu. C'est generalement le pilote graphique.",
-    insecure: "WebGPU exige une connexion securisee. Ouvre la page en HTTPS (ou depuis localhost).",
-    how: "Pour ouvrir cette page :",
-    b1: "Chrome ou Edge 113 et plus, sur ordinateur ou Android",
-    b2: "Safari 18 et plus (macOS et iOS 18)",
-    b3: "Firefox : activer WebGPU dans ",
-    b4: "verifier que l'acceleration materielle est active dans les reglages du navigateur",
-    gl_title: "WebGL 2 est requis",
-    gl_none: "Ce navigateur n'expose pas WebGL 2, ou l'acceleration materielle est desactivee. Cette version du moteur s'appuie dessus pour son rendu.",
-    gl_device: "Le contexte WebGL 2 a ete obtenu, mais le moteur n'a pas pu initialiser son rendu. C'est generalement le pilote graphique.",
-    dl: "Le fichier du moteur n'a pas pu etre recupere. Verifie ta connexion, puis recharge la page.",
-    title_dl: "Le moteur n'a pas pu etre telecharge",
-    lost_title: "Le rendu s'est interrompu",
-    lost: "Le navigateur a retire le peripherique graphique en cours de route - le plus souvent par manque de memoire video, ou apres un plantage du pilote. Rien n'est perdu : ta scene est enregistree.",
-    lost_full: "La memoire video est epuisee : trop d'onglets 3D ouverts, ou un modele trop lourd pour cet appareil. Ferme les autres onglets, puis recharge.",
-    reload: "Recharger la page",
-    detail: "Detail technique"
-  } : {
+  var T = {
     title: "WebGPU is required",
     none: "This browser does not expose WebGPU. This application relies on it for rendering.",
     noadapter: "WebGPU is present but no graphics adapter could be acquired. This usually means the graphics driver or hardware acceleration is unavailable.",
@@ -1538,7 +1514,7 @@ body.scene-entry-ready #curtain {
   function loadEngine(base) {
     window.__spinVerFrozen = window.__spinVerFrozen || getCurrentVersion();
     console.info("[gpu-bootstrap] version frozen for this page: " + window.__spinVerFrozen);
-    if (loaderText) loaderText.textContent = FR ? "Chargement du moteur" : "Loading engine";
+    if (loaderText) loaderText.textContent = "Loading engine";
     if(window.pnPrefetchWasm) window.pnPrefetchWasm(cacheBust(base + ".wasm"));
     if(window.__pnStartup) window.__pnStartup.mark("engine_script_requested");
     var sc = document.createElement("script");
@@ -1749,7 +1725,7 @@ body.scene-entry-ready #curtain {
       window.pnLoadWasm(cacheBust("app.wasm"), imports, receive, function (phase, detail) {
         if (phase && !window.vmeshRuntimeInitialized && loaderText) loaderText.textContent = phase;
         var info = document.getElementById("loaderEngineInfo");
-        if (info && detail != null && devMode) info.textContent = (FR ? "Moteur · " : "Engine · ") + detail;
+        if (info && detail != null && devMode) info.textContent = ("Engine · ") + detail;
         loaderLastSignal = performance.now ? performance.now() : Date.now();
       }).catch(function (error) { Module.onAbort(error.message || String(error)); loaderFailed(error.message || String(error)); });
       return {};
@@ -1780,7 +1756,7 @@ body.scene-entry-ready #curtain {
         loaderText.style.whiteSpace = "pre-wrap";
         loaderText.textContent = devMode && why
           ? "Engine aborted\n" + why
-          : (FR ? "Le moteur n a pas pu demarrer." : "The engine failed to start.");
+          : ("The engine failed to start.");
       }
     },
     onRuntimeInitialized: function () {
@@ -1796,7 +1772,7 @@ body.scene-entry-ready #curtain {
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
        * (vmeshHideLoader, called by the engine). */
-      if (loaderText) loaderText.textContent = FR ? "Preparation de l affichage" : "Preparing display";
+      if (loaderText) loaderText.textContent = "Preparing display";
       var info = document.getElementById("loaderEngineInfo");
       if(info) info.hidden = true;
       console.info("[runtime] Ready.");
