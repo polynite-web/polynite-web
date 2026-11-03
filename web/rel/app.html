@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0539";window.__pnEngineBase="engine/3b669256241ea2b30a51cfded563ae9f03de1b302acd178e54fe48d0196d254d/";</script>
+<head><script id="pn-deploy-config">window.__pnDeployTier="release";window.__pnBuildVersion="v0540";window.__pnEngineBase="engine/061b18c781b776e4b084023bc785b97268fff95a3c01fac34c8cfdad66d98dcc/";</script>
 <!-- A Polynite app (?app=dice, dice.polynite.io): decided before anything reads it - pn_app_shell.js -->
 <script>(function(){var h={"dice.polynite.io":"dice"},a=new URLSearchParams(location.search).get("app")||h[location.hostname]||"";if(/^[a-z][a-z0-9_-]{0,31}$/.test(a)){window.__pnAppMode=a;window.__pnAppHost=h[location.hostname]===a;window.vmeshAutoDiscover=false;}})();</script>
 <script src="scene-file-drop.js?v=1"></script>
@@ -813,9 +813,7 @@ body.scene-entry-ready #curtain {
   }
   function userSafe(t) {
     if (devMode || !isRuntimeText(t)) return String(t);
-    return ((navigator.language || "en").toLowerCase().indexOf("fr") === 0
-      ? "Erreur du moteur graphique - reference "
-      : "Graphics engine error - reference ") + refCode(t);
+    return "Graphics engine error - reference " + refCode(t);
   }
 
   /* ============== ENGINE / BACKEND BANNER (top of the DEV panel) ==============
@@ -1477,7 +1475,7 @@ body.scene-entry-ready #curtain {
      actions: no WebGPU at all, no adapter (driver or GPU refused), or an
      adapter too limited.
      The strings below are user-facing UI text, deliberately localized. */
-  var FR = (navigator.language || "en").toLowerCase().indexOf("fr") === 0;
+  var FR = false;   /* the interface is in English, whatever the browser says */
   var T = FR ? {
     title: "WebGPU est requis",
     none: "Ce navigateur n'expose pas WebGPU. Cette application s'appuie dessus pour son rendu.",

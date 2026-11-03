@@ -32,7 +32,7 @@
   window.pnLoadWasm = function (url, imports, receive, report, limits) {
     limits = limits || {};
     var finished = false, observer, reader, idleTimer, hardTimer, rejectTimeout, encoding = "", decodedBytes;
-    var FR = /^fr/i.test(navigator.language || "");
+    var FR = false;   /* the interface is in English, whatever the browser says */
     var download = pending && pending.url === url ? pending : request(url), controller = download.controller;
     pending = null;
     window.pnEngineLoading = true;
