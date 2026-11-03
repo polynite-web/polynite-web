@@ -16,10 +16,10 @@ for(const base of [root,path.join(root,'web'),path.join(root,'dev')]){
  // All standalone readers must use the shell that matches the compiled engine.
  const runtime=fs.readFileSync(path.join(root,'dev/app.html'),'utf8').replace(/<script id="pn-build-version">[^]*?<\/script>/g,'');
  const isolate=`function(){const persistentMount=FS.mount;FS.mount=function(type,options,mountpoint){return persistentMount.call(FS,type===IDBFS?MEMFS:type,options,mountpoint);};console.info('[tutorial] scene filesystem is temporary; saved scenes are untouched');}`;
- if(!runtime.includes('preRun: [],'))throw Error('Engine bootstrap changed: review tutorial filesystem isolation');
+ const preRun=/preRun: .*,$/m;if(!preRun.test(runtime))throw Error('Engine bootstrap changed: review tutorial filesystem isolation');
  const release=fs.readFileSync(path.join(root,'version.txt'),'utf8').trim();
  const ephemeral='<script id="pn-build-version">window.__pnBuildVersion='+JSON.stringify(release)+';</script><base href="/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>';
- fs.writeFileSync(path.join(viewerDir,'index.html'),runtime.replace('<head>','<head>'+ephemeral).replace('preRun: [],','preRun: ['+isolate+'],').replace('src="welcome.js"','src="welcome.js?v='+crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'welcome.js'))).digest('hex').slice(0,12)+'"'));
+ fs.writeFileSync(path.join(viewerDir,'index.html'),runtime.replace('<head>','<head>'+ephemeral).replace(preRun,()=>'preRun: ['+isolate+'],').replace('src="welcome.js"','src="welcome.js?v='+crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'welcome.js'))).digest('hex').slice(0,12)+'"'));
  const dir=path.join(base,'tutorials');fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'catalog.json'),JSON.stringify({version:1,items},null,2));
  for(const i of items){const entry=path.join(dir,i.id);fs.mkdirSync(entry,{recursive:true});fs.writeFileSync(path.join(entry,'index.html'),require('./tutorial_view_page.cjs')(i));}
 }

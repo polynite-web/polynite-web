@@ -154,15 +154,18 @@
       "title": "Cozy Autumn Night",
       "category": "My creations",
       "environment": "Moonlit",
-      "summary": "A stone cottage under a full moon, autumn maples and windows lighting up one by one to an original guitar score. A perfect loop.",
-      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon, ground mist, warm windows that switch on to a soft guitar score and a seamless loop. Use the linked scene as a starting point.",
+      "summary": "Polynite's complete demo: a stone cottage under the moon, volumetric light pouring from each window, a white garden lantern, a synthesised guitar score and a logo that dances to its notes. A perfect 15-second loop, generated on your device.",
+      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon and ground mist. Give each window a warm spot light with volume above 0 and a portal, so light pours through the air as they switch on. Add a garden lantern whose glass glows with its own light. Write a guitar score in initial.music_notes, played by synthesised voices with no audio file, and make the logo dance to it with {op:'logo_fx', on:true, dance:1, beat:1}. Finish with a seamless loop. Use the linked scene as a starting point.",
       "tags": [
         "Cottage",
         "Autumn",
         "Moonlit",
-        "Music",
+        "Volumetric light",
+        "Procedural music",
+        "Dancing logo",
         "Loop"
-      ]
+      ],
+      "version": 2
     },
     {
       "recipe": "nested-temple",
