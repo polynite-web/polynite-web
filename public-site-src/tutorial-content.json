@@ -177,15 +177,14 @@
     "title": "Brick wall lab",
     "level": "Advanced",
     "topic": "physics",
-    "portrait": true,
-    "description": "Tune the impact, dust and render budget with 17 scene-owned controls.",
-    "prompt": "Create an advanced procedural brick-wall demolition scene in Polynite.\n\n- Generate a staggered wall of 30 rows by 10 columns of individually simulated red clay bricks, with rough grain, small bevels and seeded colour variation.\n- Suspend a dark steel wrecking ball from 18 alternating physical chain links and swing it through the wall. Use a textured aggregate floor, contact shadows and warm/cool lighting.\n- Define scene-owned MCP custom values: impact speed 6 m/s (1–15), ball mass 100 kg (10–100), brick mass 2 kg (0.5–10), friction 0.85 (0.1–1.5), release angle 33° (5–55), rows 30 (5–30), and chain visibility.\n- Add dust controls: enabled, amount 0.85 (0–1), size 0.28 m (0.02–0.75), lifetime 2.4 s (0.2–4), opacity 0.65 (0–1), and minimum impact energy 1 J (0–100).\n- Add render quality Mobile/Balanced/Export, motion blur 0 (0–1), brick bevel 0.004 m (0–0.008), and colour variation 0.075 (0–0.3).\n- Define English-labelled Gentle, Breach, Demolition, Mobile and Cinematic presets. Mobile uses 18 rows, lighter LOD and dust, and no motion blur.\n- Author a roughly ten-second replayable Cinematic sequence: start with the intact wall, release the ball, then orbit gently through the collision and falling debris.",
+    "description": "Tune the impact and the dust with 12 scene-owned controls.",
+    "prompt": "Create a procedural brick-wall demolition scene in Polynite.\n\n- A staggered wall of 30 rows by 10 columns of individually simulated glossy red bricks with small bevels.\n- A brown-grey metal wrecking ball on a physical chain, swung through the wall, with impact dust.\n- A pale floor with thin contour lines, a soft floor reflection, contact shadows and warm/cool lamps.\n- Define scene-owned MCP custom values for impact speed, ball and brick mass, friction, release angle and dust, with Gentle, Breach and Demolition presets.\n- A ten-second replayable film: the intact wall, the release, then a slow orbit through the falling debris.",
     "control": {
       "operation": "settings_preset",
       "action_id": "replace-with-a-fresh-uuid",
-      "preset": "mobile"
+      "preset": "demolition"
     },
-    "control_note": "These MCP arguments select an existing preset. The creation prompt above asks the assistant to define all custom values and their bindings when building the scene.",
+    "control_note": "These MCP arguments select a preset of the demo scene. The creation prompt above asks for the main custom values; open the demo scene for all 12 controls.",
     "settings_groups": [
       {
         "title": "Impact and structure",
@@ -214,11 +213,6 @@
             "id": "release_angle",
             "label": "Release angle",
             "hint": "Starting angle of the suspended ball, measured in degrees."
-          },
-          {
-            "id": "rows",
-            "label": "Wall rows",
-            "hint": "Generate a shorter or taller wall without placing each brick manually."
           },
           {
             "id": "show_chain",
@@ -263,31 +257,6 @@
             "updated_viewer": true
           }
         ]
-      },
-      {
-        "title": "Surface and performance",
-        "items": [
-          {
-            "id": "quality",
-            "label": "Render quality",
-            "hint": "Mobile uses lighter geometry and effects; Balanced is the everyday profile; Export uses full meshes."
-          },
-          {
-            "id": "motion_blur",
-            "label": "Motion blur",
-            "hint": "Rigid-object motion blur. It is disabled by the Mobile profile."
-          },
-          {
-            "id": "brick_bevel",
-            "label": "Brick edge radius",
-            "hint": "Small bevels catch light along the edges. This remains bounded for the physics shape."
-          },
-          {
-            "id": "variation",
-            "label": "Brick colour variation",
-            "hint": "Seeded colour variation shared by the procedural wall recipe."
-          }
-        ]
       }
     ],
     "experiments": [
@@ -300,12 +269,12 @@
         "text": "Use Breach, then increase cloud size to 0.4 m and lifetime to 3 s. Change only one value at a time. On an updated viewer, lower the energy threshold for lighter impacts."
       },
       {
-        "title": "3. Build for a phone",
-        "text": "Choose Mobile: 18 rows, no motion blur and bounded dust. Check responsiveness on a real phone. Visual LOD does not change the physical colliders."
+        "title": "3. Heavier bricks, same swing",
+        "text": "Start from the demo's own values (2 m/s, 20 degrees, 0.5 kg bricks), then raise brick mass to 6 kg and replay. Change only the mass, so the difference comes from the wall."
       },
       {
         "title": "4. Frame and record",
-        "text": "Choose Cinematic for a desktop video. Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
+        "text": "Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
       }
     ],
     "viewer_note": "Live effects/body properties and queued initial-setup edits need the latest viewer. Earlier viewers either queue all edits or reset on release, and may omit dust opacity/energy threshold. Live grabbing, camera modes and speed controls also require a recent build."

@@ -74,6 +74,6 @@ const {prepareSettingsGuide}=require('./tutorial_guide.cjs');
 const content=require('./public-site-src/tutorial-content.json');
 const brick=Object.values(content).find(item=>item.id==='brick-wall') || content['brick-wall'];
 const groups=prepareSettingsGuide(brick.settings_groups,advanced);
-assert.equal(groups.reduce((n,g)=>n+g.items.length,0),17);
+assert.equal(groups.reduce((n,g)=>n+g.items.length,0),12);
 assert.throws(()=>prepareSettingsGuide([{title:'Bad',items:[{id:'missing'}]}],advanced),/Unknown tutorial control/);
 console.log('PASS: guide ranges follow the schema; old viewers omit unsupported bindings and saves retain all controls');
