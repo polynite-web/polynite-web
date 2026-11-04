@@ -3207,17 +3207,16 @@
     {
       "id": "star-veyland",
       "atelier": "star-veyland-20261023-141528-portrait",
-      "title": "Star Veyland — a ship you build, fly and break",
-      "category": "Game concepts",
+      "title": "Star Veyland: a world with no edge",
+      "category": "Infinite worlds",
       "environment": "Sea, rock and mountains",
-      "summary": "A game concept: the hero's ship is not a model but a recipe of parts — hull, nacelles, hinged wings, flames — rebuilt live as you tune it. Mid-flight a wing and a nacelle tear off, fall burning and the ship lists; at the station it is whole again. The whole world and the ship are generated on your device and driven through MCP.",
-      "prompt": "Create a Star Veyland ship in Polynite through MCP. Turn on the infinite world with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe, change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}, move a part live with ship_part:{id:'nacelle_ll', offset:[0,-0.5,-1]} and break one off in flight with ship_part:{id:'wing_rl', detach:true}.\n\nReference: https://explore.polynite.io/showcase/#star-veyland",
+      "summary": "Sea, rock and mountains are generated on your device from a seed and keep coming as you fly. The ship is a recipe of parts you can tune, and the whole scene is driven through MCP.",
+      "prompt": "Create an infinite world in Polynite through MCP. Turn it on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe and change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}.\n\nReference: https://explore.polynite.io/showcase/#star-veyland",
       "tags": [
-        "Game concept",
-        "Ship recipe",
-        "MCP",
-        "Procedural",
         "Infinite world",
+        "Procedural",
+        "MCP",
+        "Ship recipe",
         "Editable"
       ],
       "version": 1,
@@ -3272,29 +3271,31 @@
       "title": "Cozy Autumn Night",
       "category": "My creations",
       "environment": "Moonlit",
-      "summary": "A stone cottage under a full moon, autumn maples and windows lighting up one by one to an original guitar score. A perfect loop.",
-      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon, ground mist, warm windows that switch on to a soft guitar score and a seamless loop. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#cozy-autumn-night",
+      "summary": "Polynite's complete demo: a stone cottage under the moon, volumetric light pouring from each window, a white garden lantern, a synthesised guitar score and a logo that dances to its notes. A perfect 15-second loop, generated on your device.",
+      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon and ground mist. Give each window a warm spot light with volume above 0 and a portal, so light pours through the air as they switch on. Add a garden lantern whose glass glows with its own light. Write a guitar score in initial.music_notes, played by synthesised voices with no audio file, and make the logo dance to it with {op:'logo_fx', on:true, dance:1, beat:1}. Finish with a seamless loop. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#cozy-autumn-night",
       "tags": [
         "Cottage",
         "Autumn",
         "Moonlit",
-        "Music",
+        "Volumetric light",
+        "Procedural music",
+        "Dancing logo",
         "Loop"
       ],
+      "version": 2,
       "kind": "showcase",
-      "version": 1,
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "fa26ae2fd002f7493b9e4c92f2d9492e75935974fbf27b1d13416c15e8be1f60",
+      "scene_sha256": "bdeffc4cd2b9e01d8c8a18f52ee4bcfc8b636d3975b1555956b7b85974aa6331",
       "media": {
-        "video": "https://polynite.io/atelier/media/cozy-autumn-night.mp4",
-        "poster": "https://polynite.io/atelier/media/cozy-autumn-night.jpg"
+        "video": "https://polynite.io/atelier/media/cozy-autumn-night-20261103.mp4",
+        "poster": "https://polynite.io/atelier/media/cozy-autumn-night-20261103.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#cozy-autumn-night",
       "open": "https://polynite.io/examples/view.html?id=cozy-autumn-night",
-      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v1.scene"
+      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v2.scene"
     },
     {
       "id": "refuge",

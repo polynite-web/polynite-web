@@ -4,17 +4,16 @@
     {
       "id": "star-veyland",
       "atelier": "star-veyland-20261023-141528-portrait",
-      "title": "Star Veyland — a ship you build, fly and break",
-      "category": "Game concepts",
+      "title": "Star Veyland: a world with no edge",
+      "category": "Infinite worlds",
       "environment": "Sea, rock and mountains",
-      "summary": "A game concept: the hero's ship is not a model but a recipe of parts — hull, nacelles, hinged wings, flames — rebuilt live as you tune it. Mid-flight a wing and a nacelle tear off, fall burning and the ship lists; at the station it is whole again. The whole world and the ship are generated on your device and driven through MCP.",
-      "prompt": "Create a Star Veyland ship in Polynite through MCP. Turn on the infinite world with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe, change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}, move a part live with ship_part:{id:'nacelle_ll', offset:[0,-0.5,-1]} and break one off in flight with ship_part:{id:'wing_rl', detach:true}.",
+      "summary": "Sea, rock and mountains are generated on your device from a seed and keep coming as you fly. The ship is a recipe of parts you can tune, and the whole scene is driven through MCP.",
+      "prompt": "Create an infinite world in Polynite through MCP. Turn it on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe and change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}.",
       "tags": [
-        "Game concept",
-        "Ship recipe",
-        "MCP",
-        "Procedural",
         "Infinite world",
+        "Procedural",
+        "MCP",
+        "Ship recipe",
         "Editable"
       ],
       "version": 1,
@@ -33,7 +32,7 @@
       "scene": "https://polynite.io/examples/data/star-veyland-v1.scene"
     },
     {
-      "category": "Interactive architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -182,7 +181,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -329,7 +328,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -468,7 +467,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -605,7 +604,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -741,7 +740,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -868,7 +867,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -993,7 +992,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -1143,7 +1142,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -1281,7 +1280,7 @@
       ]
     },
     {
-      "category": "Connected architecture",
+      "category": "Buildings that connect",
       "level": "Advanced",
       "capabilities": [
         "recipe_program",
@@ -1445,37 +1444,39 @@
       "id": "cozy-autumn-night",
       "atelier": "cozy-autumn-night",
       "title": "Cozy Autumn Night",
-      "category": "My creations",
+      "category": "Cozy houses",
       "environment": "Moonlit",
-      "summary": "A stone cottage under a full moon, autumn maples and windows lighting up one by one to an original guitar score. A perfect loop.",
-      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon, ground mist, warm windows that switch on to a soft guitar score and a seamless loop. Use the linked scene as a starting point.",
+      "summary": "Polynite's complete demo: a stone cottage under the moon, volumetric light pouring from each window, a white garden lantern, a synthesised guitar score and a logo that dances to its notes. A perfect 15-second loop, generated on your device.",
+      "prompt": "Create a cozy stone cottage in Polynite on a round wooden plinth: autumn maples, a full moon and ground mist. Give each window a warm spot light with volume above 0 and a portal, so light pours through the air as they switch on. Add a garden lantern whose glass glows with its own light. Write a guitar score in initial.music_notes, played by synthesised voices with no audio file, and make the logo dance to it with {op:'logo_fx', on:true, dance:1, beat:1}. Finish with a seamless loop. Use the linked scene as a starting point.",
       "tags": [
         "Cottage",
         "Autumn",
         "Moonlit",
-        "Music",
+        "Volumetric light",
+        "Procedural music",
+        "Dancing logo",
         "Loop"
       ],
+      "version": 2,
       "kind": "showcase",
-      "version": 1,
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "fa26ae2fd002f7493b9e4c92f2d9492e75935974fbf27b1d13416c15e8be1f60",
+      "scene_sha256": "bdeffc4cd2b9e01d8c8a18f52ee4bcfc8b636d3975b1555956b7b85974aa6331",
       "media": {
-        "video": "https://polynite.io/atelier/media/cozy-autumn-night.mp4",
-        "poster": "https://polynite.io/atelier/media/cozy-autumn-night.jpg"
+        "video": "https://polynite.io/atelier/media/cozy-autumn-night-20261103.mp4",
+        "poster": "https://polynite.io/atelier/media/cozy-autumn-night-20261103.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#cozy-autumn-night",
       "open": "https://polynite.io/examples/view.html?id=cozy-autumn-night",
-      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v1.scene"
+      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v2.scene"
     },
     {
       "id": "nested-temple",
       "title": "A temple, built from shared parts.",
       "summary": "Compose brackets into frontages, frontages into storeys, and storeys into a tapered pagoda. Curved hipped roofs, visible ribs, lattice panels and gilt fittings remain editable recipe data.",
-      "category": "Architecture workshop",
+      "category": "Procedural workshop",
       "level": "Advanced",
       "operators": [
         "expression",
@@ -1577,7 +1578,7 @@
       "id": "modular-facade",
       "title": "A facade from reusable parts.",
       "summary": "Compose pilasters, window frames, sills and floor bands from shared profiles and primitive prototypes.",
-      "category": "Operator workshop",
+      "category": "Procedural workshop",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -1693,7 +1694,7 @@
       "id": "swept-arcade",
       "title": "One curve. A whole arcade.",
       "summary": "Sweep a tapered section along an authored arch and repeat the ribs into a cedar passage.",
-      "category": "Operator workshop",
+      "category": "Procedural workshop",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -1812,7 +1813,7 @@
       "id": "profile-studio",
       "title": "Draw a profile. Share the shape.",
       "summary": "Turn an editable width profile into glazed vessels and repeat them on stone plinths.",
-      "category": "Operator workshop",
+      "category": "Procedural workshop",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -1929,7 +1930,7 @@
       "id": "japanese-garden",
       "title": "The garden of five quiet moments",
       "summary": "A low tea pavilion with entrance steps, a bridge across the pond and clear connected garden paths.",
-      "category": "Japanese garden",
+      "category": "Japanese gardens",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -2186,7 +2187,7 @@
       "id": "japanese-lotus",
       "title": "The lotus pond awakens",
       "summary": "Pink, gold and lilac lotus flowers open above a small jade pond.",
-      "category": "Japanese garden",
+      "category": "Japanese gardens",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -2291,7 +2292,7 @@
       "id": "japanese-passage",
       "title": "Leave a way through",
       "summary": "A cedar boundary makes room for a path as it moves and widens.",
-      "category": "Japanese garden",
+      "category": "Japanese gardens",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -2395,7 +2396,7 @@
       "id": "japanese-bridge",
       "title": "A bridge between two shores",
       "summary": "An arched vermilion footbridge whose deck and rails follow two movable banks.",
-      "category": "Japanese garden",
+      "category": "Japanese gardens",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -2499,7 +2500,7 @@
       "id": "japanese-pavilion",
       "title": "A tea house on the hillside",
       "summary": "A cedar pavilion and jade roof, with four feet that follow a sloped stone island.",
-      "category": "Japanese garden",
+      "category": "Japanese gardens",
       "level": "Compose & explore",
       "operators": [
         "expression",
@@ -2605,7 +2606,7 @@
       "id": "refuge",
       "atelier": "refuge-20261014-142504-living",
       "title": "The mist keeper's refuge",
-      "category": "Architecture",
+      "category": "Cozy houses",
       "environment": "Moonlit",
       "summary": "A small refuge, warm windows and drifting mist. Explore the scale, atmosphere and life around it.",
       "prompt": "Create a small timber refuge in Polynite on a stone foundation, with a steep roof, warm recessed windows, soft moonlight, drifting mist and small signs of life. Use the linked scene as a starting point and expose its building and atmosphere controls.",
@@ -2633,7 +2634,7 @@
       "id": "keeper-house",
       "atelier": "keeper-20261014-142514-living",
       "title": "A house at the edge of dusk",
-      "category": "Architecture",
+      "category": "Cozy houses",
       "environment": "Twilight",
       "summary": "Timber, stone and a warm interior at dusk. Make your own version of the keeper's house.",
       "prompt": "Create a compact keeper's house in Polynite with timber, stone, a warm interior and a twilight garden. Preserve depth around the windows. Use the linked scene as a starting point, change its proportions and try another atmosphere.",
@@ -2661,7 +2662,7 @@
       "id": "morning-mill",
       "atelier": "mill-20261014-142451-living",
       "title": "The mill wakes with the light",
-      "category": "Architecture",
+      "category": "Cozy houses",
       "environment": "Dawn",
       "summary": "A mill in the first light, with moving details and a garden to explore.",
       "prompt": "Create a small stylised mill in Polynite with a timber building, a readable roof silhouette, moving mill details and a garden in soft dawn light. Start from the linked scene, keep it editable and expose the available building and atmosphere controls.",
@@ -2688,7 +2689,7 @@
     {
       "id": "terrain-pavilion",
       "title": "A pavilion that finds its footing",
-      "category": "Architecture",
+      "category": "Landscapes that adapt",
       "level": "Build on it",
       "summary": "Sample four support heights, keep the deck level and fit each foot to the slope.",
       "operators": [
@@ -2769,7 +2770,7 @@
     {
       "id": "flowers-in-motion",
       "title": "A garden made from shared tools",
-      "category": "Nature",
+      "category": "Procedural workshop",
       "level": "Start here",
       "summary": "Compose petals, leaves and a folded lip from shared surfaces, then animate their opening.",
       "operators": [
@@ -2848,7 +2849,7 @@
       "id": "terrain-linked-path",
       "version": 1,
       "title": "A path that meets the ground",
-      "category": "Living landscapes",
+      "category": "Landscapes that adapt",
       "level": "Build on it",
       "summary": "An editable stone path follows sampled ground and smoothly joins raised construction anchors. Change its bend, width or landing height without replacing its recipe.",
       "operators": [
@@ -2953,7 +2954,7 @@
       "id": "terrain-linked-bridge",
       "version": 1,
       "title": "A bridge between living shores",
-      "category": "Living landscapes",
+      "category": "Landscapes that adapt",
       "level": "Build on it",
       "summary": "An editable arched bridge follows two construction anchors and clears sampled terrain. Deck, rails and feet share one profile; the same operators can compose a different crossing.",
       "operators": [
@@ -3058,7 +3059,7 @@
       "id": "terrain-linked-garden",
       "version": 1,
       "title": "A Japanese garden, connected",
-      "category": "Japanese garden",
+      "category": "Landscapes that adapt",
       "level": "Build on it",
       "summary": "A connected Japanese garden: pavilion, curved approach, terrain-fitted bridge, landings and planting share explicit construction anchors. Change the land or a landing and the connections adapt.",
       "operators": [
@@ -3199,7 +3200,7 @@
       "id": "footprint-placement",
       "version": 1,
       "title": "Give every object room",
-      "category": "Living landscapes",
+      "category": "Landscapes that adapt",
       "level": "Build on it",
       "summary": "An object moves to the first free candidate when a neighbouring construction grows. Named reservations, complete-object radius and clearance remain editable recipe data.",
       "operators": [
@@ -3304,7 +3305,7 @@
       "id": "clearance-japanese-garden",
       "version": 1,
       "title": "A Japanese garden with room to grow",
-      "category": "Japanese garden",
+      "category": "Landscapes that adapt",
       "level": "Build on it",
       "summary": "A pavilion, connected paths and planting share explicit roof, passage and pond reservations. Growing the pavilion repositions a lantern; pair constraints keep the placed objects apart.",
       "operators": [

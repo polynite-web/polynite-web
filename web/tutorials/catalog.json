@@ -214,17 +214,16 @@
       "preview": "https://polynite.io/docs/media/tutorials/r32/block-explosion-preview.mp4",
       "poster": "https://polynite.io/docs/media/tutorials/r32/block-explosion.jpg",
       "open": "https://polynite.io/tutorials/block-explosion/",
-      "sha256": "cb03e53e37c34cd18ff8d9fe1ce122a7001d8072b5325c2ad1c8ab5f87ea0d4c"
+      "sha256": "e637143ca8eb07f7d778fa6979a8e56848a57f9326320d8b41cb2851b5f31d5c"
     },
     {
       "id": "brick-wall",
-      "portrait": true,
       "control": {
         "operation": "settings_preset",
         "action_id": "replace-with-a-fresh-uuid",
-        "preset": "mobile"
+        "preset": "demolition"
       },
-      "control_note": "These MCP arguments select an existing preset. The creation prompt above asks the assistant to define all custom values and their bindings when building the scene.",
+      "control_note": "These MCP arguments select a preset of the demo scene. The creation prompt above asks for the main custom values; open the demo scene for all 12 controls.",
       "settings_groups": [
         {
           "title": "Impact and structure",
@@ -262,13 +261,6 @@
               "label": "Release angle",
               "hint": "Starting angle of the suspended ball, measured in degrees.",
               "range": "5–55 deg",
-              "type": "slider"
-            },
-            {
-              "id": "rows",
-              "label": "Wall rows",
-              "hint": "Generate a shorter or taller wall without placing each brick manually.",
-              "range": "5–30",
               "type": "slider"
             },
             {
@@ -328,39 +320,6 @@
               "type": "slider"
             }
           ]
-        },
-        {
-          "title": "Surface and performance",
-          "items": [
-            {
-              "id": "quality",
-              "label": "Render quality",
-              "hint": "Mobile uses lighter geometry and effects; Balanced is the everyday profile; Export uses full meshes.",
-              "range": "Mobile / Balanced / Export",
-              "type": "select"
-            },
-            {
-              "id": "motion_blur",
-              "label": "Motion blur",
-              "hint": "Rigid-object motion blur. It is disabled by the Mobile profile.",
-              "range": "0–1",
-              "type": "slider"
-            },
-            {
-              "id": "brick_bevel",
-              "label": "Brick edge radius",
-              "hint": "Small bevels catch light along the edges. This remains bounded for the physics shape.",
-              "range": "0–0.008 m",
-              "type": "slider"
-            },
-            {
-              "id": "variation",
-              "label": "Brick colour variation",
-              "hint": "Seeded colour variation shared by the procedural wall recipe.",
-              "range": "0–0.3",
-              "type": "slider"
-            }
-          ]
         }
       ],
       "experiments": [
@@ -373,27 +332,27 @@
           "text": "Use Breach, then increase cloud size to 0.4 m and lifetime to 3 s. Change only one value at a time. On an updated viewer, lower the energy threshold for lighter impacts."
         },
         {
-          "title": "3. Build for a phone",
-          "text": "Choose Mobile: 18 rows, no motion blur and bounded dust. Check responsiveness on a real phone. Visual LOD does not change the physical colliders."
+          "title": "3. Heavier bricks, same swing",
+          "text": "Start from the demo's own values (2 m/s, 20 degrees, 0.5 kg bricks), then raise brick mass to 6 kg and replay. Change only the mass, so the difference comes from the wall."
         },
         {
           "title": "4. Frame and record",
-          "text": "Choose Cinematic for a desktop video. Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
+          "text": "Preview with a free camera or at 0.5x, then record the authored sequence as MP4. Save the .scene alongside the video to keep the controls."
         }
       ],
       "viewer_note": "Live effects/body properties and queued initial-setup edits need the latest viewer. Earlier viewers either queue all edits or reset on release, and may omit dust opacity/energy threshold. Live grabbing, camera modes and speed controls also require a recent build.",
-      "revision": 37,
+      "revision": 47,
       "title": "Brick wall lab",
       "level": "Advanced",
       "topic": "physics",
-      "description": "Tune the impact, dust and render budget with 17 scene-owned controls.",
-      "prompt": "Create an advanced procedural brick-wall demolition scene in Polynite.\n\n- Generate a staggered wall of 30 rows by 10 columns of individually simulated red clay bricks, with rough grain, small bevels and seeded colour variation.\n- Suspend a dark steel wrecking ball from 18 alternating physical chain links and swing it through the wall. Use a textured aggregate floor, contact shadows and warm/cool lighting.\n- Define scene-owned MCP custom values: impact speed 6 m/s (1–15), ball mass 100 kg (10–100), brick mass 2 kg (0.5–10), friction 0.85 (0.1–1.5), release angle 33° (5–55), rows 30 (5–30), and chain visibility.\n- Add dust controls: enabled, amount 0.85 (0–1), size 0.28 m (0.02–0.75), lifetime 2.4 s (0.2–4), opacity 0.65 (0–1), and minimum impact energy 1 J (0–100).\n- Add render quality Mobile/Balanced/Export, motion blur 0 (0–1), brick bevel 0.004 m (0–0.008), and colour variation 0.075 (0–0.3).\n- Define English-labelled Gentle, Breach, Demolition, Mobile and Cinematic presets. Mobile uses 18 rows, lighter LOD and dust, and no motion blur.\n- Author a roughly ten-second replayable Cinematic sequence: start with the intact wall, release the ball, then orbit gently through the collision and falling debris.",
-      "scene": "https://polynite.io/docs/media/tutorials/r37/brick-wall-03b46a4c19af.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r37/brick-wall.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r37/brick-wall-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r37/brick-wall.jpg",
+      "description": "Tune the impact and the dust with 12 scene-owned controls.",
+      "prompt": "Create a procedural brick-wall demolition scene in Polynite.\n\n- A staggered wall of 30 rows by 10 columns of individually simulated glossy red bricks with small bevels.\n- A brown-grey metal wrecking ball on a physical chain, swung through the wall, with impact dust.\n- A pale floor with thin contour lines, a soft floor reflection, contact shadows and warm/cool lamps.\n- Define scene-owned MCP custom values for impact speed, ball and brick mass, friction, release angle and dust, with Gentle, Breach and Demolition presets.\n- A ten-second replayable film: the intact wall, the release, then a slow orbit through the falling debris.",
+      "scene": "https://polynite.io/docs/media/tutorials/r47/brick-wall-82c2fcb26b9c.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r47/brick-wall.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r47/brick-wall-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r47/brick-wall.jpg",
       "open": "https://polynite.io/tutorials/brick-wall/",
-      "sha256": "03b46a4c19af055d745c8075653cfd17756d6fb258e51ae59b494dabdba33ef0"
+      "sha256": "82c2fcb26b9c9ae3a84d4dbb24877e32e7cfede238b09a20571dc65a6e2d6e77"
     },
     {
       "id": "orbiting-letters",
@@ -557,19 +516,131 @@
     },
     {
       "id": "autumn-lantern-cottage",
-      "viewer_note": "The saved example is the reference seed 0; the prompt asks for a new nonzero seed. The silent preview loops its first 15 seconds; the full film includes a short ending. Detailed cards cost more than rounded foliage. Exact visual endpoints were verified natively; this is not a claim that every physics or audio simulation loops.",
-      "revision": 38,
-      "title": "Autumn Lantern Cottage",
+      "settings_groups": [
+        {
+          "title": "Volumetric light",
+          "items": [
+            {
+              "id": "ray_quality",
+              "label": "Light ray quality",
+              "hint": "More samples give cleaner shafts from the windows, at a higher GPU cost.",
+              "range": "25–150 %",
+              "type": "slider"
+            },
+            {
+              "id": "light_diffusion",
+              "label": "Light diffusion",
+              "hint": "How much the air spreads the light around each window.",
+              "range": "0–100 %",
+              "type": "slider"
+            },
+            {
+              "id": "sky_air",
+              "label": "Sun / moon god rays",
+              "hint": "Rays from the moon through the air around the cottage.",
+              "range": "0–10",
+              "type": "slider"
+            },
+            {
+              "id": "sky_scatter",
+              "label": "Light scattering",
+              "hint": "How strongly the air sends moonlight toward the camera.",
+              "range": "-0.2–0.85",
+              "type": "slider"
+            }
+          ]
+        },
+        {
+          "title": "Lantern and windows",
+          "items": [
+            {
+              "id": "lantern_light",
+              "label": "Lantern brightness",
+              "hint": "The garden lantern; its glass shines with this light.",
+              "range": "0–2.5",
+              "type": "slider"
+            },
+            {
+              "id": "lantern_halo",
+              "label": "Lantern halo",
+              "hint": "The soft halo around the lantern.",
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "bloom_intensity",
+              "label": "Window bloom",
+              "hint": "The glow around the brightest windows.",
+              "range": "0–1",
+              "type": "slider"
+            },
+            {
+              "id": "window_life",
+              "label": "Family silhouettes",
+              "hint": "Figures moving behind the lit windows.",
+              "range": "0–100 %",
+              "type": "slider"
+            }
+          ]
+        },
+        {
+          "title": "Air and wind",
+          "items": [
+            {
+              "id": "floatmist_density",
+              "label": "Floating mist: density",
+              "hint": "Mist that catches the light of the lamps.",
+              "range": "0–2",
+              "type": "slider"
+            },
+            {
+              "id": "floatmist_glow",
+              "label": "Floating mist: lamp glow",
+              "hint": "How much the mist lights up near a lamp.",
+              "range": "0–3",
+              "type": "slider"
+            },
+            {
+              "id": "wind_strength",
+              "label": "Global wind strength",
+              "hint": "Moves grass, smoke and leaves together.",
+              "range": "0–2",
+              "type": "slider"
+            }
+          ]
+        }
+      ],
+      "experiments": [
+        {
+          "title": "See the volumetric light",
+          "text": "Open Scene settings and lower Light ray quality, then raise Light diffusion. Watch the shafts leaving the windows as each one lights up. Turn Floating mist off to compare."
+        },
+        {
+          "title": "Light the lantern your way",
+          "text": "Move Lantern brightness to 0, then to its maximum: the lantern's glass and its light on the path follow together."
+        },
+        {
+          "title": "Make the logo dance",
+          "text": "Ask your assistant to call scene.apply with {op:'logo_fx', dance:0.5, sparkles:0}, then record a short film. The logo dances in the exported video and answers each note; set dance to 0 to hold it still."
+        },
+        {
+          "title": "Change the music",
+          "text": "The score is data: initial.music_notes lists [time, instrument, midi, gain]. Ask your assistant to transpose it or change the notes, then listen: the voices are synthesised, so there is no audio file to replace."
+        }
+      ],
+      "viewer_note": "The scene opens as saved; the prompt asks for a new nonzero seed. The silent preview loops its first 15 seconds; the full film has sound and a short ending. The dancing logo is part of the exported film. Detailed cards cost more than rounded foliage. Exact visual endpoints were verified natively; this is not a claim that every physics or audio simulation loops.",
+      "revision": 46,
+      "title": "Autumn Lantern Cottage: volumetric light, music and a dancing logo",
       "level": "Advanced",
       "topic": "cinematic",
-      "description": "A moonlit cottage, coherent seeded variants and a seamless 15-second visual loop.",
-      "prompt": "Create a warm autumn cottage diorama in Polynite with a perfect 15-second visual loop.\n\n- Discover the connected engine capabilities. Save the current editable film and restore it after any temporary tests.\n- Generate a coherent random cottage with a recorded nonzero integer seed, detail 0.68, fantasy 0.3 and roof_curve 1.15. Preserve version 1 recipes and the chosen seed for reproduction.\n- Generate the dependent path, garden and trees, in that order. Place ivy around the walls while keeping windows, shutters and the door clear. Include stone paving, pumpkins and longer grass near walls and trunks.\n- Use seeded cards trees with autumn foliage, count 3, detail 0.68 and leaf_density 1. Offer rounded or hybrid trees for lower budgets without silently changing style on rerolls.\n- Set a blue-violet twilight sky, subtle stars and Milky Way, a cool moon above the horizon and a sun below it. Keep window and lantern light warm, with restrained bloom and god rays.\n- Synchronize shared spatial wind, grass, smoke and falling leaves to 15 seconds. Leaves settle and fade on the ground. Keep sky twinkle and cloud/aurora speeds zero for this loop.\n- Make one continuous 15-second camera orbit. Windows turn on with a brief rustic flicker; keep smoke anchored to the chimney. Expose scene-owned lighting, wind, vegetation and quality controls.\n- Inspect real frames, compare render endpoints at 0 and 15 seconds, and save the expanded editable scene. Keep the chosen random seed; do not claim that random generation alone guarantees a perfect loop.",
-      "scene": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage-e52d68a4d27f.scene",
-      "video": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.mp4",
-      "preview": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage-preview.mp4",
-      "poster": "https://polynite.io/docs/media/tutorials/r38/autumn-lantern-cottage.jpg",
+      "description": "Polynite's complete demo: volumetric light pouring from each window, a white garden lantern, a synthesised guitar score, and a logo that dances to the notes, in a seamless 15-second loop.",
+      "prompt": "Create a warm autumn cottage diorama in Polynite with a perfect 15-second visual loop, volumetric light, a synthesised score and a logo that dances to it.\n\n- Discover the connected engine capabilities. Save the current editable film and restore it after any temporary tests.\n- Generate a coherent random cottage with a recorded nonzero integer seed, detail 0.68, fantasy 0.3 and roof_curve 1.15. Generate the dependent path, garden and trees, in that order. Keep windows, shutters and the door clear of ivy. Add stone paving, pumpkins and long grass.\n- Use seeded cards trees with autumn foliage, count 3, detail 0.68 and leaf_density 1.\n- Set a blue-violet twilight sky, subtle stars and a cool moon, with restrained bloom.\n- Volumetric light: give each window and the door a warm spot light with volume above 0 and a portal matching its opening, so the mullions cut shafts through the air. Tune them with op light volume (strength, length, steps, export_steps). Each light has on_at, off_at and a brief flicker inside the loop.\n- Garden lantern: a point light named lantern, and glass with glow {light:'lantern', gain:2.4}, so the glass shines with that light.\n- Synchronize wind, grass, smoke and falling leaves to 15 seconds. Keep sky twinkle and cloud speeds zero.\n- Music: set initial.music_on 1, music_score 1 and music_notes as [time, instrument, midi, gain] within the 15 seconds, then reload the document. Voices are synthesised live: use no audio file. Put a soft note on each window's on_at.\n- Logo: {op:'logo_fx', on:true, start:0.6, glow:1, wave:1, sparkles:1, press:1, dance:1, beat:1} makes the exported watermark answer those notes.\n- Make one continuous 15-second camera orbit. Expose lighting, wind, vegetation and quality controls in Scene settings.\n- Inspect real frames, listen to the film, compare render endpoints at 0 and 15 seconds, and save the editable scene. Do not claim that random generation alone guarantees a perfect loop.",
+      "scene": "https://polynite.io/docs/media/tutorials/r46/autumn-lantern-cottage-bdeffc4cd2b9.scene",
+      "video": "https://polynite.io/docs/media/tutorials/r46/autumn-lantern-cottage.mp4",
+      "preview": "https://polynite.io/docs/media/tutorials/r46/autumn-lantern-cottage-preview.mp4",
+      "poster": "https://polynite.io/docs/media/tutorials/r46/autumn-lantern-cottage.jpg",
       "open": "https://polynite.io/tutorials/autumn-lantern-cottage/",
-      "sha256": "e52d68a4d27f201d21db539e63d74703d6fa2b2c9fa3b500bb90ed50943e22a9"
+      "sha256": "bdeffc4cd2b9e01d8c8a18f52ee4bcfc8b636d3975b1555956b7b85974aa6331"
     },
     {
       "id": "infinite-flight",
