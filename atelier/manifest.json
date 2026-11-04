@@ -563,17 +563,17 @@
     },
     {
       "id": "star-veyland-20261023-141528-portrait",
-      "title": "Star Veyland : un vaisseau qu'on construit, pilote et casse",
+      "title": "Star Veyland : un vaisseau qu'on construit et qu'on pilote",
       "summary": [
         "Concept de jeu : le vaisseau est une recette d'opérateurs (coque, nacelles, ailes articulées, flammes) dans le .scene, modifiable en direct via MCP.",
-        "En vol, une aile puis une nacelle se détachent, tombent en fumée et le vaisseau gîte ; réparé à l'arrivée sur la station.",
-        "Film complet de 107 s, monde infini, encodé par le moteur à 20 Mo (sans réencodage externe)."
+        "Vol complet au-dessus d'un monde infini : montagnes, lacs et mer, avec le vaisseau intact du début à la fin.",
+        "Film complet de 107 s, encodé par le moteur à 20 Mo (sans réencodage externe)."
       ],
-      "note": "Affiche rendue par le moteur au même instant du film (22,5 s), pas extraite du MP4.",
+      "note": "Affiche extraite du film à 24 s.",
       "collection": "cottage",
-      "captured_at": "2026-10-23T14:15:28-04:00",
+      "captured_at": "2026-11-04T06:42:59-05:00",
       "published_at": "2026-10-23T18:37:55.118508+00:00",
-      "revision": "moteur e9894cf4b (recettes de vaisseau, v0407)",
+      "revision": "moteur v0544",
       "reference": false,
       "framing": "native",
       "scene_name": "star-veyland",
@@ -581,8 +581,8 @@
       "width": 1080,
       "height": 1920,
       "duration": 107.55,
-      "bytes": 17164000,
-      "sha256": "3cc3e5a56e9a8b3224536fca0799f01a859c853d6e9238961e51bfadfb226e34",
+      "bytes": 17848146,
+      "sha256": "079b9a6a1422faec17ac0e5bb715eb8f1c401c1495830e412f65e963c738698a",
       "video": "media/star-veyland-20261023-141528-portrait.mp4",
       "poster": "media/star-veyland-20261023-141528-portrait.jpg",
       "scene": "media/star-veyland-20261023-141528-portrait.scene"
