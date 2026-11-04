@@ -1,16 +1,16 @@
 {
   "image": "https://polynite.io/assets/og-create-view-share-v2.png",
-  "imageAlt": "Polynite — Create / View / Share procedural 3D scenes and interactive Mint Links",
+  "imageAlt": "Polynite, the MCP-first procedural 3D engine — Create / View / Share",
   "youtube": "https://www.youtube.com/@polynite-io",
   "subscribe": "https://youtube.com/@polynite-io?sub_confirmation=1",
   "pages": {
     "app": {
-      "title": "Polynite — Create, View & Share Procedural 3D",
-      "description": "Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4."
+      "title": "Polynite | MCP-First Procedural 3D Engine",
+      "description": "Polynite is an MCP-first procedural 3D engine for interactive worlds and simulations. Connect your AI assistant, change any detail in real time, then share it."
     },
     "mcp": {
-      "title": "Create / View / Share — Procedural 3D | Polynite",
-      "description": "Build procedural 3D scenes with controls or a connected assistant. Explore them in real time and share interactive Mint Links or recorded MP4 videos."
+      "title": "Create, View & Share with an MCP-First Engine | Polynite",
+      "description": "How the MCP-first procedural 3D engine works: build with controls or a connected assistant, explore in real time, share Mint Links or recorded MP4 videos."
     },
     "docs": {
       "title": "Polynite Docs — Scenes, Physics, Animation & MP4",
@@ -33,8 +33,8 @@
       "description": "Terms for using Polynite: content ownership, service limits, connected providers, acceptable use and contact information for Majify Technologies Inc."
     },
     "explore": {
-      "title": "Explore Polynite — Procedural Scenes & 3D Creations",
-      "description": "Discover Polynite: procedural scene creation, AI control through MCP, physics, animation and video. Browse public 3D creations and GLB tools."
+      "title": "Explore Polynite — MCP-First Procedural 3D Engine",
+      "description": "Discover the MCP-first procedural 3D engine: reusable operations, assistant control through MCP, physics and video. Browse creations and GLB tools."
     },
     "explore-mcp": {
       "title": "Polynite MCP — Remote AI & Local Scene Control",
@@ -49,7 +49,7 @@
       "description": "Start with procedural objects or a conversation, add physics and animated text, and record an MP4. Import GLB assets or use connected generation providers."
     },
     "about": {
-      "title": "About Polynite — Procedural 3D & Conversational Creation",
+      "title": "About Polynite — An MCP-First Procedural 3D Engine",
       "description": "Polynite combines procedural 3D creation, real-time interaction, MCP control and cinematic recording. Built by Majify Technologies Inc. in Canada."
     },
     "glb-viewer": {

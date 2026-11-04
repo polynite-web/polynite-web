@@ -1,7 +1,7 @@
 {
   "name": "Polynite",
   "short_name": "Polynite",
-  "description": "Create procedural 3D scenes, explore physics and animation, and control Polynite through AI and MCP.",
+  "description": "An MCP-first procedural 3D engine: build interactive worlds, explore physics and animation, and control every detail through MCP.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
