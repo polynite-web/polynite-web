@@ -3,8 +3,8 @@
 "panlayout_last_session": "session/(default).session",
 "window": {
   "fullscreen_was_maximized": false,
-  "h": 444,
-  "mode": 1,
+  "h": 1032,
+  "mode": 3,
   "monitor": "\\\\.\\DISPLAY2",
   "normal_h": 444,
   "normal_screen_h": 444,
@@ -15,13 +15,13 @@
   "normal_x": 153,
   "normal_y": 78,
   "placement_version": 3,
-  "w": 740,
+  "w": 1920,
   "work_h": 1032,
   "work_w": 1920,
   "work_x": 0,
   "work_y": 0,
-  "x": 153,
-  "y": 78
+  "x": 0,
+  "y": 0
 }
 
 }
