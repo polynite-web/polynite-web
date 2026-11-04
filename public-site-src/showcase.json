@@ -5,17 +5,16 @@
     {
       "id": "star-veyland",
       "atelier": "star-veyland-20261023-141528-portrait",
-      "title": "Star Veyland — a ship you build, fly and break",
-      "category": "Game concepts",
+      "title": "Star Veyland: a world with no edge",
+      "category": "Infinite worlds",
       "environment": "Sea, rock and mountains",
-      "summary": "A game concept: the hero's ship is not a model but a recipe of parts — hull, nacelles, hinged wings, flames — rebuilt live as you tune it. Mid-flight a wing and a nacelle tear off, fall burning and the ship lists; at the station it is whole again. The whole world and the ship are generated on your device and driven through MCP.",
-      "prompt": "Create a Star Veyland ship in Polynite through MCP. Turn on the infinite world with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe, change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}, move a part live with ship_part:{id:'nacelle_ll', offset:[0,-0.5,-1]} and break one off in flight with ship_part:{id:'wing_rl', detach:true}.",
+      "summary": "Sea, rock and mountains are generated on your device from a seed and keep coming as you fly. The ship is a recipe of parts you can tune, and the whole scene is driven through MCP.",
+      "prompt": "Create an infinite world in Polynite through MCP. Turn it on with scene.apply {op:'infinite', on:true, seed:7, follow:3}, then give it a ship recipe: {op:'infinite', ship_recipe:<JSON>} using the operators listed in polynite_capabilities.infinite_ship (loft, bore, planform, canopy, mount, neon; parts with hinges). Start from the linked scene's recipe and change its inputs with {op:'infinite', ship_params:{span:1.3, sweep:0.3, variety:1, seed:12}}.",
       "tags": [
-        "Game concept",
-        "Ship recipe",
-        "MCP",
-        "Procedural",
         "Infinite world",
+        "Procedural",
+        "MCP",
+        "Ship recipe",
         "Editable"
       ],
       "version": 1
@@ -383,6 +382,106 @@
         "Clearance",
         "Adaptive",
         "Editable"
+      ]
+    }
+  ],
+  "spotlight": {
+    "title": "Infinite worlds",
+    "text": "Fly in any direction and the world keeps going: sea, cliffs, forests and mountains, generated on your device from a seed. Change the seed for another world, or shape it through MCP."
+  },
+  "collections": [
+    {
+      "id": "infinite-worlds",
+      "title": "Infinite worlds",
+      "kicker": "Without edges",
+      "layout": "portrait",
+      "pitch": "Sea, cliffs, forests and mountains generated on your device from a seed. Keep flying: the world keeps coming.",
+      "primary": [
+        "star-veyland",
+        "infinite-flight"
+      ]
+    },
+    {
+      "id": "cozy-houses",
+      "title": "Cozy houses",
+      "kicker": "Small places",
+      "layout": "portrait",
+      "pitch": "Warm windows, drifting mist and a little life around each house. Every one is a scene you can open and change.",
+      "primary": [
+        "cozy-autumn-night",
+        "refuge",
+        "keeper-house",
+        "morning-mill"
+      ]
+    },
+    {
+      "id": "smart-landscapes",
+      "title": "Landscapes that adapt",
+      "kicker": "Smart creations",
+      "layout": "wide",
+      "pitch": "Bridges, paths and gardens that read the ground under them. Change the land or a landing and the connections adapt.",
+      "primary": [
+        "terrain-linked-bridge",
+        "terrain-linked-garden",
+        "terrain-linked-path",
+        "clearance-japanese-garden"
+      ],
+      "more": [
+        "footprint-placement",
+        "terrain-pavilion"
+      ]
+    },
+    {
+      "id": "connected-buildings",
+      "title": "Buildings that connect",
+      "kicker": "Smart creations",
+      "layout": "wide",
+      "pitch": "Halls, galleries and gardens joined by real doorways and shared roofs. Each part stays editable while the link holds.",
+      "primary": [
+        "entry-temple-garden",
+        "linked-temple-garden",
+        "joined-temple-hall",
+        "handle-temple-garden"
+      ],
+      "more": [
+        "entry-temple-gallery",
+        "entry-roof-workshop",
+        "linked-temple-gallery",
+        "linked-roof-workshop",
+        "joined-temple-garden",
+        "joined-roof-workshop"
+      ]
+    },
+    {
+      "id": "japanese-gardens",
+      "title": "Japanese gardens",
+      "kicker": "Quiet places",
+      "layout": "wide",
+      "pitch": "Ponds, bridges and tea houses, built from editable procedural recipes.",
+      "primary": [
+        "japanese-garden",
+        "japanese-lotus",
+        "japanese-pavilion",
+        "japanese-bridge"
+      ],
+      "more": [
+        "japanese-passage"
+      ]
+    },
+    {
+      "id": "procedural-workshop",
+      "title": "Procedural workshop",
+      "kicker": "How it is made",
+      "layout": "wide",
+      "pitch": "Facades, arcades and flowers: see how one recipe or one curve becomes a whole structure.",
+      "primary": [
+        "nested-temple",
+        "swept-arcade",
+        "modular-facade",
+        "flowers-in-motion"
+      ],
+      "more": [
+        "profile-studio"
       ]
     }
   ]
