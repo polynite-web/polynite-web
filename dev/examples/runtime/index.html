@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en" translate="no">
-<head><script id="pn-build-version">window.__pnBuildVersion="v0406";</script><base href="/dev/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
+<head><script id="pn-build-version">window.__pnBuildVersion="v0546";</script><base href="/dev/"><script>window.vmeshAutoDiscover=false;window.__pnEmbedVersion="tutorial";</script>
+<!-- A Polynite app (?app=dice, dice.polynite.io): decided before anything reads it - pn_app_shell.js -->
+<script>(function(){var h={"dice.polynite.io":"dice"},a=new URLSearchParams(location.search).get("app")||h[location.hostname]||"";if(/^[a-z][a-z0-9_-]{0,31}$/.test(a)){window.__pnAppMode=a;window.__pnAppHost=h[location.hostname]===a;window.vmeshAutoDiscover=false;}})();</script>
 <script src="scene-file-drop.js?v=1"></script>
-<script src="loading_status.js?v=1"></script>
-<script src="pipeline_compile.js?v=2"></script>
+<script src="loading_status.js?v=2"></script>
+<script src="pipeline_compile.js?v=4"></script>
 <meta charset="utf-8">
 <script src="startup_profile.js"></script>
 <script src="webgpu_bindgroup_guard.js"></script>
 <meta name="google" content="notranslate">
-<title>Polynite</title>
-<meta name="description" content="Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4.">
-<meta name="robots" content="noindex, follow">
+<title>Polynite | MCP-First Procedural 3D Engine</title>
+<meta name="description" content="Polynite is an MCP-first procedural 3D engine for interactive worlds and simulations. Connect your AI assistant, change any detail in real time, then share it.">
+<meta name="robots" content="index, follow">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0b0d12">
@@ -22,23 +24,26 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<!-- On an app's own host (dice.polynite.io) it installs as that app: its manifest, icon and name.
+     Not on polynite.io/?app=: two installs with id "/" on one origin would be one. -->
+<script>(function(){var a=window.__pnAppMode;if(!a||!window.__pnAppHost)return;var b="/apps/"+a+"/",q=function(s){return document.querySelector(s);};q('link[rel="manifest"]').href=b+"manifest.webmanifest";q('link[rel="apple-touch-icon"]').href=b+"icon-192.png";q('link[rel="icon"][sizes="96x96"]').href=b+"icon-192.png";})();</script>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Polynite">
-<meta property="og:title" content="Polynite">
-<meta property="og:description" content="Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4.">
+<meta property="og:title" content="Polynite | MCP-First Procedural 3D Engine">
+<meta property="og:description" content="Polynite is an MCP-first procedural 3D engine for interactive worlds and simulations. Connect your AI assistant, change any detail in real time, then share it.">
 <meta property="og:url" content="https://polynite.io/">
 <meta property="og:image" content="https://polynite.io/assets/og-create-view-share-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Polynite — Create / View / Share procedural 3D scenes and interactive Mint Links">
+<meta property="og:image:alt" content="Polynite, the MCP-first procedural 3D engine — Create / View / Share">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Polynite">
-<meta name="twitter:description" content="Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4.">
+<meta name="twitter:title" content="Polynite | MCP-First Procedural 3D Engine">
+<meta name="twitter:description" content="Polynite is an MCP-first procedural 3D engine for interactive worlds and simulations. Connect your AI assistant, change any detail in real time, then share it.">
 <meta name="twitter:image" content="https://polynite.io/assets/og-create-view-share-v2.png">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://polynite.io/#organization","name":"Polynite","url":"https://polynite.io/","logo":"https://polynite.io/assets/icon-512.png","sameAs":["https://www.youtube.com/@polynite-io","https://github.com/polynite-io"],"parentOrganization":{"@type":"Organization","name":"Majify Technologies Inc.","url":"https://majify.tech/"}},{"@type":"WebSite","name":"Polynite","url":"https://polynite.io/","description":"Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4."},{"@type":"WebApplication","name":"Polynite","url":"https://polynite.io/","description":"Create procedural 3D scenes, view and interact in real time, and share an interactive Mint Link. Connect AI through MCP, import GLB assets and record MP4.","applicationCategory":"DesignApplication","operatingSystem":"Web browser","browserRequirements":"WebGPU; desktop Chromium is the exercised renderer path","publisher":{"@id":"https://polynite.io/#organization"},"featureList":["Procedural 3D scene creation","AI scene control through MCP","Interactive physics blocks","Scene text and cinematic animation","MP4 recording with a supported browser encoder","Interactive sharing through Mint Link","GLB import, inspection and optimization"]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://polynite.io/#organization","name":"Polynite","url":"https://polynite.io/","logo":"https://polynite.io/assets/icon-512.png","sameAs":["https://www.youtube.com/@polynite-io","https://github.com/polynite-io"],"parentOrganization":{"@type":"Organization","name":"Majify Technologies Inc.","url":"https://majify.tech/"}},{"@type":"WebSite","name":"Polynite","url":"https://polynite.io/","description":"Polynite is an MCP-first procedural 3D engine for interactive worlds and simulations. Connect your AI assistant, change any detail in real time, then share it."},{"@type":"WebApplication","name":"Polynite","url":"https://polynite.io/","description":"Polynite is an MCP-first procedural 3D engine for interactive worlds and simulations. Connect your AI assistant, change any detail in real time, then share it.","applicationCategory":"DesignApplication","operatingSystem":"Web browser","browserRequirements":"WebGPU; desktop Chromium is the exercised renderer path","publisher":{"@id":"https://polynite.io/#organization"},"featureList":["MCP-first scene control","Procedural 3D creation from reusable operations","Interactive physics blocks","Scene text and cinematic animation","MP4 recording with a supported browser encoder","Interactive sharing through Mint Link","GLB import, inspection and optimization"]}]}</script>
 
 
 <script>
@@ -63,6 +68,7 @@
   var PN_API_SITES = {
     "polynite.io":     "https://api.polynite.io",
     "www.polynite.io": "https://api.polynite.io",
+    "dice.polynite.io": "https://api.polynite.io",
     "spinview.app":    "https://api.spinview.app"
   };
   var local = location.hostname === "localhost" ||
@@ -73,7 +79,7 @@
 })();
 </script>
 <script src="backend.js"></script>
-<script src="version.js"></script>
+<script src="version.js?v=2"></script>
 <script src="engine_cache.js"></script>
 <script src="engine_loader.js"></script>
 <style>
@@ -686,7 +692,7 @@ body.scene-entry-ready #curtain {
 </style></noscript>
 <div id="startup">
 <div id="curtain"></div>
-<main class="seo-content" id="intro"><h1>Create / View / Share procedural 3D scenes</h1><p class="sub">Build an interactive scene from procedural objects or a conversation. Explore physics, animate scene text and record an MP4 with a supported browser encoder. Share the interactive experience with a Mint Link. Imported GLB models remain part of the workflow.</p><h2>Create, interact, record</h2><ul><li>Use procedural generators and move objects in the scene.</li><li>Connect a compatible assistant to the <a href="https://explore.polynite.io/docs/mcp/">Polynite MCP server</a> for conversational creation and editing.</li><li>Experiment with physical blocks, scene text and cinematic animation.</li><li>Record and download videos; encoder availability and storage limits are documented.</li></ul><h2>Share an experience</h2><p>Use Mint Link in Share to create an interactive view. Review access settings and lifetime before sending it. <a href="https://explore.polynite.io/docs/sharing/">Mint Link guide</a>.</p><h2>Import, inspect and optimize models</h2><p>Open local GLB assets, inspect geometry and textures, and choose available optimization settings. Importing a local file is separate from cloud sharing, checkpoints and connected AI generation.</p><nav aria-label="Polynite information"><a href="/mcp/">Product</a> <a href="https://explore.polynite.io/docs/">Documentation</a> <a href="https://explore.polynite.io/docs/mcp/">Connect AI through MCP</a> <a href="https://explore.polynite.io/discover/">Public creations</a> <a href="/glb-viewer/">GLB viewer</a> <a href="/glb-optimizer/">GLB optimizer</a> <a href="/support/">Support</a> <a href="https://www.youtube.com/@polynite-io">YouTube</a></nav></main>
+<main class="seo-content" id="intro"><h1>Polynite: the MCP-first procedural 3D engine</h1><p class="sub">Create / View / Share. Build an interactive scene from procedural operations or a conversation with an assistant connected through MCP. Explore physics, animate scene text and record an MP4 with a supported browser encoder. Share the interactive experience with a Mint Link. Imported GLB models remain part of the workflow.</p><h2>Create, interact, record</h2><ul><li>Use procedural generators and move objects in the scene.</li><li>Connect a compatible assistant to the <a href="https://explore.polynite.io/docs/mcp/">Polynite MCP server</a> for conversational creation and editing.</li><li>Experiment with physical blocks, scene text and cinematic animation.</li><li>Record and download videos; encoder availability and storage limits are documented.</li></ul><h2>Share an experience</h2><p>Use Mint Link in Share to create an interactive view. Review access settings and lifetime before sending it. <a href="https://explore.polynite.io/docs/sharing/">Mint Link guide</a>.</p><h2>Import, inspect and optimize models</h2><p>Open local GLB assets, inspect geometry and textures, and choose available optimization settings. Importing a local file is separate from cloud sharing, checkpoints and connected AI generation.</p><nav aria-label="Polynite information"><a href="/mcp/">Product</a> <a href="https://explore.polynite.io/docs/">Documentation</a> <a href="https://explore.polynite.io/docs/mcp/">Connect AI through MCP</a> <a href="https://explore.polynite.io/discover/">Public creations</a> <a href="/glb-viewer/">GLB viewer</a> <a href="/glb-optimizer/">GLB optimizer</a> <a href="/support/">Support</a> <a href="https://www.youtube.com/@polynite-io">YouTube</a></nav></main>
 
 <div class="app-loader" id="loader" role="status" aria-live="polite">
   <div class="loader-mark" aria-hidden="true">
@@ -747,7 +753,7 @@ body.scene-entry-ready #curtain {
 <button class="debug-button" id="debugButton" type="button">...</button>
 <link rel="stylesheet" href="welcome.css?v=2">
 <canvas class="game-canvas" id="canvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
-<script src="welcome.js?v=2"></script>
+<script src="welcome.js?v=3"></script>
 <script>
 /* Source of truth for the web shell — copied by build.cwc to {pOut}index.html
  * (and {pOut}App.html, replacing emscripten's own WebGL launcher). Same shell
@@ -807,9 +813,7 @@ body.scene-entry-ready #curtain {
   }
   function userSafe(t) {
     if (devMode || !isRuntimeText(t)) return String(t);
-    return ((navigator.language || "en").toLowerCase().indexOf("fr") === 0
-      ? "Erreur du moteur graphique - reference "
-      : "Graphics engine error - reference ") + refCode(t);
+    return "Graphics engine error - reference " + refCode(t);
   }
 
   /* ============== ENGINE / BACKEND BANNER (top of the DEV panel) ==============
@@ -1232,9 +1236,8 @@ body.scene-entry-ready #curtain {
     if(window.__spinNoticeShown) return;
     engineAborted = true;
     if(window.vmeshRuntimeInitialized && Module.pauseMainLoop) Module.pauseMainLoop();
-    gpuNotice(FR ? "Le chargement s'est interrompu. Rechargez la page pour reessayer." :
-      "Loading stopped. Reload the page to try again.", reason,
-      FR ? "Chargement interrompu" : "Loading interrupted");
+    gpuNotice("Loading stopped. Reload the page to try again.", reason,
+      "Loading interrupted");
   }
   window.addEventListener("polynite:engine-failed", function (event) {
     if(!engineAborted)loaderFailed(event.detail && event.detail.message || "Pipeline preparation failed");
@@ -1246,7 +1249,7 @@ body.scene-entry-ready #curtain {
     // Silence is not an engine exception: MCP, assets and GPU initialization
     // can still complete. Never pause the main loop or fabricate readiness.
     if (fallback) {
-      loaderText.textContent = FR ? "Preparation en cours… Le chargement continue." : "Still preparing… Loading continues.";
+      loaderText.textContent = "Still preparing… Loading continues.";
       return;
     }
     loaderHidden = true;
@@ -1471,30 +1474,7 @@ body.scene-entry-ready #curtain {
      actions: no WebGPU at all, no adapter (driver or GPU refused), or an
      adapter too limited.
      The strings below are user-facing UI text, deliberately localized. */
-  var FR = (navigator.language || "en").toLowerCase().indexOf("fr") === 0;
-  var T = FR ? {
-    title: "WebGPU est requis",
-    none: "Ce navigateur n'expose pas WebGPU. Cette application s'appuie dessus pour son rendu.",
-    noadapter: "WebGPU est present, mais aucun adaptateur graphique n'a pu etre obtenu. C'est souvent le pilote graphique ou l'acceleration materielle desactivee.",
-    missing: "L'adaptateur graphique de cet appareil refuse une fonction dont le moteur a besoin.",
-    nodevice: "L'adaptateur graphique a ete trouve, mais il refuse de creer un peripherique de rendu. C'est generalement le pilote graphique.",
-    insecure: "WebGPU exige une connexion securisee. Ouvre la page en HTTPS (ou depuis localhost).",
-    how: "Pour ouvrir cette page :",
-    b1: "Chrome ou Edge 113 et plus, sur ordinateur ou Android",
-    b2: "Safari 18 et plus (macOS et iOS 18)",
-    b3: "Firefox : activer WebGPU dans ",
-    b4: "verifier que l'acceleration materielle est active dans les reglages du navigateur",
-    gl_title: "WebGL 2 est requis",
-    gl_none: "Ce navigateur n'expose pas WebGL 2, ou l'acceleration materielle est desactivee. Cette version du moteur s'appuie dessus pour son rendu.",
-    gl_device: "Le contexte WebGL 2 a ete obtenu, mais le moteur n'a pas pu initialiser son rendu. C'est generalement le pilote graphique.",
-    dl: "Le fichier du moteur n'a pas pu etre recupere. Verifie ta connexion, puis recharge la page.",
-    title_dl: "Le moteur n'a pas pu etre telecharge",
-    lost_title: "Le rendu s'est interrompu",
-    lost: "Le navigateur a retire le peripherique graphique en cours de route - le plus souvent par manque de memoire video, ou apres un plantage du pilote. Rien n'est perdu : ta scene est enregistree.",
-    lost_full: "La memoire video est epuisee : trop d'onglets 3D ouverts, ou un modele trop lourd pour cet appareil. Ferme les autres onglets, puis recharge.",
-    reload: "Recharger la page",
-    detail: "Detail technique"
-  } : {
+  var T = {
     title: "WebGPU is required",
     none: "This browser does not expose WebGPU. This application relies on it for rendering.",
     noadapter: "WebGPU is present but no graphics adapter could be acquired. This usually means the graphics driver or hardware acceleration is unavailable.",
@@ -1534,7 +1514,7 @@ body.scene-entry-ready #curtain {
   function loadEngine(base) {
     window.__spinVerFrozen = window.__spinVerFrozen || getCurrentVersion();
     console.info("[gpu-bootstrap] version frozen for this page: " + window.__spinVerFrozen);
-    if (loaderText) loaderText.textContent = FR ? "Chargement du moteur" : "Loading engine";
+    if (loaderText) loaderText.textContent = "Loading engine";
     if(window.pnPrefetchWasm) window.pnPrefetchWasm(cacheBust(base + ".wasm"));
     if(window.__pnStartup) window.__pnStartup.mark("engine_script_requested");
     var sc = document.createElement("script");
@@ -1709,6 +1689,8 @@ body.scene-entry-ready #curtain {
   /* Module MUST exist before app.js — same contract as Numeris / blobcone_fast. */
   window.Module = {
     canvas: canvas,
+    /* An app keeps its tables itself (pn_app.js, IndexedDB "polynite-apps"): the engine's
+       session stays in memory, so an app opened on polynite.io never writes over the editor's. */
     preRun: [function(){const persistentMount=FS.mount;FS.mount=function(type,options,mountpoint){return persistentMount.call(FS,type===IDBFS?MEMFS:type,options,mountpoint);};console.info('[tutorial] scene filesystem is temporary; saved scenes are untouched');}],
     postRun: [],
     locateFile: function (path) {
@@ -1743,7 +1725,7 @@ body.scene-entry-ready #curtain {
       window.pnLoadWasm(cacheBust("app.wasm"), imports, receive, function (phase, detail) {
         if (phase && !window.vmeshRuntimeInitialized && loaderText) loaderText.textContent = phase;
         var info = document.getElementById("loaderEngineInfo");
-        if (info && detail != null && devMode) info.textContent = (FR ? "Moteur · " : "Engine · ") + detail;
+        if (info && detail != null && devMode) info.textContent = ("Engine · ") + detail;
         loaderLastSignal = performance.now ? performance.now() : Date.now();
       }).catch(function (error) { Module.onAbort(error.message || String(error)); loaderFailed(error.message || String(error)); });
       return {};
@@ -1774,7 +1756,7 @@ body.scene-entry-ready #curtain {
         loaderText.style.whiteSpace = "pre-wrap";
         loaderText.textContent = devMode && why
           ? "Engine aborted\n" + why
-          : (FR ? "Le moteur n a pas pu demarrer." : "The engine failed to start.");
+          : ("The engine failed to start.");
       }
     },
     onRuntimeInitialized: function () {
@@ -1790,7 +1772,7 @@ body.scene-entry-ready #curtain {
       if (typeof window.Shell_OnLoad === "function") window.Shell_OnLoad();
       /* Stay over the canvas until the first graphics frame is committed
        * (vmeshHideLoader, called by the engine). */
-      if (loaderText) loaderText.textContent = FR ? "Preparation de l affichage" : "Preparing display";
+      if (loaderText) loaderText.textContent = "Preparing display";
       var info = document.getElementById("loaderEngineInfo");
       if(info) info.hidden = true;
       console.info("[runtime] Ready.");
@@ -1859,5 +1841,9 @@ body.scene-entry-ready #curtain {
 })();
 </script>
 <script type="module" src="remote_panel.js"></script>
+<script src="pn_play.js?v=2"></script>
+<!-- Polynite apps (?app=dice or dice.polynite.io): inert on the editor -->
+<script src="pn_app.js?v=1"></script>
+<script src="pn_app_shell.js?v=4"></script>
 </body>
 </html>
