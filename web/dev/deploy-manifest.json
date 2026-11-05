@@ -1,13 +1,13 @@
 {
   "format": 1,
   "tier": "dev",
-  "version": "v0545",
-  "sourceVersion": "v0544",
-  "engineBase": "engine/fc85f00c964a37eab02db2708e6b43fb049e61a87fab95baa9e37a4c9737b232/",
+  "version": "v0546",
+  "sourceVersion": "v0545",
+  "engineBase": "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/",
   "engineHistory": [
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/",
     "engine/fc85f00c964a37eab02db2708e6b43fb049e61a87fab95baa9e37a4c9737b232/",
-    "engine/187bab36c45185aff48a8bf0760114f273a6a6db3409074d337940d749f488ed/",
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/"
+    "engine/187bab36c45185aff48a8bf0760114f273a6a6db3409074d337940d749f488ed/"
   ],
   "files": {
     "404.html": {
@@ -72,39 +72,39 @@
     },
     "app.html": {
       "bytes": 83847,
-      "sha256": "7e834beed8c95234242753a8d0727c735acd5b8cb5935143e73e7f88c96e3dcd"
+      "sha256": "814a8e8a0199146c730771065150dbc46e49992ba07ccf3c23b24580c98fe21f"
     },
     "app.html.br": {
-      "bytes": 25256,
-      "sha256": "d7a0c081e752c65f796748c1a385301e0f75f450327875393991acdf30014a11"
+      "bytes": 25257,
+      "sha256": "71849ff1d12f43a4bb08069844979be94b6d8c34f720cd6d55baba2839fcd7e8"
     },
     "app.html.gz": {
-      "bytes": 26563,
-      "sha256": "94bdd3d7841edb363bcb05570cb2c2d19c91778e12f83cabf33cd44fab59ac4d"
+      "bytes": 26562,
+      "sha256": "d51befe1629d6fbc239a86703bfa1fcb1a959486c3b345cfb1e8caae6ca719ee"
     },
     "app.js": {
       "bytes": 351690,
-      "sha256": "1069bc2016dfadb0afda92e4e90cef341134ba14354542047907fc7e2d296624"
+      "sha256": "92f8ef3dad9d868ee8c04e7d497d31daa54926deb1c4803ff25251ee3a1334d5"
     },
     "app.js.br": {
-      "bytes": 82390,
-      "sha256": "639caec99f6cdcf3d09d9e517171d6d941d058662422462d02a6cd91bef08ec3"
+      "bytes": 82398,
+      "sha256": "3d80a500e0f6b103c06c700fcde59f5c597e2dad56ac87b390aa06100e8d5b35"
     },
     "app.js.gz": {
-      "bytes": 88197,
-      "sha256": "440e8f9dd6ab9b7c274047591770801ef6c9451751e5bedafe0b2a4aeb06e60e"
+      "bytes": 88196,
+      "sha256": "29d5643699a0473b82afe20d2b3f3a487c05d0a23be1f87c29ecf299099f1291"
     },
     "app.wasm": {
-      "bytes": 8241209,
-      "sha256": "09c526f53c8e8fdea3a4017c88c5063ab27cf8a2a5296063a39a8497d339d28f"
+      "bytes": 8282906,
+      "sha256": "9a874e8e15c0f001b4a527acd73c6458e29ddc2dc613ef9c0f7b44f90fe0d3b7"
     },
     "app.wasm.br": {
-      "bytes": 2729386,
-      "sha256": "a0620c6d72fd4cc49846fbb4484dacb4c371935e5abf5f20e17316af990b918e"
+      "bytes": 2747312,
+      "sha256": "717a545ef0301bc0bdc83a12563b73759f020b36a3673979727536254bcf6321"
     },
     "app.wasm.gz": {
-      "bytes": 3212474,
-      "sha256": "c409d9af2857c2db4c77dd0518e178d7ad1c7432ae7ea1e5189b726490a96593"
+      "bytes": 3230094,
+      "sha256": "601b21954c3b1eebc8fd06c64dc65b6f6d734d8f03539301ab6059df35e0420b"
     },
     "apps/dice.app.json": {
       "bytes": 1547,
@@ -791,16 +791,16 @@
       "sha256": "89e6be489e42bbf9183f4a4da3b74351936e3616c1c50ca334ff17da5d4ac925"
     },
     "atelier/manifest.json": {
-      "bytes": 27792,
-      "sha256": "0289df3dd0cdec4fbbdc2b45a657a6859ac949b8e4b163dd0597d68926a08743"
+      "bytes": 28836,
+      "sha256": "94c54126fb2f60802773f1c455f68c363bb465f3925a3787a0cbdf13b1acb9b6"
     },
     "atelier/manifest.json.br": {
-      "bytes": 6335,
-      "sha256": "873dec7258cb24722aefaf3013feaf38ff6a3a6ecfe64d597a951ba9c19c4559"
+      "bytes": 6583,
+      "sha256": "bc03754126d920bf4ae7edfeabb03face7e4228527ac5e7b0a8275183f37afc0"
     },
     "atelier/manifest.json.gz": {
-      "bytes": 6551,
-      "sha256": "b124cf2ffa45dfd21996757473ca15ac33d748f869d54a93e3ce035bf23a0443"
+      "bytes": 6805,
+      "sha256": "a2471d69ad8923e2bcbeb431d3d9bd2fab81abc0416be14a508626e29ce80b6f"
     },
     "atelier/view.html": {
       "bytes": 1532,
@@ -923,8 +923,8 @@
       "sha256": "45b6e829ed59bb63173c9d220f7cf7a34183bdc1dd3f7ef00791f7a8fdba46b8"
     },
     "demo/infinite/star-veyland.scene": {
-      "bytes": 240599,
-      "sha256": "fd7ba2e7db570542d602715a17c62ada1cb440c4a98e7f9559be88cc7ba43c0a"
+      "bytes": 240815,
+      "sha256": "5da49f69dd5ecab537a3a9c2e1978d30d0f5f3f839db87ccb7cf071f701b3389"
     },
     "demo/knot.glb": {
       "bytes": 10090356,
@@ -1063,16 +1063,16 @@
       "sha256": "622c6667afdb9ea6883abd5bc0d58b605af41bac7a1c0c3f4d38a7e6ca8300ed"
     },
     "docs/recipes/clearance-japanese-garden/index.html": {
-      "bytes": 13347,
-      "sha256": "8c1f24de338d8556e675a1350d3a00fc2cff8c2b237847723a015af23a36ce12"
+      "bytes": 13323,
+      "sha256": "f02756d1de231a83d628c5cb67e66e690659ed7bb036313d0c388910cfbc0c15"
     },
     "docs/recipes/clearance-japanese-garden/index.html.br": {
       "bytes": 3948,
-      "sha256": "c35b8bce6359e68103f1b74aceecdacfc9c3179aad9072c1900de609e5840901"
+      "sha256": "467d0ed78e5edcc2e27ee87a919126123e3f5ef080cc288b2249585640fc8f1c"
     },
     "docs/recipes/clearance-japanese-garden/index.html.gz": {
-      "bytes": 4235,
-      "sha256": "898f90763102ed750c9ae1e9825d594ef136669dc073fc1db71f97c2546ec52c"
+      "bytes": 4234,
+      "sha256": "55e4e5be24b2dab024513ba51434b3dfe7cc64644d717e9baa305deef6c78283"
     },
     "docs/recipes/collections/architecture-handles/v1/courtyard.json": {
       "bytes": 1320,
@@ -3083,220 +3083,220 @@
       "sha256": "f0b768288e21a3918d0b9255db523a79c616382a80f29ed9128b14fcf21752f5"
     },
     "docs/recipes/entry-roof-workshop/index.html": {
-      "bytes": 13989,
-      "sha256": "d0227cb3a1adb333a49d2a53cd0ad50aa6569bc7a9528d9dad0d5d0f5eda862f"
+      "bytes": 13965,
+      "sha256": "4753c7d34e0bfa237f52ae9aad1db570c82c9c6c1df18398e111413c193b1615"
     },
     "docs/recipes/entry-roof-workshop/index.html.br": {
-      "bytes": 4003,
-      "sha256": "e55f38b963d7a2501c76d5396767d1d089c4441268ee3d1151e9ad57cc0a201b"
+      "bytes": 4007,
+      "sha256": "73e6a202550c30f7d8ef3f52af8d3eb44590e238acb1bfbae37f8b7e2f21efd7"
     },
     "docs/recipes/entry-roof-workshop/index.html.gz": {
-      "bytes": 4295,
-      "sha256": "c9b78fc2d9a4b6f244746f2d735b6be6f2e5189f6406a7ff35e0dd05f62baa8a"
+      "bytes": 4296,
+      "sha256": "cfada81a0705a08dca719a6f4af42ae3efabfe3cfffe8ebc33115813c600e683"
     },
     "docs/recipes/entry-temple-gallery/index.html": {
-      "bytes": 14151,
-      "sha256": "ec978243d3021b37b22bfd86b15da725bb2001ae24f11d23650dfe8287a92ef7"
+      "bytes": 14127,
+      "sha256": "e1986ea32d4caf66709d33d8a706dba5f30c7e4b0361e126f2f3938b81a8a204"
     },
     "docs/recipes/entry-temple-gallery/index.html.br": {
-      "bytes": 4022,
-      "sha256": "34441754a7f5442ae079cbe52b0d96e1a85a2fd64fefa14ffb630570eec264ba"
+      "bytes": 4029,
+      "sha256": "29792fe0a10fbea6b46d5e10ff2d73cf12149f0a1a3882aacf7ec9fd1e9ff29e"
     },
     "docs/recipes/entry-temple-gallery/index.html.gz": {
-      "bytes": 4312,
-      "sha256": "ce6dc8e67b79c4468890db2d3344025feb4a8c55edaa4b088aed08050b6ecd03"
+      "bytes": 4313,
+      "sha256": "66e66541ec8112c127da9f49a06b4acdb3c10846dfd455c518906ce73caa84c9"
     },
     "docs/recipes/entry-temple-garden/index.html": {
-      "bytes": 14390,
-      "sha256": "22ccc9ce2c9f6b64c0529df0801d3a49acc599bdaa1271300bc8f8feba440ee9"
+      "bytes": 14366,
+      "sha256": "7f7103b3281c490af94f786a07b076580780ed23214f2019891fb998f8a64d6d"
     },
     "docs/recipes/entry-temple-garden/index.html.br": {
-      "bytes": 4054,
-      "sha256": "df57e8f40a2cd31274f2e167f1f9bc7701b32d4e6b40cbe51622ecdbf230cf08"
+      "bytes": 4058,
+      "sha256": "45b5a9a7a7ff54870ca5b3b10469b0cd2845dd857bb0a2443ea701b2884dc93b"
     },
     "docs/recipes/entry-temple-garden/index.html.gz": {
-      "bytes": 4348,
-      "sha256": "38829fd4b3a59cd236ce79cb779e74bba502f8a2478d3685ff8aa12bbf4d5fa8"
+      "bytes": 4349,
+      "sha256": "b9577d0b285ba9756ca87121ab76d527f64feecee7b07371f6a78a7411b1b0db"
     },
     "docs/recipes/flowers-in-motion/index.html": {
-      "bytes": 11254,
-      "sha256": "50cb87d34916d257f32c667ff1c295e87b73b8396d016dc038c3c4783acbafcd"
+      "bytes": 11230,
+      "sha256": "ed338331142dd64f313cbf0ef78a7202bbb871faccd1d9d89356fd6bec9ec064"
     },
     "docs/recipes/flowers-in-motion/index.html.br": {
-      "bytes": 3334,
-      "sha256": "6b45241f0e45a2a0174dc7a0299c633d464899f1cc3b9eb05a4ecf8a519783ec"
+      "bytes": 3332,
+      "sha256": "f73348efa3ac2236dfe4dfe7233da7c51f77dd12e4e17a2100654eee43630a6e"
     },
     "docs/recipes/flowers-in-motion/index.html.gz": {
-      "bytes": 3625,
-      "sha256": "19d83160cbc460f96ff934fc11b953a2d2ad8746f066a2dbd41f0457c4bef197"
+      "bytes": 3623,
+      "sha256": "57fd13606913b89d64738327402c337abb16710bcb64c7ce231e1c152deed2e6"
     },
     "docs/recipes/footprint-placement/index.html": {
-      "bytes": 13052,
-      "sha256": "61c5ca96a9aaca6498b8c0103c987f6a52f798bbdb6777870a71259467cb22af"
+      "bytes": 13028,
+      "sha256": "8e47a20e673dfd85cd5fa1442a00e725fce649a3429a1de78addbb3f828c97ed"
     },
     "docs/recipes/footprint-placement/index.html.br": {
-      "bytes": 3864,
-      "sha256": "41ec03e1796cc624ce4688786cae7ae70e2fb493d0bd0bbf1d3c80e6a7b8e5ca"
+      "bytes": 3866,
+      "sha256": "7b3d42e38badfdf91a611e3bbc7b22d021ab8bc766ba894d7a5e283c7f0de9c2"
     },
     "docs/recipes/footprint-placement/index.html.gz": {
-      "bytes": 4181,
-      "sha256": "9259798b75fada007bc52694509a500e85a49692c35f888db819e3a6eb8f3a17"
+      "bytes": 4180,
+      "sha256": "cc29a86fa7082920b22f0e9120a36d8d505fc184667efbc4ebd1273e0717cd42"
     },
     "docs/recipes/handle-temple-garden/index.html": {
-      "bytes": 14861,
-      "sha256": "7e41e46c67ddd4e52d226d0d977808766df142553d51a7011edec2386f9430d8"
+      "bytes": 14837,
+      "sha256": "e00a35e02cbeabe3a1e063972adcb9d57e81d22bd681b0c0c12005094b699261"
     },
     "docs/recipes/handle-temple-garden/index.html.br": {
-      "bytes": 4269,
-      "sha256": "d677b9450158fbf56fbb0e637b54b8b733a98a851a28f5dc5e2d8eb5ad286923"
+      "bytes": 4272,
+      "sha256": "ff4fd4f873c92248fcfe6557bbd6498e9e90e4e74c1326ac4947afd34fda27a7"
     },
     "docs/recipes/handle-temple-garden/index.html.gz": {
-      "bytes": 4585,
-      "sha256": "5a7bee1524c22af66453928f78a1c4a448512c90fdddd5bc8eac59fc89ae47a0"
+      "bytes": 4586,
+      "sha256": "d24ad646ca5d0a02e46cd0cb556df9e70c44a409912f548020e9bf7096c7e023"
     },
     "docs/recipes/index.html": {
-      "bytes": 90662,
-      "sha256": "23aeefcfc34e316e2fc1e58d90eb24cbae1ddd1931a692ce01054133ef0d583d"
+      "bytes": 90638,
+      "sha256": "3e26c6dab7e608596a902c462660ecb96f6b6bd270b4fa0c4f11da7567067f09"
     },
     "docs/recipes/index.html.br": {
-      "bytes": 10354,
-      "sha256": "8581e1b83db557710758917b000e1a53e55e437a652dadf9ca79f5e82900eeda"
+      "bytes": 10359,
+      "sha256": "7c39f845d4726c814f1284b3631909065caa8bbacb49b4eb877b5de9fe474df4"
     },
     "docs/recipes/index.html.gz": {
-      "bytes": 11328,
-      "sha256": "cf07a135534d6dc5c24b443001bef1e457aa0aac14fd1fd18a20befb0231eceb"
+      "bytes": 11324,
+      "sha256": "195f2ecc08c721653dcf755b3a15d47ba73a62609affca98dcdb596141ab03d7"
     },
     "docs/recipes/japanese-bridge/index.html": {
-      "bytes": 11762,
-      "sha256": "754b09bd62d93b0352f36d43073706ba6e972d64d10c2ead1c1120429dc364b3"
+      "bytes": 11738,
+      "sha256": "a4dc7ab232959ac05f692733b5e7746486529ed84e477609ee7bb812c0899719"
     },
     "docs/recipes/japanese-bridge/index.html.br": {
-      "bytes": 3442,
-      "sha256": "0280c8e46dce1ed3f180e29a769979e60fde3f806c4949218e8c682b6a620300"
+      "bytes": 3449,
+      "sha256": "086254b7007bcb19730ffaf8069d3a1c7c474e42b08ff277a6f609c40174d8c0"
     },
     "docs/recipes/japanese-bridge/index.html.gz": {
-      "bytes": 3742,
-      "sha256": "a55c1082f29f294f0bd35b703988666af78f1d9cd05cbe8b325ed084ec56d08f"
+      "bytes": 3745,
+      "sha256": "03427f857544e98ba01ef831e586263bdeeb9d1770ac9919bb474456bae6e16c"
     },
     "docs/recipes/japanese-garden/index.html": {
-      "bytes": 12555,
-      "sha256": "e3ec008e85e3e431d8260bb65cc7a8b4c3f84ed2ce409705be946db678ecdf61"
+      "bytes": 12531,
+      "sha256": "93003db6b3edaef33a51e07a3c7bf97a276bf8fbd62de8ba2e3ee5687306c154"
     },
     "docs/recipes/japanese-garden/index.html.br": {
       "bytes": 3586,
-      "sha256": "e9ec7394ff122819c5db05ad85893964c2ab2c25603a2c6d842142950aa17a33"
+      "sha256": "d209a395b3c0e93d5690b23d6139156000f24581125b3518d19e58fe3e0d0f7a"
     },
     "docs/recipes/japanese-garden/index.html.gz": {
-      "bytes": 3907,
-      "sha256": "34877e3d4ad346891fa00bf28c419672c4ff2541423f035601f28e0b8622d80f"
+      "bytes": 3910,
+      "sha256": "6c13a5a3392d7307c37c35a54b6540947d844a7dda82e24e5c387add649d592e"
     },
     "docs/recipes/japanese-lotus/index.html": {
-      "bytes": 11651,
-      "sha256": "98ccdd91403d617a3ab0a4a46db181342b80751dea6d022dc3ac6188ab280e38"
+      "bytes": 11627,
+      "sha256": "0918bc6850d9be74eb660a0c5ce80dd90d8d2f22662c3f4b133cf763799d26b8"
     },
     "docs/recipes/japanese-lotus/index.html.br": {
-      "bytes": 3431,
-      "sha256": "e68cc5b02abec13426d109e41bdf2d5fc12cced0ab95ea53da7a9aa03aa62715"
+      "bytes": 3437,
+      "sha256": "893c600543e84ddd474f6b9f09cdcdd0849a3e53b8a42b540f56083b76ceb96b"
     },
     "docs/recipes/japanese-lotus/index.html.gz": {
       "bytes": 3736,
-      "sha256": "4c24cc39660f847a7bfdf0cb3203e29537f0e5131a26f775af1d116f47873d12"
+      "sha256": "c7d3a13dcb193bad7654fedd42f56067be6625ef23cd7c4eb0c50fa3f79bb1e0"
     },
     "docs/recipes/japanese-passage/index.html": {
-      "bytes": 11648,
-      "sha256": "56b2ed0f747da9fca042bc6b8d042b0033bbef3053edd0a8abe24d1b8323769a"
+      "bytes": 11624,
+      "sha256": "2313f6d7b2d43ca2964057afd55c45030f1cb58c2c886ae8253cd39f4dec3637"
     },
     "docs/recipes/japanese-passage/index.html.br": {
-      "bytes": 3420,
-      "sha256": "148c5a8176e2498de5af97af82de3f8a61a2e0445da5ce6aa633a8d02bf9ecf8"
+      "bytes": 3426,
+      "sha256": "86114f71fb5569a9ea91f1458cb204590bb8a95c8929914c3da45274457d638a"
     },
     "docs/recipes/japanese-passage/index.html.gz": {
-      "bytes": 3718,
-      "sha256": "131b987c739a10994bacdd0aa41123229fd54af3dad0d01551bc844257d62d30"
+      "bytes": 3717,
+      "sha256": "0073cb4a6bafaecbf93ca336b295dbe0d18ffd7b69ab14f5db13799355692627"
     },
     "docs/recipes/japanese-pavilion/index.html": {
-      "bytes": 11890,
-      "sha256": "55c65ca470788e25b5ae5a15f0da82182287da4fd807f79674be933bb0bc8821"
+      "bytes": 11866,
+      "sha256": "3495bd49cce5e72d704f6c0330cd1a6c4603f4be27e575c7adf0f673dbbfc2c3"
     },
     "docs/recipes/japanese-pavilion/index.html.br": {
-      "bytes": 3457,
-      "sha256": "88912843d152591ea0da3304c4170a6f3c7f8d89b3df53d69d5520b0b5ae450f"
+      "bytes": 3462,
+      "sha256": "97670bfe74f44cc25dd2ace9305669d6821828be2a56d65fc6fcd6e2e26dadfa"
     },
     "docs/recipes/japanese-pavilion/index.html.gz": {
       "bytes": 3752,
-      "sha256": "4f63b0e0cd35d183205c5d64ef96de0ecc783e4706ad8d58dca757c124e9675b"
+      "sha256": "a573dc450da81245925bd515eb61113ae78405ead62f953074ff51c25c481ce6"
     },
     "docs/recipes/joined-roof-workshop/index.html": {
-      "bytes": 12411,
-      "sha256": "66785826728e08bb0786fbd5d863900e1015d209e614f12482392ddb9ed9809a"
+      "bytes": 12387,
+      "sha256": "e9319f26329fe81dbcbfbe8ef59f3986d8b31d5f681c7fa83ea899d58935da2a"
     },
     "docs/recipes/joined-roof-workshop/index.html.br": {
-      "bytes": 3647,
-      "sha256": "cf3fc4a3c5783d19da5c57b24019a224341726fb32f4dfbea87cd811f4a141be"
+      "bytes": 3650,
+      "sha256": "c1348a78e39a33dab7a5d1968054fa2760fc9722362fe0efa3128ae360cf101b"
     },
     "docs/recipes/joined-roof-workshop/index.html.gz": {
       "bytes": 3961,
-      "sha256": "90e8af1701cfd5228a7444c3dbf3796f30b91429d61762b942d95bb106cd95b7"
+      "sha256": "cee98ff7bf1944e377c21ecfb853ebadac715d351f455ff4a52e58eaeb0fa588"
     },
     "docs/recipes/joined-temple-garden/index.html": {
-      "bytes": 13602,
-      "sha256": "8965dea0078095e30f8106b4a7ee9e3c8fdbd5bbb5619062cddea4b663e02cd4"
+      "bytes": 13578,
+      "sha256": "6b0bf41b68ef28ae82a15180fe167e23ffb88261d130f6671d12081c9ed465c9"
     },
     "docs/recipes/joined-temple-garden/index.html.br": {
       "bytes": 3806,
-      "sha256": "20c6a055d85914443ae0b122369468d65d4e2ca16e6680ca5ec710c20497f545"
+      "sha256": "d891dfa008d43e0cf1e6e45f1ae7634aa1f5c3c7b89f70a8e3eb883b1635641c"
     },
     "docs/recipes/joined-temple-garden/index.html.gz": {
-      "bytes": 4104,
-      "sha256": "18f1a6d3f9b150485a748655987192e334144affdb395bb9ec6108e5c2df96f8"
+      "bytes": 4105,
+      "sha256": "bec680c3c1adde320dec3cae8507acbb6fb4c286ce3cdb70bd907f216c9b019c"
     },
     "docs/recipes/joined-temple-hall/index.html": {
-      "bytes": 13148,
-      "sha256": "44b4e91d0b56d51bd81804c43711b5f8a0714a63b55f2405bf3e42abbafbe78d"
+      "bytes": 13124,
+      "sha256": "956869e045fd2006022e7cb92596d46f2fa5236ff6cb215f94379164d926ccd3"
     },
     "docs/recipes/joined-temple-hall/index.html.br": {
-      "bytes": 3751,
-      "sha256": "790dd5d8f242cf4a2d28619b47b2463888af9ac9e15c57cbc5424b15d6095995"
+      "bytes": 3753,
+      "sha256": "a10de4c06c3d5aab0832fa487cb572fe3362c7065af98c726ae84d89467cf290"
     },
     "docs/recipes/joined-temple-hall/index.html.gz": {
-      "bytes": 4044,
-      "sha256": "63fac05bd88a631d955d55067edf795cbe974b0c73ebf3ab7eb0666186246310"
+      "bytes": 4043,
+      "sha256": "4c27c1d0ccbb402ade712e4d87fc11895c3d73ea2d081201b0a4ddb3e40b5a21"
     },
     "docs/recipes/linked-roof-workshop/index.html": {
-      "bytes": 13319,
-      "sha256": "f3ab32fa6a77d877fcbc209ac7c966a1571244f800f7b673b06ea6721e84e370"
+      "bytes": 13295,
+      "sha256": "c447dabc9245dd1ea969883c6beeb398d2093ad617272b83b6e65b96a77ec006"
     },
     "docs/recipes/linked-roof-workshop/index.html.br": {
-      "bytes": 3791,
-      "sha256": "8fcf27ac70911d415d6612176b7b081c5a5c1e443dd3b435ee517e5bcfe80ebd"
+      "bytes": 3792,
+      "sha256": "fa229c833c3cc91649d24aa62eecb42e0fc69bbf12fca8263f3ac235e977408a"
     },
     "docs/recipes/linked-roof-workshop/index.html.gz": {
-      "bytes": 4086,
-      "sha256": "a368905ffeccc160446e3a359548c9aeb0a6fa3944c586b59be620e792e09abb"
+      "bytes": 4088,
+      "sha256": "6503bcdc2305dac3663e80bb18085a5e2b1a01c1c66ea0a0fcbe22baf323ccaf"
     },
     "docs/recipes/linked-temple-gallery/index.html": {
-      "bytes": 13509,
-      "sha256": "b0a1b35c701c4ad1da7dd804d378cbc4b7d09708f319b34fe580eb00141cd511"
+      "bytes": 13485,
+      "sha256": "7a64e73b55d8b7c2d1a2d8071560b2bedd6184b647ee0862e2c60c3002267ff7"
     },
     "docs/recipes/linked-temple-gallery/index.html.br": {
-      "bytes": 3833,
-      "sha256": "ad8ec419f98673121c5ac3d0a37fc8f8e7a6d65ab4e0577623e9177d0034adb7"
+      "bytes": 3836,
+      "sha256": "ec30abacddde6155b2901d00157f41c395ce6a495c7cd6a24096498f0685fe46"
     },
     "docs/recipes/linked-temple-gallery/index.html.gz": {
-      "bytes": 4108,
-      "sha256": "c1ff42c55f0ffc73f65fa3de7a69e53c35f581dddb4192562d84d445914750b0"
+      "bytes": 4110,
+      "sha256": "2f5759be66274fb3dbc17163492cf775165ed53c396b92a3bfdefe9dd2ca26af"
     },
     "docs/recipes/linked-temple-garden/index.html": {
-      "bytes": 13751,
-      "sha256": "6e5e15aecf481119d502ae537153bcb25e685dca36eaf5b6d652b847d2e6e40a"
+      "bytes": 13727,
+      "sha256": "1651aa7bed94dfc17d712b451eeb66669c2b797bb81e638a2c0adb70422f7d26"
     },
     "docs/recipes/linked-temple-garden/index.html.br": {
-      "bytes": 3852,
-      "sha256": "d0a5b86c9603c106291ee1f2a2b2a25800e65398642ca2f9c1561b36f622b17d"
+      "bytes": 3854,
+      "sha256": "768543d8b4e8dcbb83a610e966ae5a82f3e2b1e6f601a7d39e3cc5cb66c54883"
     },
     "docs/recipes/linked-temple-garden/index.html.gz": {
-      "bytes": 4138,
-      "sha256": "1ccb322d2fb49a85680a64e2dd3fca9363dfbe4e850b7d9238b9b8c45b358cbb"
+      "bytes": 4142,
+      "sha256": "91b94407b85905c26f05b003a33a3c196f892ed2db861c9c9910333ac2cb3551"
     },
     "docs/recipes/llms.txt": {
       "bytes": 7832,
@@ -3727,28 +3727,28 @@
       "sha256": "945ed3d427e66ffc08c6af4298247700ccd66fb4bc7c0bb9c0ba66693a5a8651"
     },
     "docs/recipes/modular-facade/index.html": {
-      "bytes": 12048,
-      "sha256": "9fe740b919c04276f3c65ca3b72adb11f3a553f1faa6f95ca7dcc2a3ba2b3f80"
+      "bytes": 12024,
+      "sha256": "a1d18813feaf3fff59b7e263e3d737d7af39255ce777094bc7e21b29fecf7a3b"
     },
     "docs/recipes/modular-facade/index.html.br": {
-      "bytes": 3541,
-      "sha256": "1800e9b075cec828d5e4472d50f5d1f8dfee3c873e91538fcb923c7a4a99478e"
+      "bytes": 3545,
+      "sha256": "bcc62fd5b7eb588522029251ae400dec2b55db026fa6c7f90dec2a04983d366f"
     },
     "docs/recipes/modular-facade/index.html.gz": {
-      "bytes": 3845,
-      "sha256": "8b54a44f7a4677f6ccbe94b1d49e5790a6f8af67e676e024aba758d3a25abbd9"
+      "bytes": 3847,
+      "sha256": "14fd27e09ff6f5d5bca3824821930d0ef2dc7ccc0b75f4e446c6fc174d8351b7"
     },
     "docs/recipes/nested-temple/index.html": {
-      "bytes": 13212,
-      "sha256": "66dbde04056f1407f4b956df5777a4be5ca208aea8030cb973246011201b2bec"
+      "bytes": 13188,
+      "sha256": "e116448fbea3b685143c2046f6a8d9a88499712aca35e57c7d2f3d3ca20e0bc9"
     },
     "docs/recipes/nested-temple/index.html.br": {
-      "bytes": 3754,
-      "sha256": "9057958643817db795cb9abfc72d619408bc0a932f1e6f7a4e4ca984e3e8d82c"
+      "bytes": 3752,
+      "sha256": "0a4f40b4497d9bca2b8ace81175b0500131664bfa6915a4eae810c5a894d1037"
     },
     "docs/recipes/nested-temple/index.html.gz": {
       "bytes": 4071,
-      "sha256": "372f2001c3f4090c978dd446f522b9c22c679f6a97c04d3d3aef315a1ca9fef4"
+      "sha256": "4498eae05c593873e805ab850f81d6913eb30f8d498f576c07265f1d5c43e7a0"
     },
     "docs/recipes/operators.json": {
       "bytes": 13259,
@@ -3763,100 +3763,100 @@
       "sha256": "85503eb0ef5981c5d5befb0b4175ce2ded9c21d25dc613a9893e92ad9f087153"
     },
     "docs/recipes/path-clearance/index.html": {
-      "bytes": 11497,
-      "sha256": "9b139bae94bf3a86bd0901c23b0378c7ca7a7512bde71bd34d9a5d253ea6a95c"
+      "bytes": 11473,
+      "sha256": "aa49a7a0fc9ee58ab7a83a52a04a6096981019e023387b824e0c4632457d7d7a"
     },
     "docs/recipes/path-clearance/index.html.br": {
       "bytes": 3457,
-      "sha256": "42465e11e2fb38d3b434a74de84b067e0a60bdf50b3fa6127d26beca2028e5f4"
+      "sha256": "804203bcfbe2e4a4d2bdc1f823ecb56959b7de9a1f9341780f2ab9d66ffbecdc"
     },
     "docs/recipes/path-clearance/index.html.gz": {
-      "bytes": 3740,
-      "sha256": "122eada5f1a92f1d322ef8a06a2b1bd69984e0add1380d4c6b6aaa7c72b9db4d"
+      "bytes": 3741,
+      "sha256": "41e7994b039482a9a050d949aa62abc72efb6c2041b54dc2ffa93bbb82a72bec"
     },
     "docs/recipes/profile-studio/index.html": {
-      "bytes": 11959,
-      "sha256": "0cd2c3161c5293f22d042b224c03593dece640461c8290f2de7b2db473322935"
+      "bytes": 11935,
+      "sha256": "408da4c8786e42f8762f4e53db6a17c885b1138e9f80b48744940d00f636ceaa"
     },
     "docs/recipes/profile-studio/index.html.br": {
       "bytes": 3529,
-      "sha256": "773e58d71f7e204799894d2a27af926f9d1fd96f25d047448671df90f53c268f"
+      "sha256": "a81b2447bee56b272e394affa522276183985d17e58f4e211f4475df1655f201"
     },
     "docs/recipes/profile-studio/index.html.gz": {
       "bytes": 3844,
-      "sha256": "0c55a1d7d93065f3f3e4a8c0b24f62cb5b04ff43e6f902c959b8a0251b503dc8"
+      "sha256": "64376e9f9e02e19ba8e43701d02dd5aba26e1b97e3ecbce6db72d0709307400e"
     },
     "docs/recipes/swept-arcade/index.html": {
-      "bytes": 12139,
-      "sha256": "69242e2e5294e1edf3cff8dc2673d0f6d44deb6215cc6c9017db4fa3cdd9ef38"
+      "bytes": 12115,
+      "sha256": "ff00ac6a1d171d6c0bc8af2ecb7e9fed9e5e82749023042838b8065f83677b74"
     },
     "docs/recipes/swept-arcade/index.html.br": {
       "bytes": 3566,
-      "sha256": "77d20607a9fee6c5cef2e03dff439a2e1dc8f0475daae6f40ee09f37211b77d3"
+      "sha256": "c3b609fc8b18421ea98181c049d688f3972d5694d214ade3fccf19f2c7fc306f"
     },
     "docs/recipes/swept-arcade/index.html.gz": {
       "bytes": 3872,
-      "sha256": "2176a41d70157640641da82fee16acdbc2f4a1210dad43738cff74dfd065c8be"
+      "sha256": "32a5b587febc69edcd565f0553c0c52dfeb882fb1e013767b7023349f6e4df22"
     },
     "docs/recipes/terrain-aware-pavilion/index.html": {
-      "bytes": 12501,
-      "sha256": "64202fcc359d9b5454379aba6a3a175ff76e8159bc8fc8b6fc1dfdd6ed602933"
+      "bytes": 12477,
+      "sha256": "69d78ab468e2304de88743521822422ad18d77d21c8b6ef226b530e53adffa8a"
     },
     "docs/recipes/terrain-aware-pavilion/index.html.br": {
-      "bytes": 3628,
-      "sha256": "d614a200af8d6b3736248c94536b22d3b78f6379a8acf212cfd46a7de7bf95c7"
+      "bytes": 3635,
+      "sha256": "9c7d393d10704da7a4d6ecb6321697b4d7db84f5ebc00ce2a42973d77b91f6aa"
     },
     "docs/recipes/terrain-aware-pavilion/index.html.gz": {
-      "bytes": 3946,
-      "sha256": "1010690c3dd574a07f419c6a5c596d9d81bd1c6fd7b5fe00a051965380e8ee26"
+      "bytes": 3945,
+      "sha256": "c118e2c980121e43258a6d9eca5bce601269acb25177835ea2461f40bdf50b1a"
     },
     "docs/recipes/terrain-linked-bridge/index.html": {
-      "bytes": 13017,
-      "sha256": "5cfb69db72a328e0b68fe5090fee4e3c103843da1833bc4a13ecfd995ccd7c3f"
+      "bytes": 12993,
+      "sha256": "7417ee025bbf14374e0a99c227acfeb219661c2ca2c41294d1d8dc568ddbb4c7"
     },
     "docs/recipes/terrain-linked-bridge/index.html.br": {
-      "bytes": 3826,
-      "sha256": "edd5689e7ce421a918019bbec9e2b519dfdba0e0d67c140e751cfb0d8c1b67af"
+      "bytes": 3823,
+      "sha256": "0d01d1857706e53fe7823a5f19a184aee2903573a42063272f3117c6753f670c"
     },
     "docs/recipes/terrain-linked-bridge/index.html.gz": {
-      "bytes": 4121,
-      "sha256": "c19419324cd11b292a099a0441703c58ba2e9a7253c19a1f1c5250b5124704f6"
+      "bytes": 4120,
+      "sha256": "beda379208cb8d92266410104e9925412d8f058e1abc745dd9013d471ad75a20"
     },
     "docs/recipes/terrain-linked-garden/index.html": {
-      "bytes": 13267,
-      "sha256": "2a3bd99aae4155141454942699610febf1f1cb2c293942fca99c02e950c63fee"
+      "bytes": 13243,
+      "sha256": "d74ed06d6aa6306a012212bc7bc1bcad4ec5ea33ea85c66dfb53876a32206ee7"
     },
     "docs/recipes/terrain-linked-garden/index.html.br": {
-      "bytes": 3854,
-      "sha256": "d133ded24f4b2e07a1d9378be35b279f707363296084134f7af6e922dfdb7802"
+      "bytes": 3855,
+      "sha256": "e16ee7bfc191ae9c0af5491aabeab1cf335f09979c18995314d8d9554419dd27"
     },
     "docs/recipes/terrain-linked-garden/index.html.gz": {
-      "bytes": 4146,
-      "sha256": "5febbd672023d6da3d1e58d3e678cf355609d3346e9a90e443ddb4558da72a5e"
+      "bytes": 4144,
+      "sha256": "77e97415e079f3e15b9771588cc2ec687f6a5a71fd6c68695d2b1ad1f9a74ddc"
     },
     "docs/recipes/terrain-linked-path/index.html": {
-      "bytes": 12897,
-      "sha256": "053d83bc487b30e83c138d364b8deca7f5d8e156591b970fccd42a76503c3d48"
+      "bytes": 12873,
+      "sha256": "64a063de1969294b78f456415916b7d064e013d4f68573ddf6e792cab5cfaf5d"
     },
     "docs/recipes/terrain-linked-path/index.html.br": {
-      "bytes": 3818,
-      "sha256": "6057434d203e63baee3f57a56c927d1d996ea18ef2ff88ff9908e5ae515aee62"
+      "bytes": 3813,
+      "sha256": "c43c1370da125d705c52f1dc0d5e536237907f6e2cf9540b3b3a07642eae9304"
     },
     "docs/recipes/terrain-linked-path/index.html.gz": {
       "bytes": 4116,
-      "sha256": "b01799a31d666a7fb8cac9e4416ffac3775f5a6ec07ac6f14104a3fc1e0e8d39"
+      "sha256": "79e307b2d6ddcfe19613cd0630cc2bdcc516b3e7f1de1675f8b1be66d6107b34"
     },
     "docs/recipes/terrain-pavilion/index.html": {
-      "bytes": 11584,
-      "sha256": "98201b7690d0ef99425eec6b5317bbe1f9642a8094d0df20fc07e71da2211217"
+      "bytes": 11560,
+      "sha256": "6d9305cdc788680ff447496a4003ce21dff59843d2da6c206669cee3f5125991"
     },
     "docs/recipes/terrain-pavilion/index.html.br": {
-      "bytes": 3418,
-      "sha256": "fa22c4c35bdc22acb5dc30c1a7d455c317d76ad7f1d539219db8c8ff90432a4a"
+      "bytes": 3417,
+      "sha256": "f59a69000b16cfc64cb14b4c2cdcdda7e097d6d6e627c02aa0a1e1302b6bbc08"
     },
     "docs/recipes/terrain-pavilion/index.html.gz": {
-      "bytes": 3725,
-      "sha256": "9d281bf33962fbf8dd597dfcd2c40be240b6bc131538008cfbbe6ab44aa765ae"
+      "bytes": 3724,
+      "sha256": "013f5db4f1b628a917c92578aa2741fd5a79e70e0b8590d69198388c7ce6321d"
     },
     "docs/sharing/index.html": {
       "bytes": 8782,
@@ -3894,29 +3894,29 @@
       "bytes": 3212469,
       "sha256": "af34330a121c2b756c7ffee916644eb00abe399acef9524232057db488b7ebfc"
     },
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/app.js": {
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.js": {
       "bytes": 351690,
-      "sha256": "1069bc2016dfadb0afda92e4e90cef341134ba14354542047907fc7e2d296624"
+      "sha256": "92f8ef3dad9d868ee8c04e7d497d31daa54926deb1c4803ff25251ee3a1334d5"
     },
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/app.js.br": {
-      "bytes": 82390,
-      "sha256": "639caec99f6cdcf3d09d9e517171d6d941d058662422462d02a6cd91bef08ec3"
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.js.br": {
+      "bytes": 82398,
+      "sha256": "3d80a500e0f6b103c06c700fcde59f5c597e2dad56ac87b390aa06100e8d5b35"
     },
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/app.js.gz": {
-      "bytes": 88197,
-      "sha256": "440e8f9dd6ab9b7c274047591770801ef6c9451751e5bedafe0b2a4aeb06e60e"
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.js.gz": {
+      "bytes": 88196,
+      "sha256": "29d5643699a0473b82afe20d2b3f3a487c05d0a23be1f87c29ecf299099f1291"
     },
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/app.wasm": {
-      "bytes": 8241209,
-      "sha256": "485fbde1bc9e4f650d9fa09c180e53011507de45e738efad83f6033e0fe80769"
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.wasm": {
+      "bytes": 8282906,
+      "sha256": "9a874e8e15c0f001b4a527acd73c6458e29ddc2dc613ef9c0f7b44f90fe0d3b7"
     },
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/app.wasm.br": {
-      "bytes": 2729549,
-      "sha256": "f73c737c255584bc3297677591d14ba8a85129843d68c06df0c2709bfcdb0190"
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.wasm.br": {
+      "bytes": 2747312,
+      "sha256": "717a545ef0301bc0bdc83a12563b73759f020b36a3673979727536254bcf6321"
     },
-    "engine/7787b75e69bb4a23da3ef7e45c28951f1cebb9dfcee77d11919f056ff6dde108/app.wasm.gz": {
-      "bytes": 3212479,
-      "sha256": "2f0301546b5af8d0a20618dbaa6afcd40ee5ef9bb4a531520ba58b546441ed7c"
+    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.wasm.gz": {
+      "bytes": 3230094,
+      "sha256": "601b21954c3b1eebc8fd06c64dc65b6f6d734d8f03539301ab6059df35e0420b"
     },
     "engine/fc85f00c964a37eab02db2708e6b43fb049e61a87fab95baa9e37a4c9737b232/app.js": {
       "bytes": 351690,
@@ -3967,16 +3967,16 @@
       "sha256": "fb7ee81ce32b447880884904fc5166ca03cd7109d6dc030ce05f6a44828069b8"
     },
     "examples/catalog.json": {
-      "bytes": 160047,
-      "sha256": "2eead1c7e5d18756d6a35501f4687dc17628915adc339c1943288aae0617bd6c"
+      "bytes": 161804,
+      "sha256": "9d80d910dc78c589bfc9158aaeb2a375a72b1efd804fecde3c2c40fecffe6797"
     },
     "examples/catalog.json.br": {
-      "bytes": 22111,
-      "sha256": "46e2f3ad796f9d715912b5f2831ae2222e39faed3b195b10561a5c686b872d07"
+      "bytes": 22561,
+      "sha256": "27b4afbb1d3606cf52bf8ac163ce1a6a3e01d0420bac7d309d7a14a1a6f15e1a"
     },
     "examples/catalog.json.gz": {
-      "bytes": 24163,
-      "sha256": "2eb1ddb5cc5d6545ec4f0ae8cccc95ee8086eed873d093972eede707d69d9b48"
+      "bytes": 24627,
+      "sha256": "9ea501fd4b28144bcdcd5ffdf321191800d0c08dc863df3a25806f3cc929ab75"
     },
     "examples/checks.js": {
       "bytes": 15656,
@@ -4045,6 +4045,10 @@
     "examples/data/entry-temple-garden-v1.scene": {
       "bytes": 313156,
       "sha256": "2be04f3821b60ec824d074952ada3eef0075f636ba27fe2bd5316a83e5c2d96c"
+    },
+    "examples/data/floating-islands-v1.scene": {
+      "bytes": 54546,
+      "sha256": "aae5ae0ff02492b206247f2c4327840c46c7f4e127f36e7c580eb57a111ba0b6"
     },
     "examples/data/flowers-in-motion-v1.scene": {
       "bytes": 101126,
@@ -4343,16 +4347,16 @@
       "sha256": "f0b768288e21a3918d0b9255db523a79c616382a80f29ed9128b14fcf21752f5"
     },
     "examples/runtime/index.html": {
-      "bytes": 84863,
-      "sha256": "e6a815318c0ffe728078a5ab52682dc98601bf80a040ba5a00724cecbd4d7e5e"
+      "bytes": 84017,
+      "sha256": "bb1a77fe24b9f9752a8811950360074a8240926829a29ee7b2608b282ba2af9f"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 25591,
-      "sha256": "b40a532334661e4be8c59393f1196f648b7f0872c2362720bdc0a816dcd6ff04"
+      "bytes": 25331,
+      "sha256": "ec5c6a6df159758a120618d54aa4abdc631bd2341347b87aec7c41167e0c9de5"
     },
     "examples/runtime/index.html.gz": {
-      "bytes": 26928,
-      "sha256": "a68e2df8ca80c3e2ac7c40c2b14bf32aeca7e81938b977c3d4dfb61e9cfb0a6b"
+      "bytes": 26630,
+      "sha256": "a20958f94bc2d47c880312d2558d78f18cf742e7bd44f4a1f70b92295799d7ed"
     },
     "examples/view.css": {
       "bytes": 2690,
@@ -4368,15 +4372,15 @@
     },
     "examples/view.html": {
       "bytes": 1924,
-      "sha256": "c40da30c50ea2bf241c02350a37c989fa533923ff40619a0bba59a627eced28e"
+      "sha256": "56523a6a07d0b510ce7295cc265a71edca51350f82df8a0877d979f0b33d5522"
     },
     "examples/view.html.br": {
-      "bytes": 805,
-      "sha256": "6331afdb12c73cc0e330d18db65e658b09bc18ad7e9e2004b407672bd7294aa1"
+      "bytes": 804,
+      "sha256": "8c7b96e7f6b371e953b6f21c8e6efb77b0e67d9b7a4f1e9d8d04decf2602520d"
     },
     "examples/view.html.gz": {
-      "bytes": 938,
-      "sha256": "ded8822dc6f9276726049789ac63c446101bde2fbbc2827402e5ffdc345fb406"
+      "bytes": 935,
+      "sha256": "1c23fdf86a6a2a068821b0f76ffac8ed6100f2728a7ef62a90a564b12ff8dc46"
     },
     "examples/view.js": {
       "bytes": 17189,
@@ -4408,15 +4412,15 @@
     },
     "index.html": {
       "bytes": 83847,
-      "sha256": "7e834beed8c95234242753a8d0727c735acd5b8cb5935143e73e7f88c96e3dcd"
+      "sha256": "814a8e8a0199146c730771065150dbc46e49992ba07ccf3c23b24580c98fe21f"
     },
     "index.html.br": {
-      "bytes": 25256,
-      "sha256": "d7a0c081e752c65f796748c1a385301e0f75f450327875393991acdf30014a11"
+      "bytes": 25257,
+      "sha256": "71849ff1d12f43a4bb08069844979be94b6d8c34f720cd6d55baba2839fcd7e8"
     },
     "index.html.gz": {
-      "bytes": 26563,
-      "sha256": "94bdd3d7841edb363bcb05570cb2c2d19c91778e12f83cabf33cd44fab59ac4d"
+      "bytes": 26562,
+      "sha256": "d51befe1629d6fbc239a86703bfa1fcb1a959486c3b345cfb1e8caae6ca719ee"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -4671,28 +4675,28 @@
       "sha256": "6e6d3f2be0846a7714978117bd0690f72db42fdfed276c1e0dbf5e1fb508325d"
     },
     "showcase/all/index.html": {
-      "bytes": 83441,
-      "sha256": "cf094c0daead84b9e3defd609d6b1bf8e0f06fecd920322c7cdc233bb7476237"
+      "bytes": 85451,
+      "sha256": "6797de2bc7b7495d327278bfa0e73edf052d7f140c237095a8a541593cd50678"
     },
     "showcase/all/index.html.br": {
-      "bytes": 10621,
-      "sha256": "1b0c9cd6ff2fd940a43b6775526c68ca3b9b94008d02335a38f30f2dbf6398aa"
+      "bytes": 11063,
+      "sha256": "6efc3eac82ca20fbe07d93763730d51ed2a3eb38bf8259ecc473f4d2e0b65447"
     },
     "showcase/all/index.html.gz": {
-      "bytes": 11573,
-      "sha256": "617289438a718b2f0616273daa0c0e4f2435477ea190b014d7b90df152d7ec80"
+      "bytes": 12024,
+      "sha256": "aef19a0b2ac8e033778a41a7290732b4bab99a57d800460208fc48154c4b7420"
     },
     "showcase/catalog.json": {
-      "bytes": 156635,
-      "sha256": "c64fe0503b8a9c3da97ba37833e7581e4691bb239e6177f01f81b338fd3e1195"
+      "bytes": 158327,
+      "sha256": "a0a8d1369d5ce68b75f21f85e69d4efba164cef8289bb0a7b31f5c0158674bb8"
     },
     "showcase/catalog.json.br": {
-      "bytes": 21305,
-      "sha256": "d1ee92256f4a2190f80f97bbacb74b6682c5d668f114cd1ecf4552c422c09b5a"
+      "bytes": 21772,
+      "sha256": "20f27c8242767e3993d72fb120f721889e19c9873c1a6a905f9a93e06ba0189f"
     },
     "showcase/catalog.json.gz": {
-      "bytes": 23207,
-      "sha256": "eca82414f101ee780e94bce4da5d39d2b7aef670c5e581e01eb55a9a5a141872"
+      "bytes": 23691,
+      "sha256": "d900366904c1d9f60bc1ca2a8a64d772254f1dcebc1f45f8c93279f21dc5f61a"
     },
     "showcase/connected-buildings/index.html": {
       "bytes": 20174,
@@ -4719,16 +4723,16 @@
       "sha256": "95edaa7951cbda0c48854791c2700eb1414a4c66a2d6b3161d47716bbc75e96b"
     },
     "showcase/index.html": {
-      "bytes": 13982,
-      "sha256": "eb34381e5403c8b1b137e40fc84b8521f2522784d153e2641ba45035d760ec4d"
+      "bytes": 14042,
+      "sha256": "132a6ad5c671d98d8c8fd81474fcd7fc7b3dbaa0745b2bbca4449640dca985d3"
     },
     "showcase/index.html.br": {
-      "bytes": 3266,
-      "sha256": "6a08580dc0e895bbdb25faa8851036b8a63878b77dde576b491b90d3bc9fb202"
+      "bytes": 3279,
+      "sha256": "88c528a65ab5e0234d5878b2ec7c5af13ce3ddd8bd64c4f8e69b90304633492d"
     },
     "showcase/index.html.gz": {
-      "bytes": 3553,
-      "sha256": "95937ef13f7a4048887df837620a715f80a6a739d774dd03556f1d2dc65599ef"
+      "bytes": 3572,
+      "sha256": "3bf35ce36d03608d404578c15936792386c006d8125bff3827e53a53eba2dc15"
     },
     "showcase/infinite-worlds/index.html": {
       "bytes": 11462,
@@ -4767,16 +4771,16 @@
       "sha256": "49ffbea2fa0caf5be276ecfe788dc4fb506c71b53b45b699d4018539ae7e5841"
     },
     "showcase/smart-landscapes/index.html": {
-      "bytes": 19647,
-      "sha256": "558db20bfe0df0fa2de92fc882cdc790d5734c82f7fb2107efeb8211fe2c63b9"
+      "bytes": 21678,
+      "sha256": "84556506776faf47f8365a37ac5035b2fbbb23bed2411e18b562df6e2695bcf3"
     },
     "showcase/smart-landscapes/index.html.br": {
-      "bytes": 3815,
-      "sha256": "80f7fb07732162fe8ba04841f6760a7525b0c5be8db0d63d7a050cd382772ca6"
+      "bytes": 4269,
+      "sha256": "eb2d0314c32f2a2d2170a15acee2caf19da64a5ff64a9131e3cb51788599c789"
     },
     "showcase/smart-landscapes/index.html.gz": {
-      "bytes": 4144,
-      "sha256": "d1d502e75687f685089cafe1b80e36f0b0dd0abea1d3573d74eb5c9eefefa3d7"
+      "bytes": 4618,
+      "sha256": "bea1a22d8ee74f9fa0eabf35ffe037fd156c7b2ddc48c2c59a8a087d4e5c6d32"
     },
     "site.webmanifest": {
       "bytes": 1049,
@@ -4898,17 +4902,21 @@
       "bytes": 227490,
       "sha256": "91b9b8cbd025e5274adbf2d94b506d5e343397a1078ad576981298f0ee977b78"
     },
+    "templates/film-glade-floating-9x16.scene": {
+      "bytes": 54438,
+      "sha256": "c1eda8b5bf00da4ab462205c3f7e06f8ae66036f87af04ae23baae808fefa665"
+    },
     "templates/film-glade-floating.scene": {
-      "bytes": 33426,
-      "sha256": "b62f2a6866398fcdb081b2b1ff2dfdff2b5495ed5cfde26050f1c7a57af697a2"
+      "bytes": 54546,
+      "sha256": "aae5ae0ff02492b206247f2c4327840c46c7f4e127f36e7c580eb57a111ba0b6"
     },
     "templates/film-glade-forest.scene": {
       "bytes": 33959,
       "sha256": "4388eae6ccfc5a6d980b786f7f31781199e572fa0b3d197984309d31bc9d9655"
     },
     "templates/film-glade-levels.scene": {
-      "bytes": 36475,
-      "sha256": "edf7da2c66f5195e5472d5f4d3631876532c4887788a80eeeb785e60343f9dba"
+      "bytes": 36621,
+      "sha256": "f708358d6096b0d794ee7f0cc676285ddf4783c2ed68f457782179f95deab0ab"
     },
     "templates/film-glade-paths.scene": {
       "bytes": 262462,
@@ -4963,16 +4971,16 @@
       "sha256": "9c5955fc99a60b8f6dee6cf582c4420d91e1b3e2a201f532c91e2cbdfce7fa51"
     },
     "tutorial-view/index.html": {
-      "bytes": 84863,
-      "sha256": "e6a815318c0ffe728078a5ab52682dc98601bf80a040ba5a00724cecbd4d7e5e"
+      "bytes": 84017,
+      "sha256": "bb1a77fe24b9f9752a8811950360074a8240926829a29ee7b2608b282ba2af9f"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 25591,
-      "sha256": "b40a532334661e4be8c59393f1196f648b7f0872c2362720bdc0a816dcd6ff04"
+      "bytes": 25331,
+      "sha256": "ec5c6a6df159758a120618d54aa4abdc631bd2341347b87aec7c41167e0c9de5"
     },
     "tutorial-view/index.html.gz": {
-      "bytes": 26928,
-      "sha256": "a68e2df8ca80c3e2ac7c40c2b14bf32aeca7e81938b977c3d4dfb61e9cfb0a6b"
+      "bytes": 26630,
+      "sha256": "a20958f94bc2d47c880312d2558d78f18cf742e7bd44f4a1f70b92295799d7ed"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 21582,
@@ -5288,7 +5296,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "2d156fd414a05d125d7d67048debec82529ca8c311b73a8ffb13c3579ed66f50"
+      "sha256": "0d097c95688d19acb6f9ee55fd364b0158efc0c3c6076cefc7ab7f060fe20ae4"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,

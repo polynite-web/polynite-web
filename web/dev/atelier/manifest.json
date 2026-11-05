@@ -586,6 +586,31 @@
       "video": "media/star-veyland-20261023-141528-portrait.mp4",
       "poster": "media/star-veyland-20261023-141528-portrait.jpg",
       "scene": "media/star-veyland-20261023-141528-portrait.scene"
+    },
+    {
+      "id": "floating-islands-20261105",
+      "title": "Floating Islands : un monde construit en une phrase",
+      "summary": [
+        "Des îles suspendues à plusieurs hauteurs : la roche monte, l'escalier se forme, l'herbe et les arbres poussent, les lianes tombent, les ponts de corde les relient.",
+        "Film de 43 s, chaque étape est un appel MCP."
+      ],
+      "note": "Affiche extraite du film à 39 s.",
+      "collection": "cottage",
+      "captured_at": "2026-11-05T07:16:00-05:00",
+      "published_at": "",
+      "revision": "moteur 23b52195e",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "floating-islands",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 43.47,
+      "bytes": 18225918,
+      "sha256": "57c44b73980554fcbc8208fe2a448eb990b6a5d774605cd05ba1b2172ffa6b39",
+      "video": "media/floating-islands-20261105.mp4",
+      "poster": "media/floating-islands-20261105.jpg",
+      "scene": "media/floating-islands-20261105.scene"
     }
   ]
 }
