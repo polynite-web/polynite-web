@@ -15,7 +15,7 @@ if not exist "%STUDIO%" (
    set CODE=2
    goto end
 )
-"%STUDIO%" --export "%SCENE%" --out "%OUT%" --name Polyvoid --title "Polyvoid" --app polyvoid --icon "%~dp0polyvoid.ico" --version 1.0.0 --company "Polynite"
+"%STUDIO%" --export "%SCENE%" --out "%OUT%" --name Polyvoid --title "Polyvoid" --app polyvoid --icon "%~dp0polyvoid.ico" --version 1.0.0 --company "Polynite" --no-menu
 set CODE=%ERRORLEVEL%
 if not "%CODE%"=="0" echo The export failed, code %CODE%.
 

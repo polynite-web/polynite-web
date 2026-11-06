@@ -8,7 +8,7 @@
  const film=(command,extra={})=>call('scene.cinematic',{request:{command,...extra}});
  const idle=()=>{if(checking)throw Error('An example check is in progress. Wait for it to finish.');if(film('status').export?.active)throw Error('A recording is in progress. Wait for it to finish.');};
  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
- const scenePath=url=>new URL(location.href).pathname.split('/examples/')[0]+new URL(url,location.href).pathname;
+ const scenePath=url=>{const b=document.baseURI||location.href;return new URL(b).pathname.split('/examples/')[0]+new URL(url,b).pathname.replace('/showcase/data/','/examples/data/');};   /* (the base: the page is also served from /showcase/view, with a <base> on /examples/) */
  async function checkExample(){
   if(checking)return;idle();const saved=film('document',{expanded:true}),report=$('qa-report'),button=$('check-example'),checks=[];checking=true;button.disabled=true;report.hidden=false;report.textContent='Checking…';
   try{
