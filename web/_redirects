@@ -4,6 +4,9 @@
 /dev/models/* /models/:splat 200
 /rel/models/* /models/:splat 200
 /dev/atelier/media/* /atelier/media/:splat 200
+/showcase/data/* /examples/data/:splat 200
+/dev/showcase/data/* /dev/examples/data/:splat 200
+/rel/showcase/data/* /rel/examples/data/:splat 200
 /rel/atelier/media/* /atelier/media/:splat 200
 # Play together (Browser Host): play-join.html turns the path into ?play=&i= (Pages cannot fill a query); the app joins by itself. Kept near the top: Pages applies only about the first 100 rules.
 /play/* /play-join 200
