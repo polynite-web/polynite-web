@@ -28,8 +28,8 @@
         "poster": "https://polynite.io/atelier/media/star-veyland-20261023-141528-portrait.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#star-veyland",
-      "open": "https://polynite.io/examples/view.html?id=star-veyland",
-      "scene": "https://polynite.io/examples/data/star-veyland-v1.scene"
+      "open": "https://polynite.io/showcase/view?id=star-veyland",
+      "scene": "https://polynite.io/showcase/data/star-veyland-v1.scene"
     },
     {
       "id": "floating-islands",
@@ -58,8 +58,8 @@
         "poster": "https://polynite.io/atelier/media/floating-islands-20261106.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#floating-islands",
-      "open": "https://polynite.io/examples/view.html?id=floating-islands",
-      "scene": "https://polynite.io/examples/data/floating-islands-v1.scene"
+      "open": "https://polynite.io/showcase/view?id=floating-islands",
+      "scene": "https://polynite.io/showcase/data/floating-islands-v1.scene"
     },
     {
       "category": "Buildings that connect",
@@ -194,11 +194,11 @@
           "pointer shape and move"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=handle-temple-garden",
+      "open": "https://polynite.io/showcase/view?id=handle-temple-garden",
       "url": "https://explore.polynite.io/docs/recipes/handle-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/handle-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/handle-temple-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/handle-temple-garden-v1.scene",
+      "scene": "https://polynite.io/showcase/data/handle-temple-garden-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/handle-temple-garden/v1.recipes.json",
       "kind": "recipe",
       "recipe": "handle-temple-garden",
@@ -341,11 +341,11 @@
           "floor reflections"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=entry-temple-garden",
+      "open": "https://polynite.io/showcase/view?id=entry-temple-garden",
       "url": "https://explore.polynite.io/docs/recipes/entry-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/entry-temple-garden-v1.scene",
+      "scene": "https://polynite.io/showcase/data/entry-temple-garden-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/entry-temple-garden/v1.recipes.json",
       "kind": "recipe",
       "recipe": "entry-temple-garden",
@@ -480,11 +480,11 @@
           "floor reflections"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=entry-temple-gallery",
+      "open": "https://polynite.io/showcase/view?id=entry-temple-gallery",
       "url": "https://explore.polynite.io/docs/recipes/entry-temple-gallery/",
       "detail": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.md",
-      "scene": "https://polynite.io/examples/data/entry-temple-gallery-v1.scene",
+      "scene": "https://polynite.io/showcase/data/entry-temple-gallery-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/entry-temple-gallery/v1.recipes.json",
       "kind": "recipe",
       "recipe": "entry-temple-gallery",
@@ -617,11 +617,11 @@
           "floor reflections"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=entry-roof-workshop",
+      "open": "https://polynite.io/showcase/view?id=entry-roof-workshop",
       "url": "https://explore.polynite.io/docs/recipes/entry-roof-workshop/",
       "detail": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.md",
-      "scene": "https://polynite.io/examples/data/entry-roof-workshop-v1.scene",
+      "scene": "https://polynite.io/showcase/data/entry-roof-workshop-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/entry-roof-workshop/v1.recipes.json",
       "kind": "recipe",
       "recipe": "entry-roof-workshop",
@@ -753,11 +753,11 @@
           "exact offscreen PNG"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=linked-temple-garden",
+      "open": "https://polynite.io/showcase/view?id=linked-temple-garden",
       "url": "https://explore.polynite.io/docs/recipes/linked-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/linked-temple-garden-v1.scene",
+      "scene": "https://polynite.io/showcase/data/linked-temple-garden-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/linked-temple-garden/v1.recipes.json",
       "kind": "recipe",
       "recipe": "linked-temple-garden",
@@ -880,11 +880,11 @@
           "floor reflections"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=linked-temple-gallery",
+      "open": "https://polynite.io/showcase/view?id=linked-temple-gallery",
       "url": "https://explore.polynite.io/docs/recipes/linked-temple-gallery/",
       "detail": "https://explore.polynite.io/docs/recipes/data/linked-temple-gallery/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/linked-temple-gallery/v1.md",
-      "scene": "https://polynite.io/examples/data/linked-temple-gallery-v1.scene",
+      "scene": "https://polynite.io/showcase/data/linked-temple-gallery-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/linked-temple-gallery/v1.recipes.json",
       "kind": "recipe",
       "recipe": "linked-temple-gallery",
@@ -1005,11 +1005,11 @@
           "floor reflections"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=linked-roof-workshop",
+      "open": "https://polynite.io/showcase/view?id=linked-roof-workshop",
       "url": "https://explore.polynite.io/docs/recipes/linked-roof-workshop/",
       "detail": "https://explore.polynite.io/docs/recipes/data/linked-roof-workshop/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/linked-roof-workshop/v1.md",
-      "scene": "https://polynite.io/examples/data/linked-roof-workshop-v1.scene",
+      "scene": "https://polynite.io/showcase/data/linked-roof-workshop-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/linked-roof-workshop/v1.recipes.json",
       "kind": "recipe",
       "recipe": "linked-roof-workshop",
@@ -1155,11 +1155,11 @@
           "exact offscreen PNG"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=joined-temple-garden",
+      "open": "https://polynite.io/showcase/view?id=joined-temple-garden",
       "url": "https://explore.polynite.io/docs/recipes/joined-temple-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/joined-temple-garden-v1.scene",
+      "scene": "https://polynite.io/showcase/data/joined-temple-garden-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/joined-temple-garden/v1.recipes.json",
       "kind": "recipe",
       "recipe": "joined-temple-garden",
@@ -1293,11 +1293,11 @@
           "fresh runtime restore"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=joined-temple-hall",
+      "open": "https://polynite.io/showcase/view?id=joined-temple-hall",
       "url": "https://explore.polynite.io/docs/recipes/joined-temple-hall/",
       "detail": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.md",
-      "scene": "https://polynite.io/examples/data/joined-temple-hall-v1.scene",
+      "scene": "https://polynite.io/showcase/data/joined-temple-hall-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/joined-temple-hall/v1.recipes.json",
       "kind": "recipe",
       "recipe": "joined-temple-hall",
@@ -1423,11 +1423,11 @@
           "fresh runtime restore"
         ]
       },
-      "open": "https://polynite.io/examples/view.html?id=joined-roof-workshop",
+      "open": "https://polynite.io/showcase/view?id=joined-roof-workshop",
       "url": "https://explore.polynite.io/docs/recipes/joined-roof-workshop/",
       "detail": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.md",
-      "scene": "https://polynite.io/examples/data/joined-roof-workshop-v1.scene",
+      "scene": "https://polynite.io/showcase/data/joined-roof-workshop-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/joined-roof-workshop/v1.recipes.json",
       "kind": "recipe",
       "recipe": "joined-roof-workshop",
@@ -1467,8 +1467,8 @@
         "poster": "https://polynite.io/atelier/media/infinite-flight-20261017-075557-portrait.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#infinite-flight",
-      "open": "https://polynite.io/examples/view.html?id=infinite-flight",
-      "scene": "https://polynite.io/examples/data/infinite-flight-v2.scene"
+      "open": "https://polynite.io/showcase/view?id=infinite-flight",
+      "scene": "https://polynite.io/showcase/data/infinite-flight-v2.scene"
     },
     {
       "id": "cozy-autumn-night",
@@ -1499,8 +1499,8 @@
         "poster": "https://polynite.io/atelier/media/cozy-autumn-night-20261103.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#cozy-autumn-night",
-      "open": "https://polynite.io/examples/view.html?id=cozy-autumn-night",
-      "scene": "https://polynite.io/examples/data/cozy-autumn-night-v2.scene"
+      "open": "https://polynite.io/showcase/view?id=cozy-autumn-night",
+      "scene": "https://polynite.io/showcase/data/cozy-autumn-night-v2.scene"
     },
     {
       "id": "nested-temple",
@@ -1588,11 +1588,11 @@
         "video": "https://explore.polynite.io/docs/recipes/media/nested-temple-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/nested-temple-v1.jpg"
       },
-      "open": "https://polynite.io/examples/view.html?id=nested-temple",
+      "open": "https://polynite.io/showcase/view?id=nested-temple",
       "url": "https://explore.polynite.io/docs/recipes/nested-temple/",
       "detail": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.md",
-      "scene": "https://polynite.io/examples/data/nested-temple-v1.scene",
+      "scene": "https://polynite.io/showcase/data/nested-temple-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/nested-temple/v1.recipes.json",
       "kind": "recipe",
       "recipe": "nested-temple",
@@ -1704,11 +1704,11 @@
         ],
         "limits": "Other browsers and devices require their own verification."
       },
-      "open": "https://polynite.io/examples/view.html?id=modular-facade",
+      "open": "https://polynite.io/showcase/view?id=modular-facade",
       "url": "https://explore.polynite.io/docs/recipes/modular-facade/",
       "detail": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.md",
-      "scene": "https://polynite.io/examples/data/modular-facade-v1.scene",
+      "scene": "https://polynite.io/showcase/data/modular-facade-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/modular-facade/v1.recipes.json",
       "kind": "recipe",
       "recipe": "modular-facade",
@@ -1823,11 +1823,11 @@
         ],
         "limits": "Other browsers and devices require their own verification."
       },
-      "open": "https://polynite.io/examples/view.html?id=swept-arcade",
+      "open": "https://polynite.io/showcase/view?id=swept-arcade",
       "url": "https://explore.polynite.io/docs/recipes/swept-arcade/",
       "detail": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.md",
-      "scene": "https://polynite.io/examples/data/swept-arcade-v1.scene",
+      "scene": "https://polynite.io/showcase/data/swept-arcade-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/swept-arcade/v1.recipes.json",
       "kind": "recipe",
       "recipe": "swept-arcade",
@@ -1940,11 +1940,11 @@
         ],
         "limits": "Other browsers and devices require their own verification."
       },
-      "open": "https://polynite.io/examples/view.html?id=profile-studio",
+      "open": "https://polynite.io/showcase/view?id=profile-studio",
       "url": "https://explore.polynite.io/docs/recipes/profile-studio/",
       "detail": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.md",
-      "scene": "https://polynite.io/examples/data/profile-studio-v1.scene",
+      "scene": "https://polynite.io/showcase/data/profile-studio-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/profile-studio/v1.recipes.json",
       "kind": "recipe",
       "recipe": "profile-studio",
@@ -2197,11 +2197,11 @@
         "video": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v2.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/japanese-garden-v2.jpg"
       },
-      "open": "https://polynite.io/examples/view.html?id=japanese-garden",
+      "open": "https://polynite.io/showcase/view?id=japanese-garden",
       "url": "https://explore.polynite.io/docs/recipes/japanese-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.md",
-      "scene": "https://polynite.io/examples/data/japanese-garden-v2.scene",
+      "scene": "https://polynite.io/showcase/data/japanese-garden-v2.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-garden/v2.recipes.json",
       "kind": "recipe",
       "recipe": "japanese-garden",
@@ -2302,11 +2302,11 @@
         "video": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/japanese-lotus-v1.jpg"
       },
-      "open": "https://polynite.io/examples/view.html?id=japanese-lotus",
+      "open": "https://polynite.io/showcase/view?id=japanese-lotus",
       "url": "https://explore.polynite.io/docs/recipes/japanese-lotus/",
       "detail": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.md",
-      "scene": "https://polynite.io/examples/data/japanese-lotus-v1.scene",
+      "scene": "https://polynite.io/showcase/data/japanese-lotus-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-lotus/v1.recipes.json",
       "kind": "recipe",
       "recipe": "japanese-lotus",
@@ -2406,11 +2406,11 @@
         "video": "https://explore.polynite.io/docs/recipes/media/japanese-passage-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/japanese-passage-v1.jpg"
       },
-      "open": "https://polynite.io/examples/view.html?id=japanese-passage",
+      "open": "https://polynite.io/showcase/view?id=japanese-passage",
       "url": "https://explore.polynite.io/docs/recipes/japanese-passage/",
       "detail": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.md",
-      "scene": "https://polynite.io/examples/data/japanese-passage-v1.scene",
+      "scene": "https://polynite.io/showcase/data/japanese-passage-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-passage/v1.recipes.json",
       "kind": "recipe",
       "recipe": "japanese-passage",
@@ -2510,11 +2510,11 @@
         "video": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/japanese-bridge-v1.jpg"
       },
-      "open": "https://polynite.io/examples/view.html?id=japanese-bridge",
+      "open": "https://polynite.io/showcase/view?id=japanese-bridge",
       "url": "https://explore.polynite.io/docs/recipes/japanese-bridge/",
       "detail": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.md",
-      "scene": "https://polynite.io/examples/data/japanese-bridge-v1.scene",
+      "scene": "https://polynite.io/showcase/data/japanese-bridge-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-bridge/v1.recipes.json",
       "kind": "recipe",
       "recipe": "japanese-bridge",
@@ -2616,11 +2616,11 @@
         "video": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1.mp4",
         "poster": "https://explore.polynite.io/docs/recipes/media/japanese-pavilion-v1.jpg"
       },
-      "open": "https://polynite.io/examples/view.html?id=japanese-pavilion",
+      "open": "https://polynite.io/showcase/view?id=japanese-pavilion",
       "url": "https://explore.polynite.io/docs/recipes/japanese-pavilion/",
       "detail": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.md",
-      "scene": "https://polynite.io/examples/data/japanese-pavilion-v1.scene",
+      "scene": "https://polynite.io/showcase/data/japanese-pavilion-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/japanese-pavilion/v1.recipes.json",
       "kind": "recipe",
       "recipe": "japanese-pavilion",
@@ -2657,8 +2657,8 @@
         "poster": "https://polynite.io/atelier/media/refuge-20261014-142504-living.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#refuge",
-      "open": "https://polynite.io/examples/view.html?id=refuge",
-      "scene": "https://polynite.io/examples/data/refuge-v1.scene"
+      "open": "https://polynite.io/showcase/view?id=refuge",
+      "scene": "https://polynite.io/showcase/data/refuge-v1.scene"
     },
     {
       "id": "keeper-house",
@@ -2685,8 +2685,8 @@
         "poster": "https://polynite.io/atelier/media/keeper-20261014-142514-living.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#keeper-house",
-      "open": "https://polynite.io/examples/view.html?id=keeper-house",
-      "scene": "https://polynite.io/examples/data/keeper-house-v1.scene"
+      "open": "https://polynite.io/showcase/view?id=keeper-house",
+      "scene": "https://polynite.io/showcase/data/keeper-house-v1.scene"
     },
     {
       "id": "morning-mill",
@@ -2713,8 +2713,8 @@
         "poster": "https://polynite.io/atelier/media/mill-20261014-142451-living.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#morning-mill",
-      "open": "https://polynite.io/examples/view.html?id=morning-mill",
-      "scene": "https://polynite.io/examples/data/morning-mill-v1.scene"
+      "open": "https://polynite.io/showcase/view?id=morning-mill",
+      "scene": "https://polynite.io/showcase/data/morning-mill-v1.scene"
     },
     {
       "id": "terrain-pavilion",
@@ -2782,11 +2782,11 @@
       "seed": 17,
       "duration": 6,
       "edit_parameter": "floor_clearance",
-      "open": "https://polynite.io/examples/view.html?id=terrain-pavilion",
+      "open": "https://polynite.io/showcase/view?id=terrain-pavilion",
       "url": "https://explore.polynite.io/docs/recipes/terrain-pavilion/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.md",
-      "scene": "https://polynite.io/examples/data/terrain-pavilion-v1.scene",
+      "scene": "https://polynite.io/showcase/data/terrain-pavilion-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-pavilion/v1.recipes.json",
       "kind": "recipe",
       "recipe": "terrain-pavilion",
@@ -2860,11 +2860,11 @@
       "seed": 17,
       "duration": 4,
       "edit_parameter": "opening",
-      "open": "https://polynite.io/examples/view.html?id=flowers-in-motion",
+      "open": "https://polynite.io/showcase/view?id=flowers-in-motion",
       "url": "https://explore.polynite.io/docs/recipes/flowers-in-motion/",
       "detail": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.md",
-      "scene": "https://polynite.io/examples/data/flowers-in-motion-v1.scene",
+      "scene": "https://polynite.io/showcase/data/flowers-in-motion-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/flowers-in-motion/v1.recipes.json",
       "kind": "recipe",
       "recipe": "flowers-in-motion",
@@ -2964,11 +2964,11 @@
         "tested_at": "2026-10-19",
         "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
       },
-      "open": "https://polynite.io/examples/view.html?id=terrain-linked-path",
+      "open": "https://polynite.io/showcase/view?id=terrain-linked-path",
       "url": "https://explore.polynite.io/docs/recipes/terrain-linked-path/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-path/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-path/v1.md",
-      "scene": "https://polynite.io/examples/data/terrain-linked-path-v1.scene",
+      "scene": "https://polynite.io/showcase/data/terrain-linked-path-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-linked-path/v1.recipes.json",
       "kind": "recipe",
       "recipe": "terrain-linked-path",
@@ -3069,11 +3069,11 @@
         "tested_at": "2026-10-19",
         "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
       },
-      "open": "https://polynite.io/examples/view.html?id=terrain-linked-bridge",
+      "open": "https://polynite.io/showcase/view?id=terrain-linked-bridge",
       "url": "https://explore.polynite.io/docs/recipes/terrain-linked-bridge/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-bridge/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-bridge/v1.md",
-      "scene": "https://polynite.io/examples/data/terrain-linked-bridge-v1.scene",
+      "scene": "https://polynite.io/showcase/data/terrain-linked-bridge-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-linked-bridge/v1.recipes.json",
       "kind": "recipe",
       "recipe": "terrain-linked-bridge",
@@ -3210,11 +3210,11 @@
         "tested_at": "2026-10-19",
         "engine_sha256": "bb4a1dc891dfb8216331a3a4576a2a73744b39e78f99229772b39dee987e4201"
       },
-      "open": "https://polynite.io/examples/view.html?id=terrain-linked-garden",
+      "open": "https://polynite.io/showcase/view?id=terrain-linked-garden",
       "url": "https://explore.polynite.io/docs/recipes/terrain-linked-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/terrain-linked-garden-v1.scene",
+      "scene": "https://polynite.io/showcase/data/terrain-linked-garden-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/terrain-linked-garden/v1.recipes.json",
       "kind": "recipe",
       "recipe": "terrain-linked-garden",
@@ -3315,11 +3315,11 @@
         "tested_at": "2026-10-19",
         "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
       },
-      "open": "https://polynite.io/examples/view.html?id=footprint-placement",
+      "open": "https://polynite.io/showcase/view?id=footprint-placement",
       "url": "https://explore.polynite.io/docs/recipes/footprint-placement/",
       "detail": "https://explore.polynite.io/docs/recipes/data/footprint-placement/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/footprint-placement/v1.md",
-      "scene": "https://polynite.io/examples/data/footprint-placement-v1.scene",
+      "scene": "https://polynite.io/showcase/data/footprint-placement-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/footprint-placement/v1.recipes.json",
       "kind": "recipe",
       "recipe": "footprint-placement",
@@ -3441,11 +3441,11 @@
         "tested_at": "2026-10-19",
         "engine_sha256": "3e3bf0e6b6bdc2bc85008fdc9d2f81bed7bf8c7f78a36b0fd80004397910b181"
       },
-      "open": "https://polynite.io/examples/view.html?id=clearance-japanese-garden",
+      "open": "https://polynite.io/showcase/view?id=clearance-japanese-garden",
       "url": "https://explore.polynite.io/docs/recipes/clearance-japanese-garden/",
       "detail": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.json",
       "markdown": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.md",
-      "scene": "https://polynite.io/examples/data/clearance-japanese-garden-v1.scene",
+      "scene": "https://polynite.io/showcase/data/clearance-japanese-garden-v1.scene",
       "recipes": "https://explore.polynite.io/docs/recipes/data/clearance-japanese-garden/v1.recipes.json",
       "kind": "recipe",
       "recipe": "clearance-japanese-garden",
