@@ -3236,12 +3236,12 @@
     },
     {
       "id": "floating-islands",
-      "atelier": "floating-islands-20261105",
+      "atelier": "floating-islands-20261106",
       "title": "Floating Islands: a world built from one sentence",
       "category": "Living landscapes",
       "environment": "Sky",
-      "summary": "Rock rises out of the mist at different heights, stairs form step by step, grass and trees grow, vines fall and rope bridges join the islands. Every stage is an MCP call you can open and change.",
-      "prompt": "Build floating islands in Polynite through MCP. Start with scene.controls {command:'terrace_style', base:'floating', cliff:'voronoi', vines:true, bare:true}. Raise islands at different heights with terrace_add {x, z, w, d, level, base, edge:'cliff'}, put a higher level on one of them to get its stairs, then call terrace_grow {over:3} so grass and trees grow. Join them with build.bridge {id, points, width:1.1, rise:0.55, align:'none', style:'rope'}.\n\nReference: https://explore.polynite.io/showcase/#floating-islands",
+      "summary": "Rock rises out of the mist at different heights, stairs form step by step, grass and trees grow, vines come down and rope bridges join the islands. Every stage is an MCP call you can open and change.",
+      "prompt": "Build floating islands in Polynite through MCP. Start with scene.controls {command:'terrace_style', base:'floating', cliff:'voronoi', vines:true, bare:true}. Raise islands at different heights with terrace_add {x, z, w, d, level, base, edge:'cliff'}, put a higher level on one of them to get its stairs, then call terrace_grow {over:3, vines:false} so grass and trees grow, and terrace_vines {length:1, over:4} so the vines come down. Join them with build.bridge {id, points, width:1.1, rise:0.55, align:'none', style:'rope'}.\n\nReference: https://explore.polynite.io/showcase/#floating-islands",
       "tags": [
         "Floating islands",
         "Procedural",
@@ -3255,10 +3255,10 @@
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "8ef383795cabf9551e6edcb37c0f87140304d3d1d247d1dfb1a4d0357def0159",
+      "scene_sha256": "7dafa3bd5a9dd954d6f1daac27ca8996c62f8a60e5a56499939c5e5ca4f75ebc",
       "media": {
-        "video": "https://polynite.io/atelier/media/floating-islands-20261105.mp4",
-        "poster": "https://polynite.io/atelier/media/floating-islands-20261105.jpg"
+        "video": "https://polynite.io/atelier/media/floating-islands-20261106.mp4",
+        "poster": "https://polynite.io/atelier/media/floating-islands-20261106.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#floating-islands",
       "open": "https://polynite.io/examples/view.html?id=floating-islands",
