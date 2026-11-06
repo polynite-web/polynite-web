@@ -21,12 +21,12 @@
     },
     {
       "id": "floating-islands",
-      "atelier": "floating-islands-20261105",
+      "atelier": "floating-islands-20261106",
       "title": "Floating Islands: a world built from one sentence",
       "category": "Living landscapes",
       "environment": "Sky",
-      "summary": "Rock rises out of the mist at different heights, stairs form step by step, grass and trees grow, vines fall and rope bridges join the islands. Every stage is an MCP call you can open and change.",
-      "prompt": "Build floating islands in Polynite through MCP. Start with scene.controls {command:'terrace_style', base:'floating', cliff:'voronoi', vines:true, bare:true}. Raise islands at different heights with terrace_add {x, z, w, d, level, base, edge:'cliff'}, put a higher level on one of them to get its stairs, then call terrace_grow {over:3} so grass and trees grow. Join them with build.bridge {id, points, width:1.1, rise:0.55, align:'none', style:'rope'}.",
+      "summary": "Rock rises out of the mist at different heights, stairs form step by step, grass and trees grow, vines come down and rope bridges join the islands. Every stage is an MCP call you can open and change.",
+      "prompt": "Build floating islands in Polynite through MCP. Start with scene.controls {command:'terrace_style', base:'floating', cliff:'voronoi', vines:true, bare:true}. Raise islands at different heights with terrace_add {x, z, w, d, level, base, edge:'cliff'}, put a higher level on one of them to get its stairs, then call terrace_grow {over:3, vines:false} so grass and trees grow, and terrace_vines {length:1, over:4} so the vines come down. Join them with build.bridge {id, points, width:1.1, rise:0.55, align:'none', style:'rope'}.",
       "tags": [
         "Floating islands",
         "Procedural",
