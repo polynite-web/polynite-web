@@ -1,7 +1,7 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0552",
+  "version": "v0553",
   "sourceVersion": "v0547",
   "engineBase": "engine/d24056c8f61f79fd7a1fedf1524fd6a847e6fe6b7c030142abc906a1a6290f4c/",
   "engineHistory": [
@@ -72,15 +72,15 @@
     },
     "app.html": {
       "bytes": 83849,
-      "sha256": "74217af784b2b2771b0d57dec244cfc448902c34d3a153cf2d5111d23d8aee93"
+      "sha256": "5e4ca128818cbbd247e5906d4917210bc2c1aac9beefd88c945fd3232d3fcf7d"
     },
     "app.html.br": {
       "bytes": 25255,
-      "sha256": "2500450a58de4b5d697edf3529581500ea860c74922d31850292908c146934e3"
+      "sha256": "ffe0b9b2571abdb1ae701a3d68a1da43a08e0d5b14f8824a4c2fd6b53489b97c"
     },
     "app.html.gz": {
       "bytes": 26564,
-      "sha256": "30c4f3a4e07b1a153538654ba9fd2c16f4337e71d37221eab78ed7c14f8a8149"
+      "sha256": "9e7247ad7f8a34b721a6d0c570d7c1387e01b571839077959c7f34ba29e64b9f"
     },
     "app.js": {
       "bytes": 351690,
@@ -4348,15 +4348,15 @@
     },
     "examples/runtime/index.html": {
       "bytes": 84015,
-      "sha256": "4940ca686c4f43fbda2c019c574e674e233cd761de5a9457ceed23c6fb4b8629"
+      "sha256": "1f91baf3593ffff5b8a4d45c79cec551a1244e263f152261f5f77ebbb5f267fa"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 25330,
-      "sha256": "a465cc57e9e2d86b6e6a674e1c0b04220f640a0999ec42e1e396aba8d2e641be"
+      "bytes": 25331,
+      "sha256": "1b6ff106bf065d062317b82a4da820b4aef96a058ceeb9307f39ef75a19e4310"
     },
     "examples/runtime/index.html.gz": {
       "bytes": 26632,
-      "sha256": "785bd31e659d24ed118ef949b3e7ec2875fc6fe2c4c778ff4f0380f17f5aeb5f"
+      "sha256": "b889e5b277da6afdcbfa080bacd54f501fa9800c778ea4711bbff07d9aa5d5d5"
     },
     "examples/view.css": {
       "bytes": 2690,
@@ -4412,15 +4412,15 @@
     },
     "index.html": {
       "bytes": 83849,
-      "sha256": "74217af784b2b2771b0d57dec244cfc448902c34d3a153cf2d5111d23d8aee93"
+      "sha256": "5e4ca128818cbbd247e5906d4917210bc2c1aac9beefd88c945fd3232d3fcf7d"
     },
     "index.html.br": {
       "bytes": 25255,
-      "sha256": "2500450a58de4b5d697edf3529581500ea860c74922d31850292908c146934e3"
+      "sha256": "ffe0b9b2571abdb1ae701a3d68a1da43a08e0d5b14f8824a4c2fd6b53489b97c"
     },
     "index.html.gz": {
       "bytes": 26564,
-      "sha256": "30c4f3a4e07b1a153538654ba9fd2c16f4337e71d37221eab78ed7c14f8a8149"
+      "sha256": "9e7247ad7f8a34b721a6d0c570d7c1387e01b571839077959c7f34ba29e64b9f"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -4723,16 +4723,16 @@
       "sha256": "0341ea8c0ad479d357d46aca0ad897d7f8a34b3c703737afe7311a029b3de9b0"
     },
     "showcase/index.html": {
-      "bytes": 13687,
-      "sha256": "3cb9994108c35c9279d2e37b721e990ebd26c7a9f3e3996e8aa4957636c63845"
+      "bytes": 14387,
+      "sha256": "0000444dd8953b8576179d4397f8f21e69f7bc204e3a74475856be9f3abccdc7"
     },
     "showcase/index.html.br": {
-      "bytes": 3284,
-      "sha256": "57bf6a77823ddfb5eaf9de77e7f63adef4843dfec27431f8512069600d4ca9a6"
+      "bytes": 3358,
+      "sha256": "b78b39c730140f4219b7518d23c9fe967d56573f53de861a12912156ab5665d0"
     },
     "showcase/index.html.gz": {
-      "bytes": 3579,
-      "sha256": "e2f2c9ed6110cb6afa3ec5384aaac0d923608cc631d80aa8bf3359fdafa29c02"
+      "bytes": 3661,
+      "sha256": "220b78d81cdde9fe0e80e262d634ed38fbb9984d43aae5083c54a1c33dcd5e6a"
     },
     "showcase/infinite-worlds/index.html": {
       "bytes": 11452,
@@ -4984,15 +4984,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 84015,
-      "sha256": "4940ca686c4f43fbda2c019c574e674e233cd761de5a9457ceed23c6fb4b8629"
+      "sha256": "1f91baf3593ffff5b8a4d45c79cec551a1244e263f152261f5f77ebbb5f267fa"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 25330,
-      "sha256": "a465cc57e9e2d86b6e6a674e1c0b04220f640a0999ec42e1e396aba8d2e641be"
+      "bytes": 25331,
+      "sha256": "1b6ff106bf065d062317b82a4da820b4aef96a058ceeb9307f39ef75a19e4310"
     },
     "tutorial-view/index.html.gz": {
       "bytes": 26632,
-      "sha256": "785bd31e659d24ed118ef949b3e7ec2875fc6fe2c4c778ff4f0380f17f5aeb5f"
+      "sha256": "b889e5b277da6afdcbfa080bacd54f501fa9800c778ea4711bbff07d9aa5d5d5"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 21582,
@@ -5308,7 +5308,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "d1a2bc490fc6d216cff0eac836e3603131736dcab383bbf27484ce2c7377fb11"
+      "sha256": "23fcf24332d848ec7ccd6d49b19fcca319feb3971ece64b37ff05f590385c968"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
