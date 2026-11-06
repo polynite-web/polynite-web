@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "featured": "star-veyland",
+  "featured": "floating-islands",
   "items": [
     {
       "id": "star-veyland",
@@ -403,8 +403,8 @@
     }
   ],
   "spotlight": {
-    "title": "Infinite worlds",
-    "text": "Fly in any direction and the world keeps going: sea, cliffs, forests and mountains, generated on your device from a seed. Change the seed for another world, or shape it through MCP."
+    "title": "Floating Islands",
+    "text": "One sentence, a whole world: rock rises out of the mist at different heights, stairs form, grass and trees grow, vines come down and rope bridges join the islands. Every stage is one MCP call you can open and change."
   },
   "collections": [
     {
