@@ -1,0 +1,227 @@
+{
+ "what": "A half-timbered town house (colombages): plaster framed in dark oak on a stone foot, two storeys, a steep gable roof, windows on both floors, a door, a chimney. Front = face 0.",
+ "params": {
+  "length": {
+   "default": 6.0,
+   "min": 4.6,
+   "max": 8.0
+  },
+  "width": {
+   "default": 4.4,
+   "min": 3.8,
+   "max": 5.2
+  },
+  "height": {
+   "default": 4.4,
+   "min": 3.6,
+   "max": 5.2
+  },
+  "pitch": {
+   "default": 0.78,
+   "min": 0.68,
+   "max": 0.88
+  },
+  "wall_color": {
+   "default": [
+    0.95,
+    0.9,
+    0.78
+   ],
+   "choices": [
+    [
+     0.95,
+     0.9,
+     0.78
+    ],
+    [
+     0.93,
+     0.8,
+     0.56
+    ],
+    [
+     0.9,
+     0.88,
+     0.84
+    ],
+    [
+     0.86,
+     0.66,
+     0.5
+    ]
+   ]
+  },
+  "roof_color": {
+   "default": [
+    0.62,
+    0.3,
+    0.22
+   ],
+   "choices": [
+    [
+     0.62,
+     0.3,
+     0.22
+    ],
+    [
+     0.5,
+     0.26,
+     0.2
+    ],
+    [
+     0.34,
+     0.38,
+     0.46
+    ],
+    [
+     0.56,
+     0.36,
+     0.26
+    ]
+   ]
+  },
+  "paint": {
+   "default": [
+    0.22,
+    0.34,
+    0.5
+   ],
+   "choices": [
+    [
+     0.22,
+     0.34,
+     0.5
+    ],
+    [
+     0.2,
+     0.33,
+     0.24
+    ],
+    [
+     0.55,
+     0.2,
+     0.16
+    ]
+   ]
+  }
+ },
+ "ops": [
+  {
+   "command": "build.shape",
+   "id": "$id",
+   "shape": "rectangle",
+   "center": [
+    0,
+    0
+   ],
+   "length": "$length",
+   "width": "$width",
+   "yaw": 0,
+   "height": "$height",
+   "thickness": 0.36,
+   "style": "timber",
+   "color": "$wall_color",
+   "trim": [
+    0.26,
+    0.17,
+    0.11
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.roof",
+   "on": "$id",
+   "height_01": "$pitch",
+   "eave_01": 0.32,
+   "profile_01": 0.55,
+   "ridge_01": 1,
+   "ridge_dir": "length",
+   "color": "$roof_color",
+   "ridge_color": [
+    0.42,
+    0.2,
+    0.14
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "door",
+   "face": 0,
+   "at": 0.66,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 0,
+   "at": 0.26,
+   "rank": 1,
+   "sill": 0.9,
+   "height": 0.95,
+   "shutters": true,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 0,
+   "at": 0.26,
+   "rank": 1,
+   "sill": 2.9,
+   "height": 0.85,
+   "box": true,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 0,
+   "at": 0.68,
+   "rank": 1,
+   "sill": 2.9,
+   "height": 0.85,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 2,
+   "at": 0.5,
+   "rank": 1,
+   "sill": 2.9,
+   "height": 0.85,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 2,
+   "at": 0.3,
+   "rank": 1,
+   "sill": 0.9,
+   "height": 0.95,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "chimney",
+   "face": 1,
+   "at": 0.5,
+   "rank": 1
+  },
+  {
+   "command": "build.dress",
+   "on": "$id",
+   "ivy": 0.15,
+   "flowers": 0.45,
+   "pots": 0.5,
+   "seed": "$seed"
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+ "what": "A square stone keep: high windows, a door, a hipped slate roof, a chimney, a little ivy.",
+ "params": {
+  "length": {
+   "default": 5.2,
+   "min": 4.6,
+   "max": 6
+  },
+  "width": {
+   "default": 4.4,
+   "min": 4,
+   "max": 5
+  },
+  "height": {
+   "default": 7.5,
+   "min": 6.5,
+   "max": 8.5
+  }
+ },
+ "ops": [
+  {
+   "command": "build.shape",
+   "id": "$id",
+   "shape": "rectangle",
+   "center": [
+    0,
+    0
+   ],
+   "length": "$length",
+   "width": "$width",
+   "height": "$height",
+   "thickness": 0.7,
+   "style": "stone",
+   "color": [
+    0.8,
+    0.76,
+    0.68
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.roof",
+   "on": "$id",
+   "height_01": 0.62,
+   "eave_01": 0.2,
+   "profile_01": 0.55,
+   "ridge_01": 0.35,
+   "color": [
+    0.33,
+    0.37,
+    0.44
+   ],
+   "ridge_color": [
+    0.42,
+    0.2,
+    0.15
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "door",
+   "face": 0,
+   "at": 0.5,
+   "color": [
+    0.36,
+    0.22,
+    0.12
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 0,
+   "at": 0.5,
+   "sill": 4.3,
+   "height": 1.1
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 2,
+   "at": 0.5,
+   "sill": 4.3,
+   "height": 1.1
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 1,
+   "at": 0.5,
+   "sill": 2.2,
+   "height": 1.0
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 3,
+   "at": 0.5,
+   "sill": 2.2,
+   "height": 1.0
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "chimney",
+   "face": 1,
+   "at": 0.25
+  },
+  {
+   "command": "build.dress",
+   "on": "$id",
+   "ivy": 0.25,
+   "seed": "$seed"
+  }
+ ]
+}

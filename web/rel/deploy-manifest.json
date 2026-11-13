@@ -1,13 +1,13 @@
 {
   "format": 1,
   "tier": "release",
-  "version": "v0553",
-  "sourceVersion": "v0547",
-  "engineBase": "engine/d24056c8f61f79fd7a1fedf1524fd6a847e6fe6b7c030142abc906a1a6290f4c/",
+  "version": "v0590",
+  "sourceVersion": "v0589",
+  "engineBase": "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/",
   "engineHistory": [
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/",
     "engine/d24056c8f61f79fd7a1fedf1524fd6a847e6fe6b7c030142abc906a1a6290f4c/",
-    "engine/f697b28f98cce2faee2a648acafd6d5a4aad558e391f65f346f40e49cb7aad06/",
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/"
+    "engine/f697b28f98cce2faee2a648acafd6d5a4aad558e391f65f346f40e49cb7aad06/"
   ],
   "files": {
     "404.html": {
@@ -23,8 +23,16 @@
       "sha256": "361523c67543e628e70ab00b3156a75c5a483d643815175a62a7fe0a08e1b0ee"
     },
     "Rc/defaults/app.json": {
-      "bytes": 511,
-      "sha256": "ff07cf853d248e6b4b0a03b3f536363b33efe4b22173a397690e87b7f81a8712"
+      "bytes": 515,
+      "sha256": "180e00dcf864da39f94253cc8a88c324c1a0ccd77dd7f0c63afc49b6909540db"
+    },
+    "Rc/defaults/app.json.br": {
+      "bytes": 219,
+      "sha256": "8159314e2a6e6f8503132524984954f409b2dd108523ef4a0629554904323bcb"
+    },
+    "Rc/defaults/app.json.gz": {
+      "bytes": 256,
+      "sha256": "db90b9d08bff2d711f2e4aaed41b659ed3b7f0f238a02a3f7b0d7aa519003769"
     },
     "Rc/font/legacy_clean.sdffont.json": {
       "bytes": 48563,
@@ -72,39 +80,39 @@
     },
     "app.html": {
       "bytes": 83851,
-      "sha256": "5bda1dcce2c1c94ae91376c45fa3fcf2adb2b435913af7b3ee7f7738dfd13d74"
+      "sha256": "6c760d0e8607c77fd80db92c71266c0ffcba4182e41295a75acf788a08883333"
     },
     "app.html.br": {
-      "bytes": 25258,
-      "sha256": "ebdbd7e008def2533b0fc5710cf6d5a5c88088c42a8327481f1c68df0be873d4"
+      "bytes": 25257,
+      "sha256": "6183d41fc469473eebef673d585b4c06be447204104cff14228a48e9c91843f5"
     },
     "app.html.gz": {
-      "bytes": 26565,
-      "sha256": "b175c1e2062eb9d6da0a3abd41b51d24bf292d3ec8fb14d1460350b125405209"
+      "bytes": 26563,
+      "sha256": "439a3dacb21141f4cafddebad50230bee9f13128da193c215c8ad4d53e218155"
     },
     "app.js": {
-      "bytes": 351690,
-      "sha256": "2f855113ea8fdeb9e752ec40afe36ede20d0e890d09aa15deb894929e0c3189d"
+      "bytes": 364027,
+      "sha256": "ed31694fc7fb6c0421a121c6f41a77bc973fc60a8fcc0af7695989d4e59234a3"
     },
     "app.js.br": {
-      "bytes": 82396,
-      "sha256": "9b6dcfcbf7724a5332e0057a7838aa0e0ed80ce19b66521b825bc55ca92ca84a"
+      "bytes": 85318,
+      "sha256": "dda25bd87ee1d65b1ca379b72e4e932693ce67e4174cafd758f50b4d4f5e4ccf"
     },
     "app.js.gz": {
-      "bytes": 88195,
-      "sha256": "6be229a2bffd85a921d7a941e5a5b350ea027a8ab3b25f800b656847eba20031"
+      "bytes": 91504,
+      "sha256": "79dbfd2a16d9bda460839c15bd306b5fd5632ed0faf021962fe5764111803d0b"
     },
     "app.wasm": {
-      "bytes": 8299138,
-      "sha256": "cd91ccbaf9d03096d175ef79b93e81eda8f1bff46bb9119399fbcfa0ff6dbc66"
+      "bytes": 9331097,
+      "sha256": "27b0c77f6e087ef6242d2dbe9a7bd85a77493d802d0a915d404328f471d19928"
     },
     "app.wasm.br": {
-      "bytes": 2750196,
-      "sha256": "5d751728d67fd1b38903af5a902efae99683ef025597bdafe778e201af2f3b23"
+      "bytes": 3110159,
+      "sha256": "20da078216828cb98d4bbdecf466997148efefca0495a49bcaf5449fd8145e77"
     },
     "app.wasm.gz": {
-      "bytes": 3235736,
-      "sha256": "cdb9db1be69ba3a458daf2cbc373137c43c75aec03b948ca8ad5b5e016a3bb20"
+      "bytes": 3638386,
+      "sha256": "47b8d3c3c2baa9309ce1f72b0985c8a348f41ccead6c62d6f40c1811219fb9dc"
     },
     "apps/dice.app.json": {
       "bytes": 1547,
@@ -323,12 +331,12 @@
       "sha256": "a3df6bbe47b15a04bcec9f039c1d14c9b12a862d59d49d2b75a1cc9c1f90d61b"
     },
     "apps/dice/v2.scene": {
-      "bytes": 78808,
-      "sha256": "de772f63e8c6fee5963e6725d895f77f4b28388c50c8db2bef0f79d678a98ad0"
+      "bytes": 81780,
+      "sha256": "92990d62419483798e5f352a9ca9a7a89b4bc0a8d90641fbc22bbc407e46163d"
     },
     "apps/dice/v3.scene": {
-      "bytes": 78826,
-      "sha256": "7637035ffdb6a5b673b1e977c8d0734dcacfa21345bda0b350b24e37577d8610"
+      "bytes": 81801,
+      "sha256": "28cb56ab995dd70473eac9d0ab92bf480a8d510f3d73f0102b41691eb21ebb06"
     },
     "assets/Polynod/1704a035-56ab-460c-9b9d-5da27169407d - Copy.png": {
       "bytes": 1229851,
@@ -831,40 +839,48 @@
       "sha256": "16f76885c33077eabde0af24beb43bfd9d951fb1dfc8f9d21698e4cabb2b15eb"
     },
     "demo/adaptive-garden.scene": {
-      "bytes": 191573,
-      "sha256": "6733e3356b45a749766dda1a6af209e86f92742b5d04bb9250fe86309a49ca58"
+      "bytes": 183789,
+      "sha256": "7a6d6fe5ed4232310af43c7db050ea91115b3bd4c20a9ee3c0031376f36fddfe"
     },
     "demo/atmospheres/README.md": {
-      "bytes": 6754,
-      "sha256": "c7dad8dd18cf25b1559a37b0a069da6e048db4710eec629a5f20c93764880fde"
+      "bytes": 6646,
+      "sha256": "5fd0da729e7f8b8dcc03f18d415cd8df1d127f0291e8232eb2f5135e16579499"
     },
     "demo/atmospheres/keeper-amber-283.scene": {
-      "bytes": 229152,
-      "sha256": "a9ef98dc58299b365f2a991abcd9568a730ec6779a1791d2ed355bd2a0f58db0"
+      "bytes": 217742,
+      "sha256": "e367f407351c6cd4a197442ffcce5bafdfbee9fb4fc4d48bd3d7be0f4c1e2af3"
     },
     "demo/atmospheres/mill-dawn-619.scene": {
-      "bytes": 231707,
-      "sha256": "ad5cd67dcbb6110f11a3879b950eed4576a612e1ce2dac1dc3f5154b1b8c10fe"
+      "bytes": 220144,
+      "sha256": "95db193bfd9098a14e753f10c77e2c4e3a24cc0161adcfc9e1a464a32e939043"
     },
     "demo/atmospheres/refuge-moonlit-137.scene": {
-      "bytes": 198672,
-      "sha256": "cd000cf9ba0dda92ab2ef190c837a79f04a52e79fa1480639712415d8fa3cdb0"
+      "bytes": 188948,
+      "sha256": "ce932d76a0f1160eb1aa0a3be3828346dd43ddd6870c8f1110a071bcc5834207"
     },
     "demo/brick_wall/README.md": {
-      "bytes": 705,
-      "sha256": "8cf969f819ef2f28e7bb1db961a0a7ef5246299887f771b8e49db35955d1858a"
+      "bytes": 716,
+      "sha256": "ce31cdcc1e042d6aef3daafac8a159c659f3e57a22e589aa1720f15a1ea05da2"
     },
     "demo/brick_wall/brick-wall-classic.scene": {
-      "bytes": 67155,
-      "sha256": "03b46a4c19af055d745c8075653cfd17756d6fb258e51ae59b494dabdba33ef0"
+      "bytes": 70011,
+      "sha256": "57b61deb65a81d60c31ac3834c2e9763295a0774ce638babed737b29ec48e132"
     },
     "demo/brick_wall/brick-wall.scene": {
       "bytes": 127456,
       "sha256": "82c2fcb26b9c9ae3a84d4dbb24877e32e7cfede238b09a20571dc65a6e2d6e77"
     },
+    "demo/companion-bestiary.scene": {
+      "bytes": 63046,
+      "sha256": "92fb9b5ca8767bf4d73f26656d12d6b4a39aa4e6c23403313ea5b84b18d3978b"
+    },
+    "demo/companion-motion-lab.scene": {
+      "bytes": 32374,
+      "sha256": "a62207f925e5b977b2cc9b09378096393f0f9dc2dd2db8c19448bf0deb53f747"
+    },
     "demo/devices/README.md": {
-      "bytes": 1136,
-      "sha256": "d8c0716d5adbf82f566b1f176b4787bda8e3fc5ee515e1a2f6a14e7906791df8"
+      "bytes": 1159,
+      "sha256": "c2d495f8f999141f4058286de093e3764192d7573098081758d38e7f35746001"
     },
     "demo/devices/smartphone.json": {
       "bytes": 7545,
@@ -891,8 +907,8 @@
       "sha256": "57f8dd279a917c079e50b0f6765b82fc95b8fa8030d59e1f8ea9c6aba393b9d3"
     },
     "demo/infinite/README.md": {
-      "bytes": 3134,
-      "sha256": "4607df80ed2a3350db19ad01d2018c0e8f5aad218acc0c750dbd71ebfb21d8d7"
+      "bytes": 3203,
+      "sha256": "6e342e0a7d8bdefa1e5eebe25ef3ce4a7ea5bbb4cfef184929c7610757e4f245"
     },
     "demo/infinite/pillar-hud.scene": {
       "bytes": 35095,
@@ -923,8 +939,8 @@
       "sha256": "45b6e829ed59bb63173c9d220f7cf7a34183bdc1dd3f7ef00791f7a8fdba46b8"
     },
     "demo/infinite/star-veyland.scene": {
-      "bytes": 240815,
-      "sha256": "5da49f69dd5ecab537a3a9c2e1978d30d0f5f3f839db87ccb7cf071f701b3389"
+      "bytes": 240599,
+      "sha256": "fd7ba2e7db570542d602715a17c62ada1cb440c4a98e7f9559be88cc7ba43c0a"
     },
     "demo/knot.glb": {
       "bytes": 10090356,
@@ -971,8 +987,8 @@
       "sha256": "a540f0dd0ab48a78e6ac53a2af86161ab73e13fa5eeed6f6b3589941c13b173c"
     },
     "demo/loop_house/loop-house.scene": {
-      "bytes": 807772,
-      "sha256": "cfaf731977debf0a5c4b535a4568896ad079a26918e9cd6d0c24da94261d0d61"
+      "bytes": 844442,
+      "sha256": "fa824771c9c4fee58b124b78bc38c971ade4288d8d37721de6facd649f58ec6c"
     },
     "demo/loop_house/rim-wood.patch.json": {
       "bytes": 922,
@@ -3870,29 +3886,29 @@
       "bytes": 2734,
       "sha256": "7a121cbb6c25c691c25888723f217285b64c4841eecbc27ee254881dc42ee70d"
     },
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.js": {
-      "bytes": 351690,
-      "sha256": "92f8ef3dad9d868ee8c04e7d497d31daa54926deb1c4803ff25251ee3a1334d5"
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/app.js": {
+      "bytes": 364027,
+      "sha256": "ed31694fc7fb6c0421a121c6f41a77bc973fc60a8fcc0af7695989d4e59234a3"
     },
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.js.br": {
-      "bytes": 82398,
-      "sha256": "3d80a500e0f6b103c06c700fcde59f5c597e2dad56ac87b390aa06100e8d5b35"
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/app.js.br": {
+      "bytes": 85318,
+      "sha256": "dda25bd87ee1d65b1ca379b72e4e932693ce67e4174cafd758f50b4d4f5e4ccf"
     },
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.js.gz": {
-      "bytes": 88196,
-      "sha256": "29d5643699a0473b82afe20d2b3f3a487c05d0a23be1f87c29ecf299099f1291"
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/app.js.gz": {
+      "bytes": 91504,
+      "sha256": "79dbfd2a16d9bda460839c15bd306b5fd5632ed0faf021962fe5764111803d0b"
     },
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.wasm": {
-      "bytes": 8282906,
-      "sha256": "9a874e8e15c0f001b4a527acd73c6458e29ddc2dc613ef9c0f7b44f90fe0d3b7"
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/app.wasm": {
+      "bytes": 9331097,
+      "sha256": "27b0c77f6e087ef6242d2dbe9a7bd85a77493d802d0a915d404328f471d19928"
     },
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.wasm.br": {
-      "bytes": 2747312,
-      "sha256": "717a545ef0301bc0bdc83a12563b73759f020b36a3673979727536254bcf6321"
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/app.wasm.br": {
+      "bytes": 3110159,
+      "sha256": "20da078216828cb98d4bbdecf466997148efefca0495a49bcaf5449fd8145e77"
     },
-    "engine/ce2633e273a9ccf6eac56c049fd7b8d64f8b792ec3b732e924fee6d4a383cf1c/app.wasm.gz": {
-      "bytes": 3230094,
-      "sha256": "601b21954c3b1eebc8fd06c64dc65b6f6d734d8f03539301ab6059df35e0420b"
+    "engine/beae8542eda95ccfb81eae6903ef5ab3f21c1fcd7fe6f4d943a202d6860fa509/app.wasm.gz": {
+      "bytes": 3638386,
+      "sha256": "47b8d3c3c2baa9309ce1f72b0985c8a348f41ccead6c62d6f40c1811219fb9dc"
     },
     "engine/d24056c8f61f79fd7a1fedf1524fd6a847e6fe6b7c030142abc906a1a6290f4c/app.js": {
       "bytes": 351690,
@@ -4348,15 +4364,15 @@
     },
     "examples/runtime/index.html": {
       "bytes": 84021,
-      "sha256": "14d6b072c47197cdaf5ff6eb324957aa887d947ef56eb2b325f9c0be609e6402"
+      "sha256": "c82f2f546cfc8ca193ba00d841caaf320621cb5ab9bb7ebcff4c4d45843a0690"
     },
     "examples/runtime/index.html.br": {
-      "bytes": 25331,
-      "sha256": "1b6ff106bf065d062317b82a4da820b4aef96a058ceeb9307f39ef75a19e4310"
+      "bytes": 25289,
+      "sha256": "2d1c9abfaa8b4de802d3d77eebe62fffe9f4033f8d489e891f8a82815b88526a"
     },
     "examples/runtime/index.html.gz": {
-      "bytes": 26632,
-      "sha256": "b889e5b277da6afdcbfa080bacd54f501fa9800c778ea4711bbff07d9aa5d5d5"
+      "bytes": 26630,
+      "sha256": "dc5f7875b1ec6717d96948d565c36da5c2e01e22d814459600ca5e0c0748c0d1"
     },
     "examples/view.css": {
       "bytes": 2690,
@@ -4410,17 +4426,141 @@
       "bytes": 2572,
       "sha256": "d7589825c6566360feca0b5c3fa81e65193d631c9bcbce57be47d1e57561fa70"
     },
+    "glade_recipes/castle_epic.json": {
+      "bytes": 7570,
+      "sha256": "e1975c799e6c55cfb10169069f56beffc8b00953d89e4479b38d208465782ce5"
+    },
+    "glade_recipes/castle_epic.json.br": {
+      "bytes": 1278,
+      "sha256": "746fa76db904d589655c8c06872072a4eb6826ea14194e445591f30d675c7023"
+    },
+    "glade_recipes/castle_epic.json.gz": {
+      "bytes": 1339,
+      "sha256": "6791079cf23012e8fea0345f780aabf100be28dc25518ab37fce588279114803"
+    },
+    "glade_recipes/castle_town.json": {
+      "bytes": 7776,
+      "sha256": "db5db580a592602698334027ae68429089d44f6bcc6cf1972b7cbb42d4cbf00e"
+    },
+    "glade_recipes/castle_town.json.br": {
+      "bytes": 1364,
+      "sha256": "401273d214dc08e81408eafd851682534477d9b47c057f940124680365584376"
+    },
+    "glade_recipes/castle_town.json.gz": {
+      "bytes": 1460,
+      "sha256": "a5af0ea5ed32f131f03bbf763e9e953eb30e43d6e265349d61c7bd5ce6332914"
+    },
+    "glade_recipes/cottage_champetre.json": {
+      "bytes": 3368,
+      "sha256": "bcd0e04e9abc1335c573d53c81e5762749a833d5559cba23bdc0555427ef1f9c"
+    },
+    "glade_recipes/cottage_champetre.json.br": {
+      "bytes": 850,
+      "sha256": "5818f7adfedaa5e1563b9a46d8c88d015d7d900b8e226ee33c0ae58406f083d5"
+    },
+    "glade_recipes/cottage_champetre.json.gz": {
+      "bytes": 908,
+      "sha256": "8a68dc4d93698583b65bf7f6895103fa6b7ca12dc1bef48c5f7b06be60657bb8"
+    },
+    "glade_recipes/garden_wall.json": {
+      "bytes": 502,
+      "sha256": "b3870eedf522dc5f91ae6fdaa169913713c79e7b6c29b6e8f1fead1451dec03a"
+    },
+    "glade_recipes/glade_world.json": {
+      "bytes": 5761,
+      "sha256": "72b2baab29f5082851c08f54d4218ac2a4323dc4e65c9ba0dc987922159ed5fc"
+    },
+    "glade_recipes/glade_world.json.br": {
+      "bytes": 985,
+      "sha256": "0835343cade223399966b2d2935ecf7a905d22092cf1407ef30f50db82d7f949"
+    },
+    "glade_recipes/glade_world.json.gz": {
+      "bytes": 1035,
+      "sha256": "dee640a3d67ff4e29a7cd9a2ba3f7120f010c64521aa982b1f03fd4fe6e19665"
+    },
+    "glade_recipes/house_timber.json": {
+      "bytes": 3120,
+      "sha256": "b86ce83c6cb23b818d81566042c52e6ea1dfe51012e5840936ea273f4082dcaf"
+    },
+    "glade_recipes/house_timber.json.br": {
+      "bytes": 726,
+      "sha256": "83694771474cc5817f529b54854be73250f3cf968dc1a263e6823ecace741e32"
+    },
+    "glade_recipes/house_timber.json.gz": {
+      "bytes": 783,
+      "sha256": "1c918e70aad218450e67f74c147ffb0a17dba38b7841174344ab0fc37d98ad2b"
+    },
+    "glade_recipes/keep_square.json": {
+      "bytes": 1762,
+      "sha256": "a530f4a8accdc7891d6ce607790f18e5f042cabb0a1191c806c5dc7a8a22c498"
+    },
+    "glade_recipes/keep_square.json.br": {
+      "bytes": 456,
+      "sha256": "37107ed65e216124fa68af162074fd1ebf36c3713a872efeedea5c70a9c89dd6"
+    },
+    "glade_recipes/keep_square.json.gz": {
+      "bytes": 490,
+      "sha256": "a424dfc59d4a41193d33a3cc9b0a1389b2815507d814873d885241f33991ae1c"
+    },
+    "glade_recipes/tower_round.json": {
+      "bytes": 1250,
+      "sha256": "5346d0bf9ea5ff47bd81464144b08e68c81af9324d9502854fbb09a78f69005e"
+    },
+    "glade_recipes/tower_round.json.br": {
+      "bytes": 433,
+      "sha256": "b559c5dcedea683bda5420c1eb4ecc2abd84cc1c3ee6ee435886e81f17a7b099"
+    },
+    "glade_recipes/tower_round.json.gz": {
+      "bytes": 464,
+      "sha256": "a4733ef5808080408aaca7b973620001ca2aa3d1ef20cfb4bd9bb6df1ac5e39e"
+    },
+    "glade_recipes/tower_spire.json": {
+      "bytes": 1808,
+      "sha256": "a1c57c9a0611d01c6decc73df5d5341e9300a02e06982e8af6a58970bf07a4e5"
+    },
+    "glade_recipes/tower_spire.json.br": {
+      "bytes": 533,
+      "sha256": "21117a44c06909afda580be2d3a685679b105754d9bd24cfecc3f4a5d9c6d208"
+    },
+    "glade_recipes/tower_spire.json.gz": {
+      "bytes": 566,
+      "sha256": "b31e35fb7fba849d38c7d141370e796d58e5963c0b71bb207a42097db6cda219"
+    },
+    "glade_recipes/tower_square.json": {
+      "bytes": 1207,
+      "sha256": "efbf3f0545f6a1c3655bee724068acfd4351083028a775066941e84517579c29"
+    },
+    "glade_recipes/tower_square.json.br": {
+      "bytes": 408,
+      "sha256": "5ae8dcc6f35b0fd6aac5abdcb4237f96449d07d5327260b088578577ff277e0b"
+    },
+    "glade_recipes/tower_square.json.gz": {
+      "bytes": 443,
+      "sha256": "bc35d0cd84bf107cdc256d2f174c9a0b4310b580f0bd4257ad05586d3003ce33"
+    },
+    "health_check.js": {
+      "bytes": 8916,
+      "sha256": "467d5bfe08cf7c90520905a54f310de3cc9e68e19a12a3ac80278f2520723e73"
+    },
+    "health_check.js.br": {
+      "bytes": 3388,
+      "sha256": "e4a3ed9b0515bb59a3bbc330cb2239745ca0e4c4a003d2938397a5b56ddce917"
+    },
+    "health_check.js.gz": {
+      "bytes": 3586,
+      "sha256": "81d4d26cdb920659fa36d63a80dc3ab6d683eeed1cf8ab54ba70043e1ee9311b"
+    },
     "index.html": {
       "bytes": 83851,
-      "sha256": "5bda1dcce2c1c94ae91376c45fa3fcf2adb2b435913af7b3ee7f7738dfd13d74"
+      "sha256": "6c760d0e8607c77fd80db92c71266c0ffcba4182e41295a75acf788a08883333"
     },
     "index.html.br": {
-      "bytes": 25258,
-      "sha256": "ebdbd7e008def2533b0fc5710cf6d5a5c88088c42a8327481f1c68df0be873d4"
+      "bytes": 25257,
+      "sha256": "6183d41fc469473eebef673d585b4c06be447204104cff14228a48e9c91843f5"
     },
     "index.html.gz": {
-      "bytes": 26565,
-      "sha256": "b175c1e2062eb9d6da0a3abd41b51d24bf292d3ec8fb14d1460350b125405209"
+      "bytes": 26563,
+      "sha256": "439a3dacb21141f4cafddebad50230bee9f13128da193c215c8ad4d53e218155"
     },
     "layout/current layout.layout": {
       "bytes": 0,
@@ -4622,6 +4762,10 @@
       "bytes": 10101,
       "sha256": "fe64d21fb921e3ffecef748a4cf5524a6ca4e34bb26fee6d4b02917a5b4e8ef3"
     },
+    "polynite-skill.md": {
+      "bytes": 3008,
+      "sha256": "683eb434c6aced4e896e405ec0dddde29577bac39b48a7a44c06c54efcaac8a9"
+    },
     "privacy/index.html": {
       "bytes": 8846,
       "sha256": "689ca7ec17d20e153847f188f5a972bf57e925540f1e45c3da4fa00055a7deae"
@@ -4635,28 +4779,28 @@
       "sha256": "c8518262537c9b0c6ad70f461cf3c0c4ac35ebd2b77992aacb070b54f6b62304"
     },
     "remote_panel.js": {
-      "bytes": 4952,
-      "sha256": "37b76216d63e6a5af3fc261fb48616b2d62ca1213355b20dcb9f9fb93f9dea2e"
+      "bytes": 8384,
+      "sha256": "897a0ff991c41b2ed96988ec9c429dc68d661175583e18956d423cd6c1ee8e6d"
     },
     "remote_panel.js.br": {
-      "bytes": 1995,
-      "sha256": "9790a9b8af3d6aab352eba7bde68db38b5448b7113227e789aee724beb27f55a"
+      "bytes": 3285,
+      "sha256": "59173b6db48876246cdaf1bce8430af793aac117f963b17156f1ba9245992128"
     },
     "remote_panel.js.gz": {
-      "bytes": 2260,
-      "sha256": "9b15d7e3bd4b346459b76c580bf896268e17711bb61ff22ed2697ea5a674cd2a"
+      "bytes": 3566,
+      "sha256": "888a1ff03b306ac0f68c9ef8e599363cdd1f4ee1dae065c8e80524298ced4cd4"
     },
     "remote_relay.js": {
-      "bytes": 5231,
-      "sha256": "2958f73e4e10b975a7390ca9aa727047fb140423252d806dacf065e0bb323579"
+      "bytes": 5363,
+      "sha256": "e6a44af218f03fc6496b9543d56a4b250e668443bb307a57fc5c6396b6508149"
     },
     "remote_relay.js.br": {
-      "bytes": 1908,
-      "sha256": "437dd8ace09f9dbab717d451d6cca5c3657cce940d3a8ce60158c0bf4c2baeaa"
+      "bytes": 1963,
+      "sha256": "542fec74e8b1803ca5ece56aa30bc8fbb37c3e85f439a1ee088040f2d97a76db"
     },
     "remote_relay.js.gz": {
-      "bytes": 2040,
-      "sha256": "39bb318c5146d5cbe73309798110d76503246d7c1430b9b1d5a2ed763b7fc4ba"
+      "bytes": 2096,
+      "sha256": "1e2eb237d3fc2285d00949c302a6431efd0873a2d54f19b449ac35e2e0274377"
     },
     "robots.txt": {
       "bytes": 210,
@@ -4811,8 +4955,8 @@
       "sha256": "d6e28d13b0b185e36e91b1b8044952f9424754845a5dcb8746401c653be69a68"
     },
     "sitemap.xml": {
-      "bytes": 353,
-      "sha256": "21be8533f427ed10c4bcb12ab05317428687bde7f8d2fa426385e738b6023272"
+      "bytes": 347,
+      "sha256": "77509a93659d4e6c4be408e8ed49200645e7904bd06decf41f544ebfb780f835"
     },
     "sound_bus.js": {
       "bytes": 213836,
@@ -4863,12 +5007,12 @@
       "sha256": "4db38feb767cc19429fc8718258b9d0c3508805898c3cfa3e12a128aefc48ea4"
     },
     "templates/README.md": {
-      "bytes": 2917,
-      "sha256": "0e4af64e30f83fff04bdf33972511fb444dca9f16c44df26008cba8a32223b3c"
+      "bytes": 2923,
+      "sha256": "d3707f20ce275ba6042811b372926f81a3516817ca3102f9df29b9e871beb3a4"
     },
     "templates/app-dice.scene": {
-      "bytes": 78826,
-      "sha256": "7637035ffdb6a5b673b1e977c8d0734dcacfa21345bda0b350b24e37577d8610"
+      "bytes": 81801,
+      "sha256": "28cb56ab995dd70473eac9d0ab92bf480a8d510f3d73f0102b41691eb21ebb06"
     },
     "templates/demo-glade-arcade.scene": {
       "bytes": 223290,
@@ -4951,8 +5095,8 @@
       "sha256": "309d603428bef77d7eeca44f2860c58f99aec55a13abade33323197cd1270ba7"
     },
     "templates/garden.scene": {
-      "bytes": 183789,
-      "sha256": "7a6d6fe5ed4232310af43c7db050ea91115b3bd4c20a9ee3c0031376f36fddfe"
+      "bytes": 191573,
+      "sha256": "6733e3356b45a749766dda1a6af209e86f92742b5d04bb9250fe86309a49ca58"
     },
     "templates/glade-start.scene": {
       "bytes": 27361,
@@ -4984,15 +5128,15 @@
     },
     "tutorial-view/index.html": {
       "bytes": 84021,
-      "sha256": "14d6b072c47197cdaf5ff6eb324957aa887d947ef56eb2b325f9c0be609e6402"
+      "sha256": "c82f2f546cfc8ca193ba00d841caaf320621cb5ab9bb7ebcff4c4d45843a0690"
     },
     "tutorial-view/index.html.br": {
-      "bytes": 25331,
-      "sha256": "1b6ff106bf065d062317b82a4da820b4aef96a058ceeb9307f39ef75a19e4310"
+      "bytes": 25289,
+      "sha256": "2d1c9abfaa8b4de802d3d77eebe62fffe9f4033f8d489e891f8a82815b88526a"
     },
     "tutorial-view/index.html.gz": {
-      "bytes": 26632,
-      "sha256": "b889e5b277da6afdcbfa080bacd54f501fa9800c778ea4711bbff07d9aa5d5d5"
+      "bytes": 26630,
+      "sha256": "dc5f7875b1ec6717d96948d565c36da5c2e01e22d814459600ca5e0c0748c0d1"
     },
     "tutorials/autumn-lantern-cottage/index.html": {
       "bytes": 21582,
@@ -5308,7 +5452,7 @@
     },
     "version.txt": {
       "bytes": 6,
-      "sha256": "23fcf24332d848ec7ccd6d49b19fcca319feb3971ece64b37ff05f590385c968"
+      "sha256": "8a074508983080d31e6e911bd2b1c350be4c01651040fecab9a45767057895e8"
     },
     "webgpu_bindgroup_guard.js": {
       "bytes": 1576,
