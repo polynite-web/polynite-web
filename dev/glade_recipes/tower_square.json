@@ -1,0 +1,82 @@
+{
+ "what": "A square stone tower with a moss pyramid roof and a finial, an arched window high up.",
+ "params": {
+  "size": {
+   "default": 3.4,
+   "min": 3,
+   "max": 4
+  },
+  "height": {
+   "default": 6.8,
+   "min": 5.5,
+   "max": 8
+  }
+ },
+ "ops": [
+  {
+   "command": "build.shape",
+   "id": "$id",
+   "shape": "rectangle",
+   "center": [
+    0,
+    0
+   ],
+   "length": "$size",
+   "width": "$size",
+   "height": "$height",
+   "thickness": 0.8,
+   "style": "stone",
+   "color": [
+    0.66,
+    0.67,
+    0.6
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.roof",
+   "on": "$id",
+   "height_01": 0.8,
+   "eave_01": 0.25,
+   "profile_01": 0.55,
+   "ridge_01": 0,
+   "color": [
+    0.38,
+    0.47,
+    0.28
+   ],
+   "ridge_color": [
+    0.3,
+    0.36,
+    0.22
+   ],
+   "finial": true
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 0,
+   "at": 0.5,
+   "sill": 4.2,
+   "height": 1.3,
+   "arch": "round"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 2,
+   "at": 0.5,
+   "sill": 4.2,
+   "height": 1.3,
+   "arch": "round"
+  },
+  {
+   "command": "build.dress",
+   "on": "$id",
+   "ivy": 0.35,
+   "seed": "$seed"
+  }
+ ]
+}
