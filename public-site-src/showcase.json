@@ -403,7 +403,7 @@
     },
     {
       "id": "d11-intro-battle",
-      "atelier": "d11-intro-battle-20261118",
+      "atelier": "d11-intro-battle-20261118b",
       "title": "D11: a guard drone with a mind of its own",
       "category": "Games with a mind",
       "environment": "Neon arena",
@@ -417,15 +417,15 @@
         "MCP",
         "Editable"
       ],
-      "version": 1
+      "version": 2
     },
     {
       "id": "d11-long-battle",
-      "atelier": "d11-long-battle-20261118",
+      "atelier": "d11-long-battle-20261118b",
       "title": "D11: the five-minute battle",
       "category": "Games with a mind",
       "environment": "Neon arena",
-      "summary": "The long cut: after the intro and its mind's reboot, the fight runs free - shields lost, falls, wins, every line it knows - until its last comeback and its song. Five minutes, played by the game's own rules.",
+      "summary": "The long cut: after the intro and its mind's reboot, the fight runs free - frenzy mode spinning and firing all round, a selfie under fire, the arena's taunts and its comebacks, a robot dance - until its last comeback and its song. Five minutes, played by the game's own rules.",
       "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Long Battle (5 min)'} and record it with scene.cinematic {command:'record', format:'landscape'}. Use the linked scene as a starting point.",
       "tags": [
         "Game",
@@ -435,7 +435,7 @@
         "MCP",
         "Editable"
       ],
-      "version": 1
+      "version": 2
     }
   ],
   "spotlight": {
