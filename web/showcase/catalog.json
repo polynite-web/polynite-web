@@ -3459,7 +3459,7 @@
     },
     {
       "id": "d11-intro-battle",
-      "atelier": "d11-intro-battle-20261118",
+      "atelier": "d11-intro-battle-20261118b",
       "title": "D11: a guard drone with a mind of its own",
       "category": "Game Shorts",
       "environment": "Neon arena",
@@ -3473,28 +3473,28 @@
         "MCP",
         "Editable"
       ],
-      "version": 1,
+      "version": 2,
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "5915bd3b771d9dbbaee0e2f4ba6f4a9b599e1958ccc26e8f26200f13b7ad5f04",
+      "scene_sha256": "543566572ad56cee2fe425eb727e2af3aa0457fa7d52db468accbe4981020646",
       "media": {
-        "video": "https://polynite.io/atelier/media/d11-intro-battle-20261118.mp4",
-        "poster": "https://polynite.io/atelier/media/d11-intro-battle-20261118.jpg"
+        "video": "https://polynite.io/atelier/media/d11-intro-battle-20261118b.mp4",
+        "poster": "https://polynite.io/atelier/media/d11-intro-battle-20261118b.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#d11-intro-battle",
       "open": "https://polynite.io/showcase/view?id=d11-intro-battle",
-      "scene": "https://polynite.io/showcase/data/d11-intro-battle-v1.scene"
+      "scene": "https://polynite.io/showcase/data/d11-intro-battle-v2.scene"
     },
     {
       "id": "d11-long-battle",
-      "atelier": "d11-long-battle-20261118",
+      "atelier": "d11-long-battle-20261118b",
       "title": "D11: the five-minute battle",
       "category": "Games with a mind",
       "environment": "Neon arena",
-      "summary": "The long cut: after the intro and its mind's reboot, the fight runs free - shields lost, falls, wins, every line it knows - until its last comeback and its song. Five minutes, played by the game's own rules.",
+      "summary": "The long cut: after the intro and its mind's reboot, the fight runs free - frenzy mode spinning and firing all round, a selfie under fire, the arena's taunts and its comebacks, a robot dance - until its last comeback and its song. Five minutes, played by the game's own rules.",
       "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Long Battle (5 min)'} and record it with scene.cinematic {command:'record', format:'landscape'}. Use the linked scene as a starting point.",
       "tags": [
         "Game",
@@ -3504,20 +3504,20 @@
         "MCP",
         "Editable"
       ],
-      "version": 1,
+      "version": 2,
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "5cc24ee5c66a34590c17bfc4904926c31aa6d6bb4a742a4d58fb90359c22bc5c",
+      "scene_sha256": "22b4a862387f75330fbedcea137e56f7e552f93ba8eda485df6cfe6da09ef345",
       "media": {
-        "video": "https://polynite.io/atelier/media/d11-long-battle-20261118.mp4",
-        "poster": "https://polynite.io/atelier/media/d11-long-battle-20261118.jpg"
+        "video": "https://polynite.io/atelier/media/d11-long-battle-20261118b.mp4",
+        "poster": "https://polynite.io/atelier/media/d11-long-battle-20261118b.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#d11-long-battle",
       "open": "https://polynite.io/showcase/view?id=d11-long-battle",
-      "scene": "https://polynite.io/showcase/data/d11-long-battle-v1.scene"
+      "scene": "https://polynite.io/showcase/data/d11-long-battle-v2.scene"
     }
   ]
 }
