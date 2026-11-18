@@ -1,0 +1,240 @@
+{
+ "what": "Country cottage (maison champetre) after demo/loop_house: cream plaster on a stone foot, quoins, a steep swept slate roof with a red ridge, dark oak frames, painted door and shutters, flower boxes, a dormer, a gable chimney, ivy, flowers and pots. Front = face 0 (x along it, z into the house).",
+ "params": {
+  "length": {
+   "default": 6.4,
+   "min": 5.6,
+   "max": 7.6
+  },
+  "width": {
+   "default": 4.4,
+   "min": 4.0,
+   "max": 5.0
+  },
+  "height": {
+   "default": 2.5,
+   "min": 2.3,
+   "max": 2.8
+  },
+  "pitch": {
+   "default": 0.69,
+   "min": 0.6,
+   "max": 0.76
+  },
+  "sweep": {
+   "default": 0.75,
+   "min": 0.6,
+   "max": 0.86
+  },
+  "door_at": {
+   "default": 0.64,
+   "min": 0.58,
+   "max": 0.72
+  },
+  "ivy": {
+   "default": 0.35,
+   "min": 0.1,
+   "max": 0.6
+  },
+  "wall_color": {
+   "default": [
+    0.9,
+    0.86,
+    0.76
+   ],
+   "choices": [
+    [
+     0.9,
+     0.86,
+     0.76
+    ],
+    [
+     0.94,
+     0.9,
+     0.82
+    ],
+    [
+     0.92,
+     0.84,
+     0.72
+    ],
+    [
+     0.86,
+     0.84,
+     0.8
+    ]
+   ]
+  },
+  "roof_color": {
+   "default": [
+    0.36,
+    0.4,
+    0.47
+   ],
+   "choices": [
+    [
+     0.36,
+     0.4,
+     0.47
+    ],
+    [
+     0.3,
+     0.33,
+     0.38
+    ],
+    [
+     0.58,
+     0.28,
+     0.2
+    ],
+    [
+     0.42,
+     0.38,
+     0.34
+    ]
+   ]
+  },
+  "paint": {
+   "default": [
+    0.2,
+    0.33,
+    0.24
+   ],
+   "choices": [
+    [
+     0.2,
+     0.33,
+     0.24
+    ],
+    [
+     0.22,
+     0.34,
+     0.5
+    ],
+    [
+     0.55,
+     0.2,
+     0.16
+    ],
+    [
+     0.62,
+     0.55,
+     0.32
+    ]
+   ]
+  }
+ },
+ "ops": [
+  {
+   "command": "build.shape",
+   "id": "$id",
+   "shape": "rectangle",
+   "center": [
+    0,
+    0
+   ],
+   "length": "$length",
+   "width": "$width",
+   "yaw": 0,
+   "height": "$height",
+   "thickness": 0.4,
+   "style": "plaster",
+   "color": "$wall_color",
+   "trim": [
+    0.3,
+    0.21,
+    0.13
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.roof",
+   "on": "$id",
+   "height_01": "$pitch",
+   "eave_01": 0.4,
+   "profile_01": "$sweep",
+   "ridge_01": 1,
+   "ridge_dir": "length",
+   "color": "$roof_color",
+   "ridge_color": [
+    0.5,
+    0.2,
+    0.13
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "door",
+   "face": 0,
+   "at": "$door_at",
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 0,
+   "at": 0.24,
+   "rank": 2,
+   "shutters": true,
+   "box": true,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 2,
+   "at": 0.3,
+   "rank": 1,
+   "shutters": true,
+   "box": true,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 2,
+   "at": 0.72,
+   "rank": 1,
+   "shutters": true,
+   "color": "$paint"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": 3,
+   "at": 0.5,
+   "rank": 1,
+   "sill": 1.0,
+   "height": 0.8
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "chimney",
+   "face": 1,
+   "at": 0.5,
+   "rank": 1
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "dormer",
+   "face": 0,
+   "at": 0.24,
+   "rank": 1
+  },
+  {
+   "command": "build.dress",
+   "on": "$id",
+   "ivy": "$ivy",
+   "flowers": 0.55,
+   "pots": 0.6,
+   "seed": "$seed"
+  }
+ ]
+}

@@ -1,0 +1,426 @@
+{
+ "what": "A glade world built only from the generic operators: the ground levelled by strokes (a castle hill with a ramp, a flat meadow), a castle (hexagonal curtain with battlements and a gate, six round towers, a keep), a hamlet of seven country cottages along a street, dry-stone walls round the fields.",
+ "params": {},
+ "ops": [
+  {
+   "command": "terrain.stroke",
+   "id": "$id_h1",
+   "points": [
+    [
+     0.0,
+     -16.0
+    ]
+   ],
+   "height": 3.4,
+   "width": 17,
+   "falloff": 11
+  },
+  {
+   "command": "terrain.stroke",
+   "id": "$id_h2",
+   "points": [
+    [
+     0,
+     -6.5
+    ]
+   ],
+   "height": 2.5,
+   "width": 3.4,
+   "falloff": 3.5
+  },
+  {
+   "command": "terrain.stroke",
+   "id": "$id_h3",
+   "points": [
+    [
+     0,
+     -3
+    ]
+   ],
+   "height": 1.5,
+   "width": 3.4,
+   "falloff": 3.5
+  },
+  {
+   "command": "terrain.stroke",
+   "id": "$id_h4",
+   "points": [
+    [
+     -17,
+     10.5
+    ],
+    [
+     17,
+     10.5
+    ]
+   ],
+   "height": 0.35,
+   "width": 15,
+   "falloff": 5,
+   "mode": "flatten"
+  },
+  {
+   "command": "terrain.stroke",
+   "id": "$id_h5",
+   "points": [
+    [
+     22,
+     -8
+    ]
+   ],
+   "height": 1.8,
+   "width": 4,
+   "falloff": 9
+  },
+  {
+   "command": "terrain.stroke",
+   "id": "$id_h6",
+   "points": [
+    [
+     -24,
+     -10
+    ],
+    [
+     -20,
+     0
+    ]
+   ],
+   "height": 1.2,
+   "width": 3,
+   "falloff": 6
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_cw",
+   "points": [
+    [
+     -3.25,
+     -10.371
+    ],
+    [
+     3.25,
+     -10.371
+    ],
+    [
+     6.5,
+     -16.0
+    ],
+    [
+     3.25,
+     -21.629
+    ],
+    [
+     -3.25,
+     -21.629
+    ],
+    [
+     -6.5,
+     -16.0
+    ]
+   ],
+   "closed": true,
+   "smooth": false,
+   "height": 3.6,
+   "thickness": 1.0,
+   "style": "stone",
+   "battlements": true,
+   "color": [
+    0.8,
+    0.76,
+    0.68
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_cw",
+   "type": "door",
+   "face": 0,
+   "at": 0.5,
+   "rank": 2,
+   "height": 2.6,
+   "color": [
+    0.36,
+    0.22,
+    0.12
+   ]
+  },
+  {
+   "command": "build.dress",
+   "on": "$id_cw",
+   "ivy": 0.3,
+   "flowers": 0.25,
+   "seed": "$seed"
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_round",
+   "id": "$id_t1",
+   "at": [
+    -3.25,
+    -10.371
+   ],
+   "seed": 11,
+   "vary": true,
+   "params": {
+    "radius": 1.6,
+    "height": 6.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_round",
+   "id": "$id_t2",
+   "at": [
+    3.25,
+    -10.371
+   ],
+   "seed": 12,
+   "vary": true,
+   "params": {
+    "radius": 1.6,
+    "height": 6.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_round",
+   "id": "$id_t3",
+   "at": [
+    6.5,
+    -16.0
+   ],
+   "seed": 13,
+   "vary": true,
+   "params": {
+    "radius": 1.6,
+    "height": 6.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_round",
+   "id": "$id_t4",
+   "at": [
+    3.25,
+    -21.629
+   ],
+   "seed": 14,
+   "vary": true,
+   "params": {
+    "radius": 1.6,
+    "height": 6.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_round",
+   "id": "$id_t5",
+   "at": [
+    -3.25,
+    -21.629
+   ],
+   "seed": 15,
+   "vary": true,
+   "params": {
+    "radius": 1.6,
+    "height": 6.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_round",
+   "id": "$id_t6",
+   "at": [
+    -6.5,
+    -16.0
+   ],
+   "seed": 16,
+   "vary": true,
+   "params": {
+    "radius": 1.6,
+    "height": 6.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "keep_square",
+   "id": "$id_kp",
+   "at": [
+    0.0,
+    -17.2
+   ],
+   "seed": 7,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c1",
+   "at": [
+    -13,
+    6.0
+   ],
+   "yaw": 180,
+   "seed": 101,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c2",
+   "at": [
+    -4.5,
+    6.0
+   ],
+   "yaw": 180,
+   "seed": 118,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c3",
+   "at": [
+    4.5,
+    6.0
+   ],
+   "yaw": 180,
+   "seed": 135,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c4",
+   "at": [
+    13,
+    6.0
+   ],
+   "yaw": 180,
+   "seed": 152,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c5",
+   "at": [
+    -9,
+    15.5
+   ],
+   "yaw": 0,
+   "seed": 301,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c6",
+   "at": [
+    0,
+    15.5
+   ],
+   "yaw": 0,
+   "seed": 324,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c7",
+   "at": [
+    9,
+    15.5
+   ],
+   "yaw": 0,
+   "seed": 347,
+   "vary": true
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_f1",
+   "points": [
+    [
+     -24,
+     21
+    ],
+    [
+     -15,
+     25
+    ],
+    [
+     -4,
+     26.5
+    ],
+    [
+     7,
+     25.5
+    ],
+    [
+     19,
+     22
+    ]
+   ],
+   "height": 0.9,
+   "thickness": 0.5,
+   "style": "stone",
+   "seed": "$seed"
+  },
+  {
+   "command": "build.dress",
+   "on": "$id_f1",
+   "flowers": 0.4,
+   "ivy": 0.15,
+   "seed": "$seed"
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_f2",
+   "points": [
+    [
+     17,
+     -20
+    ],
+    [
+     24,
+     -12
+    ],
+    [
+     27,
+     -2
+    ],
+    [
+     25,
+     7
+    ]
+   ],
+   "height": 0.9,
+   "thickness": 0.5,
+   "style": "stone",
+   "seed": "$seed"
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_f3",
+   "points": [
+    [
+     -26,
+     2
+    ],
+    [
+     -23,
+     8
+    ],
+    [
+     -20,
+     16
+    ]
+   ],
+   "height": 0.8,
+   "thickness": 0.45,
+   "style": "stone",
+   "seed": "$seed"
+  }
+ ]
+}

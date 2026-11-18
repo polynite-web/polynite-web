@@ -1,0 +1,40 @@
+{
+ "what": "A low dry-stone garden wall in front of a house, its ends free.",
+ "params": {
+  "length": {
+   "default": 8,
+   "min": 5,
+   "max": 12
+  }
+ },
+ "ops": [
+  {
+   "command": "build.wall",
+   "id": "$id",
+   "points": [
+    [
+     -4,
+     0
+    ],
+    [
+     0,
+     -0.6
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "height": 0.9,
+   "thickness": 0.45,
+   "style": "stone",
+   "seed": "$seed"
+  },
+  {
+   "command": "build.dress",
+   "on": "$id",
+   "flowers": 0.5,
+   "seed": "$seed"
+  }
+ ]
+}

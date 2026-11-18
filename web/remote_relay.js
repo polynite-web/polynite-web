@@ -1,6 +1,6 @@
 /* Opt-in authenticated relay. No saved credential, automatic reconnection or
    mutation retry. Engine RPC must be installed before start(). */
-export function createRemoteRelay({api, rpc, fetcher=fetch, changed=()=>{}, now=()=>performance.now()}){
+export function createRemoteRelay({api, rpc, fetcher=fetch, changed=()=>{}, executed=()=>{}, now=()=>performance.now()}){
   const base=new URL(api);if(!['http:','https:'].includes(base.protocol)||base.username||base.password)throw new Error('invalid API origin');
   if(base.protocol==='http:'&&!['localhost','127.0.0.1','[::1]'].includes(base.hostname))throw new Error('HTTPS required outside localhost');
   let session=null,abort=null,running=false,starting=false,loop=null,ownsGrab=false,startDone=null,clockStart=0;
@@ -39,6 +39,7 @@ export function createRemoteRelay({api, rpc, fetcher=fetch, changed=()=>{}, now=
             }
           }
         }
+        try{executed(envelope.rpc,response);}catch{}   // the panel's activity: what the AI asked, and how it went
         // An answer delivery failure is terminal, even if the engine succeeded.
         await post(session.session_id+'/answer',{browser_key:session.browser_key,command_id:envelope.command_id,response},abort.signal);
       }

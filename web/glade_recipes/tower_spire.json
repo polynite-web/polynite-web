@@ -1,0 +1,136 @@
+{
+ "what": "A slender round tower with a slate spire and a flag on its tip, slit windows, a door.",
+ "params": {
+  "radius": {
+   "default": 1.8,
+   "min": 1.3,
+   "max": 2.4
+  },
+  "height": {
+   "default": 7.0,
+   "min": 5.0,
+   "max": 11.0
+  },
+  "roof_color": {
+   "default": [
+    0.32,
+    0.36,
+    0.46
+   ],
+   "choices": [
+    [
+     0.32,
+     0.36,
+     0.46
+    ],
+    [
+     0.55,
+     0.25,
+     0.2
+    ],
+    [
+     0.28,
+     0.4,
+     0.36
+    ]
+   ]
+  },
+  "flag_color": {
+   "default": [
+    0.78,
+    0.14,
+    0.14
+   ],
+   "choices": [
+    [
+     0.78,
+     0.14,
+     0.14
+    ],
+    [
+     0.16,
+     0.3,
+     0.7
+    ],
+    [
+     0.92,
+     0.76,
+     0.2
+    ]
+   ]
+  }
+ },
+ "ops": [
+  {
+   "command": "build.shape",
+   "id": "$id",
+   "shape": "circle",
+   "center": [
+    0,
+    0
+   ],
+   "radius": "$radius",
+   "height": "$height",
+   "thickness": 0.55,
+   "style": "stone",
+   "color": [
+    0.86,
+    0.84,
+    0.8
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.roof",
+   "on": "$id",
+   "spire": true,
+   "flag": true,
+   "height_01": 0.5,
+   "profile_01": 0.42,
+   "color": "$roof_color",
+   "flag_color": "$flag_color"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "door",
+   "face": -1,
+   "at": 0.2,
+   "arch": "round",
+   "color": [
+    0.35,
+    0.22,
+    0.12
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": -1,
+   "at": 0.55,
+   "rank": 1,
+   "sill": 2.8,
+   "height": 0.9,
+   "arch": "round"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id",
+   "type": "window",
+   "face": -1,
+   "at": 0.05,
+   "rank": 1,
+   "sill": 4.4,
+   "height": 0.8,
+   "arch": "round"
+  },
+  {
+   "command": "build.dress",
+   "on": "$id",
+   "ivy": 0.25,
+   "flowers": 0.25,
+   "seed": "$seed"
+  }
+ ]
+}

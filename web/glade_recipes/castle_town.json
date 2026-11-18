@@ -1,0 +1,566 @@
+{
+ "what": "A fairy-tale castle above a half-timbered town (after Tiny Glade): a crenellated curtain with a gate between two small towers, corner towers with slate spires and flags, a keep with crow-stepped gables and gothic windows, a tall stair tower, a timbered hall in the bailey, a town of colombage houses and a cottage on the level below, earth paths up to the gate.",
+ "params": {},
+ "ops": [
+  {
+   "command": "terrace_clear"
+  },
+  {
+   "command": "terrace_add",
+   "x": 0,
+   "z": -2,
+   "w": 28,
+   "d": 21,
+   "level": 4,
+   "edge": "cliff",
+   "shape": "rounded"
+  },
+  {
+   "command": "terrace_add",
+   "x": 2,
+   "z": 19,
+   "w": 30,
+   "d": 13,
+   "level": 1,
+   "edge": "slope"
+  },
+  {
+   "command": "terrace_add",
+   "x": -26,
+   "z": -6,
+   "w": 12,
+   "d": 12,
+   "level": 2,
+   "edge": "slope"
+  },
+  {
+   "command": "terrace_add",
+   "x": 25,
+   "z": -10,
+   "w": 12,
+   "d": 11,
+   "level": 1,
+   "edge": "slope"
+  },
+  {
+   "command": "terrain.path",
+   "id": "$id_p1",
+   "points": [
+    [
+     -6,
+     32
+    ],
+    [
+     -3,
+     25
+    ],
+    [
+     1,
+     20
+    ],
+    [
+     0,
+     14
+    ],
+    [
+     0,
+     8.6
+    ]
+   ],
+   "width": 1.7,
+   "falloff": 0.6
+  },
+  {
+   "command": "terrain.path",
+   "id": "$id_p2",
+   "points": [
+    [
+     -12,
+     22
+    ],
+    [
+     -5,
+     20.5
+    ],
+    [
+     1,
+     20
+    ],
+    [
+     9,
+     19
+    ],
+    [
+     16,
+     21
+    ]
+   ],
+   "width": 1.4,
+   "falloff": 0.5
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_cw",
+   "points": [
+    [
+     -10,
+     6
+    ],
+    [
+     -10,
+     -8
+    ],
+    [
+     10,
+     -8
+    ],
+    [
+     10,
+     6
+    ]
+   ],
+   "smooth": false,
+   "height": 4.0,
+   "thickness": 1.4,
+   "style": "stone",
+   "battlements": true,
+   "color": [
+    0.84,
+    0.82,
+    0.77
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_fl",
+   "points": [
+    [
+     -10,
+     6
+    ],
+    [
+     -1.8,
+     7.6
+    ]
+   ],
+   "smooth": false,
+   "height": 4.0,
+   "thickness": 1.3,
+   "style": "stone",
+   "battlements": true,
+   "color": [
+    0.84,
+    0.82,
+    0.77
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_fr",
+   "points": [
+    [
+     1.8,
+     7.6
+    ],
+    [
+     10,
+     6
+    ]
+   ],
+   "smooth": false,
+   "height": 4.0,
+   "thickness": 1.3,
+   "style": "stone",
+   "battlements": true,
+   "color": [
+    0.84,
+    0.82,
+    0.77
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.dress",
+   "on": "$id_cw",
+   "ivy": 0.35,
+   "flowers": 0.25,
+   "seed": "$seed"
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_t1",
+   "at": [
+    -10,
+    -8
+   ],
+   "seed": 3,
+   "params": {
+    "height": 8.5,
+    "radius": 2.1
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_t2",
+   "at": [
+    10,
+    -8
+   ],
+   "seed": 5,
+   "params": {
+    "height": 9.5,
+    "radius": 2.1,
+    "flag_color": [
+     0.16,
+     0.3,
+     0.7
+    ]
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_t3",
+   "at": [
+    -10,
+    6
+   ],
+   "seed": 7,
+   "params": {
+    "height": 7.2,
+    "radius": 1.9
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_t4",
+   "at": [
+    10,
+    6
+   ],
+   "seed": 9,
+   "params": {
+    "height": 7.6,
+    "radius": 1.9,
+    "flag_color": [
+     0.92,
+     0.76,
+     0.2
+    ]
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_g1",
+   "at": [
+    -2.4,
+    7.8
+   ],
+   "seed": 11,
+   "params": {
+    "height": 6.0,
+    "radius": 1.35
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_g2",
+   "at": [
+    2.4,
+    7.8
+   ],
+   "seed": 13,
+   "params": {
+    "height": 6.0,
+    "radius": 1.35
+   }
+  },
+  {
+   "command": "build.shape",
+   "id": "$id_k",
+   "shape": "rectangle",
+   "center": [
+    -1,
+    -3.4
+   ],
+   "length": 10,
+   "width": 6.2,
+   "yaw": 0,
+   "height": 7.2,
+   "thickness": 0.8,
+   "style": "stone",
+   "color": [
+    0.88,
+    0.86,
+    0.82
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.roof",
+   "on": "$id_k",
+   "height_01": 0.8,
+   "eave_01": 0.25,
+   "profile_01": 0.5,
+   "ridge_01": 1,
+   "ridge_dir": "length",
+   "stepped": true,
+   "color": [
+    0.3,
+    0.34,
+    0.42
+   ],
+   "ridge_color": [
+    0.24,
+    0.26,
+    0.3
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_k",
+   "type": "door",
+   "face": 0,
+   "at": 0.5,
+   "rank": 2,
+   "arch": "pointed",
+   "color": [
+    0.35,
+    0.22,
+    0.12
+   ]
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_k",
+   "type": "window",
+   "face": 0,
+   "at": 0.2,
+   "rank": 2,
+   "sill": 3.4,
+   "height": 2.2,
+   "arch": "pointed"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_k",
+   "type": "window",
+   "face": 0,
+   "at": 0.8,
+   "rank": 2,
+   "sill": 3.4,
+   "height": 2.2,
+   "arch": "pointed"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_k",
+   "type": "window",
+   "face": 2,
+   "at": 0.35,
+   "rank": 1,
+   "sill": 4.0,
+   "height": 1.6,
+   "arch": "round"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_k",
+   "type": "window",
+   "face": 2,
+   "at": 0.7,
+   "rank": 1,
+   "sill": 4.0,
+   "height": 1.6,
+   "arch": "round"
+  },
+  {
+   "command": "build.decorate",
+   "on": "$id_k",
+   "type": "dormer",
+   "face": 0,
+   "at": 0.5,
+   "rank": 1
+  },
+  {
+   "command": "build.dress",
+   "on": "$id_k",
+   "ivy": 0.3,
+   "flowers": 0.2,
+   "seed": "$seed"
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "tower_spire",
+   "id": "$id_kt",
+   "at": [
+    4.4,
+    -6.2
+   ],
+   "seed": 17,
+   "params": {
+    "height": 11.0,
+    "radius": 1.6,
+    "roof_color": [
+     0.28,
+     0.4,
+     0.36
+    ]
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h0",
+   "at": [
+    -6.2,
+    2.4
+   ],
+   "yaw": 90,
+   "seed": 21,
+   "params": {
+    "length": 5.2,
+    "width": 4.0
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h1",
+   "at": [
+    -11,
+    15.6
+   ],
+   "yaw": 10,
+   "seed": 31,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h2",
+   "at": [
+    -5.4,
+    17.2
+   ],
+   "yaw": 4,
+   "seed": 33,
+   "vary": true,
+   "params": {
+    "length": 5.0,
+    "height": 5.0
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h3",
+   "at": [
+    6.2,
+    16.0
+   ],
+   "yaw": -6,
+   "seed": 35,
+   "vary": true
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h4",
+   "at": [
+    12.8,
+    17.8
+   ],
+   "yaw": -14,
+   "seed": 37,
+   "vary": true,
+   "params": {
+    "length": 5.4
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h5",
+   "at": [
+    -9.4,
+    25.0
+   ],
+   "yaw": 172,
+   "seed": 39,
+   "vary": true,
+   "params": {
+    "length": 6.6
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "house_timber",
+   "id": "$id_h6",
+   "at": [
+    6.8,
+    24.2
+   ],
+   "yaw": 186,
+   "seed": 41,
+   "vary": true,
+   "params": {
+    "length": 5.6,
+    "height": 3.8
+   }
+  },
+  {
+   "command": "recipe.apply",
+   "recipe": "cottage_champetre",
+   "id": "$id_c1",
+   "at": [
+    16.8,
+    24.4
+   ],
+   "yaw": 200,
+   "seed": 43,
+   "vary": true
+  },
+  {
+   "command": "build.wall",
+   "id": "$id_gw",
+   "points": [
+    [
+     -14,
+     27
+    ],
+    [
+     -10,
+     29.5
+    ],
+    [
+     -5,
+     30.5
+    ]
+   ],
+   "height": 1.1,
+   "thickness": 0.5,
+   "style": "stone",
+   "color": [
+    0.76,
+    0.74,
+    0.68
+   ],
+   "seed": "$seed"
+  },
+  {
+   "command": "build.dress",
+   "on": "$id_gw",
+   "ivy": 0.2,
+   "flowers": 0.7,
+   "seed": "$seed"
+  }
+ ]
+}

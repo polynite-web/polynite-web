@@ -3,25 +3,25 @@
 "panlayout_last_session": "session/(default).session",
 "window": {
   "fullscreen_was_maximized": false,
-  "h": 1032,
-  "mode": 3,
+  "h": 845,
+  "mode": 1,
   "monitor": "\\\\.\\DISPLAY2",
-  "normal_h": 444,
-  "normal_screen_h": 444,
-  "normal_screen_w": 740,
-  "normal_screen_x": 153,
-  "normal_screen_y": 78,
-  "normal_w": 740,
-  "normal_x": 153,
-  "normal_y": 78,
+  "normal_h": 845,
+  "normal_screen_h": 845,
+  "normal_screen_w": 1055,
+  "normal_screen_x": 865,
+  "normal_screen_y": 14,
+  "normal_w": 1055,
+  "normal_x": 865,
+  "normal_y": 14,
   "placement_version": 3,
-  "w": 1920,
+  "w": 1055,
   "work_h": 1032,
   "work_w": 1920,
   "work_x": 0,
   "work_y": 0,
-  "x": 0,
-  "y": 0
+  "x": 865,
+  "y": 14
 }
 
 }
