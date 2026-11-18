@@ -400,6 +400,42 @@
         "Adaptive",
         "Editable"
       ]
+    },
+    {
+      "id": "d11-intro-battle",
+      "atelier": "d11-intro-battle-20261118",
+      "title": "D11: a guard drone with a mind of its own",
+      "category": "Games with a mind",
+      "environment": "Neon arena",
+      "summary": "A small drone walks into a trap: three turrets rise out of the floor. Its shield pops, you watch its Nod mind reboot, it comes back, wins, and sings. A one-minute Short, recorded as the game plays.",
+      "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Intro + Battle'} and record it with scene.cinematic {command:'record', format:'portrait'}. Use the linked scene as a starting point.",
+      "tags": [
+        "Game",
+        "Nod rules",
+        "Voice",
+        "Short",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1
+    },
+    {
+      "id": "d11-long-battle",
+      "atelier": "d11-long-battle-20261118",
+      "title": "D11: the five-minute battle",
+      "category": "Games with a mind",
+      "environment": "Neon arena",
+      "summary": "The long cut: after the intro and its mind's reboot, the fight runs free - shields lost, falls, wins, every line it knows - until its last comeback and its song. Five minutes, played by the game's own rules.",
+      "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Long Battle (5 min)'} and record it with scene.cinematic {command:'record', format:'landscape'}. Use the linked scene as a starting point.",
+      "tags": [
+        "Game",
+        "Nod rules",
+        "Voice",
+        "Long film",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1
     }
   ],
   "spotlight": {
@@ -407,6 +443,26 @@
     "text": "One sentence, a whole world: rock rises out of the mist at different heights, stairs form, grass and trees grow, vines come down and rope bridges join the islands. Every stage is one MCP call you can open and change."
   },
   "collections": [
+    {
+      "id": "game-films",
+      "title": "Games with a mind",
+      "kicker": "Played by their own rules",
+      "layout": "wide",
+      "pitch": "A game whose rules are its director: the drone talks, the camera moves, the film ends on its song. Five minutes of it, unedited.",
+      "primary": [
+        "d11-long-battle"
+      ]
+    },
+    {
+      "id": "game-shorts",
+      "title": "Game Shorts",
+      "kicker": "9:16, straight from the game",
+      "layout": "portrait",
+      "pitch": "One minute, one arc: the trap, the fall, the comeback, the song. Recorded by the game itself.",
+      "primary": [
+        "d11-intro-battle"
+      ]
+    },
     {
       "id": "infinite-worlds",
       "title": "Infinite worlds",
