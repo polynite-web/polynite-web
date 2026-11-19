@@ -3413,11 +3413,11 @@
     },
     {
       "id": "d11-intro-battle",
-      "atelier": "d11-intro-battle-20261118c",
+      "atelier": "d11-intro-battle-20261118e",
       "title": "D11: a guard drone with a mind of its own",
       "category": "Games with a mind",
       "environment": "Neon arena",
-      "summary": "A small drone walks into a trap: three turrets rise out of the floor. Its shield pops, you watch its Nod mind reboot, it comes back, wins, and sings. A one-minute Short, recorded as the game plays.",
+      "summary": "One minute, 9:16. A small drone walks into a trap: three turrets rise out of the floor. Its shield pops, it crashes, you watch its Nod mind reboot, it comes back, wins, and sings. Recorded as the game plays.",
       "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Intro + Battle'} and record it with scene.cinematic {command:'record', format:'portrait'}. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#d11-intro-battle",
       "tags": [
         "Game",
@@ -3427,28 +3427,29 @@
         "MCP",
         "Editable"
       ],
-      "version": 3,
+      "version": 4,
+      "layout": "portrait",
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "07b82a0b271ab7703e07f71f175bbd84b25c5fa65848c468bf7b5c7a368027f7",
+      "scene_sha256": "193c3935b1b6cadf2e141b318ea89610f0bfba373f92b2012a961d6721a14b87",
       "media": {
-        "video": "https://polynite.io/atelier/media/d11-intro-battle-20261118c.mp4",
-        "poster": "https://polynite.io/atelier/media/d11-intro-battle-20261118c.jpg"
+        "video": "https://polynite.io/atelier/media/d11-intro-battle-20261118e.mp4",
+        "poster": "https://polynite.io/atelier/media/d11-intro-battle-20261118e.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#d11-intro-battle",
       "open": "https://polynite.io/showcase/view?id=d11-intro-battle",
-      "scene": "https://polynite.io/showcase/data/d11-intro-battle-v3.scene"
+      "scene": "https://polynite.io/showcase/data/d11-intro-battle-v4.scene"
     },
     {
       "id": "d11-long-battle",
-      "atelier": "d11-long-battle-20261118c",
+      "atelier": "d11-long-battle-20261118e",
       "title": "D11: the five-minute battle",
       "category": "Games with a mind",
       "environment": "Neon arena",
-      "summary": "The long cut: the fight runs free - frenzy mode spinning and firing all round, a selfie under fire, a robot dance - until its one crash, where you watch its Nod mind reboot, then its last comeback and its song. Five minutes, played by the game's own rules.",
+      "summary": "Five minutes, 16:9. The fight runs free - frenzy mode spinning and firing all round, a selfie under fire, a robot dance - until its one crash and its mind's reboot, then its last comeback and its song. Played by the game's own rules.",
       "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Long Battle (5 min)'} and record it with scene.cinematic {command:'record', format:'landscape'}. Use the linked scene as a starting point.\n\nReference: https://explore.polynite.io/showcase/#d11-long-battle",
       "tags": [
         "Game",
@@ -3458,20 +3459,20 @@
         "MCP",
         "Editable"
       ],
-      "version": 3,
+      "version": 4,
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "b6aa1672f5aad623bbb494fbf5e3a44292906239b07f3a336e5abc212ca10396",
+      "scene_sha256": "d717ac3a2b7fc17f7d5a4c9b6194b8cf5f4277099a75485c16cf582f516147b0",
       "media": {
-        "video": "https://polynite.io/atelier/media/d11-long-battle-20261118c.mp4",
-        "poster": "https://polynite.io/atelier/media/d11-long-battle-20261118c.jpg"
+        "video": "https://polynite.io/atelier/media/d11-long-battle-20261118e.mp4",
+        "poster": "https://polynite.io/atelier/media/d11-long-battle-20261118e.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#d11-long-battle",
       "open": "https://polynite.io/showcase/view?id=d11-long-battle",
-      "scene": "https://polynite.io/showcase/data/d11-long-battle-v3.scene"
+      "scene": "https://polynite.io/showcase/data/d11-long-battle-v4.scene"
     }
   ]
 }
