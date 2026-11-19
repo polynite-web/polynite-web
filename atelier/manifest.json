@@ -613,54 +613,54 @@
       "scene": "media/floating-islands-20261106.scene"
     },
     {
-      "id": "d11-intro-battle-20261118c",
+      "id": "d11-intro-battle-20261118d",
       "title": "D11 : Intro + Battle (Short 9:16)",
       "summary": [
-        "Un petit drone de garde tombe dans un piège : trois tourelles sortent du sol. Il perd son bouclier, on voit son esprit NOD redémarrer, il revient et gagne, puis chante.",
-        "Film de jeu Nod, enregistré tel que le jeu le joue."
+        "Le Short (9:16) : le piège, les deux canons, la chute, l'esprit NOD qui redémarre, la riposte et la chanson.",
+        "Master 4K 60 i/s, son à -20 LUFS, publié en 1080p60."
       ],
-      "note": "Affiche extraite du film à 12 s. Son à -20 LUFS, effets remontés, alarme sans voix.",
+      "note": "Affiche extraite du master 4K à 12 s.",
       "collection": "games",
       "captured_at": "2026-11-18T12:00:00-05:00",
       "published_at": "",
-      "revision": "moteur c9bfd2b1d",
+      "revision": "moteur 008af2db5",
       "reference": false,
       "framing": "native",
       "scene_name": "vfx",
       "format": "portrait",
       "width": 1080,
       "height": 1920,
-      "duration": 66.83,
-      "bytes": 23318426,
-      "sha256": "a7af8ab72578a1f227b8e24414bcc8ae16efad3d1e52cf3aa3b81130fc3a748a",
-      "video": "media/d11-intro-battle-20261118c.mp4",
-      "poster": "media/d11-intro-battle-20261118c.jpg",
-      "scene": "media/d11-intro-battle-20261118c.scene"
+      "duration": 65.02,
+      "bytes": 23020656,
+      "sha256": "5c122e9207f19c3a57883e88a5ce107006676bcbcfc195102a64b0cfe7057fd2",
+      "video": "media/d11-intro-battle-20261118d.mp4",
+      "poster": "media/d11-intro-battle-20261118d.jpg",
+      "scene": "media/d11-intro-battle-20261118d.scene"
     },
     {
-      "id": "d11-long-battle-20261118c",
+      "id": "d11-long-battle-20261118d",
       "title": "D11 : Long Battle (5 min, 16:9)",
       "summary": [
-        "La version longue : combat libre varié - mode frénésie en tournant sur lui-même, selfie, danse de robot - puis sa seule chute vers 2:50 avec le redémarrage de son esprit NOD, la riposte finale et la chanson.",
-        "Film de jeu Nod de 5 min, effets sonores remontés, son à -20 LUFS, publié en 720p pour tenir sous 25 Mio."
+        "La version longue (16:9) : combat libre varié - mode frénésie, selfie, danse de robot - puis sa seule chute vers 2:50 et le redémarrage de son esprit NOD, la riposte finale et la chanson.",
+        "Film de jeu Nod de 5 min, master 4K 60 i/s, son à -20 LUFS, publié en 720p pour tenir sous 25 Mio."
       ],
-      "note": "Affiche extraite du master 1080p à 60 s.",
+      "note": "Affiche extraite du master 4K à 60 s.",
       "collection": "games",
       "captured_at": "2026-11-18T12:00:00-05:00",
       "published_at": "",
-      "revision": "moteur c9bfd2b1d",
+      "revision": "moteur 008af2db5",
       "reference": false,
       "framing": "native",
       "scene_name": "vfx",
       "format": "landscape",
       "width": 1280,
       "height": 720,
-      "duration": 313.77,
-      "bytes": 23979744,
-      "sha256": "0ca22c0dc0b32066515f0b50852966b8fb2c7459eb8b8e163f890ec7f8618ed5",
-      "video": "media/d11-long-battle-20261118c.mp4",
-      "poster": "media/d11-long-battle-20261118c.jpg",
-      "scene": "media/d11-long-battle-20261118c.scene"
+      "duration": 309.97,
+      "bytes": 23662346,
+      "sha256": "1b75b22c6e30a0febadbd0f2a456553a4014fc1423326864839f85aca11f7b50",
+      "video": "media/d11-long-battle-20261118d.mp4",
+      "poster": "media/d11-long-battle-20261118d.jpg",
+      "scene": "media/d11-long-battle-20261118d.scene"
     }
   ]
 }
