@@ -3413,7 +3413,7 @@
     },
     {
       "id": "d11-intro-battle",
-      "atelier": "d11-intro-battle-20261118e",
+      "atelier": "d11-intro-battle-20261119a",
       "title": "D11: a guard drone with a mind of its own",
       "category": "Games with a mind",
       "environment": "Neon arena",
@@ -3427,25 +3427,25 @@
         "MCP",
         "Editable"
       ],
-      "version": 4,
+      "version": 5,
       "layout": "portrait",
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "193c3935b1b6cadf2e141b318ea89610f0bfba373f92b2012a961d6721a14b87",
+      "scene_sha256": "da446efe9937c7cb0cbd3c67a84d4b836286f95acaea71c0a9cd6ad90884d832",
       "media": {
-        "video": "https://polynite.io/atelier/media/d11-intro-battle-20261118e.mp4",
-        "poster": "https://polynite.io/atelier/media/d11-intro-battle-20261118e.jpg"
+        "video": "https://polynite.io/atelier/media/d11-intro-battle-20261119a.mp4",
+        "poster": "https://polynite.io/atelier/media/d11-intro-battle-20261119a.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#d11-intro-battle",
       "open": "https://polynite.io/showcase/view?id=d11-intro-battle",
-      "scene": "https://polynite.io/showcase/data/d11-intro-battle-v4.scene"
+      "scene": "https://polynite.io/showcase/data/d11-intro-battle-v5.scene"
     },
     {
       "id": "d11-long-battle",
-      "atelier": "d11-long-battle-20261118e",
+      "atelier": "d11-long-battle-20261119a",
       "title": "D11: the five-minute battle",
       "category": "Games with a mind",
       "environment": "Neon arena",
@@ -3459,20 +3459,20 @@
         "MCP",
         "Editable"
       ],
-      "version": 4,
+      "version": 5,
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "d717ac3a2b7fc17f7d5a4c9b6194b8cf5f4277099a75485c16cf582f516147b0",
+      "scene_sha256": "d99e6129ba8b1f5830c46d0f56d96b55957bbb88ac5e327e466c9d408e7956f5",
       "media": {
-        "video": "https://polynite.io/atelier/media/d11-long-battle-20261118e.mp4",
-        "poster": "https://polynite.io/atelier/media/d11-long-battle-20261118e.jpg"
+        "video": "https://polynite.io/atelier/media/d11-long-battle-20261119a.mp4",
+        "poster": "https://polynite.io/atelier/media/d11-long-battle-20261119a.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#d11-long-battle",
       "open": "https://polynite.io/showcase/view?id=d11-long-battle",
-      "scene": "https://polynite.io/showcase/data/d11-long-battle-v4.scene"
+      "scene": "https://polynite.io/showcase/data/d11-long-battle-v5.scene"
     }
   ]
 }
