@@ -403,7 +403,7 @@
     },
     {
       "id": "d11-intro-battle",
-      "atelier": "d11-intro-battle-20261118e",
+      "atelier": "d11-intro-battle-20261119a",
       "title": "D11: a guard drone with a mind of its own",
       "category": "Games with a mind",
       "environment": "Neon arena",
@@ -417,12 +417,12 @@
         "MCP",
         "Editable"
       ],
-      "version": 4,
+      "version": 5,
       "layout": "portrait"
     },
     {
       "id": "d11-long-battle",
-      "atelier": "d11-long-battle-20261118e",
+      "atelier": "d11-long-battle-20261119a",
       "title": "D11: the five-minute battle",
       "category": "Games with a mind",
       "environment": "Neon arena",
@@ -436,7 +436,7 @@
         "MCP",
         "Editable"
       ],
-      "version": 4
+      "version": 5
     }
   ],
   "spotlight": {
