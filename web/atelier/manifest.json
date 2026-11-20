@@ -638,29 +638,29 @@
       "scene": "media/d11-intro-battle-20261119a.scene"
     },
     {
-      "id": "d11-long-battle-20261119a",
-      "title": "D11 : Long Battle (5 min, 16:9)",
+      "id": "d11-long-battle-20261119b",
+      "title": "D11 : Long Battle (2 min, 16:9)",
       "summary": [
-        "La version longue (16:9) : combat libre varié - mode frénésie, selfies à l'appareil photo, danse de robot - puis sa seule chute vers 2:46 et le redémarrage de son esprit NOD, la riposte finale et la chanson.",
-        "Film de jeu Nod de 5 min, master 4K 60 i/s, son à -23 LUFS, publié en 720p pour tenir sous 25 Mio."
+        "La version longue (16:9), resserrée à 2 min : le piège, ses canons, un selfie sous les tirs, le Nova blast en tournant sur lui-même, sa vraie chute et le redémarrage de son esprit NOD, puis son retour en mode frénésie et la chanson.",
+        "Film de jeu Nod de 2 min, master 4K 60 i/s, son à -23 LUFS, publié en 1080p60."
       ],
-      "note": "Affiche extraite du master 4K à 60 s.",
+      "note": "Affiche extraite du master 4K à 51 s (le Nova blast).",
       "collection": "games",
-      "captured_at": "2026-11-19T08:00:00-05:00",
+      "captured_at": "2026-11-19T22:22:00-05:00",
       "published_at": "",
-      "revision": "moteur 48ffee297",
+      "revision": "moteur 81acd1004",
       "reference": false,
       "framing": "native",
       "scene_name": "vfx",
       "format": "landscape",
-      "width": 1280,
-      "height": 720,
-      "duration": 309.67,
-      "bytes": 25068146,
-      "sha256": "41231623beefb1a377a0960e1440cf0c3eb1f71860ded763cc4a93d86d25bebe",
-      "video": "media/d11-long-battle-20261119a.mp4",
-      "poster": "media/d11-long-battle-20261119a.jpg",
-      "scene": "media/d11-long-battle-20261119a.scene"
+      "width": 1920,
+      "height": 1080,
+      "duration": 112.17,
+      "bytes": 23406100,
+      "sha256": "b4929c9e0eadf45c51b19d04a30481df02486e75015849ed756851d567672a16",
+      "video": "media/d11-long-battle-20261119b.mp4",
+      "poster": "media/d11-long-battle-20261119b.jpg",
+      "scene": "media/d11-long-battle-20261119b.scene"
     }
   ]
 }
