@@ -3519,6 +3519,69 @@
       "url": "https://explore.polynite.io/showcase/#d11-long-battle",
       "open": "https://polynite.io/showcase/view?id=d11-long-battle",
       "scene": "https://polynite.io/showcase/data/d11-long-battle-v6.scene"
+    },
+    {
+      "id": "wolf-pack-glade",
+      "atelier": "wolf-pack-glade-20261122-portrait",
+      "title": "The Pack: the pups' surprise",
+      "category": "Living creatures",
+      "environment": "Glade at moonrise",
+      "summary": "One take, 9:16. Five wolves race through a sunlit glade; one clears the fallen log, and at the top of the hill the two pups, late as always, tumble in behind them. Then the pack howls at the moon. Every paw is the engine's own gait, not an animation.",
+      "prompt": "Make a wolf pack run in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks, gallops and leaps itself. Restyle their forest with the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}, then {command:'plugin_set', path:'wolf.style', value:1} for the glade (0 the night forest, 2 low-poly leaves). Each camera is one of the scene's films: scene.cinematic {command:'films'} lists them, {command:'film_play', name:\"Adults, the pups' surprise\"} plays this one, and {command:'record', format:'portrait'} records it.",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Gallop",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1,
+      "layout": "portrait",
+      "kind": "showcase",
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "d070d9c20e2917ffb02294dfa3391ab18236309062e189cb5fb7df37a4f44a73",
+      "media": {
+        "video": "https://polynite.io/atelier/media/wolf-pack-glade-20261122-portrait.mp4",
+        "poster": "https://polynite.io/atelier/media/wolf-pack-glade-20261122-portrait.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#wolf-pack-glade",
+      "open": "https://polynite.io/showcase/view?id=wolf-pack-glade",
+      "scene": "https://polynite.io/showcase/data/wolf-pack-glade-v1.scene"
+    },
+    {
+      "id": "wolf-pack-glade-wide",
+      "atelier": "wolf-pack-glade-20261122-landscape",
+      "title": "The Pack: the pups' surprise (16:9)",
+      "category": "Living creatures",
+      "environment": "Glade at moonrise",
+      "summary": "The same one take in 16:9: the adults' run, the leap over the log, the pups' late arrival on the hill and the howl at the moon, with more of the glade around them.",
+      "prompt": "Make a wolf pack run in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks, gallops and leaps itself. Restyle their forest with the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}, then {command:'plugin_set', path:'wolf.style', value:1} for the glade (0 the night forest, 2 low-poly leaves). Each camera is one of the scene's films: scene.cinematic {command:'films'} lists them, {command:'film_play', name:\"Adults, the pups' surprise\"} plays this one, and {command:'record', format:'landscape'} records it.",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Gallop",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1,
+      "kind": "showcase",
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "d070d9c20e2917ffb02294dfa3391ab18236309062e189cb5fb7df37a4f44a73",
+      "media": {
+        "video": "https://polynite.io/atelier/media/wolf-pack-glade-20261122-landscape.mp4",
+        "poster": "https://polynite.io/atelier/media/wolf-pack-glade-20261122-landscape.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#wolf-pack-glade-wide",
+      "open": "https://polynite.io/showcase/view?id=wolf-pack-glade-wide",
+      "scene": "https://polynite.io/showcase/data/wolf-pack-glade-wide-v1.scene"
     }
   ]
 }
