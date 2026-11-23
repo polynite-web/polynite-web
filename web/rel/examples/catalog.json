@@ -3475,6 +3475,71 @@
       "scene": "https://polynite.io/showcase/data/d11-long-battle-v6.scene"
     },
     {
+      "id": "wolf-full-moon",
+      "atelier": "wolf-full-moon-20261123-portrait",
+      "title": "Under the Full Moon",
+      "category": "Living creatures",
+      "environment": "Glade under the full moon",
+      "summary": "One take, 9:16. The pack climbs the hill at night; the grass bends under every paw and keeps a faint trail of glowing pollen. The she-wolf turns to you and speaks, then the whole pack sings to the full moon. Her words are yours to change in the Wolf world plugin.",
+      "prompt": "Make a wolf pack sing in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks and gallops itself, and the grass bends under their paws and keeps a faint glowing trail (scene.interaction {command:'set', grass_trail:0.45, grass_glow:0.3}). Add the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}; its Words tab changes what the she-wolf says, or scene.ui {command:'click', target:'plugin_command', id:'wolf_world', name:'phrase', value:'Your own words!'}. Then scene.cinematic {command:'record', format:'portrait'} records the film.\n\nReference: https://explore.polynite.io/showcase/#wolf-full-moon",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Voice",
+        "Grass",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1,
+      "layout": "portrait",
+      "kind": "showcase",
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "5b5b21e37486e8be84dd669fd0aa76978ffb7136e84337adb35354d175074bc9",
+      "media": {
+        "video": "https://polynite.io/atelier/media/wolf-full-moon-20261123-portrait.mp4",
+        "poster": "https://polynite.io/atelier/media/wolf-full-moon-20261123-portrait.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#wolf-full-moon",
+      "open": "https://polynite.io/showcase/view?id=wolf-full-moon",
+      "scene": "https://polynite.io/showcase/data/wolf-full-moon-v1.scene"
+    },
+    {
+      "id": "wolf-full-moon-wide",
+      "atelier": "wolf-full-moon-20261123-landscape",
+      "title": "Under the Full Moon (16:9)",
+      "category": "Living creatures",
+      "environment": "Glade under the full moon",
+      "summary": "The same one take in 16:9: the climb through the glowing grass, the she-wolf's words and the pack's song to the full moon, with more of the night glade around them.",
+      "prompt": "Make a wolf pack sing in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks and gallops itself, and the grass bends under their paws and keeps a faint glowing trail (scene.interaction {command:'set', grass_trail:0.45, grass_glow:0.3}). Add the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}; its Words tab changes what the she-wolf says, or scene.ui {command:'click', target:'plugin_command', id:'wolf_world', name:'phrase', value:'Your own words!'}. Then scene.cinematic {command:'record', format:'landscape'} records the film.\n\nReference: https://explore.polynite.io/showcase/#wolf-full-moon-wide",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Voice",
+        "Grass",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1,
+      "kind": "showcase",
+      "capabilities": [],
+      "compatibility": {
+        "browser": "not_verified"
+      },
+      "scene_sha256": "5b5b21e37486e8be84dd669fd0aa76978ffb7136e84337adb35354d175074bc9",
+      "media": {
+        "video": "https://polynite.io/atelier/media/wolf-full-moon-20261123-landscape.mp4",
+        "poster": "https://polynite.io/atelier/media/wolf-full-moon-20261123-landscape.jpg"
+      },
+      "url": "https://explore.polynite.io/showcase/#wolf-full-moon-wide",
+      "open": "https://polynite.io/showcase/view?id=wolf-full-moon-wide",
+      "scene": "https://polynite.io/showcase/data/wolf-full-moon-wide-v1.scene"
+    },
+    {
       "id": "wolf-pack-glade",
       "atelier": "wolf-pack-glade-20261122-portrait",
       "title": "The Pack: the pups' surprise",
