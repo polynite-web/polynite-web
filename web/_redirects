@@ -15,6 +15,13 @@
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
 /showroom https://explore.polynite.io/showcase/#collection 302
+# The wolves' collection was "Living creatures" (2026-11-23): its old address goes to The Pack.
+/showcase/living-creatures/ /showcase/the-pack/ 301
+/showcase/living-creatures /showcase/the-pack/ 301
+/dev/showcase/living-creatures/ /dev/showcase/the-pack/ 301
+/dev/showcase/living-creatures /dev/showcase/the-pack/ 301
+/rel/showcase/living-creatures/ /rel/showcase/the-pack/ 301
+/rel/showcase/living-creatures /rel/showcase/the-pack/ 301
 # Showcase short links: the spotlight player, and its card in the Explore showcase.
 /showcase/star-veyland /examples/view.html?id=star-veyland 302
 /showcase/star-veyland/ /examples/view.html?id=star-veyland 302
