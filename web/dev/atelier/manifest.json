@@ -713,17 +713,17 @@
       "scene": "media/wolf-pack-glade-20261122.scene"
     },
     {
-      "id": "wolf-full-moon-20261123-portrait",
+      "id": "wolf-full-moon-20261123b-portrait",
       "title": "Under the Full Moon (9:16)",
       "summary": [
-        "La meute en un seul plan dans la clairière, de nuit : les loups montent la colline, l'herbe se couche sous leurs pas et garde une traînée de pollen lumineux, la louve parle (« Subscribe, and we will sing for you! ») puis la meute chante à la pleine lune.",
+        "La meute en un seul plan dans la clairière, de nuit : les loups montent la colline, l'herbe se couche sous leurs pas et garde une traînée de pollen lumineux, la louve parle (« Subscribe, and we will sing for you! ») avec un second loup derrière elle (v13), puis la meute chante à la pleine lune.",
         "Master 4K 60 i/s, son de l'intro à -16 dB, publié en 1080p60."
       ],
       "note": "Affiche extraite du master 4K (33 s : la louve chante).",
       "collection": "creatures",
-      "captured_at": "2026-11-23T15:46:00-05:00",
+      "captured_at": "2026-11-23T19:03:00-05:00",
       "published_at": "",
-      "revision": "moteur 19610cfa8",
+      "revision": "moteur 4ae98d25f",
       "reference": false,
       "framing": "native",
       "scene_name": "wolf",
@@ -731,24 +731,24 @@
       "width": 1080,
       "height": 1920,
       "duration": 47.14,
-      "bytes": 17946015,
-      "sha256": "70624b78011969ccacc6c663d32d921e5855dcfee257b3694439d8cab0f069ab",
-      "video": "media/wolf-full-moon-20261123-portrait.mp4",
-      "poster": "media/wolf-full-moon-20261123-portrait.jpg",
-      "scene": "media/wolf-full-moon-20261123.scene"
+      "bytes": 18058955,
+      "sha256": "15a63b68ba1024d955096e53b46caffc244ee7d1305ab2d057e4a8da7dcbab50",
+      "video": "media/wolf-full-moon-20261123b-portrait.mp4",
+      "poster": "media/wolf-full-moon-20261123b-portrait.jpg",
+      "scene": "media/wolf-full-moon-20261123b.scene"
     },
     {
-      "id": "wolf-full-moon-20261123-landscape",
+      "id": "wolf-full-moon-20261123b-landscape",
       "title": "Under the Full Moon (16:9)",
       "summary": [
-        "La meute en un seul plan dans la clairière, de nuit : les loups montent la colline, l'herbe se couche sous leurs pas et garde une traînée de pollen lumineux, la louve parle (« Subscribe, and we will sing for you! ») puis la meute chante à la pleine lune.",
+        "La meute en un seul plan dans la clairière, de nuit : les loups montent la colline, l'herbe se couche sous leurs pas et garde une traînée de pollen lumineux, la louve parle (« Subscribe, and we will sing for you! ») avec un second loup derrière elle (v13), puis la meute chante à la pleine lune.",
         "Master 4K 60 i/s, son de l'intro à -16 dB, publié en 1080p60."
       ],
       "note": "Affiche extraite du master 4K (33 s : la louve chante).",
       "collection": "creatures",
-      "captured_at": "2026-11-23T15:46:00-05:00",
+      "captured_at": "2026-11-23T19:03:00-05:00",
       "published_at": "",
-      "revision": "moteur 19610cfa8",
+      "revision": "moteur 4ae98d25f",
       "reference": false,
       "framing": "native",
       "scene_name": "wolf",
@@ -756,11 +756,11 @@
       "width": 1920,
       "height": 1080,
       "duration": 47.14,
-      "bytes": 17741904,
-      "sha256": "1ecea3428cef774943731a6a7c22dfc17bfce42abac30045405580046eb5d2f6",
-      "video": "media/wolf-full-moon-20261123-landscape.mp4",
-      "poster": "media/wolf-full-moon-20261123-landscape.jpg",
-      "scene": "media/wolf-full-moon-20261123.scene"
+      "bytes": 17724014,
+      "sha256": "0d300f16a9bf2a4acf218515b793d30dd5550dd63eb6bb6f2752b62d9c04da4a",
+      "video": "media/wolf-full-moon-20261123b-landscape.mp4",
+      "poster": "media/wolf-full-moon-20261123b-landscape.jpg",
+      "scene": "media/wolf-full-moon-20261123b.scene"
     }
   ]
 }
