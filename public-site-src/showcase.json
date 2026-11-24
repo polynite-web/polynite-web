@@ -422,11 +422,11 @@
     },
     {
       "id": "d11-long-battle",
-      "atelier": "d11-long-battle-20261119b",
+      "atelier": "d11-long-battle-20261124a",
       "title": "D11: the two-minute battle",
       "category": "Games with a mind",
       "environment": "Neon arena",
-      "summary": "Two minutes, 16:9. Caught in a trap, it fights back: a selfie under fire, a Nova blast spun out of its glowing belt, its one real crash and its mind's reboot, then a frenzied comeback and its song. Played by the game's own rules.",
+      "summary": "Two minutes, 16:9. Caught in a trap, it fights back: a selfie under fire, its one real crash and its mind's reboot, a frenzied comeback that downs the whole ring, a dance or two, then it charges everything it has into a Nova blast - and sings. Played by the game's own rules.",
       "prompt": "Make a small game in Polynite through MCP whose rules film themselves. Lay out an arena with scene.apply (objects, lights, emitters), then give it a mind: scene.apply {op:'nod', graphs:[{id:'guard', states:['up','down'], vars:{life:10}, rules:[{id:'hit', on:'every:0.1', when:'life < 3', do:[{op:'voice.say', voice:'drone_voice', say:'Shields low!'}, {op:'camera.move', at:'drone', zoom:0.6, time:2}]}]}]}. Each rule is an event, a condition and actions (voice.say, voice.sing, camera.move, emitter.fire, vfx.set, film.end). Then play a film of it with scene.cinematic {command:'film_play', name:'Long Battle (2 min)'} and record it with scene.cinematic {command:'record', format:'landscape'}. Use the linked scene as a starting point.",
       "tags": [
         "Game",
@@ -436,7 +436,7 @@
         "MCP",
         "Editable"
       ],
-      "version": 6
+      "version": 7
     },
     {
       "id": "wolf-full-moon",
