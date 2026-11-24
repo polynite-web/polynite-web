@@ -661,6 +661,106 @@
       "video": "media/d11-long-battle-20261119b.mp4",
       "poster": "media/d11-long-battle-20261119b.jpg",
       "scene": "media/d11-long-battle-20261119b.scene"
+    },
+    {
+      "id": "wolf-pack-glade-20261122-portrait",
+      "title": "The Pack : la clairière (9:16)",
+      "summary": [
+        "La meute de loups en un seul plan, style Glade (Floating Islands) : les adultes courent, l'un saute le tronc, et les louveteaux en retard surgissent en haut de la colline, puis le hurlement à la lune.",
+        "Film 1 « Adults, the pups' surprise », master 4K 60 i/s, son à -23 LUFS, publié en 1080p60."
+      ],
+      "note": "Affiche extraite du master 4K.",
+      "collection": "creatures",
+      "captured_at": "2026-11-22T00:15:00-05:00",
+      "published_at": "",
+      "revision": "moteur 52ba549f2",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "wolf",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 47.15,
+      "bytes": 17066110,
+      "sha256": "f101102df32a6e35185ef1d0ad85d6c8a279d294da3401bf36e6815aecb80bc8",
+      "video": "media/wolf-pack-glade-20261122-portrait.mp4",
+      "poster": "media/wolf-pack-glade-20261122-portrait.jpg",
+      "scene": "media/wolf-pack-glade-20261122.scene"
+    },
+    {
+      "id": "wolf-pack-glade-20261122-landscape",
+      "title": "The Pack : la clairière (16:9)",
+      "summary": [
+        "La meute de loups en un seul plan, style Glade (Floating Islands) : les adultes courent, l'un saute le tronc, et les louveteaux en retard surgissent en haut de la colline, puis le hurlement à la lune.",
+        "Film 1 « Adults, the pups' surprise », master 4K 60 i/s, son à -23 LUFS, publié en 1080p60."
+      ],
+      "note": "Affiche extraite du master 4K.",
+      "collection": "creatures",
+      "captured_at": "2026-11-22T00:15:00-05:00",
+      "published_at": "",
+      "revision": "moteur 52ba549f2",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "wolf",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 47.15,
+      "bytes": 17090186,
+      "sha256": "e9ed9c0a5809f7eda095d59fbb987be1f0127b37904e1c0f2baed7b27067bf1a",
+      "video": "media/wolf-pack-glade-20261122-landscape.mp4",
+      "poster": "media/wolf-pack-glade-20261122-landscape.jpg",
+      "scene": "media/wolf-pack-glade-20261122.scene"
+    },
+    {
+      "id": "wolf-full-moon-20261123b-portrait",
+      "title": "Under the Full Moon (9:16)",
+      "summary": [
+        "La meute en un seul plan dans la clairière, de nuit : les loups montent la colline, l'herbe se couche sous leurs pas et garde une traînée de pollen lumineux, la louve parle (« Subscribe, and we will sing for you! ») avec un second loup derrière elle (v13), puis la meute chante à la pleine lune.",
+        "Master 4K 60 i/s, son de l'intro à -16 dB, publié en 1080p60."
+      ],
+      "note": "Affiche extraite du master 4K (33 s : la louve chante).",
+      "collection": "creatures",
+      "captured_at": "2026-11-23T19:03:00-05:00",
+      "published_at": "",
+      "revision": "moteur 4ae98d25f",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "wolf",
+      "format": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "duration": 47.14,
+      "bytes": 18058955,
+      "sha256": "15a63b68ba1024d955096e53b46caffc244ee7d1305ab2d057e4a8da7dcbab50",
+      "video": "media/wolf-full-moon-20261123b-portrait.mp4",
+      "poster": "media/wolf-full-moon-20261123b-portrait.jpg",
+      "scene": "media/wolf-full-moon-20261123b.scene"
+    },
+    {
+      "id": "wolf-full-moon-20261123b-landscape",
+      "title": "Under the Full Moon (16:9)",
+      "summary": [
+        "La meute en un seul plan dans la clairière, de nuit : les loups montent la colline, l'herbe se couche sous leurs pas et garde une traînée de pollen lumineux, la louve parle (« Subscribe, and we will sing for you! ») avec un second loup derrière elle (v13), puis la meute chante à la pleine lune.",
+        "Master 4K 60 i/s, son de l'intro à -16 dB, publié en 1080p60."
+      ],
+      "note": "Affiche extraite du master 4K (33 s : la louve chante).",
+      "collection": "creatures",
+      "captured_at": "2026-11-23T19:03:00-05:00",
+      "published_at": "",
+      "revision": "moteur 4ae98d25f",
+      "reference": false,
+      "framing": "native",
+      "scene_name": "wolf",
+      "format": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "duration": 47.14,
+      "bytes": 17724014,
+      "sha256": "0d300f16a9bf2a4acf218515b793d30dd5550dd63eb6bb6f2752b62d9c04da4a",
+      "video": "media/wolf-full-moon-20261123b-landscape.mp4",
+      "poster": "media/wolf-full-moon-20261123b-landscape.jpg",
+      "scene": "media/wolf-full-moon-20261123b.scene"
     }
   ]
 }

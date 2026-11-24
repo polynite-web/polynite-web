@@ -437,6 +437,82 @@
         "Editable"
       ],
       "version": 6
+    },
+    {
+      "id": "wolf-full-moon",
+      "atelier": "wolf-full-moon-20261123b-portrait",
+      "title": "Under the Full Moon",
+      "category": "The Pack",
+      "environment": "Glade under the full moon",
+      "summary": "One take, 9:16. The pack climbs the hill at night; the grass bends under every paw and keeps a faint trail of glowing pollen. The she-wolf turns to you and speaks, then the whole pack sings to the full moon. Her words are yours to change in the Wolf world plugin.",
+      "prompt": "Make a wolf pack sing in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks and gallops itself, and the grass bends under their paws and keeps a faint glowing trail (scene.interaction {command:'set', grass_trail:0.45, grass_glow:0.3}). Add the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}; its Words tab changes what the she-wolf says, or scene.ui {command:'click', target:'plugin_command', id:'wolf_world', name:'phrase', value:'Your own words!'}. Then scene.cinematic {command:'record', format:'portrait'} records the film.",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Voice",
+        "Grass",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 2,
+      "layout": "portrait"
+    },
+    {
+      "id": "wolf-full-moon-wide",
+      "atelier": "wolf-full-moon-20261123b-landscape",
+      "title": "Under the Full Moon (16:9)",
+      "category": "The Pack",
+      "environment": "Glade under the full moon",
+      "summary": "The same one take in 16:9: the climb through the glowing grass, the she-wolf's words and the pack's song to the full moon, with more of the night glade around them.",
+      "prompt": "Make a wolf pack sing in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks and gallops itself, and the grass bends under their paws and keeps a faint glowing trail (scene.interaction {command:'set', grass_trail:0.45, grass_glow:0.3}). Add the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}; its Words tab changes what the she-wolf says, or scene.ui {command:'click', target:'plugin_command', id:'wolf_world', name:'phrase', value:'Your own words!'}. Then scene.cinematic {command:'record', format:'landscape'} records the film.",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Voice",
+        "Grass",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 2
+    },
+    {
+      "id": "wolf-pack-glade",
+      "atelier": "wolf-pack-glade-20261122-portrait",
+      "title": "The Pack: the pups' surprise",
+      "category": "The Pack",
+      "environment": "Glade at moonrise",
+      "summary": "One take, 9:16. Five wolves race through a sunlit glade; one clears the fallen log, and at the top of the hill the two pups, late as always, tumble in behind them. Then the pack howls at the moon. Every paw is the engine's own gait, not an animation.",
+      "prompt": "Make a wolf pack run in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks, gallops and leaps itself. Restyle their forest with the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}, then {command:'plugin_set', path:'wolf.style', value:1} for the glade (0 the night forest, 2 low-poly leaves). Each camera is one of the scene's films: scene.cinematic {command:'films'} lists them, {command:'film_play', name:\"Adults, the pups' surprise\"} plays this one, and {command:'record', format:'portrait'} records it.",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Gallop",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1,
+      "layout": "portrait"
+    },
+    {
+      "id": "wolf-pack-glade-wide",
+      "atelier": "wolf-pack-glade-20261122-landscape",
+      "title": "The Pack: the pups' surprise (16:9)",
+      "category": "The Pack",
+      "environment": "Glade at moonrise",
+      "summary": "The same one take in 16:9: the adults' run, the leap over the log, the pups' late arrival on the hill and the howl at the moon, with more of the glade around them.",
+      "prompt": "Make a wolf pack run in Polynite through MCP. Open the linked scene: its creatures are living bodies the engine walks, gallops and leaps itself. Restyle their forest with the Wolf world plugin: scene.controls {command:'plugin_add', plugin:'wolf_world'}, then {command:'plugin_set', path:'wolf.style', value:1} for the glade (0 the night forest, 2 low-poly leaves). Each camera is one of the scene's films: scene.cinematic {command:'films'} lists them, {command:'film_play', name:\"Adults, the pups' surprise\"} plays this one, and {command:'record', format:'landscape'} records it.",
+      "tags": [
+        "Creatures",
+        "Wolves",
+        "Gallop",
+        "One take",
+        "MCP",
+        "Editable"
+      ],
+      "version": 1
     }
   ],
   "spotlight": {
@@ -444,6 +520,19 @@
     "text": "One sentence, a whole world: rock rises out of the mist at different heights, stairs form, grass and trees grow, vines come down and rope bridges join the islands. Every stage is one MCP call you can open and change."
   },
   "collections": [
+    {
+      "id": "the-pack",
+      "title": "The Pack",
+      "kicker": "Wolves that move on their own",
+      "layout": "wide",
+      "pitch": "A wolf pack in one take, in 9:16 and 16:9: climbing through glowing grass to sing to the full moon, or racing through a sunlit glade. Bodies the engine walks, gallops and leaps itself across the ground they stand on; the camera only follows.",
+      "primary": [
+        "wolf-full-moon",
+        "wolf-full-moon-wide",
+        "wolf-pack-glade",
+        "wolf-pack-glade-wide"
+      ]
+    },
     {
       "id": "game-films",
       "title": "Games with a mind",
