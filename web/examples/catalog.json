@@ -3476,7 +3476,7 @@
     },
     {
       "id": "wolf-full-moon",
-      "atelier": "wolf-full-moon-20261123-portrait",
+      "atelier": "wolf-full-moon-20261123b-portrait",
       "title": "Under the Full Moon",
       "category": "The Pack",
       "environment": "Glade under the full moon",
@@ -3491,25 +3491,25 @@
         "MCP",
         "Editable"
       ],
-      "version": 1,
+      "version": 2,
       "layout": "portrait",
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "5b5b21e37486e8be84dd669fd0aa76978ffb7136e84337adb35354d175074bc9",
+      "scene_sha256": "f9ff01346bd8df9f60fcf2c68240eeed9c7d95517d31241d15a5b7700cfb6adc",
       "media": {
-        "video": "https://polynite.io/atelier/media/wolf-full-moon-20261123-portrait.mp4",
-        "poster": "https://polynite.io/atelier/media/wolf-full-moon-20261123-portrait.jpg"
+        "video": "https://polynite.io/atelier/media/wolf-full-moon-20261123b-portrait.mp4",
+        "poster": "https://polynite.io/atelier/media/wolf-full-moon-20261123b-portrait.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#wolf-full-moon",
       "open": "https://polynite.io/showcase/view?id=wolf-full-moon",
-      "scene": "https://polynite.io/showcase/data/wolf-full-moon-v1.scene"
+      "scene": "https://polynite.io/showcase/data/wolf-full-moon-v2.scene"
     },
     {
       "id": "wolf-full-moon-wide",
-      "atelier": "wolf-full-moon-20261123-landscape",
+      "atelier": "wolf-full-moon-20261123b-landscape",
       "title": "Under the Full Moon (16:9)",
       "category": "The Pack",
       "environment": "Glade under the full moon",
@@ -3524,20 +3524,20 @@
         "MCP",
         "Editable"
       ],
-      "version": 1,
+      "version": 2,
       "kind": "showcase",
       "capabilities": [],
       "compatibility": {
         "browser": "not_verified"
       },
-      "scene_sha256": "5b5b21e37486e8be84dd669fd0aa76978ffb7136e84337adb35354d175074bc9",
+      "scene_sha256": "f9ff01346bd8df9f60fcf2c68240eeed9c7d95517d31241d15a5b7700cfb6adc",
       "media": {
-        "video": "https://polynite.io/atelier/media/wolf-full-moon-20261123-landscape.mp4",
-        "poster": "https://polynite.io/atelier/media/wolf-full-moon-20261123-landscape.jpg"
+        "video": "https://polynite.io/atelier/media/wolf-full-moon-20261123b-landscape.mp4",
+        "poster": "https://polynite.io/atelier/media/wolf-full-moon-20261123b-landscape.jpg"
       },
       "url": "https://explore.polynite.io/showcase/#wolf-full-moon-wide",
       "open": "https://polynite.io/showcase/view?id=wolf-full-moon-wide",
-      "scene": "https://polynite.io/showcase/data/wolf-full-moon-wide-v1.scene"
+      "scene": "https://polynite.io/showcase/data/wolf-full-moon-wide-v2.scene"
     },
     {
       "id": "wolf-pack-glade",
