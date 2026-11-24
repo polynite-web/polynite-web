@@ -15,10 +15,40 @@
 /showroom/cozy-autumn-night /examples/view.html?id=cozy-autumn-night 302
 /showroom/cozy-autumn-night/ /examples/view.html?id=cozy-autumn-night 302
 /showroom https://explore.polynite.io/showcase/#collection 302
+# The wolves' collection was "Living creatures" (2026-11-23): its old address goes to The Pack.
+/showcase/living-creatures/ https://explore.polynite.io/showcase/the-pack/ 301
+/showcase/living-creatures https://explore.polynite.io/showcase/the-pack/ 301
+/dev/showcase/living-creatures/ /dev/showcase/the-pack/ 301
+/dev/showcase/living-creatures /dev/showcase/the-pack/ 301
+/rel/showcase/living-creatures/ /rel/showcase/the-pack/ 301
+/rel/showcase/living-creatures /rel/showcase/the-pack/ 301
 # Showcase short links: the spotlight player, and its card in the Explore showcase.
 /showcase/star-veyland /examples/view.html?id=star-veyland 302
 /showcase/star-veyland/ /examples/view.html?id=star-veyland 302
 /showroom/ https://explore.polynite.io/showcase/#collection 302
+# The Showcase pages live on Explore only (the user, 2026-11-24: one Showcase, not two). polynite.io keeps
+# its viewer (/showcase/view), its scenes (/showcase/data/) and the short links above; the listing pages go to Explore.
+# One pair per page of public-site-src/showcase.json (a new collection: add its pair here).
+/showcase/ https://explore.polynite.io/showcase/ 301
+/showcase https://explore.polynite.io/showcase/ 301
+/showcase/the-pack/ https://explore.polynite.io/showcase/the-pack/ 301
+/showcase/the-pack https://explore.polynite.io/showcase/the-pack/ 301
+/showcase/game-films/ https://explore.polynite.io/showcase/game-films/ 301
+/showcase/game-films https://explore.polynite.io/showcase/game-films/ 301
+/showcase/infinite-worlds/ https://explore.polynite.io/showcase/infinite-worlds/ 301
+/showcase/infinite-worlds https://explore.polynite.io/showcase/infinite-worlds/ 301
+/showcase/cozy-houses/ https://explore.polynite.io/showcase/cozy-houses/ 301
+/showcase/cozy-houses https://explore.polynite.io/showcase/cozy-houses/ 301
+/showcase/smart-landscapes/ https://explore.polynite.io/showcase/smart-landscapes/ 301
+/showcase/smart-landscapes https://explore.polynite.io/showcase/smart-landscapes/ 301
+/showcase/connected-buildings/ https://explore.polynite.io/showcase/connected-buildings/ 301
+/showcase/connected-buildings https://explore.polynite.io/showcase/connected-buildings/ 301
+/showcase/japanese-gardens/ https://explore.polynite.io/showcase/japanese-gardens/ 301
+/showcase/japanese-gardens https://explore.polynite.io/showcase/japanese-gardens/ 301
+/showcase/procedural-workshop/ https://explore.polynite.io/showcase/procedural-workshop/ 301
+/showcase/procedural-workshop https://explore.polynite.io/showcase/procedural-workshop/ 301
+/showcase/all/ https://explore.polynite.io/showcase/all/ 301
+/showcase/all https://explore.polynite.io/showcase/all/ 301
 # The public pages moved to Polynite Explore, for good.
 /about/* https://explore.polynite.io/about/:splat 301
 /about https://explore.polynite.io/about/ 301
