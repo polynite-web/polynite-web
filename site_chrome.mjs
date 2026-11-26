@@ -3,7 +3,7 @@ const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 const APP='https://polynite.io',EXPLORE='https://explore.polynite.io';
 export function renderHeader({section='',current='',app=APP,explore=EXPLORE}={}){
  if(current==='Docs'||current==='AI & MCP')current='Learn';
- const links=[[explore+'/','Explore'],[explore+'/showcase/','Showcase'],[explore+'/create/','Create'],[explore+'/discover/','Discover'],[explore+'/learn/','Learn']];
+ const links=[[explore+'/','Explore'],[explore+'/showcase/','Showcase'],[explore+'/create/','Create'],[explore+'/discover/','Discover'],[explore+'/learn/','Learn'],['https://spinoul.polynite.io/','Spinoul']];
  return `<header class="site-header"><div class="header-inner"><a class="brand" href="${app}/mcp/" aria-label="Polynite product"><img src="${app}/assets/favicon-32.png" width="24" height="24" alt=""><span class="brand-name">Polynite</span></a><nav class="primary-nav" aria-label="Main navigation">${links.map(([url,label])=>`<a href="${escape(url)}"${label==='Showcase'?' class="nav-showcase" title="Explore scenes and creations"':label==='Learn'?' class="nav-learn" title="Tutorials, guides and documentation"':''}${current===label?' aria-current="page"':''}>${escape(label)}</a>`).join('')}</nav><a class="app-link" href="${app}/">Open Polynite</a></div></header>`;
 }
 export function renderFooter({app=APP,explore=EXPLORE}={}){
